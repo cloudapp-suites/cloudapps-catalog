@@ -1,0 +1,35 @@
+{
+  "name": "dashy",
+  "display_name": "Dashy",
+  "description": {
+    "zh": "Dashy 是一个开源的仪表盘项目，用于将自托管服务集中管理，通过单一界面访问。它提供了一个可定制、用户友好的主页，用于管理和监控应用程序，支持实时状态检查、小组件、主题切换和多语言选项。Dashy 可通过 Docker、云平台或源码部署，非常适合个人或团队用于管理家庭实验室或企业级服务。",
+    "en": "Dashy is an open-source dashboard that helps you organize self-hosted services by making them accessible from a single interface. It provides a customizable, user-friendly homepage to manage and monitor your applications, with support for real-time status checks, widgets, themes, and multi-language options. Dashy can be deployed via Docker, cloud platforms, or from source, making it ideal for personal or team use in managing homelab or enterprise services."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 集中访问所有自托管服务\n- 轻量级、响应式且高度可定制的用户界面\n- 活跃维护，定期更新并添加新功能\n- 注重隐私，无追踪或外部依赖\n- 支持多种部署方式，包括 Docker、云平台和源码安装\n\n## 功能列表:\n\n- 支持多页面管理\n- 对应用程序/链接进行实时状态监控\n- 可显示自托管服务动态内容的小组件\n- 支持即时搜索及自定义快捷键和键盘操作\n- 内置多种颜色主题，并支持自定义 CSS\n- 多种图标选项，包括 Font-Awesome、表情符号和 Favicon\n- 可选的身份验证功能，支持多用户访问和 SSO 登录\n- 支持超过 10 种语言的本地化\n- 提供加密云备份与恢复功能\n- 支持工作区视图和极简视图\n- 可配置的启动方式（新标签页、弹窗、剪贴板等）\n- 布局、显示内容、行为等均可自定义\n- 支持全屏背景图和自定义 HTML 页脚\n- 基于 YAML 的配置文件，并提供可视化配置界面\n- 体积小巧，支持 PWA 实现基础离线访问\n- 完全免费且开源",
+    "en": "## Benefits:\n\n- Centralized access to all self-hosted services\n- Lightweight, responsive, and fully customizable UI\n- Actively maintained with regular updates and new features\n- Privacy-focused, with no tracking or external dependencies\n- Easy deployment options including Docker, cloud, and source\n\n## Features:\n\n- Support for multiple pages\n- Real-time status monitoring for apps/links\n- Widgets to display dynamic content from self-hosted services\n- Instant search with customizable hotkeys and keyboard shortcuts\n- Built-in color themes and support for custom CSS\n- Multiple icon options including Font-Awesome, emojis, and favicons\n- Optional authentication with multi-user access and SSO support\n- Multi-language support with over 10 translations\n- Encrypted cloud backup and restore functionality\n- Workspace and minimal views for different use cases\n- Configurable app launch methods (new tab, modal, clipboard, etc.)\n- Customizable layout, visibility, and behavior settings\n- Full-screen background image and HTML footer options\n- Easy YAML-based configuration with UI editor\n- Small bundle size and PWA support for offline access\n- 100% free and open-source"
+  },
+  "github_url": "https://github.com/lissy93/dashy",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://dashy.to/docs/",
+  "categories": [
+    "Privacy",
+    "Customization",
+    "Monitoring",
+    "Multilingual",
+    "User Experience",
+    "Dashboard",
+    "Authentication",
+    "Configuration",
+    "Widgets"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dashy/image/umbrel-banner.jpg",
+  "license": "MIT",
+  "language": "JavaScript"
+}

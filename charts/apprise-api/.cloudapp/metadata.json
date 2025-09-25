@@ -1,0 +1,42 @@
+{
+  "name": "apprise-api",
+  "display_name": "Apprise-API",
+  "description": {
+    "zh": "Apprise API 是一个轻量级的微服务，为发送通知到 100 多个服务提供 RESTful 接口。它作为 Apprise 通知库的网关，允许开发者和用户通过简单的 API 或网页界面发送消息。该服务支持无状态和有状态的通知配置，适用于多种部署场景。",
+    "en": "Apprise API is a lightweight microservice that provides a RESTful interface for sending notifications to over 100 services. It acts as a gateway to the Apprise notification library, allowing both developers and users to send messages through a simple API or web interface. The service supports both stateless and stateful notification configurations, making it flexible for various deployment scenarios."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量级且生产就绪的微服务，专为通知传递设计。\n- 支持无状态和有状态的通知配置。\n- 易于集成到现有系统，配置简单。\n- 内置网页界面，用于测试和管理配置。\n- 支持自定义插件和第三方 Webhook 字段映射。\n\n## 功能列表:\n\n- 通过统一 API 向 100 多个服务发送通知。\n- 使用唯一密钥存储和管理 Apprise 配置。\n- 利用标签选择性地通知服务组。\n- 支持附件，包括本地文件和远程 URL。\n- 提供 RESTful API 端点用于触发通知和管理配置。\n- Prometheus 指标端点用于可观测性。\n- 健康检查端点用于服务器状态监控。\n- 可通过环境变量进行高级配置。\n- 支持 Docker 和 Kubernetes 部署。\n- 第三方 Webhook 负载字段映射功能以提升兼容性。",
+    "en": "## Benefits:\n\n- Lightweight and production-ready microservice for notification delivery.\n- Supports both stateless and stateful notification configurations.\n- Easy integration into existing systems with minimal setup.\n- Built-in web interface for testing and managing configurations.\n- Extensible with support for custom plugins and third-party webhook remapping.\n\n## Features:\n\n- Send notifications to over 100 services via a unified API.\n- Store and manage Apprise configurations with unique keys.\n- Use tagging to selectively notify groups of services.\n- Support for attachments, including local files and remote URLs.\n- RESTful API endpoints for notification triggering and configuration management.\n- Prometheus metrics endpoint for observability.\n- Health check endpoint for server status monitoring.\n- Customizable environment variables for advanced configuration.\n- Docker and Kubernetes deployment support.\n- Third-party webhook payload remapping for compatibility."
+  },
+  "github_url": "https://github.com/caronc/apprise-api",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "Microservices"
+  ],
+  "official_address": "",
+  "product_document": "https://github.com/caronc/apprise/wiki",
+  "categories": [
+    "Open Source",
+    "API",
+    "Notifications",
+    "open source",
+    "Email",
+    "developer tools",
+    "chat",
+    "Chat Apps",
+    "messaging",
+    "extensible",
+    "SMS",
+    "email",
+    "notification",
+    "integration"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/apprise-api/image/Screenshot-2.png",
+  "license": "MIT",
+  "language": "Python"
+}

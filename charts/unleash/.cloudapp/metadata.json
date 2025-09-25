@@ -1,0 +1,36 @@
+{
+  "name": "unleash",
+  "display_name": "Unleash",
+  "description": {
+    "zh": "Unleash 是一个领先的开源功能管理平台，帮助团队控制功能发布、优化开发流程并加快软件交付速度。它允许开发者逐步部署代码，并在无需重新部署的情况下管理生产环境中功能的可见性。Unleash 支持超过15种官方SDK和多种部署方式，具备高度的灵活性、可扩展性以及广泛的集成能力。",
+    "en": "Unleash is a leading open-source feature management platform that enables teams to control feature rollouts, streamline development workflows, and accelerate software delivery. It allows developers to deploy code incrementally and manage feature visibility in production without requiring redeployment. Supporting over 15 official SDKs and multiple deployment options, Unleash offers flexibility, scalability, and integration capabilities for any tech stack."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过功能开关实现安全可控的功能发布\n- 支持持续交付和敏捷开发实践\n- 提供高度灵活性，适配各种技术栈\n- 提供企业级安全与可扩展性选项\n- 通过实时功能控制与回滚降低风险\n\n## 功能列表:\n\n- 多环境下的功能开关管理\n- 激活策略支持定向发布（如用户分段、百分比控制）\n- 金丝雀发布与逐步上线\n- 快速关闭开关用于即时功能停用\n- 支持A/B测试\n- 基于标签的功能组织\n- 内置集成 Slack、Microsoft Teams、Datadog 及 Webhook\n- 技术债务洞察与过期功能检测\n- API优先设计，支持全自动化\n- 提供12种官方SDK和10+社区SDK\n- 支持Docker和Node.js部署\n- 审计日志及GDPR/Schrems II合规性\n- 支持Unleash Edge以提升前端扩展能力\n- 高级激活策略约束（Pro/Enterprise版）\n- 基于角色的访问控制（RBAC）和单点登录（SSO）（Pro/Enterprise版）",
+    "en": "## Benefits:\n\n- Enables safe and controlled feature rollouts using feature flags\n- Supports continuous delivery and agile development practices\n- Offers high flexibility and integration with any tech stack\n- Provides enterprise-grade security and scalability options\n- Reduces risk through real-time feature control and rollbacks\n\n## Features:\n\n- Feature flags management across multiple environments\n- Activation strategies for targeted rollouts (e.g., user segments, percentages)\n- Canary releases and gradual rollouts\n- Kill switches for immediate feature deactivation\n- A/B testing support\n- Tag-based feature organization\n- Built-in integrations with Slack, Microsoft Teams, Datadog, and webhooks\n- Technical debt insights and stale flag detection\n- API-first design for full automation\n- 12 official SDKs and 10+ community SDKs\n- Docker and Node.js deployment options\n- Audit logs and GDPR/Schrems II compliance\n- Support for Unleash Edge for frontend scalability\n- Advanced activation strategy constraints (in Pro/Enterprise)\n- Role-based access control (RBAC) and SSO (in Pro/Enterprise)"
+  },
+  "github_url": "https://github.com/Unleash/unleash",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.getunleash.io",
+  "categories": [
+    "Developer Tools",
+    "Privacy",
+    "Customization",
+    "Scalability",
+    "Deployment",
+    "Enterprise",
+    "Hosting",
+    "Cost Efficiency",
+    "Progressive Rollout",
+    "Feature Management"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/unleash/image/github_header_opaque_landscape.svg",
+  "license": "Apache-2.0",
+  "language": "TypeScript"
+}

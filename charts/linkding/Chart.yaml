@@ -1,0 +1,26 @@
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Initial release linkding with bjw lib
+apiVersion: v2
+appVersion: 1.41.0-plus
+dependencies:
+- name: common
+  repository: https://bjw-s-labs.github.io/helm-charts
+  version: 2.6.0
+description: Linkding is an application to store and synchronise web browsers bookmarks
+home: https://github.com/sissbruecker/linkding
+icon: https://github.com/sissbruecker/linkding/raw/master/docs/header.svg
+keywords:
+- linkding
+- application
+- bookmarks
+kubeVersion: '>=1.22.0-0'
+maintainers:
+- email: jonathanregnier@users.noreply.gitlab.com
+  name: jonathanregnier
+name: linkding
+sources:
+- https://github.com/sissbruecker/linkding
+- https://hub.docker.com/r/sissbruecker/linkding
+version: 0.2.3

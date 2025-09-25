@@ -1,0 +1,126 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "activepieces.fullname" . }}
+  labels:
+    {{- include "activepieces.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "activepieces.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "activepieces.labels" . | nindent 8 }}
+	{{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "activepieces.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{ if .Values.ngrok.host }}
+            - name: AP_FRONTEND_URL
+              value: "https://{{ .Values.ngrok.host }}"
+            {{ else }}
+            - name: AP_FRONTEND_URL
+              value: "https://{{ .Values.service.host }}:{{ .Values.service.port }}"
+            {{ end}}
+            - name: AP_CLOUD_AUTH_ENABLED
+              value: "true"
+            - name: AP_API_KEY
+              value: 11f7de1fab61f7aa69f3619cc25257f09d8d2f327ab2339d8f4a94c7415e72a3dd62280f22488f5e88d3d8e4b8f6c6efeddc841342d8b6621a6720d2c00711e8
+            - name: AP_ENCRYPTION_KEY
+              value: b93af1a810b3efd13ccac9f8bd4bdab4
+            - name: AP_JWT_SECRET
+              value: eace8171b8de00acc813591162319739fb549e300123236ce7e76a3e7520468cb
+            {{ if eq .Values.queue.mode "REDIS" }}
+            - name: AP_QUEUE_MODE
+              value: {{ .Values.queue.mode }}
+            {{ if .Values.queue.ui.enabled }}
+            - name: AP_QUEUE_UI_ENABLED
+              value: "true"
+            - name: AP_QUEUE_UI_USERNAME
+              value: "mariomeyer"
+            - name: AP_QUEUE_UI_PASSWORD
+              value: "123mudar"
+            {{ end }}
+            - name: AP_REDIS_URL
+              value: {{ .Values.queue.url }}
+            {{ else }}
+            - name: AP_QUEUE_MODE
+              value: {{ .Values.queue.mode }}
+            {{ end }}
+            {{ if eq .Values.db.type "POSTGRES" }}
+            - name: AP_POSTGRES_DATABASE
+              value: {{ .Values.db.database | default "activepieces" }}
+            - name: AP_POSTGRES_HOST
+              value: {{ .Values.db.host | default "postgres" | quote }}
+            - name: AP_POSTGRES_PORT
+              value: {{ .Values.db.port | default 5432 | quote }}
+            - name: AP_POSTGRES_USERNAME
+              value: {{ .Values.db.username | default "activepieces" | quote }}
+            - name: AP_POSTGRES_PASSWORD
+              value: {{ .Values.db.password | default "activepieces" | quote }}
+            {{ if .Values.db.ssl.enabled }}
+            - name: AP_POSTGRES_USE_SSL
+              value: "true"
+            - name: AP_POSTGRES_SSL_CA
+              value: {{ .Values.db.ssl.certificate | quote }}
+            {{ end }}
+            {{ else }}
+            - name: AP_DB_TYPE
+              value: {{ .Values.db.type }}
+            {{ end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

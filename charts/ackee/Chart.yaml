@@ -1,0 +1,17 @@
+apiVersion: v2
+appVersion: 3.2.0
+description: A Helm chart for Ackee analytics tool
+home: https://github.com/suda/charts/tree/main/charts/ackee
+maintainers:
+- email: admin@suda.pl
+  name: suda
+  url: https://suda.pl
+name: ackee
+sources:
+- https://github.com/suda/charts/tree/main/charts/ackee
+type: application
+version: 0.2.1
+dependencies:
+- name: mongodb
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.3.0

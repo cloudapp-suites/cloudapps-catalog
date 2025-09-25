@@ -1,0 +1,41 @@
+{
+  "name": "ghostfolio",
+  "display_name": "Ghostfolio",
+  "description": {
+    "zh": "Ghostfolio 是一个开源的财富管理软件，旨在帮助用户追踪股票、ETF 和加密货币。它支持用户进行个人财务管理并基于数据做出投资决策。该软件基于现代网页技术构建，支持自托管部署，并提供云服务高级版本。",
+    "en": "Ghostfolio is an open-source wealth management software designed to help users track stocks, ETFs, and cryptocurrencies. It enables personal financial management with data-driven investment decisions. Built with modern web technologies, it supports self-hosting and offers a cloud-based premium version."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供注重隐私和数据自主的个人财务管理工具\n- 提供自托管和云服务高级版本，灵活性强\n- 倡导极简主义理念，简化投资组合追踪，告别电子表格\n\n## 功能列表:\n\n- 支持交易的创建、更新与删除\n- 支持多账户管理\n- 提供多种时间维度的投资回报率（ROAI）分析\n- 提供多种图表用于可视化财务数据\n- 支持静态分析以识别投资组合潜在风险\n- 支持交易数据的导入与导出\n- 支持深色模式和专注模式（Zen Mode）\n- 支持渐进式网页应用（PWA），适配移动端优先\n- 提供用于投资组合及数据导入的公共 API\n- 支持部署在 CasaOS、Home Assistant 等多个家庭服务器系统上",
+    "en": "## Benefits:\n\n- Provides personal financial management tools with a focus on privacy and data ownership\n- Offers both self-hosting and cloud-based premium options for flexibility\n- Encourages minimalism and simplifies portfolio tracking without spreadsheets\n\n## Features:\n\n- Create, update and delete transactions\n- Multi account management\n- Portfolio performance tracking with Return on Average Investment (ROAI) for various time frames\n- Various charts for visualizing financial data\n- Static analysis to identify potential portfolio risks\n- Import and export transactions\n- Dark Mode and Zen Mode for better user experience\n- Progressive Web App (PWA) with mobile-first design\n- Public API for portfolio and import activities\n- Available on multiple home server systems including CasaOS, Home Assistant, and more"
+  },
+  "github_url": "https://github.com/ghostfolio/ghostfolio",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Actual Budget"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Self-Hosted",
+    "Personal Finance",
+    "personal finance",
+    "self-hosted applications",
+    "investment tracking",
+    "Investment Tracking",
+    "financial insights",
+    "risk management",
+    "wealth management",
+    "brokerage integration",
+    "asset allocation",
+    "financial health",
+    "portfolio analysis"
+  ],
+  "pic_url": "https://avatars.githubusercontent.com/u/82473144?s=200",
+  "license": "AGPL-3.0",
+  "language": "TypeScript"
+}

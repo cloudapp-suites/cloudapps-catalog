@@ -1,0 +1,35 @@
+{
+  "name": "gotify",
+  "display_name": "Gotify",
+  "description": {
+    "zh": "Gotify/server 是一个自托管的消息服务器，支持通过 REST API 和 WebSocket 实现实时消息收发。它旨在提供一个简单、开源的解决方案，支持用户和应用管理。项目强调易用性、可扩展性和实时通信能力。",
+    "en": "Gotify/server is a self-hosted messaging server that enables real-time message exchange via REST API and WebSocket. It was created to provide a simple and open-source solution for sending and receiving messages with support for user and application management. The project emphasizes ease of use, extensibility, and real-time communication capabilities."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供轻量级的自托管消息传递解决方案\n- 通过 WebSocket 支持实时双向通信\n- 通过插件和多客户端接口提供灵活扩展性\n\n## 功能列表:\n\n- 通过 REST API 发送消息\n- 通过 WebSocket 实时接收消息\n- 管理用户、客户端和应用程序\n- 插件支持扩展功能\n- 提供基于网页的用户界面（UI）\n- 提供用于发送消息的命令行工具（CLI）\n- 支持 Android 移动端应用",
+    "en": "## Benefits:\n\n- Provides a lightweight and self-hosted messaging solution\n- Supports real-time bidirectional communication through WebSocket\n- Offers flexibility with plugins and multiple client interfaces\n\n## Features:\n\n- Send messages via REST API\n- Receive messages in real time via WebSocket\n- Manage users, clients, and applications\n- Plugin support for extended functionality\n- Web-based user interface (UI)\n- CLI tool for message sending\n- Android app for mobile access"
+  },
+  "github_url": "https://github.com/gotify/server",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://gotify.net/docs/",
+  "categories": [
+    "Self-Hosted",
+    "API",
+    "Communication",
+    "Notifications",
+    "Self-hosted",
+    "Messaging",
+    "Push Notifications",
+    "Real-time Communication",
+    "WebUI"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/gotify/image/gotify-logo.png",
+  "license": "MIT",
+  "language": "Go"
+}

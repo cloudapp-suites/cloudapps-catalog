@@ -1,0 +1,12 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your Cusdis instance has been deployed.
+
+To access the application, you can use:
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "cusdis.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" | grep Running | awk '{print $1}' | head -n 1)
+  kubectl --namespace {{ .Release.Namespace }} port-forward $POD_NAME 3000:3000
+
+Then access via: http://localhost:3000
+
+For production use, consider setting up an Ingress or LoadBalancer Service.

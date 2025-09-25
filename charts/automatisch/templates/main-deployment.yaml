@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "automatisch.fullname" . }}-main
+spec:
+  replicas: {{ .Values.main.replicaCount }}
+  selector:
+    matchLabels:
+      app: automatisch-main
+  template:
+    metadata:
+      labels:
+        app: automatisch-main
+    spec:
+      containers:
+        - name: main
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.main.port }}
+          env:
+            - name: HOST
+              value: {{ .Values.main.env.HOST | quote }}
+            - name: PROTOCOL
+              value: {{ .Values.main.env.PROTOCOL | quote }}
+            - name: PORT
+              value: {{ .Values.main.port | quote }}
+            - name: APP_ENV
+              value: {{ .Values.main.env.APP_ENV | quote }}
+            - name: REDIS_HOST
+              value: {{ .Values.main.env.REDIS_HOST | quote }}
+            - name: POSTGRES_HOST
+              value: {{ .Values.main.env.POSTGRES_HOST | quote }}
+            - name: POSTGRES_DATABASE
+              value: {{ .Values.main.env.POSTGRES_DATABASE | quote }}
+            - name: POSTGRES_USERNAME
+              value: {{ .Values.main.env.POSTGRES_USERNAME | quote }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.main.env.POSTGRES_PASSWORD | quote }}
+            - name: ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: automatisch-secrets
+                  key: ENCRYPTION_KEY
+            - name: WEBHOOK_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: automatisch-secrets
+                  key: WEBHOOK_SECRET_KEY
+            - name: APP_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: automatisch-secrets
+                  key: APP_SECRET_KEY
+          volumeMounts:
+            - name: automatisch-storage
+              mountPath: /automatisch/storage
+      volumes:
+        - name: automatisch-storage
+          persistentVolumeClaim:
+            claimName: automatisch-storage-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: automatisch-storage-pvc
+spec:
+  storageClassName: {{ .Values.persistence.storageClassName }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.automatischStorage.size }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: automatisch-main
+spec:
+  type: {{ .Values.main.type }}
+  ports:
+    - port: {{ .Values.main.port }}
+      targetPort: {{ .Values.main.port }}
+  selector:
+    app: automatisch-main

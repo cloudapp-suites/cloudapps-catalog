@@ -1,0 +1,37 @@
+{
+  "name": "uptimekuma",
+  "display_name": "UptimeKuma",
+  "description": {
+    "zh": "Uptime Kuma 是一个易于使用的自托管监控工具，用于跟踪各种服务的正常运行状态。它支持对 HTTP(s)、TCP、DNS、Docker 容器等进行监控，并提供现代化的响应式界面和实时通知功能。用户可以轻松部署并实时掌握服务状态。",
+    "en": "Uptime Kuma is a self-hosted monitoring tool designed to track the uptime and availability of various services. It supports monitoring for HTTP(s), TCP, DNS, Docker containers, and more with a minimal setup. The tool provides a modern, responsive UI and real-time notifications via multiple platforms."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供实时监控和用户友好的响应式界面。\n- 支持超过 90 种通知服务，覆盖广泛。\n- 轻量快速，支持低至 20 秒的监控间隔。\n\n## 功能列表:\n\n- 支持 HTTP(s)、TCP、HTTP(s) 关键词、HTTP(s) JSON 查询、Ping、DNS 记录、Push、Steam 游戏服务器、Docker 容器的监控\n- 现代化、响应式、快速的用户界面\n- 支持 Telegram、Discord、Gotify、Slack、Pushover、电子邮件（SMTP）等 90+ 通知服务\n- 支持 20 秒监控间隔\n- 多语言支持\n- 支持多个状态页面\n- 可将状态页面映射到特定域名\n- 提供 Ping 响应图表\n- 显示 SSL 证书信息\n- 支持代理设置\n- 支持双因素认证（2FA）",
+    "en": "## Benefits:\n\n- Provides real-time monitoring with a user-friendly and reactive UI.\n- Offers extensive notification support across more than 90 services.\n- Lightweight and fast with support for short 20-second monitoring intervals.\n\n## Features:\n\n- Uptime monitoring for HTTP(s), TCP, HTTP(s) Keyword, HTTP(s) Json Query, Ping, DNS Record, Push, Steam Game Server, and Docker Containers\n- Fancy, reactive, and fast UI/UX\n- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and more than 90 services\n- 20-second monitoring intervals\n- Multi-language support\n- Multiple status pages\n- Mapping status pages to specific domains\n- Ping chart visualization\n- SSL certificate information display\n- Proxy support\n- Two-factor authentication (2FA) support"
+  },
+  "github_url": "https://github.com/louislam/uptime-kuma",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Grafana"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/louislam/uptime-kuma/wiki",
+  "categories": [
+    "Security",
+    "Monitoring",
+    "Notifications",
+    "Self-hosted",
+    "Uptime Tracking",
+    "Multi-language",
+    "Uptime",
+    "Website Management",
+    "Status Pages"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/uptimekuma/image/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg",
+  "license": "MIT",
+  "language": "JavaScript"
+}

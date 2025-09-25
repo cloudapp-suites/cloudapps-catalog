@@ -1,0 +1,41 @@
+{
+  "name": "trilium notes",
+  "display_name": "Trilium Notes",
+  "description": {
+    "zh": "Trilium Notes 是一个免费、开源、跨平台的层级笔记应用，专为构建大型个人知识库而设计。它支持将笔记组织为多层级树状结构，提供富文本和代码编辑功能，并具备强大的搜索与导航能力。该应用可高效处理大量笔记数据，并为高级用户提供了加密、版本控制和脚本等功能。",
+    "en": "Trilium Notes is a free and open-source, cross-platform hierarchical note-taking application designed for building large personal knowledge bases. It allows users to organize notes in deeply nested trees, supports rich text and code editing, and offers powerful search and navigation features. The application scales well for large datasets and provides tools like encryption, versioning, and scripting for advanced users."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 专为构建和管理大规模个人知识库而设计。\n- 提供层级结构以实现高效的笔记组织。\n- 集富文本、代码编辑与可视化工具于一体。\n\n## 功能列表:\n\n- 支持将笔记组织为任意深度的树状结构，并支持克隆功能。\n- 富文本编辑器支持表格、图片、数学公式与自动格式化。\n- 支持代码笔记并提供语法高亮。\n- 快速笔记导航、全文搜索与笔记提级功能。\n- 笔记版本控制与历史记录。\n- 笔记属性用于分类与脚本处理。\n- 支持英文、中文、西班牙语等多种语言界面。\n- 支持通过 OpenID 与 TOTP 安全登录。\n- 可通过自建服务器同步数据，也支持第三方托管服务。\n- 支持将笔记公开分享至互联网。\n- 强大的逐笔记加密功能。\n- 基于 Excalidraw 的画布笔记，支持绘图。\n- 支持关系图与链接图，可视化笔记关联。\n- 使用 Mind Elixir 实现思维导图功能。\n- 地图笔记支持定位标记与 GPX 轨迹。\n- 支持脚本扩展与高级用例展示。\n- 提供 REST API 用于自动化操作。\n- 支持移动端界面，适配智能手机与平板。\n- 内置暗色主题并支持用户自定义主题。\n- 支持从 Evernote 与 Markdown 格式导入/导出。\n- 提供网页剪辑器，便于保存网页内容。\n- 用户界面可定制，支持侧边栏按钮与自定义小部件。\n- 支持指标统计并提供 Grafana 仪表盘集成。",
+    "en": "## Benefits:\n\n- Designed for building and managing large-scale personal knowledge bases.\n- Offers a hierarchical structure for efficient note organization.\n- Combines rich text, code editing, and visual tools in a single platform.\n\n## Features:\n\n- Notes can be arranged into arbitrarily deep trees with cloning support.\n- Rich WYSIWYG editor with tables, images, math, and markdown autoformat.\n- Code note support with syntax highlighting.\n- Fast note navigation, full-text search, and note hoisting.\n- Note versioning and revision history.\n- Note attributes for organization and scripting.\n- Multi-language UI support including English, Chinese, Spanish, and more.\n- OpenID and TOTP for secure login.\n- Self-hosted synchronization with optional third-party hosting.\n- Public note sharing capabilities.\n- Strong per-note encryption.\n- Diagram sketching with Excalidraw-based canvas notes.\n- Relation maps and link maps for visualizing note connections.\n- Mind maps using Mind Elixir.\n- Geo maps with location pins and GPX tracks.\n- Scripting support and advanced showcases.\n- REST API for automation.\n- Optimized mobile frontend for smartphones and tablets.\n- Built-in dark theme and support for user themes.\n- Evernote and Markdown import/export.\n- Web Clipper for saving web content.\n- Customizable UI with sidebar buttons and user-defined widgets.\n- Metrics tracking with Grafana dashboard integration."
+  },
+  "github_url": "https://github.com/zadam/trilium",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/zadam/trilium/wiki",
+  "categories": [
+    "Encryption",
+    "Markdown",
+    "Version Control",
+    "Knowledge Management",
+    "Notes",
+    "Note-taking",
+    "Synchronization",
+    "Syntax Highlighting",
+    "Diagrams",
+    "REST API",
+    "WYSIWYG Editor",
+    "Visualization",
+    "Hierarchical Organization",
+    "Source Code Editing",
+    "Personal Wiki"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/trilium/image/app.png",
+  "license": "AGPL-3.0",
+  "language": "TypeScript/JavaScript"
+}

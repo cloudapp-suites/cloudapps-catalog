@@ -1,0 +1,41 @@
+{
+  "name": "node-red",
+  "display_name": "Node-RED",
+  "description": {
+    "zh": "Node-RED 是一个用于构建事件驱动型应用的低代码编程工具。它提供了一个可视化流程编辑器，允许用户以图形化方式连接硬件设备、API 和在线服务。该工具非常适合用于构建物联网（IoT）解决方案、自动化工作流以及实时数据处理系统。",
+    "en": "Node-RED is a low-code programming tool designed for building event-driven applications. It provides a visual flow editor that allows users to connect hardware devices, APIs, and online services in a graphical manner. The tool is ideal for creating Internet of Things (IoT) solutions, automation workflows, and real-time data processing systems."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过可视化编程简化复杂的事件驱动逻辑\n- 支持快速原型设计和设备、服务之间的集成\n- 支持多种平台和协议，适用于物联网和自动化场景\n\n## 功能列表:\n\n- 基于浏览器的可视化流程编辑器\n- 内置常用服务和协议节点（如 HTTP、MQTT 等）\n- 可通过丰富的插件和自定义节点进行扩展\n- 可运行于 Raspberry Pi、云端和桌面等多种平台\n- 支持热替换与实时监控，便于部署与调试",
+    "en": "## Benefits:\n\n- Simplifies complex event-driven logic through visual programming\n- Enables rapid prototyping and integration of devices and services\n- Supports a wide range of platforms and protocols for IoT and automation\n\n## Features:\n\n- Visual flow editor accessible via a web browser\n- Built-in nodes for common services and protocols (HTTP, MQTT, etc.)\n- Extensible through a rich ecosystem of plugins and custom nodes\n- Runs on various platforms including Raspberry Pi, cloud, and desktop\n- Easy deployment and debugging with hot-swapping and real-time monitoring"
+  },
+  "github_url": "https://github.com/node-red/node-red",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Automatisch",
+    "Kanboard"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://nodered.org/docs/",
+  "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Automation",
+    "API",
+    "Integration",
+    "IoT",
+    "Cloud Computing",
+    "Low-code Development",
+    "Hardware Connectivity",
+    "Event-driven",
+    "Flow Management",
+    "Raspberry Pi"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/node-red/image/node-red-screenshot.png",
+  "license": "Apache-2.0",
+  "language": "JavaScript"
+}

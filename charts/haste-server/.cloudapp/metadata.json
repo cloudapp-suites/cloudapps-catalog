@@ -1,0 +1,33 @@
+{
+  "name": "hastebin",
+  "display_name": "Hastebin",
+  "description": {
+    "zh": "Hastebin Plus 是一个使用 node.js 编写的开源 Pastebin 软件，设计用于在任何网络环境中轻松部署。它是原始 'haste' 项目的增强版本，专注于改进设计、速度和简洁性。该应用允许用户存储和分享代码片段、日志和其他文本内容。",
+    "en": "Hastebin Plus is an open-source Pastebin software built with node.js, designed for easy deployment in any network environment. It is an enhanced version of the original 'haste' project, focusing on improved Design, Speed, and Simplicity. The application allows users to store and share text fragments such as code snippets, logs, and other documents."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量级且部署快速\n- 易于定制和配置\n- 通过现代设计提升用户体验\n\n## 功能列表:\n\n- 存储代码、日志及其他文本内容\n- 支持语法高亮\n- 可添加静态文档\n- 可复制和编辑已有内容\n- 支持纯文本查看模式",
+    "en": "## Benefits:\n\n- Lightweight and fast deployment\n- Easy customization and configuration\n- Enhanced user experience through modern design\n\n## Features:\n\n- Paste code, logs, and other text content\n- Syntax highlighting\n- Add static documents\n- Duplicate and edit pastes\n- Raw paste-view"
+  },
+  "github_url": "https://github.com/menzerath/hastebin-plus",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/toptal/haste-server/wiki",
+  "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Collaboration",
+    "Documents",
+    "Code Hosting",
+    "Text Sharing",
+    "Code Snippets"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/haste-server/image/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67.png",
+  "license": "",
+  "language": "JavaScript"
+}

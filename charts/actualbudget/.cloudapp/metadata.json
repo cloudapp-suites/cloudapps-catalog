@@ -1,0 +1,35 @@
+{
+  "name": "actualbudget",
+  "display_name": "Actual Budget",
+  "description": {
+    "zh": "Actual 是一个以本地优先的个人理财工具，旨在帮助用户高效管理预算。它支持跨设备同步，无需复杂配置即可无缝访问财务数据。该应用完全免费、开源，基于 NodeJS 构建。",
+    "en": "Actual is a local-first personal finance tool designed to help users manage their budgets effectively. It supports synchronization across devices, allowing seamless access to financial data without complex setup. The application is free, open-source, and built using NodeJS."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供本地优先、支持跨设备同步的无缝使用体验。\n- 免费开源，拥有活跃的社区和开发者支持。\n- 提供多种部署方式，满足技术用户和非技术用户的需要。\n\n## 功能列表:\n\n- 支持信封式预算管理，帮助用户更有效地管理资金。\n- 提供适用于 Windows、Mac 和 Linux 的桌面应用。\n- 支持通过 Docker 和云端（Fly.io 和 PikaPods）部署。\n- 拥有完善的文档和迁移指南。\n- 社区驱动开发，支持功能请求和多语言翻译。",
+    "en": "## Benefits:\n\n- Offers a seamless, local-first experience with cross-device synchronization.\n- Free and open-source with active community and developer support.\n- Available through multiple deployment options to suit both technical and non-technical users.\n\n## Features:\n\n- Envelope budgeting system for effective money management.\n- Desktop apps for Windows, Mac, and Linux.\n- Docker and cloud deployment options via Fly.io and PikaPods.\n- Comprehensive documentation and migration guides.\n- Community-driven development with feature requests and translations."
+  },
+  "github_url": "https://github.com/actualbudget/actual",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Ghostfolio"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://actualbudget.github.io/docs",
+  "categories": [
+    "Finance",
+    "Personal Finance",
+    "Synchronization",
+    "Expense Tracking",
+    "Budgeting",
+    "Account Management",
+    "Reports"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/actualbudget/image/demo.png",
+  "license": "MIT",
+  "language": "TypeScript"
+}

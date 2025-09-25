@@ -1,0 +1,35 @@
+---
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/nicholaswilde/helm-charts/tree/main/charts/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: app.image
+  # -- image tag
+  # @default -- chart.appVersion
+  tag: app.image.tag
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+# See more environment variables in the grav documentation
+# https://github.com/linuxserver/docker-grav#parameters
+env: {}
+  # TZ:
+
+service:
+  type: LoadBalancer
+  port:
+    port: 80
+
+ingress:
+  enabled: false
+
+persistence:
+  config:
+    enabled: false
+    emptyDir: false
+    mountPath: /config

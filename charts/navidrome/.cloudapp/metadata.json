@@ -1,0 +1,37 @@
+{
+  "name": "navidrome",
+  "display_name": "Navidrome",
+  "description": {
+    "zh": "Navidrome 是一个开源的基于网页的音乐收藏服务器和流媒体平台，允许用户通过任何浏览器或移动设备访问自己的个人音乐库。它提供了类似 Spotify 的自托管替代方案，支持大型音乐收藏和多用户使用。该平台设计轻量、跨平台，并兼容多种音频格式和元数据。",
+    "en": "Navidrome is an open-source web-based music collection server and streaming platform that allows users to access their personal music library from any browser or mobile device. It offers a self-hosted alternative to services like Spotify, with support for large music collections and multiple users. The platform is designed to be low-resource, multi-platform, and compatible with various audio formats and metadata."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供商业音乐流媒体服务的自托管替代方案\n- 资源占用低，运行高效\n- 支持多种音频格式和元数据\n- 支持多用户个性化使用\n- 跨平台兼容桌面与移动端\n\n## 功能列表:\n\n- 支持管理超大音乐收藏库\n- 几乎支持所有音频格式的流媒体播放\n- 读取并使用完整的音乐元数据\n- 良好支持合辑（多艺术家专辑）和套盒（多碟专辑）\n- 支持多用户，每位用户拥有独立的播放记录、播放列表和收藏\n- 资源占用极低\n- 支持 macOS、Linux 和 Windows，提供 Docker 镜像\n- 提供适用于主流平台（含树莓派）的即用型二进制文件\n- 自动监控音乐库变化并导入新文件\n- 基于 Material UI 的可定制化现代网页界面\n- 兼容所有 Subsonic/Madsonic/Airsonic 客户端\n- 支持实时转码，含 Opus 编码\n- 支持多种语言翻译",
+    "en": "## Benefits:\n\n- Provides a self-hosted alternative to commercial music streaming services\n- Offers low resource consumption for efficient performance\n- Supports a wide range of audio formats and metadata\n- Enables multi-user access with personalized settings\n- Cross-platform compatibility with desktop and mobile interfaces\n\n## Features:\n\n- Handles very large music collections\n- Streams virtually any audio format available\n- Reads and uses all your beautifully curated metadata\n- Great support for compilations and box sets\n- Multi-user with individual play counts, playlists, and favorites\n- Low resource usage\n- Multi-platform (macOS, Linux, Windows) with Docker support\n- Ready-to-use binaries including Raspberry Pi\n- Automatically monitors and updates music library\n- Themeable web interface based on Material UI\n- Compatible with Subsonic/Madsonic/Airsonic clients\n- On-the-fly transcoding with Opus encoding support\n- Translated to various languages"
+  },
+  "github_url": "https://github.com/navidrome/navidrome",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Mstream"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://www.navidrome.org/docs/",
+  "categories": [
+    "Media",
+    "Streaming",
+    "Music",
+    "Audio",
+    "Music Streaming",
+    "Mobile Access",
+    "Transcoding",
+    "Personal Media Server",
+    "Media Library"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/logo-192x192.png",
+  "license": "GPL-3.0",
+  "language": "Go"
+}

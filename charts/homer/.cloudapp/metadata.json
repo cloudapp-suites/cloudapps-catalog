@@ -1,0 +1,32 @@
+{
+  "name": "homer",
+  "display_name": "Homer",
+  "description": {
+    "zh": "Homer 是一个用于整理和访问自建服务的简易静态首页仪表板。它允许用户通过 YAML 配置文件创建个性化的服务器服务界面。该仪表板轻量快速，可通过 Docker、预构建包或手动构建轻松部署。",
+    "en": "Homer is a simple static homepage dashboard for organizing and accessing self-hosted services. It allows users to create a personalized interface for their server services using a YAML configuration file. The dashboard is lightweight, fast, and can be easily deployed via Docker, prebuilt release, or manual build."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 极其轻量且运行快速。\n- 几乎无需维护。\n- 配置简单，使用 YAML 文件即可。\n- 支持 PWA（渐进式网页应用）安装。\n- 通过主题和智能卡片高度可定制和扩展。\n\n## 功能列表:\n\n- 智能卡片展示服务。\n- 支持模糊搜索。\n- 支持多页面和条目分组。\n- 主题可自定义。\n- 提供键盘快捷键快速导航。\n- 可作为渐进式网页应用安装。\n- 支持 Docker、压缩包和手动构建部署。\n- 可通过环境变量配置。",
+    "en": "## Benefits:\n\n- Extremely lightweight and blazing fast.\n- Requires minimal to no maintenance.\n- Simple and easy-to-configure YAML file.\n- Supports PWA (Progressive Web App) installation.\n- Highly customizable and extensible through themes and smart cards.\n\n## Features:\n\n- Smart cards for service display.\n- Fuzzy search functionality.\n- Multi-page support and item grouping.\n- Customizable themes.\n- Keyboard shortcuts for quick navigation.\n- Installable as a Progressive Web App.\n- Docker, tarball, and manual build deployment options.\n- Configurable through environment variables."
+  },
+  "github_url": "https://github.com/bastienwirtz/homer",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Productivity",
+    "Customization",
+    "Dashboard",
+    "Server Management",
+    "Accessibility",
+    "Homepage"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/homer/image/logo.png",
+  "license": "Apache-2.0",
+  "language": "VUE"
+}

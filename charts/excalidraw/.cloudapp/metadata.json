@@ -1,0 +1,37 @@
+{
+  "name": "excalidraw",
+  "display_name": "Excalidraw",
+  "description": {
+    "zh": "Excalidraw 是一个开源的虚拟手绘风格白板应用，能够模拟手绘草图的视觉效果。它支持创建图表、线框图等视觉内容，并通过端到端加密保障数据安全，同时提供多人协作功能。",
+    "en": "Excalidraw is an open-source virtual whiteboard application that mimics hand-drawn sketches. It enables users to create diagrams, wireframes, and visual content with a natural, artistic style. The tool supports collaboration and ensures data privacy with end-to-end encryption."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 开源且社区驱动开发，透明度高。\n- 轻量级设计，易于集成到其他应用中。\n- 强调隐私保护，支持端到端加密。\n- 支持定制化和多语言，适应多种使用场景。\n\n## 功能列表:\n\n- 免费开源。\n- 基于无限画布的白板。\n- 手绘风格视觉呈现。\n- 暗黑模式。\n- 界面可定制。\n- 支持插入图片。\n- 支持形状库。\n- 多语言支持（i18n）。\n- 支持导出为 PNG、SVG 和剪贴板内容。\n- 支持以 `.excalidraw` JSON 文件格式导出，便于开放使用。\n- 提供丰富工具：矩形、圆形、菱形、箭头、直线、自由绘制、橡皮擦等。\n- 支持箭头绑定和标注。\n- 支持撤销 / 重做操作。\n- 支持缩放和平移。\n- 实时协作功能。\n- 端到端加密。\n- 支持本地优先保存，自动保存至浏览器。\n- 可生成可共享的只读链接。\n- 支持 PWA 离线使用。",
+    "en": "## Benefits:\n\n- Open-source and community-driven development.\n- Lightweight and easy to integrate into other applications.\n- Strong focus on privacy with end-to-end encryption.\n- Supports customization and localization for diverse use cases.\n\n## Features:\n\n- Free and open-source.\n- Infinite, canvas-based whiteboard.\n- Hand-drawn like style.\n- Dark mode.\n- Customizable interface.\n- Image support.\n- Shape libraries support.\n- Localization (i18n) support.\n- Export to PNG, SVG, and clipboard.\n- Open format with `.excalidraw` JSON file export.\n- Wide range of tools: rectangle, circle, diamond, arrow, line, free-draw, eraser, etc.\n- Arrow-binding & labeled arrows.\n- Undo / Redo functionality.\n- Zoom and panning support.\n- Real-time collaboration.\n- End-to-end encryption.\n- Local-first support with browser auto-save.\n- Shareable read-only links.\n- PWA support for offline access."
+  },
+  "github_url": "https://github.com/excalidraw/excalidraw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Productivity",
+    "Collaboration",
+    "Encryption",
+    "Real-time",
+    "Drawing",
+    "Whiteboard",
+    "Wireframing",
+    "Creativity",
+    "Visualization",
+    "Diagramming",
+    "Exporting"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/excalidraw/image/excalidraw_github_cover_2.png",
+  "license": "MIT",
+  "language": "TypeScript/JavaScript"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "mstream",
+  "display_name": "Mstream",
+  "description": {
+    "zh": "mStream Music 是一个个人音乐流媒体服务器，允许用户通过家庭电脑向任何设备随时随地串流自己的音乐库。它支持包括 Windows、macOS、Linux 以及基于 ARM 的设备（如 Raspberry Pi）在内的多种平台。通过网页和移动端应用，mStream 提供了无缝且高效的个人音乐访问与管理方式。",
+    "en": "mStream Music is a personal music streaming server that allows users to stream their music libraries from a home computer to any device, anywhere. It supports a wide range of platforms including Windows, macOS, Linux, and ARM-based devices like the Raspberry Pi. With both web and mobile applications available, mStream provides a seamless and efficient way to access and manage personal music collections."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 自托管音乐流媒体方案，无需依赖第三方服务\n- 内存与 CPU 占用低，运行轻量高效\n- 高度可移植，兼容多种硬件与操作系统平台\n\n## 功能列表:\n\n- 跨平台支持（Windows、macOS、Linux、FreeBSD、ARM 设备）\n- 无间隙播放，提供连续听觉体验\n- Milkdrop 可视化插件带来音乐视觉效果\n- 支持播放列表共享\n- 网页端支持通过文件浏览器上传音乐文件\n- 提供 iOS 与 Android 移动端应用\n- 支持主流音频格式，包括 FLAC、MP3、MP4、WAV、OGG、Opus、AAC 和 M4A\n- 支持通过 Docker、二进制文件或源码安装\n- 基于 Node.js 和轻量级依赖库，性能快速",
+    "en": "## Benefits:\n\n- Self-hosted solution for personal music streaming with no third-party dependency\n- Lightweight performance with low memory and CPU usage\n- Highly portable and runs on a wide variety of hardware and OS platforms\n\n## Features:\n\n- Cross-platform support (Windows, macOS, Linux, FreeBSD, ARM devices)\n- Gapless playback for uninterrupted listening experience\n- Milkdrop Visualizer for visual music experience\n- Playlist sharing capabilities\n- File upload through web file explorer\n- Mobile apps available for iOS and Android\n- Supports major audio formats including FLAC, MP3, MP4, WAV, OGG, Opus, AAC, and M4A\n- Easy installation via Docker, binaries, or source\n- Uses Node.js and lightweight dependencies for fast performance"
+  },
+  "github_url": "https://github.com/IrosTheBeggar/mStream",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Navidrome"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "mstream",
+  "categories": [
+    "Privacy",
+    "Media",
+    "Cross-Platform",
+    "Audio",
+    "Music Streaming",
+    "Mobile App",
+    "Personal Cloud",
+    "High-Quality Streaming",
+    "FLAC",
+    "Visualizer",
+    "Gapless Playback",
+    "Playlist Sharing"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/mstream/image/mstreamv5.png",
+  "license": "GPL-3.0",
+  "language": "JavaScript"
+}

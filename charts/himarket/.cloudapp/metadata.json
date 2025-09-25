@@ -1,0 +1,28 @@
+{
+  "name": "himarket",
+  "display_name": "HiMarket",
+  "description": {
+    "zh": "HiMarket 是一个开箱即用的 AI 开放平台解决方案，旨在帮助企业构建 AI 能力市场和开发者生态系统。管理员可将模型服务、MCP 服务器、Agent 等 AI 能力打包为标准化的 API 产品，附带完整文档并一键发布至门户。开发者可通过自助式门户完成注册、订阅 AI 产品、在线测试，并清晰查看调用状态与成本。",
+    "en": "HiMarket is an out-of-the-box AI open platform solution designed to help enterprises build AI capability markets and developer ecosystems. It enables administrators to package AI services—such as models, MCP servers, and agents—into standardized API-based products with full documentation and publish them instantly. Developers can register, subscribe to AI products, test APIs online, and monitor usage and costs through a self-service portal."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 企业可快速搭建 AI 服务市场，部署成本低，上线速度快。\n- 统一管理多种 AI 能力（如模型、Agent、MCP 服务），提升资源利用率。\n- 支持基于域名的多租户门户隔离，满足不同业务或团队的独立运营需求。\n\n## 功能列表:\n\n- 管理后台：将 AI 能力打包为带文档和示例的 API 产品。\n- 开发者门户：支持自助注册、创建消费者、凭证管理与产品订阅。\n- 集成 AI 网关（Higress 子项目）：提供认证、限流、协议转换与可观测性能力。\n- 一键发布：将 API 产品从管理台发布至指定门户。\n- 在线 API 测试及调用状态、费用实时监控。\n- 支持第三方 OIDC 登录（如 GitHub、Google、阿里云等）。\n- 基于域名的多租户门户路由，实现环境隔离。\n- 支持开发者注册与 API 订阅的自动或人工审批流程。",
+    "en": "## Benefits:\n\n- Enables enterprises to rapidly establish an AI service marketplace with minimal setup.\n- Unifies management of diverse AI capabilities (models, agents, MCPs) under a single platform.\n- Supports multi-tenancy and domain-based portal isolation for flexible deployment.\n\n## Features:\n\n- Admin Console for packaging AI capabilities into API products with documentation and examples.\n- Developer Portal for self-service registration, consumer creation, credential management, and subscription.\n- Integrated AI Gateway (Higress sub-project) for authentication, rate limiting, protocol conversion, and observability.\n- One-click publishing of AI products from admin console to developer portal.\n- Online API testing and real-time monitoring of call status and usage costs.\n- Support for third-party OIDC logins (e.g., GitHub, Google, Alibaba Cloud).\n- Domain-based multi-tenant portal routing for isolated environments.\n- Automated or manual approval workflows for developer registration and API subscriptions."
+  },
+  "github_url": "https://github.com/higress-group/himarket",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": ["AI"],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "MCP"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/himarket/image/e0956234-1a97-42c6-852d-411fa02c3f01",
+  "license": "Apache-2.0",
+  "language": "Java"
+}

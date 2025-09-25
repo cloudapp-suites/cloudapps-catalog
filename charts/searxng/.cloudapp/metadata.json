@@ -1,0 +1,34 @@
+{
+  "name": "searxng",
+  "display_name": "SearXNG",
+  "description": {
+    "zh": "SearXNG 是一个尊重隐私、可定制的元搜索引擎，能够从多个来源聚合搜索结果。它允许用户在不被追踪的情况下匿名搜索网络。用户可在 searx.space 找到现成可用的实例。",
+    "en": "SearXNG is a privacy-respecting and customizable metasearch engine that aggregates results from multiple sources. It allows users to search the web anonymously without tracking. Ready-to-use instances are available at searx.space."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 尊重用户隐私，不追踪搜索行为\n- 高度可定制，适合开发者和高级用户\n- 提供现成可用的在线实例，便于快速使用\n\n## 功能列表:\n\n- 聚合多个来源的搜索结果\n- 提供维护良好的 Docker 镜像（支持 ARM64 和 ARM/v7 架构）\n- 提供安装脚本和详细的安装指南\n- 通过 Weblate 支持社区驱动的翻译\n- 配套开发快速入门指南，便于贡献代码\n- 支持通过 GitHub Codespaces 进行浏览器端开发",
+    "en": "## Benefits:\n\n- Respects user privacy and does not track search behavior\n- Highly customizable for developers and advanced users\n- Provides ready-to-use online instances for easy access\n\n## Features:\n\n- Aggregates search results from multiple sources\n- Available as a well-maintained Docker image (including ARM64 and ARM/v7 support)\n- Offers installation scripts and detailed setup guides\n- Supports community-driven translations via Weblate\n- Easy contribution process with development quickstart guides\n- Compatible with GitHub Codespaces for browser-based development"
+  },
+  "github_url": "https://github.com/searxng/searxng",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Privacy",
+    "Integration",
+    "Encryption",
+    "Search",
+    "Search Engine",
+    "Anonymity",
+    "Metasearch",
+    "Online Security"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/searxng/image/multi-auto.svg",
+  "license": "AGPL-3.0",
+  "language": "Python"
+}

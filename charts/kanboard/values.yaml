@@ -1,0 +1,44 @@
+image:
+  # -- The registry to pull the image from.
+  # -- The repository to pull the image from.
+  repository: app.image
+  # -- The docker tag, if left empty chart's appVersion will be used.
+  # @default -- `.Chart.AppVersion`
+  tag: app.image.tag
+  # -- The pull policy for the controller.
+  pullPolicy: IfNotPresent
+
+application:
+  port: 80
+  additionalLabels: {}
+  persistence:
+    enabled: false
+    persistentVolumeClaim:
+      name: kanboard-pvc
+      create: true
+      storageClass: cloudapp.storageClassName
+      size: Cloudapp.Storage
+      accessMode: ReadWriteMany
+    
+
+
+nodePort:
+  enabled: ture
+  port: 8080
+
+clusterip:
+  enabled: false
+  port: 8080
+
+ingress:
+  enabled: false
+  annotations: {}
+  ingressClassName: "nginx"
+  host: ~
+  tls: ~
+
+securityContext:
+  pod: ~
+  container: ~
+
+resources: ~

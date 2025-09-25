@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "authorizer.fullname" . }}
+  labels:
+    {{- include "authorizer.labels" . | nindent 4 }}
+  namespace: {{ include "authorizer.namespace" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "authorizer.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "authorizer.fullname" . }}
+    spec:
+      {{- if .Values.postgresql.enabled }}
+      initContainers:
+      - name: wait-for-db
+        image: postgres:13
+        command:
+        - sh
+        - -c
+        - |
+          set -e
+          echo "Checking if PostgreSQL is ready..."
+          pg_isready -h {{ .Values.postgresql.postgresqlHost }} -p 5432 -U {{ .Values.postgresql.postgresqlUsername }}
+        env:
+        - name: PGPASSWORD
+          value: {{ .Values.postgresql.postgresqlPassword | quote }}
+        imagePullPolicy: IfNotPresent
+      {{- end }}
+      containers:
+      - name: authorizer
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+        - name: ENV
+          value: {{ .Values.env.ENV | quote }}
+        - name: DATABASE_TYPE
+          value: {{ .Values.env.DATABASE_TYPE | quote }}
+        - name: DATABASE_URL
+          value: {{ .Values.env.DATABASE_URL | quote }}
+        - name: CUSTOM_ACCESS_TOKEN_SCRIPT
+          value: {{ .Values.env.CUSTOM_ACCESS_TOKEN_SCRIPT | quote }}
+        - name: DISABLE_PLAYGROUND
+          value: {{ .Values.env.DISABLE_PLAYGROUND | quote }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+      affinity: {{- toYaml .Values.affinity | nindent 8 }}
+      tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
+      nodeSelector: {{- toYaml .Values.nodeSelector | nindent 8 }}

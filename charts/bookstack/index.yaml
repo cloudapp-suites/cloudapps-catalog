@@ -1,0 +1,71 @@
+apiVersion: v1
+entries:
+  bookstack:
+  - apiVersion: v2
+    appVersion: "2024.10"
+    created: "2024-11-29T15:09:20.206929589+01:00"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 19.1.x
+    description: BookStack is a simple, self-hosted, easy-to-use platform for organising
+      and storing information.
+    digest: 0c4b3959b6e514c0fe63bd524be163592bdd0eb9b8358e3072826efd2c70841c
+    home: https://www.bookstackapp.com/
+    icon: https://media.githubusercontent.com/media/BookStackApp/website/master/static/images/logo.png
+    maintainers:
+    - email: dominique@code-straight.fr
+      name: Dominique Dumont
+      url: https://code-straight.fr
+    - email: benoit.fourmentraux@seira-formation.fr
+      name: Benoit Fourmentraux
+    name: bookstack
+    sources:
+    - https://github.com/BookStackApp/BookStack
+    type: application
+    urls:
+    - https://github.com/Seira-Formation/stellarhosted-helm-charts/releases/download//bookstack-1.7.0.tgz
+    version: 1.7.0
+  mariadb:
+  - annotations:
+      category: Database
+      images: |
+        - name: mariadb
+          image: docker.io/bitnami/mariadb:11.4.3-debian-12-r1
+        - name: mysqld-exporter
+          image: docker.io/bitnami/mysqld-exporter:0.15.1-debian-12-r34
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:12-debian-12-r30
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 11.4.3
+    created: "2024-11-29T15:09:20.211227909+01:00"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MariaDB is an open source, community-developed SQL database server
+      that is widely in use around the world due to its enterprise features, flexibility,
+      and collaboration with leading tech firms.
+    digest: 054cdcf94c0bfd2c3ed0ca7f1114516aead649807d2b545ba3e2937a4168f8bb
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/mariadb
+    urls:
+    - https://github.com/Seira-Formation/stellarhosted-helm-charts/charts/mariadb-19.1.0.tgz
+    version: 19.1.0
+generated: "2024-11-29T15:09:20.202941154+01:00"

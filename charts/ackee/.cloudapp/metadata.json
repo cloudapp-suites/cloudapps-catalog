@@ -1,0 +1,35 @@
+{
+  "name": "ackee",
+  "display_name": "Ackee",
+  "description": {
+    "zh": "Ackee 是一个自托管的、基于 Node.js 的分析工具，专为重视隐私的用户设计。它运行在你自己的服务器上，提供简洁而实用的网站流量统计功能，同时不追踪可识别用户的数据。与传统分析平台不同，Ackee 采用轻量级架构（结合 Node.js 和 MongoDB），在保障隐私的前提下提供有价值的访问洞察。",
+    "en": "Ackee is a self-hosted, Node.js-based analytics tool designed for users who prioritize privacy. It runs on your own server and provides minimal yet insightful website traffic statistics without compromising user identity. Unlike traditional analytics platforms, Ackee avoids tracking identifiable data and offers a lightweight, modern solution using Node.js and MongoDB."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过避免追踪可识别信息，保护用户隐私\n- 使用 Node.js 和 MongoDB，架构轻量现代\n- 完全开源且支持自托管，具备更高控制权\n- 界面简洁，专注于核心分析需求\n\n## 功能列表:\n\n- 支持 Docker、Helm 和多种平台的自托管部署\n- 可追踪按钮点击、订阅等用户行为事件\n- 不使用 Cookie 进行用户追踪，无需 Cookie 同意提示\n- 提供完整文档的 GraphQL API，便于构建定制工具\n- 支持环境变量和 `.env` 文件配置\n- 提供 React、Gatsby、WordPress 等多种框架的集成插件",
+    "en": "## Benefits:\n\n- Respects user privacy by avoiding identifiable tracking\n- Lightweight and modern architecture with Node.js and MongoDB\n- Fully open-source and self-hosted for full control\n- Minimal interface focused on essential analytics\n\n## Features:\n\n- Self-hosted analytics with support for Docker, Helm, and multiple deployment platforms\n- Tracks events like button clicks and newsletter subscriptions\n- No cookies used for tracking, eliminating the need for cookie consent banners\n- Fully documented GraphQL API for building custom tools\n- Supports environment variables and `.env` files for configuration\n- Integration options with React, Gatsby, WordPress, and other frameworks"
+  },
+  "github_url": "https://github.com/electerious/Ackee",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Umami"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.ackee.electerious.com/",
+  "categories": [
+    "Privacy",
+    "Analytics",
+    "Self-Hosted",
+    "User Interface",
+    "Data Visualization",
+    "Web Traffic",
+    "Multi-Domain"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ackee/image/icon.png",
+  "license": "MIT",
+  "language": "JavaScript"
+}

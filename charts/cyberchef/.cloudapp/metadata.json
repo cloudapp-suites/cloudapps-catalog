@@ -1,0 +1,34 @@
+{
+  "name": "cyberchef",
+  "display_name": "CyberChef",
+  "description": {
+    "zh": "CyberChef 是一个多功能的基于网页的工具，专为执行各种“网络安全”操作而设计，可在浏览器中直接进行数据处理。它支持包括编码、加密、数据压缩、哈希计算以及解析 IPv6 和 X.509 证书等任务。该工具使技术人员和非技术人员都能轻松操作数据，无需依赖外部软件。",
+    "en": "CyberChef is a versatile web-based tool designed for carrying out a wide range of \"cyber\" operations directly in the browser. It supports tasks such as encoding, encryption, data compression, hash calculation, and parsing complex data formats like IPv6 and X.509 certificates. The tool enables both technical and non-technical users to manipulate data easily without relying on external software."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供直观的操作界面，即使非技术人员也可执行复杂的数据处理任务。\n- 集成多种网络安全操作，无需依赖多个外部工具。\n- 完全基于客户端的处理机制，确保数据隐私与安全。\n- 支持通过 JavaScript 扩展自定义功能，易于扩展。\n\n## 功能列表:\n\n- 支持拖放操作和最大 2GB 的输入文件。\n- 自动烘焙（Auto Bake）功能，在输入或操作变化时实时更新输出。\n- 自动编码检测，可识别并解码嵌套编码。\n- 支持在复杂操作流程中设置断点并逐步调试。\n- 可将操作流程（Recipe）保存到本地或通过 URL 分享。\n- 支持搜索操作列表，快速定位所需功能。\n- 输入/输出高亮功能，便于追踪数据转换过程。\n- 支持随时将输出保存为文件，或通过拖放加载文件。\n- 支持通过 URL 哈希预配置操作流程和输入内容（Deep Linking）。\n- 所有操作均在本地浏览器中完成，不上传任何数据至服务器。\n- 提供 Docker 镜像并支持本地部署。\n- 支持 Node.js 集成，可用于后端开发。",
+    "en": "## Benefits:\n\n- Provides an intuitive interface for complex data manipulation without requiring deep technical knowledge.\n- Eliminates the need for external tools by handling a wide variety of cyber operations in one platform.\n- Fully client-side processing ensures data privacy and security during operations.\n- Easy to extend with custom operations using JavaScript.\n\n## Features:\n\n- Drag and drop interface for operations and input files up to 2GB.\n- Auto Bake feature that updates output in real-time as input or operations change.\n- Automated encoding detection to identify and decode nested encodings.\n- Breakpoints and step-through debugging for complex recipes.\n- Save and load recipes locally or via URL sharing.\n- Searchable list of operations for quick access.\n- Input/output highlighting to track data transformations.\n- Support for saving output to file and loading files directly into the input.\n- Deep linking support to pre-configure recipes and input via URL.\n- Runs entirely client-side, ensuring no data is sent to external servers.\n- Available via Docker and supports local deployment.\n- Node.js integration for backend use."
+  },
+  "github_url": "https://github.com/gchq/CyberChef",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/gchq/CyberChef/wiki",
+  "categories": [
+    "Developer Tools",
+    "Data Analysis",
+    "Cybersecurity",
+    "Data Encryption",
+    "Encoding",
+    "Compression",
+    "Forensics",
+    "Hashing"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cyberchef/image/screenshot.png",
+  "license": "Apache-2.0",
+  "language": "JavaScript"
+}

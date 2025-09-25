@@ -1,0 +1,27 @@
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Upgraded `common` chart dependency to version 4.5.2
+apiVersion: v2
+appVersion: latest
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.5.2
+description: Simple text sharing
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/haste
+icon: https://raw.githubusercontent.com/nicholaswilde/helm-charts/main/images/haste.png
+keywords:
+- haste
+- hastebin
+- haste-server
+- pastebin
+kubeVersion: '>=1.16.0-0'
+maintainers:
+- email: rwalt@pm.me
+  name: rwaltr
+name: haste-server
+sources:
+- https://github.com/seejohnrun/haste-server
+- https://github.com/k8s-at-home/container-images
+version: 3.4.2

@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dify.fullname" . }}-sandbox
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dify.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: sandbox
+  template:
+    metadata:
+      labels:
+        {{- include "dify.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: sandbox
+    spec:
+      containers:
+        - name: sandbox
+          image: "{{ .Values.sandbox.image.repository }}:{{ .Values.sandbox.image.tag }}"
+          imagePullPolicy: {{ .Values.sandbox.image.pullPolicy }}
+          env:
+            - name: API_KEY
+              value: "dify-sandbox"
+            - name: GIN_MODE
+              value: "release"
+            - name: WORKER_TIMEOUT
+              value: "15"
+            - name: ENABLE_NETWORK
+              value: "true"
+            - name: HTTP_PROXY
+              value: "http://{{ include "dify.fullname" . }}-ssrf-proxy:{{ .Values.ssrfProxy.service.port }}"
+            - name: HTTPS_PROXY
+              value: "http://{{ include "dify.fullname" . }}-ssrf-proxy:{{ .Values.ssrfProxy.service.port }}"
+            - name: SANDBOX_PORT
+              value: "8194"
+          ports:
+            - name: http
+              containerPort: {{ .Values.sandbox.service.port }}
+              protocol: TCP
+          volumeMounts:
+            - name: dependencies
+              mountPath: /dependencies
+            - name: conf
+              mountPath: /conf
+          resources:
+            {{- toYaml .Values.sandbox.resources | nindent 12 }}
+      volumes:
+        - name: dependencies
+          emptyDir: {}
+        - name: conf
+          configMap:
+            name: {{ include "dify.fullname" . }}-sandbox-config
+      {{- with .Values.sandbox.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.sandbox.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.sandbox.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

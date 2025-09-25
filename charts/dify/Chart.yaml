@@ -1,0 +1,6 @@
+apiVersion: v2
+name: dify
+description: A Helm chart for Dify AI application
+type: application
+version: 0.1.0
+appVersion: "1.8.1"

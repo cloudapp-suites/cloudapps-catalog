@@ -1,0 +1,36 @@
+{
+  "name": "ragflow",
+  "display_name": "Ragflow",
+  "description": {
+    "zh": "RAGFlow 是一个开源的检索增强生成（RAG）引擎，融合了先进的 RAG 技术与智能体（Agent）能力，为大语言模型（LLM）构建强大的上下文层。它能够高效、精准地将复杂的非结构化和结构化数据转化为可投入生产的 AI 系统。面向各类规模企业，提供基于深度文档理解的简化 RAG 工作流。",
+    "en": "RAGFlow is an open-source Retrieval-Augmented Generation (RAG) engine that combines advanced RAG techniques with Agent capabilities to build a robust context layer for large language models (LLMs). It enables efficient, high-fidelity transformation of complex unstructured and structured data into production-ready AI systems. Designed for enterprises of all sizes, it offers a streamlined workflow with deep document understanding and agentic features."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过可追溯的引用减少幻觉，提供高质量、有依据的回答。\n- 融合 RAG 与智能体能力，实现智能化、自主化的工作流。\n- 支持企业级部署，组件灵活可配置，适应不同规模需求。\n\n## 功能列表:\n\n- 基于深度文档理解，从复杂格式的非结构化数据中提取知识。\n- 基于模板的智能、可解释分块，提供多种模板选项。\n- 支持引用溯源和分块可视化，便于人工干预。\n- 兼容多种异构数据源：Word、PDF、Excel、图片、扫描件、网页等。\n- 支持跨语言查询。\n- 支持使用多模态模型解析 PDF 或 DOCX 文件中的图像。\n- 集成互联网搜索（如 Tavily），实现类似 Deep Research 的推理能力。\n- 通过 RAG 实现文本到 SQL 的转换。\n- 支持智能体工作流（agentic workflow）和 MCP。\n- 智能体内置 Python/JavaScript 代码执行组件。\n- 兼容最新大模型，包括 GPT-5、Kimi K2 和 Grok 4。\n- 多种召回方式结合融合重排序。\n- 提供直观 API，便于与业务系统无缝集成。",
+    "en": "## Benefits:\n\n- Delivers high-quality, grounded responses by minimizing hallucinations through traceable citations.\n- Combines RAG and Agent capabilities for intelligent, autonomous workflows.\n- Supports enterprise-scale deployment with adaptable, configurable components.\n\n## Features:\n\n- Deep document understanding for extracting knowledge from complex-format unstructured data.\n- Template-based, intelligent, and explainable chunking with multiple options.\n- Grounded citations with visualized chunking and human intervention support.\n- Support for heterogeneous data sources: Word, PDF, Excel, images, scanned documents, web pages, and more.\n- Cross-language query support.\n- Multi-modal model support for analyzing images in PDF or DOCX files.\n- Integration with internet search (e.g., Tavily) for deep research capabilities.\n- Text-to-SQL generation via RAG.\n- Agentic workflow and MCP support.\n- Code executor component for Python and JavaScript within Agents.\n- Compatibility with latest LLMs including GPT-5, Kimi K2, and Grok 4.\n- Multiple recall methods paired with fused re-ranking.\n- Intuitive APIs for seamless business integration."
+  },
+  "github_url": "https://github.com/infiniflow/ragflow",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "n8n",
+    "AutoGen Studio",
+    "Dify",
+    "AnythingLLM",
+    "Coze Studio"
+  ],
+  "tags": ["AI"],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "RAG",
+    "Agent",
+    "LLM"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ragflow/image/logo-with-text.png",
+  "license": "Apache-2.0",
+  "language": "Python/TypeScript"
+}

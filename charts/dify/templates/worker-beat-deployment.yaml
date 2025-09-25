@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dify.fullname" . }}-worker-beat
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: worker-beat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dify.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: worker-beat
+  template:
+    metadata:
+      labels:
+        {{- include "dify.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: worker-beat
+    spec:
+      containers:
+        - name: worker-beat
+          image: "{{ .Values.workerBeat.image.repository }}:{{ .Values.workerBeat.image.tag }}"
+          imagePullPolicy: {{ .Values.workerBeat.image.pullPolicy }}
+          env:
+            - name: MODE
+              value: "beat"
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+            - name: DB_HOST
+              value: {{ include "dify.fullname" . }}-postgresql
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_DATABASE
+              value: {{ .Values.postgresql.auth.database | quote }}
+            - name: REDIS_HOST
+              value: {{ include "dify.fullname" . }}-redis-master
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              value: {{ .Values.redis.auth.password | quote }}
+            - name: REDIS_DB
+              value: "0"
+            - name: CELERY_BROKER_URL
+              value: "redis://:{{ .Values.redis.auth.password }}@{{ include "dify.fullname" . }}-redis-master:6379/1"
+            - name: WEAVIATE_ENDPOINT
+              value: "http://{{ include "dify.fullname" . }}-weaviate:{{ .Values.weaviate.service.port }}"
+            - name: WEAVIATE_API_KEY
+              value: "WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih"
+            - name: STORAGE_TYPE
+              value: "opendal"
+            - name: OPENDAL_SCHEME
+              value: "fs"
+            - name: OPENDAL_FS_ROOT
+              value: "/app/api/storage"
+            - name: SECRET_KEY
+              value: ""
+            - name: MIGRATION_ENABLED
+              value: "true"
+          resources:
+            {{- toYaml .Values.workerBeat.resources | nindent 12 }}
+      {{- with .Values.workerBeat.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.workerBeat.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.workerBeat.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

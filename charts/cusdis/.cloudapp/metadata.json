@@ -1,0 +1,37 @@
+{
+  "name": "cusdis",
+  "display_name": "Cusdis",
+  "description": {
+    "zh": "Cusdis 是一个开源、轻量且注重隐私的 Disqus 替代方案。它提供了一个极简且可嵌入的评论系统，专为静态博客等小型网站设计。项目强调数据自主权、极简主义和易集成性。",
+    "en": "Cusdis is an open-source, lightweight, and privacy-friendly alternative to Disqus. It provides a minimalist and embeddable comment system tailored for small websites like static blogs. The project emphasizes data ownership, minimalism, and ease of integration."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 开源且支持自托管，用户完全掌控数据\n- 评论组件轻量（压缩后约5KB）\n- 无需用户登录即可评论，无 Cookie 使用\n- 注重隐私保护\n\n## 功能列表:\n\n- 支持国际化和暗色模式的轻量评论组件\n- 邮件通知\n- Webhook 支持\n- 易于自托管\n- 多种集成支持",
+    "en": "## Benefits:\n\n- Open-source and self-hostable, giving users full data control\n- Lightweight comment widget (~5kb gzip)\n- No cookies or mandatory user sign-ins required\n- Privacy-friendly design\n\n## Features:\n\n- Lightweight comment widget with i18n and dark mode\n- Email notification\n- Webhook support\n- Easy to self-host\n- Many integrations"
+  },
+  "github_url": "https://github.com/djyde/cusdis/",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://cusdis.com/docs",
+  "categories": [
+    "Privacy",
+    "Notifications",
+    "User Engagement",
+    "Lightweight",
+    "Web Development",
+    "Webhooks",
+    "Open-source",
+    "Dark Mode",
+    "Comments",
+    "Internationalization",
+    "Flexible Pricing"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cusdis/image/logo-256.png",
+  "license": "GPL-3.0",
+  "language": "TypeScript"
+}

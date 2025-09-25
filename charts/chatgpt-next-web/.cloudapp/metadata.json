@@ -1,0 +1,46 @@
+{
+  "name": "nextchat",
+  "display_name": "NextChat",
+  "description": {
+    "zh": "NextChat 是一个轻量且快速的 AI 助手，支持包括 Claude、DeepSeek、GPT-4 和 Gemini Pro 在内的多种模型。它提供网页和桌面界面用于与 AI 模型交互，强调速度、隐私和定制化。该项目支持跨平台部署，适用于个人和企业使用场景。",
+    "en": "NextChat is a lightweight and fast AI assistant supporting multiple models including Claude, DeepSeek, GPT-4, and Gemini Pro. It provides a web and desktop interface for interacting with AI models, emphasizing speed, privacy, and customization. The project is deployable across platforms and supports both public and enterprise use cases."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量快速，支持跨平台部署\n- 强调隐私保护，数据本地存储\n- 支持多种 AI 模型及私有化部署\n- 企业级定制能力强，支持品牌、权限和知识库集成\n\n## 功能列表:\n\n- 支持一键部署到 Vercel\n- 支持跨平台桌面客户端（Windows、macOS、Linux）\n- 兼容自建模型如 RWKV-Runner 和 LocalAI\n- 隐私优先设计，数据本地浏览器存储\n- 支持 Markdown、LaTeX、mermaid 图表和代码高亮\n- 响应式设计，支持暗黑模式和 PWA\n- 首屏加载速度快，支持流式响应\n- 支持通过提示模板创建、分享和调试聊天工具\n- 集成社区优质提示模板\n- 自动压缩聊天历史以支持长对话并节省 Token\n- 支持 15 种以上语言的国际化\n- 支持实时聊天\n- 插件系统支持联网搜索、计算器和自定义 API\n- 支持内容预览、复制和分享（Artifacts）\n- 支持 MCP（模型上下文协议）",
+    "en": "## Benefits:\n\n- Lightweight and fast deployment across platforms\n- Strong emphasis on user privacy with local data storage\n- Supports a wide range of AI models and private deployments\n- Highly customizable for enterprise use with brand, permissions, and knowledge integration\n\n## Features:\n\n- One-click deployment on Vercel\n- Cross-platform desktop clients (Windows, macOS, Linux)\n- Compatibility with self-hosted LLMs like RWKV-Runner and LocalAI\n- Privacy-first design with local browser data storage\n- Markdown support including LaTeX, mermaid, and code highlighting\n- Responsive design with dark mode and PWA support\n- Fast first-screen loading speed with streaming response support\n- Prompt templates for creating, sharing, and debugging chat tools\n- Integration with awesome prompts from community resources\n- Chat history compression for long conversations and token savings\n- I18n support for over 15 languages\n- Realtime chat support\n- Plugin system including network search, calculator, and custom APIs\n- Artifact preview, copy, and share capabilities\n- MCP (Model Context Protocol) support"
+  },
+  "github_url": "https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Privacy",
+    "Cross-Platform",
+    "Multilingual",
+    "Markdown",
+    "Conversational AI",
+    "PWA",
+    "Natural Language Processing",
+    "AI Assistant",
+    "ChatGPT",
+    "Responsive",
+    "GPT4",
+    "Vercel",
+    "Gemini Pro",
+    "GPT3",
+    "AI Chatbot",
+    "Web UI",
+    "GPT-4",
+    "GPT-3"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/chatgpt-next-web/image/435371843-e0aa334f-4c13-4dc9-8310-e3b09fa4b9f3.png",
+  "license": "MIT",
+  "language": "TypeScript"
+}

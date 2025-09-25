@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "apprise.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ template "apprise.fullname" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.ports.containerPort }}
+  selector:
+    app.kubernetes.io/name: {{ template "apprise.fullname" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

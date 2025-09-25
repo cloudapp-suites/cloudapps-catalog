@@ -1,0 +1,22 @@
+{{- if .Values.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "chatgpt-next-web.fullname" . }}
+  labels:
+    {{- include "chatgpt-next-web.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 3000
+      protocol: TCP
+      {{- if eq .Values.service.type "NodePort" }}
+      {{- with .Values.service.nodePort }}
+      nodePort: {{ . }}
+      {{- end }}
+      {{- end }}
+      name: http
+  type: {{ .Values.service.type }}
+  selector:
+    {{- include "chatgpt-next-web.selectorLabels" . | nindent 4 }}
+{{- end }}

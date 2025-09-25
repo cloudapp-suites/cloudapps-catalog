@@ -1,0 +1,41 @@
+{
+  "name": "label studio",
+  "display_name": "Label Studio",
+  "description": {
+    "zh": "Label Studio 是一个开源的数据标注工具，旨在帮助用户对文本、图像、音频、视频和时间序列等多种数据类型进行标注。它提供了一个简洁直观的用户界面用于标注任务，并支持将标注数据导出为多种机器学习模型格式。该工具可用于准备原始数据或增强现有训练数据集，以提升模型的准确性。",
+    "en": "Label Studio is an open-source data labeling tool designed to help users annotate various data types such as text, images, audio, video, and time series. It provides a clean and intuitive UI for labeling tasks and supports exporting labeled data into multiple machine learning model formats. The tool can be used to prepare raw data or enhance existing training datasets to improve model accuracy."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供灵活且可定制的数据标注平台。\n- 支持与机器学习模型集成，实现预标注和主动学习。\n- 简洁的用户界面设计，提升可用性和工作效率。\n\n## 功能列表:\n\n- 多用户标注，支持账号绑定与标注追踪\n- 单实例支持多个项目管理\n- 可配置的标签格式和可视化界面\n- 支持多种数据类型：图像、音频、文本、HTML、时间序列、视频等\n- 支持从本地文件或云存储（AWS S3、Google Cloud Storage 等）导入数据\n- 支持将标注数据导出为多种机器学习模型格式\n- 提供 REST API 接口，便于集成到数据流程中\n- 使用机器学习预测进行预标注\n- 标注过程中支持在线学习和模型再训练\n- 提供常见标注任务的模板\n- 支持 Docker 部署及云平台部署（Heroku、Azure、Google Cloud）\n- 前端支持 React 组件集成",
+    "en": "## Benefits:\n\n- Provides a flexible and customizable platform for data annotation.\n- Supports integration with machine learning models for pre-labeling and active learning.\n- Offers a streamlined UI that focuses on usability and productivity.\n\n## Features:\n\n- Multi-user labeling with account-based annotation tracking\n- Support for multiple projects within a single instance\n- Configurable label formats and visual interfaces\n- Support for various data types including images, audio, text, HTML, time-series, and video\n- Import data from local files or cloud storage (AWS S3, Google Cloud Storage, etc.)\n- Export labeled data to multiple machine learning model formats\n- Integration with REST API for embedding into data pipelines\n- Pre-labeling using machine learning predictions\n- Online learning and model retraining during annotation\n- Templates for common labeling tasks\n- Docker and cloud deployment options (Heroku, Azure, Google Cloud)\n- Frontend integration using React components"
+  },
+  "github_url": "https://github.com/HumanSignal/label-studio",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://labelstud.io/guide/",
+  "categories": [
+    "Developer Tools",
+    "Machine Learning",
+    "user-friendly interface",
+    "machine learning",
+    "data labeling",
+    "Data Annotation",
+    "text labeling",
+    "image labeling",
+    "audio labeling",
+    "export formats",
+    "data preparation",
+    "video labeling",
+    "time series labeling"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/label-studio/image/labelstudio-ui.gif",
+  "license": "Apache-2.0",
+  "language": "Python"
+}

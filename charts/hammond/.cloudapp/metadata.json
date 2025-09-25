@@ -1,0 +1,35 @@
+{
+  "name": "hammond",
+  "display_name": "Hammond",
+  "description": {
+    "zh": "Hammond 是一个自托管的车辆费用追踪系统，用于管理多个用户和车辆的燃油及其他相关费用。它是 Clarkson 的现代化替代项目，具备更强的功能和更好的可扩展性。系统支持从 Clarkson 迁移数据，并针对轻量级部署（尤其是 Raspberry Pi 等设备）进行了优化。",
+    "en": "Hammond is a self-hosted vehicle expense tracking system designed to manage fuel and other vehicle-related expenses across multiple users and vehicles. It serves as a modern successor to Clarkson, offering enhanced functionality and better scalability. The system supports data migration from Clarkson and is optimized for lightweight deployment, especially on devices like Raspberry Pi."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量级设计，适用于 Raspberry Pi 等低资源设备上的自托管\n- 基于 Docker 的简易部署，采用单容器结构提升易用性\n- 活跃开发，更新频繁\n- 使用 GPL-3.0 开源许可\n\n## 功能列表:\n\n- 从 Clarkson 迁移数据\n- 添加和管理多辆车辆\n- 添加和管理多个用户\n- 追踪燃油及其他车辆费用\n- 多用户共享车辆管理\n- 为车辆保存附件\n- 快速录入（例如照片收据）\n- 车辆级和整体费用报表\n- 从 Fuelly 导入数据（未来将支持更多应用）",
+    "en": "## Benefits:\n\n- Lightweight and optimized for self-hosting on low-resource devices like Raspberry Pi\n- Easy Docker-based deployment with single-container simplicity\n- Active development and frequent updates\n- Open-source with GPL-3.0 license\n\n## Features:\n\n- Migrate data from Clarkson\n- Add and manage multiple vehicles\n- Add and manage multiple users\n- Track fuel and other vehicle expenses\n- Share vehicles across multiple users\n- Save attachments against vehicles\n- Quick Entries (e.g., photo receipts)\n- Vehicle-level and overall expense reporting\n- Import data from Fuelly (with more apps to be supported)"
+  },
+  "github_url": "https://github.com/akhilrex/hammond",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/akhilrex/hammond/tree/master/docs",
+  "categories": [
+    "Productivity",
+    "Reporting",
+    "Finance",
+    "Expense Tracking",
+    "Fuel Logging",
+    "Receipt Management",
+    "Vehicle Management",
+    "Data Import",
+    "Shared Access"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/hammond/image/screenshot.jpg",
+  "license": "AGPL-3.0",
+  "language": "Go"
+}

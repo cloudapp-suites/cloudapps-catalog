@@ -1,0 +1,86 @@
+controllers:
+  main:
+    enabled: true
+    type: deployment
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: app.image
+          # -- image tag
+          # @default -- chart.appVersion
+          tag: app.image.tag
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+        # -- environment variables.
+        # @default -- See below
+        env:
+          # -- Set the container timezone
+          TZ: UTC
+          NZBGET_PASS:
+            valueFrom:
+              secretKeyRef:
+                name: nzbget
+                key: password
+          NZBGET_USER:
+            valueFrom:
+              secretKeyRef:
+                name: nzbget
+                key: username
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            cpu: "10m"
+            memory: 128Mi
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    controller: main
+    type: LoadBalancer
+    ports:
+      http:
+        port: 6789
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence:
+  config:
+    enabled: false
+    type: emptyDir
+  media:
+    enabled: false
+    type: emptyDir
+  downloads:
+    enabled: false
+    type: emptyDir
+
+
+
+probes:
+  startup:
+    spec:
+      initialDelaySeconds: 20
+
+# change user/group ids if needed
+# env:
+#  - name: PUID
+#    value: 568
+#  - name: PGID
+#    value: 568
+
+# 在 values.yaml 中添加以下内容
+secrets:
+  nzbget:
+    enabled: true
+    stringData:
+      username: "username"
+      password: "password"

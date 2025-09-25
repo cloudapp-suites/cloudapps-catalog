@@ -1,0 +1,234 @@
+# yaml-language-server: $schema=values.schema.json
+# Default values for actualbudget.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+replicaCount: 1
+
+image:
+  # -- The docker image repository to use
+  repository: app.image
+  # -- This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: app.image.tag
+
+# -- This will set the deployment strategy more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+strategy:
+  type: "RollingUpdate"
+  rollingUpdate:
+    maxSurge: "100%"
+    maxUnavailable: 0
+
+# -- This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+imagePullSecrets: []
+# -- This is to override the chart name.
+nameOverride: ""
+fullnameOverride: ""
+
+# -- This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use. If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# -- This is for setting Kubernetes Annotations to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+podAnnotations: {}
+# -- This is for setting Kubernetes Labels to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+podLabels: {}
+
+# -- This is for setting Security Context to a Pod. For more information checkout: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+podSecurityContext:
+  fsGroup: 1001
+  fsGroupChangePolicy: "OnRootMismatch"
+
+# -- This is for setting Security Context to a Container. For more information checkout: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: false
+  runAsNonRoot: true
+  privileged: false
+  runAsUser: 1001
+  runAsGroup: 1001
+
+# -- This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+service:
+  # -- This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+  type: LoadBalancer
+  # -- This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
+  port: 5006
+  # -- Default Service name
+  name: http
+  # -- Additional service annotations
+  annotations: {}
+
+files:
+  # -- This is where the server stores the budget data files. For more information checkout: https://actualbudget.org/docs/config/#actual_data_dir
+  dataDirectory: /data
+  # -- The server will put an account.sqlite file in this directory, which will contain the (hashed) server password, a list of all the budget files the server knows about, and the active session token (along with anything else the server may want to store in the future). For more information checkout: https://actualbudget.org/docs/config/#serverfiles
+  server: /data/server-files
+  # -- The server will put all the budget files in this directory as binary blobs. For more information checkout: https://actualbudget.org/docs/config/#userfiles
+  user: /data/user-files
+
+# -- This is for setting up the upload limits for the server. For more information checkout: https://github.com/actualbudget/actual/blob/f413fa03ae8f3bffc9c9c8b19885eb9f0f252acc/packages/sync-server/src/load-config.js#L83-L87
+upload:
+  # -- This is the maximum size of a file that can be uploaded to the server in megabytes.
+  fileSizeSyncLimitMB: 20
+  # -- This is the maximum size of an encrypted file that can be uploaded to the server in megabytes.
+  syncEncryptedFileSizeLimitMB: 50
+  # -- This is the maximum size of a file that can be uploaded to the server in megabytes.
+  fileSizeLimitMB: 20
+
+# -- This is for setting up the login for the server. For more information checkout: https://actualbudget.org/docs/config/#loginmethod
+login:
+  # -- This is the method to use for login. Possible values are "password" or "header" or "openid".
+  method: "password"
+
+  # -- This is for skipping the SSL verification for the login.
+  skipSSLVerification: false
+
+  # -- This is the allowed login methods.
+  allowedLoginMethods:
+    - password
+    - header
+    - openid
+
+  # -- This is for setting up the openid login. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/
+  openid:
+    # -- This is for setting the enforce for the openid login. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_enforce
+    enforce: true
+    # -- This is the provider name for the openid provider.
+    providerName: "OpenID Connect"
+    # -- Deprecated: Please use discoveryUrl instead. This field will be removed in next major version.
+    dicovertUrl: ""
+    # -- This is the discovery url for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_discovery_url
+    discoveryUrl: ""
+    # -- This is the client id for the openid provider. If not set and existingSecret is set, the client id will be read from the existing secret. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_client_id
+    clientId: ""
+    # -- This is the client secret for the openid provider. If not set and existingSecret is set, the client secret will be read from the existing secret. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_client_secret
+    clientSecret: ""
+    # -- This is the authorization endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_authorization_endpoint
+    authorizationEndpoint: ""
+    # -- This is the token endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_token_endpoint
+    tokenEndpoint: ""
+    # -- This is the user info endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_userinfo_endpoint
+    userInfoEndpoint: ""
+    # -- Tells the server whether it should use the OpenID (OIDC) or a more general OAuth2 flow. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_auth_method
+    authMethod: "openid"
+    # -- Controls how access tokens expire. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_token_expiration
+    tokenExpiration: "never"
+    # -- This is for setting up the existing secret for the openid provider.
+    existingSecret:
+      # -- This is the name of the existing secret.
+      name: ""
+      # -- This is the key of the client id in the existing secret.
+      clientIdKey: ""
+      # -- This is the key of the client secret in the existing secret.
+      clientSecretKey: ""
+
+# -- This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: actualbudget.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: actualbudget-tls
+  #    hosts:
+  #      - actualbudget.local
+
+# -- Extra environment variables. For more information checkout: https://actualbudget.org/docs/config/
+extraEnvVars: {}
+
+# -- This block is for setting up the resource management for the pod more information can be found here: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# -- This is to setup the liveness probe more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+
+# -- This is to setup the readiness probe more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+# -- This is to setup the persistence for the pod more information can be found here: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+persistence:
+  # -- Enable persistence
+  enabled: false
+
+  # -- Actual Budget persistence annotations
+  annotations: {}
+
+  # -- Actual Budget persistence existing claim
+  existingClaim: ""
+
+  # -- Actual Budget persistence storage class
+  storageClass: cloudapp.storageClassName
+
+  # -- Actual Budget persistence sub path
+  subPath: ""
+
+  # -- Actual Budget persistence volume mode
+  volumeMode: ""
+
+  # -- Actual Budget persistence access mode
+  accessModes:
+    - ReadWriteOnce
+
+  # -- Actual Budget persistence size
+  size: cloudapp.storage
+
+# -- Additional init containers on the output Deployment definition.
+initContainers: []
+
+# -- Additional containers (sidecars) on the output Deployment definition.
+extraContainers: []
+
+# -- Additional volumes on the output Deployment definition.
+volumes: []
+# - name: data
+#   persistentVolumeClaim:
+#     claimName: actualbudget-volume
+
+# -- Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+# - name: data
+#   mountPath: "/data"
+
+# -- For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector
+nodeSelector: {}
+
+# -- For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
+tolerations: []
+
+# -- For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+affinity: {}

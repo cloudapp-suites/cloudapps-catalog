@@ -1,0 +1,27 @@
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Upgraded `common` chart dependency to version 4.5.2
+apiVersion: v2
+appVersion: 4.2.0
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.5.2
+description: The Lounge, modern web IRC client designed for self-hosting
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/thelounge
+icon: https://avatars.githubusercontent.com/u/14336958?s=200&v=4
+keywords:
+- thelounge
+- IRC
+- The Lounge
+- docker
+- thelounge-docker
+kubeVersion: '>=1.16.0-0'
+maintainers:
+- email: rwalt@pm.me
+  name: Rwaltr
+name: thelounge
+sources:
+- https://github.com/thelounge/thelounge
+version: 3.4.2

@@ -1,0 +1,39 @@
+{
+  "name": "nocodb",
+  "display_name": "NocoDB",
+  "description": {
+    "zh": "NocoDB 是 Airtable 的开源替代方案，旨在帮助用户轻松构建和管理在线数据库。它提供了一个强大且易于使用的数据库操作界面，支持协作与自动化功能。该项目致力于通过开放源代码的方式普及数据库工具的使用，避免供应商锁定问题。",
+    "en": "NocoDB is an open-source alternative to Airtable, designed to help users easily build and manage online databases. It provides a powerful yet user-friendly interface for database operations, enabling collaboration and automation. The project aims to democratize access to database tools by offering an open-source solution without vendor lock-in."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 开源无供应商锁定\n- 非开发者也能轻松上手的界面\n- 支持协作与自动化\n- 提供多种自托管安装方式\n\n## 功能列表:\n\n- 基本数据库操作：创建、读取、更新、删除表、字段和记录\n- 字段操作：排序、筛选、分组、隐藏/显示列\n- 多种视图类型：表格、画廊、表单、看板、日历\n- 视图共享选项：公开或密码保护的私有视图\n- 高级单元格类型：链接、关联、汇总、公式、用户等\n- 细粒度角色访问控制\n- REST API 和 SDK 支持程序化访问\n- 通过应用商店集成聊天、邮件、存储等服务",
+    "en": "## Benefits:\n\n- Open-source with no vendor lock-in\n- Easy-to-use interface for non-developers\n- Supports collaboration and automation\n- Self-hostable with multiple installation options\n\n## Features:\n\n- Basic database operations: create, read, update, delete tables, columns, and rows\n- Field operations: sort, filter, group, hide/unhide columns\n- Multiple view types: grid, gallery, form, kanban, calendar\n- View sharing options: public or password-protected private\n- Advanced cell types: links, lookup, rollup, formula, user, etc.\n- Fine-grained access control with roles\n- REST APIs and SDK for programmatic access\n- Integrations with chat, email, and storage services via App Store"
+  },
+  "github_url": "https://github.com/nocodb/nocodb",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Pgweb"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.nocodb.com/getting-started/installation/",
+  "categories": [
+    "Collaboration",
+    "Automation",
+    "API",
+    "Databases",
+    "No-Code",
+    "Data Visualization",
+    "Database Management",
+    "Access Control",
+    "Spreadsheet",
+    "Team Productivity",
+    "Workflow Management"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/nocodb/image/nocodb-full.png",
+  "license": "AGPL-3.0",
+  "language": "TypeScript"
+}

@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dify.fullname" . }}-plugin-daemon
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: plugin-daemon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dify.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: plugin-daemon
+  template:
+    metadata:
+      labels:
+        {{- include "dify.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: plugin-daemon
+    spec:
+      initContainers:
+        - name: wait-for-postgres
+          image: {{ .Values.busybox.image }}
+          command:
+            - sh
+            - -c
+            - |
+              until nc -z {{ include "dify.fullname" . }}-postgresql 5432; do
+                echo "Waiting for PostgreSQL to be ready..."
+                sleep 2
+              done
+              echo "PostgreSQL is ready!"
+      containers:
+        - name: plugin-daemon
+          image: "{{ .Values.pluginDaemon.image.repository }}:{{ .Values.pluginDaemon.image.tag }}"
+          imagePullPolicy: {{ .Values.pluginDaemon.image.pullPolicy }}
+          env:
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+            - name: DB_HOST
+              value: "{{ include "dify.fullname" . }}-postgresql"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_DATABASE
+              value: "dify_plugin"
+            - name: REDIS_HOST
+              value: "{{ include "dify.fullname" . }}-redis-master"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              value: {{ .Values.redis.auth.password | quote }}
+            - name: REDIS_DB
+              value: "0"
+            - name: SERVER_PORT
+              value: "5002"
+            - name: SERVER_KEY
+              value: "lYkiYYT6owG+71oLerGzA7GXCgOT++6ovaezWAjpCjf+Sjc3ZtU+qUEi"
+            - name: MAX_PLUGIN_PACKAGE_SIZE
+              value: "52428800"
+            - name: PPROF_ENABLED
+              value: "false"
+            - name: DIFY_INNER_API_URL
+              value: "http://{{ include "dify.fullname" . }}-api:5001"
+            - name: DIFY_INNER_API_KEY
+              value: "QaHbTe77CtuXmsfyhR7+vRjI/+XbV1AaFy691iy+kGDv2Jvy0/eAh8Y1"
+            - name: PLUGIN_REMOTE_INSTALLING_HOST
+              value: "0.0.0.0"
+            - name: PLUGIN_REMOTE_INSTALLING_PORT
+              value: "5003"
+            - name: PLUGIN_WORKING_PATH
+              value: "/app/storage/cwd"
+            - name: FORCE_VERIFYING_SIGNATURE
+              value: "true"
+            - name: PYTHON_ENV_INIT_TIMEOUT
+              value: "120"
+            - name: PLUGIN_MAX_EXECUTION_TIMEOUT
+              value: "600"
+            - name: PLUGIN_STDIO_BUFFER_SIZE
+              value: "1024"
+            - name: PLUGIN_STDIO_MAX_BUFFER_SIZE
+              value: "5242880"
+            - name: PIP_MIRROR_URL
+              value: ""
+            - name: PLUGIN_STORAGE_TYPE
+              value: "local"
+            - name: PLUGIN_STORAGE_LOCAL_ROOT
+              value: "/app/storage"
+            - name: PLUGIN_INSTALLED_PATH
+              value: "plugin"
+            - name: PLUGIN_PACKAGE_CACHE_PATH
+              value: "plugin_packages"
+            - name: PLUGIN_MEDIA_CACHE_PATH
+              value: "assets"
+          ports:
+            - name: http
+              containerPort: {{ .Values.pluginDaemon.service.port }}
+              protocol: TCP
+            - name: debug
+              containerPort: 5003
+              protocol: TCP
+          volumeMounts:
+            - name: storage
+              mountPath: /app/storage
+          resources:
+            {{- toYaml .Values.pluginDaemon.resources | nindent 12 }}
+      volumes:
+        - name: storage
+          emptyDir: {}
+      {{- with .Values.pluginDaemon.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.pluginDaemon.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.pluginDaemon.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

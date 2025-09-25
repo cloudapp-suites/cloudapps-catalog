@@ -1,0 +1,952 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "affinity": {
+      "additionalProperties": true,
+      "description": "For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity",
+      "required": [],
+      "title": "affinity",
+      "type": "object"
+    },
+    "files": {
+      "additionalProperties": false,
+      "properties": {
+        "dataDirectory": {
+          "default": "/data",
+          "required": [],
+          "title": "dataDirectory",
+          "type": "string"
+        },
+        "server": {
+          "default": "/data/server-files",
+          "required": [],
+          "title": "server",
+          "type": "string"
+        },
+        "user": {
+          "default": "/data/user-files",
+          "required": [],
+          "title": "user",
+          "type": "string"
+        }
+      },
+      "required": ["dataDirectory", "server", "user"],
+      "title": "files",
+      "type": "object"
+    },
+    "upload": {
+      "additionalProperties": false,
+      "properties": {
+        "fileSizeSyncLimitMB": {
+          "default": 20,
+          "required": [],
+          "title": "fileSizeSyncLimitMB",
+          "type": "integer"
+        },
+        "syncEncryptedFileSizeLimitMB": {
+          "default": 50,
+          "required": [],
+          "title": "syncEncryptedFileSizeLimitMB",
+          "type": "integer"
+        },
+        "fileSizeLimitMB": {
+          "default": 20,
+          "required": [],
+          "title": "fileSizeLimitMB",
+          "type": "integer"
+        }
+      },
+      "required": ["fileSizeSyncLimitMB", "syncEncryptedFileSizeLimitMB", "fileSizeLimitMB"],
+      "title": "upload",
+      "type": "object"
+    },
+    "login": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "default": "password",
+          "required": [],
+          "title": "method",
+          "type": "string",
+          "enum": ["password", "header", "openid"]
+        },
+        "skipSSLVerification": {
+          "default": false,
+          "required": [],
+          "title": "skipSSLVerification",
+          "type": "boolean"
+        },
+        "allowedLoginMethods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["password", "header", "openid"]
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        "openid": {
+          "additionalProperties": false,
+          "properties": {
+            "enforce": {
+              "default": true,
+              "description": "Whether to enforce the openid login. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_enforce",
+              "required": [],
+              "title": "enforce",
+              "type": "boolean"
+            },
+            "providerName": {
+              "default": "OpenID Connect",
+              "description": "The provider name for the openid provider.",
+              "required": [],
+              "title": "providerName",
+              "type": "string"
+            },
+            "discoveryUrl": {
+              "default": "",
+              "description": "The discovery url for the openid provider.",
+              "required": [],
+              "title": "discoveryUrl",
+              "type": "string"
+            },
+            "dicovertUrl": {
+              "default": "",
+              "deprecated": true,
+              "description": "Deprecated: Please use discoveryUrl instead. This field will be removed in next major version.",
+              "required": [],
+              "title": "dicovertUrl",
+              "type": "string"
+            },
+            "clientId": {
+              "default": "",
+              "description": "The client id for the openid provider. If not set and existingSecret is set, the client id will be read from the existing secret. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_client_id",
+              "required": [],
+              "title": "clientId",
+              "type": "string"
+            },
+            "clientSecret": {
+              "default": "",
+              "description": "The client secret for the openid provider. If not set and existingSecret is set, the client secret will be read from the existing secret. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_client_secret",
+              "required": [],
+              "title": "clientSecret",
+              "type": "string"
+            },
+            "existingSecret": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "default": "",
+                  "description": "The name of the existing secret.",
+                  "required": [],
+                  "title": "name",
+                  "type": "string"
+                },
+                "clientIdKey": {
+                  "default": "",
+                  "description": "The key of the client id in the existing secret.",
+                  "required": [],
+                  "title": "clientIdKey",
+                  "type": "string"
+                },
+                "clientSecretKey": {
+                  "default": "",
+                  "description": "The key of the client secret in the existing secret.",
+                  "required": [],
+                  "title": "clientSecretKey",
+                  "type": "string"
+                }
+              },
+              "required": ["name", "clientSecretKey"],
+              "title": "existingSecret",
+              "type": "object"
+            },
+            "authorizationEndpoint": {
+              "default": "",
+              "description": "The authorization endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_authorization_endpoint",
+              "required": [],
+              "title": "authorizationEndpoint",
+              "type": "string"
+            },
+            "tokenEndpoint": {
+              "default": "",
+              "description": "The token endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_token_endpoint",
+              "required": [],
+              "title": "tokenEndpoint",
+              "type": "string"
+            },
+            "userInfoEndpoint": {
+              "default": "",
+              "description": "The user info endpoint for the openid provider. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_userinfo_endpoint",
+              "required": [],
+              "title": "userInfoEndpoint",
+              "type": "string"
+            },
+            "authMethod": {
+              "default": "openid",
+              "description": "Tells the server whether it should use the OpenID (OIDC) or a more general OAuth2 flow. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_openid_auth_method",
+              "required": [],
+              "title": "authMethod",
+              "type": "string",
+              "enum": ["openid", "oauth2"]
+            },
+            "tokenExpiration": {
+              "default": "never",
+              "description": "Controls how access tokens expire. For more information checkout: https://actualbudget.org/docs/config/oauth-auth/#actual_token_expiration",
+              "required": [],
+              "title": "tokenExpiration",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": ["never", "openid-provider"]
+                },
+                {
+                  "type": "number",
+                  "minimum": 0
+                }
+              ]
+            }
+          },
+          "required": [
+            "enforce",
+            "providerName",
+            "discoveryUrl",
+            "clientId",
+            "clientSecret",
+            "authorizationEndpoint",
+            "tokenEndpoint",
+            "userInfoEndpoint",
+            "existingSecret",
+            "authMethod",
+            "tokenExpiration"
+          ]
+        }
+      },
+      "required": ["method", "allowedLoginMethods", "skipSSLVerification"],
+      "title": "login",
+      "type": "object",
+      "if": {
+        "properties": {
+          "method": { "const": "openid" }
+        }
+      },
+      "then": {
+        "properties": {
+          "openid": {
+            "oneOf": [
+              {
+                "required": ["discoveryUrl", "clientId", "clientSecret"],
+                "properties": {
+                  "discoveryUrl": { "minLength": 1 },
+                  "clientId": { "minLength": 1 },
+                  "clientSecret": { "minLength": 1 }
+                }
+              },
+              {
+                "required": ["dicovertUrl", "clientId", "clientSecret"],
+                "properties": {
+                  "dicovertUrl": { "minLength": 1 },
+                  "clientId": { "minLength": 1 },
+                  "clientSecret": { "minLength": 1 }
+                }
+              },
+              {
+                "required": ["discoveryUrl", "existingSecret"],
+                "properties": {
+                  "discoveryUrl": { "minLength": 1 },
+                  "existingSecret": {
+                    "required": ["name", "clientSecretKey"],
+                    "properties": {
+                      "name": { "minLength": 1 },
+                      "clientSecretKey": { "minLength": 1 }
+                    }
+                  }
+                }
+              },
+              {
+                "required": [
+                  "authorizationEndpoint",
+                  "tokenEndpoint",
+                  "userInfoEndpoint",
+                  "clientId",
+                  "clientSecret"
+                ],
+                "properties": {
+                  "authorizationEndpoint": { "minLength": 1 },
+                  "tokenEndpoint": { "minLength": 1 },
+                  "userInfoEndpoint": { "minLength": 1 },
+                  "clientId": { "minLength": 1 },
+                  "clientSecret": { "minLength": 1 }
+                }
+              },
+              {
+                "required": [
+                  "authorizationEndpoint",
+                  "tokenEndpoint",
+                  "userInfoEndpoint",
+                  "existingSecret"
+                ],
+                "properties": {
+                  "authorizationEndpoint": { "minLength": 1 },
+                  "tokenEndpoint": { "minLength": 1 },
+                  "userInfoEndpoint": { "minLength": 1 },
+                  "existingSecret": {
+                    "required": ["name", "clientSecretKey"],
+                    "properties": {
+                      "name": { "minLength": 1 },
+                      "clientSecretKey": { "minLength": 1 }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": ["openid"]
+      }
+    },
+    "fullnameOverride": {
+      "default": "",
+      "required": [],
+      "title": "fullnameOverride",
+      "type": "string"
+    },
+    "global": {
+      "additionalProperties": true,
+      "description": "Global values are values that can be accessed from any chart or subchart by exactly the same name.",
+      "required": [],
+      "title": "global",
+      "type": "object"
+    },
+    "image": {
+      "additionalProperties": false,
+      "properties": {
+        "pullPolicy": {
+          "default": "IfNotPresent",
+          "description": "This sets the pull policy for images.",
+          "required": [],
+          "title": "pullPolicy",
+          "type": "string",
+          "enum": ["IfNotPresent", "Never", "Always"]
+        },
+        "repository": {
+          "default": "actualbudget/actual-server",
+          "description": "The docker image repository to use",
+          "required": [],
+          "title": "repository",
+          "type": "string"
+        },
+        "tag": {
+          "default": "",
+          "description": "Overrides the image tag whose default is the chart appVersion.",
+          "required": [],
+          "title": "tag",
+          "type": "string"
+        }
+      },
+      "required": ["repository", "pullPolicy", "tag"],
+      "title": "image",
+      "type": "object"
+    },
+    "imagePullSecrets": {
+      "description": "This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/",
+      "items": {
+        "required": []
+      },
+      "required": [],
+      "title": "imagePullSecrets",
+      "type": "array"
+    },
+    "ingress": {
+      "additionalProperties": false,
+      "description": "This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/",
+      "properties": {
+        "annotations": {
+          "additionalProperties": true,
+          "default": {},
+          "description": "This is for setting up the ingress annotations.",
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "className": {
+          "default": "",
+          "description": "This is for setting up the ingress class name.",
+          "required": [],
+          "title": "className",
+          "type": "string"
+        },
+        "enabled": {
+          "default": false,
+          "description": "This is for setting up the ingress enabled.",
+          "required": [],
+          "title": "enabled",
+          "type": "boolean"
+        },
+        "hosts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["host", "paths"],
+            "properties": {
+              "host": {
+                "type": "string"
+              },
+              "paths": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "pathType": {
+                      "type": "string",
+                      "enum": ["Exact", "Prefix", "ImplementationSpecific"]
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "pathType"
+                  ],
+                  "title": "paths"
+                }
+              }
+            },
+            "title": "hosts",
+            "minItems": 1
+          }
+        },
+        "tls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "secretName": {
+                "type": "string"
+              },
+              "hosts": {
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "required": [],
+                "title": "hosts",
+                "type": "array"
+              }
+            },
+            "required": [
+              "secretName",
+              "hosts"
+            ],
+            "title": "tls"
+          }
+        }
+      },
+      "required": [
+        "enabled",
+        "className",
+        "annotations",
+        "hosts",
+        "tls"
+      ],
+      "title": "ingress",
+      "type": "object"
+    },
+    "extraEnvVars": {
+      "type": "object",
+      "description": "Extra environment variables",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "livenessProbe": {
+      "additionalProperties": true,
+      "description": "This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+      "properties": {
+        "httpGet": {
+          "additionalProperties": true,
+          "properties": {
+            "path": {
+              "default": "/",
+              "required": [],
+              "title": "path",
+              "type": "string"
+            },
+            "port": {
+              "default": "http",
+              "required": [],
+              "title": "port",
+              "type": "string"
+            }
+          },
+          "required": ["path", "port"],
+          "title": "httpGet",
+          "type": "object"
+        }
+      },
+      "required": ["httpGet"],
+      "title": "livenessProbe",
+      "type": "object"
+    },
+    "persistence": {
+      "additionalProperties": false,
+      "description": "Actual Budget persistence",
+      "properties": {
+        "accessModes": {
+          "default": ["ReadWriteOnce"],
+          "description": "Actual Budget persistence access mode",
+          "required": [],
+          "title": "accessModes",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ReadWriteOnce", "ReadWriteMany", "ReadOnlyMany"]
+          }
+        },
+        "annotations": {
+          "additionalProperties": true,
+          "default": {},
+          "description": "Actual Budget persistence annotations",
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "enabled": {
+          "default": true,
+          "description": "Enable persistence",
+          "required": [],
+          "title": "enabled",
+          "type": "boolean"
+        },
+        "existingClaim": {
+          "default": "",
+          "description": "Actual Budget persistence existing claim",
+          "required": [],
+          "title": "existingClaim",
+          "type": "string"
+        },
+        "size": {
+          "default": "10Gi",
+          "pattern": "^[0-9]+(Gi|Mi|Ki|G|M|K)$",
+          "description": "Actual Budget persistence size",
+          "required": [],
+          "title": "size",
+          "type": "string"
+        },
+        "storageClass": {
+          "default": "",
+          "description": "Actual Budget persistence storage class",
+          "required": [],
+          "title": "storageClass",
+          "type": "string"
+        },
+        "subPath": {
+          "default": "",
+          "description": "Actual Budget persistence sub path",
+          "required": [],
+          "title": "subPath",
+          "type": "string"
+        },
+        "volumeMode": {
+          "default": "",
+          "description": "Actual Budget persistence volume mode",
+          "required": [],
+          "title": "volumeMode",
+          "type": "string",
+          "enum": ["", "Filesystem", "Block"]
+        }
+      },
+      "required": [
+        "enabled",
+        "annotations",
+        "existingClaim",
+        "storageClass",
+        "subPath",
+        "volumeMode",
+        "accessModes",
+        "size"
+      ],
+      "title": "persistence",
+      "type": "object"
+    },
+    "nameOverride": {
+      "default": "",
+      "description": "This is to override the chart name.",
+      "required": [],
+      "title": "nameOverride",
+      "type": "string"
+    },
+    "nodeSelector": {
+      "additionalProperties": true,
+      "description": "For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector",
+      "required": [],
+      "title": "nodeSelector",
+      "type": "object"
+    },
+    "podAnnotations": {
+      "additionalProperties": true,
+      "description": "This is for setting Kubernetes Annotations to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/",
+      "required": [],
+      "title": "podAnnotations",
+      "type": "object"
+    },
+    "podLabels": {
+      "additionalProperties": true,
+      "description": "This is for setting Kubernetes Labels to a Pod. For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/",
+      "required": [],
+      "title": "podLabels",
+      "type": "object"
+    },
+    "podSecurityContext": {
+      "additionalProperties": true,
+      "description": "This is for setting Security Context to a Pod. For more information checkout: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
+      "properties": {
+        "runAsUser": {
+          "default": 1000,
+          "required": [],
+          "title": "runAsUser",
+          "type": "integer"
+        },
+        "runAsGroup": {
+          "default": 3000,
+          "required": [],
+          "title": "runAsGroup",
+          "type": "integer"
+        },
+        "fsGroup": {
+          "default": 2000,
+          "required": [],
+          "title": "fsGroup",
+          "type": "integer"
+        },
+        "supplementalGroups": {
+          "items": {
+            "required": []
+          },
+          "required": [],
+          "title": "runAsUser",
+          "type": "array"
+        },
+        "fsGroupChangePolicy": {
+          "default": "OnRootMismatch",
+          "required": [],
+          "title": "fsGroupChangePolicy",
+          "type": "string",
+          "enum": ["OnRootMismatch", "Always"]
+        }
+      },
+      "required": [],
+      "title": "podSecurityContext",
+      "type": "object"
+    },
+    "readinessProbe": {
+      "additionalProperties": true,
+      "properties": {
+        "httpGet": {
+          "additionalProperties": true,
+          "properties": {
+            "path": {
+              "default": "/",
+              "required": [],
+              "title": "path",
+              "type": "string"
+            },
+            "port": {
+              "default": "http",
+              "required": [],
+              "title": "port",
+              "type": "string"
+            }
+          },
+          "required": ["path", "port"],
+          "title": "httpGet",
+          "type": "object"
+        }
+      },
+      "required": ["httpGet"],
+      "title": "readinessProbe",
+      "type": "object"
+    },
+    "replicaCount": {
+      "default": 1,
+      "description": "This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/",
+      "required": [],
+      "title": "replicaCount",
+      "type": "integer"
+    },
+    "resources": {
+      "additionalProperties": true,
+      "description": "Set the resources requests and limits",
+      "properties": {
+        "limits": {
+          "additionalProperties": true,
+          "properties": {
+            "cpu": {
+              "default": "200m",
+              "required": [],
+              "title": "cpu",
+              "type": "string"
+            },
+            "memory": {
+              "default": "256Mi",
+              "required": [],
+              "title": "memory",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "limits",
+          "type": "object"
+        },
+        "requests": {
+          "additionalProperties": true,
+          "properties": {
+            "cpu": {
+              "default": "100m",
+              "required": [],
+              "title": "cpu",
+              "type": "string"
+            },
+            "memory": {
+              "default": "128Mi",
+              "required": [],
+              "title": "memory",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "requests",
+          "type": "object"
+        }
+      },
+      "required": [],
+      "title": "resources",
+      "type": "object"
+    },
+    "securityContext": {
+      "additionalProperties": true,
+      "description": "This is for setting Security Context to a Container. For more information checkout: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
+      "properties": {
+        "allowPrivilegeEscalation": {
+          "default": false,
+          "required": [],
+          "title": "allowPrivilegeEscalation",
+          "type": "boolean"
+        },
+        "readOnlyRootFilesystem": {
+          "default": true,
+          "required": [],
+          "title": "readOnlyRootFilesystem",
+          "type": "boolean"
+        },
+        "runAsNonRoot": {
+          "default": true,
+          "required": [],
+          "title": "runAsNonRoot",
+          "type": "boolean"
+        },
+        "runAsUser": {
+          "default": 1000,
+          "required": [],
+          "title": "runAsUser",
+          "type": "integer"
+        },
+        "capabilities": {
+          "additionalProperties": true,
+          "properties": {
+            "drop": {
+              "items": {
+                "required": []
+              },
+              "required": [],
+              "title": "drop",
+              "type": "array"
+            },
+            "add": {
+              "items": {
+                "required": []
+              },
+              "required": [],
+              "title": "add",
+              "type": "array"
+            }
+          },
+          "required": [],
+          "title": "capabilities",
+          "type": "object"
+        }
+      },
+      "required": [],
+      "title": "securityContext",
+      "type": "object"
+    },
+    "service": {
+      "additionalProperties": false,
+      "description": "This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/",
+      "properties": {
+        "annotations": {
+          "additionalProperties": true,
+          "description": "Additional service annotations",
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "name": {
+          "default": "http",
+          "description": "Default Service name",
+          "required": [],
+          "title": "name",
+          "type": "string"
+        },
+        "port": {
+          "default": 5006,
+          "description": "This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports",
+          "required": [],
+          "title": "port",
+          "type": "integer"
+        },
+        "type": {
+          "default": "ClusterIP",
+          "description": "This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types",
+          "required": [],
+          "title": "type",
+          "type": "string"
+        }
+      },
+      "required": ["type", "port", "name", "annotations"],
+      "title": "service",
+      "type": "object"
+    },
+    "serviceAccount": {
+      "additionalProperties": false,
+      "description": "This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/",
+      "properties": {
+        "annotations": {
+          "additionalProperties": true,
+          "description": "Annotations to add to the service account",
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "automount": {
+          "default": true,
+          "description": "Automatically mount a ServiceAccount's API credentials?",
+          "required": [],
+          "title": "automount",
+          "type": "boolean"
+        },
+        "create": {
+          "default": true,
+          "description": "Specifies whether a service account should be created",
+          "required": [],
+          "title": "create",
+          "type": "boolean"
+        },
+        "name": {
+          "default": "",
+          "description": "The name of the service account to use. If not set and create is true, a name is generated using the fullname template",
+          "required": [],
+          "title": "name",
+          "type": "string"
+        }
+      },
+      "required": ["create", "automount", "annotations", "name"],
+      "title": "serviceAccount",
+      "type": "object"
+    },
+    "strategy": {
+      "additionalProperties": true,
+      "description": "This will set the deployment strategy more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy",
+      "properties": {
+        "type": {
+          "default": "RollingUpdate",
+          "required": [],
+          "title": "type",
+          "type": "string",
+          "enum": ["RollingUpdate", "Recreate"]
+        }
+      },
+      "required": ["type"],
+      "title": "strategy",
+      "type": "object"
+    },
+    "tolerations": {
+      "description": "For more information checkout: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/",
+      "items": {
+        "required": []
+      },
+      "required": [],
+      "title": "tolerations",
+      "type": "array"
+    },
+    "volumeMounts": {
+      "description": "Additional volumeMounts on the output Deployment definition.",
+      "items": {
+        "required": []
+      },
+      "required": [],
+      "title": "volumeMounts",
+      "type": "array"
+    },
+    "initContainers": {
+      "description": "Additional init containers on the output Deployment definition.",
+      "items": {
+        "additionalProperties": true,
+        "required": []
+      },
+      "required": [],
+      "title": "initContainers",
+      "type": "array"
+    },
+    "extraContainers": {
+      "description": "Additional containers (sidecars) on the output Deployment definition.",
+      "items": {
+        "additionalProperties": true,
+        "required": []
+      },
+      "required": [],
+      "title": "extraContainers",
+      "type": "array"
+    },
+    "volumes": {
+      "description": "Additional volumes on the output Deployment definition.",
+      "items": {
+        "required": []
+      },
+      "required": [],
+      "title": "volumes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "replicaCount",
+    "image",
+    "strategy",
+    "imagePullSecrets",
+    "nameOverride",
+    "fullnameOverride",
+    "serviceAccount",
+    "podAnnotations",
+    "podLabels",
+    "podSecurityContext",
+    "securityContext",
+    "service",
+    "files",
+    "upload",
+    "login",
+    "ingress",
+    "extraEnvVars",
+    "resources",
+    "livenessProbe",
+    "readinessProbe",
+    "persistence",
+    "volumes",
+    "volumeMounts",
+    "nodeSelector",
+    "tolerations",
+    "affinity"
+  ],
+  "type": "object"
+}

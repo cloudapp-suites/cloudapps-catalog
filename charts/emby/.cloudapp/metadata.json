@@ -1,0 +1,36 @@
+{
+  "name": "emby",
+  "display_name": "Emby",
+  "description": {
+    "zh": "Emby Server 是一款个人媒体服务器，允许用户在各种设备上流式传输和管理自己的媒体内容。它提供基于 REST 的 API，并内置文档，便于客户端开发和集成。该服务器支持自托管，为用户提供对其媒体库的完全控制。",
+    "en": "Emby Server is a personal media server that allows users to stream and manage their media content across a wide range of devices. It provides a REST-based API with built-in documentation to support client development and integration. The server is designed to be self-hosted, offering users full control over their media libraries."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持用户自主托管媒体内容，掌控数据\n- 提供文档齐全的 REST API，便于客户端开发\n- 兼容多种客户端设备与平台\n\n## 功能列表:\n\n- 基于 REST 的 API，附带内置文档\n- 提供用于 API 集成的客户端库\n- 支持 Android、iOS、Windows、Roku、Kodi 等平台的应用程序\n- 支持服务器插件开发",
+    "en": "## Benefits:\n\n- Enables personal media hosting with full user control\n- Facilitates client development with a well-documented REST API\n- Supports a wide range of client devices and platforms\n\n## Features:\n\n- REST-based API with built-in documentation\n- Client libraries available for API integration\n- Apps available for Android, iOS, Windows, Roku, Kodi, and more\n- Support for server plugin development"
+  },
+  "github_url": "https://github.com/MediaBrowser/Emby",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Bazarr"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://support.emby.media/support/home",
+  "categories": [
+    "Media",
+    "Media Management",
+    "Streaming",
+    "Media Server",
+    "DVR",
+    "Live TV",
+    "Personal Media Organizer",
+    "Parental Controls"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/emby/image/html5.png",
+  "license": "GPL-2.0",
+  "language": "C#"
+}

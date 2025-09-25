@@ -1,0 +1,43 @@
+replicaCount: 1
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 5173
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+env:
+  GROQ_API_KEY: ""
+  HuggingFace_API_KEY: ""
+  OPENAI_API_KEY: ""
+  ANTHROPIC_API_KEY: ""
+  OPEN_ROUTER_API_KEY: ""
+  GOOGLE_GENERATIVE_AI_API_KEY: ""
+  OLLAMA_API_BASE_URL: ""
+  XAI_API_KEY: ""
+  TOGETHER_API_KEY: ""
+  TOGETHER_API_BASE_URL: ""
+  AWS_BEDROCK_CONFIG: ""
+  VITE_LOG_LEVEL: "debug"
+  DEFAULT_NUM_CTX: "32768"
+  RUNNING_IN_DOCKER: "true"
+secrets:
+  GROQ_API_KEY: ""
+  HuggingFace_API_KEY: ""
+  OPENAI_API_KEY: ""
+  ANTHROPIC_API_KEY: ""
+  OPEN_ROUTER_API_KEY: ""
+  GOOGLE_GENERATIVE_AI_API_KEY: ""
+  XAI_API_KEY: ""
+  TOGETHER_API_KEY: ""
+  AWS_BEDROCK_CONFIG: ""

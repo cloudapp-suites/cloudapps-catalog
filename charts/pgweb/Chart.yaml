@@ -1,0 +1,17 @@
+annotations:
+  artifacthub.io/signKey: |
+    fingerprint: E42F9280FEC5C8235AB45343B0EDB01E6EDFD5AC
+    url: https://keybase.io/ectobit/pgp_keys.asc
+apiVersion: v2
+appVersion: 0.14.1
+description: pgweb Helm chart for Kubernetes
+home: https://github.com/ectobit/charts
+icon: https://ectobit.com/logo-sq.png
+keywords:
+- pgweb
+name: pgweb
+sources:
+- https://github.com/ectobit/charts/tree/main/pgweb
+- https://github.com/sosedoff/pgweb
+type: application
+version: 0.1.9

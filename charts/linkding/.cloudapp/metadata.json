@@ -1,0 +1,41 @@
+{
+  "name": "linkding",
+  "display_name": "linkding",
+  "description": {
+    "zh": "linkding 是一个可自托管的书签管理工具，设计简洁、快速且易于通过 Docker 部署。它帮助用户高效地整理、归档和分享书签。该工具可自动从 URL 中提取标题、描述和图标等元数据，并支持稍后阅读、标签管理和 Markdown 笔记等高级功能。",
+    "en": "linkding is a self-hosted bookmark manager designed to be minimal, fast, and easy to set up using Docker. It allows users to organize, archive, and share bookmarks efficiently. The tool automatically captures metadata like titles, descriptions, and icons from URLs and supports advanced features like read-later, tagging, and Markdown notes."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供自托管方案，数据完全自主控制\n- 轻量快速，性能优异\n- 支持通过 Docker 或 DevContainers 快速部署\n\n## 功能列表:\n\n- 简洁美观、注重可读性的用户界面\n- 使用标签组织书签\n- 支持批量编辑、Markdown 笔记和稍后阅读功能\n- 可与他人或访客共享书签\n- 自动抓取书签网站的标题、描述和图标\n- 支持将网站归档为本地 HTML 文件或上传至互联网档案馆（Internet Archive）\n- 支持以 Netscape HTML 格式导入和导出书签\n- 可作为渐进式网页应用（PWA）安装\n- 提供 Firefox 和 Chrome 浏览器扩展，以及书签小工具\n- 支持通过 OIDC 或认证代理进行单点登录（SSO）\n- 提供 REST API 接口供第三方应用开发使用\n- 含管理后台，支持用户自助服务和原始数据访问",
+    "en": "## Benefits:\n\n- Self-hosted solution with full data control\n- Lightweight and fast performance\n- Easy setup via Docker or DevContainers\n\n## Features:\n\n- Clean UI optimized for readability\n- Organize bookmarks with tags\n- Bulk editing, Markdown notes, read it later functionality\n- Share bookmarks with other users or guests\n- Automatically provides titles, descriptions and icons of bookmarked websites\n- Automatically archive websites, either as local HTML file or on Internet Archive\n- Import and export bookmarks in Netscape HTML format\n- Installable as a Progressive Web App (PWA)\n- Extensions for Firefox and Chrome, as well as a bookmarklet\n- SSO support via OIDC or authentication proxies\n- REST API for developing 3rd party apps\n- Admin panel for user self-service and raw data access"
+  },
+  "github_url": "https://github.com/sissbruecker/linkding",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Shiori",
+    "LinkWarden"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Productivity",
+    "API",
+    "User Interface",
+    "Note-Taking",
+    "Bookmarks",
+    "Bookmark Management",
+    "Content Sharing",
+    "Archiving",
+    "Dark Mode",
+    "Organization",
+    "Import",
+    "Export"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/linkding-screenshot.png",
+  "license": "MIT",
+  "language": "Python"
+}

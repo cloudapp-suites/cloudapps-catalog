@@ -1,0 +1,44 @@
+{{- if not .Values.nginxConf.existingConfigmap }}
+apiVersion: v1 
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data: 
+  nginx.conf: |
+    worker_processes  auto;
+
+    error_log  /tmp/nginx/error.log warn;
+    pid        /tmp/nginx/nginx.pid;
+
+    events { 
+    worker_connections  1024; 
+    }
+
+    http {
+        include /etc/nginx/mime.types;
+        
+        server {
+            listen 8080;
+            server_name _;
+            root /usr/share/nginx/html;
+            index index.html;
+
+            location / {
+                try_files $uri $uri/ /index.html;
+            }
+        }
+
+        {{- if .Values.metrics.enabled }}
+        server {
+            listen 8081;
+            server_name _;
+
+            location /stub_status {
+                stub_status;
+                allow 127.0.0.1;
+                deny all;
+            }
+        }
+        {{- end }}
+    }
+{{- end }}

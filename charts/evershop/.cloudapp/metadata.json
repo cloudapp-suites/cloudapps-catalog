@@ -1,0 +1,42 @@
+{
+  "name": "evershop",
+  "display_name": "EverShop",
+  "description": {
+    "zh": "EverShop 是一个以 TypeScript 为核心、基于 GraphQL 和 React 构建的现代化电商平台。它提供基础的电商功能，并具备模块化和可定制的架构。专为开发者设计，能够快速构建个性化的购物体验。",
+    "en": "EverShop is a modern, TypeScript-first eCommerce platform built with GraphQL and React. It provides essential commerce features within a modular and customizable architecture. Designed for developers, it enables the rapid creation of tailored shopping experiences."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 基于现代技术栈：TypeScript、GraphQL 和 React。\n- 模块化架构支持高度定制和扩展。\n- 专为开发者优化，提升开发效率与灵活性。\n\n## 功能列表:\n\n- 支持使用 Docker 快速安装，无需手动配置依赖。\n- 提供详尽的安装指南、插件开发与主题开发文档。\n- 后台与前台演示站点，便于实际体验。\n- 开源项目，拥有活跃的社区贡献与透明的开发流程。\n- 支持通过 Discord 和 GitHub 进行问题反馈、功能建议与技术讨论。",
+    "en": "## Benefits:\n\n- Built with modern technologies: TypeScript, GraphQL, and React.\n- Modular architecture allows for high customization and scalability.\n- Designed specifically for developer productivity and flexibility.\n\n## Features:\n\n- Docker-based installation for quick setup without dependency issues.\n- Comprehensive documentation for installation, extension, and theme development.\n- Admin and storefront demo for hands-on exploration.\n- Open-source with active community contributions and transparent development.\n- Support for bug reporting, feature requests, and discussions via Discord and GitHub."
+  },
+  "github_url": "https://github.com/evershopcommerce/evershop",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://evershop.io/docs/development/getting-started/introduction",
+  "categories": [
+    "Open Source",
+    "Customizable",
+    "GraphQL",
+    "customizable",
+    "React",
+    "inventory management",
+    "Modular",
+    "Extensible",
+    "online store",
+    "order management",
+    "modular",
+    "Rich Functionality",
+    "shopping cart",
+    "product management",
+    "ecommerce",
+    "Node Ecommerce Platform"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/evershop/image/logo-green.png",
+  "license": "GPL-3.0",
+  "language": "JavaScript"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "nzbget",
+  "display_name": "Nzbget",
+  "description": {
+    "zh": "NZBGet 是一个高性能的二进制下载工具，通过 nzb 文件从 Usenet 网络下载资源。该项目采用 C++ 编写，以高效和轻量著称。它支持多种设备运行，包括 PC、NAS、媒体播放器、路由器等，并为多个平台提供了预编译版本。",
+    "en": "NZBGet is a high-performance binary downloader that retrieves files from Usenet using nzb-files. Written in C++, it is designed to be efficient and lightweight. The application is compatible with a wide range of devices including PCs, NAS systems, media players, and routers, with precompiled binaries available for multiple platforms."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 高性能和高效下载能力\n- 轻量级设计，适用于资源受限设备\n- 跨平台兼容性强，支持多种系统\n\n## 功能列表:\n\n- 通过 NZB 文件从 Usenet 下载资源\n- 提供适用于 Windows、macOS、Linux、FreeBSD 和 Android 的预编译版本\n- 可在不支持的平台上从源码编译安装",
+    "en": "## Benefits:\n\n- High performance and efficient downloading\n- Lightweight design suitable for low-resource devices\n- Cross-platform compatibility with a wide range of systems\n\n## Features:\n\n- Downloads files from Usenet using NZB files\n- Available on Windows, macOS, Linux, FreeBSD, and Android\n- Source code can be compiled for unsupported platforms"
+  },
+  "github_url": "https://github.com/nzbget/nzbget",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Bazarr"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://nzbget.net/documentation",
+  "categories": [
+    "Automation",
+    "File Sharing",
+    "Usenet",
+    "Download",
+    "Performance Optimization",
+    "Downloader",
+    "Media Sorting"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/nzbget/image/3368377.png",
+  "license": "GPL-2.0",
+  "language": "C++"
+}

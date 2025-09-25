@@ -1,0 +1,34 @@
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 9080
+  targetPort: 80
+
+ingress:
+  enabled: false
+  hosts:
+    - host: answer.local
+      paths:
+        - /
+  tls: []
+
+resources:
+  {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+volumes:
+  - name: answer-data
+    persistentVolumeClaim:
+      claimName: answer-pvc
+
+persistent:
+  storage: cloud.storage

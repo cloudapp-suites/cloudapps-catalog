@@ -1,0 +1,36 @@
+{
+  "name": "pgweb",
+  "display_name": "Pgweb",
+  "description": {
+    "zh": "Pgweb 是一个轻量级的基于 Web 的 PostgreSQL 数据库浏览器，支持 Mac、Linux 和 Windows 多平台运行。它使用 Go 编写，以单一可执行文件形式发布，无任何依赖，易于安装和使用。该工具提供直观的网页界面，帮助用户浏览和管理 PostgreSQL 数据库。",
+    "en": "Pgweb is a lightweight, web-based PostgreSQL database explorer designed to work across multiple platforms including Mac, Linux, and Windows. It is built in Go and distributed as a single binary with zero dependencies, making it easy to install and use. The tool allows users to browse and manage PostgreSQL databases through a simple and intuitive web interface."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量级设计，安装简单，无依赖。\n- 支持多平台，适用范围广泛。\n- 通过 Web 界面简化 PostgreSQL 数据库管理。\n\n## 功能列表:\n\n- 跨平台支持：Mac/Linux/Windows（64位）\n- 简单安装（以单一二进制文件分发）\n- 无任何依赖\n- 支持 PostgreSQL 9.1 及以上版本\n- 支持原生 SSH 隧道\n- 支持多个数据库会话\n- 执行并分析自定义 SQL 查询\n- 表格和查询结果导出为 CSV/JSON/XML\n- 查询历史记录\n- 服务器书签功能",
+    "en": "## Benefits:\n\n- Lightweight and easy to install with no dependencies.\n- Cross-platform compatibility ensures wide usability.\n- Simplifies PostgreSQL database management via a web interface.\n\n## Features:\n\n- Cross-platform: Mac/Linux/Windows (64bit)\n- Simple installation (distributed as a single binary)\n- Zero dependencies\n- Works with PostgreSQL 9.1+\n- Supports native SSH tunnels\n- Multiple database sessions\n- Execute and analyze custom SQL queries\n- Table and query data export to CSV/JSON/XML\n- Query history\n- Server bookmarks"
+  },
+  "github_url": "https://github.com/sosedoff/pgweb",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "NocoDB"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/sosedoff/pgweb/wiki",
+  "categories": [
+    "Databases",
+    "Cross-Platform",
+    "Web Interface",
+    "Database Management",
+    "SQL",
+    "PostgreSQL",
+    "Data Export",
+    "Query Tool"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/pgweb/image/browse.png",
+  "license": "MIT",
+  "language": "Go"
+}

@@ -1,0 +1,138 @@
+image:
+  # -- repository with Emby image
+  repository: app.image
+  # -- pull policy
+  pullPolicy: Always
+  # -- current version of the image. Default: Charts appVersion.
+  tag: app.image.tag
+
+# -- imagePullSecrets (not needed, if default image is used)
+imagePullSecrets: []
+# -- @ignore
+nameOverride: ""
+# -- @ignore
+fullnameOverride: ""
+
+# -- the UID to run emby as
+uid: 1000
+# -- the GID to run emby as
+gid: 100
+# -- a comma-separated list of additional GIDs to run emby as
+gidlist: 100
+
+serviceAccount:
+  # -- enable serviceAccount
+  create: true
+  # -- automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # -- add annotations to serviceAccount
+  annotations: {}
+  # -- name of the serviceAccount (will be generated if empty)
+  name: ""
+
+# -- @ignore
+podAnnotations: {}
+
+# -- @ignore
+podLabels: {}
+
+# -- podSecurityContext configuration
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# -- securityContext configuration
+securityContext:
+  #readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # -- service type
+  type: LoadBalancer
+  # -- service port
+  port: 8096
+
+# -- Configure ingress.
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+# -- @ignore
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+persistence:
+  # -- enable persistence?
+  enabled: false
+  # -- existing claim
+  existingClaim:
+  # -- desired storageClass
+  storageClass: cloudapp.storageClassName
+  # -- storage access mode
+  accessMode: ReadWriteOnce
+  # -- storage size
+  size: cloudapp.storage
+
+nfsMounts:
+  # -- enable mounting of nfs exports
+  enabled: false
+  mounts:
+    # -- name of mount
+    - name: content
+      # -- ip or dns of nfs server
+      nfsServer: xxx.xxx.xxx.xxx
+      # -- export path on nfs server
+      exportPath: "/movies"
+      # -- mount path on container
+      mountPath: "/movies"
+      # -- desired capacity (usually not needed for nfs)
+      capacity: 20Gi
+      # -- mark mount as readonly
+      readOnly: false
+
+# -- additional volume(s) to mount into the container
+additionalVolumes: []
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# -- mountpoint(s) of the additional volumes inside the container
+additionalVolumeMounts: []
+# - name: foo
+#   mountPath: "/etc/foo"
+#   readOnly: true
+
+# -- @ignore
+nodeSelector: {}
+
+# -- @ignore
+tolerations: []
+
+# -- @ignore
+affinity: {}

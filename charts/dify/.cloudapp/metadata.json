@@ -1,0 +1,50 @@
+{
+  "name": "dify",
+  "display_name": "Dify",
+  "description": {
+    "zh": "Dify 是一个用于构建大语言模型（LLM）应用的开源平台。它提供了直观的界面，支持 AI 工作流、RAG 管道、智能体能力以及模型管理功能，帮助用户从原型快速过渡到生产部署。",
+    "en": "Dify is an open-source platform for building LLM-based applications. It offers a user-friendly interface with features like AI workflows, RAG pipelines, agent capabilities, and model management. It enables rapid development and deployment of AI applications from prototype to production."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供可视化界面用于设计和测试 AI 工作流。\n- 支持多种大模型提供商及本地部署方案。\n- 可通过 API 和后端即服务（BaaS）轻松集成到现有系统。\n\n## 功能列表:\n\n- 可视化画布构建 AI 工作流\n- 集成数百个 LLM 提供商，包括 GPT、Mistral 和 Llama3\n- 提示词开发环境（Prompt IDE）用于提示词编写和对比\n- 支持文档上传和检索的 RAG 管道\n- 支持基于 Function Calling 和 ReAct 的智能体，提供 50+ 内置工具\n- LLMOps 功能用于监控和优化生产环境中的模型表现\n- 后端即服务（BaaS）提供完整 API 接口\n- 支持云服务部署和本地部署（含企业版）\n- 可观测性功能及企业级特性（如访问控制和单点登录）",
+    "en": "## Benefits:\n\n- Offers a visual interface for designing and testing AI workflows.\n- Supports a wide variety of LLMs from multiple providers and self-hosted setups.\n- Enables seamless integration with existing systems via APIs and Backend-as-a-Service.\n\n## Features:\n\n- Visual canvas for building AI workflows\n- Integration with hundreds of LLM providers including GPT, Mistral, and Llama3\n- Prompt IDE for crafting and comparing prompts\n- RAG pipeline with document ingestion and retrieval support\n- Agent capabilities with pre-built and custom tools\n- LLMOps features for monitoring and improving models in production\n- Backend-as-a-Service with full API support\n- Cloud and self-hosting options including enterprise deployment\n- Observability and enterprise features like access control and SSO"
+  },
+  "github_url": "https://github.com/langgenius/dify",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "n8n",
+    "AutoGen Studio",
+    "Ragflow",
+    "AnythingLLM",
+    "Coze Studio"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://docs.dify.ai",
+  "categories": [
+    "Open Source",
+    "Prompt Engineering",
+    "Large Language Models",
+    "Model Management",
+    "LLM",
+    "AI Applications",
+    "AI Workflow",
+    "Backend Service",
+    "Agent Framework",
+    "RAG Pipeline",
+    "LLMOps",
+    "Monitoring and Analysis",
+    "RAG",
+    "Prompt Orchestration",
+    "Agent Capabilities",
+    "AI Platform"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/GitHub_README_if.png",
+  "license": "Custom License",
+  "language": "Python"
+}

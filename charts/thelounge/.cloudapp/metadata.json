@@ -1,0 +1,35 @@
+{
+  "name": "the lounge",
+  "display_name": "The Lounge",
+  "description": {
+    "zh": "The Lounge 是一个专为自托管设计的现代网页 IRC 客户端，提供现代化且响应式的界面，用于访问 IRC 网络。它允许用户在离线时仍保持与 IRC 服务器的连接，并提供推送通知、链接预览等功能。该应用支持跨平台使用，并确保在不同设备间同步使用体验。",
+    "en": "The Lounge is a modern web IRC client designed for self-hosting, providing a contemporary and responsive interface for accessing IRC networks. It allows users to stay connected to IRC servers even when offline and offers features like push notifications and link previews. The application supports cross-platform use and ensures a synchronized experience across devices."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供现代化、直观的 IRC 使用体验，支持网页访问。\n- 用户离线时仍可保持 IRC 连接。\n- 界面响应式设计，支持多设备同步使用。\n\n## 功能列表:\n\n- 推送通知\n- 链接预览\n- 新消息标记\n- 支持桌面与移动端的响应式界面\n- 支持所有可运行 Node.js 的平台",
+    "en": "## Benefits:\n\n- Provides a modern and intuitive IRC experience with web-based access.\n- Maintains persistent IRC connections while users are offline.\n- Offers a responsive and synchronized interface across devices.\n\n## Features:\n\n- Push notifications\n- Link previews\n- New message markers\n- Responsive web interface for desktop and mobile\n- Cross-platform compatibility wherever Node.js runs"
+  },
+  "github_url": "https://github.com/thelounge/thelounge",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Self-Hosted",
+    "Communication",
+    "Cross-Platform",
+    "Chat",
+    "File Sharing",
+    "Responsive Design",
+    "Push Notifications",
+    "Multi-User",
+    "IRC"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/thelounge/image/thelounge-screenshot.png",
+  "license": "GPL-3.0",
+  "language": "TypeScript"
+}

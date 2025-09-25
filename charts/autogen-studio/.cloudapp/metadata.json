@@ -1,0 +1,37 @@
+{
+  "name": "autogen-studio",
+  "display_name": "AutoGen Studio",
+  "description": {
+    "zh": "AutoGen 是一个用于开发多智能体 AI 应用的框架，支持智能体自主运行或与人类协作。它采用分层可扩展架构，允许开发者使用高级 API 构建智能体工作流，或自定义底层组件。该框架支持消息传递、事件驱动智能体，并可集成大语言模型（LLM）。",
+    "en": "AutoGen is a framework for developing multi-agent AI applications that can operate autonomously or collaborate with humans. It offers a layered and extensible architecture, enabling developers to build AI agent workflows using high-level APIs or customize low-level components. The framework supports a wide range of capabilities including message passing, event-driven agents, and integration with large language models (LLMs)."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供灵活且可扩展的框架，支持构建复杂的多智能体工作流。\n- 同时提供高级 API 用于快速原型开发，以及低级组件用于定制化。\n- 支持与多种大语言模型（LLM）及开发者工具的无缝集成，提升开发效率。\n\n## 功能列表:\n\n- 多智能体通信与协作能力。\n- 支持消息传递、事件驱动智能体和分布式运行时。\n- 集成 OpenAI、Azure OpenAI 等 LLM 客户端。\n- 通过扩展支持代码执行和网页浏览功能。\n- 提供无代码开发环境 AutoGen Studio。\n- 包含性能评估工具 AutoGen Bench。\n- 支持 Python 与 .NET 的跨语言开发。",
+    "en": "## Benefits:\n\n- Provides a flexible and extensible framework for building complex multi-agent workflows.\n- Offers both high-level APIs for rapid prototyping and low-level components for customization.\n- Supports seamless integration with various LLMs and developer tools for enhanced productivity.\n\n## Features:\n\n- Multi-agent communication and coordination capabilities.\n- Support for message passing, event-driven agents, and distributed runtime.\n- Integration with OpenAI, Azure OpenAI, and other LLM clients.\n- Code execution and web browsing capabilities via extensions.\n- AutoGen Studio for no-code development of multi-agent applications.\n- Developer tools like AutoGen Bench for performance evaluation.\n- Cross-language support for Python and .NET."
+  },
+  "github_url": "https://github.com/microsoft/autogen",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://microsoft.github.io/autogen/docs/Getting-Started",
+  "categories": [
+    "AI",
+    "User Interface",
+    "Task Management",
+    "AI Agents",
+    "Prototyping",
+    "AI Prototyping",
+    "AutoGen Framework",
+    "Workflow Composition",
+    "Agent Skills Enhancement"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/autogen-studio/image/ag.svg",
+  "license": "CC-BY-4.0",
+  "language": "Python/C#"
+}

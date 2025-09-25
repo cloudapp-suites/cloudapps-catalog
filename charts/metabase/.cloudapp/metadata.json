@@ -1,0 +1,35 @@
+{
+  "name": "metabase",
+  "display_name": "Metabase",
+  "description": {
+    "zh": "Metabase 是一个开源的数据分析平台，允许用户通过简单操作从公司数据中获取洞察，而无需掌握 SQL。它支持团队创建交互式仪表盘、构建数据模型并轻松共享分析结果。面向技术与非技术用户设计，Metabase 支持多种数据库，并提供云端与自托管两种部署方式。",
+    "en": "Metabase is an open-source data analytics platform that enables users to ask questions and learn from their company's data without requiring SQL knowledge. It allows teams to create interactive dashboards, build data models, and share insights easily. Designed for both technical and non-technical users, Metabase supports a wide range of databases and offers both cloud and self-hosting options."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 面向技术人员与非技术人员的易用界面。\n- 支持云端与自托管，部署快速便捷。\n- 帮助团队实现数据驱动的决策。\n\n## 功能列表:\n\n- 五分钟内完成安装配置。\n- 支持自然语言查询，无需编写 SQL。\n- 提供面向高级用户的 SQL 编辑器。\n- 可创建带过滤器和自动刷新的交互式仪表盘。\n- 构建用于清洗和整合数据表的数据模型。\n- 定义可复用的数据分段和指标。\n- 通过邮件或 Slack 接收仪表盘订阅更新。\n- 设置数据变更实时通知的警报机制。\n- 支持将图表和仪表盘嵌入外部应用。\n- 支持多种数据库连接。\n- 提供 REST API 用于与其他系统集成。\n- 通过社区翻译支持多语言界面。",
+    "en": "## Benefits:\n\n- Easy-to-use interface for both technical and non-technical users.\n- Fast setup and deployment with support for cloud and self-hosting.\n- Encourages data-driven decision-making across teams.\n\n## Features:\n\n- Setup in under five minutes.\n- Natural language querying without SQL.\n- SQL editor for advanced users.\n- Interactive dashboards with filters and auto-refresh.\n- Data models for cleaning and combining tables.\n- Reusable segments and metrics.\n- Dashboard subscriptions via email or Slack.\n- Data alerts for real-time notifications.\n- Embeddable charts and dashboards in external applications.\n- Support for a wide range of databases.\n- REST API for integration with other systems.\n- Internationalization support through community translations."
+  },
+  "github_url": "https://github.com/metabase/metabase",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://www.metabase.com/docs/latest/",
+  "categories": [
+    "Analytics",
+    "Data Visualization",
+    "Dashboard",
+    "Business Apps",
+    "Business Intelligence",
+    "Data Analytics",
+    "Data Exploration",
+    "Interactive Reporting",
+    "Self-Service Analytics"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/metabase/image/metabase-product-screenshot.png",
+  "license": "AGPL-3.0",
+  "language": "Clojure/TypeScript"
+}

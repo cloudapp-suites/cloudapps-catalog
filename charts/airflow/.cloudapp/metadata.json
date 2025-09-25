@@ -1,0 +1,29 @@
+{
+  "name": "airflow",
+  "display_name": "airflow",
+  "description": {
+    "zh": "Apache Airflow 是一个用于以编程方式编写、调度和监控工作流的平台。它允许用户将数据管道定义为代码，从而提升可维护性、版本控制、可测试性和团队协作性。Airflow 广泛应用于生产环境中的数据处理任务编排。",
+    "en": "Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. It enables users to define pipelines as code, making them more maintainable, version-controlled, testable, and collaborative. Airflow is widely used for orchestrating data processing tasks in production environments."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持将工作流定义为代码，提升可维护性和团队协作效率。\n- 具有高度可扩展性，提供丰富的内置操作符和集成生态。\n- 通过 Jinja 模板引擎实现动态管道生成和灵活配置。\n\n## 功能列表:\n\n- 以编程方式编写工作流（DAG）来编排任务。\n- 根据依赖关系在分布式工作节点上调度和执行任务。\n- 提供丰富的用户界面，用于可视化管道、监控进度和排查问题。\n- 提供命令行工具，便于管理和调试工作流。\n- 支持通过 XCom 机制在任务间传递元数据。\n- 基于资产的依赖管理，实现更细粒度的编排。\n- 支持回填和重试功能，便于处理历史数据。\n- 通过插件化提供方集成外部系统，支持在 Kubernetes 上运行。",
+    "en": "## Benefits:\n\n- Enables defining workflows as code for better maintainability and collaboration.\n- Highly extensible with a rich ecosystem of built-in operators and integrations.\n- Supports dynamic pipeline generation and flexible configuration via Jinja templating.\n\n## Features:\n\n- Programmatically author workflows (DAGs) to orchestrate tasks.\n- Schedule and execute tasks following defined dependencies across distributed workers.\n- Rich user interface to visualize pipelines, monitor progress, and troubleshoot.\n- Command-line tools for managing and debugging workflows.\n- Support for metadata passing between tasks using XComs.\n- Asset-based dependency management for fine-grained orchestration.\n- Backfill and retry capabilities for historical data processing.\n- Integration with external systems via providers and support for Kubernetes execution."
+  },
+  "github_url": "https://github.com/apache/airflow",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Scheduler",
+    "Task Management",
+    "DAG"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/wordmark_1.png",
+  "license": "Apache-2.0",
+  "language": "Python"
+}

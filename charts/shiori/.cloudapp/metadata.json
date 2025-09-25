@@ -1,0 +1,36 @@
+{
+  "name": "shiori",
+  "display_name": "Shiori",
+  "description": {
+    "zh": "Shiori 是一款旨在作为 Pocket 的自托管替代品的简单书签管理器。它可以作为命令行程序或 Web 应用来使用，方便访问和管理。该项目以单个二进制文件分发，旨在实现轻松安装和高可移植性。",
+    "en": "Shiori is a simple bookmark manager intended to be a self-hosted clone of Pocket. It can be used as a command-line application or as a web application for easy access and management. Distributed as a single binary, it is designed for easy installation and portability."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 便携且简单: 以单个二进制文件和 SQLite3 数据库的形式分发，使其极易安装和迁移。\n- 使用方式灵活: 同时提供简洁的命令行界面和简单的 Web 界面来管理书签。\n- 高度兼容: 支持从网景书签文件格式导入和导出书签，确保与 Pocket、Instapaper 及主流浏览器兼容。\n- 可扩展性强: 支持插件和多种数据库后端（PostgreSQL, MySQL, SQLite3），允许用户进行定制和扩展。\n\n## 功能列表:\n\n- 书签管理: 添加、编辑、删除和搜索书签。\n- 离线存档: 为任何网页创建可离线阅读的存档，也支持将页面保存为 PDF、截图或 DOM 文件。\n- 内容抓取: 添加书签时，能自动抓取网页的标题和摘要。\n- 高级搜索: 可按标签、标题、URL 甚至存档页面的全文内容来搜索书签。\n- Web 界面: 提供用于浏览和管理书签的 Web UI，并支持主题切换。\n- 旧版支持: 包含对直接从 Pocket 和 Instapaper 帐户导入数据的旧版支持。",
+    "en": "## Benefits:\n\n- Distributed as a single binary with a SQLite3 database, making it extremely easy to install and move.\n- Offers both a clean command-line interface and a simple web interface to manage bookmarks.\n- Supports importing and exporting bookmarks from and to Netscape Bookmark file format, ensuring compatibility with services like Pocket, Instapaper, and major browsers.\n- Supports plugins and multiple database backends (PostgreSQL, MySQL, SQLite3), allowing for customization and scalability.\n\n## Features:\n\n- Bookmark Management: Add, edit, delete, and search bookmarks.\n- Offline Archiving: Creates an offline, readable archive of any webpage. It can also save pages as PDF, screenshot, or DOM dump.\n- Content Fetching: Automatically fetches the title and excerpt of a webpage when a bookmark is added.\n- Advanced Search: Search bookmarks by their tags, title, URL, or even the full text content of the archived page.\n- Web Interface: Provides a web UI for browsing and managing bookmarks, which supports theming.\n- Legacy Support: Includes legacy support for importing data directly from Pocket and Instapaper accounts."
+  },
+  "github_url": "https://github.com/go-shiori/shiori",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "linkding",
+    "LinkWarden"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Productivity",
+    "Bookmarks",
+    "Web Application",
+    "Web Archiving",
+    "Bookmarks Management",
+    "Content Saving",
+    "Command Line"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/shiori/image/cover.png",
+  "license": "MIT",
+  "language": "Go"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "n8n",
+  "display_name": "n8n",
+  "description": {
+    "zh": "n8n 是一个面向技术团队的安全工作流自动化平台，结合了代码的灵活性与无代码工具的高效性。它提供超过 400 个集成、原生 AI 功能，并通过公平代码许可保障部署控制权。平台支持自托管和云部署，适用于企业级应用场景。",
+    "en": "n8n is a secure workflow automation platform designed for technical teams, combining the flexibility of code with the speed of no-code tools. It offers over 400 integrations, native AI capabilities, and deployment control through a fair-code license. The platform supports self-hosting and cloud deployment, making it suitable for enterprise use."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 兼具代码灵活性与无代码自动化效率\n- 通过公平代码许可保障数据与部署控制权\n- 可扩展性强，具备高级权限管理和 SSO 支持，适合企业使用\n- 拥有活跃社区和持续发展的开发团队\n\n## 功能列表:\n\n- 提供 400 多个预构建服务集成\n- 可视化工作流构建器，支持 JavaScript/Python 脚本\n- 基于 LangChain 的原生 AI 工作流，支持自定义数据与模型\n- 支持自托管与云部署模式\n- 支持 npm 包与自定义节点扩展\n- 提供可直接使用的流程模板\n- 支持离线隔离环境部署",
+    "en": "## Benefits:\n\n- Combines the flexibility of code with the speed of no-code automation\n- Maintains full data and deployment control with a fair-code license\n- Scalable and enterprise-ready with advanced permissions and SSO support\n- Actively maintained by a growing community and development team\n\n## Features:\n\n- 400+ pre-built integrations with third-party services\n- Visual workflow builder with optional JavaScript/Python scripting\n- Native AI agent workflows using LangChain and custom models\n- Self-hosting and cloud deployment options\n- Support for npm packages and custom node extensions\n- Ready-to-use workflow templates\n- Air-gapped and secure deployment capabilities"
+  },
+  "github_url": "https://github.com/n8n-io/n8n",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Coze Studio",
+    "AnythingLLM",
+    "Dify",
+    "Ragflow"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://docs.n8n.io/",
+  "categories": [
+    "Automation",
+    "Self-Hosted",
+    "Integration",
+    "No-Code",
+    "Workflow Automation",
+    "Data Integration",
+    "Efficiency",
+    "Low-Code",
+    "Workflow",
+    "Custom Code",
+    "Debugging",
+    "Bulk Operations",
+    "API Connectivity",
+    "Technical Tools"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/n8n/image/n8n-screenshot-readme.png",
+  "license": "Sustainable Use License",
+  "language": "TypeScript/JavaScript"
+}

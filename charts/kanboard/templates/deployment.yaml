@@ -1,0 +1,62 @@
+{{- $name := include "kanboard.name" . -}}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ $name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ $name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $name }}
+        {{- if .Values.application.additionalLabels }}
+        {{- toYaml .Values.application.additionalLabels | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- if .Values.securityContext.pod }}
+      securityContext:
+        {{- toYaml .Values.securityContext.pod | nindent 8 }}
+      {{- end }}
+      containers:
+      - name: {{ $name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- if .Values.securityContext.container }}
+        securityContext:
+        {{- toYaml .Values.securityContext.container | nindent 10 }}
+        {{- end }}
+        {{- if .Values.resources }}
+        resources:
+        {{- toYaml .Values.resources | nindent 10 }}
+        {{- end }}
+        env:
+        - name: LOG_DRIVER
+          value: "stdout"
+        ports:
+          - containerPort: {{ .Values.application.port }}
+        volumeMounts:
+        - mountPath: /var/www/app/data
+          name: storage-volume
+          subPath: data/
+        - mountPath: /var/www/app/plugins
+          name: storage-volume
+          subPath: plugins/
+        - mountPath: /etc/nginx/ssl
+          name: ssl-volume
+      volumes:
+      - name: storage-volume
+        {{- if .Values.application.persistence.enabled }}
+        persistentVolumeClaim:
+            claimName: {{ .Values.application.persistence.persistentVolumeClaim.name }}
+        {{- else}}
+        emptyDir: {}
+        {{- end }}
+      - name: ssl-volume
+        emptyDir: {}

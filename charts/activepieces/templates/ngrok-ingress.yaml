@@ -1,0 +1,21 @@
+# ngrok Ingress Controller Configuration
+{{- if .Values.ngrok.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: activepieces-ngrok
+  namespace: default
+spec:
+  ingressClassName: ngrok
+  rules:
+    - host: {{ .Values.ngrok.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: activepieces
+                port:
+                  number: 80
+{{- end }}

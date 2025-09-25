@@ -1,0 +1,40 @@
+{
+  "name": "automatisch",
+  "display_name": "Automatisch",
+  "description": {
+    "zh": "Automatisch 是一个开源的 Zapier 替代工具，旨在通过连接 Twitter、Slack 等多种服务帮助企业自动化工作流程。用户无需编程知识即可创建自动化任务。该工具支持自托管，强调数据隐私，适用于处理敏感信息的行业。",
+    "en": "Automatisch is an open-source alternative to Zapier, designed to help businesses automate workflows by connecting various services like Twitter and Slack. It allows users to create automation without any programming knowledge. The tool emphasizes data privacy by enabling self-hosting, making it suitable for industries handling sensitive information."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持自托管，提升数据隐私和控制权。\n- 开源项目，社区驱动开发。\n- 无供应商锁定，便于迁移到其他平台。\n\n## 功能列表:\n\n- 可连接 Twitter、Slack 等多种服务实现流程自动化。\n- 提供无需编程的用户友好界面。\n- 支持通过 Docker 快速安装部署。\n- 提供示例登录账户，便于快速上手测试。\n- 配套详细文档和活跃的社区支持。",
+    "en": "## Benefits:\n\n- Enables self-hosting for enhanced data privacy and control.\n- Open-source with community-driven development.\n- No vendor lock-in, allowing easy migration to other platforms.\n\n## Features:\n\n- Connects multiple services like Twitter and Slack for workflow automation.\n- User-friendly interface without requiring programming knowledge.\n- Supports easy installation via Docker.\n- Comes with a sample login for quick start and testing.\n- Detailed documentation and active community support."
+  },
+  "github_url": "https://github.com/automatisch/automatisch",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Node-RED",
+    "Kanboard"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://automatisch.io/docs",
+  "categories": [
+    "Open Source",
+    "Automation",
+    "Integration",
+    "No-Code",
+    "Self-Hosting",
+    "Data Privacy",
+    "Workflow",
+    "GDPR Compliance",
+    "Flexibility",
+    "Business Process Automation",
+    "Community-Driven"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/automatisch/image/191562539-e42f6c34-03c7-4dc4-bcf9-7f9473a9c64f.png",
+  "license": "AGPL-3.0",
+  "language": "JavaScript"
+}

@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  chatgpt-next-web:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-02-26T22:48:34.44636+08:00"
+    description: A Helm chart for Kubernetes
+    digest: df04dcf32adb5e09da3d2d7c5daaf7304fd337f90b71dafe42b41baf1c773325
+    name: chatgpt-next-web
+    type: application
+    urls:
+    - https://charts.kii.la/chatgpt-next-web/chatgpt-next-web-0.1.1.tgz
+    version: 0.1.1
+generated: "2024-02-26T22:48:34.44594+08:00"

@@ -1,0 +1,6 @@
+dependencies:
+- name: ngrok-ingress-controller
+  repository: https://ngrok.github.io/kubernetes-ingress-controller
+  version: 0.4.0
+digest: sha256:44dd03a2cd13b2ce59fe8f410b99b8130bc498a76b5bbc1fd1af7aaca9ac94d6
+generated: "2023-12-07T10:13:35.296781-05:00"

@@ -1,0 +1,46 @@
+{
+  "name": "anythingllm",
+  "display_name": "AnythingLLM",
+  "description": {
+    "zh": "AnythingLLM 是一个全栈应用，可将文档和内容转化为任何大型语言模型（LLM）可用的上下文参考。它支持多种 LLM 和向量数据库，提供可本地运行或远程托管的私有化 ChatGPT 类体验。该应用还支持多用户管理、AI 智能体功能以及简洁的拖放式聊天界面。",
+    "en": "AnythingLLM is a full-stack application that enables users to turn documents and content into contextual references for any Large Language Model (LLM). It supports multiple LLMs and vector databases, and provides a private, customizable ChatGPT-like experience that can be run locally or hosted remotely. The app also features multi-user support, AI agent capabilities, and a simple drag-and-drop chat interface."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供完全可定制且私有的 LLM 使用体验。\n- 支持本地和云端部署，灵活适配不同场景。\n- 可集成多种 LLM 和向量数据库。\n- 提供无代码工具构建 AI 智能体和流程。\n- 通过工作区和拖放式界面简化文档管理。\n\n## 功能列表:\n\n- 完全兼容 MCP 协议\n- 无代码 AI 智能体构建器\n- 支持闭源与开源 LLM 的多模态功能\n- 自定义 AI 智能体\n- 多用户实例支持及权限管理（仅限 Docker 版本）\n- 工作区内的智能体功能（如网页浏览）\n- 可嵌入网站的自定义聊天组件（仅限 Docker 版本）\n- 支持多种文档格式（PDF、TXT、DOCX 等）\n- 简洁的聊天界面，支持拖放操作并显示清晰引用\n- 完全适配云端部署\n- 内置优化机制，节省处理大文档的时间和成本\n- 提供完整开发者 API 用于定制集成\n- 支持广泛的 LLM、嵌入模型、语音模型和向量数据库",
+    "en": "## Benefits:\n\n- Offers a fully customizable and private LLM experience.\n- Supports both local and remote deployment for flexibility.\n- Integrates with a wide range of LLMs and vector databases.\n- Provides no-code tools for building AI agents and workflows.\n- Simplifies document management with workspaces and drag-and-drop UI.\n\n## Features:\n\n- Full MCP-compatibility\n- No-code AI Agent builder\n- Multi-modal support for both closed and open-source LLMs\n- Custom AI Agents\n- Multi-user instance support and permissioning (Docker version only)\n- Agents inside your workspace (e.g., web browsing)\n- Custom Embeddable Chat widget for websites (Docker version only)\n- Multiple document type support (PDF, TXT, DOCX, etc.)\n- Simple chat UI with Drag-n-Drop functionality and clear citations\n- 100% Cloud deployment ready\n- Built-in cost & time-saving measures for large documents\n- Full Developer API for custom integrations\n- Supports a wide range of LLMs, embedder models, speech models, and vector databases"
+  },
+  "github_url": "https://github.com/Mintplex-Labs/anything-llm",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Dify",
+    "n8n",
+    "Ragflow",
+    "Coze Studio"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://docs.useanything.com/",
+  "categories": [
+    "Developer Tools",
+    "AI",
+    "Content Management",
+    "Document Management",
+    "Chatbot",
+    "Multi-user",
+    "AI Chat",
+    "AI Agents",
+    "LLM",
+    "Hyper-configurable",
+    "Contextual AI",
+    "Full-stack Application",
+    "Cloud"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/wordmark.png",
+  "language": "JavaScript",
+  "license": "MIT"
+}

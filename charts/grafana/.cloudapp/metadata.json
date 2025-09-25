@@ -1,0 +1,39 @@
+{
+  "name": "grafana",
+  "display_name": "Grafana",
+  "description": {
+    "zh": "Grafana 是一个用于监控和可观测性的开源平台。它允许用户从多种数据源中查询、可视化、设置告警并理解指标数据。该平台支持创建动态仪表盘、探索指标和日志，以及配置告警，帮助团队实现数据驱动的决策。",
+    "en": "Grafana is an open-source platform designed for monitoring and observability. It enables users to query, visualize, alert on, and understand metrics from various data sources. The platform supports creating dynamic dashboards, exploring metrics and logs, and setting up alerts to help teams make data-driven decisions."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 统一的指标、日志和告警观测平台。\n- 高度可定制和扩展，支持插件机制。\n- 支持实时数据探索与可视化。\n\n## 功能列表:\n\n- 快速灵活的客户端可视化，支持多种图表选项。\n- 使用模板变量创建动态且可复用的仪表盘。\n- 支持临时查询和多时间范围、数据源的并排对比。\n- 可在保留标签过滤器的情况下在指标和日志之间切换。\n- 可视化配置告警规则，并向外部系统发送通知。\n- 支持在同一图表中混合使用多个数据源。",
+    "en": "## Benefits:\n\n- Unified observability platform for metrics, logs, and alerts.\n- Highly customizable and extensible with plugin support.\n- Enables real-time data exploration and visualization.\n\n## Features:\n\n- Fast and flexible client-side visualizations with multiple graph options.\n- Dynamic and reusable dashboards using template variables.\n- Ad-hoc querying and side-by-side comparison of time ranges and data sources.\n- Seamless switch between metrics and logs with preserved filters.\n- Visual alert rule configuration with notifications to external systems.\n- Support for mixing multiple data sources within the same graph."
+  },
+  "github_url": "https://github.com/grafana/grafana",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "UptimeKuma"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://grafana.com/docs",
+  "categories": [
+    "Monitoring",
+    "Data Visualization",
+    "Logging",
+    "Incident Management",
+    "Metrics",
+    "Alerting",
+    "Operational Dashboards",
+    "Tracing",
+    "Traces",
+    "Logs",
+    "Performance Testing"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/grafana/image/logo-horizontal.png",
+  "license": "AGPL-3.0",
+  "language": "JavaScript"
+}

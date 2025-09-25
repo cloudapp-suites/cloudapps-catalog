@@ -1,0 +1,33 @@
+## Main application configuration
+app:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  port: 3000
+  replicaCount: 1
+  env:
+    DB_PORT: 5432
+    DB_NAME: postgres
+    DB_USER: postgres
+  secrets:
+    DB_PASSWORD: postgres
+
+## PostgreSQL configuration
+postgresql:
+  enabled: true
+  image:
+    repository: postgresql.image
+    tag: postgresql.image.tag
+    pullPolicy: IfNotPresent
+  port: 5432
+  user: postgres
+  password: postgres
+  db: postgres
+  persistence:
+    enabled: true
+    storageClassName: cloudapp.storageClassName
+    size: cloudapp.storage
+
+## Global configuration
+replicaCount: 1

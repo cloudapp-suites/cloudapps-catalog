@@ -1,0 +1,122 @@
+# templates/rbac-job.yaml
+{{- if eq .Values.service.type "LoadBalancer" }}
+---
+# 为 Job 创建一个专用的 ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-ip-updater"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+  annotations:
+    # 这个注解让 Helm 在安装后、删除前管理这个资源
+    "helm.sh/hook": post-install,pre-delete
+    "helm.sh/hook-weight": "-5" # 确保在 Job 运行前创建
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+
+---
+# 定义 Job 所需的权限：获取 Service 和更新 Deployment
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+  annotations:
+    "helm.sh/hook": post-install,pre-delete
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+rules:
+- apiGroups: [""] # "" 表示核心 API 组
+  resources: ["services"]
+  verbs: ["get", "watch", "list"] # 允许获取 Service 信息
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "patch"] # 允许获取和更新 Deployment
+
+---
+# 将上述权限绑定到 ServiceAccount
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-binding"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+  annotations:
+    "helm.sh/hook": post-install,pre-delete
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+subjects:
+- kind: ServiceAccount
+  name: "{{ include "bookstack.fullname" . }}-ip-updater"
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+
+---
+# templates/job-update-ip.yaml (或者你原来的文件名)
+{{- if eq .Values.service.type "LoadBalancer" }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-clb-ip-setup"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+  annotations:
+    # "post-install" 表示在 Helm 安装完成后运行
+    "helm.sh/hook": post-install
+    # "hook-succeeded" 表示如果 Job 成功，Helm release 更新后就删除这个 Job
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "bookstack.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      # 关键：使用我们创建的带有权限的 ServiceAccount
+      serviceAccountName: "{{ include "bookstack.fullname" . }}-ip-updater"
+      containers:
+      - name: clb-ip-setup
+        image: {{ .Values.kubetcl.image }}
+        command:
+        - /bin/bash
+        - -c
+        - |
+          set -e # 如果任何命令失败，立即退出
+          echo "Waiting for LoadBalancer to get external IP for service {{ include "bookstack.fullname" . }}..."
+          EXTERNAL_IP=""
+          # 增加超时机制，比如等待 5 分钟 (30 * 10s)
+          for i in $(seq 1 30); do
+            # 使用 --namespace 明确指定命名空间，增加脚本的健壮性
+            EXTERNAL_IP=$(kubectl get svc {{ include "bookstack.fullname" . }} --namespace {{ .Release.Namespace }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
+            if [ -n "$EXTERNAL_IP" ]; then
+              echo "Successfully found external IP: $EXTERNAL_IP"
+              break
+            fi
+            echo "Still waiting for external IP... (Attempt $i/30)"
+            sleep 10
+          done
+
+          if [ -z "$EXTERNAL_IP" ]; then
+            echo "Error: Timed out waiting for external IP after 5 minutes."
+            exit 1
+          fi
+
+          echo "Patching deployment {{ include "bookstack.fullname" . }} with APP_URL=http://$EXTERNAL_IP"
+          # 使用 --type=strategic 和更清晰的 patch 语法
+          kubectl patch deployment {{ include "bookstack.fullname" . }} --namespace {{ .Release.Namespace }} \
+            --type='strategic' \
+            -p='{"spec":{"template":{"spec":{"containers":[{"name":"{{ include "bookstack.name" . }}","env":[{"name":"APP_URL","value":"http://'"$EXTERNAL_IP"'"}]}]}}}}'
+
+          echo "Patch successful. Deployment will be updated with the new environment variable."
+      restartPolicy: Never
+  backoffLimit: 3 # 减少重试次数
+{{- end }}

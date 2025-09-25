@@ -1,0 +1,37 @@
+{
+  "name": "gotenberg",
+  "display_name": "Gotenberg",
+  "description": {
+    "zh": "Gotenberg 是一个容器化的 API，可将多种文档格式无缝转换为 PDF 文件。它利用 Chromium 和 LibreOffice 等强大工具，提供高质量的 PDF 生成服务。该项目面向开发者设计，提供易于集成的接口，方便在应用程序中实现 PDF 转换功能。",
+    "en": "Gotenberg is a containerized API that enables seamless conversion of various document formats into PDF files. It leverages powerful tools like Chromium and LibreOffice to provide reliable and high-quality PDF generation. Designed for developers, it offers an easy-to-use interface for integrating PDF conversion into applications."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供简洁且面向开发者的 PDF 转换接口。\n- 基于 Chromium 和 LibreOffice 等可靠工具，确保渲染准确。\n- 可轻松集成到现有应用和流程中。\n\n## 功能列表:\n\n- 支持将 HTML、Markdown、Word、Excel 等格式转换为 PDF。\n- 支持通过 Docker 进行容器化部署。\n- 提供在线演示和完整文档，便于快速启动和使用。",
+    "en": "## Benefits:\n\n- Provides a simple and developer-friendly API for PDF conversion.\n- Built on reliable tools like Chromium and LibreOffice for accurate rendering.\n- Easily integrable into existing applications and workflows.\n\n## Features:\n\n- Converts HTML, Markdown, Word, Excel, and other formats to PDF.\n- Supports containerized deployment via Docker.\n- Offers live demo and comprehensive documentation for quick setup."
+  },
+  "github_url": "https://github.com/gotenberg/gotenberg",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "stirling-pdf-chart"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://gotenberg.dev/docs/get-started/live-demo",
+  "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Documents",
+    "Modular Architecture",
+    "Webhook Integration",
+    "Document Conversion",
+    "PDF Management",
+    "Asynchronous Processing",
+    "File Conversion"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/gotenberg/image/130322857-185831e2-f041-46eb-a17f-0a69d066c4e5.png",
+  "license": "MIT",
+  "language": "Go"
+}

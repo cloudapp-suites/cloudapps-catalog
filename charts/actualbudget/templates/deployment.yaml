@@ -1,0 +1,148 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "actualbudget.fullname" . }}
+  labels:
+    {{- include "actualbudget.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: {{ .Values.strategy.type }}
+    {{- if eq .Values.strategy.type "RollingUpdate" }}
+    rollingUpdate:
+      maxUnavailable: {{ .Values.strategy.rollingUpdate.maxUnavailable }}
+      maxSurge: {{ .Values.strategy.rollingUpdate.maxSurge }}
+    {{- end }}
+  selector:
+    matchLabels:
+      {{- include "actualbudget.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "actualbudget.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "actualbudget.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- with .Values.initContainers }}
+      initContainers:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: ACTUAL_PORT
+              value: {{ .Values.service.port | quote }}
+            - name: ACTUAL_DATA_DIR
+              value: {{ default "/data" .Values.files.dataDirectory }}
+            - name: ACTUAL_SERVER_FILES
+              value: {{ default "/data/server-files" .Values.files.server }}
+            - name: ACTUAL_USER_FILES
+              value: {{ default "/data/user-files" .Values.files.user }}
+            - name: ACTUAL_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB
+              value: {{ .Values.upload.fileSizeSyncLimitMB | quote }}
+            - name: ACTUAL_UPLOAD_SYNC_ENCRYPTED_FILE_SYNC_SIZE_LIMIT_MB
+              value: {{ .Values.upload.syncEncryptedFileSizeLimitMB | quote }}
+            - name: ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB
+              value: {{ .Values.upload.fileSizeLimitMB | quote }}
+            - name: ACTUAL_LOGIN_METHOD
+              value: {{ .Values.login.method | quote }}
+            - name: ACTUAL_ALLOWED_LOGIN_METHODS
+              value: {{ .Values.login.allowedLoginMethods | join "," | quote }}
+          {{- if .Values.login.skipSSLVerification }}
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0"
+          {{- end }}
+          {{- range $key, $value := .Values.extraEnvVars }}
+            - name: {{ upper $key }}
+              value: {{ $value | quote }}
+          {{- end }}
+          {{- if and .Values.ingress.enabled (eq .Values.login.method "openid") (contains "openid" (.Values.login.allowedLoginMethods | join ",")) (semverCompare ">=25.1.0" (ternary .Chart.AppVersion .Values.image.tag (eq .Values.image.tag ""))) }}
+            {{- if .Values.login.openid.existingSecret.name }}
+            {{- if .Values.login.openid.existingSecret.clientIdKey }}
+            - name: ACTUAL_OPENID_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.login.openid.existingSecret.name }}
+                  key: {{ .Values.login.openid.existingSecret.clientIdKey }}
+            {{- end }}
+            {{- if .Values.login.openid.existingSecret.clientSecretKey }}
+            - name: ACTUAL_OPENID_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.login.openid.existingSecret.name }}
+                  key: {{ .Values.login.openid.existingSecret.clientSecretKey }}
+            {{- end }}
+            {{- end }}
+          envFrom:
+            - secretRef:
+                name: {{ template "actualbudget.fullname" . }}-openid-secret
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if or .Values.volumeMounts .Values.persistence.enabled }}
+          volumeMounts:
+          {{- end }}
+          {{- if .Values.persistence.enabled }}
+            - name: data
+              mountPath: {{ default "/data" .Values.files.dataDirectory }}
+            {{- if .Values.persistence.subPath }}
+              subPath: {{ .Values.persistence.subPath }}
+            {{- end }}
+          {{- end }}
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.extraContainers }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.volumes .Values.persistence.enabled }}
+      volumes:
+      {{- end }}
+      {{- if .Values.persistence.enabled }}
+        - name: data
+          persistentVolumeClaim:
+        {{- if .Values.persistence.existingClaim }}
+            claimName: {{ .Values.persistence.existingClaim }}
+        {{- else }}
+            claimName: {{ template "actualbudget.fullname" . }}-data
+        {{- end }}
+      {{- end }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

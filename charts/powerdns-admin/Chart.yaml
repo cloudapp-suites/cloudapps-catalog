@@ -1,0 +1,25 @@
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Upgraded `common` chart dependency to version 4.5.2
+apiVersion: v2
+appVersion: v0.2.4
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.5.2
+description: A PowerDNS web interface with advanced features
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns-admin
+keywords:
+- powerdns
+- pdns
+- powerdns-admin
+- admin
+kubeVersion: '>=1.16.0-0'
+maintainers:
+- email: psych0d0g@users.noreply.github.com
+  name: psych0d0g
+name: powerdns-admin
+sources:
+- https://github.com/PowerDNS-Admin/PowerDNS-Admin
+version: 1.2.2

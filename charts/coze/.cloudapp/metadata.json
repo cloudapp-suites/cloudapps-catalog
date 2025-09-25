@@ -1,0 +1,47 @@
+{
+  "name": "coze",
+  "display_name": "Coze Studio",
+  "description": {
+    "zh": "Coze Studio 是一款一体化的 AI Agent 开发工具，提供从开发、调试到部署的完整环境，支持低代码或无代码构建 AI 智能体。它集成了提示词工程、RAG、插件、工作流等核心技术，帮助开发者专注于核心价值创造。基于 Golang 和 React 构建，采用微服务与领域驱动设计，具备高性能、高扩展性和易定制性。",
+    "en": "Coze Studio is an all-in-one AI agent development tool that provides a complete environment for building, debugging, and deploying AI agents with minimal coding. It supports key technologies like prompt engineering, RAG, plugins, and workflows, enabling developers to focus on creating core AI value. Built on a microservices architecture using Golang and React, it offers high performance, scalability, and customization."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过无代码/低代码可视化工具降低 AI 智能体开发门槛。\n- 源自服务数万企业、数百万开发者的成熟平台，核心引擎完全开源。\n- 基于微服务和领域驱动设计（DDD）架构，后端高性能、高可扩展、易定制。\n- 提供完整模板与框架，支持 AI 应用快速原型设计与上线。\n\n## 功能列表:\n\n- 集成 OpenAI、Volcengine 等大模型服务并统一管理模型列表。\n- 支持构建、发布和管理 AI 智能体，可配置工作流与知识库等资源。\n- 创建并发布 AI 应用，通过工作流编排业务逻辑。\n- 开发与管理插件、知识库、数据库、提示词等各类资源。\n- 提供完整的 API 与 SDK，支持通过 Chat SDK 或 OpenAPI 将智能体集成至自有系统。\n- 提供可视化拖拽式工作流画布，支持创建、编辑、发布和删除工作流。",
+    "en": "## Benefits:\n\n- Lowers the barrier to AI agent development with no-code/low-code visual tools.\n- Open-sources the core engine from a proven enterprise-grade platform used by millions.\n- Provides a highly scalable, high-performance backend based on microservices and DDD architecture.\n- Enables rapid prototyping and deployment of AI applications through templates and frameworks.\n\n## Features:\n\n- Model service integration with providers like OpenAI and Volcengine.\n- Build, publish, and manage AI agents with configurable workflows and knowledge bases.\n- Create and deploy AI apps using visual workflow builders.\n- Develop and manage resources including plugins, knowledge bases, databases, and prompts.\n- Full API and SDK support for integrating agents into external systems via Chat SDK or OpenAPI.\n- Visual canvas for designing, modifying, and managing workflows through drag-and-drop."
+  },
+  "github_url": "https://github.com/coze-dev/coze-studio",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "n8n",
+    "Dify",
+    "Ragflow",
+    "AnythingLLM"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://www.coze.cn/open/docs",
+  "categories": [
+    "Open Source",
+    "Prompt Engineering",
+    "Large Language Models",
+    "Model Management",
+    "LLM",
+    "AI Applications",
+    "AI Workflow",
+    "Agent Framework",
+    "LLMOps",
+    "Monitoring and Analysis",
+    "RAG",
+    "Prompt Orchestration",
+    "Agent Capabilities",
+    "AI Platform"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/coze/image/943f576df3424fa98580c2ad18946719_tplv-goo7wpa0wc-image.image",
+  "license": "Apache-2.0",
+  "language": "TypeScript/Go"
+}

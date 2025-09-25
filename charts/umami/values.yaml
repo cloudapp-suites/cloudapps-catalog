@@ -1,0 +1,30 @@
+replicaCount: 1
+image:
+  repository: docker.umami.is/umami-software/umami
+  tag: postgresql-latest
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 3000
+env:
+  DATABASE_URL: "postgresql://admin:umami@postgresql/umami"
+resources:
+  {}
+persistence:
+  enabled: false
+  size:  cloudapp.storage
+  storageClassName: cloudapp.storageClassName
+postgresql:
+  enabled: true
+  image:
+    repository: postgresql.image
+    tag: 15.3.0-debian-11-r7
+    pullPolicy: IfNotPresent
+  port: 5432
+  user: admin
+  password: umami
+  db: umami
+  persistence:
+    enabled: true
+    size:  cloudapp.storage
+    storageClassName: cloudapp.storageClassName

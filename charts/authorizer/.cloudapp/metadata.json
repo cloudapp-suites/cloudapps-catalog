@@ -1,0 +1,39 @@
+{
+  "name": "authorizer",
+  "display_name": "Authorizer",
+  "description": {
+    "zh": "Authorizer 是一个开源的身份验证和授权解决方案，帮助开发者轻松将安全的用户管理功能集成到他们的应用中。它支持自托管部署，并兼容超过11种数据库，让用户完全掌控用户数据。平台提供包括社交登录、基于角色的访问控制和多因素认证等丰富功能。",
+    "en": "Authorizer is an open-source authentication and authorization solution that allows developers to easily integrate secure user management into their applications. It supports self-hosting and connects to over 11 databases, giving full control over user data. The platform provides a comprehensive set of features including social login, role-based access, and multi-factor authentication."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过自托管和自定义数据库集成，让用户完全掌控用户数据。\n- 提供开箱即用的完整且安全的身份验证和授权系统。\n- 拥有活跃的维护和不断扩展的SDK及部署选项生态系统。\n\n## 功能列表:\n\n- 邮箱+密码登录/注册\n- 安全的会话管理\n- 邮箱验证\n- 支持OAuth2和OpenID的API\n- 安全更新用户资料的API\n- 基于邮箱的忘记密码流程\n- 社交登录（支持Google、GitHub、Facebook、LinkedIn、Apple，更多即将上线）\n- 基于角色的访问控制\n- 无密码登录（通过魔法链接）\n- 多因素认证\n- 邮件模板定制\n- Webhook支持",
+    "en": "## Benefits:\n\n- Offers full control over user data by allowing self-hosting and custom database integration.\n- Provides a comprehensive and secure authentication and authorization system out of the box.\n- Actively maintained with a growing ecosystem of SDKs and deployment options.\n\n## Features:\n\n- Sign-in / Sign-up with email and password\n- Secure session management\n- Email verification\n- OAuth2 and OpenID compatible APIs\n- APIs for secure profile updates\n- Forgot password flow via email\n- Social logins (Google, GitHub, Facebook, LinkedIn, Apple, more coming)\n- Role-based access control\n- Password-less login via magic link\n- Multi-factor authentication\n- Email templating\n- Webhooks"
+  },
+  "github_url": "https://github.com/authorizerdev/authorizer",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.authorizer.dev/",
+  "categories": [
+    "Developer Tools",
+    "Security",
+    "Customization",
+    "Authentication",
+    "User Management",
+    "Access Control",
+    "Webhooks",
+    "Authorization",
+    "OAuth2",
+    "Low Code",
+    "Session Management",
+    "OTP",
+    "OpenID"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/authorizer/image/logo.png",
+  "license": "MIT",
+  "language": "Go/TypeScript"
+}

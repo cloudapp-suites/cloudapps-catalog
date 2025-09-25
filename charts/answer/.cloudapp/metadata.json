@@ -1,0 +1,36 @@
+{
+  "name": "answer",
+  "display_name": "Answer",
+  "description": {
+    "zh": "Apache Answer 是一个面向各类团队的开源问答平台软件。它可以用于构建社区论坛、帮助中心或知识管理平台。项目基于 Go 和 React 开发，具备良好的灵活性和可扩展性。",
+    "en": "Apache Answer is an open-source Q&A platform software designed for teams of all sizes. It can be used to build community forums, help centers, or knowledge management platforms. The project is built using Go and React, offering flexibility and scalability for various use cases."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 适用于不同规模团队和多种使用场景\n- 模块化插件系统，便于功能扩展\n- 基于现代主流技术（Go 和 React）构建\n\n## 功能列表:\n\n- 基于 Docker 的快速部署方式\n- 支持自定义扩展的插件系统\n- 提供详尽的文档和社区支持\n- 支持源码构建并列明明确依赖条件\n- 活跃的开源协作与开发机制",
+    "en": "## Benefits:\n\n- Highly scalable for different team sizes and use cases\n- Modular plugin system for feature expansion\n- Built with modern, widely adopted technologies (Go and React)\n\n## Features:\n\n- Docker-based quick start deployment\n- Plugin system for custom extensions\n- Comprehensive documentation and community support\n- Support for building from source with clear prerequisites\n- Active contribution and development process"
+  },
+  "github_url": "https://github.com/answerdev/answer",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://answer.dev/docs",
+  "categories": [
+    "Content Management",
+    "User Engagement",
+    "Community",
+    "Team Collaboration",
+    "Customer Support",
+    "Knowledge Base",
+    "Q&A",
+    "Product Support",
+    "Gamification",
+    "Support"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/logo.svg",
+  "license": "Apache-2.0",
+  "language": "Go/TypeScript"
+}

@@ -1,0 +1,28 @@
+replicaCount: 1
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 8080
+env:
+  ENV: production
+  DATABASE_TYPE: sqlite
+  DATABASE_URL: data.db
+  CUSTOM_ACCESS_TOKEN_SCRIPT: "function(user,tokenPayload){var data = tokenPayload;data.extra = {'x-extra-id': user.id};return data;}"
+  DISABLE_PLAYGROUND: true
+postgresql:
+  enabled: postgresql.enabled
+  image: postgresql.image
+  postgresqlUsername: postgresql.username
+  postgresqlPassword: postgresql.password
+  postgresqlDatabase: authorizer
+  persistence:
+    enabled: persistence.enabled
+    storageClassName: cloudapp.storageClassName
+    size: cloudapp.storage
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}

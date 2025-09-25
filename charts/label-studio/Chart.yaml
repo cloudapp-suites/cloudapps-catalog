@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: "1"
+dependencies:
+- enabled: true
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 11.6.15
+- name: library-chart
+  repository: https://inseefrlab.github.io/helm-charts-datascience
+  version: 2.0.20
+description: Data Science starts with data. Label Studio removes the pain of labeling
+  it.
+home: https://labelstud.io/
+icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/labelStudio.png
+name: label-studio
+sources:
+- https://github.com/heartexlabs/label-studio
+type: application
+version: 2.3.1

@@ -1,0 +1,63 @@
+---
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/nicholaswilde/helm-charts/tree/main/charts/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: app.image
+  # -- image tag
+  # @default -- chart.appVersion
+  tag: app.image.tag
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+secret: {}
+
+# See more environment variables in the shiori documentation
+# https://github.com/go-shiori/shiori/wiki/Configuration#database
+env: {}
+  # TZ:
+
+service:
+  type: LoadBalancer
+  port:
+    port: 8080
+
+ingress:
+  enabled: false
+
+persistence:
+  data:
+    enabled: false
+    emptyDir: false
+    mountPath: /data
+    storageClass: cloudapp.storageClassName
+    accessMode: ReadWriteOnce
+    size: Cloudapp.Storage
+
+# Enable mariadb
+# https://github.com/nicholaswilde/helm-charts/blob/main/charts/mariadb/values.yaml
+mariadb:
+  enabled: true
+  secret:
+    MYSQL_ROOT_PASSWORD: "shiori-pass"
+    MYSQL_PASSWORD: "shiori-pass"
+  env:
+    MYSQL_USER: "shiori"
+    MYSQL_DATABASE: "shiori-mariadb"
+  fullnameOverride: shiori-mariadb
+
+# Enable postgres
+# https://github.com/nicholaswilde/helm-charts/blob/main/charts/postgres/values.yaml
+postgres:
+  enabled: false
+  secret:
+    POSTGRES_PASSWORD: "shiori-pass"
+  env:
+    POSTGRES_USER: "shiori"
+    POSTGRES_DB: "shiori-postgres"
+  fullnameOverride: shiori-postgres

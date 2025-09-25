@@ -1,0 +1,49 @@
+replicaCount: 1
+
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 8080
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+persistence:
+  enabled: true
+  storageClassName: cloudapp.storageClassName
+  existingClaim: ""
+  size: cloudapp.storage
+  accessMode: ReadWriteOnce
+
+appConfig:
+  host: "0.0.0.0"
+  port: 8080
+  appdir: /home/user/app
+  reload: false
+  databaseUri: "sqlite:///database.sqlite"
+  upgradeDatabase: false
+
+securityContext:
+  runAsUser: 1000
+  fsGroup: 1000
+
+env: {
+       OPENAI_API_KEY: app.apikey
+}
+
+livenessProbe:
+  enabled: false
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+readinessProbe:
+  enabled: false
+  initialDelaySeconds: 5
+  periodSeconds: 5

@@ -1,0 +1,41 @@
+{
+  "name": "jellyseerr",
+  "display_name": "Jellyseerr",
+  "description": {
+    "zh": "Jellyseerr 是一个免费开源的媒体请求管理应用，支持与 Jellyfin、Plex 和 Emby 等主流媒体服务器集成。它允许用户请求电影和电视剧，管理员可高效管理这些请求。该应用还支持与 Sonarr 和 Radarr 等工具集成，实现自动化媒体管理。",
+    "en": "Jellyseerr is a free and open-source media request management application that integrates with popular media servers like Jellyfin, Plex, and Emby. It enables users to request movies and TV shows, and administrators to manage those requests efficiently. The application also supports integration with tools like Sonarr and Radarr for automated media management."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 简化用户和管理员的媒体请求流程。\n- 支持多种媒体服务器和自动化工具集成。\n- 提供可定制且用户友好的媒体请求界面。\n\n## 功能列表:\n\n- 完全集成 Jellyfin、Emby 和 Plex，支持用户认证与管理。\n- 支持 PostgreSQL 和 SQLite 数据库。\n- 支持电影、电视剧或混合媒体库的请求。\n- 支持更改邮箱地址用于 SMTP 配置。\n- 可轻松集成 Sonarr 和 Radarr 等现有服务。\n- 支持媒体库扫描以跟踪已有内容。\n- 可定制的请求系统，界面友好易用。\n- 简洁直观的请求管理界面。\n- 细粒度的权限管理系统。\n- 支持多种通知代理。\n- 支持移动端访问。\n- 支持媒体内容的观看列表和黑名单功能。",
+    "en": "## Benefits:\n\n- Streamlines media request management for both users and administrators.\n- Supports integration with multiple media servers and automation tools.\n- Offers a customizable and user-friendly interface for media requests.\n\n## Features:\n\n- Full integration with Jellyfin, Emby, and Plex, including user authentication and management.\n- Support for PostgreSQL and SQLite databases.\n- Allows requests for movies, shows, or mixed libraries.\n- Ability to change email addresses for SMTP purposes.\n- Easy integration with existing services like Sonarr and Radarr.\n- Media library scan to track already available titles.\n- Customizable request system with a user-friendly interface.\n- Simple and intuitive request management UI.\n- Granular permission system.\n- Support for various notification agents.\n- Mobile-friendly design.\n- Watchlist and blacklist support for media."
+  },
+  "github_url": "https://github.com/Fallenbagel/jellyseerr",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Bazarr"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/Fallenbagel/jellyseerr/tree/develop/docs",
+  "categories": [
+    "Media",
+    "Integration",
+    "Media Management",
+    "Localization",
+    "Mobile-Friendly",
+    "Permission System",
+    "Content Requesting",
+    "UI",
+    "UX",
+    "User Access Control",
+    "Library Synchronization",
+    "Plex Integration",
+    "Request Management"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/jellyseerr/image/logo_full.svg",
+  "license": "MIT",
+  "language": "TypeScript"
+}

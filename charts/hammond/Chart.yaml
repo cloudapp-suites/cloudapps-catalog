@@ -1,0 +1,28 @@
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: Migrate to bjw-s-labs
+apiVersion: v2
+appVersion: v0.0.24
+dependencies:
+- name: common
+  repository: http://bjw-s-labs.github.io/helm-charts/
+  version: 0.2.0
+description: Self-hosted vehicle expense tracking system with support for multiple
+  users
+home: https://github.com/alfhou/hammond
+icon: https://github.com/alfhou/hammond/raw/master/ui/src/assets/images/logo.png
+keywords:
+- hammond
+- car
+- expense
+- fuel
+maintainers:
+- email: djjudas21@users.noreply.github.com
+  name: djjudas21
+name: hammond
+sources:
+- https://github.com/alfhou/hammond
+- https://hub.docker.com/r/alfhou/hammond
+type: application
+version: 0.3.9

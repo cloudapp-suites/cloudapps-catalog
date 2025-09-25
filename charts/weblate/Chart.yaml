@@ -1,0 +1,22 @@
+apiVersion: v2
+appVersion: 5.11.4.4
+dependencies:
+- condition: postgresql.enabled
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.6.7
+- condition: redis.enabled
+  name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 20.11.4
+description: Weblate is a free web-based translation management system.
+home: https://weblate.org/
+icon: https://s.weblate.org/cdn/weblate.svg
+maintainers:
+- email: patrick@ch.tario.org
+  name: tarioch
+- email: michal@weblate.org
+  name: nijel
+name: weblate
+type: application
+version: 0.5.24

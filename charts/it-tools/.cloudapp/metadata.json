@@ -1,0 +1,35 @@
+{
+  "name": "it-tools",
+  "display_name": "It Tools",
+  "description": {
+    "zh": "IT-Tools 是为开发者和 IT 专业人士打造的一套实用在线工具集合。它提供了一个集中化的平台，具备出色的用户体验，可简化各类开发和系统管理工作。这些工具可通过自托管方案或云服务进行访问。",
+    "en": "IT-Tools is a collection of handy online tools designed for developers and IT professionals. It provides a centralized platform with a great user experience to simplify various development and system administration tasks. The tools can be accessed through a self-hosted solution or cloud services."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 为开发者和 IT 专业人士提供量身定制的多种工具。\n- 出色的用户体验，界面集中统一。\n- 支持多种自托管方案，包括 Docker、Cloudron、Tipi 和 Unraid。\n\n## 功能列表:\n\n- 提供一系列可用于 IT 任务的在线工具。\n- 可通过 Docker 命令或第三方平台轻松实现自托管。\n- 提供工具创建脚本，帮助开发者快速添加新工具。\n- 提供完整的开发环境配置指南。\n- 支持单元测试和代码检查工具以确保代码质量。\n- 拥有清晰的路线图和功能请求系统，持续更新维护。",
+    "en": "## Benefits:\n\n- Offers a wide range of tools tailored for developers and IT professionals.\n- Provides excellent user experience with a centralized interface.\n- Supports multiple self-hosting options including Docker, Cloudron, Tipi, and Unraid.\n\n## Features:\n\n- Ready-to-use collection of online tools for IT tasks.\n- Easy self-hosting via Docker commands or third-party platforms.\n- Tool creation script to help developers add new tools efficiently.\n- Comprehensive development setup guidance for contributors.\n- Unit testing and linting tools for code quality assurance.\n- Actively maintained with a clear roadmap and feature request system."
+  },
+  "github_url": "https://github.com/CorentinTh/it-tools",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Encoding",
+    "Video Recording",
+    "QR Code Generation",
+    "Utilities",
+    "Decoding",
+    "Data Conversion",
+    "Cryptography"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/it-tools/image/logo-dark.png",
+  "license": "GPL-3.0",
+  "language": "Go/TypeScript"
+}

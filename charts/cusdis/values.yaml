@@ -1,0 +1,32 @@
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 3000
+
+env:
+  NEXTAUTH_URL: http://localhost:3000
+  DB_TYPE: sqlite
+  DB_URL: file:/data/db.sqlite
+  USERNAME: admin
+  JWT_SECRET: your_jwt_secret
+
+secret:
+  PASSWORD: admin
+
+replicaCount: 1
+
+resources: {}
+
+initContainer:
+  enabled: false
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []

@@ -1,0 +1,16 @@
+{{- if .Values.nfsMounts.enabled -}}
+{{- range .Values.nfsMounts.mounts }}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "emby.fullname" $ }}-{{ .name }}-pvc
+spec:
+  storageClassName: local-path
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .capacity }}
+{{- end }}
+{{- end }}

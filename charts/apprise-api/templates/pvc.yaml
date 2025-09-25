@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "apprise.fullname" . }}-config
+spec:
+  storageClassName:  {{ .Values.persistence.storageClassName | quote}}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.config.size }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "apprise.fullname" . }}-attach
+spec:
+  storageClassName:  {{ .Values.persistence.storageClassName | quote}}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.attach.size }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "apprise.fullname" . }}-plugin
+spec:
+  storageClassName:  {{ .Values.persistence.storageClassName | quote}}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.plugin.size }}

@@ -1,0 +1,31 @@
+replicaCount: 1
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+env:
+  APPRISE_STATEFUL_MODE: simple
+  APPRISE_CONFIG_DIR: /config
+  APPRISE_ATTACH_DIR: /attach
+  APPRISE_PLUGIN_PATHS: /plugin
+ports:
+  containerPort: 8000
+resources:
+  {}
+persistence:
+  storageClassName: cloudapp.storageClassName
+  config:
+    size: cloudapp.storage
+  attach:
+    size: cloudapp.storage
+  plugin:
+    size: cloudapp.storage
+service:
+  type: LoadBalancer
+  port: 8000
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: apprise-api.local
+      paths: []

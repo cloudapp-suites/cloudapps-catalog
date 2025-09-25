@@ -1,0 +1,164 @@
+# Default values for dify.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global Docker image parameters
+# Please, note that this will override the image parameters, including dependencies, configured to use the global value
+# Current available global Docker image parameters: imageRegistry and imagePullSecrets
+imageRegistry: cloudapp.registry
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Dify API service configuration
+api:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5001
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Dify Worker service configuration
+worker:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Dify Worker Beat service configuration
+workerBeat:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Dify Web service configuration
+web:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3000
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Dify Sandbox service configuration
+sandbox:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8194
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Dify Plugin Daemon service configuration
+pluginDaemon:
+  image:
+    repository: app.image
+    tag: app.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5002
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# PostgreSQL database configuration
+postgresql:
+  enabled: true
+  image:
+    repository: postgresql.image
+    tag: postgresql.image.tag
+    pullPolicy: IfNotPresent
+  auth:
+    postgresPassword: "difyai123456"
+    database: "dify"
+  primary:
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
+
+# Redis configuration
+redis:
+  enabled: true
+  image:
+    repository: redis.image
+    tag: redis.image.tag
+    pullPolicy: IfNotPresent
+  auth:
+    password: "difyai123456"
+  master:
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
+
+# Weaviate vector database configuration
+weaviate:
+  enabled: true
+  image:
+    repository: weaviate.image
+    tag: weaviate.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8080
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# Nginx configuration
+nginx:
+  image:
+    repository: nginx.image
+    tag: nginx.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 8080
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# SSRF Proxy configuration
+ssrfProxy:
+  image:
+    repository: ssrfProxy.image
+    tag: ssrfProxy.image.tag
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3128
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+busybox:
+  image: busybox.image

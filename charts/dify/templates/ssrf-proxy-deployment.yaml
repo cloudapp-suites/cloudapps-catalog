@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dify.fullname" . }}-ssrf-proxy
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ssrf-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dify.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: ssrf-proxy
+  template:
+    metadata:
+      labels:
+        {{- include "dify.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: ssrf-proxy
+    spec:
+      containers:
+        - name: ssrf-proxy
+          image: "{{ .Values.ssrfProxy.image.repository }}:{{ .Values.ssrfProxy.image.tag }}"
+          imagePullPolicy: {{ .Values.ssrfProxy.image.pullPolicy }}
+          env:
+            - name: HTTP_PORT
+              value: "{{ .Values.ssrfProxy.service.port }}"
+            - name: COREDUMP_DIR
+              value: "/var/spool/squid"
+            - name: REVERSE_PROXY_PORT
+              value: "8194"
+            - name: SANDBOX_HOST
+              value: "{{ include "dify.fullname" . }}-sandbox"
+            - name: SANDBOX_PORT
+              value: "8194"
+          ports:
+            - name: http
+              containerPort: {{ .Values.ssrfProxy.service.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.ssrfProxy.resources | nindent 12 }}
+      {{- with .Values.ssrfProxy.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.ssrfProxy.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.ssrfProxy.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

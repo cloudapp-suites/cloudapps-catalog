@@ -1,0 +1,41 @@
+{
+  "name": "linkwarden",
+  "display_name": "LinkWarden",
+  "description": {
+    "zh": "Linkwarden 是一个自托管、开源的协作式书签管理工具，帮助用户集中收集、阅读、标注并永久保存重要的网页内容。它会自动将网页保存为截图、PDF 和 HTML 文件，防止因链接失效而丢失内容，并提供简洁的阅读与标注界面。支持个人与团队使用，具备分享、协作、高级标签分类与搜索等功能。",
+    "en": "Linkwarden is a self-hosted, open-source collaborative bookmark manager that allows users to collect, read, annotate, and preserve important web content in one place. It automatically saves webpages as screenshots, PDFs, and HTML files to protect against link rot and offers a clean reading and annotation interface. Designed for both individual and team use, it supports sharing, collaboration, and organization of bookmarks with advanced tagging and search features."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过多种格式保存网页内容，防止链接失效丢失信息。\n- 结合“稍后阅读”体验与网页归档的可靠性。\n- 支持用户间的协作与内容共享。\n\n## 功能列表:\n\n- 自动保存网页为截图、PDF 和 HTML 文件。\n- 支持高亮与标注的网页阅读视图。\n- 将网页归档至 Wayback Machine（archive.org）。\n- 本地 AI 标签功能，基于内容自动打标签。\n- 按集合、子集、标签及元数据组织链接。\n- 可定制权限的协作收藏夹共享。\n- 向公众分享链接与归档格式。\n- 将常用链接固定至仪表板。\n- 全文搜索、筛选与排序功能。\n- 响应式设计，支持主流浏览器。\n- 支持深色与浅色界面。\n- 浏览器扩展及通过 Floccus 实现同步。\n- 支持书签导入与导出。\n- SSO 集成（企业版与自托管版）。\n- 可安装为渐进式网页应用（PWA）。\n- 支持通过 iOS 快捷方式保存链接。\n- 提供 API 密钥支持。\n- 批量操作功能。\n- 用户管理功能。\n- 多语言支持（i18n）。\n- 支持上传图片与 PDF。\n- 自定义链接与集合图标。\n- RSS 订阅功能。",
+    "en": "## Benefits:\n\n- Protects against link rot by preserving web content in multiple formats.\n- Combines a “read-it-later” experience with web archiving reliability.\n- Supports collaboration and sharing among users.\n\n## Features:\n\n- Auto capture screenshot, PDF, and HTML file of each webpage.\n- Reader view with text highlighting and annotation.\n- Archive webpage to Wayback Machine (archive.org).\n- Local AI Tagging for automatic content-based tagging.\n- Organize links by collections, sub-collections, tags, and metadata.\n- Collaborate on shared collections with customizable permissions.\n- Share links and archived formats publicly.\n- Pin favorite links to dashboard.\n- Full-text search, filtering, and sorting.\n- Responsive design with browser support.\n- Dark and light mode.\n- Browser extension and synchronization via Floccus.\n- Bookmark import and export.\n- SSO integration (Enterprise and Self-hosted).\n- Installable PWA and iOS shortcut for saving links.\n- API keys support.\n- Bulk actions.\n- User administration.\n- Multi-language support (i18n).\n- Upload images and PDFs.\n- Custom icons for links and collections.\n- RSS feed subscription."
+  },
+  "github_url": "https://github.com/linkwarden/linkwarden",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "linkding",
+    "shiori"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://linkwarden.app/docs",
+  "categories": [
+    "Productivity",
+    "Self-Hosted",
+    "Bookmark Management",
+    "Archiving",
+    "User-Friendly Interface",
+    "Productivity Tools",
+    "Link Archiving",
+    "Personal Organization",
+    "Bookmark Manager",
+    "Data Preservation"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkwarden/image/logo.png",
+  "license": "AGPL-3.0",
+  "language": "TypeScript"
+}

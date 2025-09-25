@@ -1,0 +1,10 @@
+{{- if and (.Values.static.enabled) (not .Values.static.existingSecret) -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dashy.fullname" . }}-conf
+  labels:
+    {{- include "dashy.labels" . | nindent 4 }}
+data:
+  {{- toJson .Values.static.configMapContent | nindent 2 }}
+{{- end -}}

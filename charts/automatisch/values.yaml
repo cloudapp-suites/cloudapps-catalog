@@ -1,0 +1,56 @@
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: IfNotPresent
+
+main:
+  replicaCount: 1
+  port: 3000
+  type: LoadBalancer
+  protocol: http
+  env:
+    APP_ENV: production
+    REDIS_HOST: automatisch-redis
+    POSTGRES_HOST: automatisch-postgres
+    POSTGRES_DATABASE: automatisch
+    POSTGRES_USERNAME: automatisch_user
+    POSTGRES_PASSWORD: automatisch_password
+  secrets:
+    ENCRYPTION_KEY: "your-encryption-key"
+    WEBHOOK_SECRET_KEY: "your-webhook-secret-key"
+    APP_SECRET_KEY: "your-app-secret-key"
+
+worker:
+  replicaCount: 1
+  env:
+    APP_ENV: production
+    REDIS_HOST: redis
+    POSTGRES_HOST: postgres
+    POSTGRES_DATABASE: automatisch
+    POSTGRES_USERNAME: automatisch_user
+    POSTGRES_PASSWORD: automatisch_password
+  secrets:
+    ENCRYPTION_KEY: "your-encryption-key"
+    WEBHOOK_SECRET_KEY: "your-webhook-secret-key"
+    APP_SECRET_KEY: "your-app-secret-key"
+
+postgresql:
+  image: postgresql.image
+  database: automatisch
+  username: automatisch_user
+  password: automatisch_password
+  persistence:
+    enabled: true
+    size: cloudapp.storage
+
+redis:
+  image: redis.image
+  persistence:
+    enabled: true
+    size: cloudapp.storage
+
+persistence:
+  storageClassName: cloudapp.storageClassName
+  automatischStorage:
+    enabled: true
+    size: cloudapp.storage

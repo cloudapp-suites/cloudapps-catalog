@@ -1,0 +1,41 @@
+{
+  "name": "bookstack",
+  "display_name": "Bookstack",
+  "description": {
+    "zh": "BookStack 是一个用于存储和组织信息的文档平台，旨在提供用户友好的体验。它拥有简单直观的界面，用户只需基本的文字处理技能即可创建内容。在保持日常用户操作简洁的同时，它也为高级用户提供了强大的功能而不影响核心体验。",
+    "en": "BookStack is a documentation platform designed to store and organize information in a user-friendly way. It offers a simple and intuitive interface that requires only basic word-processing skills to create content. While maintaining simplicity for everyday users, it also provides advanced features for power users without compromising the core experience."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 在新用户体验的简洁性与高级用户的强大功能之间取得平衡。\n- 拥有持续演进的开发理念，提供稳定的升级路径。\n- 开箱即用即具备良好的文档管理体验。\n\n## 功能列表:\n\n- 简洁直观的用户界面，无需复杂技术背景。\n- 支持高级内容的创建与组织方式。\n- 提供内置文档和演示实例，便于快速上手。\n- 支持多种无需修改源码的定制和扩展方式。\n- 遵循 WCAG 2.1 Level A 标准的无障碍功能。\n- 通过 Crowdin 支持多语言翻译。\n- 提供安全配置与管理指南，保障部署安全。",
+    "en": "## Benefits:\n\n- Combines simplicity for new users with advanced features for experienced ones.\n- Offers a stable and easy upgrade path with continuous development.\n- Provides a pleasant, opinionated documentation experience out of the box.\n\n## Features:\n\n- Intuitive user interface requiring minimal technical skills.\n- Support for advanced content creation and organization.\n- Built-in documentation and demo instance for quick onboarding.\n- Customization and extension options without altering source code.\n- Accessibility features aligned with WCAG 2.1 Level A standards.\n- Multi-language support via Crowdin.\n- Security and administration guidance for safe deployment."
+  },
+  "github_url": "https://github.com/BookStackApp/BookStack",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://www.bookstackapp.com/docs/",
+  "categories": [
+    "Open Source",
+    "Customization",
+    "Self-Hosted",
+    "Documentation",
+    "Knowledge Management",
+    "Wiki",
+    "Multi-Language",
+    "Dark Mode",
+    "Diagrams",
+    "Multi-Factor Authentication",
+    "Role-Based Access Control",
+    "Markdown Editor",
+    "Content Organization",
+    "Search Functionality",
+    "Information Storage"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bookstack/image/BookStack.svg",
+  "license": "MIT",
+  "language": "PHP"
+}

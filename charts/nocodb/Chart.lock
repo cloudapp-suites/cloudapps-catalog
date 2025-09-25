@@ -1,0 +1,9 @@
+dependencies:
+- name: common
+  repository: https://zekker6.github.io/helm-charts
+  version: 0.5.2
+- name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.7.21
+digest: sha256:6f6d278c6bf83db19621866e68850ce2f28983c98d5a264cd26dd57668ca5613
+generated: "2025-08-01T04:26:12.804716094Z"

@@ -1,0 +1,45 @@
+{
+  "name": "grav",
+  "display_name": "Grav",
+  "description": {
+    "zh": "Grav 是一个快速、简洁且灵活的基于文件的网页平台，无需安装即可使用。用户只需解压 ZIP 文件即可立即开始构建网站，无需复杂配置。Grav 采用现代技术设计，支持便捷的内容创作、强大的模板功能，并可通过插件和主题轻松扩展。",
+    "en": "Grav is a fast, simple, and flexible file-based web platform that requires zero installation. It allows users to extract a ZIP archive and immediately start building websites without complex setup. Designed with modern technologies, Grav supports easy content creation, powerful templating, and seamless extension through plugins and themes."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无需安装，设置快速且简单\n- 采用业界领先技术，具备高性能和可扩展性\n- 通过内置的包管理器轻松扩展插件和主题\n- 轻量高效的架构带来出色的性能表现\n\n## 功能列表:\n\n- 基于文件的内容管理，支持 Markdown\n- 使用 Twig 模板引擎实现灵活的界面控制\n- 基于 YAML 的配置，简洁易用\n- 使用 Parsedown 实现快速 Markdown 渲染\n- 集成 Doctrine Cache 提升性能\n- 支持 Symfony 组件，包括命令行、事件调度和依赖注入\n- 使用 Gregwar Image Library 实现动态图像处理\n- 内置 Grav 包管理器（GPM）用于安装和更新插件与主题\n- 支持通过 Composer 和 GitHub 安装",
+    "en": "## Benefits:\n\n- Zero installation required, making setup fast and simple\n- Built with best-in-class technologies for performance and scalability\n- Easy to extend with plugins and themes via a built-in package manager\n- Lightweight and efficient architecture for high performance\n\n## Features:\n\n- File-based content management with Markdown support\n- Twig templating engine for flexible UI control\n- YAML-based configuration for simplicity\n- Parsedown for fast Markdown rendering\n- Doctrine Cache for improved performance\n- Symfony components for CLI, event handling, and dependency injection\n- Gregwar Image Library for dynamic image manipulation\n- Grav Package Manager (GPM) for installing and updating plugins and themes\n- Support for Composer and GitHub-based installation methods"
+  },
+  "github_url": "https://github.com/getgrav/grav",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://learn.getgrav.org",
+  "categories": [
+    "Customization",
+    "Documentation",
+    "Content Management",
+    "Markdown",
+    "Plugins",
+    "Extensibility",
+    "CMS",
+    "User-Friendly",
+    "Performance",
+    "Content Creation",
+    "Multi-Language",
+    "Blogging",
+    "Configuration",
+    "E-commerce",
+    "Media Processing",
+    "Themes",
+    "Backups",
+    "Business",
+    "Flat-File"
+  ],
+  "pic_url": "https://avatars1.githubusercontent.com/u/8237355?v=2&s=50",
+  "license": "MIT",
+  "language": "PHP"
+}

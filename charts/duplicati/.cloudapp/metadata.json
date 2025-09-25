@@ -1,0 +1,37 @@
+{
+  "name": "duplicati",
+  "display_name": "Duplicati",
+  "description": {
+    "zh": "Duplicati 是一个免费的开源备份客户端，能够将加密、增量和压缩后的备份安全地存储在云存储服务或远程文件服务器上。它支持包括 Amazon S3、Dropbox、Google Drive、OneDrive 在内的多种云存储平台。该工具通过强加密和自动备份计划来保障数据安全。",
+    "en": "Duplicati is a free, open-source backup client that securely stores encrypted, incremental, and compressed backups on cloud storage services and remote file servers. It supports a wide range of cloud storage providers including Amazon S3, Dropbox, Google Drive, OneDrive, and more. The tool is designed to ensure data safety through strong encryption and automated backup scheduling."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过 AES-256 加密保障数据隐私。\n- 使用增量备份技术节省带宽和存储空间。\n- 内置计划任务实现备份自动化。\n\n## 功能列表:\n\n- 支持 AES-256 或 GPG 加密以确保数据传输安全。\n- 支持首次完整备份后进行增量更新。\n- 内置计划器实现自动执行备份任务。\n- 集成更新程序，便于软件升级。\n- 支持将备份传输至 FTP、WebDAV、SSH（SFTP）、Amazon S3 等多种目的地。\n- 灵活的备份选项，包括文件夹、特定文件类型及自定义过滤器。\n- 提供图形界面应用程序和命令行工具两种使用方式。\n- 支持通过 Windows 的 VSS 或 Linux 的 LVM 备份正在使用或锁定的文件。\n- 提供高级设置选项，包括过滤规则、删除策略、传输参数和带宽限制等。",
+    "en": "## Benefits:\n\n- Ensures data privacy through strong AES-256 encryption.\n- Saves bandwidth and storage with incremental backup technology.\n- Automates backup processes with a built-in scheduler.\n\n## Features:\n\n- Supports AES-256 or GPG encryption for secure data transfer.\n- Performs initial full backup followed by incremental updates.\n- Built-in scheduler for automatic backups.\n- Integrated updater for easy software upgrades.\n- Backup to FTP, WebDAV, SSH (SFTP), Amazon S3, and many other destinations.\n- Flexible backup options including folder, file type, and custom filters.\n- Available as GUI application or command-line tool.\n- Supports backing up open or locked files via VSS (Windows) or LVM (Linux).\n- Advanced settings for filters, deletion rules, transfer options, and bandwidth limits."
+  },
+  "github_url": "https://github.com/duplicati/duplicati",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://duplicati.readthedocs.io/en/latest/",
+  "categories": [
+    "Cross-Platform",
+    "Encryption",
+    "Web Interface",
+    "Data Security",
+    "Cloud Storage",
+    "Backup",
+    "Data Protection",
+    "Data Deduplication",
+    "Incremental Backup",
+    "Auto-Updater",
+    "Scheduler"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/duplicati/image/Se4cvDSJRp9MNtNW5bV0YIIBsCM.avif",
+  "license": "MIT",
+  "language": "C#"
+}

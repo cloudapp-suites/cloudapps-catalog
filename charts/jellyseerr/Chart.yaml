@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 2.2.3
+description: jellyseerr helm chart for Kubernetes
+home: https://github.com/Fallenbagel/jellyseerr
+icon: https://artifacthub.io/image/e417b561-5fe4-4ee3-9b89-f67df4069169
+kubeVersion: '>=1.23.0-0'
+maintainers:
+- email: ludovic.ortega@adminafk.fr
+  name: Ludovic Ortega
+name: jellyseerr
+sources:
+- https://github.com/M0NsTeRRR/helm-charts/tree/main/charts/jellyseerr
+type: application
+version: 2.1.0

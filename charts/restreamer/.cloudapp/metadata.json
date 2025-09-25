@@ -1,0 +1,34 @@
+{
+  "name": "restreamer",
+  "display_name": "Restreamer",
+  "description": {
+    "zh": "Restreamer 是一个开源的视频流解决方案，支持将 IP 摄像机的 H.264 视频实时推流到网站或第三方平台如 YouTube Live、Twitch 和 Vimeo。它提供了一个易于使用的界面，并以 Docker 容器的形式运行在 Linux、macOS 和 Windows 上。该项目基于 Apache 2.0 许可证免费提供，适用于个人和商业用途。",
+    "en": "Restreamer is an open-source video streaming solution that enables live H.264 video streaming from IP cameras to websites or third-party platforms like YouTube Live, Twitch, and Vimeo. It provides an easy-to-use interface and runs as a Docker container on Linux, macOS, and Windows. The project is free to use under the Apache 2.0 license for both private and commercial purposes."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量级架构，通过 Docker 易于安装\n- 可与 Raspberry Pi 等单板计算机无缝协作\n- 支持向 YouTube、Twitch 和 Vimeo 等平台推流\n- 基于 Apache 2.0 协议，免费用于开源与商业用途\n\n## 功能列表:\n\n- 带登录安全机制的用户界面\n- 支持集成与自动化的 JSON/HTTP API\n- 基于 FFmpeg 的视频推流与编码，支持截图功能\n- 集成 RTMP 模块的 NGINX 作为流媒体后端及 HLS 服务器\n- 使用 Clappr 播放器轻松将视频流嵌入网页\n- 针对 Docker 与 Kitematic 的优化，安装配置简单",
+    "en": "## Benefits:\n\n- Lightweight and easy to install via Docker\n- Works seamlessly with single-board computers like Raspberry Pi\n- Supports streaming to multiple platforms including YouTube, Twitch, and Vimeo\n- Free and open-source with Apache 2.0 license\n\n## Features:\n\n- User interface with login security\n- JSON/HTTP API for integration and automation\n- FFmpeg-based streaming and encoding with snapshot support\n- NGINX with RTMP module for streaming backend and HLS server\n- Clappr player for easy embedding of the video stream on websites\n- Optimized for Docker and Kitematic with easy setup instructions"
+  },
+  "github_url": "https://github.com/datarhei/restreamer",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.datarhei.com/restreamer/",
+  "categories": [
+    "Privacy",
+    "Media",
+    "Self-Hosting",
+    "Content Sharing",
+    "Social Media Integration",
+    "Video Streaming",
+    "Live Streaming",
+    "Live Broadcasting"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/restreamer/image/readme-promo.gif",
+  "license": "Apache-2.0",
+  "language": "HTML/Shell"
+}

@@ -1,0 +1,9 @@
+apiVersion: v2
+appVersion: 0.60.4
+description: A Helm chart for trilium notes.
+home: https://gitlab.com/oecis/charts/-/tree/main/charts/trilium
+name: trilium
+sources:
+- https://github.com/zadam/trilium
+type: application
+version: 0.1.0

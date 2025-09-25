@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 2.1.1
+description: Flame is self-hosted startpage for your server. Easily manage your apps
+  and bookmarks with built-in editors.
+name: flame
+type: application
+version: 0.3.0

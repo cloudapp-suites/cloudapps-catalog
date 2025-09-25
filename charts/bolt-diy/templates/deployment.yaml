@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "bolt-diy.fullname" . }}
+  labels:
+    {{- include "bolt-diy.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "bolt-diy.fullname" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "bolt-diy.fullname" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: bolt-diy
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: COMPOSE_PROFILES
+              value: "production"
+            - name: PORT
+              value: {{ .Values.service.port | quote }}
+            - name: GROQ_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: GROQ_API_KEY
+            - name: HuggingFace_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: HuggingFace_API_KEY
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: OPENAI_API_KEY
+            - name: ANTHROPIC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: ANTHROPIC_API_KEY
+            - name: OPEN_ROUTER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: OPEN_ROUTER_API_KEY
+            - name: GOOGLE_GENERATIVE_AI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: GOOGLE_GENERATIVE_AI_API_KEY
+            - name: OLLAMA_API_BASE_URL
+              value: {{ .Values.env.OLLAMA_API_BASE_URL | quote }}
+            - name: XAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: XAI_API_KEY
+            - name: TOGETHER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: TOGETHER_API_KEY
+            - name: TOGETHER_API_BASE_URL
+              value: {{ .Values.env.TOGETHER_API_BASE_URL | quote }}
+            - name: AWS_BEDROCK_CONFIG
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "bolt-diy.fullname" . }}-secrets
+                  key: AWS_BEDROCK_CONFIG
+            - name: VITE_LOG_LEVEL
+              value: {{ .Values.env.VITE_LOG_LEVEL | quote }}
+            - name: DEFAULT_NUM_CTX
+              value: {{ .Values.env.DEFAULT_NUM_CTX | quote }}
+            - name: RUNNING_IN_DOCKER
+              value: "true"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      imagePullSecrets:
+        - name: regcred
+      restartPolicy: Always

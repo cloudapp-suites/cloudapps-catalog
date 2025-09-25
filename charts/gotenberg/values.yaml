@@ -1,0 +1,354 @@
+# Default values for gotenberg.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Specifies that chart can be used as a condition when it is a dependency.
+# See https://helm.sh/docs/chart_best_practices/dependencies/#conditions-and-tags for more info.
+# @ignored
+enabled: true
+
+replicaCount: 1
+
+image:
+  repository: app.image
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: app.image.tag
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: false
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  ## If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+# -- Set annotations for the helm test pods (for example to disable certain kube-score checks)
+testPodAnnotations: {}
+
+# -- List of additional pod labels
+podLabels: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+# -- Define the security context for the container. By default will use upstream recommended values.
+# @default -- `{ privileged: false, runAsUser: 1001 }`, except in OpenShift where `runAsUser` is not set.
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 80
+  # -- Annotations to add to the service
+  annotations: {}
+
+# Strategy is utilized to configure the desired upgrade approach and
+# configuration for the deployment.
+strategy: {}
+
+progressDeadlineSeconds: 120
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# -- Define the liveness probe object for the container.
+# +docs:property
+# livenessProbe: {}
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+
+# -- Define the readiness probe object for the container.
+# +docs:property
+# readinessProbe: {}
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  behavior: {}
+  extraMetrics: []
+  targetCPUUtilizationPercentage: 80
+  # +docs:property
+  # targetMemoryUtilizationPercentage: 80
+
+pdb:
+  create: false
+  minAvailable: 1
+  maxUnavailable: ""
+  # -- This is a beta feature, so it's not enabled by default.
+  unhealthyPodEvictionPolicy:
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+topologySpreadConstraints: []
+
+volumes: []
+#  - name: tmp-volume
+#    emptyDir:
+#      medium: Memory
+#      sizeLimit: 2Gi
+
+volumeMounts: []
+#  - name: tmp-volume
+#    mountPath: /tmp
+
+# -- List of extra environment variables for gotenberg container
+extraEnv: []
+#  - name: FOO
+#    value: bar
+
+ingress:
+  # -- Set to true to enable ingress record generation. WARNING: Gotenberg shouldn't be exposed to the internet.
+  enabled: false
+  # -- Set the class name of the ingress
+  className: ""
+  # -- Set the annotations of the ingress
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  # -- Set the hostnames of the ingress, see values.yaml for an example.
+  hosts:
+    []
+    # - host: chart-example.local
+    #   paths:
+    #     - path: /
+    #       pathType: ImplementationSpecific
+  # -- Set the TLS configuration for the ingress, see values.yaml for an example.
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+# The API module is an HTTP/1 and HTTP/2 (H2C) server. Other modules may add routes, middlewares, and health checks.
+# https://gotenberg.dev/docs/configuration#api
+api:
+  # -- Set the port on which the API should listen (default 3000)
+  port: 3000
+  # -- Enables TLS on the API server: K8S TLS secret name containing the TLS certificate and key (tls.crt, tls.key)
+  tlsSecretName: ""
+  # -- Set the time limit for requests (default 30s)
+  timeout: ""
+  # -- Set the root path of the API - for service discovery via URL paths (default "/")
+  rootPath: ""
+  # -- Set the header name to use for identifying requests (default "Gotenberg-Trace")
+  traceHeader: ""
+  # -- Disable health check logging
+  disableHealthCheckLogging: false
+  # -- Enable basic authentication, see also the basicAuthUsername and basicAuthPassword values
+  enableBasicAuth: false
+  # -- Set the basic authentication username
+  basicAuthUsername:
+  # -- Set the basic authentication password
+  basicAuthPassword:
+  # -- Set the allowed URLs for the download from feature using a regular expression
+  downloadFromAllowList: ""
+  # -- Set the denied URLs for the download from feature using a regular expression
+  downloadFromDenyList: ""
+  # -- Set the maximum number of retries for the download from feature (default 4)
+  downloadFromMaxRetry: 4
+  # -- Disable the download from feature
+  disableDownloadFrom: false
+
+# The Chromium module interacts with the Chromium browser to convert HTML documents to PDF.
+# https://gotenberg.dev/docs/configuration#chromium
+chromium:
+  # -- Number of conversions after which Chromium will automatically restart. Set to 0 to disable this feature
+  restartAfter: ""
+  # -- Automatically launch Chromium upon initialization if set to true; otherwise, Chromium will start at the time of the first conversion
+  autoStart: false
+  # -- Maximum duration to wait for Chromium to start or restart
+  startTimeout: ""
+  # -- Allow file:// URIs to read other file:// URIs
+  allowFileAccessFromFiles: false
+  # -- Ignore TLS/SSL errors on localhost
+  allowInsecureLocalhost: false
+  # -- Set the allowed URLs for Chromium using a regular expression
+  allowList: ""
+  # -- Set the denied URLs for Chromium using a regular expression (default "^file:///[^tmp].*")
+  denyList: ""
+  # -- Ignore the certificate errors
+  ignoreCertificateErrors: false
+  # -- Don't enforce the same-origin policy
+  disableWebSecurity: false
+  # -- Start Chromium with incognito mode
+  incognito: false
+  # -- Set custom mappings to the host resolver
+  hostResolverRules: ""
+  # -- Set the outbound proxy server; this switch only affects HTTP and HTTPS requests
+  proxyServer: ""
+  # -- Disable JavaScript
+  disableJavaScript: false
+  # -- Disable the routes
+  disableRoutes: false
+  # -- Clear Chromium cache between each conversion.
+  clearCache: false
+  # -- Clear Chromium cookies between each conversion.
+  clearCookies: false
+  # -- Maximum request queue size for Chromium. Set to 0 to disable this feature.
+  maxQueueSize: 0
+
+# The LibreOffice module interacts with LibreOffice to convert documents to PDF, thanks to unoconv.
+# https://gotenberg.dev/docs/configuration#libreoffice
+libreOffice:
+  # -- Number of conversions after which LibreOffice will automatically restart. Set to 0 to disable this feature (default 10)
+  restartAfter: ""
+  # -- Automatically launch LibreOffce upon initialization if set to true; otherwise, LibreOffice will start at the time of the first conversion (default false)
+  autoStart: false
+  # -- Maximum duration to wait for LibreOffice to start or restart (default 10s)
+  startTimeout: ""
+  # -- Disable the routes
+  disableRoutes: false
+  # -- Maximum request queue size for LibreOffice. Set to 0 to disable this feature.
+  maxQueueSize: 0
+
+# The PDF Engines module gathers all engines that can manipulate PDF files.
+# https://gotenberg.dev/docs/configuration#pdf-engines
+pdfEngines:
+  # -- (DEPRECATED in Gotenberg 8.13.0) Set the PDF engines and their order - all by default
+  engines: ""
+  # -- Set the PDF engines and their order for the merge feature (default qpdf,pdfcpu,pdftk)
+  mergeEngines: ""
+  # -- Set the PDF engines and their order for the convert feature (default libreoffice-pdfengine)
+  convertEngines: ""
+  # -- Set the PDF engines and their order for the read metadata feature (default exiftool)
+  readMetadataEngines: ""
+  # -- Set the PDF engines and their order for the write metadata feature (default exiftool)
+  writeMetadataEngines: ""
+  # -- Disable the routes
+  disableRoutes: false
+
+# The Webhook module provides a middleware that allows you to upload the output file
+# from multipart/form-data routes to the destination of your choice.
+# https://gotenberg.dev/docs/configuration#webhook
+webhook:
+  # -- Set the allowed URLs for the webhook feature using a regular expression
+  allowList: ""
+  # -- Set the denied URLs for the webhook feature using a regular expression
+  denyList: ""
+  # -- Set the allowed URLs in case of an error for the webhook feature using a regular expression
+  errorAllowList: ""
+  # -- Set the denied URLs in case of an error for the webhook feature using a regular expression
+  errorDenyList: ""
+  # -- Set the maximum number of retries for the webhook feature (default 4)
+  maxRetry: ""
+  # -- Set the minimum duration to wait before trying to call the webhook again (default 1s)
+  retryMinWait: ""
+  # -- Set the maximum duration to wait before trying to call the webhook again (default 30s)
+  retryMaxWait: ""
+  # -- Set the time limit for requests to the webhook (default 30s)
+  clientTimeout: ""
+  # -- Disable the webhook feature
+  disable: false
+
+# The Prometheus module collects metrics from other modules.
+# https://gotenberg.dev/docs/configuration#prometheus
+prometheus:
+  # -- Set the interval for collecting modules' metrics (default 1s)
+  collectInterval: ""
+  # -- Set the namespace of modules' metrics (default "gotenberg")
+  namespace: ""
+  # -- Disable the collect of metrics
+  disableCollect: false
+  # -- Disable the route logging
+  disableRouterLogging: false
+
+# The Logging module provides a logger to Gotenberg.
+# https://gotenberg.dev/docs/configuration#logging
+logging:
+  # -- Set log format - auto, json, or text (default "auto")
+  format: ""
+  # -- Set the log level - error, warn, info, or debug (default "info")
+  level: ""
+  # -- Prepend a specified prefix to each field in the logs
+  fieldsPrefix: ""
+  # -- Enable GCP log field mapping for Cloud Run
+  enableGcpFields: false
+
+# Misc.
+# https://gotenberg.dev/docs/configuration#graceful-shutdown
+gotenberg:
+  # -- Set the graceful shutdown duration (default 30s)
+  gracefulShutdownDurationSec: 30
+
+metrics:
+  serviceMonitor:
+    # -- Enable ServiceMonitor
+    enabled: false
+    # -- (string) Namespace for ServiceMonitor, defaults to release namespace
+    namespace:
+    # -- (string) Optional job label for the target service in Prometheus
+    jobLabel:
+    # -- (string) Interval at which metrics should be scraped
+    interval:
+    # -- (string) Timeout after which the scrape is ended
+    scrapeTimeout:
+    # -- HonorLabels chooses the metric’s labels on collisions with target labels
+    honorLabels: false
+    # -- List of metric relabel configs to apply to samples before ingestion
+    metricRelabelings: []
+    # -- List of relabel configs to apply to samples before scraping
+    relabelings: []
+    # -- Additional annotations for the service monitor
+    annotations: {}
+    # -- Additional labels for the service monitor
+    labels: {}
+
+# Enable or Disable Network Policy.
+# See also: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+networkPolicy:
+  enabled: false
+
+  # Allow all connections from any source. To be set to false if extraIngress is used.
+  allowIngress: true
+
+  # Allow all connections to any destinations. To be set to false if extraEgress is used.
+  allowEgress: true
+  # Config custom ingress rules to the NetworkPolicy.
+  extraIngress: []
+  # extraIngress:
+  #   - from:
+  #     - podSelector:
+  #         matchLabels:
+  #           component: apache
+  #     ports:
+  #     - port: 8080
+  #       protocol: TCP
+  # Config custom egress rules to the NetworkPolicy.
+  extraEgress: []
+  # extraEgress:
+  #   - to:
+  #     - podSelector:
+  #         matchLabels:
+  #           component: apache
+  #     ports:
+  #     - port: 80
+  #       protocol: TCP

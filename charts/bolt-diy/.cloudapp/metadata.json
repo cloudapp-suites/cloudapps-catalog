@@ -1,0 +1,45 @@
+{
+  "name": "bolt-diy",
+  "display_name": "Bolt.diy",
+  "description": {
+    "zh": "bolt.diy 是 Bolt.new 的开源版本，专为在浏览器中进行 AI 驱动的全栈网页开发而设计。它支持多种大语言模型（LLM），并允许用户为每个提示选择所需的模型。该平台帮助开发者借助 AI 辅助功能构建、测试并部署基于 Node.js 的网页应用。",
+    "en": "bolt.diy is an open-source version of Bolt.new, designed for AI-powered full-stack web development directly in the browser. It supports multiple LLMs (Large Language Models) and allows users to choose the model they want to use for each prompt. The platform enables developers to build, test, and deploy Node.js-based web applications using AI assistance."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供强大的开源 AI 编程助手，支持全栈网页开发。\n- 高度可扩展的架构，支持多种大语言模型（LLM）提供商。\n- 支持浏览器端开发，无需本地开发环境。\n\n## 功能列表:\n\n- 为 NodeJS 应用提供 AI 驱动的全栈网页开发。\n- 支持包括 OpenAI、Anthropic、Ollama、Gemini 等在内的多种 LLM。\n- 支持在提示中上传图片以增强上下文理解。\n- 集成终端，用于查看 LLM 执行命令的输出结果。\n- 支持代码回滚至早期版本，便于调试和修改。\n- 支持将项目打包为 ZIP 格式下载，便于移植。\n- 提供 Docker 支持，便于容器化部署。\n- 可直接部署到 Netlify。\n- 支持在 UI 中配置 API 密钥和自定义基础 URL。\n- 支持通过 Git 导入和克隆仓库。\n- 提供适用于不同场景的提示语库。\n- 界面适配移动端。\n- 支持语音输入提示。\n- 支持与本地文件夹同步。\n- 支持聊天历史备份与恢复。\n- 可检测终端和预览中的错误并自动修复。\n- 支持项目模板选项。\n- 支持弹出式网页容器窗口，并可自定义窗口大小。",
+    "en": "## Benefits:\n\n- Offers a powerful, open-source AI coding assistant for full-stack web development.\n- Highly extensible architecture supporting a wide range of LLM providers.\n- Enables browser-based development without the need for local development environments.\n\n## Features:\n\n- AI-powered full-stack web development for NodeJS applications.\n- Support for multiple LLMs including OpenAI, Anthropic, Ollama, Gemini, and more.\n- Attach images to prompts for better contextual understanding.\n- Integrated terminal to view LLM-run command outputs.\n- Revert code to earlier versions for easier debugging.\n- Download projects as ZIP for easy portability.\n- Docker support for containerized deployment.\n- Direct deployment to Netlify.\n- API key and custom base URL configuration in the UI.\n- Git integration for importing and cloning repositories.\n- Prompt library for different use cases.\n- Mobile-friendly interface.\n- Voice prompting capability.\n- Sync files to local folders.\n- Chat history backup and restore.\n- Error detection and auto-fixing in terminal and preview.\n- Support for starter templates.\n- Popout window for web container with customizable size."
+  },
+  "github_url": "https://github.com/stackblitz-labs/bolt.diy",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://stackblitz-labs.github.io/bolt.diy",
+  "categories": [
+    "Developer Tools",
+    "Customization",
+    "API",
+    "AI",
+    "Deployment",
+    "Web Development",
+    "Language Models",
+    "AI Development",
+    "Open Source AI",
+    "Prompt Engineering",
+    "Browser",
+    "Node.js",
+    "Full-Stack",
+    "Web-Development",
+    "WebContainers",
+    "LLM-Integration",
+    "LLM Integration"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bolt-diy/image/social_preview_index.jpg",
+  "license": "MIT",
+  "language": "TypeScript"
+}

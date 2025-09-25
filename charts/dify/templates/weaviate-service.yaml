@@ -1,0 +1,19 @@
+{{- if .Values.weaviate.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "dify.fullname" . }}-weaviate
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: weaviate
+spec:
+  type: {{ .Values.weaviate.service.type }}
+  ports:
+    - port: {{ .Values.weaviate.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "dify.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: weaviate
+{{- end }}

@@ -1,0 +1,33 @@
+{
+  "name": "kutt",
+  "display_name": "Kutt",
+  "description": {
+    "zh": "Kutt 是一个开源的 URL 缩短工具，专为自托管设计，支持自定义域名。它允许用户创建、管理和追踪缩短后的链接，并提供密码保护、过期设置和私有统计等功能。该项目采用现代 Web 技术构建，强调安装简便和高度可定制。",
+    "en": "Kutt is an open-source URL shortener designed for self-hosting with support for custom domains. It allows users to create, manage, and track shortened URLs while offering features like password protection, expiration settings, and private statistics. The project is built with modern web technologies and emphasizes ease of setup and customization."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持零配置自托管\n- 轻量级且易于部署\n- 支持多种数据库并可选 Redis 缓存\n- 社区活跃，欢迎贡献代码\n\n## 功能列表:\n\n- 支持自定义域名\n- 可为链接设置自定义 URL、密码、描述和过期时间\n- 查看、编辑、删除和管理链接\n- 每个缩短链接的私有统计信息\n- 提供用户和链接管理的后台界面\n- 支持界面主题和元素的自定义\n- 提供 RESTful API 用于集成\n- 提供 Chrome 和 Firefox 浏览器扩展\n- 支持 Docker 并提供多种配置选项\n- 支持通过环境变量进行配置",
+    "en": "## Benefits:\n\n- Self-hosted with zero configuration required\n- Lightweight and easy to set up\n- Supports multiple databases and optional Redis caching\n- Actively maintained with a welcoming community for contributions\n\n## Features:\n\n- Custom domain support\n- Set custom URLs, passwords, descriptions, and expiration times for links\n- View, edit, delete, and manage links\n- Private statistics for each shortened URL\n- Admin interface for user and link management\n- Customizable themes and UI elements\n- RESTful API for integration\n- Browser extensions for Chrome and Firefox\n- Docker support with multiple configuration options\n- Configurable via environment variables"
+  },
+  "github_url": "https://github.com/thedevs-network/kutt",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.kutt.it/",
+  "categories": [
+    "Productivity",
+    "Analytics",
+    "API",
+    "Link Management",
+    "URL Shortener",
+    "Browser Extension",
+    "Custom Domains"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/kutt/image/logo-github.png",
+  "license": "MIT",
+  "language": "TypeScript/JavaScript"
+}

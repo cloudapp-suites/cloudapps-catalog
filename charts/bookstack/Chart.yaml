@@ -1,0 +1,22 @@
+apiVersion: v2
+appVersion: "2024.10"
+dependencies:
+- condition: mariadb.enabled
+  name: mariadb
+  repository: https://charts.bitnami.com/bitnami
+  version: 19.1.x
+description: BookStack is a simple, self-hosted, easy-to-use platform for organising
+  and storing information.
+home: https://www.bookstackapp.com/
+icon: https://media.githubusercontent.com/media/BookStackApp/website/master/static/images/logo.png
+maintainers:
+- email: dominique@code-straight.fr
+  name: Dominique Dumont
+  url: https://code-straight.fr
+- email: benoit.fourmentraux@seira-formation.fr
+  name: Benoit Fourmentraux
+name: bookstack
+sources:
+- https://github.com/BookStackApp/BookStack
+type: application
+version: 1.7.0

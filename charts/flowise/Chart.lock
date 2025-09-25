@@ -1,0 +1,15 @@
+dependencies:
+- name: common
+  repository: oci://ghcr.io/cowboysysop/charts
+  version: 2.31.3
+- name: mariadb
+  repository: oci://ghcr.io/cowboysysop/charts
+  version: 20.4.2
+- name: postgresql
+  repository: oci://ghcr.io/cowboysysop/charts
+  version: 15.5.7
+- name: redis
+  repository: oci://ghcr.io/cowboysysop/charts
+  version: 21.2.6
+digest: sha256:cbc111640c24ace4c67a5e2756742b25ba457e7fc6c1f96a9e8f0feef47603f4
+generated: "2025-07-28T20:31:06.218014511Z"

@@ -1,0 +1,18 @@
+apiVersion: v2
+appVersion: 1.23.13
+dependencies:
+- condition: mariadb.enabled
+  name: mariadb
+  repository: https://charts.bitnami.com/bitnami
+  version: 20.2.2
+description: A self-hosted Monitoring tool like "Uptime-Robot".
+home: https://github.com/dirsigler/uptime-kuma-helm
+icon: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
+maintainers:
+- email: dennis@irsigler.dev
+  name: dirsigler
+name: uptimekuma
+sources:
+- https://github.com/louislam/uptime-kuma
+type: application
+version: 2.21.3

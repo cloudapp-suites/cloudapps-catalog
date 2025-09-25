@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.26.1
+description: Activepieces is an open-source business automation tool
+icon: https://cdn.activepieces.com/pieces/activepieces.png
+name: activepieces
+type: application
+version: 0.1.6

@@ -1,0 +1,39 @@
+{
+  "name": "tautulli",
+  "display_name": "Tautulli",
+  "description": {
+    "zh": "Tautulli 是一个基于 Python 的 Web 应用程序，专为 Plex Media Server 提供监控、分析和通知功能。它可以详细展示媒体服务器活动和用户行为。该项目继承自 Headphones 和 PlexWatchWeb 的代码。",
+    "en": "Tautulli is a Python-based web application designed for monitoring, analytics, and notifications for Plex Media Server. It provides detailed insights into media server activity and user behavior. The project builds upon code from Headphones and PlexWatchWeb."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 为 Plex Media Server 提供实时监控和深度分析。\n- 支持针对播放活动和新增媒体内容的可定制通知。\n- 采用响应式设计，适配桌面、平板和移动端浏览器。\n\n## 功能列表:\n\n- 支持桌面、平板和移动端浏览器的响应式网页设计。\n- 界面风格与 Plex/Web 保持协调统一。\n- 配置简单，无需额外的 Web 服务器。\n- 实时监控当前 Plex Media Server 的运行状态。\n- 可完全自定义的播放活动与新增媒体通知。\n- 首页展示顶部统计信息，支持自定义时间范围和度量单位。\n- 全局观看历史记录，支持搜索、过滤和动态列排序。\n- 完整用户列表，包含基本信息和对比统计数据。\n- 每个用户的详细信息，包括设备 IP 地址。\n- 完整的媒体库统计和媒体文件信息。\n- 使用 Highcharts 图表库展示丰富的分析数据。\n- 精美的内容信息页面。\n- 显示所有用户从媒体库中同步内容的完整同步列表。\n- 还有更多功能等待体验！",
+    "en": "## Benefits:\n\n- Provides real-time monitoring and deep analytics for Plex Media Server.\n- Offers customizable notifications for stream activity and new media additions.\n- Features a responsive design that works seamlessly across desktop, tablet, and mobile browsers.\n\n## Features:\n\n- Responsive web design viewable on desktop, tablet and mobile web browsers.\n- Themed to complement Plex/Web.\n- Easy configuration setup (no separate web server required).\n- Monitor current Plex Media Server activity.\n- Fully customizable notifications for stream activity and recently added media.\n- Top statistics on home page with configurable duration and measurement metric.\n- Global watching history with search/filtering & dynamic column sorting.\n- Full user list with general information and comparison stats.\n- Individual user information including devices IP addresses.\n- Complete library statistics and media file information.\n- Rich analytics presented using Highcharts graphing.\n- Beautiful content information pages.\n- Full sync list data on all users syncing items from your library.\n- And many more!!"
+  },
+  "github_url": "https://github.com/Tautulli/Tautulli",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Bazarr",
+    "Radarr",
+    "Sonarr"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Analytics",
+    "Media",
+    "Monitoring",
+    "Notifications",
+    "Media Management",
+    "Streaming",
+    "User Statistics",
+    "Media Monitoring",
+    "Content Tracking"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/tautulli/image/activity-compressed.jpg",
+  "license": "GPL-3.0",
+  "language": "Python"
+}

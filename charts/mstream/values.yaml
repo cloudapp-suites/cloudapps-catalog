@@ -1,0 +1,47 @@
+---
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/nicholaswilde/helm-charts/tree/main/charts/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: app.image
+  # -- image tag
+  # @default -- chart.appVersion
+  tag: app.image.tag
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+secret: {}
+  # PASSWORD: password
+
+# See more environment variables in the template documentation
+# https://github.com/IrosTheBeggar/mStream/blob/master/docs/docker.md
+env: {}
+  # TZ:
+
+service:
+  type: LoadBalancer
+  port:
+    port: 3000
+
+ingress:
+  enabled: false
+
+persistence:
+  config:
+    enabled: false
+    emptyDir: false
+    mountPath: /config
+    storageClass: cloudapp.storageClassName
+    size: Cloudapp.Storage
+  music:
+    enabled: false
+    emptyDir: false
+    mountPath: /music
+    accessMode: ReadWriteOnce
+    storageClass: cloudapp.storageClassName
+    size: Cloudapp.Storage

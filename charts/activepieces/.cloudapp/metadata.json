@@ -1,0 +1,39 @@
+{
+  "name": "activepieces",
+  "display_name": "Activepieces",
+  "description": {
+    "zh": "Activepieces 是一个开源的自动化平台，通过使用 TypeScript 编写的类型安全的 pieces 框架进行扩展。它支持与超过 200 个服务集成，并提供 AI 优先的工作流、企业级部署以及社区驱动的开发模式。该平台为技术用户和非技术用户都提供了无代码构建工具。",
+    "en": "Activepieces is an open-source automation platform designed to be extensible through a type-safe pieces framework written in TypeScript. It enables users to create and manage integrations with over 200 services and supports AI-first workflows, enterprise-ready deployment, and community-driven development. The platform offers a no-code builder for both technical and non-technical users."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 为技术用户和非技术用户提供直观的界面。\n- 拥有开放的生态系统，60% 的集成模块由社区贡献。\n- 提供最大的开源 MCP 工具包，所有模块均可作为 MCP 服务器使用。\n- 使用 TypeScript 构建，支持完全定制和开发者友好体验。\n- 原生支持 AI 工作流，包含 AI SDK 和 AI 模块。\n- 支持企业级部署，可自定义品牌和控制。\n- 强调安全性设计，支持自托管和网络隔离。\n- 支持人工介入流程，用于审批或延迟执行。\n\n## 功能列表:\n\n- 可视化工作流构建器，支持拖放操作。\n- 支持循环、分支和自动重试。\n- 支持 HTTP 和 NPM 代码集成。\n- AI 辅助代码模块中的数据清理功能。\n- 完全版本控制的自动化流程。\n- 多语言支持和可定制模板。\n- 超过 200 个预置集成模块。\n- 支持本地模块开发的热重载。\n- 内置人工输入接口（聊天、表单）。\n- 社区驱动的开发与贡献。",
+    "en": "## Benefits:\n\n- Offers an intuitive interface for both technical and non-technical users.\n- Features an open ecosystem with 60% of integration pieces contributed by the community.\n- Provides the largest open-source MCP toolkit, with all pieces available as MCP servers.\n- Built with TypeScript for full customization and developer-friendly experience.\n- Designed for AI-first workflows with native AI pieces and AI SDK.\n- Enterprise-ready with branding control and secure, self-hosted deployment.\n- Emphasizes security by design with network-gapped and data-controlled environments.\n- Supports human-in-the-loop automation for approval or delay execution.\n\n## Features:\n\n- Visual workflow builder with drag-and-drop interface.\n- Support for loops, branches, and auto-retries.\n- HTTP and NPM code integration.\n- AI-assisted data cleaning in code pieces.\n- Fully versioned automation flows.\n- Multilingual support and customizable templates.\n- Over 200+ pre-built integration pieces.\n- Hot-reloading for local piece development.\n- Built-in interfaces for human input (chat, form).\n- Community-driven development and contributions."
+  },
+  "github_url": "https://github.com/activepieces/activepieces",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "n8n"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://activepieces.com/docs",
+  "categories": [
+    "Automation",
+    "Self-Hosted",
+    "No-Code",
+    "Task Management",
+    "Business Apps",
+    "Data Security",
+    "Logging",
+    "Flexibility",
+    "Business Automation"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/activepieces/image/246954877-76c97441-c285-4480-bc75-30a0c73ed340.png",
+  "license": "MIT",
+  "language": "JavaScript"
+}

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "apprise.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ template "apprise.fullname" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "apprise.fullname" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ template "apprise.fullname" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: apprise
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.ports.containerPort }}
+          env:
+            - name: APPRISE_STATEFUL_MODE
+              value: {{ .Values.env.APPRISE_STATEFUL_MODE }}
+            - name: APPRISE_CONFIG_DIR
+              value: {{ .Values.env.APPRISE_CONFIG_DIR }}
+            - name: APPRISE_ATTACH_DIR
+              value: {{ .Values.env.APPRISE_ATTACH_DIR }}
+            - name: APPRISE_PLUGIN_PATHS
+              value: {{ .Values.env.APPRISE_PLUGIN_PATHS }}
+          volumeMounts:
+            - name: config
+              mountPath: {{ .Values.env.APPRISE_CONFIG_DIR }}
+              subPath: config
+            - name: attach
+              mountPath: {{ .Values.env.APPRISE_ATTACH_DIR }}
+              subPath: attach
+            - name: plugin
+              mountPath: {{ .Values.env.APPRISE_PLUGIN_PATHS }}
+              subPath: plugin
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: {{ template "apprise.fullname" . }}-config
+        - name: attach
+          persistentVolumeClaim:
+            claimName: {{ template "apprise.fullname" . }}-attach
+        - name: plugin
+          persistentVolumeClaim:
+            claimName: {{ template "apprise.fullname" . }}-plugin

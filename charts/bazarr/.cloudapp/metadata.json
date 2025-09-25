@@ -1,0 +1,35 @@
+{
+  "name": "bazarr",
+  "display_name": "Bazarr",
+  "description": {
+    "zh": "Bazarr 是 Sonarr 和 Radarr 的配套应用，用于自动化管理和下载字幕。用户可为字幕设置语言偏好，Bazarr 将根据设定自动完成下载。该应用支持多种平台，并可与现有的媒体库无缝集成。",
+    "en": "Bazarr is a companion application for Sonarr and Radarr that automates subtitle management and downloads. It helps users define language preferences for subtitles and handles downloading based on those settings. The app supports a wide range of platforms and integrates seamlessly with existing media libraries."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 简化由 Sonarr 和 Radarr 管理的媒体库的字幕管理流程\n- 支持广泛的字幕语言和格式\n- 提供受 Sonarr 启发的简洁直观用户界面\n\n## 功能列表:\n\n- 支持主流平台：Windows、Linux、macOS、Raspberry Pi 等\n- 自动从 Sonarr 添加新剧集和新集数\n- 自动从 Radarr 添加新电影\n- 可基于剧集或电影配置字幕语言偏好\n- 扫描现有媒体库中的内嵌和外挂字幕并下载缺失的字幕\n- 记录字幕的下载来源与时间\n- 支持手动搜索并按需下载字幕\n- 当发现更优字幕时自动升级已下载的字幕\n- 支持从磁盘中删除外挂字幕\n- 当前支持 184 种字幕语言，包含强制/外文子标题（取决于提供商）\n- 支持的字幕提供商包括 OpenSubtitles、Subscene、Addic7ed 等众多平台",
+    "en": "## Benefits:\n\n- Streamlines subtitle management for media libraries managed by Sonarr and Radarr\n- Supports a broad range of languages and subtitle formats\n- Offers a clean and intuitive UI inspired by Sonarr\n\n## Features:\n\n- Support for major platforms: Windows, Linux, macOS, Raspberry Pi, etc.\n- Automatically add new series and episodes from Sonarr\n- Automatically add new movies from Radarr\n- Series or movies based configuration for subtitles languages\n- Scan your existing library for internal and external subtitles and download any missing\n- Keep history of what was downloaded from where and when\n- Manual search so you can download subtitles on demand\n- Upgrade subtitles previously downloaded when a better one is found\n- Ability to delete external subtitles from disk\n- Currently support 184 subtitles languages with support for forced/foreign subtitles (depending of providers)\n- Supported subtitles providers include OpenSubtitles, Subscene, Addic7ed, and many more"
+  },
+  "github_url": "https://github.com/morpheus65535/bazarr",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Jellyseerr"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://wiki.bazarr.media/",
+  "categories": [
+    "Automation",
+    "Media",
+    "Media Management",
+    "Entertainment",
+    "Download",
+    "Subtitles",
+    "Video Content"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bazarr/image/bazarr-screenshot.png",
+  "license": "GPL-3.0",
+  "language": "Python"
+}

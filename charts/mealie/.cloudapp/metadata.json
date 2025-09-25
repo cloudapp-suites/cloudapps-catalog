@@ -1,0 +1,42 @@
+{
+  "name": "mealie",
+  "display_name": "Mealie",
+  "description": {
+    "zh": "Mealie 是一个自托管的食谱管理器、餐食计划工具和购物清单应用，后端采用 REST API，前端使用 Vue 构建，提供流畅的用户体验。用户可以通过输入 URL 自动导入食谱，或使用 UI 编辑器手动添加家庭食谱。平台还支持通过 API 与第三方应用集成，适合全家人用于管理和规划饮食。",
+    "en": "Mealie is a self-hosted recipe manager, meal planner, and shopping list application with a REST API backend and a reactive Vue-based frontend. It allows users to easily import recipes from URLs or manually enter them using a UI editor. The platform also supports third-party integrations via its API, making it a versatile tool for managing recipes and meal planning for the whole family."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 为食谱、餐食计划和购物清单提供集中化管理。\n- 提供响应式、用户友好的界面，适合全家人使用。\n- 支持通过 API 与第三方应用集成。\n\n## 功能列表:\n\n- 支持从 URL 导入食谱或手动添加\n- 餐食计划功能用于安排每周烹饪内容\n- 购物清单按超市区域分类整理\n- 可自定义分类创建食谱合集（Cookbooks）\n- 支持 Docker 部署\n- 提供 35 种以上语言的翻译",
+    "en": "## Benefits:\n\n- Provides a centralized place for managing recipes, meal plans, and shopping lists.\n- Offers a responsive and user-friendly interface suitable for all family members.\n- Supports third-party integrations via a well-documented API.\n\n## Features:\n\n- Recipe imports from URLs or manual entry\n- Meal Planner for weekly cooking schedules\n- Shopping List organized by supermarket sections\n- Cookbooks to group recipes by custom categories\n- Docker deployment support\n- Translations available in 35+ languages"
+  },
+  "github_url": "https://github.com/hay-kot/mealie",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://nightly.mealie.io/",
+  "categories": [
+    "Collaboration",
+    "API",
+    "Notifications",
+    "User Interface",
+    "User Experience",
+    "Markdown",
+    "Meal Planning",
+    "Recipe Management",
+    "Cooking",
+    "Food",
+    "Food & Drink",
+    "Import Tools",
+    "Family",
+    "Recipe Manager",
+    "Data Backup",
+    "Meal Planner"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/mealie/image/home_screenshot.png",
+  "license": "AGPL-3.0",
+  "language": "Python"
+}

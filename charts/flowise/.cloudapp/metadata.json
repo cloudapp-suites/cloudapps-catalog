@@ -1,0 +1,37 @@
+{
+  "name": "flowise",
+  "display_name": "Flowise",
+  "description": {
+    "zh": "Flowise 是一个开源的低代码平台，旨在帮助用户通过可视化方式构建和部署 AI 代理。它允许开发者和非开发者使用拖放界面创建自定义 AI 工作流。该平台支持本地部署和云端部署，为不同环境提供灵活性和可扩展性。",
+    "en": "Flowise is an open-source, low-code platform designed to help users visually build and deploy AI agents. It allows developers and non-developers to create custom AI workflows using a drag-and-drop interface. The platform supports self-hosting and cloud deployment, offering flexibility and scalability for different environments."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持技术人员与非技术人员通过可视化界面开发 AI 代理\n- 提供本地部署与云端部署等多种灵活部署方式\n- 支持第三方工具集成，扩展性强\n\n## 功能列表:\n\n- 拖拽式 AI 工作流构建界面\n- 支持使用 Docker Compose 和自定义镜像进行部署\n- 通过 `.env` 文件支持多环境配置\n- 提供详细的开发文档和 API 参考\n- 采用模块化单体仓库结构，分离后端、前端与组件\n- 提供 AWS、Azure、GCP、Digital Ocean 等主流云平台部署指南\n- 支持在 HuggingFace Spaces、Railway、Render 等平台部署\n- 通过 Discord 和 GitHub Discussions 提供活跃社区与技术支持",
+    "en": "## Benefits:\n\n- Enables visual, low-code development of AI agents for both technical and non-technical users\n- Offers flexible deployment options including self-hosting and cloud services\n- Integrates with third-party tools and platforms for extended functionality\n\n## Features:\n\n- Drag-and-drop interface for building AI workflows\n- Support for Docker deployment with Docker Compose and custom images\n- Multi-environment configuration via `.env` files\n- Comprehensive developer documentation and API references\n- Modular monorepo structure with backend, frontend, and component separation\n- Deployment guides for AWS, Azure, GCP, Digital Ocean, and other cloud providers\n- Available on HuggingFace Spaces, Railway, Render, and other platforms\n- Active community and support via Discord and GitHub Discussions"
+  },
+  "github_url": "https://github.com/FlowiseAI/Flowise",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "https://docs.flowiseai.com",
+  "categories": [
+    "Developer Tools",
+    "Customization",
+    "Extensibility",
+    "Translation",
+    "Efficiency",
+    "QnA",
+    "Workflow Visualization",
+    "Language Learning",
+    "Conversational Agent"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/flowise/image/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f466c6f7769736541492f466c6f77697365.svg",
+  "license": "Apache-2.0",
+  "language": "JavaScript/TypeScript"
+}

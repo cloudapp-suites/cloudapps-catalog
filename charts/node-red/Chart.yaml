@@ -1,0 +1,41 @@
+annotations:
+  artifacthub.io/changes: |
+    - Update k8s-sidecar to 1.30.5
+    - Update Node-Red to 4.0.9
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/images: |
+    - name: node-red
+      image: docker.io/nodered/node-red:4.0.9
+    - name: node-red-sidecar
+      image: quay.io/kiwigrid/k8s-sidecar:1.30.5
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: website
+      url: https://jobs.schwarz
+  artifacthub.io/maintainers: |
+    - name: dirien
+      email: engin.diri@mail.schwarz
+    - name: Kaktor
+      email: felix.kammerer@mail.schwarz
+apiVersion: v2
+appVersion: 4.0.9
+description: A Helm chart for Node-Red, a low-code programming for event-driven applications
+home: https://nodered.org/
+icon: https://nodered.org/about/resources/media/node-red-icon-2.png
+keywords:
+- node-red
+- iot
+- home
+- automation
+maintainers:
+- email: engin@pulumi.com
+  name: dirien
+  url: https://pulumi.com
+- email: felix.kammerer@mail.schwarz
+  name: Kaktor
+  url: https://jobs.schwarz
+name: node-red
+sources:
+- https://github.com/SchwarzIT/node-red-chart
+type: application
+version: 0.35.0

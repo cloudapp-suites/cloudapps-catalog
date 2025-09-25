@@ -1,0 +1,12 @@
+apiVersion: v2
+appVersion: 1.11.106
+description: 'All-in-one secure chat app for teams, friends and organisations. Keeps
+  conversations in your control, safe from data-mining and ads. Talk to everyone through
+  the open global Matrix network, protected by proper end-to-end encryption. '
+icon: https://element.io/images/logo-mark-primary.svg
+maintainers:
+- email: ace@haxalot.com
+  name: Alexander Olofsson
+name: element-web
+type: application
+version: 1.4.16

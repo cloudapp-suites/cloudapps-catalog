@@ -1,0 +1,74 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/bjw-s/helm-charts/blob/main/charts/library/common/values.yaml
+#
+
+controllers:
+  main:
+    pod: {}
+    containers:
+      main:
+        order: 1
+        image:
+          # -- image repository
+          repository: app.image
+          # -- image tag
+          # @default -- chart.appVersion
+          tag: app.image.tag
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+        env:
+          LD_SUPERUSER_NAME: admin
+          LD_SUPERUSER_PASSWORD: ''
+          LD_DISABLE_BACKGROUND_TASKS: False
+          LD_DISABLE_URL_VALIDATION: False
+          LD_REQUEST_TIMEOUT: 60
+          LD_ENABLE_AUTH_PROXY: False
+          LD_DB_ENGINE: sqlite
+
+        # -- Set the resource requests / limits for the container.
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 266Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    enabled: true
+    type: LoadBalancer
+    ports:
+      http:
+        port: 9090
+        protocol: HTTP
+        primary: true
+    monitor:
+      enabled: false
+
+      endpoints:
+        - port: http
+          scheme: http
+          path: /metrics
+          interval: 1m
+          scrapeTimeout: 10s
+
+ingress:
+  main:
+    enabled: false
+    annotations:
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        location /metrics {
+          deny all;
+          return 403;
+        }
+
+persistence:
+  config:
+    enabled: false
+    mountPath: /etc/linkding/data

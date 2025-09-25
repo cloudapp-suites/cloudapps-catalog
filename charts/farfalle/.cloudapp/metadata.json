@@ -1,0 +1,49 @@
+{
+  "name": "farfalle",
+  "display_name": "Farfalle",
+  "description": {
+    "zh": "Farfalle 是一个受 Perplexity 启发的开源 AI 搜索引擎。它支持运行如 llama3、gemma、mistral 和 phi3 等本地大语言模型，以及来自 OpenAI 和 Groq 的云端模型。该项目使用户能够通过多种 AI 模型和搜索服务提供商进行智能搜索和问答。",
+    "en": "Farfalle is an open-source AI-powered search engine inspired by Perplexity. It supports running local LLMs like llama3, gemma, mistral, and phi3, as well as cloud models from OpenAI and Groq. The project enables users to perform intelligent searches and answer questions using a variety of AI models and search providers."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 将 AI 搜索能力与本地和云端大模型支持结合。\n- 通过 LiteLLM 支持多种搜索服务和可定制的 LLM，提供高度灵活性。\n- 提供模块化设计和基于 Docker 的云部署选项，便于扩展和部署。\n\n## 功能列表:\n\n- 支持多种搜索服务（Tavily、Searxng、Serper、Bing）进行搜索\n- 使用云端模型回答问题（OpenAI/gpt4-o、OpenAI/gpt3.5-turbo、Groq/Llama3）\n- 使用本地模型回答问题（llama3、mistral、gemma、phi3）\n- 通过 LiteLLM 使用任意自定义 LLM 回答问题\n- 借助具有规划和执行能力的智能代理进行搜索以获得更佳结果\n- 支持聊天历史记录\n- 专家搜索功能\n- 基于 Docker 的部署配置\n- 提供预构建的 Docker 镜像\n- 支持本地文件对话（开发中）",
+    "en": "## Benefits:\n\n- Combines AI-powered search with support for both local and cloud-based LLMs.\n- Offers flexibility with multiple search providers and customizable LLMs via LiteLLM.\n- Provides a modular and deployable architecture with Docker and cloud deployment options.\n\n## Features:\n\n- Search with multiple search providers (Tavily, Searxng, Serper, Bing)\n- Answer questions with cloud models (OpenAI/gpt4-o, OpenAI/gpt3.5-turbo, Groq/Llama3)\n- Answer questions with local models (llama3, mistral, gemma, phi3)\n- Answer questions with any custom LLMs through LiteLLM\n- Search with an agent that plans and executes the search for better results\n- Chat history support\n- Expert search functionality\n- Docker-based deployment setup\n- Pre-built Docker image available\n- Support for local file chat (in development)"
+  },
+  "github_url": "https://github.com/rashadphz/farfalle",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "open source",
+    "Search Engine",
+    "Next.js",
+    "machine learning",
+    "search engine",
+    "AI-powered search engine",
+    "information retrieval",
+    "knowledge base",
+    "data search",
+    "FastAPI",
+    "Local Models",
+    "Logfire",
+    "Shadcn",
+    "ui",
+    "Redis",
+    "AI search",
+    "Tavily",
+    "Cloud Models",
+    "intelligent search",
+    "natural language processing"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/farfalle/image/farfalle.png",
+  "license": "Apache-2.0",
+  "language": "TypeScript/Python"
+}

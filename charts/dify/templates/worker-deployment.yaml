@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dify.fullname" . }}-worker
+  labels:
+    {{- include "dify.labels" . | nindent 4 }}
+    app.kubernetes.io/component: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dify.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: worker
+  template:
+    metadata:
+      labels:
+        {{- include "dify.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: worker
+    spec:
+      containers:
+        - name: worker
+          image: "{{ .Values.worker.image.repository }}:{{ .Values.worker.image.tag }}"
+          imagePullPolicy: {{ .Values.worker.image.pullPolicy }}
+          env:
+            - name: MODE
+              value: "worker"
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+            - name: DB_HOST
+              value: {{ include "dify.fullname" . }}-postgresql
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_DATABASE
+              value: {{ .Values.postgresql.auth.database | quote }}
+            - name: REDIS_HOST
+              value: {{ include "dify.fullname" . }}-redis-master
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              value: {{ .Values.redis.auth.password | quote }}
+            - name: REDIS_DB
+              value: "0"
+            - name: CELERY_BROKER_URL
+              value: "redis://:{{ .Values.redis.auth.password }}@{{ include "dify.fullname" . }}-redis-master:6379/1"
+            - name: WEAVIATE_ENDPOINT
+              value: "http://{{ include "dify.fullname" . }}-weaviate:{{ .Values.weaviate.service.port }}"
+            - name: WEAVIATE_API_KEY
+              value: "WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih"
+            - name: SANDBOX_API_KEY
+              value: "dify-sandbox"
+            - name: PLUGIN_DIFY_INNER_API_KEY
+              value: "QaHbTe77CtuXmsfyhR7+vRjI/+XbV1AaFy691iy+kGDv2Jvy0/eAh8Y1"
+            - name: STORAGE_TYPE
+              value: "opendal"
+            - name: OPENDAL_SCHEME
+              value: "fs"
+            - name: OPENDAL_FS_ROOT
+              value: "/app/api/storage"
+            - name: SECRET_KEY
+              value: ""
+            - name: MIGRATION_ENABLED
+              value: "true"
+          volumeMounts:
+            - name: storage
+              mountPath: /app/api/storage
+          resources:
+            {{- toYaml .Values.worker.resources | nindent 12 }}
+      volumes:
+        - name: storage
+          emptyDir: {}
+      {{- with .Values.worker.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.worker.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.worker.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

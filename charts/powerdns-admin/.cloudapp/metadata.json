@@ -1,0 +1,38 @@
+{
+  "name": "powerdns-admin",
+  "display_name": "PowerDNS-Admin",
+  "description": {
+    "zh": "PowerDNS-Admin 是一个具备高级功能的 PowerDNS Web 管理界面。它提供了 DNS 区域管理、用户权限控制和服务监控工具。该项目通过友好的用户界面简化了 DNS 管理操作，并支持多种认证方式。",
+    "en": "PowerDNS-Admin is a web interface for managing PowerDNS with advanced features. It provides tools for DNS zone management, user access control, and service monitoring. The project simplifies DNS administration through a user-friendly interface and supports various authentication methods."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供集中化且用户友好的 PowerDNS 管理界面\n- 通过基于角色的访问控制和多因素认证增强安全性\n- 支持灵活的部署方式，包括 Docker 和直接安装\n\n## 功能列表:\n\n- 支持正向和反向区域管理\n- 支持区域模板功能\n- 支持基于角色的用户管理与访问控制\n- 支持针对特定区域的访问控制\n- 提供操作日志记录\n- 支持本地用户认证\n- 支持 SAML 认证\n- 支持 LDAP 认证：OpenLDAP / Active Directory\n- 支持 OAuth 认证：Google / GitHub / Azure / OpenID\n- 支持双因素认证（TOTP）\n- 支持 PowerDNS 服务配置与状态监控\n- 支持 DynDNS 2 协议\n- 支持便捷的 IPv6 PTR 记录编辑\n- 提供用于区域和记录管理的 API\n- 支持完整的 IDN/Punycode",
+    "en": "## Benefits:\n\n- Offers a centralized and user-friendly web interface for PowerDNS management\n- Enhances security with role-based access control and multi-factor authentication\n- Supports flexible deployment options including Docker and direct installation\n\n## Features:\n\n- Provides forward and reverse zone management\n- Provides zone templating features\n- Provides user management with role based access control\n- Provides zone specific access control\n- Provides activity logging\n- Local User Support\n- SAML Support\n- LDAP Support: OpenLDAP / Active Directory\n- OAuth Support: Google / GitHub / Azure / OpenID\n- Two-factor authentication support (TOTP)\n- PDNS Service Configuration & Statistics Monitoring\n- DynDNS 2 protocol support\n- Easy IPv6 PTR record editing\n- Provides an API for zone and record management among other features\n- Provides full IDN/Punycode support"
+  },
+  "github_url": "https://github.com/PowerDNS-Admin/PowerDNS-Admin",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/PowerDNS-Admin/PowerDNS-Admin/wiki",
+  "categories": [
+    "API",
+    "Web Interface",
+    "Authentication",
+    "User Management",
+    "Access Control",
+    "Two-Factor Authentication",
+    "DNS Management",
+    "IPv6",
+    "Activity Logging",
+    "DynDNS",
+    "IDN",
+    "Punycode"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/powerdns-admin/image/dashboard.png",
+  "license": "MIT",
+  "language": "Python"
+}

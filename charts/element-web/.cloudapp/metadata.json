@@ -1,0 +1,39 @@
+{
+  "name": "element-web",
+  "display_name": "Element",
+  "description": {
+    "zh": "Element 是一个基于 Matrix JS SDK 构建的 Matrix 网页客户端。它为通过 Matrix 协议进行实时通信（包括消息、语音和视频通话）提供了用户友好的界面。该项目持续维护，并支持多个平台，包括桌面和移动浏览器。",
+    "en": "Element is a Matrix web client built using the Matrix JS SDK. It provides a user-friendly interface for real-time communication via the Matrix protocol, supporting messaging, voice, and video calls. The project is actively maintained and offers support across multiple platforms including desktop and mobile browsers."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 活跃维护且广泛使用的 Matrix 客户端\n- 多平台支持，具有分级的环境兼容策略\n- 强调部署中的安全性和最佳实践\n- 模块化架构，支持自定义配置\n\n## 功能列表:\n\n- 通过 Matrix 进行实时消息和音视频通话\n- 支持桌面和移动网页环境\n- 可配置的部署选项，包括自托管\n- 通过 Electron 集成支持桌面应用\n- 通过 config.json 支持主题和行为定制\n- 实验性功能可通过 Labs 设置启用\n- 提供全面的开发者文档和贡献支持",
+    "en": "## Benefits:\n\n- Actively maintained and widely used Matrix client\n- Cross-platform support with tiered environment compatibility\n- Strong focus on security and best practices in deployment\n- Modular architecture with support for custom configuration\n\n## Features:\n\n- Real-time messaging and voice/video calling via Matrix\n- Support for desktop and mobile web environments\n- Configurable deployment options including self-hosting\n- Integration with Electron for desktop application support\n- Customizable themes and behavior via config.json\n- Experimental features available through Labs settings\n- Comprehensive developer documentation and contribution support"
+  },
+  "github_url": "https://github.com/vector-im/element-web",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/vector-im/element-web/wiki",
+  "categories": [
+    "Productivity",
+    "Collaboration",
+    "Security",
+    "Customization",
+    "Communication",
+    "Chat",
+    "Cybersecurity",
+    "Secure Messaging",
+    "Real-time Communication",
+    "Instant Messaging",
+    "Voice",
+    "Video Calls",
+    "Data Sovereignty"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/element-web/image/13446337.jpeg",
+  "license": "AGPL-3.0",
+  "language": "TypeScript"
+}

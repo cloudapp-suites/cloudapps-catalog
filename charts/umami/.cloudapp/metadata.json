@@ -1,0 +1,33 @@
+{
+  "name": "umami",
+  "display_name": "Umami",
+  "description": {
+    "zh": "Umami 是一个简单、快速且注重隐私的 Google Analytics 替代方案。它允许用户在不侵犯访客隐私的前提下跟踪网站流量和用户行为。该工具支持自托管，让用户完全掌控数据，确保符合隐私法规要求。",
+    "en": "Umami is a simple, fast, and privacy-focused alternative to Google Analytics. It allows users to track website traffic and user behavior without compromising visitor privacy. The tool is self-hosted, giving full control over data and ensuring compliance with privacy regulations."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 以隐私为先，不进行用户追踪或数据共享\n- 通过自托管实现对数据的完全掌控\n- 相比传统分析工具更轻量、更快的性能表现\n\n## 功能列表:\n\n- 跟踪网站流量和用户行为\n- 支持 MariaDB、MySQL 和 PostgreSQL 等多种数据库\n- 支持从源码安装或通过 Docker 部署\n- 提供默认管理员账户以便快速启动\n- 支持通过环境变量进行配置\n- 安装过程中自动创建数据库表\n- 提供详细文档和社区支持",
+    "en": "## Benefits:\n\n- Privacy-first approach with no user tracking or data sharing\n- Full data control through self-hosted deployment\n- Lightweight and fast performance compared to traditional analytics tools\n\n## Features:\n\n- Track website traffic and user behavior\n- Support for multiple databases including MariaDB, MySQL, and PostgreSQL\n- Easy installation from source or via Docker\n- Provides a default admin user for quick setup\n- Supports configuration through environment variables\n- Auto-creation of database tables during installation\n- Available documentation and community support"
+  },
+  "github_url": "https://github.com/umami-software/umami",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Ackee"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://umami.is/docs",
+  "categories": [
+    "Privacy",
+    "Analytics",
+    "Data Visualization",
+    "GDPR Compliance",
+    "User Data",
+    "Web Metrics"
+  ],
+  "pic_url": "",
+  "language": "TypeScript/JavaScript"
+}

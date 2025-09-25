@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "autogenstudio.fullname" . }}
+  labels:
+    {{- include "autogenstudio.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "autogenstudio.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "autogenstudio.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        {{- include "autogenstudio.labels" . | nindent 8 }}
+    spec:
+      securityContext:
+        {{- toYaml .Values.securityContext | nindent 8 }}
+      containers:
+        - name: autogenstudio
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - "sh"
+            - "-c"
+            - |-
+              # Wait for database to be ready if using external database
+              {{ if not (contains "sqlite" .Values.appConfig.databaseUri) }}
+              until nc -z $(DB_HOST) $(DB_PORT); do
+                echo "Waiting for database at $(DB_HOST):$(DB_PORT)..."
+                sleep 5
+              done
+              {{ end }}
+              # Start the application
+              exec gunicorn -w $((2 * $(getconf _NPROCESSORS_ONLN) + 1)) --timeout 12600 -k uvicorn.workers.UvicornWorker autogenstudio.web.app:app --bind "{{ .Values.appConfig.host }}:{{ .Values.appConfig.port }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          volumeMounts:
+            - name: app-data
+              mountPath: {{ .Values.appConfig.appdir }}
+          {{- if .Values.readinessProbe.enabled }}
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          {{- end }}
+          {{- if .Values.livenessProbe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          {{- end }}
+      volumes:
+        - name: app-data
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ if .Values.persistence.existingClaim }}{{ .Values.persistence.existingClaim }}{{ else }}{{ include "autogenstudio.fullname" . }}-pvc{{ end }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+      {{- if not .Values.persistence.enabled }}
+      initContainers:
+        - name: init-appdir
+          image: busybox
+          command:
+            - "sh"
+            - "-c"
+            - |-
+              mkdir -p /mnt/app
+          volumeMounts:
+            - name: app-data
+              mountPath: /mnt/app
+      {{- end }}
