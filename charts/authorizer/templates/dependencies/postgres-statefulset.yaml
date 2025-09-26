@@ -16,20 +16,22 @@ spec:
         app: {{ include "authorizer.fullname" . }}-postgresql
     spec:
       containers:
-      - name: postgres
-        image: {{ .Values.postgresql.image }}
-        ports:
-        - containerPort: 5432
-        env:
-        - name: POSTGRES_USER
-          value: {{ .Values.postgresql.postgresqlUsername | quote }}
-        - name: POSTGRES_PASSWORD
-          value: {{ .Values.postgresql.postgresqlPassword | quote }}
-        - name: POSTGRES_DB
-          value: {{ .Values.postgresql.postgresqlDatabase | quote }}
-        volumeMounts:
-        - name: postgres-data
-          mountPath: /var/lib/postgresql/data
+        - name: postgres
+          image: {{ .Values.postgresql.image }}
+          ports:
+          - containerPort: 5432
+          env:
+          - name: POSTGRES_USER
+            value: {{ .Values.postgresql.postgresqlUsername | quote }}
+          - name: POSTGRES_PASSWORD
+            value: {{ .Values.postgresql.postgresqlPassword | quote }}
+          - name: POSTGRES_DB
+            value: {{ .Values.postgresql.postgresqlDatabase | quote }}
+          resources:
+            {{ toYaml .Values.resources | indent 12 }}
+          volumeMounts:
+          - name: postgres-data
+            mountPath: /var/lib/postgresql/data
   volumeClaimTemplates:
   - metadata:
       name: postgres-data

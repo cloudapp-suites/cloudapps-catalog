@@ -34,6 +34,8 @@ spec:
               value: {{ .Values.redis.allowEmptyPassword | quote }}
           ports:
             - containerPort: {{ .Values.redis.port }}
+          resources:
+            {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
           - name: redis-data
             mountPath: /bitnami/redis/data

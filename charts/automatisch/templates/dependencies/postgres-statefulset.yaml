@@ -25,6 +25,8 @@ spec:
               value: {{ .Values.postgresql.username }}
             - name: POSTGRES_PASSWORD
               value: {{ .Values.postgresql.password }}
+          resources:
+            {{ toYaml .Values.postgresql.resources | indent 12 }}
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data

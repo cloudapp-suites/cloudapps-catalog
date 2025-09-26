@@ -38,4 +38,6 @@ spec:
                 secretKeyRef:
                   name: {{ printf "%s-db-secrets" .Release.Name }}
                   key: DB_PASSWORD
+          resources:
+            {{ toYaml .Values.resources | indent 12 }}
       restartPolicy: Always
