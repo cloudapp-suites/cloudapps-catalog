@@ -39,7 +39,7 @@ spec:
             - containerPort: {{ .Values.minio.service.port }}
             - containerPort: {{ .Values.minio.service.consolePort }}
           resources:
-            {{ toYaml .Values.minio.resources | indent 12 }}
+{{ toYaml .Values.minio.resources | indent 12 }}
           volumeMounts:
             - name: minio-data
               mountPath: /data

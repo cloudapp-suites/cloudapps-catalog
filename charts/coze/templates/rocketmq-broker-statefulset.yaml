@@ -99,7 +99,7 @@ spec:
             - containerPort: 10909
             - containerPort: 10911
           resources:
-            {{ toYaml .Values.rocketmq.broker.resources | indent 12 }}
+{{ toYaml .Values.rocketmq.broker.resources | indent 12 }}
           volumeMounts:
             - name: broker-store
               mountPath: /home/rocketmq/store
