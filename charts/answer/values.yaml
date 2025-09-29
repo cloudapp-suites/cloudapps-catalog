@@ -32,3 +32,6 @@ volumes:
 
 persistent:
   storage: cloud.storage
+
+nameOverride: ""
+fullnameOverride: ""
