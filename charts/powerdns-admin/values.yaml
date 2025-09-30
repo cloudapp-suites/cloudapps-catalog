@@ -1,9 +1,3 @@
-# IMPORTANT NOTE
-#
-# This chart inherits from our common library chart. You can check the default values/options here:
-# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
-#
-
 image:
   # -- image repository
   repository: app.image
@@ -24,15 +18,12 @@ env:
   SECRET_KEY: changeme
   # -- Database connection string - if not set uses internal sqlite db
   # SQLALCHEMY_DATABASE_URI: mysql://db_user:db_pass@db_host/powerdns_admin
-  # -- Timeout for Gunicorn workers
+  # Additional Gunicorn settings (as environment variables)
   GUNICORN_TIMEOUT: 60
-  # -- How many Gunicorn workers to spawn
-  GUNICORN_WORKERS: 2
-  # -- Gunicorn loglevel to use
+  GUNICORN_WORKERS: 4
   GUNICORN_LOGLEVEL: DEBUG
 
 # -- Configures service settings for the chart.
-# @default -- See values.yaml
 service:
   main:
     type: LoadBalancer
@@ -40,15 +31,49 @@ service:
       http:
         port: 80
 
+# -- Probe configuration to fix connection instability
+probes:
+  liveness:
+    spec:
+      # Increased timeout from 1 to 10 seconds
+      timeoutSeconds: 10
+      # Increased failure threshold from 3 to 5
+      failureThreshold: 5
+      # Increased initial delay
+      initialDelaySeconds: 30
+  readiness:
+    spec:
+      # Increased timeout from 1 to 10 seconds
+      timeoutSeconds: 10
+      # Increased failure threshold from 3 to 5
+      failureThreshold: 5
+      # Increased initial delay
+      initialDelaySeconds: 30
+  startup:
+    spec:
+      # Increased timeout from 1 to 10 seconds
+      timeoutSeconds: 10
+      # Increased failure threshold from 30 to 60
+      failureThreshold: 60
+      # Increased period seconds for startup check
+      periodSeconds: 10
+
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
-  # @default -- See values.yaml
   main:
     enabled: false
 
 # -- Configure persistence settings for the chart under this key.
 # this persists the internal sqlite DB if no other database is enabled
-# @default -- See values.yaml
 persistence:
   data:
     enabled: false
+
+# -- Set the resource requests / limits for the main container.
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 512Mi
