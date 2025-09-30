@@ -21,7 +21,7 @@ spec:
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
           resources:
-            {{ toYaml .Values.resources | indent 12 }}
+            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: answer-data
               mountPath: /data

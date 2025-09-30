@@ -88,7 +88,7 @@ spec:
           ports:
             - containerPort: {{ .Values.elasticsearch.service.port }}
           resources:
-            {{ toYaml .Values.resources | indent 12 }}
+            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: es-data
               mountPath: /usr/share/elasticsearch/data

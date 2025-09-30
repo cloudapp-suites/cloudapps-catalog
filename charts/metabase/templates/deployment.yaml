@@ -211,7 +211,7 @@ spec:
             {{- end }}
           {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.resources | nindent 12 }}
         {{- if gt (len .Values.database.googleCloudSQL.instanceConnectionNames) 0 }}
         - name: cloudsql-proxy
           image: "gcr.io/cloudsql-docker/gce-proxy:{{ or .Values.database.googleCloudSQL.sidecarImageTag "latest" }}"

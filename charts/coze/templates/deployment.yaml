@@ -101,7 +101,7 @@ spec:
               value: {{ $val | quote }}
             {{- end }}
           resources:
-            {{ toYaml .Values.resources | indent 12 }}
+            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: model-config
               mountPath: /app/resources/conf/model

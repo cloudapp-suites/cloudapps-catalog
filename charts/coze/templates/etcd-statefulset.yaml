@@ -46,7 +46,7 @@ spec:
             - containerPort: 2379
             - containerPort: 2380
           resources:
-            {{ toYaml .Values.resources | indent 12 }}
+            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: etcd-data
             mountPath: /bitnami/etcd
