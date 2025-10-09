@@ -8,11 +8,11 @@
 
 如需了解更多项目信息，请访问 [answer.apache.org](https://answer.apache.org)。
 
-[![LICENSE](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6170616368652f616e73776572.svg)](https://github.com/apache/answer/blob/main/LICENSE)
+[![LICENSE](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/answer.svg)](https://github.com/apache/answer/blob/main/LICENSE)
 [![Language](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/language-go-blue.svg)](https://golang.org/)
 [![Language](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/language-react-blue.svg)](https://reactjs.org/)
-[![Go Report Card](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/68747470733a2f2f676f7265706f7274636172642e636f6d2f62616467652f6769746875622e636f6d2f6170616368652f616e73776572.svg)](https://goreportcard.com/report/github.com/apache/answer)
-[![Discord](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646973636f72642d636861742d3538363566323f6c6f676f3d646973636f7264266c6f676f436f6c6f723d663566356635.svg)](https://discord.gg/Jm7Y4cbUej)
+[![Go Report Card](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/go-report-card.svg)](https://goreportcard.com/report/github.com/apache/answer)
+[![Discord](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/discord-chat-5865f2.svg)](https://discord.gg/Jm7Y4cbUej)
 
 ## 截图
 
