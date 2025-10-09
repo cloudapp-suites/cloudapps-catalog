@@ -20,9 +20,9 @@ labels: {}
 # adminEmail -- Email of Admin Account
 adminEmail: ''
 # adminUser -- Name of Admin Account
-adminUser: ''
+adminUser: "admin"
 # adminPassword -- Password of Admin Account
-adminPassword: ''
+adminPassword: "password"
 
 # existingSecret -- Name of existing secret,
 # Make sure it contains the keys postgresql-user, postgresql-password, redis-password, email-user, email-password, admin-user, admin-password
@@ -68,9 +68,6 @@ caCertSubPath: ''
 extraVolumes: []
 # extraVolumeMounts -- Additional volume mounts to be added to the container. Values will be evaluated as templates. Normally used with `extraVolumes`
 extraVolumeMounts: []
-
-# extraConfig -- Additional (environment) configs. Values will be evaluated as templates. See https://docs.weblate.org/en/latest/admin/install/docker.html#docker-environment
-extraConfig: {}
 
 # extraSecretConfig -- Same as `extraConfig`, but created as secrets. Values will be evaluated as Helm templates
 extraSecretConfig: {}
@@ -229,4 +226,11 @@ redis:
   # @default -- `None`
   redisHost:
 
-customJs:
+# Can be removed when running Weblate service using Human-machine verification
+captcha:
+  enabled: false
+customJavaScript: ""
+
+extraConfig:
+  CUSTOM_JAVASCRIPT: ''
+  REGISTRATION_CAPTCHA: "false"

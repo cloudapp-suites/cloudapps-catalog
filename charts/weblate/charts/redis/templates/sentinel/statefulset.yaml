@@ -102,7 +102,7 @@ spec:
             preStop:
               exec:
                 command:
-                  - /bin/bash
+                  - /bin/sh
                   - -c
                   - /opt/bitnami/scripts/start-scripts/prestop-redis.sh
           {{- end }}
@@ -116,7 +116,7 @@ spec:
           command: {{- include "common.tplvalues.render" (dict "value" .Values.replica.command "context" $) | nindent 12 }}
           {{- else }}
           command:
-            - /bin/bash
+            - /bin/sh
           {{- end }}
           {{- if .Values.diagnosticMode.enabled }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.args "context" $) | nindent 12 }}
@@ -282,7 +282,7 @@ spec:
             preStop:
               exec:
                 command:
-                  - /bin/bash
+                  - /bin/sh
                   - -c
                   - /opt/bitnami/scripts/start-scripts/prestop-sentinel.sh
           {{- end }}
@@ -296,7 +296,7 @@ spec:
           command: {{- include "common.tplvalues.render" (dict "value" .Values.sentinel.command "context" $) | nindent 12 }}
           {{- else }}
           command:
-            - /bin/bash
+            - /bin/sh
           {{- end }}
           {{- if .Values.diagnosticMode.enabled }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.args "context" $) | nindent 12 }}
@@ -448,10 +448,10 @@ spec:
           command: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.command "context" $) | nindent 12 }}
           {{- else }}
           command:
-            - /bin/bash
+            - /bin/sh
             - -c
             - |
-              if [[ -f '/secrets/redis-password' ]]; then
+              if [ -f '/secrets/redis-password' ]; then
                   export REDIS_PASSWORD=$(cat /secrets/redis-password)
               fi
               redis_exporter{{- range $key, $value := .Values.metrics.extraArgs }} --{{ $key }}={{ $value }}{{- end }}
@@ -522,11 +522,11 @@ spec:
           image: {{ include "redis.volumePermissions.image" . }}
           imagePullPolicy: {{ .Values.volumePermissions.image.pullPolicy | quote }}
           command:
-            - /bin/bash
+            - /bin/sh
             - -ec
             - |
               {{- if eq ( toString ( .Values.volumePermissions.containerSecurityContext.runAsUser )) "auto" }}
-              chown -R `id -u`:`id -G | cut -d " " -f2` {{ .Values.replica.persistence.path }}
+              chown -R $(id -u):$(id -G | cut -d " " -f2) {{ .Values.replica.persistence.path }}
               {{- else }}
               chown -R {{ .Values.replica.containerSecurityContext.runAsUser }}:{{ .Values.replica.podSecurityContext.fsGroup }} {{ .Values.replica.persistence.path }}
               {{- end }}
