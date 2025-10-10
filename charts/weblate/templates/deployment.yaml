@@ -159,9 +159,9 @@ spec:
             - name: WEBLATE_DEBUG
               value: "{{ .Values.debug }}"
             - name: WEBLATE_CUSTOM_JS
-              value: {{ .Values.customJavaScript }}
+              value: ""
             - name: WEBLATE_REGISTRATION_CAPTCHA
-              value: {{ .Values.captcha.enabled }}
+              value: "False"
             {{- if (and .Values.caCertSecretName .Values.caCertSubPath )}}
             - name: REQUESTS_CA_BUNDLE
               value: /{{ .Values.caCertSubPath }}
