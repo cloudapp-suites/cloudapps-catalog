@@ -463,7 +463,7 @@ labels: {}
 ## When `mongodb.architecture=replicaset`, the number of replicas is taken in account
 ## When `mongodb.architecture=standalone`, the number of replicas can only be 0 or 1 (value higher then 1 will not be taken in account)
 ##
-replicaCount: 1
+replicaCount: 2
 ## @param updateStrategy.type Strategy to use to replace existing MongoDB(&reg;) pods. When architecture=standalone and useStatefulSet=false,
 ## this parameter will be applied on a deployment object. In other case it will be applied on a statefulset object
 ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies
