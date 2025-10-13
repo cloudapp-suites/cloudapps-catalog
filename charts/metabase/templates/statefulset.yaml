@@ -1,5 +1,5 @@
-apiVersion: {{ template "deployment.apiVersion" . }}
-kind: Deployment
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
   name: {{ template "metabase.fullname" . }}
   namespace: {{ .Release.Namespace }}
@@ -19,11 +19,8 @@ spec:
   selector:
     matchLabels:
       app: {{ template "metabase.name" . }}
+  serviceName: {{ template "metabase.fullname" . }}
   replicas: {{ .Values.replicaCount }}
-  {{- with .Values.strategy }}
-  strategy:
-{{ toYaml . | trim | indent 4 }}
-  {{- end }}
   template:
     metadata:
       annotations:
@@ -268,14 +265,6 @@ spec:
       {{- end }}
       serviceAccountName: {{ template "metabase.serviceAccountName" . }}
       volumes:
-        {{- if .Values.persistence.enabled }}
-        - name: h2database-data
-          persistentVolumeClaim:
-            claimName: {{ .Values.persistence.persistentVolumeClaim.h2database.existingClaim | default (include "metabase.fullname" .) }}
-        {{- else }}
-        - name: h2database-data
-          emptyDir: {}
-        {{- end }}
         {{- if or .Values.log4jProperties .Values.log4j2XML }}
         - name: config
           configMap:
@@ -293,3 +282,30 @@ spec:
         {{- if ne (len .Values.extraVolumes) 0 }}
           {{ toYaml .Values.extraVolumes | nindent 8 }}
         {{- end }}
+  {{- if and .Values.persistence.enabled (not .Values.persistence.persistentVolumeClaim.h2database.existingClaim) }}
+  volumeClaimTemplates:
+  - metadata:
+      name: h2database-data
+      annotations:
+      {{- range $key, $value := .Values.persistence.persistentVolumeClaim.h2database.annotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+      {{- if eq .Values.persistence.resourcePolicy "keep" }}
+        helm.sh/resource-policy: keep
+      {{- end }}
+      labels:
+        component: h2database
+    spec:
+      accessModes:
+        - {{ .Values.persistence.persistentVolumeClaim.h2database.accessMode }}
+      resources:
+        requests:
+          storage: {{ .Values.persistence.persistentVolumeClaim.h2database.size }}
+      {{- if .Values.persistence.persistentVolumeClaim.h2database.storageClass }}
+        {{- if eq "-" .Values.persistence.persistentVolumeClaim.h2database.storageClass }}
+      storageClassName: ""
+        {{- else }}
+      storageClassName: {{ .Values.persistence.persistentVolumeClaim.h2database.storageClass }}
+        {{- end }}
+      {{- end }}
+  {{- end }}
