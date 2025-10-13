@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "weblate.fullname" . }}
   namespace: {{ .Release.Namespace }}
@@ -7,7 +7,8 @@ metadata:
 {{ include "weblate.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
-  strategy:
+  serviceName: {{ include "weblate.fullname" . }}
+  updateStrategy:
     type: {{ .Values.updateStrategy }}
   selector:
     matchLabels:
@@ -234,11 +235,8 @@ spec:
             items:
             - key: "settings-override.py"
               path: "settings-override.py"
+        {{- if not .Values.persistence.enabled }}
         - name: weblate-data
-        {{- if .Values.persistence.enabled }}
-          persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default ( include "weblate.fullname" . ) }}
-        {{- else }}
           emptyDir: {}
         {{- end -}}
       {{- if (and .Values.caCertSecretName .Values.caCertSubPath )}}
@@ -261,3 +259,15 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+  {{- if .Values.persistence.enabled }}
+  volumeClaimTemplates:
+    - metadata:
+        name: weblate-data
+      spec:
+        accessModes:
+          - {{ .Values.persistence.accessMode | quote }}
+        storageClassName: "{{ .Values.persistence.storageClass }}"
+        resources:
+          requests:
+            storage: {{ .Values.persistence.size | quote }}
+  {{- end }}

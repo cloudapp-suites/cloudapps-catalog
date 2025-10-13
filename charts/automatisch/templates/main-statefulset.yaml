@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "automatisch.fullname" . }}-main
 spec:
+  serviceName: {{ include "automatisch.fullname" . }}-main
   replicas: {{ .Values.main.replicaCount }}
   selector:
     matchLabels:
