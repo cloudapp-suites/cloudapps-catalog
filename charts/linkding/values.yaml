@@ -29,13 +29,7 @@ controllers:
           LD_DB_ENGINE: sqlite
 
         # -- Set the resource requests / limits for the container.
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 266Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
+        resources: {}
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
