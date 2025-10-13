@@ -31,4 +31,6 @@ volumes:
       claimName: answer-pvc
 
 persistent:
-  storage: cloud.storage
+  enable: true
+  storageClassName: cloudapp.storageClassName
+  storage: cloudapp.storageClass

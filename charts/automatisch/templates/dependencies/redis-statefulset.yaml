@@ -18,6 +18,8 @@ spec:
           image: {{ .Values.redis.image }}
           ports:
             - containerPort: 6379
+          resources:
+{{ toYaml .Values.redis.resources | indent 12 }}
           volumeMounts:
             - name: redis-data
               mountPath: /data

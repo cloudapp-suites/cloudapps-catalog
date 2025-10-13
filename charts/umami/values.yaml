@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: docker.umami.is/umami-software/umami
-  tag: postgresql-latest
+  repository: app.image
+  tag: app.image.tag
   pullPolicy: IfNotPresent
 service:
   type: LoadBalancer
@@ -18,7 +18,7 @@ postgresql:
   enabled: true
   image:
     repository: postgresql.image
-    tag: 15.3.0-debian-11-r7
+    tag: postgresql.image.tag
     pullPolicy: IfNotPresent
   port: 5432
   user: admin

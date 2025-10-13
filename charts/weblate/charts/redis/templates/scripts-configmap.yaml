@@ -13,7 +13,7 @@ metadata:
 data:
 {{- if and (eq .Values.architecture "replication") .Values.sentinel.enabled }}
   start-node.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
     . /opt/bitnami/scripts/libos.sh
     . /opt/bitnami/scripts/liblog.sh
@@ -100,8 +100,8 @@ data:
     chown -R redis {{ .Values.replica.persistence.path }}
     {{- end }}
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
+    [ -f "$REDIS_MASTER_PASSWORD_FILE" ] && REDIS_MASTER_PASSWORD=$(cat "${REDIS_MASTER_PASSWORD_FILE}")
 
     # check if there is a master
     master_in_persisted_conf="$(get_full_hostname "$HOSTNAME")"
@@ -110,7 +110,7 @@ data:
     redisRetVal=$?
 
     {{- if .Values.sentinel.persistence.enabled }}
-    if [[ -f /opt/bitnami/redis-sentinel/etc/sentinel.conf ]]; then
+    if [ -f /opt/bitnami/redis-sentinel/etc/sentinel.conf ]; then
         master_in_persisted_conf="$(awk '/monitor/ {print $4}' /opt/bitnami/redis-sentinel/etc/sentinel.conf)"
         master_port_in_persisted_conf="$(awk '/monitor/ {print $5}' /opt/bitnami/redis-sentinel/etc/sentinel.conf)"
         info "Found previous master ${master_in_persisted_conf}:${master_port_in_persisted_conf} in /opt/bitnami/redis-sentinel/etc/sentinel.conf"
@@ -119,8 +119,8 @@ data:
     fi
     {{- end }}
 
-    if [[ $redisRetVal -ne 0 ]]; then
-        if [[ "$master_in_persisted_conf" == "$(get_full_hostname "$HOSTNAME")" ]]; then
+    if [ $redisRetVal -ne 0 ]; then
+        if [ "$master_in_persisted_conf" = "$(get_full_hostname "$HOSTNAME")" ]; then
             # Case 1: No active sentinel and in previous sentinel.conf we were the master --> MASTER
             info "Configuring the node as master"
             export REDIS_REPLICATION_MODE="master"
@@ -138,7 +138,7 @@ data:
         REDIS_MASTER_HOST=${REDIS_SENTINEL_INFO[0]}
         REDIS_MASTER_PORT_NUMBER=${REDIS_SENTINEL_INFO[1]}
 
-        if [[ "$REDIS_MASTER_HOST" == "$(get_full_hostname "$HOSTNAME")" ]]; then
+        if [ "$REDIS_MASTER_HOST" = "$(get_full_hostname "$HOSTNAME")" ]; then
             # Case 3: Active sentinel and master it is this node --> MASTER
             info "Configuring the node as master"
             export REDIS_REPLICATION_MODE="master"
@@ -167,16 +167,16 @@ data:
         fi
     fi
 
-    if [[ -n "$REDIS_EXTERNAL_MASTER_HOST" ]]; then
+    if [ -n "$REDIS_EXTERNAL_MASTER_HOST" ]; then
       REDIS_MASTER_HOST="$REDIS_EXTERNAL_MASTER_HOST"
       REDIS_MASTER_PORT_NUMBER="${REDIS_EXTERNAL_MASTER_PORT}"
     fi
 
-    if [[ ! -f /opt/bitnami/redis/etc/replica.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/replica.conf ];then
         cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf
     fi
 
-    if [[ ! -f /opt/bitnami/redis/etc/redis.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/redis.conf ];then
         cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf
     fi
 
@@ -184,36 +184,37 @@ data:
     echo "replica-announce-port $REDISPORT" >> /opt/bitnami/redis/etc/replica.conf
     echo "replica-announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis/etc/replica.conf
 
+    ARGS=""
     {{- if .Values.tls.enabled }}
-    ARGS=("--port" "0")
-    ARGS+=("--tls-port" "${REDIS_TLS_PORT}")
-    ARGS+=("--tls-cert-file" "${REDIS_TLS_CERT_FILE}")
-    ARGS+=("--tls-key-file" "${REDIS_TLS_KEY_FILE}")
-    ARGS+=("--tls-ca-cert-file" "${REDIS_TLS_CA_FILE}")
-    ARGS+=("--tls-auth-clients" "${REDIS_TLS_AUTH_CLIENTS}")
-    ARGS+=("--tls-replication" "yes")
+    ARGS="$ARGS --port 0"
+    ARGS="$ARGS --tls-port ${REDIS_TLS_PORT}"
+    ARGS="$ARGS --tls-cert-file ${REDIS_TLS_CERT_FILE}"
+    ARGS="$ARGS --tls-key-file ${REDIS_TLS_KEY_FILE}"
+    ARGS="$ARGS --tls-ca-cert-file ${REDIS_TLS_CA_FILE}"
+    ARGS="$ARGS --tls-auth-clients ${REDIS_TLS_AUTH_CLIENTS}"
+    ARGS="$ARGS --tls-replication yes"
     {{- if .Values.tls.dhParamsFilename }}
-    ARGS+=("--tls-dh-params-file" "${REDIS_TLS_DH_PARAMS_FILE}")
+    ARGS="$ARGS --tls-dh-params-file ${REDIS_TLS_DH_PARAMS_FILE}"
     {{- end }}
     {{- else }}
-    ARGS=("--port" "${REDIS_PORT}")
+    ARGS="$ARGS --port ${REDIS_PORT}"
     {{- end }}
 
-    if [[ "$REDIS_REPLICATION_MODE" = "slave" ]]; then
-        ARGS+=("--replicaof" "${REDIS_MASTER_HOST}" "${REDIS_MASTER_PORT_NUMBER}")
+    if [ "$REDIS_REPLICATION_MODE" = "slave" ]; then
+        ARGS="$ARGS --replicaof ${REDIS_MASTER_HOST} ${REDIS_MASTER_PORT_NUMBER}"
     fi
 
     {{- if .Values.auth.enabled }}
-    ARGS+=("--requirepass" "${REDIS_PASSWORD}")
-    ARGS+=("--masterauth" "${REDIS_MASTER_PASSWORD}")
+    ARGS="$ARGS --requirepass ${REDIS_PASSWORD}"
+    ARGS="$ARGS --masterauth ${REDIS_MASTER_PASSWORD}"
     {{- else }}
-    ARGS+=("--protected-mode" "no")
+    ARGS="$ARGS --protected-mode no"
     {{- end }}
-    ARGS+=("--include" "/opt/bitnami/redis/etc/replica.conf")
-    ARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/replica.conf"
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/redis.conf"
     {{- if .Values.replica.extraFlags }}
     {{- range .Values.replica.extraFlags }}
-    ARGS+=({{ . | quote }})
+    ARGS="$ARGS {{ . }}"
     {{- end }}
     {{- end }}
 
@@ -222,13 +223,13 @@ data:
     {{- end }}
 
     {{- if .Values.replica.command }}
-    exec {{ .Values.replica.command }} "${ARGS[@]}"
+    eval "{{ .Values.replica.command }} $ARGS"
     {{- else }}
-    exec redis-server "${ARGS[@]}"
+    eval "redis-server $ARGS"
     {{- end }}
 
   start-sentinel.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
     . /opt/bitnami/scripts/libos.sh
     . /opt/bitnami/scripts/libvalidations.sh
@@ -282,7 +283,7 @@ data:
         value="${value//\\/\\\\}"
         value="${value//&/\\&}"
         value="${value//\?/\\?}"
-        [[ "$value" = "" ]] && value="\"$value\""
+        [ "$value" = "" ] && value="\"$value\""
 
         replace_in_file "/opt/bitnami/redis-sentinel/etc/sentinel.conf" "^#*\s*${key} .*" "${key} ${value}" false
     }
@@ -302,12 +303,12 @@ data:
         eval $sentinel_info_command
     }
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
 
     master_in_persisted_conf="$(get_full_hostname "$HOSTNAME")"
 
     {{- if .Values.sentinel.persistence.enabled }}
-    if [[ -f /opt/bitnami/redis-sentinel/etc/sentinel.conf ]]; then
+    if [ -f /opt/bitnami/redis-sentinel/etc/sentinel.conf ]; then
         check_lock_file() {
             [[ -f /opt/bitnami/redis-sentinel/etc/.node_read ]]
         }
@@ -318,7 +319,7 @@ data:
         debug "$(cat /opt/bitnami/redis-sentinel/etc/sentinel.conf | grep monitor)"
     fi
     {{- end }}
-    if ! get_sentinel_master_info && [[ "$master_in_persisted_conf" == "$(get_full_hostname "$HOSTNAME")" ]]; then
+    if ! get_sentinel_master_info && [ "$master_in_persisted_conf" = "$(get_full_hostname "$HOSTNAME")" ]; then
         # No master found, lets create a master node
         export REDIS_REPLICATION_MODE="master"
 
@@ -334,7 +335,7 @@ data:
         REDIS_MASTER_PORT_NUMBER=${REDIS_SENTINEL_INFO[1]}
     fi
 
-    if [[ -n "$REDIS_EXTERNAL_MASTER_HOST" ]]; then
+    if [ -n "$REDIS_EXTERNAL_MASTER_HOST" ]; then
       REDIS_MASTER_HOST="$REDIS_EXTERNAL_MASTER_HOST"
       REDIS_MASTER_PORT_NUMBER="${REDIS_EXTERNAL_MASTER_PORT}"
     fi
@@ -354,7 +355,7 @@ data:
         hostname="$1"
         ip="$2"
 
-        if [[ -n "$hostname" && -n "$ip" && "$hostname" != "$HOSTNAME" ]]; then
+        if [ -n "$hostname" && -n "$ip" && "$hostname" != "$HOSTNAME" ]; then
             sentinel_conf_add "sentinel known-sentinel {{ .Values.sentinel.masterSet }} $(get_full_hostname "$hostname") $(get_port "$hostname" "SENTINEL") $(host_id "$hostname")"
         fi
     }
@@ -362,7 +363,7 @@ data:
         hostname="$1"
         ip="$2"
 
-        if [[ -n "$ip" && "$(get_full_hostname "$hostname")" != "$REDIS_MASTER_HOST" ]]; then
+        if [ -n "$ip" && "$(get_full_hostname "$hostname")" != "$REDIS_MASTER_HOST" ]; then
             sentinel_conf_add "sentinel known-replica {{ .Values.sentinel.masterSet }} $(get_full_hostname "$hostname") $(get_port "$hostname" "REDIS")"
         fi
     }
@@ -381,24 +382,25 @@ data:
     echo "sentinel announce-port $SERVPORT" >> /opt/bitnami/redis-sentinel/etc/sentinel.conf
     echo "sentinel announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis-sentinel/etc/sentinel.conf
 
+    ARGS=""
     {{- if .Values.tls.enabled }}
-    ARGS=("--port" "0")
-    ARGS+=("--tls-port" "${REDIS_SENTINEL_TLS_PORT_NUMBER}")
-    ARGS+=("--tls-cert-file" "${REDIS_SENTINEL_TLS_CERT_FILE}")
-    ARGS+=("--tls-key-file" "${REDIS_SENTINEL_TLS_KEY_FILE}")
-    ARGS+=("--tls-ca-cert-file" "${REDIS_SENTINEL_TLS_CA_FILE}")
-    ARGS+=("--tls-replication" "yes")
-    ARGS+=("--tls-auth-clients" "${REDIS_SENTINEL_TLS_AUTH_CLIENTS}")
+    ARGS="$ARGS --port 0"
+    ARGS="$ARGS --tls-port ${REDIS_SENTINEL_TLS_PORT_NUMBER}"
+    ARGS="$ARGS --tls-cert-file ${REDIS_SENTINEL_TLS_CERT_FILE}"
+    ARGS="$ARGS --tls-key-file ${REDIS_SENTINEL_TLS_KEY_FILE}"
+    ARGS="$ARGS --tls-ca-cert-file ${REDIS_SENTINEL_TLS_CA_FILE}"
+    ARGS="$ARGS --tls-replication yes"
+    ARGS="$ARGS --tls-auth-clients ${REDIS_SENTINEL_TLS_AUTH_CLIENTS}"
     {{- if .Values.tls.dhParamsFilename }}
-    ARGS+=("--tls-dh-params-file" "${REDIS_SENTINEL_TLS_DH_PARAMS_FILE}")
+    ARGS="$ARGS --tls-dh-params-file ${REDIS_SENTINEL_TLS_DH_PARAMS_FILE}"
     {{- end }}
     {{- end }}
     {{- if .Values.sentinel.preExecCmds }}
     {{ .Values.sentinel.preExecCmds | nindent 4 }}
     {{- end }}
-    exec redis-server /opt/bitnami/redis-sentinel/etc/sentinel.conf --sentinel {{- if .Values.tls.enabled }} "${ARGS[@]}" {{- end }}
+    eval "redis-server /opt/bitnami/redis-sentinel/etc/sentinel.conf --sentinel {{- if .Values.tls.enabled }} $ARGS {{- end }}"
   prestop-sentinel.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
     . /opt/bitnami/scripts/libvalidations.sh
     . /opt/bitnami/scripts/libos.sh
@@ -428,15 +430,15 @@ data:
     failover_finished() {
       REDIS_SENTINEL_INFO=($(run_sentinel_command get-master-addr-by-name "{{ .Values.sentinel.masterSet }}"))
       REDIS_MASTER_HOST="${REDIS_SENTINEL_INFO[0]}"
-      [[ "$REDIS_MASTER_HOST" != "$(get_full_hostname $HOSTNAME)" ]]
+      [ "$REDIS_MASTER_HOST" != "$(get_full_hostname $HOSTNAME)" ]
     }
 
     REDIS_SERVICE="{{ include "common.names.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}"
 
     {{ if .Values.auth.sentinel -}}
     # redis-cli automatically consumes credentials from the REDISCLI_AUTH variable
-    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
-    [[ -f "$REDIS_PASSWORD_FILE" ]] && export REDISCLI_AUTH="$(< "${REDIS_PASSWORD_FILE}")"
+    [ -n "$REDIS_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDISCLI_AUTH=$(cat "${REDIS_PASSWORD_FILE}")
     {{- end }}
 
     if ! failover_finished; then
@@ -454,7 +456,7 @@ data:
         exit 0
     fi
   prestop-redis.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
     . /opt/bitnami/scripts/libvalidations.sh
     . /opt/bitnami/scripts/libos.sh
@@ -472,8 +474,8 @@ data:
     }
 
     # redis-cli automatically consumes credentials from the REDISCLI_AUTH variable
-    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
-    [[ -f "$REDIS_PASSWORD_FILE" ]] && export REDISCLI_AUTH="$(< "${REDIS_PASSWORD_FILE}")"
+    [ -n "$REDIS_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDISCLI_AUTH=$(cat "${REDIS_PASSWORD_FILE}")
 
     if ! failover_finished; then
         echo "Waiting for sentinel to run failover for up to {{ sub .Values.sentinel.terminationGracePeriodSeconds 10 }}s"
@@ -484,56 +486,57 @@ data:
 
 {{- else }}
   start-master.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
     {{- if and .Values.master.containerSecurityContext.runAsUser (eq (.Values.master.containerSecurityContext.runAsUser | int) 0) }}
     useradd redis
     chown -R redis {{ .Values.master.persistence.path }}
     {{- end }}
-    if [[ ! -f /opt/bitnami/redis/etc/master.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/master.conf ];then
         cp /opt/bitnami/redis/mounted-etc/master.conf /opt/bitnami/redis/etc/master.conf
     fi
-    if [[ ! -f /opt/bitnami/redis/etc/redis.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/redis.conf ];then
         cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf
     fi
+    ARGS=""
     {{- if .Values.tls.enabled }}
-    ARGS=("--port" "0")
-    ARGS+=("--tls-port" "${REDIS_TLS_PORT}")
-    ARGS+=("--tls-cert-file" "${REDIS_TLS_CERT_FILE}")
-    ARGS+=("--tls-key-file" "${REDIS_TLS_KEY_FILE}")
-    ARGS+=("--tls-ca-cert-file" "${REDIS_TLS_CA_FILE}")
-    ARGS+=("--tls-auth-clients" "${REDIS_TLS_AUTH_CLIENTS}")
+    ARGS="$ARGS --port 0"
+    ARGS="$ARGS --tls-port ${REDIS_TLS_PORT}"
+    ARGS="$ARGS --tls-cert-file ${REDIS_TLS_CERT_FILE}"
+    ARGS="$ARGS --tls-key-file ${REDIS_TLS_KEY_FILE}"
+    ARGS="$ARGS --tls-ca-cert-file ${REDIS_TLS_CA_FILE}"
+    ARGS="$ARGS --tls-auth-clients ${REDIS_TLS_AUTH_CLIENTS}"
     {{- if .Values.tls.dhParamsFilename }}
-    ARGS+=("--tls-dh-params-file" "${REDIS_TLS_DH_PARAMS_FILE}")
+    ARGS="$ARGS --tls-dh-params-file ${REDIS_TLS_DH_PARAMS_FILE}"
     {{- end }}
     {{- else }}
-    ARGS=("--port" "${REDIS_PORT}")
+    ARGS="$ARGS --port ${REDIS_PORT}"
     {{- end }}
     {{- if .Values.auth.enabled }}
-    ARGS+=("--requirepass" "${REDIS_PASSWORD}")
-    ARGS+=("--masterauth" "${REDIS_PASSWORD}")
+    ARGS="$ARGS --requirepass ${REDIS_PASSWORD}"
+    ARGS="$ARGS --masterauth ${REDIS_PASSWORD}"
     {{- else }}
-    ARGS+=("--protected-mode" "no")
+    ARGS="$ARGS --protected-mode no"
     {{- end }}
-    ARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")
-    ARGS+=("--include" "/opt/bitnami/redis/etc/master.conf")
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/redis.conf"
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/master.conf"
     {{- if .Values.master.extraFlags }}
     {{- range .Values.master.extraFlags }}
-    ARGS+=({{ . | quote }})
+    ARGS="$ARGS {{ . }}"
     {{- end }}
     {{- end }}
     {{- if .Values.master.preExecCmds }}
     {{ .Values.master.preExecCmds | nindent 4 }}
     {{- end }}
     {{- if .Values.master.command }}
-    exec {{ .Values.master.command }} "${ARGS[@]}"
+    eval "{{ .Values.master.command }} $ARGS"
     {{- else }}
-    exec redis-server "${ARGS[@]}"
+    eval "redis-server $ARGS"
     {{- end }}
   {{- if eq .Values.architecture "replication" }}
   start-replica.sh: |
-    #!/bin/bash
+    #!/bin/sh
 
     get_port() {
         hostname="$1"
@@ -570,16 +573,16 @@ data:
 
     REDISPORT=$(get_port "$HOSTNAME" "REDIS")
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
+    [ -f "$REDIS_MASTER_PASSWORD_FILE" ] && REDIS_MASTER_PASSWORD=$(cat "${REDIS_MASTER_PASSWORD_FILE}")
     {{- if and .Values.replica.containerSecurityContext.runAsUser (eq (.Values.replica.containerSecurityContext.runAsUser | int) 0) }}
     useradd redis
     chown -R redis {{ .Values.replica.persistence.path }}
     {{- end }}
-    if [[ ! -f /opt/bitnami/redis/etc/replica.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/replica.conf ];then
         cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf
     fi
-    if [[ ! -f /opt/bitnami/redis/etc/redis.conf ]];then
+    if [ ! -f /opt/bitnami/redis/etc/redis.conf ];then
         cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf
     fi
 
@@ -587,41 +590,42 @@ data:
     echo "replica-announce-port $REDISPORT" >> /opt/bitnami/redis/etc/replica.conf
     echo "replica-announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis/etc/replica.conf
 
+    ARGS=""
     {{- if .Values.tls.enabled }}
-    ARGS=("--port" "0")
-    ARGS+=("--tls-port" "${REDIS_TLS_PORT}")
-    ARGS+=("--tls-cert-file" "${REDIS_TLS_CERT_FILE}")
-    ARGS+=("--tls-key-file" "${REDIS_TLS_KEY_FILE}")
-    ARGS+=("--tls-ca-cert-file" "${REDIS_TLS_CA_FILE}")
-    ARGS+=("--tls-auth-clients" "${REDIS_TLS_AUTH_CLIENTS}")
-    ARGS+=("--tls-replication" "yes")
+    ARGS="$ARGS --port 0"
+    ARGS="$ARGS --tls-port ${REDIS_TLS_PORT}"
+    ARGS="$ARGS --tls-cert-file ${REDIS_TLS_CERT_FILE}"
+    ARGS="$ARGS --tls-key-file ${REDIS_TLS_KEY_FILE}"
+    ARGS="$ARGS --tls-ca-cert-file ${REDIS_TLS_CA_FILE}"
+    ARGS="$ARGS --tls-auth-clients ${REDIS_TLS_AUTH_CLIENTS}"
+    ARGS="$ARGS --tls-replication yes"
     {{- if .Values.tls.dhParamsFilename }}
-    ARGS+=("--tls-dh-params-file" "${REDIS_TLS_DH_PARAMS_FILE}")
+    ARGS="$ARGS --tls-dh-params-file ${REDIS_TLS_DH_PARAMS_FILE}"
     {{- end }}
     {{- else }}
-    ARGS=("--port" "${REDIS_PORT}")
+    ARGS="$ARGS --port ${REDIS_PORT}"
     {{- end }}
-    ARGS+=("--replicaof" "${REDIS_MASTER_HOST}" "${REDIS_MASTER_PORT_NUMBER}")
+    ARGS="$ARGS --replicaof ${REDIS_MASTER_HOST} ${REDIS_MASTER_PORT_NUMBER}"
     {{- if .Values.auth.enabled }}
-    ARGS+=("--requirepass" "${REDIS_PASSWORD}")
-    ARGS+=("--masterauth" "${REDIS_MASTER_PASSWORD}")
+    ARGS="$ARGS --requirepass ${REDIS_PASSWORD}"
+    ARGS="$ARGS --masterauth ${REDIS_MASTER_PASSWORD}"
     {{- else }}
-    ARGS+=("--protected-mode" "no")
+    ARGS="$ARGS --protected-mode no"
     {{- end }}
-    ARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")
-    ARGS+=("--include" "/opt/bitnami/redis/etc/replica.conf")
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/redis.conf"
+    ARGS="$ARGS --include /opt/bitnami/redis/etc/replica.conf"
     {{- if .Values.replica.extraFlags }}
     {{- range .Values.replica.extraFlags }}
-    ARGS+=({{ . | quote }})
+    ARGS="$ARGS {{ . }}"
     {{- end }}
     {{- end }}
     {{- if .Values.replica.preExecCmds }}
     {{ .Values.replica.preExecCmds | nindent 4 }}
     {{- end }}
     {{- if .Values.replica.command }}
-    exec {{ .Values.replica.command }} "${ARGS[@]}"
+    eval "{{ .Values.replica.command }} $ARGS"
     {{- else }}
-    exec redis-server "${ARGS[@]}"
+    eval "redis-server $ARGS"
     {{- end }}
   {{- end }}
 {{- end }}

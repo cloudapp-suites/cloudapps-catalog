@@ -157,7 +157,7 @@ schedulerName: ""
 architecture: standalone
 ## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
 ##
-useStatefulSet: false
+useStatefulSet: true
 ## MongoDB(&reg;) Authentication parameters
 ##
 auth:
@@ -463,7 +463,7 @@ labels: {}
 ## When `mongodb.architecture=replicaset`, the number of replicas is taken in account
 ## When `mongodb.architecture=standalone`, the number of replicas can only be 0 or 1 (value higher then 1 will not be taken in account)
 ##
-replicaCount: 2
+replicaCount: 1
 ## @param updateStrategy.type Strategy to use to replace existing MongoDB(&reg;) pods. When architecture=standalone and useStatefulSet=false,
 ## this parameter will be applied on a deployment object. In other case it will be applied on a statefulset object
 ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies

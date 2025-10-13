@@ -32,6 +32,8 @@ spec:
               value: {{ .Values.env.APPRISE_ATTACH_DIR }}
             - name: APPRISE_PLUGIN_PATHS
               value: {{ .Values.env.APPRISE_PLUGIN_PATHS }}
+          resources:
+            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config
               mountPath: {{ .Values.env.APPRISE_CONFIG_DIR }}

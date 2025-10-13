@@ -68,7 +68,7 @@ spec:
               port: http
           {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.resources | nindent 12 }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}

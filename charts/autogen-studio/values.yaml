@@ -47,3 +47,5 @@ readinessProbe:
   enabled: false
   initialDelaySeconds: 5
   periodSeconds: 5
+
+resources: {}
