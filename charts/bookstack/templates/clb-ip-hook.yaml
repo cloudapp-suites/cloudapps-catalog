@@ -1,4 +1,3 @@
-# templates/rbac-job.yaml
 {{- if eq .Values.service.type "LoadBalancer" }}
 ---
 # 为 Job 创建一个专用的 ServiceAccount
@@ -9,11 +8,6 @@ metadata:
   labels:
     app: {{ template "bookstack.name" . }}
     release: {{ .Release.Name }}
-  annotations:
-    # 这个注解让 Helm 在安装后、删除前管理这个资源
-    "helm.sh/hook": post-install,pre-delete
-    "helm.sh/hook-weight": "-5" # 确保在 Job 运行前创建
-    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
 
 ---
 # 定义 Job 所需的权限：获取 Service 和更新 Deployment
@@ -24,10 +18,6 @@ metadata:
   labels:
     app: {{ template "bookstack.name" . }}
     release: {{ .Release.Name }}
-  annotations:
-    "helm.sh/hook": post-install,pre-delete
-    "helm.sh/hook-weight": "-5"
-    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
 rules:
 - apiGroups: [""] # "" 表示核心 API 组
   resources: ["services"]
@@ -45,10 +35,6 @@ metadata:
   labels:
     app: {{ template "bookstack.name" . }}
     release: {{ .Release.Name }}
-  annotations:
-    "helm.sh/hook": post-install,pre-delete
-    "helm.sh/hook-weight": "-5"
-    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
 subjects:
 - kind: ServiceAccount
   name: "{{ include "bookstack.fullname" . }}-ip-updater"
