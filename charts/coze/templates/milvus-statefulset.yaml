@@ -69,8 +69,6 @@ spec:
             timeoutSeconds: 3
             successThreshold: 1
             failureThreshold: 3
-          resources:
-            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: milvus-data
             mountPath: /var/lib/milvus

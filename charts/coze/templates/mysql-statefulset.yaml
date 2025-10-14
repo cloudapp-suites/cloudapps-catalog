@@ -46,8 +46,6 @@ spec:
             initialDelaySeconds: 30
             periodSeconds: 10
             timeoutSeconds: 5
-          resources:
-            {{ toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: mysql-data
             mountPath: /var/lib/mysql
