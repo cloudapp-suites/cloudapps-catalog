@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ template "apprise.fullname" . }}
   labels:
     app.kubernetes.io/name: {{ template "apprise.fullname" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
+  serviceName: {{ template "apprise.fullname" . }}
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:

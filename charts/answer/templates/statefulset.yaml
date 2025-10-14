@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "answer.fullname" . }}
 spec:
+  serviceName: {{ include "answer.fullname" . }}
   replicas: 1
   selector:
     matchLabels:
@@ -25,7 +26,13 @@ spec:
           volumeMounts:
             - name: answer-data
               mountPath: /data
-      volumes:
-        - name: answer-data
-          persistentVolumeClaim:
-            claimName: {{ (index .Values.volumes 0).persistentVolumeClaim.claimName }}
+  volumeClaimTemplates:
+    - metadata:
+        name: answer-data
+      spec:
+        storageClassName: {{ .Values.persistent.storageClassName | quote }}
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.persistent.storage | quote }}
