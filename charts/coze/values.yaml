@@ -148,9 +148,9 @@ rocketmq:
         storageClassName: cloudapp.storageClassName
         size: "20Gi"
     resources:
-      limits:
-        cpu: 2000m
-        memory: 4Gi
+      requests:
+        cpu: "1"
+        memory: 2Gi
     livenessProbe:
       exec:
         command: ["sh", "-c", "mqadmin clusterList -n localhost:9876"]
@@ -188,9 +188,9 @@ rocketmq:
         storageClassName: cloudapp.storageClassName
         size: "20Gi"
     resources:
-      limits:
-        cpu: 4000m
-        memory: 8Gi
+      requests:
+        cpu: "1"
+        memory: 2Gi
     initContainers:
       - name: wait-for-namesrv
         image: busybox.image
@@ -235,8 +235,8 @@ minio:
       cpu: 8000m
       memory: 16Gi
     requests:
-      cpu: 4000m
-      memory: 8Gi
+      cpu: "1"
+      memory: 2Gi
 
 etcd:
   enabled: true
