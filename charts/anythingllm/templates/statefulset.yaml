@@ -64,6 +64,10 @@ spec:
               mountPath: /app/server/storage
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: {{ include "anythingllm.fullname" . }}-pvc
+          persistentVolumeClaim:
+            claimName: {{ .Values.anythingllm.storage.existingClaim | default (printf "%s-pvc" (include "anythingllm.fullname" .)) }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -76,14 +80,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-  volumeClaimTemplates:
-    - metadata:
-        name: {{ include "anythingllm.fullname" . }}-pvc
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: {{ .Values.anythingllm.storage.size }}
-        {{- if .Values.anythingllm.storage.className }}
-        storageClassName: {{ .Values.anythingllm.storage.className }}
-        {{- end }}

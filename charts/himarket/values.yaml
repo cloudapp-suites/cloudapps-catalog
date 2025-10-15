@@ -47,8 +47,8 @@ mysql:
     database: "himarket_db"
     username: "himarket_user"
     # 可选：设置固定密码（留空则自动生成随机密码）
-    rootPassword: ""  # 设置root密码，如 "myRootPass123"
-    password: ""      # 设置应用用户密码，如 "myAppPass123"
+    rootPassword: "myRootPass123"  # 设置root密码，如 "myRootPass123"
+    password: "myRootPass123"      # 设置应用用户密码，如 "myAppPass123"
   
   # Service 配置
   service:
