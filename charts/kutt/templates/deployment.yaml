@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "kutt.fullname" . }}
   labels:
     {{- include "kutt.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "kutt.fullname" . }}
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
