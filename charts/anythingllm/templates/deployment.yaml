@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "anythingllm.fullname" . }}
   labels:
     {{- include "anythingllm.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "anythingllm.fullname" . }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
@@ -63,10 +64,6 @@ spec:
               mountPath: /app/server/storage
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      volumes:
-        - name: storage
-          persistentVolumeClaim:
-            claimName: {{ include "anythingllm.fullname" . }}-pvc
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -79,3 +76,14 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ include "anythingllm.fullname" . }}-pvc
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: {{ .Values.anythingllm.storage.size }}
+        {{- if .Values.anythingllm.storage.className }}
+        storageClassName: {{ .Values.anythingllm.storage.className }}
+        {{- end }}

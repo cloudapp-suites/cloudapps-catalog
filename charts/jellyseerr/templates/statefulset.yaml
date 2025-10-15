@@ -1,15 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "jellyseerr.fullname" . }}
   labels:
     {{- include "jellyseerr.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "jellyseerr.fullname" . }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  strategy:
-    type: {{ .Values.strategy.type }}
+  updateStrategy:
+    type: {{ .Values.strategy.type | default "RollingUpdate" }}
   selector:
     matchLabels:
       {{- include "jellyseerr.selectorLabels" . | nindent 6 }}
@@ -67,10 +68,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /app/config
-      volumes:
-        - name: config
-          persistentVolumeClaim:
-            claimName: {{ include "jellyseerr.configPersistenceName" . }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -83,3 +80,12 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+  volumeClaimTemplates:
+    - metadata:
+        name: config
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: {{ .Values.config.persistence.size }}
+        storageClassName: {{ .Values.config.persistence.storageClassName }}
