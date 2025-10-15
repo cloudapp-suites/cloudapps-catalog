@@ -42,7 +42,7 @@ spec:
               chmod 777 /app/server/storage
               chmod 666 /app/server/storage/anythingllm.db
           volumeMounts:
-            - name: storage
+            - name: {{ include "anythingllm.fullname" . }}-pvc
               mountPath: /app/server/storage
       containers:
         - name: {{ .Chart.Name }}
@@ -60,7 +60,7 @@ spec:
               containerPort: {{ .Values.anythingllm.env.SERVER_PORT | default 3001 }}
               protocol: TCP
           volumeMounts:
-            - name: storage
+            - name: {{ include "anythingllm.fullname" . }}-pvc
               mountPath: /app/server/storage
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
