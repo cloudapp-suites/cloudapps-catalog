@@ -75,6 +75,8 @@ spec:
               value: "all"
             - name: PLUGIN_INIT_TIMEOUT
               value: "600"
+            - name: GEVENT_ENABLE
+              value: "true"
           ports:
             - name: http
               containerPort: {{ .Values.api.service.port }}

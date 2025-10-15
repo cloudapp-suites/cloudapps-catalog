@@ -58,6 +58,8 @@ spec:
               value: ""
             - name: MIGRATION_ENABLED
               value: "true"
+            - name: GEVENT_ENABLE
+              value: "true"
           resources:
             {{- toYaml .Values.workerBeat.resources | nindent 12 }}
       {{- with .Values.workerBeat.nodeSelector }}
