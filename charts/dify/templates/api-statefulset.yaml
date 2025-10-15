@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "dify.fullname" . }}-api
   labels:
     {{- include "dify.labels" . | nindent 4 }}
     app.kubernetes.io/component: api
 spec:
+  serviceName: {{ include "dify.fullname" . }}-api
   replicas: 1
   selector:
     matchLabels:
