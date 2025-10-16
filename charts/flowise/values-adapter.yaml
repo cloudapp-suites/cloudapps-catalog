@@ -1,0 +1,100 @@
+image:
+  registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+  repository: cloud-app/flowiseai_flowise
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 20Gi
+  storageClass: "alicloud-disk-essd"
+
+worker:
+  enabled: false
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/flowise-worker
+    tag: latest
+    pullPolicy: IfNotPresent
+
+wait:
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/wait4x/wait4x
+    tag: latest
+    pullPolicy: IfNotPresent
+  resources: {}
+
+tests:
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/cowboysysop/pytest
+    tag: latest
+    pullPolicy: IfNotPresent
+
+
+mariadb:
+  global:
+    imageRegistry: ""
+  enabled: false
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/mariadb
+    tag: latest
+    digest: ""
+    pullPolicy: IfNotPresent
+  primary:
+    persistence:
+      enabled: true
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  secondary:
+    persistence:
+      enabled: true
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  metrics:
+    enabled: false
+    image:
+      registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+      repository: cloud-app/mysqld-exporter
+      tag: latest
+
+postgresql:
+  enabled: false
+  global:
+    imageRegistry: ""
+    storageClass: "alicloud-disk-essd"
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/postgresql
+    tag: 15.3.0-debian-11-r7
+  primary:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  readReplicas:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+
+redis:
+  enabled: false
+  global:
+    imageRegistry: ""
+    storageClass: "alicloud-disk-essd"
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/redis
+    tag: 7.0.4
+  master:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  replica:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+
+resources: {}

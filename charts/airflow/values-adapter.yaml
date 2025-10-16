@@ -1,0 +1,96 @@
+defaultAirflowRepository: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/apache/airflow"
+
+images:
+  statsd:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/prometheus/statsd-exporter
+    tag: latest
+    pullPolicy: IfNotPresent
+  redis:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/redis
+    tag: 7.2-bookworm
+    pullPolicy: IfNotPresent
+  pgbouncer:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/airflow
+    tag: airflow-pgbouncer-2025.03.05-1.23.1
+    pullPolicy: IfNotPresent
+  pgbouncerExporter:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/airflow-pgbouncer-exporter
+    tag: airflow-pgbouncer-exporter-2025.03.05-0.18.0
+    pullPolicy: IfNotPresent
+  gitSync:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/git-sync
+    tag: v4.3.0
+    pullPolicy: IfNotPresent
+
+workers:
+  persistence:
+    enabled: true
+    size: 100Gi
+    storageClassName: "alicloud-disk-essd"
+  resources: {}
+
+scheduler:
+  resources: {}
+
+createUserJob:
+  resources: {}
+
+migrateDatabaseJob:
+  resources: {}
+
+apiServer:
+  resources: {}
+
+webserver:
+  resources: {}
+
+statsd:
+  resources: {}
+
+
+triggerer:
+  resources: {}
+  persistence:
+    enabled: true
+    size: 100Gi
+    storageClassName: "alicloud-disk-essd"
+
+redis:
+  resources: {}
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClassName: "alicloud-disk-essd"
+
+dags:
+  gitSync:
+    resources: {}
+  persistence:
+    enabled: false
+    size: 20Gi
+    storageClassName: "alicloud-disk-essd"
+
+logs:
+  persistence:
+    enabled: false
+    size: 100Gi
+    storageClassName: "alicloud-disk-essd"
+    
+postgresql:
+  enabled: true
+  global:
+    imageRegistry: ""
+    storageClass: "alicloud-disk-essd"
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/postgresql
+    tag: 15.3.0-debian-11-r7
+  primary:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  readReplicas:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+  resources: {}

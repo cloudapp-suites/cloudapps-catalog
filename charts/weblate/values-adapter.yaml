@@ -1,0 +1,49 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/weblate_weblate
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: true
+  size: 20Gi
+  storageClass: "alicloud-disk-essd"
+
+postgresql:
+  global:
+    imageRegistry: ""
+    storageClass: "alicloud-disk-essd"
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/postgresql
+    tag: 15.3.0-debian-11-r7
+  primary:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+  readReplicas:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+
+redis:
+  global:
+    imageRegistry: ""
+    storageClass: "alicloud-disk-essd"
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/redis
+    tag: 7.0.4
+  master:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+  replica:
+    persistence:
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+
+resources: {}

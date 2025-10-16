@@ -2,6 +2,7 @@ image:
   repository: app.image
   tag: app.image.tag
   pullPolicy: IfNotPresent
+  kubectl: kubectl.image
 
 service:
   type: LoadBalancer
@@ -30,3 +31,6 @@ ingress:
   hosts:
     - host: chart-example.local
       paths: []
+
+nameOverride: ""
+fullnameOverride: ""

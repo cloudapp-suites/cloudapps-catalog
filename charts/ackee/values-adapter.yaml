@@ -1,0 +1,24 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/electerious_ackee
+  tag: latest
+  pullPolicy: IfNotPresent
+
+mongodb:
+  global:
+    imageRegistry: ""
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/mongodb
+    tag: latest
+    pullPolicy: IfNotPresent
+  tls:
+    image:
+      registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+      repository: cloud-app/nginx
+      tag: latest
+  persistence:
+    enabled: true
+    storageClass: "alicloud-disk-essd"
+  resources: {}
+
+resources: {}

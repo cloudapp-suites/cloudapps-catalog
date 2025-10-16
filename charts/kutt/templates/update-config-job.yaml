@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "kutt.fullname" . }}-update-config"
+  labels:
+    {{- include "kutt.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "1"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+spec:
+  template:
+    metadata:
+      name: "{{ include "kutt.fullname" . }}-update-config"
+      labels:
+        {{- include "kutt.labels" . | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      serviceAccountName: {{ include "kutt.fullname" . }}-job-sa
+      containers:
+        - name: update-config
+          image: {{ .Values.kubectl.image }}
+          command:
+            - /bin/bash
+            - -c
+            - |
+              # 等待服务获得外部 IP
+              echo "Waiting for LoadBalancer to get external IP..."
+              EXTERNAL_IP=""
+              for i in {1..30}; do
+                EXTERNAL_IP=$(kubectl get service {{ include "kutt.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null)
+                if [ -n "$EXTERNAL_IP" ]; then
+                  echo "External IP found: $EXTERNAL_IP"
+                  break
+                fi
+                echo "Waiting for external IP... ($i/30)"
+                sleep 10
+              done
+              
+              if [ -z "$EXTERNAL_IP" ]; then
+                echo "Failed to get external IP after 5 minutes"
+                exit 1
+              fi
+              
+              # 更新 ConfigMap
+              echo "Updating ConfigMap with external IP..."
+              kubectl patch configmap {{ include "kutt.fullname" . }}-config -p "{\"data\":{\"default-domain\":\"$EXTERNAL_IP:{{ .Values.service.port }}\"}}"
+              echo "ConfigMap updated successfully"

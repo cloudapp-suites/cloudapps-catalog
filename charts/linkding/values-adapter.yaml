@@ -1,0 +1,14 @@
+controllers:
+  main:
+    pod: {}
+    containers:
+      main:
+        image:
+          repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/sissbruecker_linkding
+          tag: latest
+          pullPolicy: IfNotPresent
+
+        resources:
+          requests:
+            cpu: "1"
+            memory: "2Gi"

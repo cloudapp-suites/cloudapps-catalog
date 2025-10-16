@@ -34,7 +34,7 @@ spec:
     {{- end }}
   {{- if .Values.oceanbase.monitorEnabled }}
   monitor:
-    image: oceanbase/obagent:{{ .Values.oceanbase.obAgentVersion }}
+    image: {{ .Values.oceanbase.image}}:{{ .Values.oceanbase.obAgentVersion }}
     resource:
       {{- toYaml .Values.oceanbase.monitorResource | nindent 6 }}
   {{- end }}

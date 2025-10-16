@@ -12,10 +12,10 @@ metadata:
   {{- end }}
 data:
   ping_readiness_local.sh: |-
-    #!/bin/bash
+    #!/bin/sh
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
+    [ -n "$REDIS_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -42,10 +42,10 @@ data:
       exit 1
     fi
   ping_liveness_local.sh: |-
-    #!/bin/bash
+    #!/bin/sh
 
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
+    [ -n "$REDIS_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -74,11 +74,11 @@ data:
     fi
 {{- if .Values.sentinel.enabled }}
   ping_sentinel.sh: |-
-    #!/bin/bash
+    #!/bin/sh
 
 {{- if .Values.auth.sentinel }}
-    [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [ -f "$REDIS_PASSWORD_FILE" ] && REDIS_PASSWORD=$(cat "${REDIS_PASSWORD_FILE}")
+    [ -n "$REDIS_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_PASSWORD"
 {{- end }}
     response=$(
       timeout -s 3 $1 \
@@ -122,10 +122,10 @@ data:
     }
 {{- end }}
   ping_readiness_master.sh: |-
-    #!/bin/bash
+    #!/bin/sh
 
-    [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
-    [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+    [ -f "$REDIS_MASTER_PASSWORD_FILE" ] && REDIS_MASTER_PASSWORD=$(cat "${REDIS_MASTER_PASSWORD_FILE}")
+    [ -n "$REDIS_MASTER_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -150,10 +150,10 @@ data:
       exit 1
     fi
   ping_liveness_master.sh: |-
-    #!/bin/bash
+    #!/bin/sh
 
-    [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
-    [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+    [ -f "$REDIS_MASTER_PASSWORD_FILE" ] && REDIS_MASTER_PASSWORD=$(cat "${REDIS_MASTER_PASSWORD_FILE}")
+    [ -n "$REDIS_MASTER_PASSWORD" ] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \

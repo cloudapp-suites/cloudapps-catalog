@@ -1,0 +1,64 @@
+imageRegistry: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app"
+api:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-api
+    tag: 1.8.1
+  resources: {}
+worker:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-api
+    tag: 1.8.1
+  resources: {}
+workerBeat:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-api
+    tag: 1.8.1
+  resources: {}
+web:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-web
+    tag: 1.8.1
+  resources: {}
+sandbox:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-sandbox
+    tag: 0.2.12
+  resources: {}
+pluginDaemon:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/dify-plugin-daemon
+    tag: 0.2.0-local
+  resources: {}
+postgresql:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/postgresql
+    tag: 15.3.0-debian-11-r7
+  primary:
+    resources: {}
+redis:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/redis
+    tag: 7.0.4
+  master:
+    resources: {}
+weaviate:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/weaviate
+    tag: 1.19.0
+  resources: {}
+nginx:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/nginx
+    tag: latest
+  resources: {}
+ssrfProxy:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/squid
+    tag: latest
+  resources: {}
+
+busybox:
+  image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest

@@ -32,24 +32,24 @@ spec:
         imagePullPolicy: IfNotPresent
       {{- end }}
       containers:
-      - name: authorizer
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
-        ports:
-        - containerPort: {{ .Values.service.port }}
-        env:
-        - name: ENV
-          value: {{ .Values.env.ENV | quote }}
-        - name: DATABASE_TYPE
-          value: {{ .Values.env.DATABASE_TYPE | quote }}
-        - name: DATABASE_URL
-          value: {{ .Values.env.DATABASE_URL | quote }}
-        - name: CUSTOM_ACCESS_TOKEN_SCRIPT
-          value: {{ .Values.env.CUSTOM_ACCESS_TOKEN_SCRIPT | quote }}
-        - name: DISABLE_PLAYGROUND
-          value: {{ .Values.env.DISABLE_PLAYGROUND | quote }}
-        resources:
-          {{- toYaml .Values.resources | nindent 12 }}
+        - name: authorizer
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ .Values.service.port }}
+          env:
+          - name: ENV
+            value: {{ .Values.env.ENV | quote }}
+          - name: DATABASE_TYPE
+            value: {{ .Values.env.DATABASE_TYPE | quote }}
+          - name: DATABASE_URL
+            value: {{ .Values.env.DATABASE_URL | quote }}
+          - name: CUSTOM_ACCESS_TOKEN_SCRIPT
+            value: {{ .Values.env.CUSTOM_ACCESS_TOKEN_SCRIPT | quote }}
+          - name: DISABLE_PLAYGROUND
+            value: {{ .Values.env.DISABLE_PLAYGROUND | quote }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
       affinity: {{- toYaml .Values.affinity | nindent 8 }}
       tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
       nodeSelector: {{- toYaml .Values.nodeSelector | nindent 8 }}

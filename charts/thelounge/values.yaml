@@ -20,7 +20,7 @@ strategy:
 # -- environment variables. See [image docs](https://hub.docker.com/r/thelounge/thelounge/) for more details.
 # @default -- See below
 env:
-  THELOUNGE_HOME: "/config"
+  THELOUNGE_HOME: "/var/opt/thelounge"
 
 # -- Configures service settings for the chart. Normally this does not need to be modified.
 # @default -- See values.yaml
@@ -45,3 +45,39 @@ persistence:
     accessMode: ReadWriteOnce
     size: cloudapp.storage
     storageClass: cloudapp.storageClassName
+
+initContainers:
+  setup-config:
+    image: busybox.image
+    command:
+      - sh
+      - -c
+      - |
+        echo "Setting up The Lounge in public mode..."
+        # Create the config directory if it doesn't exist
+        mkdir -p /thelounge
+        # Create the config file with public mode enabled
+        cat > /thelounge/config.js << 'EOF'
+        "use strict";
+
+        module.exports = {
+          // 运行模式: "public" 或 "private"
+          public: true,
+
+          // 用户连接设置
+          prefetch: false,
+          
+          // 默认主题
+          theme: "default",
+          
+          // 调试设置
+          debug: {
+            ircFramework: false,
+            raw: false,
+          },
+        };
+        EOF
+        echo "Config file created successfully"
+    volumeMounts:
+      - name: config
+        mountPath: /thelounge

@@ -1,0 +1,103 @@
+mysql:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/mysql
+    tag: 8.4.5
+  persistence:
+    storageClassName: "alicloud-disk-essd"
+
+oceanbase:
+  enabled: false
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/oceanbase/oceanbase-cloud-native
+    tag: '4.3.5.3-103000092025080818'
+
+redis:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/redis
+    tag: "7.2"
+  persistence:
+    storageClassName: "alicloud-disk-essd"
+
+cozeServer:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/opencoze
+    tag: '0.3.9'
+
+rocketmq:
+  enabled: true
+  namesrv:
+    image:
+      repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/rocketmq
+      tag: 5.3.2
+    persistence:
+      store:
+        storageClassName: "alicloud-disk-essd"
+        size: "20Gi"
+      logs:
+        storageClassName: "alicloud-disk-essd"
+        size: "20Gi"
+  broker:
+    image:
+      repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/rocketmq
+      tag: 5.3.2
+    persistence:
+      store:
+        storageClassName: "alicloud-disk-essd"
+        size: "20Gi"
+      logs:
+        storageClassName: "alicloud-disk-essd"
+        size: "20Gi"
+    initContainers:
+      - name: wait-for-namesrv
+        image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest
+
+elasticsearch:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/elasticsearch
+    tag: 8.18.0
+  persistence:
+    enabled: true
+    storageClassName: "alicloud-disk-essd"
+
+minio:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/minio
+    tag: RELEASE.2025-06-13T11-33-47Z-cpuv1
+  persistence:
+    storageClassName: "alicloud-disk-essd"
+  resources:
+    requests:
+      cpu: "1"
+      memory: "2Gi"
+
+etcd:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/etcd
+    tag: 3.5
+  persistence:
+    storageClassName: "alicloud-disk-essd"
+    size: "20Gi"
+
+milvus:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/milvus
+    tag: v2.5.10
+  persistence:
+    storageClassName: "alicloud-disk-essd"
+    size: "20Gi"
+
+
+images:
+  busybox: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest
+  curl: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/alpine/curl:latest
+
+resources:
+  requests:
+    cpu: "1"
+    memory: "2Gi"

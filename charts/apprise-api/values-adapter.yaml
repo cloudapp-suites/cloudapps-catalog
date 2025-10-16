@@ -1,0 +1,15 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/caronc_apprise
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  config:
+    size: 20Gi
+  attach:
+    size: 20Gi
+  plugin:
+    size: 20Gi
+  storageClassName: "alicloud-disk-essd"
+
+resources: {}

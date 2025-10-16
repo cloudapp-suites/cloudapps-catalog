@@ -1,0 +1,13 @@
+deployment:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/kutt_kutt
+    tag: latest
+    pullPolicy: IfNotPresent
+
+persistence:
+  enabled: true
+  size: 20Gi
+  storageClassName: alicloud-disk-essd
+
+kubectl:
+  image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/kubectl:latest

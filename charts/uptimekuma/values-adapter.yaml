@@ -1,0 +1,40 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/louislam_uptime-kuma
+  tag: latest
+  pullPolicy: IfNotPresent
+
+volume:
+  enabled: true
+  size: 20Gi
+  storageClassName: "alicloud-disk-essd"
+
+mariadb:
+  global:
+    imageRegistry: ""
+  image:
+    registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+    repository: cloud-app/mariadb
+    tag: latest
+    digest: ""
+    pullPolicy: IfNotPresent
+  primary:
+    persistence:
+      enabled: true
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+  secondary:
+    persistence:
+      enabled: true
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+    resources: {}
+  metrics:
+    enabled: false
+    image:
+      registry: apaas-registry.cn-hangzhou.cr.aliyuncs.com
+      repository: cloud-app/mysqld-exporter
+      tag: latest
+    resources: {}
+
+resources: {}

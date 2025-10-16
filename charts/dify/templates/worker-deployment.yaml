@@ -62,6 +62,8 @@ spec:
               value: ""
             - name: MIGRATION_ENABLED
               value: "true"
+            - name: GEVENT_ENABLE
+              value: "true"
           volumeMounts:
             - name: storage
               mountPath: /app/api/storage

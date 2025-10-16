@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <p align="center">
-  <a href="https://anythingllm.com"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/wordmark.png" alt="AnythingLLM logo"></a>
+  <a href="https://anythingllm.com"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/wordmark.png" alt="AnythingLLM logo"></a>
 </p>
 
 <p align="center">
@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-	<a href="https://discord.gg/6UyHPeGZAC" target="_blank">
-      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/chat-mintplex_labs-blue.svg" alt="Discord">
+  <a href="https://discord.gg/6UyHPeGZAC" target="_blank">
+      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/chat-mintplex_labs-blue.svg" alt="Discord">
   </a> |
   <a href="https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE" target="_blank">
-      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/v1.svg" alt="许可证">
+      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/v1.svg" alt="License">
   </a> |
   <a href="https://docs.anythingllm.com" target="_blank">
     文档
@@ -34,7 +34,7 @@
 
 这是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用程序允许您选择使用哪个LLM或向量数据库，同时支持多用户管理并设置不同权限。
 
-![聊天](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/demo.gif)
+![聊天](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/demo.gif)
 
 <details>
 <summary><kbd>观看演示视频！</kbd></summary>

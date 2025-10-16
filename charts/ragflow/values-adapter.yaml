@@ -1,0 +1,68 @@
+infinity:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/infinity
+    tag: latest
+    pullPolicy: IfNotPresent
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+elasticsearch:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/elasticsearch
+    tag: "8.11.3"
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+opensearch:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/opensearchproject/opensearch
+    tag: latest
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+minio:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/minio
+    tag: RELEASE.2023-12-20T01-00-02Z
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+mysql:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/mysql
+    tag: latest
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+redis:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/valkey
+    tag: latest
+  storage:
+    className: alicloud-disk-essd
+    capacity: 20Gi
+  deployment:
+    resources: {}
+
+ragflow:
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/ragflow
+    tag: latest
+    pullPolicy: IfNotPresent
+  deployment:
+    resources: {}

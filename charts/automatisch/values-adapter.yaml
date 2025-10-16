@@ -1,0 +1,26 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/automatischio_automatisch
+  tag: latest
+  pullPolicy: IfNotPresent
+
+postgresql:
+  image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/postgresql:15.3.0-debian-11-r7
+  persistence:
+    enabled: true
+    size: 20Gi
+
+redis:
+  image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/redis:7.0.4
+  persistence:
+    enabled: true
+    size: 20Gi
+  resources: {}
+
+persistence:
+  storageClassName: "alicloud-disk-essd"
+  automatischStorage:
+    enabled: true
+    size: 20Gi
+  resources: {}
+
+resources: {}

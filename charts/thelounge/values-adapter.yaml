@@ -1,0 +1,20 @@
+controller:
+  type: statefulset
+
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/thelounge_thelounge
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  config:
+    enabled: true
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+    mountPath: "/var/opt/thelounge"
+
+initContainers:
+  setup-config:
+    image: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest
+
+resources: {}

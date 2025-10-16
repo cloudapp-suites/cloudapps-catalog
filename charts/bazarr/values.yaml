@@ -44,3 +44,5 @@ persistence:
   media:
     enabled: false
     mountPath: /media
+
+resources: {}

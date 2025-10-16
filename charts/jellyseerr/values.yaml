@@ -17,7 +17,7 @@ fullnameOverride: ""
 
 # -- Deployment strategy
 strategy:
-  type: Recreate
+  type: RollingUpdate
 
 # -- Environment variables to add to the jellyseerr pods
 extraEnv: []

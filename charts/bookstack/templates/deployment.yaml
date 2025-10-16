@@ -110,7 +110,7 @@ spec:
             readOnly: true
           {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: uploads
         {{- if .Values.persistence.uploads.enabled }}

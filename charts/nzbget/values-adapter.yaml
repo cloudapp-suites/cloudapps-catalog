@@ -1,0 +1,13 @@
+controllers:
+  main:
+    enabled: true
+    type: deployment
+    containers:
+      main:
+        image:
+          # -- image repository
+#          repository: loeken/nzbget
+          repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/lscr.io_linuxserver_nzbget
+          tag: latest
+          pullPolicy: IfNotPresent
+        resources: {}

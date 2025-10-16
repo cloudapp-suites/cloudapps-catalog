@@ -1,5 +1,5 @@
 {
-  "name": "nextchat",
+  "name": "chatgpt-next-web",
   "display_name": "NextChat",
   "description": {
     "zh": "NextChat 是一个轻量且快速的 AI 助手，支持包括 Claude、DeepSeek、GPT-4 和 Gemini Pro 在内的多种模型。它提供网页和桌面界面用于与 AI 模型交互，强调速度、隐私和定制化。该项目支持跨平台部署，适用于个人和企业使用场景。",

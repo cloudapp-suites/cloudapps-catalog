@@ -54,3 +54,5 @@ persistence:
   automatischStorage:
     enabled: true
     size: cloudapp.storage
+
+resources: {}

@@ -1,0 +1,12 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/anythingllm
+  tag: latest
+  pullPolicy: IfNotPresent
+  busybox: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest
+
+anythingllm:
+  storage:
+    size: 20Gi
+    className: "alicloud-disk-essd"
+
+resources: {}

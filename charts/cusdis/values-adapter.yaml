@@ -1,0 +1,7 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/djyde_cusdis
+  tag: latest
+  pullPolicy: IfNotPresent
+  kubectl: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/kubectl:latest
+
+resources: {}

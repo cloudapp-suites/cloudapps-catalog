@@ -1,0 +1,11 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/gotify_server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: false
+  size: 20Gi
+  storageClass: "alicloud-disk-essd"
+
+resources: {}

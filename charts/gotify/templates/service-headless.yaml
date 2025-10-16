@@ -5,11 +5,7 @@ metadata:
   labels:
     {{- include "gotify.labels" . | nindent 4 }}
 spec:
-  {{- if eq .Values.service.type "LoadBalancer" }}
-  type: ClusterIP
-  {{- else }}
   type: {{ .Values.service.type }}
-  {{- end }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http

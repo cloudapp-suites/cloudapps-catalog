@@ -1,3 +1,4 @@
+> Note: After deployment, you need to manually remove the tracking information from the browser address (for example: /?spm=5176.13764303.0.0.768f2c01KgPdkL)
 # NZBGet #
 [![License](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/nzbget/image/license-GPL-blue.svg)](http://www.gnu.org/licenses/)
 

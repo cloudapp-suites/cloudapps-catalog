@@ -1,0 +1,14 @@
+image:
+  repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/metabase_metabase
+  tag: latest
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: true
+  persistentVolumeClaim:
+    h2database:
+      storageClass: "alicloud-disk-essd"
+      accessMode: ReadWriteOnce
+      size: 20Gi
+
+resources: {}
