@@ -1,0 +1,34 @@
+{
+  "name": "filebrowser",
+  "display_name": "filebrowser",
+  "description": {
+    "zh": "File Browser 是一个基于 Web 的文件管理工具，允许用户通过直观的界面管理指定目录中的文件。它支持在浏览器中直接上传、删除、预览和编辑文件。作为一个自托管的“自主云”解决方案，它让用户能在个人或公司服务器上完全掌控自己的数据。",
+    "en": "File Browser is a web-based file management tool that allows users to manage files in a specified directory through an intuitive interface. It enables uploading, deleting, previewing, and editing files directly from the browser. Designed as a self-hosted \"create-your-own-cloud\" solution, it gives users full control over their data on personal or company servers."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供简单且安全的方式，通过浏览器远程访问和管理文件。\n- 实现自托管云存储，无需依赖第三方服务。\n- 轻量级且易于部署，适合个人和小型团队使用。\n\n## 功能列表:\n\n- 浏览、上传、下载、重命名、移动、复制和删除文件与目录。\n- 在浏览器中直接预览常见文件类型（如图片、PDF、文本文件等）。\n- 直接在网页界面中编辑文本文件和代码。\n- 支持用户认证和多用户权限管理。\n- 可配置文件根目录，支持类似 chroot 的隔离机制。",
+    "en": "## Benefits:\n\n- Provides a simple, secure way to access and manage files remotely via a web browser.\n- Enables self-hosted cloud storage without relying on third-party services.\n- Lightweight and easy to deploy, ideal for personal and small team use.\n\n## Features:\n\n- Browse, upload, download, rename, move, copy, and delete files and directories.\n- Preview common file types (images, PDFs, text files, etc.) directly in the browser.\n- Edit text files and code directly within the web interface.\n- User authentication and permission management for multiple users.\n- Configurable file root directory with support for chroot-like isolation."
+  },
+  "github_url": "https://github.com/filebrowser/filebrowser",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "https://filebrowser.org",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "File Management",
+    "Web Interface",
+    "Cloud Storage",
+    "Lightweight",
+    "Multi-User"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/filebrowser/image/filebrowser",
+  "license": "Apache-2.0",
+  "language": "Go",
+  "phase": 2
+}

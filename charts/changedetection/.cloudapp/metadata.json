@@ -1,0 +1,37 @@
+{
+  "name": "change detection",
+  "display_name": "Change Detection",
+  "description": {
+    "zh": "changedetection.io 是一个开源的网站监控工具，能够实时检测网页内容变化并即时发送警报。它帮助用户追踪价格变动、内容更新以及条件性变化。该工具支持交互式浏览器操作、通过可视化工具选择性监控，并集成了多种通知服务。",
+    "en": "changedetection.io is an open-source website monitoring tool that detects web page changes in real-time and sends instant alerts. It helps users track price changes, content updates, and conditional changes across websites. The tool supports interactive browser steps, selective monitoring with visual tools, and offers integrations with multiple notification services."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 实时监控网站内容变化\n- 支持快速非JS页面与JavaScript渲染页面检测\n- 高度可定制的通知与警报条件\n- 基础使用无需注册即可快速上手\n- 提供自托管与订阅服务选项\n\n## 功能列表:\n\n- 检测 HTML、PDF 和 JSON API 响应中的变化\n- 可视化选择器用于监控特定网页元素\n- 支持交互式浏览器操作（如登录、提交表单）\n- 基于关键词或数值的条件变化检测\n- 价格与库存监控并支持自定义阈值\n- 集成多种通知服务（Discord、Slack、邮件、Telegram 等）\n- 内置代理支持（包括 Bright Data 和 Oxylabs）\n- 按时间与时区安排监控任务\n- Chrome 扩展快速添加监控页面\n- 支持通过 Excel 或纯文本导入监控列表\n- 提供 API 接口管理监控任务\n- 使用 Jinja2 模板自定义通知内容\n- 支持 XPath、CSS 选择器、JSONPath 和 jq 过滤器",
+    "en": "## Benefits:\n\n- Real-time monitoring of website content changes\n- Supports both fast non-JS and JavaScript-rendered page detection\n- Highly customizable notifications and alert conditions\n- Easy setup with no registration required for basic usage\n- Self-hosted and subscription-based options available\n\n## Features:\n\n- Detect changes in HTML, PDFs, and JSON API responses\n- Visual Selector for targeting specific webpage elements\n- Interactive browser steps (e.g., login, form submission)\n- Conditional change detection based on keywords or values\n- Price and restock monitoring with customizable thresholds\n- Notification integrations (Discord, Slack, Email, Telegram, etc.)\n- Built-in support for proxies (including Bright Data and Oxylabs)\n- Schedule monitoring by time and timezone\n- Chrome extension for quick page addition\n- Import website lists via Excel or plain text\n- API support for managing watch lists\n- Jinja2 templating for custom notification content\n- XPath, CSS Selector, JSONPath, and jq filtering support"
+  },
+  "github_url": "https://github.com/dgtlmoon/changedetection.io",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Security",
+    "Monitoring",
+    "Notifications",
+    "Data Analysis",
+    "E-commerce",
+    "Research",
+    "Web Scraping",
+    "Product Tracking",
+    "Data",
+    "Change Monitoring"
+  ],
+  "pic_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "phase": 2
+}
