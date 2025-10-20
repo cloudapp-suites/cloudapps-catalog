@@ -1,0 +1,31 @@
+{
+  "name": "organizr",
+  "display_name": "Organizr",
+  "description": {
+    "zh": "Organizr 是一个基于网页的仪表板工具，用于集中管理服务器或计算机上运行的多个服务。它允许用户将服务组织成可自定义的标签页，集成在一个页面中，简化访问和管理。该工具支持用户认证、访客访问，并能与多种外部服务无缝集成。",
+    "en": "Organizr is a web-based dashboard solution designed to centralize access to multiple services running on a server or computer. It allows users to organize their services into customizable tabs within a single webpage, simplifying navigation and management. The tool supports user authentication, guest access, and seamless integration with various external services."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 在统一界面中集中管理多个服务\n- 无需记忆多个IP、端口或书签，提升使用便捷性\n- 支持灵活的访问控制，包含用户账户和访客权限\n\n## 功能列表:\n\n- 可自定义服务标签页\n- 支持 iframe 嵌入服务界面\n- 用户管理功能，支持无限用户组\n- 访客访问及通过注册密码保护新用户创建\n- 支持使用 Plex、Emby、LDAP 或 sFTP 凭据登录\n- 移动端适配并支持全屏模式\n- 主题可定制，包括调色板和站点Logo\n- 快捷访问标签（如 www.example.com/#Sonarr）\n- 支持 Fail2ban 和 Nginx Auth_Request 安全集成\n- 通过邮件实现“忘记密码”功能（需配置邮件服务器）\n- 支持 Gravatar 头像和侧边栏固定\n- 支持键盘快捷键\n- 提供 Organizr 登录日志查看器\n- 支持 Docker 部署，易于安装",
+    "en": "## Benefits:\n\n- Centralizes access to multiple services in one unified interface\n- Enhances usability by eliminating the need to remember multiple IPs, ports, or bookmarks\n- Supports flexible access control with user accounts and guest permissions\n\n## Features:\n\n- Customizable tabs for organizing services\n- Support for iframe embedding of service interfaces\n- User management with unlimited user groups\n- Guest access and user registration protection via password\n- Login integration with Plex, Emby, LDAP, and sFTP\n- Mobile-friendly design with fullscreen support\n- Theme customization including color palette and logo branding\n- Quick access tabs using URL fragments (e.g., #Sonarr)\n- Fail2ban and Nginx Auth_Request security integrations\n- Password recovery via email (requires mail server setup)\n- Gravatar support and sidebar pinning\n- Keyboard shortcut support\n- Organizr login log viewer\n- Docker-ready with easy deployment options"
+  },
+  "github_url": "https://github.com/causefx/Organizr",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Dashboard",
+    "Service Management",
+    "Web Interface",
+    "Multiple IPs"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/organizr/image/logo-wide.png",
+  "license": "GPL-3.0",
+  "language": "PHP",
+  "phase": 2
+}
