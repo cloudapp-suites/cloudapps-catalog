@@ -1,15 +1,14 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: portainer-admin-cluster-role
+  name: {{ include "portainer.fullname" . }}-cluster-role
   labels:
-    app: portainer
+    {{- include "portainer.labels" . | nindent 4 }}
 rules:
-  # 1️⃣ 核心资源：命名空间、节点、Pod、服务等
   - apiGroups: [""]
     resources:
       - namespaces
-      - namespaces/status         # 修复您遇到的 403 错误
+      - namespaces/status
       - nodes
       - nodes/status
       - persistentvolumes
@@ -34,7 +33,6 @@ rules:
       - patch
       - delete
 
-  # 2️⃣ 工作负载（Deployments, StatefulSets, DaemonSets, Jobs）
   - apiGroups: ["apps"]
     resources:
       - deployments
@@ -57,7 +55,6 @@ rules:
       - patch
       - delete
 
-  # 3️⃣ 批处理任务
   - apiGroups: ["batch"]
     resources:
       - jobs
@@ -73,7 +70,6 @@ rules:
       - patch
       - delete
 
-  # 4️⃣ 网络资源
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
@@ -88,7 +84,6 @@ rules:
       - patch
       - delete
 
-  # 5️⃣ 存储类
   - apiGroups: ["storage.k8s.io"]
     resources:
       - storageclasses
@@ -97,7 +92,6 @@ rules:
       - list
       - watch
 
-  # 6️⃣ RBAC 查看（不建议 Portainer 修改 RBAC，除非必要）
   - apiGroups: ["rbac.authorization.k8s.io"]
     resources:
       - clusterroles
@@ -109,7 +103,6 @@ rules:
       - list
       - watch
 
-  # 7️⃣ 自定义资源定义（CRD）
   - apiGroups: ["apiextensions.k8s.io"]
     resources:
       - customresourcedefinitions
@@ -118,7 +111,6 @@ rules:
       - list
       - watch
 
-  # 8️⃣ 指标（用于监控图表）
   - apiGroups: ["metrics.k8s.io"]
     resources:
       - pods
@@ -127,7 +119,6 @@ rules:
       - get
       - list
 
-  # 9️⃣ 扩展 API（可选：如果您使用 HorizontalPodAutoscaler）
   - apiGroups: ["autoscaling"]
     resources:
       - horizontalpodautoscalers
@@ -139,9 +130,3 @@ rules:
       - update
       - patch
       - delete
-
-  # 🔟 服务网格/Operator 常见 CRD（可选，按需添加）
-  # 例如 Istio, Cert-Manager, Prometheus Operator 等
-  # - apiGroups: ["cert-manager.io"]
-  #   resources: ["certificates", "issuers", "clusterissuers"]
-  #   verbs: [get, list, watch, create, update, patch, delete]

@@ -31,5 +31,6 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/shaarli/image/doc-logo.png",
   "language": "PHP",
-  "license": "Custom License"
+  "license": "Custom License",
+  "phase": 2
 }

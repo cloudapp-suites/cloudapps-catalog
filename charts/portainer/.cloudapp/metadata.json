@@ -1,0 +1,36 @@
+{
+  "name": "portainer",
+  "display_name": "portainer",
+  "description": {
+    "zh": "Portainer Community Edition 是一个轻量级的开源平台，用于简化对容器化环境（包括 Docker、Swarm、Kubernetes 和 Azure Container Instances）的管理。它通过直观的 Web 界面和丰富的 API 来管理容器、镜像、存储卷、网络等编排资源。该解决方案以单个容器形式运行，可在多种基础设施中轻松部署。",
+    "en": "Portainer Community Edition is a lightweight, open-source platform designed to simplify the management of containerized environments, including Docker, Swarm, Kubernetes, and Azure Container Instances (ACI). It provides a user-friendly web interface and API to manage containers, images, volumes, networks, and other orchestration resources. The solution runs as a single container and is easy to deploy across diverse infrastructures."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过直观的图形界面简化复杂的容器编排操作\n- 轻量级设计，部署简单，资源占用低\n- 统一管理多种容器平台（Docker、Kubernetes、ACI）\n\n## 功能列表:\n\n- 通过 Web 界面管理容器、镜像、存储卷、网络和服务\n- 支持 Docker、Docker Swarm、Kubernetes 和 Azure Container Instances (ACI)\n- 可作为单个容器在 Linux 或 Windows 上运行\n- 提供 RESTful API 用于自动化和集成\n- 商业版支持基于角色的访问控制（社区版不包含）\n- 内置公共演示环境，定期重置供测试使用\n- 应用内数据分析功能（可选择退出），用于产品优化",
+    "en": "## Benefits:\n\n- Simplifies complex container orchestration through an intuitive GUI\n- Lightweight and easy to deploy on any cluster with minimal overhead\n- Unified management interface for multiple container platforms (Docker, Kubernetes, ACI)\n\n## Features:\n\n- Manage containers, images, volumes, networks, and services via web UI\n- Support for Docker, Docker Swarm, Kubernetes, and Azure Container Instances (ACI)\n- Runs as a single container for Linux or Windows\n- RESTful API for automation and integration\n- Role-based access control available in Business Edition (not in CE)\n- Built-in public demo with regular reset for testing\n- In-app analytics (opt-out available) for product improvement"
+  },
+  "github_url": "https://github.com/portainer/portainer",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "Microservices"
+  ],
+  "official_address": "https://www.portainer.io",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Container Management",
+    "Kubernetes",
+    "Docker",
+    "Web Ui",
+    "API"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/portainer/image/portainer-github-banner.png",
+  "license": "Zlib",
+  "language": "TypeScript",
+  "phase": 2
+}
