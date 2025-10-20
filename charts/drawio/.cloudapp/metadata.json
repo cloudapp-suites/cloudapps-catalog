@@ -1,0 +1,34 @@
+{
+  "name": "drawio",
+  "display_name": "Drawio",
+  "description": {
+    "zh": "drawio 是一款基于 Electron 构建的独立桌面图表绘制应用，封装了核心的 draw.io 编辑器。它允许用户在离线环境下创建和编辑图表，且不会将任何数据发送到外部服务器。该应用遵循 Apache 2.0 许可证免费使用，注重安全性和本地数据隔离。",
+    "en": "drawio is a standalone desktop diagramming application built with Electron, wrapping the core draw.io editor. It allows users to create and edit diagrams offline without sending any data to external servers. The app is free to use under the Apache 2.0 license and prioritizes security and local data isolation."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 完全离线运行，无任何外部数据传输\n- 通过严格的内联安全策略和网络隔离实现高安全性\n- 遵循宽松的 Apache 2.0 许可证，可免费用于任何用途\n\n## 功能列表:\n\n- 基于 Electron 构建，支持 Windows、macOS 和 Linux 的桌面应用\n- 集成功能完整的 draw.io 图表编辑器\n- 自动更新机制，启动时检查 GitHub 上的新版本\n- 图表文件和会话数据本地存储在 AppData 目录中\n- Windows 版本支持安装版和便携版",
+    "en": "## Benefits:\n\n- Fully offline operation with no external data transmission\n- High security through strict Content Security Policy and Internet isolation\n- Free to use for any purpose under the permissive Apache 2.0 license\n\n## Features:\n\n- Desktop application built on Electron for Windows, macOS, and Linux\n- Bundles the full-featured draw.io diagram editor\n- Automatic update mechanism checking GitHub for new versions\n- Local storage of diagram files and session data in AppData directory\n- Supports both installer and portable versions on Windows"
+  },
+  "github_url": "https://github.com/jgraph/drawio-desktop",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Excalidraw"
+  ],
+  "tags": [],
+  "official_address": "https://www.diagrams.net",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Real-time",
+    "Drawing",
+    "Whiteboard",
+    "Diagramming",
+    "Exporting"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/drawio/image/home.png",
+  "license": "Apache-2.0",
+  "language": "JavaScript"
+}

@@ -1,0 +1,99 @@
+{{- if .Values.drawio.persistence.enabled}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "drawio.fullname" . }}
+  labels:
+    {{- include "drawio.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "drawio.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "drawio.fullname" . }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "drawio.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "drawio.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- range $key, $val := .Values.drawio.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end }}
+            {{- if .Values.drawio.https.enabled }}
+            {{- if .Values.drawio.https.certificate.letsEncrypt.enabled }}
+            - name: LETS_ENCRYPT_ENABLED
+              value: "true"
+            - name: PUBLIC_DNS
+              value: {{ .Values.drawio.https.certificate.letsEncrypt.domain | quote }}
+            {{- end }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            {{- if .Values.drawio.https.enabled }}
+            - name: https
+              containerPort: 8443
+              protocol: TCP
+            {{- end }}
+          volumeMounts:
+            {{- if .Values.drawio.persistence.enabled }}
+            - name: drawio-data
+              mountPath: /var/lib/tomcat
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+  volumeClaimTemplates:
+    - metadata:
+        name: drawio-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.drawio.persistence.size | default "20Gi" }}
+        {{- if .Values.drawio.persistence.storageClass }}
+        storageClassName: {{ .Values.drawio.persistence.storageClass }}
+        {{- end }}
+{{- end }}

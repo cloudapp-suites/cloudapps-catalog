@@ -1,0 +1,6 @@
+apiVersion: v2
+name: drawio
+description: A Helm chart for draw.io (diagrams.net)
+type: application
+version: 0.1.0
+appVersion: "1.0"
