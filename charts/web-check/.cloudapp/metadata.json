@@ -1,0 +1,31 @@
+{
+  "name": "web-check",
+  "display_name": "Web-check",
+  "description": {
+    "zh": "Web-Check 是一个开源情报（OSINT）工具，可对任意网站进行全方位、按需分析。它能揭示网站的技术细节，如IP信息、SSL配置、DNS记录、HTTP头、Cookie和服务器架构。该工具通过暴露所使用的技术、潜在攻击面和安全配置，帮助用户理解、优化和保护网站。",
+    "en": "Web-Check is an open-source intelligence (OSINT) tool that provides comprehensive, on-demand analysis of any website. It reveals technical details such as IP information, SSL configuration, DNS records, headers, cookies, and server infrastructure. The tool helps users understand, optimize, and secure websites by uncovering technologies used, potential attack vectors, and security configurations."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供集中式仪表板，实现全面的网站侦察\n- 帮助安全研究人员和开发人员识别漏洞并加强站点防护\n- 无需认证即可深入了解网站技术栈和基础设施\n- 支持自托管，并可通过Docker、Netlify或Vercel轻松部署\n\n## 功能列表:\n\n- IP信息查询，包括地理位置和ASN\n- SSL/TLS链分析和加密套件检查\n- DNS记录枚举（A、MX、TXT、CNAME等）\n- HTTP头和安全策略分析（HSTS、CSP、X-Frame-Options）\n- Cookie审计\n- Robots.txt和站点地图解析\n- 使用Lighthouse进行网站性能和质量评估\n- 服务器位置和路由追踪可视化\n- 关联域名和子域名发现\n- 开放端口扫描\n- WHOIS和域名注册信息查询\n- 技术栈检测（基于Wappalyzer式指纹识别）\n- 碳足迹估算\n- 恶意软件和钓鱼网站状态检查\n- 网页截图捕获\n- 来自Wayback Machine的归档历史\n- 全球网站排名数据\n- 防火墙（WAF）检测\n- 邮件安全配置分析（SPF、DKIM、DMARC、BIMI）\n- 基于Mozilla Observatory指南的TLS配置审计\n- Security.txt文件检测\n- 内部和外部链接映射\n- 社交元标签检查",
+    "en": "## Benefits:\n\n- Provides a centralized dashboard for comprehensive website reconnaissance\n- Enables security researchers and developers to identify vulnerabilities and improve site hardening\n- Offers deep insights into a website's technology stack and infrastructure without requiring authentication\n- Supports self-hosting and easy deployment via Docker, Netlify, or Vercel\n\n## Features:\n\n- IP Info lookup including geolocation and ASN\n- SSL/TLS chain analysis and cipher suite inspection\n- DNS record enumeration (A, MX, TXT, CNAME, etc.)\n- HTTP headers and security policy analysis (HSTS, CSP, X-Frame-Options)\n- Cookie auditing\n- Robots.txt and sitemap parsing\n- Website performance and quality metrics using Lighthouse\n- Server location and traceroute visualization\n- Associated domains and subdomains discovery\n- Open port scanning\n- WHOIS and domain registration data lookup\n- Technology stack detection (via Wappalyzer-style fingerprinting)\n- Carbon footprint estimation\n- Malware and phishing status checks\n- Web screenshot capture\n- Archive history from Wayback Machine\n- Global website ranking data\n- Firewall (WAF) detection\n- Email security configuration analysis (SPF, DKIM, DMARC, BIMI)\n- TLS configuration audit based on Mozilla Observatory guidelines\n- Security.txt file detection\n- Outbound and internal link mapping\n- Social meta tags inspection"
+  },
+  "github_url": "https://github.com/Lissy93/web-check",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "https://web-check.xyz",
+  "product_document": "",
+  "categories": [
+    "OSINT",
+    "Security",
+    "Website Analysis",
+    "Network Monitoring",
+    "Technology Detection"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/web-check/image/web-check-logo.png",
+  "license": "MIT",
+  "language": "TypeScript"
+}

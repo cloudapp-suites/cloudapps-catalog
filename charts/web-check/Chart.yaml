@@ -1,0 +1,6 @@
+apiVersion: v2
+name: web-check
+description: A Helm chart for Kubernetes to deploy web-check application
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
