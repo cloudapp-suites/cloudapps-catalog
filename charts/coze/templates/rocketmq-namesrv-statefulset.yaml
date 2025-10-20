@@ -46,6 +46,8 @@ spec:
             initialDelaySeconds: 20
             periodSeconds: 10
             timeoutSeconds: 5
+          resources:
+{{ toYaml .Values.rocketmq.namesrv.resources | indent 12 }}
           volumeMounts:
             - name: namesrv-store
               mountPath: /home/rocketmq/store

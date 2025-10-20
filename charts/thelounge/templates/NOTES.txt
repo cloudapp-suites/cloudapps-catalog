@@ -1,1 +1,7 @@
-{{- include "common.notes.defaultNotes" . -}}
+{{- include "common.notes.defaultNotes" . }}
+
+--------------------------------------------------------------------------------
+ℹ️  The Lounge Public Mode
+--------------------------------------------------------------------------------
+The Lounge is running in public mode and does not require authentication.
+Anyone can access the application at the URL shown above.

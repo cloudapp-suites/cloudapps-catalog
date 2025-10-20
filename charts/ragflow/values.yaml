@@ -230,6 +230,9 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+nameOverride: ""
+fullnameOverride: ""
+
 
 
 

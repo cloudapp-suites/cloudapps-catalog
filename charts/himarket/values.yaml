@@ -47,8 +47,8 @@ mysql:
     database: "himarket_db"
     username: "himarket_user"
     # 可选：设置固定密码（留空则自动生成随机密码）
-    rootPassword: ""  # 设置root密码，如 "myRootPass123"
-    password: ""      # 设置应用用户密码，如 "myAppPass123"
+    rootPassword: "myRootPass123"  # 设置root密码，如 "myRootPass123"
+    password: "myRootPass123"      # 设置应用用户密码，如 "myAppPass123"
   
   # Service 配置
   service:
@@ -66,10 +66,10 @@ mysql:
   resources:
     requests:
       cpu: "1"
-      memory: "1Gi"
+      memory: "2Gi"
     limits:
       cpu: "2"
-      memory: "2Gi"
+      memory: "4Gi"
   
   # StatefulSet 副本数
   replicaCount: 1
@@ -86,9 +86,9 @@ serviceAccount:
   name: "himarket"
 
 resources:
-  limits:
-    cpu: 2
-    memory: 2000Mi
   requests:
-    cpu: 1
-    memory: 1000Mi
+    cpu: "1"
+    memory: "2Gi"
+  limits:
+    cpu: "2"
+    memory: "4Gi"

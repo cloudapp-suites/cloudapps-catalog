@@ -1,3 +1,5 @@
+> **注意**：部署完成后需要自行删除浏览器地址中的埋点信息，（例如：/?spm=5176.13764303.0.0.768f2c01KgPdkL）
+
 # NZBGet #
 [![License](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/nzbget/image/license-GPL-blue.svg)](http://www.gnu.org/licenses/)
 

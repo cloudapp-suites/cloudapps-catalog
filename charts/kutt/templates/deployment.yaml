@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "kutt.fullname" . }}
+  labels:
+    {{- include "kutt.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "kutt.fullname" . }}
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      {{- include "kutt.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        # 当 ConfigMap 更新时，这个注解会触发滚动更新
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        {{- include "kutt.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
+          imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          env:
+            - name: PORT
+              value: "{{ .Values.service.port }}"
+            - name: SITE_NAME
+              value: {{ .Values.env.SITE_NAME | quote }}
+            - name: DEFAULT_DOMAIN
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "kutt.fullname" . }}-config
+                  key: default-domain
+            - name: JWT_SECRET
+              value: {{ .Values.env.JWT_SECRET | quote }}
+            - name: DB_CLIENT
+              value: {{ .Values.database.type | quote }}
+            - name: DB_FILENAME
+              value: {{ .Values.database.filename | quote }}
+            - name: REDIS_ENABLED
+              value: {{ .Values.redis.enabled | quote }}
+            - name: DISALLOW_REGISTRATION
+              value: {{ .Values.env.DISALLOW_REGISTRATION | quote }}
+            - name: DISALLOW_ANONYMOUS_LINKS
+              value: {{ .Values.env.DISALLOW_ANONYMOUS_LINKS | quote }}
+            - name: TRUST_PROXY
+              value: {{ .Values.env.TRUST_PROXY | quote }}
+            - name: CUSTOM_DOMAIN_USE_HTTPS
+              value: {{ .Values.env.CUSTOM_DOMAIN_USE_HTTPS | quote }}
+            - name: ENABLE_RATE_LIMIT
+              value: {{ .Values.env.ENABLE_RATE_LIMIT | quote }}
+            - name: MAIL_ENABLED
+              value: {{ .Values.env.MAIL_ENABLED | quote }}
+          volumeMounts:
+            - name: kutt-data
+              mountPath: /var/lib/kutt
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: kutt-data
+          persistentVolumeClaim:
+            claimName: {{ include "kutt.fullname" . }}-pvc

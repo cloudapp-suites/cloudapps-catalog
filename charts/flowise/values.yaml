@@ -537,7 +537,7 @@ worker:
 
 mariadb:
   ## @param mariadb.enabled Whether to use the MariaDB chart
-  enabled: mariadb.enabled
+  enabled: false
 
   ## @param mariadb.architecture MariaDB architecture
   architecture: standalone
@@ -563,7 +563,7 @@ mariadb:
 
 externalMariadb:
   ## @param externalMariadb.enabled Whether to use an external MariaDB
-  enabled: externalMariadb.enabled
+  enabled: false
 
   ## @param externalMariadb.host External MariaDB host
   host: mariadb
@@ -590,7 +590,7 @@ externalMariadb:
 
 postgresql:
   ## @param postgresql.enabled Whether to use the PostgreSQL chart
-  enabled: postgresql.enabled
+  enabled: false
 
   auth:
     ## @param postgresql.auth.username PostgreSQL user
@@ -616,7 +616,7 @@ postgresql:
 
 externalPostgresql:
   ## @param externalPostgresql.enabled Whether to use an external PostgreSQL
-  enabled: externalPostgresql.enabled
+  enabled: false
 
   ## @param externalPostgresql.host External PostgreSQL host
   host: postgresql
@@ -643,7 +643,7 @@ externalPostgresql:
 
 redis:
   ## @param redis.enabled Whether to use the Redis chart
-  enabled: redis.enabled
+  enabled: false
 
   ## @param redis.architecture Redis architecture
   architecture: standalone
@@ -663,7 +663,7 @@ redis:
 
 externalRedis:
   ## @param externalRedis.enabled Whether to use an external Redis
-  enabled: externalRedis.enabled
+  enabled: false
 
   ## @param externalRedis.host External Redis host
   host: redis

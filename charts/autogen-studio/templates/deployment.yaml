@@ -43,6 +43,8 @@ spec:
             - name: {{ $key }}
               value: {{ $value | quote }}
             {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: app-data
               mountPath: {{ .Values.appConfig.appdir }}

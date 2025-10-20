@@ -92,6 +92,8 @@ spec:
               value: "plugin_packages"
             - name: PLUGIN_MEDIA_CACHE_PATH
               value: "assets"
+            - name: GEVENT_ENABLE
+              value: "true"
           ports:
             - name: http
               containerPort: {{ .Values.pluginDaemon.service.port }}

@@ -67,7 +67,7 @@ spec:
 
       initContainers:
         - name: wait-for-postgresql
-          image: cloud-app/alpine:latest
+          image: {{ .Values.apline.image }}
           imagePullPolicy: IfNotPresent
           command:
             - sh

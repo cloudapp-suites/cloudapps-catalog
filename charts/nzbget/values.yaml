@@ -27,12 +27,7 @@ controllers:
               secretKeyRef:
                 name: nzbget
                 key: username
-        resources:
-          limits:
-            memory: 512Mi
-          requests:
-            cpu: "10m"
-            memory: 128Mi
+        resources: {}
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml

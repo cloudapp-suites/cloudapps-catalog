@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "answer.fullname" . }}
+spec:
+  serviceName: {{ include "answer.fullname" . }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "answer.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "answer.name" . }}
+    spec:
+      containers:
+        - name: answer
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          resources:
+            {{ toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: answer-data
+              mountPath: /data
+      volumes:
+        - name: answer-data
+          persistentVolumeClaim:
+            claimName: {{ include "answer.fullname" . }}-pvc

@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <p align="center">
-  <a href="https://anythingllm.com"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/wordmark.png" alt="AnythingLLM logo"></a>
+  <a href="https://anythingllm.com"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/wordmark.png" alt="AnythingLLM logo"></a>
 </p>
 
 <p align="center">
@@ -11,10 +11,10 @@
 
 <p align="center">
   <a href="https://discord.gg/6UyHPeGZAC" target="_blank">
-      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/chat-mintplex_labs-blue.svg" alt="Discord">
+      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/chat-mintplex_labs-blue.svg" alt="Discord">
   </a> |
   <a href="https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE" target="_blank">
-      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/v1.svg" alt="License">
+      <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/v1.svg" alt="License">
   </a> |
   <a href="https://docs.anythingllm.com" target="_blank">
     Docs
@@ -34,7 +34,7 @@
 
 A full-stack application that enables you to turn any document, resource, or piece of content into context that any LLM can use as a reference during chatting. This application allows you to pick and choose which LLM or Vector Database you want to use as well as supporting multi-user management and permissions.
 
-![Chatting](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anything-llm/image/demo.gif)
+![Chatting](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/anythingllm/image/demo.gif)
 
 <details>
 <summary><kbd>Watch the demo!</kbd></summary>
