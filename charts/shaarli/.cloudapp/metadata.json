@@ -1,0 +1,35 @@
+{
+  "name": "shaarli",
+  "display_name": "Shaarli",
+  "description": {
+    "zh": "Shaarli 是一个个人化、极简且超快速的自托管书签服务，无需数据库即可运行。它帮助用户保存和分享他们发现的网络链接，操作简单高效。专为单用户设计，注重速度、隐私和易部署性。",
+    "en": "Shaarli is a personal, minimalist, and super-fast bookmarking service that can be self-hosted without requiring a database. It allows users to save and share links they discover online in a simple and efficient way. Designed for single-user use, it emphasizes speed, privacy, and ease of deployment."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量快速，无需依赖数据库\n- 完全自托管，保障隐私与控制权\n- 极简设计，专注于简洁与易用性\n\n## 功能列表:\n\n- 支持公开或私密的个人链接分享\n- 基于标签管理已保存的链接\n- 支持共享书签的 RSS 源\n- 支持通过常用格式（如HTML）导入导出书签\n- 可按标签、标题或描述进行搜索和过滤\n- 提供内置演示实例，便于测试",
+    "en": "## Benefits:\n\n- Lightweight and fast with no database dependency\n- Fully self-hosted for enhanced privacy and control\n- Minimalist design focused on simplicity and usability\n\n## Features:\n\n- Personal link sharing with public or private bookmarks\n- Tag-based organization of saved links\n- RSS feed support for shared bookmarks\n- Import and export of bookmarks via popular formats (e.g., HTML)\n- Search and filtering by tags, titles, or descriptions\n- Built-in demo instance for easy testing"
+  },
+  "github_url": "https://github.com/shaarli/Shaarli",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Memos"
+  ],
+  "tags": [],
+  "official_address": "https://shaarli.readthedocs.io/",
+  "product_document": "https://demo.shaarli.org/doc/html/index.html",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Bookmarking",
+    "Minimalist",
+    "Lightweight",
+    "Privacy-Focused",
+    "Single-User"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/shaarli/image/doc-logo.png",
+  "language": "PHP",
+  "license": "Custom License"
+}

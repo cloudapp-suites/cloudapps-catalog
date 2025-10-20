@@ -14,7 +14,9 @@
     "zh": "./README-zh.md",
     "en": "./README.md"
   },
-  "alternative_products": [],
+  "alternative_products": [
+    "Shaarli"
+  ],
   "tags": [],
   "official_address": "",
   "product_document": "https://github.com/usememos/memos#deploy-with-docker-in-seconds",

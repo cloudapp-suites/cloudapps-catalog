@@ -1,0 +1,6 @@
+apiVersion: v2
+name: shaarli
+description: A Helm chart for shaarli - The personal, minimalist, super-fast, database free, bookmarking service
+type: application
+version: 0.1.0
+appVersion: "0.15.0"
