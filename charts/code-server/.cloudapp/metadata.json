@@ -31,5 +31,6 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/screenshot-1.png",
   "license": "MIT",
-  "language": "TypeScript"
+  "language": "TypeScript",
+  "phase": 2
 }

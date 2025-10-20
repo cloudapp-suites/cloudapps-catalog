@@ -30,5 +30,5 @@
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/memos/image/demo.png",
   "license": "MIT",
   "language": "Go",
-  "Version": 2
+  "phase": 2
 }
