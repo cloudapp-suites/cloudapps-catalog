@@ -1,0 +1,68 @@
+# Default values for code-server.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Default values for code-server chart.
+replicaCount: 1
+
+image:
+  repository: registry.cn-hangzhou.aliyuncs.com/edas_unified_test_bk/code-server
+  tag: 4.92.2
+  pullPolicy: IfNotPresent
+
+# Image pull secrets
+imagePullSecrets: []
+
+# Override the name of the app
+nameOverride: ""
+fullnameOverride: ""
+
+# Container ports
+ports:
+  containerPort: 8443
+
+# Service configuration
+service:
+  type: LoadBalancer
+  port: 8443
+  targetPort: 8443
+
+# Environment variables
+env:
+  TZ: Asia/Shanghai
+  PUID: "1000"
+  PGID: "1000"
+
+# Container configuration
+container:
+  workingDir: /config/workspace
+
+# Volume configuration
+persistence:
+  enabled: true
+  size: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "alicloud-disk-essd"
+
+# Resource limits and requests
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# Node selector
+nodeSelector: {}
+
+# Tolerations
+tolerations: []
+
+# Affinity
+affinity: {}

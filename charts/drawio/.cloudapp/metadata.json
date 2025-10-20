@@ -30,5 +30,6 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/drawio/image/home.png",
   "license": "Apache-2.0",
-  "language": "JavaScript"
+  "language": "JavaScript",
+  "Version": 2
 }

@@ -1,0 +1,35 @@
+{
+  "name": "code-server",
+  "display_name": "Code-server",
+  "description": {
+    "zh": "code-server 是一个开源项目，通过在远程服务器上运行 VS Code 并在浏览器中访问，实现云端编程。它允许开发者从任何设备访问功能完整的开发环境。该工具适用于远程开发场景，利用云基础设施提升性能与开发一致性。",
+    "en": "code-server is an open-source project that enables running VS Code in a browser by hosting it on a remote server. It allows developers to access a full-featured coding environment from any device, anywhere. This tool is ideal for remote development, leveraging cloud infrastructure for better performance and consistency."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 在任意设备上访问一致的开发环境\n- 利用强大的云服务器加速编译、测试和下载任务\n- 通过将高负载任务转移到服务器端，延长笔记本电脑电池续航\n\n## 功能列表:\n\n- 在浏览器中完整运行 VS Code\n- 支持插件、主题和设置同步\n- 支持通过脚本、手动或云平台一键部署安装\n- 集成 devcontainers，支持容器化开发环境\n- 可自托管，支持自定义配置和安全管控",
+    "en": "## Benefits:\n\n- Access a consistent development environment across all devices\n- Leverage powerful cloud servers to accelerate compilation, testing, and downloads\n- Extend laptop battery life by offloading intensive tasks to the server\n\n## Features:\n\n- Run VS Code entirely in the browser\n- Support for extensions, themes, and settings synchronization\n- Easy installation via script, manual setup, or cloud deployment\n- Integration with devcontainers for containerized development environments\n- Self-hosted solution with support for custom configuration and security controls"
+  },
+  "github_url": "https://github.com/coder/code-server",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "Microservices"
+  ],
+  "official_address": "https://coder.com",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Cloud-Based",
+    "Development Environment",
+    "Remote Development",
+    "Browser-Based",
+    "Vs Code"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/screenshot-1.png",
+  "license": "MIT",
+  "language": "TypeScript"
+}

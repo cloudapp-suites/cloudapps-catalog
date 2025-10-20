@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "memos.fullname" . }}
+  labels:
+    {{- include "memos.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "memos.fullname" . }}
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "memos.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: memos
+        app.kubernetes.io/instance: memos
+    spec:
+      serviceAccountName: memos
+      securityContext:
+        {}
+      containers:
+        - name: memos
+          securityContext:
+            {}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 5230
+              protocol: TCP
+          env:
+            - name: MEMOS_PORT
+              value: "5230"
+          volumeMounts:
+            - name: memos-data
+              mountPath: /var/opt/memos
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: memos-data
+          persistentVolumeClaim:
+            claimName: memos-data
