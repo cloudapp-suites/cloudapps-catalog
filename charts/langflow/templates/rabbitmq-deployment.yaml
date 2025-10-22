@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "langflow.fullname" . }}-rabbitmq
+  labels:
+    {{- include "langflow.labels" . | nindent 4 }}
+    app.kubernetes.io/component: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "langflow.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: rabbitmq
+  template:
+    metadata:
+      labels:
+        {{- include "langflow.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: {{ .Values.rabbitmq.image }}
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              value: "{{ .Values.rabbitmq.user }}"
+            - name: RABBITMQ_DEFAULT_PASS
+              value: "{{ .Values.rabbitmq.password }}"
+          ports:
+            - name: amqp
+              containerPort: {{ .Values.rabbitmq.port }}
+              protocol: TCP
+            - name: management
+              containerPort: 15672
+              protocol: TCP
+          volumeMounts:
+            - name: rabbitmq-data
+              mountPath: /var/lib/rabbitmq
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: rabbitmq-data
+          persistentVolumeClaim:
+            claimName: {{ include "langflow.fullname" . }}-rabbitmq-pvc

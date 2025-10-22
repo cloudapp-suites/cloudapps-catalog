@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "langflow.fullname" . }}-backend
+  labels:
+    {{- include "langflow.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "langflow.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: backend
+  template:
+    metadata:
+      labels:
+        {{- include "langflow.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: LANGFLOW_HOST
+              value: "{{ .Values.langflow.host }}"
+            - name: LANGFLOW_PORT
+              value: "{{ .Values.langflow.port }}"
+            - name: LANGFLOW_LOG_LEVEL
+              value: "{{ .Values.langflow.logLevel }}"
+            - name: LANGFLOW_SUPERUSER
+              value: "{{ .Values.langflow.superuser }}"
+            - name: LANGFLOW_SUPERUSER_PASSWORD
+              value: "{{ .Values.langflow.superuserPassword }}"
+            - name: LANGFLOW_NEW_USER_IS_ACTIVE
+              value: "{{ .Values.langflow.newUserIsActive }}"
+            - name: DB_HOST
+              value: "{{ .Values.database.host }}"
+            - name: DB_PORT
+              value: "{{ .Values.database.port }}"
+            - name: DB_NAME
+              value: "{{ .Values.database.name }}"
+            - name: DB_USER
+              value: "{{ .Values.database.user }}"
+            - name: DB_PASSWORD
+              value: "{{ .Values.database.password }}"
+            - name: REDIS_HOST
+              value: "{{ .Values.redis.host }}-service"
+            - name: REDIS_PORT
+              value: "{{ .Values.redis.port }}"
+            - name: REDIS_DB
+              value: "{{ .Values.redis.db }}"
+            - name: RABBITMQ_HOST
+              value: "{{ .Values.rabbitmq.host }}"
+            - name: RABBITMQ_PORT
+              value: "{{ .Values.rabbitmq.port }}"
+            - name: RABBITMQ_USER
+              value: "{{ .Values.rabbitmq.user }}"
+            - name: RABBITMQ_PASSWORD
+              value: "{{ .Values.rabbitmq.password }}"
+          ports:
+            - name: http
+              containerPort: {{ .Values.langflow.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

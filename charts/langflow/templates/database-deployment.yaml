@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "langflow.fullname" . }}-db
+  labels:
+    {{- include "langflow.labels" . | nindent 4 }}
+    app.kubernetes.io/component: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "langflow.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: database
+  template:
+    metadata:
+      labels:
+        {{- include "langflow.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: database
+    spec:
+      containers:
+        - name: postgresql
+          image: {{ .Values.database.image }}
+          env:
+            - name: POSTGRES_USER
+              value: "{{ .Values.database.user }}"
+            - name: POSTGRES_PASSWORD
+              value: "{{ .Values.database.password }}"
+            - name: POSTGRES_DB
+              value: "{{ .Values.database.name }}"
+            - name: PGDATA
+              value: "/var/lib/postgresql/data/pgdata"
+          ports:
+            - name: postgresql
+              containerPort: {{ .Values.database.port }}
+              protocol: TCP
+          volumeMounts:
+            - name: postgresql-data
+              mountPath: /var/lib/postgresql/data
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: postgresql-data
+          persistentVolumeClaim:
+            claimName: {{ include "langflow.fullname" . }}-db-pvc

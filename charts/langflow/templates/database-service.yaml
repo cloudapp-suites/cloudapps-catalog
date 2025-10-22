@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "langflow.fullname" . }}-db
+  labels:
+    {{- include "langflow.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.database.port }}
+      targetPort: postgresql
+      protocol: TCP
+      name: postgresql
+  selector:
+    {{- include "langflow.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: database

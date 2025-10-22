@@ -1,0 +1,67 @@
+# Default values for Langflow.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global Docker image parameters
+image:
+  registry: langflowai
+  repository: langflow-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+frontend:
+  image:
+    registry: langflowai
+    repository: langflow-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+
+# Application configuration
+langflow:
+  host: 0.0.0.0
+  port: 7860
+  logLevel: debug
+  superuser: superuser
+  superuserPassword: superuser
+  newUserIsActive: false
+
+# Database configuration
+database:
+  type: postgresql
+  image: postgres:14.5
+  host: langflow-db
+  port: 5432
+  name: langflow
+  user: langflow
+  password: langflow
+  storageSize: 20Gi
+
+# Redis configuration
+redis:
+  image: redis:6.2.5
+  host: langflow-redis
+  port: 6379
+  db: 0
+
+# RabbitMQ configuration
+rabbitmq:
+  image: rabbitmq:3-management
+  host: langflow-rabbitmq
+  port: 5672
+  user: langflow
+  password: langflow
+  storageSize: 20Gi
+
+# Service configuration
+service:
+  type: LoadBalancer
+  port: 7860
+
+# Resource limits and requests
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 512Mi
