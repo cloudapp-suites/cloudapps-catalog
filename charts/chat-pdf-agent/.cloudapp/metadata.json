@@ -1,0 +1,34 @@
+{
+  "name": "chat-pdf-agent",
+  "display_name": "Chat with PDF",
+  "description": {
+    "zh": "Chat with PDF 是一个轻量级的大型语言模型（LLM）应用，通过检索增强生成（RAG）技术让用户与 PDF 文档进行交互。用户可上传 PDF 并针对其内容提问，系统将提供准确且上下文相关的问题回答。该项目仅用 30 行 Python 代码实现，并使用 Streamlit 构建了简洁的交互界面。",
+    "en": "Chat with PDF is a lightweight LLM-powered application that enables users to interact with PDF documents using Retrieval Augmented Generation (RAG). It allows uploading PDFs and asking questions about their content, providing accurate, context-aware answers. Built in just 30 lines of Python, it leverages Streamlit for a simple, interactive interface."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过自然语言查询实现对复杂 PDF 内容的直观交互\n- 利用人工智能减少从文档中提取信息所需的人工操作\n- 轻量高效，代码简洁，依赖少，易于部署\n\n## 功能列表:\n\n- 上传 PDF 文档\n- 针对 PDF 内容提问\n- 基于 RAG 和选定的大语言模型获取准确答案",
+    "en": "## Benefits:\n\n- Enables intuitive interaction with complex PDF content through natural language queries\n- Reduces manual effort in extracting information from documents using AI\n- Lightweight and easy to set up with minimal code and dependencies\n\n## Features:\n\n- Upload a PDF document\n- Ask questions about the content of the PDF\n- Get accurate answers using RAG and the selected LLM"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_pdf",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "Natural Language Processing",
+    "Document Processing",
+    "Lightweight"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/chat-pdf-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

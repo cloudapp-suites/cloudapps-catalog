@@ -1,0 +1,36 @@
+{
+  "name": "ai-financial-coach-agent",
+  "display_name": "AI Financial Coach",
+  "description": {
+    "zh": "AI Financial Coach 是一款基于 Google Agent Development Kit（ADK）构建的个性化财务顾问应用。它利用多个AI代理分析用户的收入、支出、债务和财务目标等数据。该应用提供针对预算优化、储蓄策略和债务偿还的定制化建议，并配有交互式可视化图表。",
+    "en": "The AI Financial Coach is a personalized financial advisory application built using Google's Agent Development Kit (ADK). It leverages multiple AI agents to analyze user financial data, including income, expenses, debts, and goals. The app delivers tailored recommendations for budgeting, savings strategies, and debt reduction with interactive visualizations."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供由AI驱动的个性化财务建议，无需依赖人工理财顾问\n- 通过自动化分析和可执行建议帮助用户做出数据驱动的决策\n- 采用多个专业化代理协同工作，实现全面的财务规划\n\n## 功能列表:\n\n- 多代理财务分析系统，包含独立的预算、储蓄和债务管理代理\n- 支持CSV文件上传和手动输入记录支出\n- 自动化支出分类与消费模式识别\n- 使用饼图对支出类别进行可视化拆分\n- 条形图展示收入与支出对比\n- 定制储蓄计划并推荐应急基金配置\n- 债务偿还策略对比（雪崩法与雪球法）\n- 交互式债务偿还时间线与利息节省分析\n- 财务目标进度跟踪与里程碑提醒",
+    "en": "## Benefits:\n\n- Provides personalized, AI-driven financial advice without requiring human financial planners\n- Enables users to make data-informed decisions through automated analysis and actionable insights\n- Combines multiple specialized agents for comprehensive financial planning\n\n## Features:\n\n- Multi-Agent Financial Analysis System with dedicated Budget, Savings, and Debt Reduction agents\n- Supports CSV upload and manual entry for expense tracking\n- Automated expense categorization and spending pattern detection\n- Visual breakdown of expenses by category using pie charts\n- Bar charts comparing income vs. expenses\n- Customized savings plans with emergency fund recommendations\n- Debt payoff strategy comparison (avalanche vs. snowball methods)\n- Interactive debt timeline and interest savings visualization\n- Progress tracking for financial goals and milestones"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_ai_agents/multi_agent_apps/ai_financial_coach_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "Ai Agent",
+    "Financial Analytics",
+    "Personal Finance",
+    "Data Visualization",
+    "Multi-Agent System",
+    "Expense Tracking",
+    "Recommendation Engine"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ai-financial-coach-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}
