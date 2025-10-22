@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "ai-investment-agent.name" -}}
+{{- define "chat-arxiv-agent.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "ai-investment-agent.fullname" -}}
+{{- define "chat-arxiv-agent.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "ai-investment-agent.chart" -}}
+{{- define "chat-arxiv-agent.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "ai-investment-agent.labels" -}}
-helm.sh/chart: {{ include "ai-investment-agent.chart" . }}
-{{ include "ai-investment-agent.selectorLabels" . }}
+{{- define "chat-arxiv-agent.labels" -}}
+helm.sh/chart: {{ include "chat-arxiv-agent.chart" . }}
+{{ include "chat-arxiv-agent.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,7 +45,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "ai-investment-agent.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "ai-investment-agent.name" . }}
+{{- define "chat-arxiv-agent.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "chat-arxiv-agent.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}

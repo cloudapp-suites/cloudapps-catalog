@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "ai-investment-agent.fullname" . }}
+  name: {{ include "chat-arxiv-agent.fullname" . }}
   labels:
-    {{- include "ai-investment-agent.labels" . | nindent 4 }}
+    {{- include "chat-arxiv-agent.labels" . | nindent 4 }}
 spec:
   {{- if .Values.ingress.className }}
   ingressClassName: {{ .Values.ingress.className }}
@@ -19,7 +19,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ include "ai-investment-agent.fullname" $ }}
+                name: {{ include "chat-arxiv-agent.fullname" $ }}
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}

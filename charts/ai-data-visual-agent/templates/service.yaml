@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "ai-investment-agent.fullname" . }}
+  name: {{ include "ai-data-visual-agent.fullname" . }}
   labels:
-    {{- include "ai-investment-agent.labels" . | nindent 4 }}
+    {{- include "ai-data-visual-agent.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "ai-investment-agent.selectorLabels" . | nindent 4 }}
+    {{- include "ai-data-visual-agent.selectorLabels" . | nindent 4 }}

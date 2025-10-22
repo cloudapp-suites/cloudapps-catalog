@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "ai-investment-agent.fullname" . }}
+  name: {{ include "ai-data-analysis-agent.fullname" . }}
   labels:
-    {{- include "ai-investment-agent.labels" . | nindent 4 }}
+    {{- include "ai-data-analysis-agent.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "ai-investment-agent.selectorLabels" . | nindent 6 }}
+      {{- include "ai-data-analysis-agent.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "ai-investment-agent.selectorLabels" . | nindent 8 }}
+        {{- include "ai-data-analysis-agent.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
