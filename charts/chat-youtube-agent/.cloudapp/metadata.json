@@ -1,0 +1,35 @@
+{
+  "name": "chat-youtube-agent",
+  "display_name": "Chat with YouTube",
+  "description": {
+    "zh": "这是一个基于大语言模型（LLM）的应用程序，利用检索增强生成（RAG）技术实现与YouTube视频的对话。它通过youtube-transcript-api提取视频字幕，并借助OpenAI的GPT-4o等模型，根据视频内容回答用户问题。该应用通过AI驱动的对话提升对视频内容的理解和互动体验。",
+    "en": "This is an LLM-powered application that enables users to chat with YouTube videos using Retrieval Augmented Generation (RAG). It extracts video transcripts via the youtube-transcript-api and leverages models like OpenAI's GPT-4o to answer questions based on video content. The app enhances understanding and interaction with video material through AI-driven conversations."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过AI实现与YouTube视频内容的交互式问答\n- 提升长视频内容的可访问性和理解效率\n- 利用强大的大语言模型和RAG技术提供准确、上下文感知的回答\n\n## 功能列表:\n\n- 输入YouTube视频URL\n- 对视频内容提出问题\n- 使用RAG和选定的大语言模型获取准确答案",
+    "en": "## Benefits:\n\n- Enables interactive Q&A with YouTube video content using AI\n- Improves accessibility and comprehension of long-form video content\n- Leverages powerful LLMs and RAG for accurate, context-aware responses\n\n## Features:\n\n- Input a YouTube video URL\n- Ask questions about the content of the video\n- Get accurate answers using RAG and the selected LLM"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_youtube_videos",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "Natural Language Processing",
+    "Video Analytics",
+    "RAG",
+    "Llm Application"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/chat-youtube-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

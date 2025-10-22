@@ -1,0 +1,35 @@
+{
+  "name": "blog-to-podcast-agent",
+  "display_name": "Blog to Podcast Agent",
+  "description": {
+    "zh": "这是一个基于 Streamlit 的 AI 工具，可将博客文章转换为播客节目。它能自动抓取博客内容，使用 GPT-4 生成简洁摘要，并通过 ElevenLabs 将摘要合成为自然语音。该工具帮助用户轻松将文字内容转化为音频收听。",
+    "en": "This is a Streamlit-based AI agent that converts blog posts into podcast episodes. It automatically scrapes blog content, generates a concise summary using GPT-4, and synthesizes the summary into natural-sounding speech via ElevenLabs. The tool enables users to consume written content in audio format effortlessly."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持通过音频方式免提收听博客内容。\n- 自动化实现博客到播客的转换，简化内容再利用。\n- 集成先进的AI模型，确保摘要和语音合成质量高。\n\n## 功能列表:\n\n- 博客抓取：使用 Firecrawl API 抓取任意公开博客 URL 的完整内容。\n- 摘要生成：利用 OpenAI 的 GPT-4 模型生成生动简洁的摘要（2000字符以内）。\n- 播客生成：通过 ElevenLabs 语音 API 将摘要转换为音频播客。\n- API 密钥集成：通过侧边栏安全输入 OpenAI、Firecrawl 和 ElevenLabs 的 API 密钥以启用功能。",
+    "en": "## Benefits:\n\n- Enables hands-free consumption of blog content through audio.\n- Simplifies content repurposing by automating blog-to-podcast conversion.\n- Integrates state-of-the-art AI models for high-quality summarization and voice generation.\n\n## Features:\n\n- Blog Scraping: Scrapes the full content of any public blog URL using Firecrawl API.\n- Summary Generation: Creates an engaging and concise summary of the blog (within 2000 characters) using OpenAI GPT-4.\n- Podcast Generation: Converts the summary into an audio podcast using the ElevenLabs voice API.\n- API Key Integration: Requires OpenAI, Firecrawl, and ElevenLabs API keys to function, entered securely via the sidebar."
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_blog_to_podcast_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "Content Conversion",
+    "Text-To-Speech",
+    "Summarization",
+    "Streamlit"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/blog-to-podcast-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}
