@@ -1,0 +1,37 @@
+{
+  "name": "ai-data-visual-agent",
+  "display_name": "AI Data Visualization Agent",
+  "description": {
+    "zh": "AI数据可视化代理是一个基于Streamlit的应用程序，利用大语言模型（LLM）实现通过自然语言与数据集交互。用户只需上传数据并用自然语言提问，AI即可自动生成相应的可视化图表、统计分析和解释说明。它是一个智能且交互式的数据探索与分析助手。",
+    "en": "AI Data Visualization Agent is a Streamlit-based application that leverages large language models (LLMs) to enable natural language interaction with datasets. Users can upload data and ask questions in plain English, and the AI will automatically generate relevant visualizations, statistical insights, and explanations. It serves as an intelligent, interactive assistant for data exploration and analysis."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 让非技术用户也能通过自然语言轻松探索数据\n- 通过自动化生成可视化和洞察，显著加快数据分析速度\n- 支持多种先进的大语言模型，灵活平衡性能与成本\n\n## 功能列表:\n\n- 用简单英文向数据提问\n- 实时获取可视化图表和统计分析\n- 获得发现结果的详细解释和洞察\n- 支持交互式追问\n- 自动选择合适的图表类型\n- 动态生成可视化图表\n- 支持统计类可视化\n- 支持自定义图表格式和样式\n- 使用Meta-Llama 3.1 405B进行复杂分析\n- 使用DeepSeek V3获取深入洞察\n- 使用Qwen 2.5 7B进行快速分析\n- 使用Meta-Llama 3.3 70B处理高级查询",
+    "en": "## Benefits:\n\n- Enables non-technical users to explore data using natural language\n- Accelerates data analysis with automated visualization and insight generation\n- Supports multiple state-of-the-art LLMs for flexible performance and cost trade-offs\n\n## Features:\n\n- Ask questions about your data in plain English\n- Get instant visualizations and statistical analysis\n- Receive explanations of findings and insights\n- Interactive follow-up questioning\n- Automatic choice of appropriate chart types\n- Dynamic visualization generation\n- Statistical visualization support\n- Custom plot formatting and styling\n- Meta-Llama 3.1 405B for complex analysis\n- DeepSeek V3 for detailed insights\n- Qwen 2.5 7B for quick analysis\n- Meta-Llama 3.3 70B for advanced queries"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_data_visualisation_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "Data Visualization",
+    "Natural Language Processing",
+    "Streamlit",
+    "Analytics",
+    "LLM",
+    "Interactive Dashboard"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ai-data-visual-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

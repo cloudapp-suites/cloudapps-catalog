@@ -1,0 +1,36 @@
+{
+  "name": "music-generator-agent",
+  "display_name": "ModelsLab Music Generator",
+  "description": {
+    "zh": "ModelsLab Music Generator 是一个基于 Streamlit 的应用，允许用户通过 ModelsLab API 和 OpenAI 的 GPT-4 模型生成音乐。用户只需输入描述性提示，即可根据流派、乐器、情绪等参数生成自定义的 MP3 音乐。该应用提供简洁的界面和便捷的 API 密钥集成。",
+    "en": "ModelsLab Music Generator is a Streamlit-based application that enables users to generate music tracks using the ModelsLab API and OpenAI's GPT-4 model. By entering a descriptive prompt, users can create custom music in MP3 format based on genre, instruments, mood, and other parameters. The app provides a simple interface for music generation with easy API key integration."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 利用强大的 AI 模型（GPT-4 和 ModelsLab）进行创意音乐生成。\n- 提供直观友好的界面，便于非技术用户使用。\n- 通过自然语言提示快速实现音乐创意原型。\n\n## 功能列表:\n\n- 生成音乐：输入详细的音乐生成提示（如流派、乐器、情绪等），应用将生成相应的音乐片段。\n- MP3 输出：生成的音乐为 MP3 格式，可在线播放或下载。\n- 用户友好界面：采用简洁清晰的 Streamlit UI，操作简便。\n- API 密钥集成：需配置 OpenAI 和 ModelsLab 的 API 密钥，密钥通过侧边栏输入认证。",
+    "en": "## Benefits:\n\n- Leverages powerful AI models (GPT-4 and ModelsLab) for creative music generation.\n- Provides an intuitive, user-friendly interface for non-technical users.\n- Enables rapid prototyping of music ideas through natural language prompts.\n\n## Features:\n\n- Generate Music: Enter a detailed prompt for music generation (genre, instruments, mood, etc.), and the app will generate a music track.\n- MP3 Output: The generated music will be in MP3 format, available for listening or download.\n- User-Friendly Interface: Simple and clean Streamlit UI for ease of use.\n- API Key Integration: Requires both OpenAI and ModelsLab API keys to function. API keys are entered in the sidebar for authentication."
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_music_generator_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "Music Generation",
+    "Natural Language Processing",
+    "Streamlit",
+    "Api Integration",
+    "MP3"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/music-generator-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}
