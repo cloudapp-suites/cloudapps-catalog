@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "beifong.fullname" . }}-post-deploy-hook"
+  labels:
+    {{- include "beifong.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+spec:
+  template:
+    metadata:
+      name: "{{ include "beifong.fullname" . }}-post-deploy-hook"
+      labels:
+        {{- include "beifong.labels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "beifong.fullname" . }}-post-deploy-hook
+      restartPolicy: Never
+      containers:
+      - name: post-deploy-hook
+        image: {{ .Values.kubctl.image }}
+        command:
+          - "/bin/sh"
+          - "-c"
+          - |
+            # 等待服务获取外部IP
+            echo "Waiting for LoadBalancer to get external IP..."
+            until kubectl get svc {{ include "beifong.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}' | grep -q "^[0-9]"; do
+              echo "Waiting for external IP..."
+              sleep 5
+            done
+            
+            # 获取外部IP
+            EXTERNAL_IP=$(kubectl get svc {{ include "beifong.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+            echo "External IP is: $EXTERNAL_IP"
+            
+            # 更新Deployment环境变量
+            echo "Updating deployment with external API URL..."
+            kubectl set env deployment/{{ include "beifong.fullname" . }} REACT_APP_API_BASE_URL=http://$EXTERNAL_IP:{{ .Values.service.port }}
+            
+            echo "Post-deploy hook completed successfully!"
