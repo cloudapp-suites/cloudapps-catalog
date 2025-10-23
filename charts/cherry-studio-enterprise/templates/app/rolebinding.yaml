@@ -1,0 +1,17 @@
+{{- if and .Values.app.enabled (eq .Values.app.api.service.type "LoadBalancer") }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-updater-binding"
+  labels:
+    {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+subjects:
+- kind: ServiceAccount
+  name: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-updater"
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-updater-role"
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

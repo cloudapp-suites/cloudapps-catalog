@@ -55,14 +55,14 @@ http{{ if $.Values.app.admin.ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path
    ⚠️  注意：可能需要几分钟时间才能获得 LoadBalancer 的 IP 地址
    📝 获取访问地址：
    export ADMIN_SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "cherry-studio-enterprise.fullname" . }}-admin --template "{{"{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}"}}")
-   echo "🖥️  Admin: http://$ADMIN_SERVICE_IP:{{ .Values.admin.service.port }}"
+   echo "🖥️  Admin: http://$ADMIN_SERVICE_IP:{{ .Values.app.admin.service.port }}"
 {{- else if contains "ClusterIP" .Values.app.admin.service.type }}
 🔗 Admin 服务 (ClusterIP):
    📝 执行以下命令进行端口转发：
    export ADMIN_POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "cherry-studio-enterprise.name" . }},app.kubernetes.io/component=admin" -o jsonpath="{.items[0].metadata.name}")
    export ADMIN_CONTAINER_PORT=$(kubectl get pod --namespace {{ .Release.Namespace }} $ADMIN_POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-   echo "🖥️  Admin 访问: http://127.0.0.1:{{ .Values.admin.service.port }}"
-   kubectl --namespace {{ .Release.Namespace }} port-forward $ADMIN_POD_NAME {{ .Values.admin.service.port }}:$ADMIN_CONTAINER_PORT
+   echo "🖥️  Admin 访问: http://127.0.0.1:{{ .Values.app.admin.service.port }}"
+   kubectl --namespace {{ .Release.Namespace }} port-forward $ADMIN_POD_NAME {{ .Values.app.admin.service.port }}:$ADMIN_CONTAINER_PORT
 {{- end }}
 
 ================================================================================

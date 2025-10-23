@@ -1,0 +1,16 @@
+{{- if and .Values.app.enabled (eq .Values.app.api.service.type "LoadBalancer") }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-updater-role"
+  labels:
+    {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+rules:
+- apiGroups: [""]
+  resources: ["services"]
+  verbs: ["get", "watch", "list"]
+- apiGroups: ["apps"]
+  resources: ["statefulsets"]
+  verbs: ["get", "patch"]
+{{- end }}

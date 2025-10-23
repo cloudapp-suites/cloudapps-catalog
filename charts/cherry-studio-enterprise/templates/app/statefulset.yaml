@@ -1,12 +1,13 @@
 {{- if .Values.app.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "cherry-studio-enterprise.fullname" . }}-api
   labels:
     {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
     app.kubernetes.io/component: api
 spec:
+  serviceName: {{ include "cherry-studio-enterprise.fullname" . }}-api
   {{- if not .Values.app.autoscaling.enabled }}
   replicas: {{ .Values.app.replicaCount }}
   {{- end }}
