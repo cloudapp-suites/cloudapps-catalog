@@ -2,6 +2,60 @@
 
 This is the official Helm Chart repository for Cherry Studio Enterprise API.
 
+# 🍒 Cherry Studio
+
+Cherry Studio is a desktop client that supports multiple LLM providers, available on Windows, Mac and Linux.
+
+👏 Join [Telegram Group](https://t.me/CherryStudioAI)｜[Discord](https://discord.gg/wez8HtpxqQ) | [QQ Group(575014769)](https://qm.qq.com/q/lo0D4qVZKi)
+
+❤️ Like Cherry Studio? Give it a star 🌟 or [Sponsor](docs/sponsor.md) to support the development!
+
+# 🌠 Screenshot
+
+![](https://github.com/user-attachments/assets/36dddb2c-e0fb-4a5f-9411-91447bab6e18)
+
+![](https://github.com/user-attachments/assets/f549e8a0-2385-40b4-b52b-2039e39f2930)
+
+![](https://github.com/user-attachments/assets/58e0237c-4d36-40de-b428-53051d982026)
+
+# 🌟 Key Features
+
+1. **Diverse LLM Provider Support**:
+
+- ☁️ Major LLM Cloud Services: OpenAI, Gemini, Anthropic, and more
+- 🔗 AI Web Service Integration: Claude, Perplexity, Poe, and others
+- 💻 Local Model Support with Ollama, LM Studio
+
+2. **AI Assistants & Conversations**:
+
+- 📚 300+ Pre-configured AI Assistants
+- 🤖 Custom Assistant Creation
+- 💬 Multi-model Simultaneous Conversations
+
+3. **Document & Data Processing**:
+
+- 📄 Supports Text, Images, Office, PDF, and more
+- ☁️ WebDAV File Management and Backup
+- 📊 Mermaid Chart Visualization
+- 💻 Code Syntax Highlighting
+
+4. **Practical Tools Integration**:
+
+- 🔍 Global Search Functionality
+- 📝 Topic Management System
+- 🔤 AI-powered Translation
+- 🎯 Drag-and-drop Sorting
+- 🔌 Mini Program Support
+- ⚙️ MCP(Model Context Protocol) Server
+
+5. **Enhanced User Experience**:
+
+- 🖥️ Cross-platform Support for Windows, Mac, and Linux
+- 📦 Ready to Use - No Environment Setup Required
+- 🎨 Light/Dark Themes and Transparent Window
+- 📝 Complete Markdown Rendering
+- 🤲 Easy Content Sharing
+
 ## Directory Structure
 
 ```
