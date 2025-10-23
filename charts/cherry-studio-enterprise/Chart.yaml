@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cherry-studio-enterprise
+description: A Helm chart for Cherry Studio Enterprise
+type: application
+version: 1.0.4
+appVersion: 'v0.1.3'

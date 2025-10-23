@@ -1,0 +1,18 @@
+{{- if and .Values.app.enabled .Values.app.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "cherry-studio-enterprise.fullname" . }}-data
+  labels:
+    {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+spec:
+  accessModes:
+    - {{ .Values.app.persistence.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.app.persistence.size | quote }}
+  {{- if .Values.app.persistence.storageClass }}
+  storageClassName: {{ .Values.app.persistence.storageClass }}
+  {{- end }}
+{{- end }}
