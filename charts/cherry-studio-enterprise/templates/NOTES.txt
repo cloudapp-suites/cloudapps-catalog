@@ -1,0 +1,86 @@
+🎉 Cherry Studio Enterprise 部署成功！
+
+================================================================================
+📋 服务访问信息
+================================================================================
+
+🌐 API 服务 (Ingress):
+
+{{- if .Values.app.api.ingress.enabled }}
+{{- range $host := .Values.app.api.ingress.hosts }}
+  {{- range .paths }}
+http{{ if $.Values.app.api.ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path }}
+  {{- end }}
+{{- end }}
+{{- else if contains "NodePort" .Values.app.api.service.type }}
+🔗 API 服务 (NodePort):
+   📝 执行以下命令获取访问地址：
+   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "cherry-studio-enterprise.fullname" . }}-api)
+   export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+   echo "🌐 API: http://$NODE_IP:$NODE_PORT"
+{{- else if contains "LoadBalancer" .Values.app.api.service.type }}
+🔗 API 服务 (LoadBalancer):
+   ⚠️  注意：可能需要几分钟时间才能获得 LoadBalancer 的 IP 地址
+   📝 监控服务状态：
+   kubectl get --namespace {{ .Release.Namespace }} svc -w {{ include "cherry-studio-enterprise.fullname" . }}-api
+
+   📝 获取访问地址：
+   export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "cherry-studio-enterprise.fullname" . }}-api --template "{{"{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}"}}")
+   echo "🌐 API: http://$SERVICE_IP:{{ .Values.app.api.service.port }}"
+{{- else if contains "ClusterIP" .Values.app.api.service.type }}
+🔗 API 服务 (ClusterIP):
+   📝 执行以下命令进行端口转发：
+   export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "cherry-studio-enterprise.name" . }},app.kubernetes.io/component=api" -o jsonpath="{.items[0].metadata.name}")
+   export CONTAINER_PORT=$(kubectl get pod --namespace {{ .Release.Namespace }} $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+   echo "🌐 API 访问: http://127.0.0.1:{{ .Values.app.api.service.port }}"
+   kubectl --namespace {{ .Release.Namespace }} port-forward $POD_NAME {{ .Values.app.api.service.port }}:$CONTAINER_PORT
+{{- end }}
+
+🖥️  Admin 服务 (Ingress):
+
+{{- if .Values.app.admin.ingress.enabled }}
+{{- range $host := .Values.app.admin.ingress.hosts }}
+  {{- range .paths }}
+http{{ if $.Values.app.admin.ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path }}
+  {{- end }}
+{{- end }}
+{{- else if contains "NodePort" .Values.app.admin.service.type }}
+🔗 Admin 服务 (NodePort):
+   📝 执行以下命令获取访问地址：
+   export ADMIN_NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "cherry-studio-enterprise.fullname" . }}-admin)
+   export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+   echo "🖥️  Admin: http://$NODE_IP:$ADMIN_NODE_PORT"
+{{- else if contains "LoadBalancer" .Values.app.admin.service.type }}
+🔗 Admin 服务 (LoadBalancer):
+   ⚠️  注意：可能需要几分钟时间才能获得 LoadBalancer 的 IP 地址
+   📝 获取访问地址：
+   export ADMIN_SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "cherry-studio-enterprise.fullname" . }}-admin --template "{{"{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}"}}")
+   echo "🖥️  Admin: http://$ADMIN_SERVICE_IP:{{ .Values.admin.service.port }}"
+{{- else if contains "ClusterIP" .Values.app.admin.service.type }}
+🔗 Admin 服务 (ClusterIP):
+   📝 执行以下命令进行端口转发：
+   export ADMIN_POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "cherry-studio-enterprise.name" . }},app.kubernetes.io/component=admin" -o jsonpath="{.items[0].metadata.name}")
+   export ADMIN_CONTAINER_PORT=$(kubectl get pod --namespace {{ .Release.Namespace }} $ADMIN_POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+   echo "🖥️  Admin 访问: http://127.0.0.1:{{ .Values.admin.service.port }}"
+   kubectl --namespace {{ .Release.Namespace }} port-forward $ADMIN_POD_NAME {{ .Values.admin.service.port }}:$ADMIN_CONTAINER_PORT
+{{- end }}
+
+================================================================================
+📚 重要说明
+================================================================================
+
+💡 架构说明：
+   • API 服务：后端 API 服务，默认使用 SQLite 数据库
+   • Admin 服务：前端管理界面，提供 Web UI
+
+⚠️  注意事项：
+   • API 服务如果使用 SQLite 数据库，Pod 数量要求为 1
+   • API 数据存储在持久化卷中（/app/data）
+   • Admin 服务默认不启用持久化存储
+
+🔧 管理命令：
+   • 查看服务状态：kubectl get pods,svc,ingress -n {{ .Release.Namespace }}
+   • 查看日志：kubectl logs -f deployment/{{ include "cherry-studio-enterprise.fullname" . }}-api -n {{ .Release.Namespace }}
+   • 备份数据：备份 PVC {{ include "cherry-studio-enterprise.fullname" . }}-data
+
+================================================================================
