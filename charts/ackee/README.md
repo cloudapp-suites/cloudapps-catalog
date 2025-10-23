@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2d2a0dc1-e1d7-4778-8a44-fcf263c5cd13)
+
 <div align="center">
 
 <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ackee/image/icon.png" title="Ackee" alt="Ackee logo" width="128">

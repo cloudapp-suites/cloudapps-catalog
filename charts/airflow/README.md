@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=8218b4ed-30a8-4057-a9c6-e76b2cee5b3d)
+
 <!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file

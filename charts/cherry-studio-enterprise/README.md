@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bdd9a65d-7201-46e3-b1cb-49897399e4bf)
+
 # Cherry Studio Enterprise Helm Chart
 
 This is the official Helm Chart repository for Cherry Studio Enterprise API.

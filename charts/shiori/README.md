@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=713e8a30-ec75-49be-9658-eb151ae317a6)
+
 # Shiori
 
 [![IC](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/shiori/image/badge.svg)](https://github.com/go-shiori/shiori/actions/workflows/push.yml)

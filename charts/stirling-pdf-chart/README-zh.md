@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=48e0f27f-b651-4edd-b63d-6b06dc0cfeb9)
+
 <p align="center"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/stirling-pdf-chart/image/stirling.png" width="80"></p>
 <h1 align="center">Stirling-PDF</h1>
 

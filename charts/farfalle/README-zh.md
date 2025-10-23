@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=a89a2106-89ef-4f2b-b7d9-d7698930a7cc)
+
 # Farfalle
 
 开源的 AI 驱动搜索引擎（Perplexity 克隆）

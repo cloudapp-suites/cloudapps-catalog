@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=dbed8c88-044b-48c6-ad59-7a6b6b678786)
+
 Emby Server
 ============
 

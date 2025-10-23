@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=f0e29f51-6bb9-4245-98fc-deaebcf47b92)
+
 # pgweb
 
 Simple web-based and cross platform PostgreSQL database explorer.

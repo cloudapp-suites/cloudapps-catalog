@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bdd9a65d-7201-46e3-b1cb-49897399e4bf)
+
 # Cherry Studio Enterprise Helm Chart
 
 这是 Cherry Studio Enterprise API 的官方 Helm Chart 仓库。

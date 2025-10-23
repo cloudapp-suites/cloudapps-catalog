@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b083f5df-e374-4bd7-8ddf-e1f659833992)
+
 <div align="center">
 
 <a href='https://nextchat.club'>

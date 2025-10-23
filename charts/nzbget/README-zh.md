@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=8ee67da0-02a5-47ad-93c5-ecfda425cfa6)
+
 > **注意**：部署完成后需要自行删除浏览器地址中的埋点信息，（例如：/?spm=5176.13764303.0.0.768f2c01KgPdkL）
 
 # NZBGet #

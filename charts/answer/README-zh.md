@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=f79bbdff-da0b-4872-9c78-938c476ab9b7)
+
 <a href="https://answer.apache.org">
     <img alt="logo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/answer/image/logo.svg" height="99px">
 </a>

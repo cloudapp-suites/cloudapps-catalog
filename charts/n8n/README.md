@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=adba7482-dfaa-43ef-959f-a4fc8f0c6995)
+
 ![Banner image](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/n8n/image/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
 # n8n - Secure Workflow Automation for Technical Teams

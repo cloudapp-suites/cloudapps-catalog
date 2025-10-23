@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=99e3ecf3-3837-4cd2-a2ec-ff4915c3af17)
+
 # Duplicati
 
 **English** | 中文 | 日本語

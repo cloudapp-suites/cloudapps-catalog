@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=484f046a-5117-446d-b608-66294a1b24a0)
+
 Miniflux 2
 ==========
 

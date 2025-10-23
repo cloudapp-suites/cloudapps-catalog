@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=dbed8c88-044b-48c6-ad59-7a6b6b678786)
+
 Emby 服务器
 ============
 

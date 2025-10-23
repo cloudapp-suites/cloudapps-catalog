@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2c6d5fe2-6ca2-4717-974e-45512d1c7ae9)
+
 <h1 align="center">Dashy</h1>
 <p align="center">
   <i>Dashy 帮助您通过单一入口访问和组织您的自托管服务</i>

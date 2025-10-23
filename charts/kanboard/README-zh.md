@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2ef10569-70b5-45a4-8200-fb491f170773)
+
 Kanboard
 ========
 

@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b8bf821f-d64d-43d7-a065-3682c4d78bdc)
+
 <!-- markdownlint-disable MD030 -->
 
 <p align="center">

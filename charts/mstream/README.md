@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=96ba5820-3c28-4750-ae45-66063e7ef48a)
+
 # mStream Music
 
 mStream is a personal music streaming server.  You can use mStream to stream your music from your home computer to any device, anywhere.

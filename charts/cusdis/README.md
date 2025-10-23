@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=180efb88-6599-4278-8354-730ac9b01782)
+
 
 <p align="center"><a href="https://cusdis.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cusdis/image/logo-256.png" alt="logo"></a></p>
 

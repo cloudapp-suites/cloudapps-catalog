@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=c82c9057-223f-4c2b-9401-83d9c43c2204)
+
 ![verdaccio logo](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/weblate/image/Logo-Darktext-borders.png)
 
 **Weblate is libre software web-based continuous localization system,

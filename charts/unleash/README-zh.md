@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=6736e598-82f3-44ef-9898-1786c40c77d7)
+
 <div align="center">
 
 <a href="https://getunleash.io" title="Unleash - 赋能开发者自信发布功能">

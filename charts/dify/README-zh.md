@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=61cae214-cc87-4dfd-a8c8-2b737e44a081)
+
 ![cover-v5-optimized](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/GitHub_README_if.png)
 
 <div align="center">

@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=e42b20c8-79a8-4a80-9033-00b1b2864c65)
+
 # Apprise API
 
 Take advantage of [Apprise](https://github.com/caronc/apprise) through your network with a user-friendly API.

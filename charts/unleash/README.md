@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=6736e598-82f3-44ef-9898-1786c40c77d7)
+
 <div align="center">
 
 <a href="https://getunleash.io" title="Unleash - Empowering developers to release with confidence">

@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=c718b2f5-74ba-4987-a966-1d77412af15e)
+
 <a href="https://www.navidrome.org"><img alt="Navidrome标志" height="60px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/logo-192x192.png" title="navidrome"/></a>
 
 # Navidrome音乐服务器 &nbsp;[![Tweet](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/shields.io.svg)](https://twitter.com/intent/tweet?text=Tired%20of%20paying%20for%20music%20subscriptions%2C%20and%20not%20finding%20what%20you%20really%20like%3F%20Roll%20your%20own%20streaming%20service%21&url=https://navidrome.org&via=navidrome)

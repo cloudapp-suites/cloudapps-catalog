@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=60f3ab94-2e1f-4905-b673-fb285ad36c96)
+
 # Tautulli
 
 A python based web application for monitoring, analytics and notifications for 

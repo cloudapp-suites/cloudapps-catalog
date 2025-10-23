@@ -1,3 +1,5 @@
+> 🚀 **EDAS provides one-click application deployment. Try it now!** [Deploy Now](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=a89a2106-89ef-4f2b-b7d9-d7698930a7cc)
+
 # Farfalle
 
 Open-source AI-powered search engine. (Perplexity Clone)

@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=5f70d85a-823c-4642-80f3-ed2cfd2b90e9)
+
 # PowerDNS-Admin
 
 一个具有高级功能的 PowerDNS Web 界面。

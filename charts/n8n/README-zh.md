@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=adba7482-dfaa-43ef-959f-a4fc8f0c6995)
+
 ![Banner 图片](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/n8n/image/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
 # n8n - 面向技术团队的安全工作流自动化工具

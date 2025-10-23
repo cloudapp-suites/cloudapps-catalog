@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=23732034-9978-4127-b623-1a9a2763a481)
+
 <p align="center"><a href="https://kutt.it" title="kutt.it"><img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/kutt/image/logo-github.png" alt="Kutt.it"></a></p>
 
 # Kutt.it
