@@ -1,3 +1,5 @@
+> 🚀 **EDAS 提供应用一键部署，快来体验吧！** [立即部署](https://edasnext.console.aliyun.com/#/home?tab=marketplace)
+
 # cloudapps-catalog
 CloudApps application catalog, and can be deployed to EDAS quickly.
 
