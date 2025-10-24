@@ -9,9 +9,7 @@ metadata:
 spec:
   accessModes:
     - {{ .Values.postgresql.persistence.accessMode | quote }}
-  {{- if .Values.postgresql.persistence.storageClass }}
   storageClassName: {{ .Values.postgresql.persistence.storageClass | quote }}
-  {{- end }}
   resources:
     requests:
       storage: {{ .Values.postgresql.persistence.size | quote }}
