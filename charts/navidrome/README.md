@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=c718b2f5-74ba-4987-a966-1d77412af15e)
+
+</div>
+
 <a href="https://www.navidrome.org"><img alt="Navidrome logo" height="60px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/logo-192x192.png" title="navidrome"/></a>
 
 # Navidrome Music Server &nbsp;[![Tweet](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/shields.io.svg)](https://twitter.com/intent/tweet?text=Tired%20of%20paying%20for%20music%20subscriptions%2C%20and%20not%20finding%20what%20you%20really%20like%3F%20Roll%20your%20own%20streaming%20service%21&url=https://navidrome.org&via=navidrome)

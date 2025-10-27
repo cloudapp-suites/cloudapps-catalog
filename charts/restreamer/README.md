@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=6c1681c8-2e80-4360-b9cc-70a4d19d8f3e)
+
+</div>
+
 <h1 align="center">Restreamer</h1>
 <h3 align="center">A really nice and free alternative for handling live streams.</h3>
 <p align="center">

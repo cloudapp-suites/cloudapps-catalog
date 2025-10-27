@@ -1,5 +1,13 @@
 <div align="center">
 
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=6736e598-82f3-44ef-9898-1786c40c77d7)
+
+</div>
+
+<div align="center">
+
 <a href="https://getunleash.io" title="Unleash - Empowering developers to release with confidence">
     <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/unleash/image/github_header_opaque_landscape.svg" alt="Visit the Unleash website">
 </a>

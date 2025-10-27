@@ -1,4 +1,4 @@
-{{- if .Values.postgresql.enabled }}
+{{- if .Values.externalEnv.postgresql.enabled }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -30,11 +30,11 @@ spec:
             runAsNonRoot: true
           env:
             - name: POSTGRES_USER
-              value: "postgres"
+              value: {{ .Values.externalEnv.postgresql.env.DB_USERNAME | quote }}
             - name: POSTGRES_PASSWORD
-              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+              value: {{ .Values.externalEnv.postgresql.env.DB_PASSWORD | quote }}
             - name: POSTGRES_DB
-              value: {{ .Values.postgresql.auth.database | quote }}
+              value: {{ .Values.externalEnv.postgresql.env.DB_DATABASE | quote }}
             - name: PGDATA
               value: "/var/lib/postgresql/data/pgdata"
           ports:

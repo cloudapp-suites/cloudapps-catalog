@@ -1,12 +1,13 @@
 {{- if .Values.app.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "cherry-studio-enterprise.fullname" . }}-api
   labels:
     {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
     app.kubernetes.io/component: api
 spec:
+  serviceName: {{ include "cherry-studio-enterprise.fullname" . }}-api
   {{- if not .Values.app.autoscaling.enabled }}
   replicas: {{ .Values.app.replicaCount }}
   {{- end }}
@@ -51,10 +52,39 @@ spec:
               containerPort: 3680
               protocol: TCP
           env:
-            {{- range $key, $value := .Values.app.env }}
-            - name: {{ $key }}
-              value: {{ $value | quote }}
+            - name: API_PORT
+              value: "{{ .Values.app.env.API_PORT }}"
+            - name: ADMIN_PORT
+              value: "{{ .Values.app.env.ADMIN_PORT }}"
+            - name: API_URL
+              value: {{ .Values.app.env.API_URL }}
+            - name: ADMIN_APP_NAME
+              value: "{{ .Values.app.env.ADMIN_APP_NAME}}"
+            - name: ADMIN_APP_LOGO_URL
+              value: {{ .Values.app.env.ADMIN_APP_LOGO_URL }}
+            - name: ADMIN_BASE_PATH
+              value: {{ .Values.app.env.ADMIN_BASE_PATH }}
+            - name: JWT_SECRET
+              value: {{ .Values.app.env.JWT_SECRET }}
+            {{- if .Values.externalEnv.postgresql.enabled | default true }}
+            - name: DB_HOST
+              value: {{ include "cherry-studio-enterprise.fullname" . }}-postgresql
+            {{- else }}
+            - name: DB_HOST
+              value: {{ .Values.externalEnv.postgresql.env.DB_HOST }}
             {{- end }}
+            - name: DB_PORT
+              value: "{{ .Values.externalEnv.postgresql.env.DB_PORT }}"
+            - name: DB_USERNAME
+              value: {{ .Values.externalEnv.postgresql.env.DB_USERNAME }}
+            - name: DB_PASSWORD
+              value: {{ .Values.externalEnv.postgresql.env.DB_PASSWORD }}
+            - name: DB_NAME
+              value: {{ .Values.externalEnv.postgresql.env.DB_NAME }}
+            - name: DB_TYPE
+              value: {{ .Values.app.env.DB_TYPE }}
+            - name: DB_SSL
+              value: "{{ .Values.externalEnv.postgresql.env.DB_SSL }}"
           {{- with .Values.app.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}

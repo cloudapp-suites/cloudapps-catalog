@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=97fc48c0-4f2d-4baf-b592-b3984f247b4b)
+
+</div>
+
 <div align="center" width="100%">
     <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/uptimekuma/image/icon.svg" width="128" alt="" />
 </div>

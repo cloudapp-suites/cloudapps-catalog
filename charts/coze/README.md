@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=7bd173d1-e731-473d-8a52-73fbb48c690f)
+
+</div>
+
 > **Note**: After deployment, you need to configure the model's api_key and model (default qwen-plus) in the model-configmap. Currently, only Alibaba Bailian is supported. If you need to modify it, you can configure the model file according to the project details.
 
 ![Image](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/coze/image/943f576df3424fa98580c2ad18946719_tplv-goo7wpa0wc-image.image)
@@ -51,7 +59,6 @@ The backend of Coze Studio is developed using Golang, the frontend uses React + 
 
 ## Using the open-source version of Coze Studio
 > Regarding how to use Coze Studio, refer to the [Coze Development Platform Official Documentation Center](https://www.coze.cn/open/docs) for more information. Please note that certain features, such as tone customization, are limited to the commercial version. Differences between the open-source and commercial versions can be found in the **Feature List**.
-
 
 * [Quick Start](https://www.coze.cn/open/docs/guides/quickstart): Quickly build an AI assistant agent with Coze Studio.
 * [Developing Agents](https://www.coze.cn/open/docs/guides/agent_overview): Learn how to create, build, publish, and manage agents. You can use functions such as knowledge, plugins, etc., to resolve model hallucination and lack of expertise in professional fields. In addition, Coze Studio provides rich memory features that enable agents to generate more accurate responses based on a personal user's historical conversations during interactions.

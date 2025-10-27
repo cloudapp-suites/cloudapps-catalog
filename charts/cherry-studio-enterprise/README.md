@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bdd9a65d-7201-46e3-b1cb-49897399e4bf)
+
+</div>
+
 # Cherry Studio Enterprise Helm Chart
 
 This is the official Helm Chart repository for Cherry Studio Enterprise API.
@@ -12,11 +20,11 @@ Cherry Studio is a desktop client that supports multiple LLM providers, availabl
 
 # 🌠 Screenshot
 
-![](https://github.com/user-attachments/assets/36dddb2c-e0fb-4a5f-9411-91447bab6e18)
+![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/36dddb2c-e0fb-4a5f-9411-91447bab6e18)
 
-![](https://github.com/user-attachments/assets/f549e8a0-2385-40b4-b52b-2039e39f2930)
+![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/f549e8a0-2385-40b4-b52b-2039e39f2930)
 
-![](https://github.com/user-attachments/assets/58e0237c-4d36-40de-b428-53051d982026)
+![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/58e0237c-4d36-40de-b428-53051d982026)
 
 # 🌟 Key Features
 

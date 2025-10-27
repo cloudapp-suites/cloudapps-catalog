@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=89afd8a9-7023-44ba-8064-a87a9f0616d4)
+
+</div>
+
 <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/label-studio/image/ls_github_header.png"/>
 
 ![GitHub](https://img.shields.io/github/license/heartexlabs/label-studio?logo=heartex) ![label-studio:build](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/label-studio/image/badge.svg) ![GitHub release](https://img.shields.io/github/v/release/heartexlabs/label-studio?include_prereleases)
@@ -67,7 +75,6 @@ You can use Label Studio as an independent part of your machine learning workflo
 | [data-manager](https://github.com/heartexlabs/dm2) | React and JavaScript frontend for managing data. Includes the Label Studio Frontend. Relies on the label-studio server or a custom backend with the expected API methods. | 
 | [label-studio-converter](https://github.com/heartexlabs/label-studio-converter) | Encode labels in the format of your favorite machine learning library | 
 | [label-studio-transformers](https://github.com/heartexlabs/label-studio-transformers) | Transformers library connected and configured for use with Label Studio |
-
 
 ## Roadmap
 

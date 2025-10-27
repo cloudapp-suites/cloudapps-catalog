@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=7bd173d1-e731-473d-8a52-73fbb48c690f)
+
+</div>
+
 > **注意**：部署完成后需要自行去model-configmap中配置模型的api_key 和 model（默认 qwen-plus ），当前只支持阿里百炼，如需修改可以按照项目详情自行配置模型文件
 
 ![Image](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/coze/image/943f576df3424fa98580c2ad18946719_tplv-goo7wpa0wc-image.image)
@@ -40,7 +48,6 @@ Coze Studio 的后端采用 Golang 开发，前端使用 React + TypeScript，�
 
 ## 使用 Coze Studio 开源版
 > 关于如何使用 Coze Studio，可参考[扣子开发平台官方文档中心](https://www.coze.cn/open/docs)获取更多资料。需要注意的是，音色等部分功能限商业版本使用，开源版与商业版的功能差异可参考**功能清单**。
-
 
 * [快速入门](https://www.coze.cn/open/docs/guides/quickstart)：通过 Coze Studio 快速搭建一个 AI 助手智能体。
 * [开发智能体](https://www.coze.cn/open/docs/guides/agent_overview)：如何创建、编排、发布与管理智能体。你可以使用知识、插件等功能解决模型幻觉、专业领域知识不足等问题。除此之外，Coze Studio 还提供了丰富的记忆功能，使智能体在与个人用户交互时，可根据个人用户的历史对话等生成更准确性的回复。

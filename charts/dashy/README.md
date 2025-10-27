@@ -1,3 +1,10 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2c6d5fe2-6ca2-4717-974e-45512d1c7ae9)
+
+</div>
 
 <h1 align="center">Dashy</h1>
 <p align="center">
@@ -148,18 +155,15 @@ The following icon types are supported:
 - **Local** - Store custom images locally and reference by filename
 - **Homelab Icons** - Using [dashboard-icons] for logos of commonly self-hosted services
 
-
 [font-awesome]: https://fontawesome.com/icons
 [simple-icons]: https://simpleicons.org/
 [material icons]: https://github.com/Templarian/MaterialDesign
 [selfh.st/icons]: https://selfh.st/icons
 [dashboard-icons]: https://github.com/WalkxCode/dashboard-icons
 
-
 <p align="center">
   <img width="400" src="https://i.ibb.co/GTVmZnc/dashy-example-icons.png" />
 </p>
-
 
 **⬆️ Back to Top**
 
@@ -187,11 +191,9 @@ Status indicators can be globally enabled by setting `appConfig.statusCheck: tru
 
 You can display dynamic content from services in the form of widgets. There are several pre-built widgets available for showing useful info, and integrations with commonly self-hosted services, but you can also easily create your own for almost any app.
 
-
 <p align="center">
   <img width="600" src="https://i.ibb.co/GFjXVHy/dashy-widgets.png" />
 </p>
-
 
 **⬆️ Back to Top**
 
@@ -204,7 +206,6 @@ You can display dynamic content from services in the form of widgets. There are 
 Dashy has full support for secure single-sign-on using [Keycloak](https://www.keycloak.org/) for secure, easy authentication, see setup docs for a full usage guide.
 
 There is also a basic auth feature, which doesn't require additional setup. To enable this, add an `auth` attribute under `appConfig`, containing an array of `users`, each with a username, SHA-256 hashed password and optional user type. Basic auth also supports several access control features, including read-only guest access and granular controls.
-
 
 ```yaml
 appConfig:
@@ -314,7 +315,6 @@ Under the config menu, you can export, view, backup, or reset app config and edi
 <p align="center">
   <img alt="Interactive Editor demo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dashy/image/139543020-b0576d28-0830-476f-afc8-a815d4de6def.gif" width="600" />
 </p>
-
 
 <p align="center">
   <img alt="Config Editor demo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dashy/image/config-editor-demo.gif" width="600" />

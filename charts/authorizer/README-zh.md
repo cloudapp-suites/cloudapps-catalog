@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bf6fd51d-f5d2-47b5-b5ae-cd5f5a2357c7)
+
+</div>
+
 <p align="center">
   <a href="https://authorizer.dev">
     <img alt="Logo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/authorizer/image/logo.png" width="60" />

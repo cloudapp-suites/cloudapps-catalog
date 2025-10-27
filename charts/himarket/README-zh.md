@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=27243528-6734-4e33-a729-2fbe729bdd56)
+
+</div>
+
 <a name="readme-top"></a>
 <h1 align="center">
     <img width="406" height="96" alt="image" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/himarket/image/e0956234-1a97-42c6-852d-411fa02c3f01" />

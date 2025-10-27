@@ -90,14 +90,10 @@ pluginDaemon:
 
 # PostgreSQL database configuration
 postgresql:
-  enabled: true
   image:
     repository: postgresql.image
     tag: postgresql.image.tag
     pullPolicy: IfNotPresent
-  auth:
-    postgresPassword: "difyai123456"
-    database: "dify"
   primary:
     nodeSelector: {}
     tolerations: []
@@ -105,13 +101,10 @@ postgresql:
 
 # Redis configuration
 redis:
-  enabled: true
   image:
     repository: redis.image
     tag: redis.image.tag
     pullPolicy: IfNotPresent
-  auth:
-    password: "difyai123456"
   master:
     nodeSelector: {}
     tolerations: []
@@ -162,3 +155,20 @@ ssrfProxy:
 
 busybox:
   image: busybox.image
+
+externalEnv:
+  postgresql:
+    enabled: true
+    env:
+      DB_USERNAME: "postgres"
+      DB_PASSWORD: "difyai123456"
+      DB_HOST: "dify-postgresql"
+      DB_PORT: "5432"
+      DB_DATABASE: "dify"
+  redis:
+    enabled: true
+    env:
+      REDIS_HOST: "dify-redis-master"
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: "difyai123456"
+      REDIS_DB: "0"

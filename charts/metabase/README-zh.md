@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=ccec3ef9-d6af-4267-9867-e32f189318ad)
+
+</div>
+
 # Metabase
 
 [Metabase](https://www.metabase.com) 是一种简单、开源的方式，让公司中的每个人都可以通过提问从数据中获取信息。

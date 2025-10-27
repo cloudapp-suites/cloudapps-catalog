@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=230ad397-79d8-46fd-b5a9-d02bf805636f)
+
+</div>
+
 # Automatisch - 开源的Zapier替代方案
 
 ![Automatisch - 截图](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/automatisch/image/191562539-e42f6c34-03c7-4dc4-bcf9-7f9473a9c64f.png)

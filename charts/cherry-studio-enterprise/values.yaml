@@ -7,6 +7,7 @@ app:
 
   image:
     repository: cherrystudio/cherry-studio-enterprise-api
+    kubectlImage: bitnami/kubectl:latest
 
   autoscaling:
     enabled: true
@@ -18,7 +19,7 @@ app:
     ADMIN_PORT: 3680
     API_URL: "YOUR_API_URL"
     ADMIN_APP_NAME: Cherry Studio
-    ADMIN_APP_LOGO_URL: https://raw.gitcode.com/CherryHQ/cherry-studio-enterprise/blobs/76b5582ee5ec1e1be7ac984eb9369640303acf35/logo.webp
+    ADMIN_APP_LOGO_URL: https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/logo.webp
     ADMIN_BASE_PATH: /
     JWT_SECRET: "YOUR_JWT_SECRET"
     DB_HOST: "YOUR_DB_HOST"
@@ -32,16 +33,17 @@ app:
   persistence:
     enabled: true
     accessMode: ReadWriteOnce
+    storageClass: ""
     size: 50Gi
     mountPath: /app/data
 
   api:
     service:
-      type: ClusterIP
+      type: LoadBalancer
       port: 3670
       targetPort: 3670
     ingress:
-      enabled: true
+      enabled: false
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "20m"
       hosts:
@@ -52,11 +54,11 @@ app:
 
   admin:
     service:
-      type: ClusterIP
+      type: LoadBalancer
       port: 3680
       targetPort: 3680
     ingress:
-      enabled: true
+      enabled: false
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "20m"
       hosts:
@@ -90,3 +92,28 @@ app:
     periodSeconds: 5
     timeoutSeconds: 3
     failureThreshold: 3
+
+postgresql:
+  image:
+    repository: postgres
+    tag: 15.3.0
+  database: cherry_studio_enterprise
+  username: cherry_studio
+  password: cherry_studio_password
+  resources: {}
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    storageClass: ""
+    size: 20Gi
+
+externalEnv:
+  postgresql:
+    enabled: true
+    env:
+      DB_HOST: cherry-studio-enterprise-postgresql
+      DB_PORT: "5432"
+      DB_USERNAME: "cherry_studio"
+      DB_PASSWORD: "cherry_studio_password"
+      DB_NAME: "cherry_studio_enterprise"
+      DB_SSL: false

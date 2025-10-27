@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bac43b5b-6ccb-4fbe-aafe-0dca060101b5)
+
+</div>
+
 # ![](https://avatars1.githubusercontent.com/u/8237355?v=2&s=50) Grav
 
 [![PHPStan](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/grav/image/PHPStan-已启用-brightgreen.svg)](https://github.com/phpstan/phpstan)
@@ -121,7 +129,6 @@ $ bin/gpm update
 # 许可证
 
 请查看 LICENSE
-
 
 [gitflow-model]: http://nvie.com/posts/a-successful-git-branching-model/
 [gitflow-extensions]: https://github.com/nvie/gitflow

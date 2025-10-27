@@ -38,7 +38,7 @@
     "GPT-4",
     "GPT-3"
   ],
-  "pic_url": "https://raw.gitcode.com/CherryHQ/cherry-studio-enterprise/blobs/76b5582ee5ec1e1be7ac984eb9369640303acf35/logo.webp",
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/logo.webp",
   "license": "cherry-ai business license",
   "language": "TypeScript"
 }

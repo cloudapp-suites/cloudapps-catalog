@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=8218b4ed-30a8-4057-a9c6-e76b2cee5b3d)
+
+</div>
+
 <!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -17,7 +25,7 @@
  under the License.
 -->
 
-<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
 # Apache Airflow
 
 | Badges     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -27,15 +35,11 @@
 | Containers | [![Docker Pulls](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/airflow.svg)](https://hub.docker.com/r/apache/airflow) [![Docker Stars](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/airflow.svg)](https://hub.docker.com/r/apache/airflow) [![Artifact HUB](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/endpoint.svg)](https://artifacthub.io/packages/search?repo=apache-airflow)                                                  |
 | Community  | [![Contributors](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/airflow.svg)](https://github.com/apache/airflow/graphs/contributors) [![Slack Status](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/slack-join_chat-white.svg)](https://s.apache.org/airflow-slack) ![Commit Activity](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/airflow.svg) [![OSSRank](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/endpoint)](https://ossrank.com/p/6) |
 
-
-
 | Version | Build Status                                                                                                                                                                                                                                                                                                            |
 |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Main    | [![GitHub Build main](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/badge.svg)](https://github.com/apache/airflow/actions) [![GitHub Build main](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/badge.svg)](https://github.com/apache/airflow/actions)                                 |
 | 3.x     | [![GitHub Build 3.1](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/badge.svg?branch=v3-1-test)](https://github.com/apache/airflow/actions) [![GitHub Build 3.1](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/badge.svg?branch=v3-1-test)](https://github.com/apache/airflow/actions) |
 | 2.x     | [![GitHub Build 2.11](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/airflow/image/badge.svg)](https://github.com/apache/airflow/actions)                                                                                                                                                               |
-
-
 
 <picture width="500">
   <img
@@ -50,7 +54,7 @@ When workflows are defined as code, they become more maintainable, versionable, 
 
 Use Airflow to author workflows (Dags) that orchestrate tasks. The Airflow scheduler executes your tasks on an array of workers while following the specified dependencies. Rich command line utilities make performing complex surgeries on DAGs a snap. The rich user interface makes it easy to visualize pipelines running in production, monitor progress, and troubleshoot issues when needed.
 
-<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
@@ -94,7 +98,7 @@ Airflow is not a streaming solution, but it is often used to process real-time d
 - **Extensible**: The Airflow framework includes a wide range of built-in operators and can be extended to fit your needs.
 - **Flexible**: Airflow leverages the [**Jinja**](https://jinja.palletsprojects.com) templating engine, allowing rich customizations.
 
-<!-- START Requirements, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- START Requirements, please keep comment here to allow auto update of PyPI README.md -->
 ## Requirements
 
 Apache Airflow is tested with:
@@ -124,8 +128,8 @@ as this is the only environment that is supported. The only distro that is used 
 is used in the [Community managed DockerHub image](https://hub.docker.com/p/apache/airflow) is
 `Debian Bookworm`.
 
-<!-- END Requirements, please keep comment here to allow auto update of PyPI readme.md -->
-<!-- START Getting started, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- END Requirements, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Getting started, please keep comment here to allow auto update of PyPI README.md -->
 
 ## User Interface
 
@@ -213,8 +217,8 @@ We know about around 500 organizations that are using Apache Airflow (but there 
 
 If you use Airflow - feel free to make a PR to add your organisation to the list.
 
-<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI readme.md -->
-<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
 
 ## Who maintains Apache Airflow?
 
@@ -224,7 +228,7 @@ are responsible for reviewing and merging PRs as well as steering conversations 
 If you would like to become a maintainer, please review the Apache Airflow
 [committer requirements](https://github.com/apache/airflow/blob/main/COMMITTERS.rst#guidelines-to-become-an-airflow-committer).
 
-<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI readme.md -->
+<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
 
 ## What goes into the next release?
 

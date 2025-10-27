@@ -9,7 +9,7 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
-    kind: Deployment
+    kind: StatefulSet
     name: {{ include "cherry-studio-enterprise.fullname" . }}-api
   minReplicas: {{ .Values.app.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.app.autoscaling.maxReplicas }}

@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bdd9a65d-7201-46e3-b1cb-49897399e4bf)
+
+</div>
+
 # Cherry Studio Enterprise Helm Chart
 
 这是 Cherry Studio Enterprise API 的官方 Helm Chart 仓库。
@@ -14,9 +22,9 @@ Cherry Studio 是一款支持多类大语言模型服务的桌面客户端，支
 
 ![](https://github.com/user-attachments/assets/36dddb2c-e0fb-4a5f-b411-91447bab6e18)
 
-![](https://github.com/user-attachments/assets/f549e8a0-2385-40b4-b52b-2039e39f2930)
+![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/f549e8a0-2385-40b4-b52b-2039e39f2930)
 
-![](https://github.com/user-attachments/assets/58e0237c-4d36-40de-b428-53051d982026)
+![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/58e0237c-4d36-40de-b428-53051d982026)
 
 # 🌟 核心功能
 
