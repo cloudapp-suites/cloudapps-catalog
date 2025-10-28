@@ -91,21 +91,21 @@ If release name contains chart name it will be used as a full name.
         name: {{ template "airflow_metadata_secret" . }}
         key: kedaConnection
   {{- end }}
-  {{- if and (semverCompare "<3.0.0" .Values.airflowVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__WEBSERVER__SECRET_KEY }}
+  {{- if and (semverCompare "<3.0.0" .Chart.AppVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__WEBSERVER__SECRET_KEY }}
   - name: AIRFLOW__WEBSERVER__SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: {{ template "webserver_secret_key_secret" . }}
         key: webserver-secret-key
   {{- end }}
-  {{- if and (semverCompare ">=3.0.0" .Values.airflowVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__API__SECRET_KEY }}
+  {{- if and (semverCompare ">=3.0.0" .Chart.AppVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__API__SECRET_KEY }}
   - name: AIRFLOW__API__SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: {{ template "api_secret_key_secret" . }}
         key: api-secret-key
   {{- end }}
-  {{- if and (semverCompare ">=3.0.0" .Values.airflowVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__API_AUTH__JWT_SECRET }}
+  {{- if and (semverCompare ">=3.0.0" .Chart.AppVersion) .Values.enableBuiltInSecretEnvVars.AIRFLOW__API_AUTH__JWT_SECRET }}
   - name: AIRFLOW__API_AUTH__JWT_SECRET
     valueFrom:
       secretKeyRef:
@@ -113,7 +113,7 @@ If release name contains chart name it will be used as a full name.
         key: jwt-secret
   {{- end }}
   {{- if or (contains "CeleryExecutor" .Values.executor) (contains "CeleryKubernetesExecutor" .Values.executor) }}
-    {{- if or (semverCompare "<2.4.0" .Values.airflowVersion) (.Values.data.resultBackendSecretName) (.Values.data.resultBackendConnection) }}
+    {{- if or (semverCompare "<2.4.0" .Chart.AppVersion) (.Values.data.resultBackendSecretName) (.Values.data.resultBackendConnection) }}
     {{- if .Values.enableBuiltInSecretEnvVars.AIRFLOW__CELERY__CELERY_RESULT_BACKEND }}
   # (Airflow 1.10.* variant)
   - name: AIRFLOW__CELERY__CELERY_RESULT_BACKEND
@@ -349,7 +349,7 @@ If release name contains chart name it will be used as a full name.
 {{/* This helper will change when customers deploy a new image */}}
 {{- define "airflow_image" -}}
   {{- $repository := .Values.images.airflow.repository | default .Values.defaultAirflowRepository -}}
-  {{- $tag := .Values.images.airflow.tag | default .Values.defaultAirflowTag -}}
+  {{- $tag := .Values.images.airflow.tag | default .Chart.AppVersion -}}
   {{- $digest := .Values.images.airflow.digest | default .Values.defaultAirflowDigest -}}
   {{- if $digest }}
     {{- printf "%s@%s" $repository $digest -}}
@@ -359,13 +359,13 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{- define "pod_template_image" -}}
-  {{- printf "%s:%s" (.Values.images.pod_template.repository | default .Values.defaultAirflowRepository) (.Values.images.pod_template.tag | default .Values.defaultAirflowTag) }}
+  {{- printf "%s:%s" (.Values.images.pod_template.repository | default .Values.defaultAirflowRepository) (.Values.images.pod_template.tag | default .Chart.AppVersion) }}
 {{- end }}
 
 {{/* This helper is used for airflow containers that do not need the users code */}}
 {{ define "default_airflow_image" -}}
   {{- $repository := .Values.defaultAirflowRepository -}}
-  {{- $tag := .Values.defaultAirflowTag -}}
+  {{- $tag := .Chart.AppVersion -}}
   {{- $digest := .Values.defaultAirflowDigest -}}
   {{- if $digest }}
     {{- printf "%s@%s" $repository $digest -}}
@@ -383,7 +383,7 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{- define "flower_image" -}}
-  {{- printf "%s:%s" (.Values.images.flower.repository | default .Values.defaultAirflowRepository) (.Values.images.flower.tag | default .Values.defaultAirflowTag) }}
+  {{- printf "%s:%s" (.Values.images.flower.repository | default .Values.defaultAirflowRepository) (.Values.images.flower.tag | default .Chart.AppVersion) }}
 {{- end }}
 
 {{- define "statsd_image" -}}
@@ -480,7 +480,7 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{- define "celery_executor_namespace" -}}
-  {{- if semverCompare ">=2.7.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.7.0" .Chart.AppVersion }}
     {{- print "airflow.providers.celery.executors.celery_executor.app" -}}
   {{- else }}
     {{- print "airflow.executors.celery_executor.app" -}}
@@ -719,7 +719,7 @@ server_tls_key_file = /etc/pgbouncer/server.key
 {{- end }}
 
 {{- define "wait-for-migrations-command" -}}
-  {{- if semverCompare ">=2.0.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.0.0" .Chart.AppVersion }}
   - airflow
   - db
   - check-migrations
@@ -767,13 +767,13 @@ server_tls_key_file = /etc/pgbouncer/server.key
 {{- end }}
 
 {{- define "scheduler_liveness_check_command" }}
-  {{- if semverCompare ">=2.5.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.5.0" .Chart.AppVersion }}
   - sh
   - -c
   - |
     CONNECTION_CHECK_MAX_COUNT=0 AIRFLOW__LOGGING__LOGGING_LEVEL=ERROR exec /entrypoint \
     airflow jobs check --job-type SchedulerJob --local
-  {{- else if semverCompare ">=2.1.0" .Values.airflowVersion }}
+  {{- else if semverCompare ">=2.1.0" .Chart.AppVersion }}
   - sh
   - -c
   - |
@@ -800,13 +800,13 @@ server_tls_key_file = /etc/pgbouncer/server.key
 
 
 {{- define  "scheduler_startup_check_command" }}
-  {{- if semverCompare ">=2.5.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.5.0" .Chart.AppVersion }}
   - sh
   - -c
   - |
     CONNECTION_CHECK_MAX_COUNT=0 AIRFLOW__LOGGING__LOGGING_LEVEL=ERROR exec /entrypoint \
     airflow jobs check --job-type SchedulerJob --local
-  {{- else if semverCompare ">=2.1.0" .Values.airflowVersion }}
+  {{- else if semverCompare ">=2.1.0" .Chart.AppVersion }}
   - sh
   - -c
   - |
@@ -832,7 +832,7 @@ server_tls_key_file = /etc/pgbouncer/server.key
 {{- end }}
 
 {{- define "triggerer_liveness_check_command" }}
-  {{- if semverCompare ">=2.5.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.5.0" .Chart.AppVersion }}
   - sh
   - -c
   - |
@@ -849,9 +849,9 @@ server_tls_key_file = /etc/pgbouncer/server.key
 
 {{- define "dag_processor_liveness_check_command" }}
   {{- $commandArgs := (list) -}}
-  {{- if semverCompare ">=2.5.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.5.0" .Chart.AppVersion }}
     {{- $commandArgs = append $commandArgs "--local" -}}
-    {{- if semverCompare ">=2.5.2" .Values.airflowVersion }}
+    {{- if semverCompare ">=2.5.2" .Chart.AppVersion }}
       {{- $commandArgs = concat $commandArgs (list "--job-type" "DagProcessorJob") -}}
     {{- end }}
   {{- else }}

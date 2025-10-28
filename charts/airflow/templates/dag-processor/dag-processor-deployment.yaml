@@ -20,10 +20,10 @@
 ################################
 ## Airflow Dag Processor Deployment
 #################################
-{{- if semverCompare ">=2.3.0" .Values.airflowVersion }}
+{{- if semverCompare ">=2.3.0" .Chart.AppVersion }}
 {{- $enabled := .Values.dagProcessor.enabled }}
 {{- if eq $enabled nil}}
-  {{ $enabled = ternary true false (semverCompare ">=3.0.0" .Values.airflowVersion) }}
+  {{ $enabled = ternary true false (semverCompare ">=3.0.0" .Chart.AppVersion) }}
 {{- end }}
 {{- if $enabled }}
 {{- $nodeSelector := or .Values.dagProcessor.nodeSelector .Values.nodeSelector }}

@@ -45,8 +45,11 @@ annotations:
   artifacthub.io/signKey: |
     fingerprint: 939B1A0ED8AAA8E722ACCDB3B6A012EE8A76426A
     url: https://keybase.io/communitycharts/pgp_keys.asc
+  artifacthub.io/cr.source: "actualbudget/actual-server"
+  artifacthub.io/own.source: "actualbudget_actual-server"
+  artifacthub.io/cr.update-strategy: "force-numer"
 apiVersion: v2
-appVersion: 25.8.0
+appVersion: 25.9.0
 description: A local-first personal finance app
 home: https://actualbudget.org/
 icon: https://raw.githubusercontent.com/actualbudget/docs/refs/heads/master/static/img/actual.png

@@ -72,7 +72,7 @@ subjects:
     name: {{ include "flower.serviceAccountName" . }}
     namespace: "{{ .Release.Namespace }}"
   {{- end }}
-  {{- if and (semverCompare ">=2.2.0" .Values.airflowVersion) }}
+  {{- if and (semverCompare ">=2.2.0" .Chart.AppVersion) }}
   - kind: ServiceAccount
     name: {{ include "triggerer.serviceAccountName" . }}
     namespace: "{{ .Release.Namespace }}"

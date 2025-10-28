@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: caronc/apprise
+  tag:
   pullPolicy: IfNotPresent
 env:
   APPRISE_STATEFUL_MODE: simple

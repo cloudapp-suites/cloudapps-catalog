@@ -1,6 +1,6 @@
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: apache/answer
+  tag:
   pullPolicy: IfNotPresent
 
 service:
@@ -31,5 +31,6 @@ volumes:
       claimName: answer-pvc
 
 persistent:
+  enabled: true
   storageClassName: cloudapp.storageClassName
   storage: cloudapp.storageClass

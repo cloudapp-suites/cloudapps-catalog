@@ -29,9 +29,9 @@ secret:
 
 image:
   # Ackee Image name
-  repository: app.image
+  repository: electerious/ackee
   # Ackee Image tag
-  tag: app.image.tag
+  tag:
   # Image pull policy
   pullPolicy: IfNotPresent
 

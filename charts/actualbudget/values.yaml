@@ -8,12 +8,11 @@ replicaCount: 1
 
 image:
   # -- The docker image repository to use
-  repository: app.image
+  repository: actualbudget/actual-server
   # -- This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
-
+  tag:
 # -- This will set the deployment strategy more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
 strategy:
   type: "RollingUpdate"

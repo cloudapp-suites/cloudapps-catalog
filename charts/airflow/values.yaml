@@ -65,7 +65,7 @@ containerLifecycleHooks: {}
 airflowHome: /opt/airflow
 
 # Default airflow repository -- overridden by all the specific images below
-defaultAirflowRepository: app.image
+defaultAirflowRepository: apache/airflow
 
 # Default airflow tag to deploy
 defaultAirflowTag: "3.0.2"
@@ -342,7 +342,7 @@ airflowConfigAnnotations: {}
 
 # `airflow_local_settings` file as a string (templated).
 airflowLocalSettings: |-
-  {{- if semverCompare ">=2.2.0 <3.0.0" .Values.airflowVersion }}
+  {{- if semverCompare ">=2.2.0 <3.0.0" .Chart.AppVersion }}
   {{- if not (or .Values.webserverSecretKey .Values.webserverSecretKeySecretName) }}
   from airflow.www.utils import UIAlert
 
@@ -644,7 +644,7 @@ workers:
     # The format below is necessary to get `helm lint` happy
     - |-
       exec \
-      airflow {{ semverCompare ">=2.0.0" .Values.airflowVersion | ternary "celery worker" "worker" }}
+      airflow {{ semverCompare ">=2.0.0" .Chart.AppVersion | ternary "celery worker" "worker" }}
 
   # If the Airflow Celery worker stops responding for 5 minutes (5*60s)
   # kill the worker and let Kubernetes restart it
@@ -1180,7 +1180,7 @@ createUserJob:
     # The format below is necessary to get `helm lint` happy
     - |-
       exec \
-      airflow {{ semverCompare ">=2.0.0" .Values.airflowVersion | ternary "users create" "create_user" }} "$@"
+      airflow {{ semverCompare ">=2.0.0" .Chart.AppVersion | ternary "users create" "create_user" }} "$@"
     - --
     - "-r"
     - "{{ .Values.webserver.defaultUser.role }}"
@@ -1286,8 +1286,8 @@ migrateDatabaseJob:
     - >-
       exec \
 
-      airflow {{ semverCompare ">=2.7.0" .Values.airflowVersion
-      | ternary "db migrate" (semverCompare ">=2.0.0" .Values.airflowVersion
+      airflow {{ semverCompare ">=2.7.0" .Chart.AppVersion
+      | ternary "db migrate" (semverCompare ">=2.0.0" .Chart.AppVersion
       | ternary "db upgrade" "upgradedb") }}
 
   # Annotations on the database migration pod
@@ -2171,7 +2171,7 @@ flower:
     # The format below is necessary to get `helm lint` happy
     - |-
       exec \
-      airflow {{ semverCompare ">=2.0.0" .Values.airflowVersion | ternary "celery flower" "flower" }}
+      airflow {{ semverCompare ">=2.0.0" .Chart.AppVersion | ternary "celery flower" "flower" }}
 
   # Additional network policies as needed (Deprecated - renamed to `flower.networkPolicy.ingress.from`)
   extraNetworkPolicies: []
@@ -2861,7 +2861,7 @@ config:
     flower_url_prefix: '{{ ternary "" .Values.ingress.flower.path (eq .Values.ingress.flower.path "/") }}'
     worker_concurrency: 16
   scheduler:
-    standalone_dag_processor: '{{ ternary "True" "False" (or (semverCompare ">=3.0.0" .Values.airflowVersion) (.Values.dagProcessor.enabled | default false)) }}'
+    standalone_dag_processor: '{{ ternary "True" "False" (or (semverCompare ">=3.0.0" .Chart.AppVersion) (.Values.dagProcessor.enabled | default false)) }}'
     # statsd params included for Airflow 1.10 backward compatibility; moved to [metrics] in 2.0
     statsd_on: '{{ ternary "True" "False" .Values.statsd.enabled }}'
     statsd_port: 9125
@@ -2892,14 +2892,14 @@ config:
     airflow_local_settings_configmap: '{{ include "airflow_config" . }}'
     pod_template_file: '{{ include "airflow_pod_template_file" . }}/pod_template_file.yaml'
     worker_container_repository: '{{ .Values.images.airflow.repository | default .Values.defaultAirflowRepository }}'
-    worker_container_tag: '{{ .Values.images.airflow.tag | default .Values.defaultAirflowTag }}'
+    worker_container_tag: '{{ .Values.images.airflow.tag | default .Chart.AppVersion }}'
     multi_namespace_mode: '{{ ternary "True" "False" .Values.multiNamespaceMode }}'
   # The `kubernetes_executor` section duplicates the `kubernetes` section in Airflow >= 2.5.0 due to an airflow.cfg schema change.
   kubernetes_executor:
     namespace: '{{ .Release.Namespace }}'
     pod_template_file: '{{ include "airflow_pod_template_file" . }}/pod_template_file.yaml'
     worker_container_repository: '{{ .Values.images.airflow.repository | default .Values.defaultAirflowRepository }}'
-    worker_container_tag: '{{ .Values.images.airflow.tag | default .Values.defaultAirflowTag }}'
+    worker_container_tag: '{{ .Values.images.airflow.tag | default .Chart.AppVersion }}'
     multi_namespace_mode: '{{ ternary "True" "False" .Values.multiNamespaceMode }}'
 
 # yamllint enable rule:line-length

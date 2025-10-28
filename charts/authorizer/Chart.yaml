@@ -2,4 +2,8 @@ apiVersion: v2
 name: authorizer
 version: 1.0.0
 description: A Helm chart for deploying Authorizer with support for multiple databases
-appVersion: "latest"
+appVersion: 1.4.4
+annotations:
+  artifacthub.io/cr.source: "lakhansamani/authorizer"
+  artifacthub.io/own.source: "lakhansamani_authorizer"
+  artifacthub.io/cr.update-strategy: "latest"

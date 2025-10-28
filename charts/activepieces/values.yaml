@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: activepieces/activepieces
+  tag:
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
