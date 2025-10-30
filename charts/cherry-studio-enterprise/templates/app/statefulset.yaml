@@ -42,7 +42,7 @@ spec:
           securityContext:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          image: "{{ .Values.app.image.repository }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
           ports:
             - name: api
