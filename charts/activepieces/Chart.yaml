@@ -7,7 +7,6 @@ type: application
 version: 0.1.6
 annotations:
   # 自定义 Annotation，用于存放镜像的原始出处
-  artifacthub.io/cr.source: "docker.io/actualbudget/actual-server"
+  artifacthub.io/cr.source: "activepieces/activepieces"
   artifacthub.io/own.source: "activepieces"
-  artifacthub.io/github.source: "https://api.github.com/repos/activepieces/activepieces/releases/latest"
-  artifacthub.io/cr.update-strategy: "github"
+  artifacthub.io/cr.update-strategy: "latest"

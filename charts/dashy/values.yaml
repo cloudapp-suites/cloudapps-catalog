@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: app.image
+  repository: lissy93/dashy
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
+  tag:
 
 # Choose deployment strategy type
 strategyType: Recreate

@@ -100,7 +100,7 @@ image:
   # -- Docker image repository
   repository: cloud-app/grafana_grafana
   # Overrides the Grafana image tag whose default is the chart appVersion
-  tag: app.image.tag
+  tag: 
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -122,7 +122,7 @@ testFramework:
     # -- The Docker registry
     registry: cloudapp.registry
     repository: cloud-app/bats/bats
-    tag: app.image.tag
+    tag: 
   imagePullPolicy: IfNotPresent
   securityContext: {}
   containerSecurityContext: {}
@@ -186,7 +186,7 @@ extraLabels: {}
 downloadDashboardsImage:
   # -- The Docker registry
   repository: cloud-app/curlimages/curl
-  tag: app.image.tag
+  tag: 
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -420,7 +420,7 @@ persistence:
   accessModes:
     - ReadWriteOnce
   size: Cloudapp.Storage
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   # annotations: {}
   finalizers:
     - kubernetes.io/pvc-protection
@@ -460,7 +460,7 @@ initChownData:
     # -- The Docker registry
     registry: cloudapp.registry
     repository: cloud-app/busybox
-    tag: app.image.tag
+    tag: 
     sha: ""
     pullPolicy: IfNotPresent
 

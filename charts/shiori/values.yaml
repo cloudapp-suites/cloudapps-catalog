@@ -8,10 +8,10 @@
 
 image:
   # -- image repository
-  repository: app.image
+  repository: nicholaswilde/shiori
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -35,7 +35,7 @@ persistence:
     enabled: false
     emptyDir: false
     mountPath: /data
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     accessMode: ReadWriteOnce
     size: Cloudapp.Storage
 

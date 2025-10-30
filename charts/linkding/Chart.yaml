@@ -2,8 +2,11 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: Initial release linkding with bjw lib
+  artifacthub.io/cr.source: "sissbruecker/linkding"
+  artifacthub.io/own.source: "sissbruecker_linkding"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 1.41.0-plus
+appVersion: 1.44.1
 dependencies:
 - name: common
   repository: https://bjw-s-labs.github.io/helm-charts

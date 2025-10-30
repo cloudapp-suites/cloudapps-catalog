@@ -1,4 +1,8 @@
 apiVersion: v2
 name: evershop
 version: 0.1.0
-appVersion: latest
+appVersion: 1.2.2
+annotations:
+  artifacthub.io/cr.source: "evershop/evershop"
+  artifacthub.io/own.source: "evershop_evershop"
+  artifacthub.io/cr.update-strategy: "latest"

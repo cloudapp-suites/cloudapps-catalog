@@ -38,10 +38,10 @@ fullnameOverride: ""
 ## @param image.tag Overrides the image tag whose default is the chart appVersion
 image:
   # -- image repository
-  repository: app.image
+  repository:
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 

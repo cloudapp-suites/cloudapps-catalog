@@ -45,5 +45,5 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/farfalle/image/farfalle.png",
   "license": "Apache-2.0",
-  "language": "TypeScript/Python"
+  "language": "Python"
 }

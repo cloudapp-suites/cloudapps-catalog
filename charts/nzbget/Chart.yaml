@@ -3,8 +3,11 @@ annotations:
     - kind: changed
       description: changed version naming scheme so charts show app versions in search on artifacthub.io
   artifacthub.io/values-schema: values.schema.json
+  artifacthub.io/cr.source: "linuxserver/nzbget"
+  artifacthub.io/own.source: "linuxserver_nzbget"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v25.2-ls206
+appVersion: 25.4.20251017
 dependencies:
 - name: common
   repository: https://bjw-s-labs.github.io/helm-charts

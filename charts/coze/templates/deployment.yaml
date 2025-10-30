@@ -54,7 +54,7 @@ spec:
         {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.cozeServer.image.repository }}:{{ .Values.cozeServer.image.tag }}"
+          image: "{{ .Values.cozeServer.image.repository }}:{{ .Values.cozeServer.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.cozeServer.image.pullPolicy }}
           ports:
           {{- range .Values.cozeServer.service.ports }}

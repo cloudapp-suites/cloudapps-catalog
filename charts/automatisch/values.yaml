@@ -1,6 +1,6 @@
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository:
+  tag:
   pullPolicy: IfNotPresent
 
 main:
@@ -41,18 +41,18 @@ postgresql:
   password: automatisch_password
   persistence:
     enabled: true
-    size: cloudapp.storage
+    size: 20Gi
 
 redis:
   image: redis.image
   persistence:
     enabled: true
-    size: cloudapp.storage
+    size: 20Gi
 
 persistence:
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   automatischStorage:
     enabled: true
-    size: cloudapp.storage
+    size: 20Gi
 
 resources: {}

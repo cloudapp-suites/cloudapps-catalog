@@ -191,7 +191,7 @@ persistence:
   existingClaim: ""
 
   # -- Actual Budget persistence storage class
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
 
   # -- Actual Budget persistence sub path
   subPath: ""
@@ -204,7 +204,7 @@ persistence:
     - ReadWriteOnce
 
   # -- Actual Budget persistence size
-  size: cloudapp.storage
+  size: 20Gi
 
 # -- Additional init containers on the output Deployment definition.
 initContainers: []

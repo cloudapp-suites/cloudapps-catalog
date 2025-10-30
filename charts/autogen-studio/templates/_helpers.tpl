@@ -20,8 +20,8 @@ Define some default values for the AutoGen Studio chart
 {{- end -}}
 
 {{- define "autogenstudio.labels" -}}
-app.kubernetes.io/name: {{ include "autogenstudio.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-app.kubernetes.io/version: {{ .Chart.AppVersion }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/name: {{ include "autogenstudio.name" . | quote }}
+app.kubernetes.io/instance: {{ .Release.Name | quote }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
 {{- end -}}

@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: app.image
-  tag: app.image.tag
+  tag: 
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -150,10 +150,10 @@ persistence:
   # persistence.existingClaim -- Use an existing volume claim
   existingClaim: ''
 
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
 
   accessMode: ReadWriteOnce
-  size:  cloudapp.storage
+  size:  20Gi
 
   filestore_dir: /app/data
 

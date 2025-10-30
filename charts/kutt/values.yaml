@@ -14,8 +14,8 @@ service:
 deployment:
   replicas: 1
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: kutt/kutt
+    tag: 
     pullPolicy: IfNotPresent
 
 # Database configuration (using SQLite by default)
@@ -41,10 +41,10 @@ resources:
 # Storage configuration
 persistence:
   enabled: true
-  size: cloudapp.storage
+  size: 20Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
 
 # Environment variables
 env:

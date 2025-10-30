@@ -13,8 +13,11 @@ annotations:
   artifacthub.io/maintainers: |
     - name: pmoscode
       email: info@pmoscode.de
+  artifacthub.io/cr.source: "gotify/server"
+  artifacthub.io/own.source: "gotify_server"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 2.6.3
+appVersion: 2.7.3
 description: Gotify - a simple server for sending and receiving messages
 home: https://gotify.net/
 icon: https://github.com/gotify/logo/raw/master/gotify-logo-small.png

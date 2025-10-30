@@ -11,8 +11,11 @@ annotations:
   artifacthub.io/images: |
     - name: shiori
       image: ghcr.io/nicholaswilde/shiori:version-v1.5.0
+  artifacthub.io/cr.source: "nicholaswilde/shiori"
+  artifacthub.io/own.source: "nicholaswilde_shiori"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v1.5.0
+appVersion: v1.5.0-ls3
 dependencies:
 - name: common
   repository: https://nicholaswilde.github.io/helm-charts/

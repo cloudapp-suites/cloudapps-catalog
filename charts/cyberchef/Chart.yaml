@@ -8,6 +8,9 @@ annotations:
   artifacthub.io/signKey: |
     fingerprint: B9FE852F28888D27F8C9A11CD33E04CD22E335CE
     url: https://raw.githubusercontent.com/obeone/charts/main/public_key.gpg
+  artifacthub.io/cr.source: "obeoneorg/cyberchef"
+  artifacthub.io/own.source: "obeoneorg_cyberchef"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
 appVersion: v10.19.4
 dependencies:

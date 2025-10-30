@@ -1,5 +1,9 @@
 apiVersion: v2
-appVersion: 2.2.3
+appVersion: 2.7.3
+annotations:
+  artifacthub.io/cr.source: "fallenbagel/jellyseerr"
+  artifacthub.io/own.source: "fallenbagel_jellyseerr"
+  artifacthub.io/cr.update-strategy: "latest"
 description: jellyseerr helm chart for Kubernetes
 home: https://github.com/Fallenbagel/jellyseerr
 icon: https://artifacthub.io/image/e417b561-5fe4-4ee3-9b89-f67df4069169

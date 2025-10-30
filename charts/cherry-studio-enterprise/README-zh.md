@@ -198,7 +198,7 @@ helm install cherry-studio-enterprise ./helm -f values-custom.yaml
 | `app.enabled`                   | 是否启用应用服务                          | `true`                                      |
 | `app.replicaCount`              | 副本数量（推荐设置为 1 以保证数据一致性） | `1`                                         |
 | `app.image.repository`          | 应用镜像仓库                              | `cherrystudio/cherry-studio-enterprise-api` |
-| `app.image.tag`                 | 应用镜像标签                              | `latest`                                    |
+| ``                 | 应用镜像标签                              | `latest`                                    |
 | `app.api.service.type`          | API Service 类型                          | `ClusterIP`                                 |
 | `app.api.service.port`          | API 服务端口                              | `3670`                                      |
 | `app.api.service.targetPort`    | API 容器端口                              | `3670`                                      |

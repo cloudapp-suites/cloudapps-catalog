@@ -6,10 +6,10 @@ strategy:
   type: RollingUpdate
 image:
   # -- image repository
-  repository: app.image
+  repository: stirlingtools/stirling-pdf
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
   sha: ""
@@ -193,7 +193,7 @@ persistence:
   # If undefined (the default) or set to null, no storageClassName spec is
   #   set, choosing the default provisioner.  (gp2 on AWS, standard on
   #   GKE, AWS & OpenStack)
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   # volumeName:
   pv:
     enabled: false
@@ -211,7 +211,7 @@ volumePermissions:
   image:
     registry: cloudapp.registry
     repository: cloud-app/minideb:latest
-    tag: app.image.tag
+    tag: 
     pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.

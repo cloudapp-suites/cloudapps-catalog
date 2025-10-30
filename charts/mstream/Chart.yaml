@@ -4,9 +4,12 @@ annotations:
       description: Bump tag to version-v5.2.5
   artifacthub.io/images: |
     - name: mstream
-      image: ghcr.io/linuxserver/mstream:version-v5.2.5
+      image: linuxserver/mstream:5.13.1
+  artifacthub.io/cr.source: "linuxserver/mstream"
+  artifacthub.io/own.source: "linuxserver_mstream"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v5.2.5
+appVersion: 5.13.1
 dependencies:
 - name: common
   repository: https://nicholaswilde.github.io/helm-charts/

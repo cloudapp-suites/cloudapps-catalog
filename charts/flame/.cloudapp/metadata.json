@@ -1,0 +1,35 @@
+{
+  "name": "flame",
+  "display_name": "Flame",
+  "description": {
+    "zh": "Flame 是一个自托管的起始页项目，灵感来自 SUI，旨在帮助用户快速构建个性化的应用与书签中心。它提供直观的图形界面，无需手动编辑文件即可管理应用和书签。项目强调简易部署、高度定制化，并支持 Docker 与 Kubernetes 集成。",
+    "en": "Flame is a self-hosted startpage inspired by SUI, designed to help users create a personalized application and bookmark hub. It offers an intuitive GUI for managing apps and bookmarks without requiring manual file edits. The project emphasizes ease of setup, customization, and integration with Docker and Kubernetes."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 安装简单，界面直观易用\n- 支持自托管，兼容 Docker 与 Kubernetes\n- 高度可定制，支持主题和 CSS 样式\n\n## 功能列表:\n\n- 通过内置图形界面编辑应用与书签\n- 将常用项目固定到主页\n- 集成搜索栏，支持本地过滤和 11 种网络搜索引擎\n- 身份验证系统保护用户设置和数据\n- 提供 15 种内置主题、主题构建器及自定义选项\n- 天气小部件，显示实时温度与天气状态\n- Docker 集成，通过容器标签自动识别应用\n- Kubernetes 集成，通过 Ingress 注解识别服务\n- 支持导入 HTML 书签（实验性功能）\n- 支持自定义 CSS 样式实现高级美化",
+    "en": "## Benefits:\n\n- Easy setup and user-friendly interface\n- Self-hosted with support for Docker and Kubernetes\n- Highly customizable with themes and CSS support\n\n## Features:\n\n- Create, update, and delete apps and bookmarks via GUI editors\n- Pin favorite items to the homescreen\n- Integrated search bar with local filtering and 11 web search providers\n- Authentication system for securing settings and data\n- Customization options including 15 built-in themes and custom theme builder\n- Weather widget with animated status and real-time data\n- Docker integration for automatic app detection via container labels\n- Kubernetes integration using ingress annotations\n- Support for importing HTML bookmarks (experimental)\n- Custom CSS support for advanced styling"
+  },
+  "github_url": "https://github.com/pawelmalak/flame",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/pawelmalak/flame",
+  "categories": [
+    "Productivity",
+    "Customization",
+    "Dashboard",
+    "Authentication",
+    "Bookmarks",
+    "Bookmark Management",
+    "Weather Information",
+    "Personal Dashboard",
+    "Web Search"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/flame/image/home.png",
+  "language": "TypeScript/JavaScript",
+  "license": "MIT"
+}

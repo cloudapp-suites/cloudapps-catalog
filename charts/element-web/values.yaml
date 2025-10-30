@@ -6,9 +6,9 @@ replicaCount: 1
 ## Image configuration
 ##
 image:
-  repository: app.image
+  repository: vectorim/element-web
   pullPolicy: IfNotPresent
-  tag: app.image.tag
+  tag:
 
 imagePullSecrets: []
 # nameOverride: ""

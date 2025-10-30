@@ -10,7 +10,7 @@ image:
   repository: app.image
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -43,7 +43,7 @@ persistence:
     enabled: false
     mountPath: /usr/app/data/
     accessMode: ReadWriteOnce
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     size: Cloudapp.Storage
     emptyDir:
       enabled: false
@@ -65,6 +65,6 @@ postgresql:
     persistence:
       enabled: true
       size: Cloudapp.Storage
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       accessModes:
         - ReadWriteOnce

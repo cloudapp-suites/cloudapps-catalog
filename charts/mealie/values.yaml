@@ -10,7 +10,7 @@ image:
   repository: app.image
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -46,7 +46,7 @@ persistence:
     mountPath: /app/data/
     accessMode: ReadWriteOnce
     size: Cloudapp.Storage
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
 
 api:
   image:
@@ -54,7 +54,7 @@ api:
     repository: app.image
     # -- image tag
     # @default -- chart.appVersion
-    tag: app.image.tag
+    tag: 
     # -- image pull policy
     pullPolicy: IfNotPresent
 

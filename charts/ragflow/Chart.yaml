@@ -21,4 +21,9 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "dev"
+appVersion: 0.20.5
+annotations:
+  artifacthub.io/cr.source: "infiniflow/ragflow"
+  artifacthub.io/own.source: "ragflow"
+  artifacthub.io/github.source: "https://api.github.com/repos/infiniflow/ragflow/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"

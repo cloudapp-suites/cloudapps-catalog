@@ -20,8 +20,8 @@ postgresql:
   postgresqlDatabase: authorizer
   persistence:
     enabled: persistence.enabled
-    storageClassName: cloudapp.storageClassName
-    size: cloudapp.storage
+    storageClassName: ""
+    size: 20Gi
 resources: {}
 nodeSelector: {}
 tolerations: []

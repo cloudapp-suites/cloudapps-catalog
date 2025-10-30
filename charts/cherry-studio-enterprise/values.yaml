@@ -109,6 +109,7 @@ postgresql:
 
 externalEnv:
   postgresql:
+    # 是否使用内置数据库，false则使用外部数据库，并需要填写env值
     enabled: true
     env:
       DB_HOST: cherry-studio-enterprise-postgresql

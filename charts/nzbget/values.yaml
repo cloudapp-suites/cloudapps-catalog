@@ -6,10 +6,10 @@ controllers:
       main:
         image:
           # -- image repository
-          repository: app.image
+          repository: linuxserver/nzbget
           # -- image tag
           # @default -- chart.appVersion
-          tag: app.image.tag
+          tag: 
           # -- image pull policy
           pullPolicy: IfNotPresent
         # -- environment variables.

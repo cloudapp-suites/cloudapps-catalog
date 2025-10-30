@@ -58,7 +58,7 @@ mysql:
   
   # 存储配置
   persistence:
-    storageClass: cloudapp.storageClassName  # 根据实际环境调整
+    storageClass: ""  # 根据实际环境调整
     size: 50Gi
     accessMode: ReadWriteOnce
   
@@ -75,12 +75,13 @@ mysql:
   replicaCount: 1
 
 # 外部数据库配置（当 mysql.enabled=false 时使用）
-database:
-  host: "Your_External_DB_Host"  # 外部数据库地址
-  port: "3306"
-  name: "Your_DB_Name"
-  username: "Your_DB_Username"
-  password: "Your_DB_Password"
+externalEnv:
+  database:
+    host: "Your_External_DB_Host"  # 外部数据库地址
+    port: "3306"
+    name: "Your_DB_Name"
+    username: "Your_DB_Username"
+    password: "Your_DB_Password"
 
 serviceAccount:
   name: "himarket"

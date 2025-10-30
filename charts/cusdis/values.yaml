@@ -1,6 +1,6 @@
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: djyde/cusdis
+  tag:
   pullPolicy: IfNotPresent
   kubectl: kubectl.image
 

@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: app.image
-  tag: app.image.tag
+  tag: 
   pullPolicy: IfNotPresent
 service:
   type: LoadBalancer
@@ -12,8 +12,8 @@ resources:
   {}
 persistence:
   enabled: false
-  size:  cloudapp.storage
-  storageClassName: cloudapp.storageClassName
+  size:  20Gi
+  storageClassName: ""
 postgresql:
   enabled: true
   image:
@@ -26,5 +26,5 @@ postgresql:
   db: umami
   persistence:
     enabled: true
-    size:  cloudapp.storage
-    storageClassName: cloudapp.storageClassName
+    size:  20Gi
+    storageClassName: ""

@@ -5,11 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: app.image
+  repository:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
-
+  tag:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -74,11 +73,11 @@ resources: {}
 
 persistence:
   enabled: false
-  size: cloudapp.storage
+  size: 20Gi
   # -- existing claim name
   # existingClaim: "existing-claim-name"
   # -- storage class name
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   # -- pvc annotations
   annotations: {}
 

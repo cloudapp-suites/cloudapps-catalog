@@ -13,8 +13,8 @@ fullnameOverride: ""
 # Dify API service configuration
 api:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-api
+    tag:
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -27,8 +27,8 @@ api:
 # Dify Worker service configuration
 worker:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-api
+    tag:
     pullPolicy: IfNotPresent
   resources: {}
   nodeSelector: {}
@@ -38,8 +38,8 @@ worker:
 # Dify Worker Beat service configuration
 workerBeat:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-api
+    tag:
     pullPolicy: IfNotPresent
   resources: {}
   nodeSelector: {}
@@ -49,8 +49,8 @@ workerBeat:
 # Dify Web service configuration
 web:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-api
+    tag:
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -63,8 +63,8 @@ web:
 # Dify Sandbox service configuration
 sandbox:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-sandbox
+    tag: 0.2.12
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -77,8 +77,8 @@ sandbox:
 # Dify Plugin Daemon service configuration
 pluginDaemon:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: langgenius/dify-plugin-daemon
+    tag: 0.2.0-local
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP

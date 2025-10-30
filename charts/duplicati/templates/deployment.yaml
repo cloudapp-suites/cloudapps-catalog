@@ -59,7 +59,9 @@ spec:
             {{- end }}
           env:
             - name: SETTINGS_ENCRYPTION_KEY
-              value: {{ .Values.env.SETTINGS_ENCRYPTION_KEY }}
+              value: {{ .Values.externalEnv.app.SETTINGS_ENCRYPTION_KEY }}
+            - name: DUPLICATI__WEBSERVICE_PASSWORD
+              value: {{ .Values.externalEnv.app.DUPLICATI__WEBSERVICE_PASSWORD }}
       volumes:
         {{- if .Values.persistence.config.enabled }}
         - name: config

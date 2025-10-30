@@ -13,8 +13,11 @@ annotations:
   artifacthub.io/maintainers: |
     - name: pmoscode
       email: info@pmoscode.de
+  artifacthub.io/cr.source: "excalidraw/excalidraw"
+  artifacthub.io/own.source: "excalidraw_excalidraw"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v0.15.0
+appVersion: latest
 description: Virtual whiteboard for sketching hand-drawn like diagrams.
 home: https://github.com/excalidraw/excalidraw
 icon: https://github.com/excalidraw/excalidraw/blob/23c88a38d0504e333465960a928832b99b0ecb70/public/logo-180x180.png?raw=true

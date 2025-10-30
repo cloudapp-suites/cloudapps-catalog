@@ -86,7 +86,7 @@ affinity: {}
 anythingllm:
   storage:
     size: 20Gi
-    className: cloudapp.storageClassName
+    className: ""
   env:
     SERVER_PORT: 3001
     STORAGE_DIR: "/app/server/storage"

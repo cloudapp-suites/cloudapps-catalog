@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: hipnologo/bolt.diy
+  tag:
   pullPolicy: IfNotPresent
 service:
   type: LoadBalancer

@@ -7,10 +7,10 @@
 
 image:
   # -- image repository
-  repository: app.image
+  repository: datarhei/restreamer
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -85,7 +85,7 @@ affinity: {}
 persistence:
   enabled: false
   # existingClaim: "my-existing-claim"
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   annotations:
   accessModes:
     - ReadWriteOnce

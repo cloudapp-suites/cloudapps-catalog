@@ -3,8 +3,12 @@ annotations:
     fingerprint: 9E57D2479D48B84463EF491F66D280CE667AD6C8
     url: https://cowboysysop.github.io/charts/pgp-public-key-2022-02-19.asc
   kubeVersion: '>=1.24'
+  artifacthub.io/cr.source: "flowiseai/flowise"
+  artifacthub.io/own.source: "flowiseai_flowise"
+  artifacthub.io/github.source: "https://api.github.com/repos/flowiseai/flowise/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"
 apiVersion: v2
-appVersion: 3.0.3
+appVersion: 3.0.8
 dependencies:
 - name: common
   repository: oci://ghcr.io/cowboysysop/charts

@@ -47,7 +47,7 @@ annotations:
     url: https://keybase.io/communitycharts/pgp_keys.asc
   artifacthub.io/cr.source: "actualbudget/actual-server"
   artifacthub.io/own.source: "actualbudget_actual-server"
-  artifacthub.io/cr.update-strategy: "force-numer"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
 appVersion: 25.9.0
 description: A local-first personal finance app

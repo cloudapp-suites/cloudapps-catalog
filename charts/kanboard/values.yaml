@@ -1,10 +1,10 @@
 image:
   # -- The registry to pull the image from.
   # -- The repository to pull the image from.
-  repository: app.image
+  repository: kanboard/kanboard
   # -- The docker tag, if left empty chart's appVersion will be used.
   # @default -- `.Chart.AppVersion`
-  tag: app.image.tag
+  tag: 
   # -- The pull policy for the controller.
   pullPolicy: IfNotPresent
 
@@ -16,7 +16,7 @@ application:
     persistentVolumeClaim:
       name: kanboard-pvc
       create: true
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       size: Cloudapp.Storage
       accessMode: ReadWriteMany
     

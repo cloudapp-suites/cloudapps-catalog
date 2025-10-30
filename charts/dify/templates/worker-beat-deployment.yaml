@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: worker-beat
-          image: "{{ .Values.workerBeat.image.repository }}:{{ .Values.workerBeat.image.tag }}"
+          image: "{{ .Values.workerBeat.image.repository }}:{{ .Values.workerBeat.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.workerBeat.image.pullPolicy }}
           env:
             - name: MODE

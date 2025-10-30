@@ -2,7 +2,7 @@ image:
   # -- image repository
   repository: app.image
   # -- image tag
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 

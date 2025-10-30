@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: app.image
+  repository: excalidraw/excalidraw
   pullPolicy: IfNotPresent
-  tag: app.image.tag
+  tag:
 
 imagePullSecrets: []
 nameOverride: ""

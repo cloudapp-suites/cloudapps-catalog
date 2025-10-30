@@ -13,13 +13,13 @@ ports:
 resources:
   {}
 persistence:
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   config:
-    size: cloudapp.storage
+    size: 20Gi
   attach:
-    size: cloudapp.storage
+    size: 20Gi
   plugin:
-    size: cloudapp.storage
+    size: 20Gi
 service:
   type: LoadBalancer
   port: 8000

@@ -198,7 +198,7 @@ helm install cherry-studio-enterprise ./helm -f values-custom.yaml
 | `app.enabled`                   | Whether to enable application service                        | `true`                                      |
 | `app.replicaCount`              | Replica count (recommended to set to 1 for data consistency) | `1`                                         |
 | `app.image.repository`          | Application image repository                                 | `cherrystudio/cherry-studio-enterprise-api` |
-| `app.image.tag`                 | Application image tag                                        | `latest`                                    |
+| ``                 | Application image tag                                        | `latest`                                    |
 | `app.api.service.type`          | API Service type                                             | `ClusterIP`                                 |
 | `app.api.service.port`          | API service port                                             | `3670`                                      |
 | `app.api.service.targetPort`    | API container port                                           | `3670`                                      |

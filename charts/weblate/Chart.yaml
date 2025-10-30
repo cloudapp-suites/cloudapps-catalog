@@ -1,5 +1,9 @@
 apiVersion: v2
-appVersion: 5.11.4.4
+appVersion: 5.14.0.0
+annotations:
+  artifacthub.io/cr.source: "weblate/weblate"
+  artifacthub.io/own.source: "weblate_weblate"
+  artifacthub.io/cr.update-strategy: "latest"
 dependencies:
 - condition: postgresql.enabled
   name: postgresql

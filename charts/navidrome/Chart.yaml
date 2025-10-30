@@ -1,5 +1,9 @@
 apiVersion: v2
-appVersion: 0.41.1
+appVersion: 0.58.0
+annotations:
+  artifacthub.io/cr.source: "deluan/navidrome"
+  artifacthub.io/own.source: "deluan_navidrome"
+  artifacthub.io/cr.update-strategy: "latest"
 description: Experimental helm chart to run navidrome
 name: navidrome
 type: application

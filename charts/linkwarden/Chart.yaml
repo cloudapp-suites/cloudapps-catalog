@@ -22,8 +22,11 @@ annotations:
     url: https://keys.openpgp.org/vks/v1/by-fingerprint/654213659810F05D16A7EDECB6C4D653E669D643
   org.opencontainers.image.licenses: MIT
   org.opencontainers.image.vendor: FMJ Studios
+  artifacthub.io/cr.source: "ghcr.io/linkwarden/linkwarden"
+  artifacthub.io/own.source: "ghcr.io_linkwarden_linkwarden"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 2.5.3
+appVersion: v2.13.1
 dependencies:
 - condition: postgresql.enabled
   name: postgresql
