@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: yidadaa/chatgpt-next-web
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: yidadaa_chatgpt-next-web
 apiVersion: v2
-appVersion: v2.16.0
+appVersion: v2.16.1
 description: A Helm chart for Kubernetes
 name: chatgpt-next-web
 type: application
 version: 0.1.1
-annotations:
-  artifacthub.io/cr.source: "yidadaa/chatgpt-next-web"
-  artifacthub.io/own.source: "yidadaa_chatgpt-next-web"
-  artifacthub.io/cr.update-strategy: "latest"
