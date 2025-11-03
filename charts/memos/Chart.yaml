@@ -3,4 +3,9 @@ name: memos
 description: A Helm chart for Memos - A modern, open-source, self-hosted knowledge management and note-taking platform
 type: application
 version: 0.1.0
-appVersion: "0.22.0"
+appVersion: 0.25.2
+annotations:
+  artifacthub.io/cr.source: "neosmemo/memos"
+  artifacthub.io/own.source: "neosmemo_memos"
+  artifacthub.io/github.source: "https://api.github.com/repos/usememos/memos/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"

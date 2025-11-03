@@ -1,0 +1,11 @@
+apiVersion: v2
+name: mindsdb
+description: A Helm chart for MindsDB deployment
+type: application
+version: 0.1.0
+appVersion: 25.10.1
+annotations:
+  artifacthub.io/cr.source: "mindsdb/mindsdb"
+  artifacthub.io/own.source: "mindsdb/mindsdb"
+  artifacthub.io/github.source: "https://api.github.com/repos/mindsdb/mindsdb/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"

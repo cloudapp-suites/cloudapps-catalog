@@ -3,4 +3,9 @@ name: shaarli
 description: A Helm chart for shaarli - The personal, minimalist, super-fast, database free, bookmarking service
 type: application
 version: 0.1.0
-appVersion: "0.15.0"
+appVersion: 0.15.0
+annotations:
+  artifacthub.io/cr.source: "shaarli/shaarli"
+  artifacthub.io/own.source: "shaarli"
+  artifacthub.io/github.source: "https://api.github.com/repos/shaarli/shaarli/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"
