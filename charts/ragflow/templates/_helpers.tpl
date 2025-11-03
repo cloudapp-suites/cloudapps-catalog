@@ -37,7 +37,7 @@ Common labels
 helm.sh/chart: {{ include "ragflow.chart" . }}
 {{ include "ragflow.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ (printf "v%s-slim" .Chart.AppVersion) | quote }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}

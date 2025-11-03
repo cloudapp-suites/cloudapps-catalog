@@ -36,7 +36,7 @@ spec:
       {{- end }}
       containers:
       - name: ragflow
-        image: {{ .Values.ragflow.image.repository }}:{{ .Values.ragflow.image.tag | default (printf "v%s-slim" .Chart.AppVersion) }}
+        image: {{ .Values.ragflow.image.repository }}:{{ .Values.ragflow.image.tag | default .Chart.AppVersion }}
         {{- with .Values.ragflow.image.pullPolicy }}
         imagePullPolicy: {{ . }}
         {{- end }}
