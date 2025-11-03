@@ -37,11 +37,11 @@ persistence:
     emptyDir: false
     mountPath: /config
     storageClass: ""
-    size: Cloudapp.Storage
+    size: 20Gi
   music:
     enabled: false
     emptyDir: false
     mountPath: /music
     accessMode: ReadWriteOnce
     storageClass: ""
-    size: Cloudapp.Storage
+    size: 20Gi

@@ -134,7 +134,8 @@ topologySpreadConstraints: []
 schedulerName: ~
 
 # Add common labels to all objects and pods defined in this chart.
-labels: {}
+labels:
+  app.kubernetes.io/instance: airflow
 
 # Ingress configuration
 ingress:

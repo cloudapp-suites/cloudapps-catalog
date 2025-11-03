@@ -235,7 +235,7 @@ persistence:
       # Set it to "-" to disable dynamic provisioning
       storageClass: ""
       accessMode: ReadWriteOnce
-      size: Cloudapp.Storage
+      size: 20Gi
       annotations: {}
 
 

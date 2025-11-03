@@ -40,5 +40,6 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cherry-studio-enterprise/image/logo.webp",
   "license": "cherry-ai business license",
-  "language": "TypeScript"
+  "language": "TypeScript",
+  "isSaaS": true
 }

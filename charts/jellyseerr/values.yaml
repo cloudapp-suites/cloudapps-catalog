@@ -56,8 +56,10 @@ service:
 # -- Creating PVC to store configuration
 config:
   persistence:
+    # -- Enable/disable persistence
+    enabled: true
     # -- Size of persistent disk
-    size: Cloudapp.Storage
+    size: 20Gi
     # -- Annotations for PVCs
     annotations: {}
     # -- Access modes of persistent disk

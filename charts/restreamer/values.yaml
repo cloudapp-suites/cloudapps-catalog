@@ -90,7 +90,7 @@ persistence:
   accessModes:
     - ReadWriteOnce
   ## Persistent Volume size
-  size: Cloudapp.Storage
+  size: 20Gi
 
 # see: https://datarhei.github.io/restreamer/docs/references-environment-vars.html
 # for sensitive values, use secretEnv below.
@@ -100,7 +100,7 @@ env:
   RS_TOKEN:
   RS_HTTPS: false
   RS_LOGLEVEL: 3
-  RS_TIMEZONE: Europe/Berlin
+  RS_TIMEZONE: Asia/Shanghai
   RS_DEBUG: false
   RS_DEBUG_HEAPDUMPS: false
   RS_NODEJS_PORT: 3000
@@ -109,9 +109,10 @@ env:
   RS_INPUTSTREAM:
 
 # put sensitive values here
-secretEnv:
-  RS_USERNAME: admin
-  RS_PASSWORD: datarhei
+externalEnv:
+  app:
+    RS_USERNAME: admin
+    RS_PASSWORD: datarhei
 
 rtmp:
   hostPort:

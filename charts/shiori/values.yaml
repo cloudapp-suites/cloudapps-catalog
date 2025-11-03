@@ -37,7 +37,7 @@ persistence:
     mountPath: /data
     storageClass: ""
     accessMode: ReadWriteOnce
-    size: Cloudapp.Storage
+    size: 20Gi
 
 # Enable mariadb
 # https://github.com/nicholaswilde/helm-charts/blob/main/charts/mariadb/values.yaml

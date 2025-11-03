@@ -44,7 +44,7 @@ persistence:
     mountPath: /usr/app/data/
     accessMode: ReadWriteOnce
     storageClass: ""
-    size: Cloudapp.Storage
+    size: 20Gi
     emptyDir:
       enabled: false
 
@@ -64,7 +64,7 @@ postgresql:
   primary:
     persistence:
       enabled: true
-      size: Cloudapp.Storage
+      size: 20Gi
       storageClass: ""
       accessModes:
         - ReadWriteOnce

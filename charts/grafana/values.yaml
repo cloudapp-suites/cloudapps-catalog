@@ -419,7 +419,7 @@ persistence:
   volumeName: ""
   accessModes:
     - ReadWriteOnce
-  size: Cloudapp.Storage
+  size: 20Gi
   storageClassName: ""
   # annotations: {}
   finalizers:

@@ -126,7 +126,7 @@ linkwarden:
       pvc:
         ## @param linkwarden.data.filesystem.pvc.size [default: 5Gi] The size given to the PVC for the above data paths
         ##
-        size: Cloudapp.Storage
+        size: 20Gi
         ## @param linkwarden.data.filesystem.pvc.storageClass [default: standard] The storageClass given to PVCs
         ##
         storageClass: ""
@@ -643,7 +643,7 @@ postgresql:
         - ReadWriteOnce
       ## @param postgresql.primary.persistence.size PVC Storage Request for PostgreSQL volume
       ##
-      size: Cloudapp.Storage
+      size: 20Gi
 
   global:
     security:

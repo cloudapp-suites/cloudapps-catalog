@@ -67,7 +67,7 @@ postgresql:
   persistence:
     enabled: true
     storageClass: ""
-    size: Cloudapp.Storage
+    size: 20Gi
 
 serviceMonitor:
   main:

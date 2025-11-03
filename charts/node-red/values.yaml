@@ -155,7 +155,7 @@ persistence:
   # -- Persistence access mode
   accessMode: ReadWriteOnce
   # -- Size of persistent volume claim
-  size: Cloudapp.Storage
+  size: 20Gi
   # -- ## Keep a created Persistent volume claim when uninstalling the helm chart (default: false)
   keepPVC: false
 

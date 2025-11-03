@@ -35,6 +35,8 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: postgres-data
+      labels:
+        app.kubernetes.io/instance: {{ include "authorizer.fullname" . }}
     spec:
       storageClassName: {{ .Values.postgresql.persistence.storageClassName | quote }}
       accessModes: [ "ReadWriteOnce" ]

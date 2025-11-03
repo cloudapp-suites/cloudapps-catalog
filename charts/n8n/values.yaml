@@ -154,7 +154,7 @@ persistence:
     - ReadWriteOnce
   ## Persistent Volume size
   ##
-  size: Cloudapp.Storage
+  size: 20Gi
   ## Use an existing PVC
   ##
   # existingClaim:
@@ -338,5 +338,5 @@ redis:
     persistence:
       enabled: true
       existingClaim: ""
-      size: Cloudapp.Storage
+      size: 20Gi
       storageClass: ""

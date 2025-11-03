@@ -14,6 +14,7 @@ metadata:
   {{- end }}
   labels:
     component: h2database
+    app.kubernetes.io/instance: {{ template "metabase.fullname" . }}
 spec:
   accessModes: 
     - {{ $h2database.accessMode }}

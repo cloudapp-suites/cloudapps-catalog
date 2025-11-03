@@ -45,7 +45,7 @@ persistence:
     enabled: true
     mountPath: /app/data/
     accessMode: ReadWriteOnce
-    size: Cloudapp.Storage
+    size: 20Gi
     storageClass: ""
 
 api:

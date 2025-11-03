@@ -17,7 +17,7 @@ application:
       name: kanboard-pvc
       create: true
       storageClass: ""
-      size: Cloudapp.Storage
+      size: 20Gi
       accessMode: ReadWriteMany
     
 

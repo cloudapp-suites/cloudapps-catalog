@@ -295,6 +295,7 @@ spec:
       {{- end }}
       labels:
         component: h2database
+        app.kubernetes.io/instance: {{ template "metabase.fullname" . }}
     spec:
       accessModes:
         - {{ .Values.persistence.persistentVolumeClaim.h2database.accessMode }}

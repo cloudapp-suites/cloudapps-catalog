@@ -503,7 +503,7 @@ primary:
       - ReadWriteOnce
     ## @param primary.persistence.size MariaDB primary persistent volume size
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param primary.persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:
@@ -919,7 +919,7 @@ secondary:
       - ReadWriteOnce
     ## @param secondary.persistence.size MariaDB secondary persistent volume size
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param secondary.persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:

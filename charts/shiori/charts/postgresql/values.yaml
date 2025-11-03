@@ -665,7 +665,7 @@ primary:
       - ReadWriteOnce
     ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param primary.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1002,7 +1002,7 @@ readReplicas:
       - ReadWriteOnce
     ## @param readReplicas.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param readReplicas.persistence.annotations Annotations for the PVC
     ##
     annotations: {}

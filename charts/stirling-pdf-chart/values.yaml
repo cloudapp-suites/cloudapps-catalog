@@ -177,7 +177,7 @@ affinity: {}
 persistence:
   enabled: false
   accessMode: ReadWriteOnce
-  size: Cloudapp.Storage
+  size: 20Gi
   labels:
     {}
     # name: value
