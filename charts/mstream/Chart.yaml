@@ -1,15 +1,11 @@
 annotations:
-  artifacthub.io/changes: |
-    - kind: changed
-      description: Bump tag to version-v5.2.5
-  artifacthub.io/images: |
-    - name: mstream
-      image: linuxserver/mstream:5.13.1
-  artifacthub.io/cr.source: "linuxserver/mstream"
-  artifacthub.io/own.source: "linuxserver_mstream"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/changes: "- kind: changed\n  description: Bump tag to version-v5.2.5\n"
+  artifacthub.io/cr.source: linuxserver/mstream
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/images: "- name: mstream\n  image: linuxserver/mstream:5.13.1\n"
+  artifacthub.io/own.source: linuxserver_mstream
 apiVersion: v2
-appVersion: 5.13.1
+appVersion: v5.13.1-ls211
 dependencies:
 - name: common
   repository: https://nicholaswilde.github.io/helm-charts/

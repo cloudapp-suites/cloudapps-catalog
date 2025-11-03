@@ -1,12 +1,11 @@
+annotations:
+  artifacthub.io/cr.source: activepieces/activepieces
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: activepieces
 apiVersion: v2
-appVersion: 0.71.0
+appVersion: 0.71.1
 description: Activepieces is an open-source business automation tool
 icon: https://cdn.activepieces.com/pieces/activepieces.png
 name: activepieces
 type: application
 version: 0.1.6
-annotations:
-  # 自定义 Annotation，用于存放镜像的原始出处
-  artifacthub.io/cr.source: "activepieces/activepieces"
-  artifacthub.io/own.source: "activepieces"
-  artifacthub.io/cr.update-strategy: "latest"
