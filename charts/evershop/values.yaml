@@ -1,8 +1,8 @@
 ## Main application configuration
 app:
   image:
-    repository: app.image
-    tag: app.image.tag
+    repository: evershop/evershop
+    tag:
     pullPolicy: IfNotPresent
   port: 3000
   replicaCount: 1
@@ -26,8 +26,8 @@ postgresql:
   db: postgres
   persistence:
     enabled: true
-    storageClassName: cloudapp.storageClassName
-    size: cloudapp.storage
+    storageClassName: ""
+    size: 20Gi
 
 ## Global configuration
 replicaCount: 1

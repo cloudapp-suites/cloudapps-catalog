@@ -3,10 +3,10 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: app.image
+  repository: louislam/uptime-kuma
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
+  tag: 
 
 imagePullSecrets: []
 nameOverride: ""
@@ -141,13 +141,13 @@ readinessProbe:
 volume:
   enabled: true
   accessMode: ReadWriteOnce
-  size:  cloudapp.storage
+  size:  20Gi
   # If you want to use a storage class other than the default, uncomment this
   # line and define the storage class name
   # storageClassName:
   # Reuse your own pre-existing PVC.
   existingClaim: ""
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
 
 # -- A list of additional volumes to be added to the pod
 additionalVolumes:

@@ -11,3 +11,7 @@ sources:
 - https://github.com/CorentinTh/it-tools
 type: application
 version: 0.1.4
+annotations:
+  artifacthub.io/cr.source: "corentinth/it-tools"
+  artifacthub.io/own.source: "corentinth_it-tools"
+  artifacthub.io/cr.update-strategy: "latest"

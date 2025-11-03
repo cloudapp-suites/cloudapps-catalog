@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=1ee4cebf-20ee-4b62-a7c3-3a0d6dfb7711)
+
+</div>
+
 <p align="center">
     <a href="https://github.com/gotify/logo">
         <img height="370px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/gotify/image/gotify-logo.png" />

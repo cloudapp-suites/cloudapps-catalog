@@ -1,5 +1,10 @@
 apiVersion: v2
-appVersion: 1.23.13
+appVersion: 2.0.2
+annotations:
+  artifacthub.io/cr.source: "louislam/uptime-kuma"
+  artifacthub.io/own.source: "louislam_uptime-kuma"
+  artifacthub.io/github.source: "https://api.github.com/repos/louislam/uptime-kuma/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"
 dependencies:
 - condition: mariadb.enabled
   name: mariadb

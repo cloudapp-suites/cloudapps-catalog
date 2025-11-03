@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: app.image
-  tag: app.image.tag
+  tag: 
   pullPolicy: IfNotPresent
 
 service:
@@ -17,9 +17,9 @@ autoscaling:
 
 persistence:
   enabled: true
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   existingClaim: ""
-  size: cloudapp.storage
+  size: 20Gi
   accessMode: ReadWriteOnce
 
 appConfig:
@@ -34,9 +34,9 @@ securityContext:
   runAsUser: 1000
   fsGroup: 1000
 
-env: {
-       OPENAI_API_KEY: app.apikey
-}
+externalEnv:
+  model:
+    OPENAI_API_KEY: ""
 
 livenessProbe:
   enabled: false

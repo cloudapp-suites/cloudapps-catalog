@@ -1,0 +1,55 @@
+{{- if and .Values.app.enabled (eq .Values.app.api.service.type "LoadBalancer") }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-setup"
+  labels:
+    {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        {{- include "cherry-studio-enterprise.labels" . | nindent 8 }}
+        app.kubernetes.io/component: api
+    spec:
+      serviceAccountName: "{{ include "cherry-studio-enterprise.fullname" . }}-api-url-updater"
+      restartPolicy: Never
+      containers:
+      - name: api-url-setup
+        image: {{ .Values.app.image.kubectlImage | default "bitnami/kubectl:latest" }}
+        command:
+        - /bin/bash
+        - -c
+        - |
+          set -e
+          echo "Waiting for LoadBalancer to get external IP for service {{ include "cherry-studio-enterprise.fullname" . }}-api..."
+          EXTERNAL_IP=""
+          # Wait for external IP with timeout (30 attempts * 10s = 5 minutes)
+          for i in $(seq 1 30); do
+            EXTERNAL_IP=$(kubectl get svc {{ include "cherry-studio-enterprise.fullname" . }}-api --namespace {{ .Release.Namespace }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
+            if [ -n "$EXTERNAL_IP" ]; then
+              echo "Successfully found external IP: $EXTERNAL_IP"
+              break
+            fi
+            echo "Still waiting for external IP... (Attempt $i/30)"
+            sleep 10
+          done
+
+          if [ -z "$EXTERNAL_IP" ]; then
+            echo "Error: Timed out waiting for external IP after 5 minutes."
+            exit 1
+          fi
+
+          echo "Patching statefulset {{ include "cherry-studio-enterprise.fullname" . }}-api with API_URL=http://$EXTERNAL_IP"
+          
+          # Use kubectl patch with strategic merge patch to only update API_URL env var
+          kubectl patch statefulset {{ include "cherry-studio-enterprise.fullname" . }}-api --namespace {{ .Release.Namespace }} \
+            --type='strategic' \
+            -p='{"spec":{"template":{"spec":{"containers":[{"name":"{{ .Chart.Name }}","env":[{"name":"API_URL","value":"http://'$EXTERNAL_IP':{{ .Values.app.api.service.port }}"}]}]}}}}'
+          echo "Patch successful. StatefulSet will be updated with the new API_URL environment variable."
+  backoffLimit: 3
+{{- end }}

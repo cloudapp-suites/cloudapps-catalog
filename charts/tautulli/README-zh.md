@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=60f3ab94-2e1f-4905-b673-fb285ad36c96)
+
+</div>
+
 # Tautulli
 
 一个基于 Python 的 Web 应用程序，用于监控、分析和通知 [Plex Media Server](https://plex.tv) 的运行情况。

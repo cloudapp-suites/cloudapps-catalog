@@ -1,4 +1,4 @@
-{{- if .Values.redis.enabled }}
+{{- if .Values.externalEnv.redis.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,7 +9,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 6379
+    - port: {{ .Values.externalEnv.redis.env.REDIS_PORT | default 6379 }}
       targetPort: redis
       protocol: TCP
       name: redis

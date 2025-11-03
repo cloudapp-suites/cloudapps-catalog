@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=f0e29f51-6bb9-4245-98fc-deaebcf47b92)
+
+</div>
+
 # pgweb
 
 简单、基于网页、跨平台的 PostgreSQL 数据库浏览器。

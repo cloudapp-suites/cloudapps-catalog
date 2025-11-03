@@ -1315,7 +1315,7 @@ persistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   ## @param persistence.accessModes PV Access Mode
   ##
   accessModes:
@@ -1477,7 +1477,7 @@ backup:
       ## If undefined (the default) or set to null, no storageClassName spec is
       ## set, choosing the default provisioner.
       ##
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       ## @param backup.cronjob.storage.accessModes PV Access Mode
       ##
       accessModes:
@@ -2346,7 +2346,7 @@ hidden:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param hidden.persistence.accessModes PV Access Mode
     ##
     accessModes:

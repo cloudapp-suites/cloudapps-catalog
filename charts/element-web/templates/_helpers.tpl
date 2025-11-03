@@ -28,7 +28,7 @@ If release name contains chart name it will be used as a full name.
 Get the correct image tag name
 */}}
 {{- define "element-web.imageTag" -}}
-{{- .Values.image.tag | default (printf "v%s" .Chart.AppVersion) -}}
+{{- .Values.image.tag | default .Chart.AppVersion -}}
 {{- end -}}
 
 {{/*

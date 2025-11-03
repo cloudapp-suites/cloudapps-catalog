@@ -6,10 +6,10 @@ defaults:
 
 image:
   # -- image repository
-  repository: app.image
+  repository: n8nio/n8n
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -139,7 +139,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   ## PVC annotations
   #
   # If you need this annotation include it under values.yml file and pvc.yml template will add it.
@@ -154,7 +154,7 @@ persistence:
     - ReadWriteOnce
   ## Persistent Volume size
   ##
-  size: Cloudapp.Storage
+  size: 20Gi
   ## Use an existing PVC
   ##
   # existingClaim:
@@ -338,5 +338,5 @@ redis:
     persistence:
       enabled: true
       existingClaim: ""
-      size: Cloudapp.Storage
-      storageClass: cloudapp.storageClassName
+      size: 20Gi
+      storageClass: ""

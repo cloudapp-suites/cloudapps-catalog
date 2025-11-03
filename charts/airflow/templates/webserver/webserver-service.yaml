@@ -20,7 +20,7 @@
 ################################
 ## Airflow Webserver Service
 #################################
-{{- if and .Values.webserver.enabled (semverCompare "<3.0.0" .Values.airflowVersion) }}
+{{- if and .Values.webserver.enabled (semverCompare "<3.0.0" .Chart.AppVersion) }}
 apiVersion: v1
 kind: Service
 metadata:

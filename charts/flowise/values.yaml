@@ -48,13 +48,13 @@ updateStrategy:
 
 image:
   ## @param image.registry Image registry
-  registry: cloudapp.registry
+  registry: docker.io
 
   ## @param image.repository Image repository
-  repository: app.image
+  repository: flowiseai/flowise
 
   ## @param image.tag Image tag
-  tag: app.image.tag
+  tag:
 
   ## @param image.digest Image digest
   digest: ""
@@ -316,10 +316,10 @@ persistence:
   annotations: {}
 
   ## @param persistence.size PVC size
-  size: cloudapp.storage
+  size: 20Gi
 
   ## @param persistence.storageClass PVC storage class
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   # storageClass: -
 
 ## @section Config parameters
@@ -357,7 +357,7 @@ worker:
     repository: flowiseai/flowise-worker
 
     ## @param worker.image.tag Image tag
-    tag: 3.0.3
+    tag:
 
     ## @param worker.image.digest Image digest
     digest: ""

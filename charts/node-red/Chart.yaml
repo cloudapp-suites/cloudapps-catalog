@@ -17,8 +17,11 @@ annotations:
       email: engin.diri@mail.schwarz
     - name: Kaktor
       email: felix.kammerer@mail.schwarz
+  artifacthub.io/cr.source: "nodered/node-red"
+  artifacthub.io/own.source: "nodered_node-red"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 4.0.9
+appVersion: 4.1.1
 description: A Helm chart for Node-Red, a low-code programming for event-driven applications
 home: https://nodered.org/
 icon: https://nodered.org/about/resources/media/node-red-icon-2.png

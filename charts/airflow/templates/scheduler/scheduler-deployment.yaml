@@ -31,7 +31,7 @@
 # We can skip DAGs mounts on scheduler if dagProcessor is enabled, except with $local mode
 {{- $dagProcessorEnabled := .Values.dagProcessor.enabled }}
 {{- if eq $dagProcessorEnabled nil}}
-  {{ $dagProcessorEnabled = ternary true false (semverCompare ">=3.0.0" .Values.airflowVersion) }}
+  {{ $dagProcessorEnabled = ternary true false (semverCompare ">=3.0.0" .Chart.AppVersion) }}
 {{- end }}
 {{- $localOrDagProcessorDisabled := or (not $dagProcessorEnabled) $local }}
 # If we're using elasticsearch or opensearch logging
@@ -229,7 +229,7 @@ spec:
           {{- end }}
           resources: {{- toYaml .Values.scheduler.resources | nindent 12 }}
           volumeMounts:
-            {{- if semverCompare ">=1.10.12" .Values.airflowVersion }}
+            {{- if semverCompare ">=1.10.12" .Chart.AppVersion }}
             - name: config
               mountPath: {{ include "airflow_pod_template_file" . }}/pod_template_file.yaml
               subPath: pod_template_file.yaml

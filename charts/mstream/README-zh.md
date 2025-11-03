@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=96ba5820-3c28-4750-ae45-66063e7ef48a)
+
+</div>
+
 # mStream 音乐
 
 mStream 是一个个人音乐流媒体服务器。你可以使用 mStream 从你的家用电脑将音乐流式传输到任何设备，随时随地访问。

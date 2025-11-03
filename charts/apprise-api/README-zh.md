@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=e42b20c8-79a8-4a80-9033-00b1b2864c65)
+
+</div>
+
 # Apprise API
 
 通过用户友好的API在网络上利用[Apprise](https://github.com/caronc/apprise)。

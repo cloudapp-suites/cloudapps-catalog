@@ -13,7 +13,7 @@ global:
   imagePullSecrets: []
   ## @param global.storageClass Global StorageClass for Persistent Volume(s)
   ##
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   postgresql:
     ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
     ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
@@ -658,14 +658,14 @@ primary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param primary.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -995,14 +995,14 @@ readReplicas:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param readReplicas.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param readReplicas.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param readReplicas.persistence.annotations Annotations for the PVC
     ##
     annotations: {}

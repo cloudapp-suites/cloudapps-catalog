@@ -1,0 +1,16 @@
+{{- if .Values.database.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "farfalle.fullname" . }}-db-pvc
+  labels:
+    {{- include "farfalle.labels" . | nindent 4 }}
+    app: db
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.storageSize }}
+  storageClassName: "alicloud-disk-essd"
+{{- end }}

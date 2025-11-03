@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b001c1b6-7652-439a-8bac-dd052ff71e7a)
+
+</div>
+
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
 <img width="60" height="68" alt="EverShop Logo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/evershop/image/logo-green.png"/>
@@ -90,14 +98,12 @@ You can ask questions, and participate in discussions about EverShop-related top
 
 If you see an error message or run into an issue, please [create bug report](https://github.com/evershopcommerce/evershop/issues/new). This effort is valued and it will help all EverShop users.
 
-
 ### Submit a feature request
 
 If you have an idea, or you're missing a capability that would make development easier and more robust, please [Submit feature request](https://github.com/evershopcommerce/evershop/issues/new).
 
 If a similar feature request already exists, don't forget to leave a "+1".
 If you add some more information such as your thoughts and vision about the feature, your comments will be embraced warmly :)
-
 
 Please refer to our Contribution Guidelines and Code of Conduct.
 

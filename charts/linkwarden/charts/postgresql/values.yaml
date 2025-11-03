@@ -806,14 +806,14 @@ primary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param primary.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1260,14 +1260,14 @@ readReplicas:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: Cloudapp.Storage
+    size: 20Gi
     ## @param readReplicas.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1411,14 +1411,14 @@ backup:
       ## If undefined (the default) or set to null, no storageClassName spec is
       ## set, choosing the default provisioner.
       ##
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
       ##
       accessModes:
         - ReadWriteOnce
       ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
       ##
-      size: Cloudapp.Storage
+      size: 20Gi
       ## @param backup.cronjob.storage.annotations PVC annotations
       ##
       annotations: {}

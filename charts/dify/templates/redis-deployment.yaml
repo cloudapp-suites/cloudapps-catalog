@@ -1,4 +1,4 @@
-{{- if .Values.redis.enabled }}
+{{- if .Values.externalEnv.redis.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,15 +24,15 @@ spec:
           imagePullPolicy: {{ .Values.redis.image.pullPolicy }}
           env:
             - name: REDISCLI_AUTH
-              value: {{ .Values.redis.auth.password | quote }}
+              value: {{ .Values.externalEnv.redis.env.REDIS_PASSWORD | quote }}
           ports:
             - name: redis
-              containerPort: 6379
+              containerPort: {{ .Values.externalEnv.redis.env.REDIS_PORT }}
               protocol: TCP
           command:
             - "redis-server"
             - "--requirepass"
-            - {{ .Values.redis.auth.password | quote }}
+            - {{ .Values.externalEnv.redis.env.REDIS_PASSWORD | quote }}
           volumeMounts:
             - name: data
               mountPath: /data

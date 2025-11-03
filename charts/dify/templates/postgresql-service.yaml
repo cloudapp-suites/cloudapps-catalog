@@ -1,4 +1,4 @@
-{{- if .Values.postgresql.enabled }}
+{{- if .Values.externalEnv.postgresql.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,7 +9,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 5432
+    - port: {{ .Values.externalEnv.postgresql.env.DB_PORT | default 5432 }}
       targetPort: postgresql
       protocol: TCP
       name: postgresql

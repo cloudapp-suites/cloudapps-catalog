@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b001c1b6-7652-439a-8bac-dd052ff71e7a)
+
+</div>
+
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
 <img width="60" height="68" alt="EverShop Logo" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/evershop/image/logo-green.png"/>

@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2c6d5fe2-6ca2-4717-974e-45512d1c7ae9)
+
+</div>
+
 <h1 align="center">Dashy</h1>
 <p align="center">
   <i>Dashy 帮助您通过单一入口访问和组织您的自托管服务</i>
@@ -183,18 +191,15 @@ Dashy 预装了多个内置主题，您可以通过 UI 预览、应用和编辑�
 - **本地** - 本地存储自定义图片并通过文件名引用
 - **Homelab 图标** - 使用 [dashboard-icons] 作为常用自托管服务的 logo
 
-
 [font-awesome]: https://fontawesome.com/icons
 [simple-icons]: https://simpleicons.org/
 [material icons]: https://github.com/Templarian/MaterialDesign
 [selfh.st/icons]: https://selfh.st/icons
 [dashboard-icons]: https://github.com/WalkxCode/dashboard-icons
 
-
 <p align="center">
   <img width="400" src="https://i.ibb.co/GTVmZnc/dashy-example-icons.png" />
 </p>
-
 
 **⬆️ 返回顶部**
 
@@ -222,11 +227,9 @@ Dashy 有一个可选功能，用于检查每个应用/服务是否在线并响�
 
 您可以以小工具的形式显示来自服务的动态内容。有多个预构建的小工具可用于显示有用信息，并与常用的自托管服务集成，但您也可以轻松地为几乎任何应用创建自己的小工具。
 
-
 <p align="center">
   <img width="600" src="https://i.ibb.co/GFjXVHy/dashy-widgets.png" />
 </p>
-
 
 **⬆️ 返回顶部**
 
@@ -239,7 +242,6 @@ Dashy 有一个可选功能，用于检查每个应用/服务是否在线并响�
 Dashy 完全支持使用 [Keycloak](https://www.keycloak.org/) 进行安全的单点登录，实现安全、简单的身份验证，请参见 设置文档 获取完整使用指南。
 
 还有一个基本的身份验证功能，不需要额外设置。要启用此功能，请在 `appConfig` 下添加一个 `auth` 属性，其中包含一个 `users` 数组，每个用户都有用户名、SHA-256 哈希密码和可选的用户类型。基本身份验证还支持多种访问控制功能，包括只读访客访问和细粒度控制。
-
 
 ```yaml
 appConfig:
@@ -349,7 +351,6 @@ webSearch:
 <p align="center">
   <img alt="交互式编辑器演示" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dashy/image/139543020-b0576d28-0830-476f-afc8-a815d4de6def.gif" width="600" />
 </p>
-
 
 <p align="center">
   <img alt="配置编辑器演示" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dashy/image/config-editor-demo.gif" width="600" />

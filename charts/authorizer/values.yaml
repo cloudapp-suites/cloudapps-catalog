@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: lakhansamani/authorizer
+  tag:
   pullPolicy: IfNotPresent
 service:
   type: LoadBalancer
@@ -20,8 +20,8 @@ postgresql:
   postgresqlDatabase: authorizer
   persistence:
     enabled: persistence.enabled
-    storageClassName: cloudapp.storageClassName
-    size: cloudapp.storage
+    storageClassName: ""
+    size: 20Gi
 resources: {}
 nodeSelector: {}
 tolerations: []

@@ -1,5 +1,9 @@
 apiVersion: v2
 name: bolt-diy
 version: 0.1.0
-appVersion: "1.0"
+appVersion: latest
 description: A Helm chart for bolt-diy - AI-powered Full-Stack Web Development in the Browser
+annotations:
+  artifacthub.io/cr.source: "hipnologo/bolt.diy"
+  artifacthub.io/own.source: "bolt.diy"
+  artifacthub.io/cr.update-strategy: "no"

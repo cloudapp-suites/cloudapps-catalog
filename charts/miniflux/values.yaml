@@ -7,10 +7,10 @@
 
 image:
   # -- image repository
-  repository: app.image
+  repository: miniflux/miniflux
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -66,8 +66,8 @@ postgresql:
     # password: changeme
   persistence:
     enabled: true
-    storageClass: cloudapp.storageClassName
-    size: Cloudapp.Storage
+    storageClass: ""
+    size: 20Gi
 
 serviceMonitor:
   main:

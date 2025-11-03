@@ -13,10 +13,10 @@ controllers:
         order: 1
         image:
           # -- image repository
-          repository: app.image
+          repository: sissbruecker/linkding
           # -- image tag
           # @default -- chart.appVersion
-          tag: app.image.tag
+          tag: 
           # -- image pull policy
           pullPolicy: IfNotPresent
         env:

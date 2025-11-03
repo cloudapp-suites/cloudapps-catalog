@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=517cdf03-3683-4583-90b6-c9fc8009d749)
+
+</div>
+
 # bazarr
 
 Bazarr 是 Sonarr 和 Radarr 的配套应用程序。它可根据您的需求管理和下载字幕。您可以通过电视剧或电影定义您的偏好，Bazarr 会为您处理一切。

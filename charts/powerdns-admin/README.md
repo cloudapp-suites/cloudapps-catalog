@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=5f70d85a-823c-4642-80f3-ed2cfd2b90e9)
+
+</div>
+
 # PowerDNS-Admin
 
 A PowerDNS web interface with advanced features.

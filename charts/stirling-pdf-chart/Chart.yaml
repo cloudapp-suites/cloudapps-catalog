@@ -1,5 +1,9 @@
 apiVersion: v2
-appVersion: 1.1.0
+appVersion: 1.5.0
+annotations:
+  artifacthub.io/cr.source: "stirlingtools/stirling-pdf"
+  artifacthub.io/own.source: "stirlingtools_stirling-pdf"
+  artifacthub.io/cr.update-strategy: "latest"
 description: locally hosted web application that allows you to perform various operations
   on PDF files
 home: https://github.com/Stirling-Tools/Stirling-PDF

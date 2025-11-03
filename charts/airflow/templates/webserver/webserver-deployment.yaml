@@ -20,7 +20,7 @@
 ################################
 ## Airflow Webserver Deployment
 #################################
-{{- if and .Values.webserver.enabled (semverCompare "<3.0.0" .Values.airflowVersion) }}
+{{- if and .Values.webserver.enabled (semverCompare "<3.0.0" .Chart.AppVersion) }}
 {{- $nodeSelector := or .Values.webserver.nodeSelector .Values.nodeSelector }}
 {{- $affinity := or .Values.webserver.affinity .Values.affinity }}
 {{- $tolerations := or .Values.webserver.tolerations .Values.tolerations }}
@@ -57,7 +57,7 @@ spec:
     {{- if .Values.webserver.strategy }}
     {{- toYaml .Values.webserver.strategy | nindent 4 }}
     {{- else }}
-    {{- if semverCompare ">=2.0.0" .Values.airflowVersion }}
+    {{- if semverCompare ">=2.0.0" .Chart.AppVersion }}
     # Here we define the rolling update strategy
     # - maxSurge define how many pod we can add at a time
     # - maxUnavailable define how many pod can be unavailable
@@ -161,7 +161,7 @@ spec:
               {{- tpl (toYaml .Values.webserver.waitForMigrations.env) $ | nindent 12 }}
             {{- end }}
         {{- end }}
-        {{- if and (.Values.dags.gitSync.enabled) (not .Values.dags.persistence.enabled) (semverCompare "<2.0.0" .Values.airflowVersion) }}
+        {{- if and (.Values.dags.gitSync.enabled) (not .Values.dags.persistence.enabled) (semverCompare "<2.0.0" .Chart.AppVersion) }}
           {{- include "git_sync_container" (dict "Values" .Values "is_init" "true" "Template" .Template) | nindent 8 }}
         {{- end }}
         {{- if .Values.webserver.extraInitContainers }}
@@ -183,7 +183,7 @@ spec:
           {{- end }}
           resources: {{- toYaml .Values.webserver.resources | nindent 12 }}
           volumeMounts:
-            {{- if semverCompare ">=1.10.12" .Values.airflowVersion }}
+            {{- if semverCompare ">=1.10.12" .Chart.AppVersion }}
             - name: config
               mountPath: {{ include "airflow_pod_template_file" . }}/pod_template_file.yaml
               subPath: pod_template_file.yaml
@@ -193,7 +193,7 @@ spec:
             {{- if or .Values.webserver.webserverConfig .Values.webserver.webserverConfigConfigMapName }}
               {{- include "airflow_webserver_config_mount" . | nindent 12 }}
             {{- end }}
-            {{- if and (semverCompare "<2.0.0" .Values.airflowVersion) (or .Values.dags.gitSync.enabled .Values.dags.persistence.enabled) }}
+            {{- if and (semverCompare "<2.0.0" .Chart.AppVersion) (or .Values.dags.gitSync.enabled .Values.dags.persistence.enabled) }}
               {{- include "airflow_dags_mount" . | nindent 12 }}
             {{- end }}
             {{- if .Values.logs.persistence.enabled }}
@@ -256,7 +256,7 @@ spec:
             {{- include "custom_airflow_environment" . | indent 10 }}
             {{- include "standard_airflow_environment" . | indent 10 }}
             {{- include "container_extra_envs" (list . .Values.webserver.env) | indent 10 }}
-        {{- if and (.Values.dags.gitSync.enabled) (not .Values.dags.persistence.enabled) (semverCompare "<2.0.0" .Values.airflowVersion) }}
+        {{- if and (.Values.dags.gitSync.enabled) (not .Values.dags.persistence.enabled) (semverCompare "<2.0.0" .Chart.AppVersion) }}
           {{- include "git_sync_container" . | nindent 8 }}
         {{- end }}
         {{- if .Values.webserver.extraContainers }}
@@ -271,7 +271,7 @@ spec:
           configMap:
             name: {{ template "airflow_webserver_config_configmap_name" . }}
         {{- end }}
-        {{- if (semverCompare "<2.0.0" .Values.airflowVersion) }}
+        {{- if (semverCompare "<2.0.0" .Chart.AppVersion) }}
         {{- if .Values.dags.persistence.enabled }}
         - name: dags
           persistentVolumeClaim:

@@ -3,8 +3,11 @@ annotations:
     - kind: changed
       description: "Update application version of n8n 1.33.1"
   artifacthub.io/prerelease: "false"
+  artifacthub.io/cr.source: "n8nio/n8n"
+  artifacthub.io/own.source: "docker.n8n.io_n8nio_n8n"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 1.33.1
+appVersion: 1.117.3
 dependencies:
 - condition: redis.enabled
   name: redis

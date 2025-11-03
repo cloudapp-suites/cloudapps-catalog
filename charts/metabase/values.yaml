@@ -9,10 +9,10 @@ podAnnotations: {}
 podLabels: {}
 image:
   # -- image repository
-  repository: app.image
+  repository: metabase/metabase
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
   command: []
@@ -233,9 +233,9 @@ persistence:
       # Specify the "storageClass" used to provision the volume. Or the default
       # StorageClass will be used (the default).
       # Set it to "-" to disable dynamic provisioning
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       accessMode: ReadWriteOnce
-      size: Cloudapp.Storage
+      size: 20Gi
       annotations: {}
 
 

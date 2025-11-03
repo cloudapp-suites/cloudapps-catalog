@@ -5,11 +5,11 @@
 replicaCount: 1
 
 image:
-  repository: app.image
+  repository: mintplexlabs/anythingllm
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
-  busybox: busybox.image
+  tag:
+  busybox: busybox:latest
 
 imagePullSecrets: []
 nameOverride: ""
@@ -86,7 +86,7 @@ affinity: {}
 anythingllm:
   storage:
     size: 20Gi
-    className: cloudapp.storageClassName
+    className: ""
   env:
     SERVER_PORT: 3001
     STORAGE_DIR: "/app/server/storage"

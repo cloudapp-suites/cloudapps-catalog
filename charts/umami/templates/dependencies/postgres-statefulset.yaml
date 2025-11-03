@@ -33,6 +33,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: postgres-data
+        labels:
+          app.kubernetes.io/instance: {{ include "umami.fullname" . }}
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: {{ .Values.postgresql.persistence.storageClassName }}

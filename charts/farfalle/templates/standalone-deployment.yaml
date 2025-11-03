@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "farfalle.fullname" . }}-standalone
+  labels:
+    {{- include "farfalle.labels" . | nindent 4 }}
+    app: standalone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "farfalle.selectorLabels" . | nindent 6 }}
+      app: standalone
+  template:
+    metadata:
+      labels:
+        {{- include "farfalle.selectorLabels" . | nindent 8 }}
+        app: standalone
+    spec:
+      containers:
+        - name: standalone
+          image: "{{ .Values.standalone.image }}:{{ .Values.standalone.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: backend
+              containerPort: {{ .Values.standalone.backendPort }}
+              protocol: TCP
+            - name: frontend
+              containerPort: {{ .Values.standalone.frontendPort }}
+              protocol: TCP
+          env:
+            - name: SEARCH_PROVIDER
+              value: "searxng"
+            - name: SEARXNG_BASE_URL
+              value: "http://{{ include "farfalle.fullname" . }}-searxng:8080"
+            - name: DATABASE_URL
+              value: "postgresql+psycopg2://{{ .Values.database.user }}:{{ .Values.database.password }}@{{ include "farfalle.fullname" . }}-db:5432/{{ .Values.database.name }}"
+            - name: DB_ENABLED
+              value: "True"
+            - name: NEXT_PUBLIC_API_URL
+              value: "http://localhost:{{ .Values.standalone.backendPort }}"
+            - name: NEXT_PUBLIC_LOCAL_MODE_ENABLED
+              value: "true"
+            - name: NEXT_PUBLIC_PRO_MODE_ENABLED
+              value: "true"
+            - name: OPENAI_API_KEY
+              value: "{{ .Values.externalEnv.model.OPENAI_API_KEY }}"
+          readinessProbe:
+            httpGet:
+              path: /docs
+              port: {{ .Values.standalone.backendPort }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources: {}

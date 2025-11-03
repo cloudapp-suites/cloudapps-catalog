@@ -2,8 +2,11 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: Migrate to bjw-s-labs
+  artifacthub.io/cr.source: "akhilrex/hammond"
+  artifacthub.io/own.source: "akhilrex_hammond"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v0.0.24
+appVersion: 1.0.0
 dependencies:
 - name: common
   repository: http://bjw-s-labs.github.io/helm-charts/

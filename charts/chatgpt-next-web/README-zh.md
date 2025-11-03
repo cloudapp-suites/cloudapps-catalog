@@ -1,5 +1,13 @@
 <div align="center">
 
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b083f5df-e374-4bd7-8ddf-e1f659833992)
+
+</div>
+
+<div align="center">
+
 <a href='#企业版'>
   <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/chatgpt-next-web/image/ent.svg" alt="icon"/>
 </a>

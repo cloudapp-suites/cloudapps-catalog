@@ -1,7 +1,10 @@
 apiVersion: v2
-appVersion: 2.1.1
-description: Flame is self-hosted startpage for your server. Easily manage your apps
-  and bookmarks with built-in editors.
-name: flame
+name: farfalle
+description: A Helm chart for Farfalle AI-powered search engine
 type: application
-version: 0.3.0
+version: 0.1.0
+appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "notgard/farfalle"
+  artifacthub.io/own.source: "farfalle"
+  artifacthub.io/cr.update-strategy: "no"

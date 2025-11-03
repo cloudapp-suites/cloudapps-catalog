@@ -19,31 +19,41 @@ spec:
     spec:
       containers:
         - name: worker
-          image: "{{ .Values.worker.image.repository }}:{{ .Values.worker.image.tag }}"
+          image: "{{ .Values.worker.image.repository }}:{{ .Values.worker.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.worker.image.pullPolicy }}
           env:
             - name: MODE
               value: "worker"
             - name: DB_USERNAME
-              value: "postgres"
+              value: {{ .Values.externalEnv.postgresql.env.DB_USERNAME | quote }}
             - name: DB_PASSWORD
-              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+              value: {{ .Values.externalEnv.postgresql.env.DB_PASSWORD | quote }}
+            {{- if .Values.externalEnv.postgresql.enabled | default true }}
             - name: DB_HOST
               value: {{ include "dify.fullname" . }}-postgresql
+            {{- else }}
+            - name: DB_HOST
+              value: {{ .Values.externalEnv.postgresql.env.DB_HOST | quote }}
+            {{- end }}
             - name: DB_PORT
-              value: "5432"
+              value: {{ .Values.externalEnv.postgresql.env.DB_PORT | quote }}
             - name: DB_DATABASE
-              value: {{ .Values.postgresql.auth.database | quote }}
+              value: {{ .Values.externalEnv.postgresql.env.DB_DATABASE | quote }}
+            {{- if .Values.externalEnv.redis.enabled | default true }}
             - name: REDIS_HOST
-              value: {{ include "dify.fullname" . }}-redis-master
+              value: "{{ include "dify.fullname" . }}-redis-master"
+            {{- else }}
+            - name: REDIS_HOST
+              value: {{ .Values.externalEnv.redis.env.REDIS_HOST | quote}}
+            {{- end }}
             - name: REDIS_PORT
-              value: "6379"
+              value: {{ .Values.externalEnv.redis.env.REDIS_PORT | quote}}
             - name: REDIS_PASSWORD
-              value: {{ .Values.redis.auth.password | quote }}
+              value: {{ .Values.externalEnv.redis.env.REDIS_PASSWORD | quote}}
             - name: REDIS_DB
-              value: "0"
+              value: {{ .Values.externalEnv.redis.env.REDIS_DB | quote}}
             - name: CELERY_BROKER_URL
-              value: "redis://:{{ .Values.redis.auth.password }}@{{ include "dify.fullname" . }}-redis-master:6379/1"
+              value: "redis://:{{ .Values.externalEnv.redis.env.REDIS_PASSWORD }}@{{ .Values.externalEnv.redis.env.REDIS_HOST }}:{{ .Values.externalEnv.redis.env.REDIS_PORT }}/1"
             - name: WEAVIATE_ENDPOINT
               value: "http://{{ include "dify.fullname" . }}-weaviate:{{ .Values.weaviate.service.port }}"
             - name: WEAVIATE_API_KEY

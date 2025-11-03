@@ -78,6 +78,9 @@ annotations:
       url: https://airflow.apache.org/docs/apache-airflow/3.0.2/_images/variable_hidden.png
     - title: Code View
       url: https://airflow.apache.org/docs/apache-airflow/3.0.2/_images/dag_overview_code.png
+  artifacthub.io/cr.source: "apache/airflow"
+  artifacthub.io/own.source: "apache/airflow"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
 appVersion: 3.0.2
 dependencies:

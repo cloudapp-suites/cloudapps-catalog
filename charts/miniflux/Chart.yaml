@@ -1,14 +1,17 @@
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Update ghcr.io/miniflux/miniflux docker tag to v2.2.5
+      description: Update ghcr.io/miniflux/miniflux docker tag to v2.2.14
   artifacthub.io/links: |-
     - name: App Source
       url: https://github.com/miniflux/v2
     - name: Chart Source
       url: https://github.com/gabe565/charts/tree/main/charts/miniflux
+  artifacthub.io/cr.source: "miniflux/miniflux"
+  artifacthub.io/own.source: "miniflux_miniflux"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: 2.2.5
+appVersion: 2.2.14
 dependencies:
 - name: common
   repository: https://bjw-s.github.io/helm-charts

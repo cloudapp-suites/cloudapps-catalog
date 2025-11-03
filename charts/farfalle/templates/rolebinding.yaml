@@ -1,0 +1,16 @@
+{{- if eq .Values.service.type "LoadBalancer" }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: "{{ include "farfalle.fullname" . }}-ip-updater-binding"
+  labels:
+    {{- include "farfalle.labels" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: "{{ include "farfalle.fullname" . }}-ip-updater"
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: "{{ include "farfalle.fullname" . }}-ip-updater-role"
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=230ad397-79d8-46fd-b5a9-d02bf805636f)
+
+</div>
+
 # Automatisch - Open Source Zapier Alternative
 
 ![Automatisch - Screenshot](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/automatisch/image/191562539-e42f6c34-03c7-4dc4-bcf9-7f9473a9c64f.png)

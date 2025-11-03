@@ -3,4 +3,8 @@ name: kutt
 description: A modern URL shortener with support for custom domains
 type: application
 version: 0.1.0
-appVersion: "2.7.7"
+appVersion: v3.2.3
+annotations:
+  artifacthub.io/cr.source: "kutt/kutt"
+  artifacthub.io/own.source: "kutt_kutt"
+  artifacthub.io/cr.update-strategy: "latest"

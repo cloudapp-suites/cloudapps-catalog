@@ -11,7 +11,7 @@ image:
   repository: app.image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
+  tag: 
 
 imagePullSecrets: []
 nameOverride: ""
@@ -155,9 +155,9 @@ persistence:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     accessMode: ReadWriteOnce
-    size: cloudapp.storage
+    size: 20Gi
 
   # Persistence for the public/storage folder
   storage:
@@ -170,9 +170,9 @@ persistence:
     ##   GKE, AWS & OpenStack)
     ##
     # storageClass: "-"
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     accessMode: ReadWriteOnce
-    size: cloudapp.storage
+    size: 20Gi
 
 ## Enable ldap authentication. See https://www.bookstackapp.com/docs/admin/ldap-auth/ for details on how to set it up.
 ldap:

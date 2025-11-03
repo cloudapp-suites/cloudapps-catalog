@@ -1,0 +1,49 @@
+{{- if .Values.externalEnv.postgresql.enabled }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "cherry-studio-enterprise.fullname" . }}-postgresql
+  labels:
+    {{- include "cherry-studio-enterprise.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgresql
+spec:
+  serviceName: {{ include "cherry-studio-enterprise.fullname" . }}-postgresql
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "cherry-studio-enterprise.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: postgresql
+  template:
+    metadata:
+      labels:
+        {{- include "cherry-studio-enterprise.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: postgresql
+    spec:
+      containers:
+        - name: postgresql
+          image: "{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          env:
+            - name: POSTGRES_DB
+              value: {{ .Values.externalEnv.postgresql.env.DB_NAME | quote }}
+            - name: POSTGRES_USER
+              value: {{ .Values.externalEnv.postgresql.env.DB_USERNAME | quote }}
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cherry-studio-enterprise.fullname" . }}-postgresql
+                  key: postgres-password
+          ports:
+            - name: postgresql
+              containerPort: {{ .Values.externalEnv.postgresql.env.DB_PORT }}
+              protocol: TCP
+          volumeMounts:
+            - name: postgresql-data
+              mountPath: /var/lib/postgresql/data
+          resources:
+            {{- toYaml .Values.postgresql.resources | nindent 12 }}
+      volumes:
+        - name: postgresql-data
+          persistentVolumeClaim:
+            claimName: {{ include "cherry-studio-enterprise.fullname" . }}-postgresql-data
+{{- end }}

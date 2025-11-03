@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=61cae214-cc87-4dfd-a8c8-2b737e44a081)
+
+</div>
+
 ![cover-v5-optimized](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/GitHub_README_if.png)
 
 <div align="center">
@@ -45,7 +53,6 @@
   <a href="./README_BN.md"><img alt="README in বাংলা" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/ব__ল_-d9d9d9.svg"></a>
 </p>
 
-
 #
 
 <div align="center">
@@ -63,7 +70,6 @@ Dify 是一个开源的 LLM 应用开发平台。其直观的界面结合了 AI 
 
 ![providers-v5](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/model.png)
 
-
 **3. Prompt IDE**: 
   用于制作提示、比较模型性能以及向基于聊天的应用程序添加其他功能（如文本转语音）的直观界面。
 
@@ -78,7 +84,6 @@ Dify 是一个开源的 LLM 应用开发平台。其直观的界面结合了 AI 
 
 **7. 后端即服务**: 
   所有 Dify 的功能都带有相应的 API，因此您可以轻松地将 Dify 集成到自己的业务逻辑中。
-
 
 ## 功能比较
 <table style="width: 100%;">
@@ -159,7 +164,6 @@ Dify 是一个开源的 LLM 应用开发平台。其直观的界面结合了 AI 
 ## Star History
 
 [![Star History Chart](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/dify/image/starhistory.svg)](https://star-history.com/#langgenius/dify&Date)
-
 
 ## Contributing
 

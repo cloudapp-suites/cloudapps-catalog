@@ -9,10 +9,10 @@ data:
   SERVER_PORT: "8080"
 {{- if not .Values.mysql.enabled }}
   # 外部数据库配置（非敏感信息）
-  DB_HOST: {{ .Values.database.host | quote }}
-  DB_PORT: {{ .Values.database.port | quote }}
-  DB_NAME: {{ .Values.database.name | quote }}
-  DB_USERNAME: {{ .Values.database.username | quote }}
-  DB_PASSWORD: {{ .Values.database.password | quote }}
+  DB_HOST: {{ .Values.externalEnv.database.host | quote }}
+  DB_PORT: {{ .Values.externalEnv.database.port | quote }}
+  DB_NAME: {{ .Values.externalEnv.database.name | quote }}
+  DB_USERNAME: {{ .Values.externalEnv.database.username | quote }}
+  DB_PASSWORD: {{ .Values.externalEnv.database.password | quote }}
 {{- end }}
   # 其他非敏感配置可以在这里添加

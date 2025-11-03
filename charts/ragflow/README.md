@@ -1,4 +1,12 @@
 <div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=e7bb6341-8f78-4404-b746-8c3d88f23384)
+
+</div>
+
+<div align="center">
 <a href="https://demo.ragflow.io/">
 <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ragflow/image/logo-with-text.png" width="520" alt="ragflow logo">
 </a>

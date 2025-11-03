@@ -103,9 +103,9 @@ existingSecrets:
 fullnameOverride: ""
 
 image:
-  repository: app.image
+  repository: unleashorg/unleash-server
   # Obtained from .Chart.AppVersion, up to date tags available at https://hub.docker.com/r/unleashorg/unleash-server/tags
-  tag: app.image.tag
+  tag: 
   pullPolicy: Always
 
 imagePullSecrets: []
@@ -259,7 +259,7 @@ cloudsql:
   instance: ""
   image:
     repository: app.image
-    tag: app.image.tag
+    tag: 
     pullPolicy: IfNotPresent
   resources:
     {}

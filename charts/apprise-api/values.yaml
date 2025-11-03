@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: app.image
-  tag: app.image.tag
+  repository: caronc/apprise
+  tag:
   pullPolicy: IfNotPresent
 env:
   APPRISE_STATEFUL_MODE: simple
@@ -13,13 +13,13 @@ ports:
 resources:
   {}
 persistence:
-  storageClassName: cloudapp.storageClassName
+  storageClassName: ""
   config:
-    size: cloudapp.storage
+    size: 20Gi
   attach:
-    size: cloudapp.storage
+    size: 20Gi
   plugin:
-    size: cloudapp.storage
+    size: 20Gi
 service:
   type: LoadBalancer
   port: 8000

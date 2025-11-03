@@ -3,4 +3,9 @@ name: anythingllm
 description: A Helm chart for AnythingLLM
 type: application
 version: 0.1.0
-appVersion: "1.0.0"
+appVersion: 1.9.0
+annotations:
+  artifacthub.io/cr.source: "mintplexlabs/anythingllm"
+  artifacthub.io/own.source: "anythingllm"
+  artifacthub.io/github.source: "https://api.github.com/repos/Mintplex-Labs/anything-llm/releases/latest"
+  artifacthub.io/cr.update-strategy: "github"

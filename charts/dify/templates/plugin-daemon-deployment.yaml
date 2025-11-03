@@ -35,23 +35,33 @@ spec:
           imagePullPolicy: {{ .Values.pluginDaemon.image.pullPolicy }}
           env:
             - name: DB_USERNAME
-              value: "postgres"
+              value: {{ .Values.externalEnv.postgresql.env.DB_USERNAME | quote }}
             - name: DB_PASSWORD
-              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+              value: {{ .Values.externalEnv.postgresql.env.DB_PASSWORD | quote }}
+            {{- if .Values.externalEnv.postgresql.enabled  | default true }}
             - name: DB_HOST
-              value: "{{ include "dify.fullname" . }}-postgresql"
+              value: {{ include "dify.fullname" . }}-postgresql
+            {{- else }}
+            - name: DB_HOST
+              value: {{ .Values.externalEnv.postgresql.env.DB_HOST | quote }}
+            {{- end }}
             - name: DB_PORT
-              value: "5432"
+              value: {{ .Values.externalEnv.postgresql.env.DB_PORT | quote }}
             - name: DB_DATABASE
-              value: "dify_plugin"
+              value: {{ .Values.externalEnv.postgresql.env.DB_DATABASE | quote }}
+            {{- if .Values.externalEnv.redis.enabled | default true }}
             - name: REDIS_HOST
               value: "{{ include "dify.fullname" . }}-redis-master"
+            {{- else }}
+            - name: REDIS_HOST
+              value: {{ .Values.externalEnv.redis.env.REDIS_HOST | quote}}
+            {{- end }}
             - name: REDIS_PORT
-              value: "6379"
+              value: {{ .Values.externalEnv.redis.env.REDIS_PORT | quote}}
             - name: REDIS_PASSWORD
-              value: {{ .Values.redis.auth.password | quote }}
+              value: {{ .Values.externalEnv.redis.env.REDIS_PASSWORD | quote}}
             - name: REDIS_DB
-              value: "0"
+              value: {{ .Values.externalEnv.redis.env.REDIS_DB | quote}}
             - name: SERVER_PORT
               value: "5002"
             - name: SERVER_KEY

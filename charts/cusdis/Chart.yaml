@@ -3,3 +3,7 @@ name: cusdis
 version: 1.0.0
 description: A Helm chart for deploying Cusdis
 appVersion: "latest"
+annotations:
+  artifacthub.io/cr.source: "djyde/cusdis"
+  artifacthub.io/own.source: "djyde_cusdis"
+  artifacthub.io/cr.update-strategy: "latest"

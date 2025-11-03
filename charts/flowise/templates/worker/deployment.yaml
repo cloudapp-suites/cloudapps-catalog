@@ -150,10 +150,10 @@ spec:
             {{- end }}
         {{- end }}
       containers:
-        - name: worker
+        - name: flowise-worker
           securityContext:
             {{- toYaml .Values.worker.securityContext | nindent 12 }}
-          image: {{ include "common.images.image" ( dict "imageRoot" .Values.worker.image "global" .Values.global ) }}
+          image: {{ include "common.images.image" ( dict "imageRoot" .Values.worker.image "global" .Values.global "chart" .Chart ) }}
           imagePullPolicy: {{ .Values.worker.image.pullPolicy }}
           {{- if .Values.worker.extraArgs }}
           args:

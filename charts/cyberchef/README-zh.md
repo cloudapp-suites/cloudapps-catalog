@@ -1,3 +1,11 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=ba5be972-10e1-4d4d-b49e-593b947b2c81)
+
+</div>
+
 # CyberChef
 
 [![](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cyberchef/image/badge.svg)](https://github.com/gchq/CyberChef/actions?query=workflow%3A%22Master+Build%2C+Test+%26+Deploy%22)

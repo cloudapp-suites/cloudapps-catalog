@@ -20,7 +20,7 @@
 ################################
 ## Airflow Webserver HPA
 #################################
-{{- if semverCompare "<3.0.0" .Values.airflowVersion }}
+{{- if semverCompare "<3.0.0" .Chart.AppVersion }}
 {{- if and .Values.webserver.enabled .Values.webserver.hpa.enabled }}
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler

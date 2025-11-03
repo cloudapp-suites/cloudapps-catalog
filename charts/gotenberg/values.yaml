@@ -10,10 +10,10 @@ enabled: true
 replicaCount: 1
 
 image:
-  repository: app.image
+  repository: gotenberg/gotenberg
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: app.image.tag
+  tag:
 
 imagePullSecrets: []
 nameOverride: ""

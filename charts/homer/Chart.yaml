@@ -8,8 +8,11 @@ annotations:
       description: 'Support more values for service configuration.'
     - kind: changed
       description: 'Specify user ids and make filesystem read-only.'
+  artifacthub.io/cr.source: "b4bz/homer"
+  artifacthub.io/own.source: "b4bz_homer"
+  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
-appVersion: v25.05.2
+appVersion: v25.10.1
 dependencies:
 - name: base
   repository: https://charts.pascaliske.dev

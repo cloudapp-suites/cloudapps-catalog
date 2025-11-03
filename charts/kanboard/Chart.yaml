@@ -3,3 +3,8 @@ description: A Helm chart to deploy Kanboard to Kubernetes
 name: kanboard
 type: application
 version: 1.0.2
+appVersion: v1.2.48
+annotations:
+  artifacthub.io/cr.source: "kanboard/kanboard"
+  artifacthub.io/own.source: "kanboard_kanboard"
+  artifacthub.io/cr.update-strategy: "latest"

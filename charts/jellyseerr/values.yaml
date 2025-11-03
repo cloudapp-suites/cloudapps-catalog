@@ -3,10 +3,10 @@ replicaCount: 1
 image:
   # -- The registry to pull the image from.
   # -- The repository to pull the image from.
-  repository: app.image
+  repository: fallenbagel/jellyseerr
   # -- The docker tag, if left empty chart's appVersion will be used.
   # @default -- `.Chart.AppVersion`
-  tag: app.image.tag
+  tag: 
   # -- The pull policy for the controller.
   pullPolicy: IfNotPresent
   sha: ""
@@ -56,8 +56,10 @@ service:
 # -- Creating PVC to store configuration
 config:
   persistence:
+    # -- Enable/disable persistence
+    enabled: true
     # -- Size of persistent disk
-    size: Cloudapp.Storage
+    size: 20Gi
     # -- Annotations for PVCs
     annotations: {}
     # -- Access modes of persistent disk
@@ -68,7 +70,7 @@ config:
     # -- Name of the permanent volume to reference in the claim.
     # Can be used to bind to existing volumes.
     volumeName: ""
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
 
 ingress:
   enabled: false

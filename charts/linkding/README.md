@@ -1,4 +1,12 @@
 <div align="center">
+
+🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=9b05d6bd-c8e3-4201-b7ac-37dc5b21e8b7)
+
+</div>
+
+<div align="center">
     <br>
     <a href="https://github.com/sissbruecker/linkding">
         <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/header.svg" height="50">

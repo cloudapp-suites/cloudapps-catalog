@@ -14,7 +14,7 @@ mysql:
   user: coze
   password: coze123
   persistence:
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     size: "50Gi"
   initScripts:
     - files/mysql/schema.sql
@@ -70,7 +70,7 @@ redis:
   allowEmptyPassword: "yes"
   password: ""
   persistence:
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     size: "50Gi"
 
 # -- coze-server configuration
@@ -80,10 +80,10 @@ cozeServer:
   replicaCount: 1
 
   image:
-    repository: app.image
+    repository: opencoze/opencoze
     # -- Keep the mirror up to date
     pullPolicy: Always
-    tag: app.image.tag
+    tag:
 
   service:
     type: LoadBalancer
@@ -142,10 +142,10 @@ rocketmq:
       tag: rocketmq.image.tag
     persistence:
       store:
-        storageClassName: cloudapp.storageClassName
+        storageClassName: ""
         size: "20Gi"
       logs:
-        storageClassName: cloudapp.storageClassName
+        storageClassName: ""
         size: "20Gi"
     resources:
       requests:
@@ -182,10 +182,10 @@ rocketmq:
       flushDiskType = ASYNC_FLUSH
     persistence:
       store:
-        storageClassName: cloudapp.storageClassName
+        storageClassName: ""
         size: "20Gi"
       logs:
-        storageClassName: cloudapp.storageClassName
+        storageClassName: ""
         size: "20Gi"
     resources:
       requests:
@@ -206,7 +206,7 @@ elasticsearch:
   password: ""
   persistence:
     enabled: true
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     accessModes:
       - ReadWriteOnce
     size: 50Gi
@@ -228,7 +228,7 @@ minio:
     port: 9000
     consolePort: 9001
   persistence:
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     size: "50Gi"
   resources:
     limits:
@@ -244,7 +244,7 @@ etcd:
     repository: etcd.image
     tag: etcd.image.tag
   persistence:
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     size: "20Gi"
 
 milvus:
@@ -254,7 +254,7 @@ milvus:
     tag: milvus.image.tag
   bucketName: milvus
   persistence:
-    storageClassName: cloudapp.storageClassName
+    storageClassName: ""
     size: "20Gi"
 
 

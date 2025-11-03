@@ -19,10 +19,10 @@
 image:
   # -- The registry to pull the image from.
   # -- The repository to pull the image from.
-  repository: app.image
+  repository: ghcr.io/linkwarden/linkwarden
   # -- The docker tag, if left empty chart's appVersion will be used.
   # @default -- `.Chart.AppVersion`
-  tag: app.image.tag
+  tag: 
   # -- The pull policy for the controller.
   pullPolicy: IfNotPresent
   digest: ""
@@ -126,10 +126,10 @@ linkwarden:
       pvc:
         ## @param linkwarden.data.filesystem.pvc.size [default: 5Gi] The size given to the PVC for the above data paths
         ##
-        size: Cloudapp.Storage
+        size: 20Gi
         ## @param linkwarden.data.filesystem.pvc.storageClass [default: standard] The storageClass given to PVCs
         ##
-        storageClass: cloudapp.storageClassName
+        storageClass: ""
         ## @param linkwarden.data.filesystem.pvc.reclaimPolicy [default: Retain] The resourcePolicy given to PVCs
         ##
         reclaimPolicy: Retain
@@ -636,14 +636,14 @@ postgresql:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      storageClass: cloudapp.storageClassName
+      storageClass: ""
       ## @param postgresql.primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
       ##
       accessModes:
         - ReadWriteOnce
       ## @param postgresql.primary.persistence.size PVC Storage Request for PostgreSQL volume
       ##
-      size: Cloudapp.Storage
+      size: 20Gi
 
   global:
     security:

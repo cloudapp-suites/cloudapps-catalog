@@ -1,7 +1,17 @@
+<div align="center">
+
+🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace)
+
+</div>
+
 # cloudapps-catalog
 CloudApps application catalog, and can be deployed to EDAS quickly.
 
-# 1. 提交流程概述
+# 应用首页接入开源应用指南
+
+## 1. 提交流程概述
 贡献者需要向 GitHub 仓库 `https://github.com/cloudapp-suites/cloudapps-catalog` 提交一个 Pull Request (PR)。
 
 PR 中必须包含以下核心文件和目录结构：
@@ -11,7 +21,7 @@ PR 中必须包含以下核心文件和目录结构：
 3. 【非必填】`README.md`: 应用的英文介绍文档。
 4. 【非必填】`README-zh.md`: 应用的中文介绍文档（可选，如不提供，系统将自动从github仓库获取）。
 
-# 2. 应用目录结构示例
+## 2. 应用目录结构示例
 应用目录应遵循标准的 Helm Chart 结构，并包含一个额外的 `.cloudapp` 目录用于存放元数据。以下以 `dify` 应用为例：
 
 ```plain
@@ -40,7 +50,7 @@ dify/
 | `values.yaml` | **必须**，包含 Chart 的默认配置值。 |
 
 
-# 3. `metadata.json` 元数据配置
+## 3. `metadata.json` 元数据配置
 `metadata.json` 文件是应用在 CloudApps 目录中展示的核心数据源。**github_url 字段必填，其他如不填写默认自动生成**
 
 ### 3.1. 字段要求
@@ -128,7 +138,7 @@ dify/
 
 ![](https://intranetproxy.alipay.com/skylark/lark/0/2025/png/142456461/1761200481302-7ac50d72-9f10-4e5c-8047-b807a319cd25.png)
 
-# 4. 后续步骤（非贡献者执行）
+## 4. 后续步骤（非贡献者执行）
 1. **执行项目数据初始化流水线**: PR 合并后，将执行数据初始化流水线，将应用数据导入目录系统。
 2. `values-adapter.yaml`** 文件**:
     - 该文件用于定义向用户展示的、可直接修改的配置项。

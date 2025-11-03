@@ -8,10 +8,10 @@
 
 image:
   # -- image repository
-  repository: app.image
+  repository: linuxserver/mstream
   # -- image tag
   # @default -- chart.appVersion
-  tag: app.image.tag
+  tag: 
   # -- image pull policy
   pullPolicy: IfNotPresent
 
@@ -36,12 +36,12 @@ persistence:
     enabled: false
     emptyDir: false
     mountPath: /config
-    storageClass: cloudapp.storageClassName
-    size: Cloudapp.Storage
+    storageClass: ""
+    size: 20Gi
   music:
     enabled: false
     emptyDir: false
     mountPath: /music
     accessMode: ReadWriteOnce
-    storageClass: cloudapp.storageClassName
-    size: Cloudapp.Storage
+    storageClass: ""
+    size: 20Gi

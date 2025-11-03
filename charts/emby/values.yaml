@@ -1,10 +1,10 @@
 image:
   # -- repository with Emby image
-  repository: app.image
+  repository: emby/embyserver
   # -- pull policy
   pullPolicy: Always
   # -- current version of the image. Default: Charts appVersion.
-  tag: app.image.tag
+  tag:
 
 # -- imagePullSecrets (not needed, if default image is used)
 imagePullSecrets: []
@@ -92,11 +92,11 @@ persistence:
   # -- existing claim
   existingClaim:
   # -- desired storageClass
-  storageClass: cloudapp.storageClassName
+  storageClass: ""
   # -- storage access mode
   accessMode: ReadWriteOnce
   # -- storage size
-  size: cloudapp.storage
+  size: 20Gi
 
 nfsMounts:
   # -- enable mounting of nfs exports

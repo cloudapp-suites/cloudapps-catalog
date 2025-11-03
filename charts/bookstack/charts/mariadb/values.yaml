@@ -490,7 +490,7 @@ primary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param primary.persistence.labels Labels for the PVC
     ##
     labels: {}
@@ -503,7 +503,7 @@ primary:
       - ReadWriteOnce
     ## @param primary.persistence.size MariaDB primary persistent volume size
     ##
-    size: cloudapp.storage
+    size: 20Gi
     ## @param primary.persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:
@@ -906,7 +906,7 @@ secondary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: cloudapp.storageClassName
+    storageClass: ""
     ## @param secondary.persistence.labels Labels for the PVC
     ##
     labels: {}
@@ -919,7 +919,7 @@ secondary:
       - ReadWriteOnce
     ## @param secondary.persistence.size MariaDB secondary persistent volume size
     ##
-    size: cloudapp.storage
+    size: 20Gi
     ## @param secondary.persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:
