@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: filebrowser/filebrowser
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag:
 
 imagePullSecrets: []
 nameOverride: ""

@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/code-server
+  repository: codercom/code-server
   tag:
   pullPolicy: Always
 
@@ -76,13 +76,15 @@ extraArgs: []
 
 # Optional additional environment variables
 extraVars:
-  - name: PASSWORD
-    value: "password"
 #  - name: DISABLE_TELEMETRY
 #    value: "true"
 # if dind is desired:
 #  - name: DOCKER_HOST
 #    value: "tcp://localhost:2376"
+
+externalEnv:
+  app:
+    PASSWORD: "admin"
 
 ##
 ## Init containers parameters:

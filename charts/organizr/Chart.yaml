@@ -3,4 +3,8 @@ name: organizr
 description: A Helm chart for organizr
 type: application
 version: 0.1.0
-appVersion: "latest"
+appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "organizr/organizr"
+  artifacthub.io/own.source: "organizr"
+  artifacthub.io/cr.update-strategy: "no"

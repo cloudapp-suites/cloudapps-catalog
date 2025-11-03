@@ -51,6 +51,8 @@ spec:
           {{- if .Values.securityContext.enabled }}
           securityContext:
             runAsUser: {{ .Values.securityContext.runAsUser }}
+            runAsGroup: {{ .Values.securityContext.fsGroup }}
+            fsGroup: {{ .Values.securityContext.fsGroup }}
           {{- end }}
           {{- if .Values.lifecycle.enabled }}
           lifecycle:
@@ -76,6 +78,10 @@ spec:
                 name: {{ template "code-server.fullname" . }}
               {{- end }}
                 key: password
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
         {{- if .Values.extraArgs }}
           args:
 {{ toYaml .Values.extraArgs | indent 10 }}

@@ -3,4 +3,8 @@ name: portainer
 description: A lightweight service delivery platform for containerized applications
 type: application
 version: 0.1.0
-appVersion: "2.20.0"
+appVersion: 2.33.3
+annotations:
+  artifacthub.io/cr.source: "portainer/portainer-ce"
+  artifacthub.io/own.source: "portainer-ce"
+  artifacthub.io/cr.update-strategy: "latest"
