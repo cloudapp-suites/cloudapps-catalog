@@ -163,10 +163,13 @@ affinity: {}
 # Secret configuration for sensitive data like API keys
 secret:
   # Set to true to create a Secret resource
-  create: false
+  create: true
   # Google API Key (will be base64 encoded automatically)
   # Set this value when deploying: --set secret.create=true --set secret.googleApiKey="your_key"
-  googleApiKey: ""
+
+externalEnv:
+  app:
+    googleApiKey: ""
 
 # Application environment variables (optional - for non-sensitive config)
 # For sensitive values like API keys, use secret above or external Secrets

@@ -1,3 +1,5 @@
+> ⚠️ 注意：该应用使用 openai/gemini 等外部服务，对服务器所在地网络有要求。请使用合适的集群进行部署，如 新加坡 集群，并确保对外服务网络可用。
+
 # 基于OpenAI Agents SDK和Firecrawl的深度研究助手
 
 一个强大的研究助理，利用OpenAI Agents SDK和Firecrawl的深度研究功能，对任何主题和问题进行全面的网络研究。
