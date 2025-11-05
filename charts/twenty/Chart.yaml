@@ -1,0 +1,10 @@
+apiVersion: v2
+name: twenty
+description: A Helm chart for Twenty CRM
+type: application
+version: 0.1.0
+appVersion: v1.10.0
+annotations:
+  artifacthub.io/cr.source: "twentycrm/twenty"
+  artifacthub.io/own.source: "twenty"
+  artifacthub.io/cr.update-strategy: "latest"

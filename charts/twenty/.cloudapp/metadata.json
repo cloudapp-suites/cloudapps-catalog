@@ -1,0 +1,37 @@
+{
+  "name": "twenty",
+  "display_name": "Twenty",
+  "description": {
+    "zh": "Twenty 是一款开源客户关系管理（CRM）系统，旨在提供一种经济实惠、用户友好且由社区驱动的替代方案，以取代价格高昂且数据锁定的传统 CRM。它通过可自定义的布局、自动化工作流和灵活的权限管理，帮助团队高效管理客户数据。基于 TypeScript、NestJS 和 React 等现代技术构建，Twenty 强调透明性、可扩展性以及受 Notion 和 Airtable 启发的全新用户体验。",
+    "en": "Twenty is the #1 open-source CRM designed to provide an affordable, user-friendly, and community-driven alternative to expensive, locked-in customer relationship management systems. It empowers teams to manage customer data with customizable layouts, automation workflows, and flexible permissions. Built with modern tech like TypeScript, NestJS, and React, Twenty emphasizes transparency, extensibility, and a fresh UX inspired by tools like Notion and Airtable."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 采用真正的开源 CRM，避免供应商锁定并降低成本\n- 采用受主流效率工具启发的现代化、直观的用户界面\n- 借助社区驱动开发及未来的插件生态体系实现持续扩展\n\n## 功能列表:\n\n- 使用筛选、排序、分组、看板和表格视图自定义布局\n- 自定义对象和字段以适应特定业务需求\n- 通过自定义角色创建和管理用户权限\n- 使用触发器和操作实现工作流自动化\n- 管理邮件、日历事件、文件及其他 CRM 相关数据",
+    "en": "## Benefits:\n\n- Avoid vendor lock-in and reduce costs with a truly open-source CRM\n- Benefit from a modern, intuitive UI inspired by leading productivity tools\n- Leverage community-driven development and future plugin ecosystem\n\n## Features:\n\n- Personalize layouts using filters, sort, group by, kanban, and table views\n- Customize objects and fields to fit specific business needs\n- Create and manage user permissions with custom roles\n- Automate workflows using triggers and actions\n- Manage emails, calendar events, files, and other CRM-related data"
+  },
+  "github_url": "https://github.com/twentyhq/twenty",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Salesforce",
+    "Pipedrive"
+  ],
+  "tags": [],
+  "official_address": "https://twenty.com",
+  "product_document": "https://docs.twenty.com/",
+  "categories": [
+    "Open Source",
+    "CRM",
+    "Self-Hosted",
+    "Workflow Automation",
+    "Customization",
+    "Collaboration",
+    "Productivity"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/twenty/image/logo.svg",
+  "language": "TypeScript",
+  "license": "GPL-3.0",
+  "phase": 2
+}

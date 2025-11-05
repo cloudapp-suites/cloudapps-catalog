@@ -1,0 +1,31 @@
+{{- if and .Values.storage.local.persistence.enabled (eq .Values.storage.type "local") }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "twenty.fullname" . }}-server-local-data
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-server
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.storage.local.persistence.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.storage.local.persistence.size }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "twenty.fullname" . }}-worker-local-data
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-worker
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.storage.local.persistence.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.storage.local.persistence.size }}
+{{- end }}

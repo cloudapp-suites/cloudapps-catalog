@@ -1,0 +1,51 @@
+{{- if eq .Values.server.service.type "LoadBalancer" }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "twenty.fullname" . }}-update-server-url"
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        {{- include "twenty.selectorLabels" . | nindent 8 }}
+        app: {{ include "twenty.name" . }}-server
+    spec:
+      serviceAccountName: "{{ include "twenty.fullname" . }}-ip-updater"
+      containers:
+      - name: update-server-url
+        image: {{ .Values.image.kubectl }}
+        command:
+        - /bin/bash
+        - -c
+        - |
+          set -e
+          echo "Waiting for LoadBalancer to get external IP for service {{ include "twenty.fullname" . }}-server..."
+          EXTERNAL_IP=""
+          for i in $(seq 1 30); do
+            EXTERNAL_IP=$(kubectl get svc {{ include "twenty.fullname" . }}-server --namespace {{ .Release.Namespace }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
+            if [ -n "$EXTERNAL_IP" ]; then
+              echo "Successfully found external IP: $EXTERNAL_IP"
+              break
+            fi
+            echo "Still waiting for external IP... (Attempt $i/30)"
+            sleep 10
+          done
+
+          if [ -z "$EXTERNAL_IP" ]; then
+            echo "Error: Timed out waiting for external IP after 5 minutes."
+            exit 1
+          fi
+
+          echo "Patching deployment {{ include "twenty.fullname" . }}-server with SERVER_URL=http://$EXTERNAL_IP:{{ .Values.server.service.port }}"
+          kubectl patch deployment {{ include "twenty.fullname" . }}-server --namespace {{ .Release.Namespace }} \
+            --type='strategic' \
+            -p='{"spec":{"template":{"spec":{"containers":[{"name":"server","env":[{"name":"SERVER_URL","value":"http://'$EXTERNAL_IP':{{ .Values.server.service.port }}"}]}]}}}}'
+          echo "Patch successful. Deployment will be updated with the new SERVER_URL environment variable."
+      restartPolicy: Never
+  backoffLimit: 3
+{{- end }}

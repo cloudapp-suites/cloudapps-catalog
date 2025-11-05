@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "twenty.fullname" . }}-server
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-server
+spec:
+  type: {{ .Values.server.service.type }}
+  ports:
+    - port: {{ .Values.server.service.port }}
+      targetPort: {{ .Values.server.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "twenty.selectorLabels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-server
