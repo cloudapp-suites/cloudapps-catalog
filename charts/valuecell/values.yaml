@@ -1,0 +1,69 @@
+# Default values for valuecell.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Application settings
+app:
+  name: valuecell
+  version: "0.1.0"
+  environment: production
+  timezone: "Asia/Shanghai"
+  language: "en-US"
+  debug: false
+
+image:
+  repository: tntest/valuecell
+  tag:
+  pullPolicy: IfNotPresent
+
+# API settings
+api:
+  enabled: true
+  host: "0.0.0.0"
+  port: 8000
+
+# Model provider settings
+externalEnv:
+  modelProviders:
+    google:
+      enabled: false
+      apiKey: ""
+    openrouter:
+      enabled: false
+      apiKey: ""
+    azureOpenai:
+      enabled: false
+      apiKey: ""
+      endpoint: ""
+      apiVersion: ""
+    openai:
+      enabled: false
+      apiKey: ""
+    siliconflow:
+      enabled: false
+      apiKey: ""
+
+# Third-party agent configurations
+thirdParty:
+  finnhub:
+    enabled: false
+    apiKey: ""
+  sec:
+    email: ""
+
+# Resource limits
+resources: {}
+
+# Service configuration
+service:
+  type: LoadBalancer
+  port: 1420
+  targetPort: 1420
+
+# Storage configuration
+persistence:
+  enabled: true
+  size: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "alicloud-disk-essd"

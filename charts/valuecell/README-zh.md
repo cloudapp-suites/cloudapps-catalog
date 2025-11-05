@@ -1,0 +1,235 @@
+> ⚠️ 注意：该应用使用 openai/gemini 等外部服务，对服务器所在地网络有要求。请使用合适的集群进行部署，如 新加坡 集群，并确保对外服务网络可用。
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/valuecell.png" style="width: 100%; height: auto;">
+</p>
+
+<div align="center" style="line-height: 2;">
+    <a href="https://www.python.org/downloads" target="_blank">
+        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/python-3.12_-blue.svg"
+            alt="Python version"></a>
+    <a href="LICENSE" target="_blank">
+        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/license-Apache2.0-red.svg"
+            alt="License: Apache2.0"></a>  
+    <br>
+    <a href="https://discord.com/invite/84Kex3GGAh" target="_blank">
+        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/1399603591471435907.svg"
+            alt="chat on Discord"></a>
+    <a href="https://twitter.com/intent/follow?screen_name=valuecell" target="_blank">
+        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/valuecell.svg"
+            alt="follow on X(Twitter)"></a>
+</div>
+
+<div align="center">
+  <a href="README.md" style="color: gray;">English</a>
+  <a href="README.zh.md" style="color: auto;">中文（简体）</a>
+  <a href="README.zh_Hant.md" style="color: gray;">中文（繁體）</a>
+  <a href="README.ja.md" style="color: gray;">日本語</a>
+</div>
+
+
+# ValueCell
+ValueCell 是一个社区驱动的多智能体金融应用产品，我们的计划是打造全球最大的去中心化金融智能体社区
+
+它将为您提供顶级的投资智能体团队，帮助您完成选股，调研，跟踪和交易
+
+欢迎大家加入Discord社区反馈使用中遇到的问题，以及更多开发者参与共建🔥🔥🔥
+
+>注意：ValueCell团队人员不会主动私信社区参与者，项目仅为技术交流使用，投资有风险。⚠️
+
+# 产品截图
+
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/homepage.png" style="width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/superagent.png" style="width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/AutoTradingAgent.png" style="width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/NewPushAgent.png" style="width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/agent_market.png" style="width: 100%; height: auto;">
+</p>
+
+# 核心特性
+
+<p align="center">
+  <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/architecture.png" style="width: 100%; height: auto;">
+</p>
+
+
+## 多智能体系统
+- **DeepResearch Agent**: 获取并分析股票的基本面文件，输出准确的数据、可解释性的总结
+- **Auto Trading Agent**: 支持多种加密资产和AI自动交易策略，依据技术指标创建自动化交易
+- **News Retrieval Agent**: 支持个性化定时任务的新闻推送，及时跟踪关键信息
+- **Trading Agents**：专门负责市场分析、情绪分析、新闻分析和基本面分析的智能体协同工作
+- **AI-Hedge-Fund**：智能体协作提供全面的金融洞察
+- **其他智能体**：更多智能体正在规划中...
+
+## 灵活集成
+- **多种大语言模型提供商**：支持 OpenRouter、SiliconFlow、Google 和 OpenAI
+- **热门市场数据**：覆盖美国市场、加密货币市场、香港市场、中国市场等
+- **多智能体框架兼容**：通过 A2A 协议，支持 Langchain、Agno 等主流Agent框架，进行研发集成
+
+# 快速开始
+
+ValueCell 是一个基于Python的应用程序，且有完备的前端操作页面。可以参考下面配置快速运行。
+
+## 前提条件
+
+为了获得最佳性能和简化开发，我们建议安装以下工具：
+
+**[uv](https://docs.astral.sh/uv/getting-started/installation/)** - 用Rust构建的超快速Python包和项目管理器  
+**[bun](https://github.com/oven-sh/bun#install)** - 高性能JavaScript/TypeScript工具包，集成运行时、打包器、测试运行器和包管理器
+
+## 安装
+
+1. **克隆仓库**
+
+   ```bash
+   git clone https://github.com/ValueCell-ai/valuecell.git
+   cd valuecell
+   ```
+
+2. **配置环境变量**
+
+   ```bash
+   cp .env.example .env
+   ```
+   
+   使用您的API密钥和偏好设置编辑`.env`文件。此配置文件在所有智能体之间共享。详见 [配置指南](docs/CONFIGURATION_GUIDE.md)
+
+## 配置
+
+更多系统配置详情说明可以参考[CONFIGURATION_GUIDE](./docs/CONFIGURATION_GUIDE.md)
+
+### 模型提供商
+通过编辑`.env`文件配置您首选的模型提供商：
+
+- **简易配置**：仅需配置模型厂商API Key即可
+
+- **其他配置**：对于调研类型的Agent来说，需要配置更多环境变量，可以仔细阅读`.env.example`中的说明
+
+- **官方推荐**：配置OpenRouter + 任意提供嵌入模型的供应商。原因：可以快速实现多厂商模型切换，以及RAG+Memory的AI能力
+  
+
+## 运行应用程序
+
+启动完整的应用程序（前端、后端和智能体）：
+
+### Linux / Macos
+```bash
+bash start.sh
+```
+
+### Windows (PowerShell)
+```powershell
+.\start.ps1
+```
+
+## 访问界面
+
+- **Web UI**：在浏览器中导航到 [http://localhost:1420](http://localhost:1420)
+- **日志**：在 `logs/{timestamp}/*.log` 监控应用程序日志，获取后端服务和各个智能体的详细运行时信息
+
+## 注意
+
+运行应用程序前，请确保所有前提条件已安装且环境变量已正确配置
+如长时间没有更新可以删除项目中数据库文件`lancedb/`,`valuecell.db`, `.knowledgebase/`再进行启动
+
+
+# 开发者
+
+诚挚邀请每位开发者加入Discord讨论组，我们会定期交流社区RoadMap以及未来社区贡献者权益规划
+
+开发流程及标准详见:[CONTRIBUTING.md](.github/CONTRIBUTING.md)
+
+# Roadmap
+
+## 🤖 增强智能体能力
+### 交易能力
+- **加密货币**：支持更多交易所
+- **证券**：逐步支持AI证券交易
+
+### 市场扩展
+- **欧洲市场**：增加对富时指数、DAX、CAC 40和其他欧洲交易所的支持
+- **亚洲市场**：扩展对日经指数和新兴亚洲市场的覆盖
+- **大宗商品市场**：石油、黄金、白银、农产品分析
+- **外汇市场**：主要货币对和交叉货币分析
+
+### 资产类别多样化
+- **固定收益**：政府债券、企业债券和收益率分析智能体
+- **衍生品**：期权、期货和复杂金融工具
+- **另类投资**：私募股权、对冲基金和风险投资分析
+
+### 高级通知和推送类型
+- **实时警报**：价格变动、成交量激增和技术突破
+- **定期报告**：每日/每周/每月投资组合摘要
+- **事件驱动通知**：财报发布、股息公告、监管变化
+- **自定义触发器**：用户定义的条件和阈值
+- **多渠道推送**：Discord和webhook集成
+
+## ⚙️ 产品配置与个性化
+### 多端产品化
+-- **客户端支持**：逐步支持桌面端、客户端能力
+-- **数据库热更新**：逐步支持兼容性升级
+
+### 国际化 (i18n)
+- **多语言支持**：英语、中文（简体/繁体）、日语、韩语、西班牙语、法语
+- **本地化市场数据**：特定地区的金融术语和格式
+- **文化适应**：时区、日期格式和货币偏好
+- **智能体个性本地化**：文化适宜的沟通风格
+
+### 令牌和身份验证管理
+- **API密钥管理**：第三方API密钥的安全存储和轮换
+- **OAuth集成**：支持主要金融数据提供商
+
+### 用户偏好和自定义
+- **投资档案**：风险承受能力、投资期限和策略偏好
+- **UI/UX自定义**：深色/浅色模式、仪表板布局和小部件偏好
+- **智能体行为**：沟通频率、分析深度和报告风格
+- **投资组合管理**：自定义基准、绩效指标和配置目标
+
+### 记忆和学习系统
+- **对话历史**：跨会话的持久聊天历史
+- **用户学习**：基于用户行为的自适应推荐
+- **市场记忆**：历史背景和模式识别
+- **偏好演进**：推荐的动态调整
+
+## 🔧 ValueCell SDK开发
+### 核心SDK功能
+- **Python SDK**：用于智能体集成和自定义的核心代码，衔接前后端
+- **WebSocket支持**：实时数据流和双向通信
+
+### 智能体集成框架
+- **插件架构**：轻松集成第三方智能体和工具
+- **智能体注册表**：社区贡献智能体的市场
+
+### 开发者工具和文档
+- **交互式API浏览器**：带有实时测试的Swagger/OpenAPI文档
+- **代码示例**：多种编程语言的示例实现
+- **测试框架**：单元测试、集成测试和模拟数据提供商
+
+
+# Star
+
+<div align="center">
+<a href="https://www.star-history.com/#ValueCell-ai/valuecell&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/svg&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/svg" />
+   <img alt="TradingAgents Star History" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/valuecell/image/svg" style="width: 80%; height: auto;" />
+ </picture>
+</a>
+</div>
+
+<div align="center">

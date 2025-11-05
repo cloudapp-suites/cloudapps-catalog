@@ -1,0 +1,15 @@
+{{- if .Values.tolgee.storage.persistent }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "tolgee.fullname" . }}-pvc
+  labels:
+    {{- include "tolgee.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.tolgee.storage.className }}
+  resources:
+    requests:
+      storage: {{ .Values.tolgee.storage.size }}
+{{- end }}
