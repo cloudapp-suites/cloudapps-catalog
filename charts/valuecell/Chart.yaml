@@ -4,3 +4,7 @@ description: A Helm chart for ValueCell - a community-driven, multi-agents platf
 type: application
 version: 0.1.0
 appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "tntest/valuecell"
+  artifacthub.io/own.source: "valuecell"
+  artifacthub.io/cr.update-strategy: "no"
