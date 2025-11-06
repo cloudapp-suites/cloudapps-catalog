@@ -1,5 +1,5 @@
 apiVersion: v2
-name: opencoze
+name: coze
 description: opencoze is a ai agent platform.
 
 # A chart can be either an 'application' or a 'library' chart.
