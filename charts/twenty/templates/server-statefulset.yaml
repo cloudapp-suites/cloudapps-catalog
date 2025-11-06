@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "twenty.fullname" . }}-server
   labels:
     {{- include "twenty.labels" . | nindent 4 }}
     app: {{ include "twenty.name" . }}-server
 spec:
+  serviceName: {{ include "twenty.fullname" . }}-server
   replicas: 1
   selector:
     matchLabels:

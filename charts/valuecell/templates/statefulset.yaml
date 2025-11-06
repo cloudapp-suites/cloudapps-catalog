@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "valuecell.fullname" . }}
   labels:
     {{- include "valuecell.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "valuecell.fullname" . }}
   replicas: 1
   selector:
     matchLabels:

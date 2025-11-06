@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "twenty.fullname" . }}-worker
   labels:
     {{- include "twenty.labels" . | nindent 4 }}
     app: {{ include "twenty.name" . }}-worker
 spec:
+  serviceName: {{ include "twenty.fullname" . }}-worker
   replicas: 1
   selector:
     matchLabels:
