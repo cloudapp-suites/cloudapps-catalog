@@ -1,0 +1,55 @@
+{{- if .Values.chrome.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-chrome
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: chrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "reactive-resume.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: chrome
+  template:
+    metadata:
+      labels:
+        {{- include "reactive-resume.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: chrome
+    spec:
+      containers:
+        - name: chrome
+          image: "{{ .Values.chrome.image.repository }}:{{ .Values.chrome.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: HEALTH
+              value: "{{ .Values.chrome.env.HEALTH }}"
+            - name: TOKEN
+              value: "{{ .Values.chrome.env.TOKEN }}"
+            - name: PROXY_HOST
+              value: "{{ .Values.chrome.env.PROXY_HOST }}"
+            - name: PROXY_PORT
+              value: "{{ .Values.chrome.env.PROXY_PORT }}"
+            - name: PROXY_SSL
+              value: "{{ .Values.chrome.env.PROXY_SSL }}"
+          ports:
+            - name: chrome
+              containerPort: {{ .Values.chrome.service.port }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-chrome
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: chrome
+spec:
+  ports:
+    - name: chrome
+      port: {{ .Values.chrome.service.port }}
+      targetPort: chrome
+  selector:
+    {{- include "reactive-resume.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: chrome
+{{- end }}

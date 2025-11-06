@@ -1,0 +1,39 @@
+{
+  "name": "thumbor",
+  "display_name": "Thumbor",
+  "description": {
+    "zh": "Thumbor 是一个开源的、由人工智能驱动的图像服务，支持按需进行裁剪、缩放、滤镜和优化等图像处理。它利用人工智能智能识别人脸和关键特征，实现自动且美观的图像裁剪。该服务以 HTTP 服务器形式运行，可通过 URL 参数动态生成不同版本的图片。",
+    "en": "Thumbor is an open-source, AI-powered imaging service that enables on-demand image manipulation such as cropping, resizing, filtering, and optimization. It uses artificial intelligence for smart detection of faces and key features to deliver visually appealing crops automatically. The service runs as an HTTP server, allowing dynamic image transformations via URL parameters."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 基于AI的关键特征识别，实现智能化的自动图像裁剪\n- 内置缓存机制，处理速度快，性能优异\n- 高度可扩展，支持多种编程语言和框架集成\n\n## 功能列表:\n\n- 开箱即用，支持常见图像格式\n- 基于人脸识别和特征检测（如眼镜、兴趣点）的智能裁剪与缩放\n- 采用高效缓存机制，处理速度极快\n- 支持多种存储后端，包括本地存储、AWS S3、Rackspace 和 Ceph\n- AI驱动的裁剪功能，聚焦图像中的重要视觉元素\n- 可扩展架构，支持自定义滤镜、加载器和引擎\n- 通过基于URL的HTTP请求实现图像变换",
+    "en": "## Benefits:\n\n- Enables intelligent, automatic image cropping using AI-based feature detection\n- Delivers high performance with built-in caching and fast processing\n- Highly extensible and integrates easily with multiple programming languages and frameworks\n\n## Features:\n\n- Supports common image formats out of the box\n- Intelligent cropping and resizing based on face and feature detection (e.g., glasses, points of interest)\n- Blazing fast performance with robust caching mechanisms\n- Supports multiple storage backends including local storage, AWS S3, Rackspace, and Ceph\n- AI-powered cropping that focuses on important visual elements\n- Extensible architecture for custom filters, loaders, and engines\n- Accessible via simple HTTP requests with URL-based image transformation"
+  },
+  "github_url": "https://github.com/thumbor/thumbor",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Cloudinary",
+    "Imgix"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "http://thumbor.org",
+  "product_document": "https://thumbor.readthedocs.io",
+  "categories": [
+    "Image Processing",
+    "AI",
+    "Open Source",
+    "Self-Hosted",
+    "Web Service",
+    "Real-Time",
+    "API"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/thumbor/image/thumbor-logo.png",
+  "language": "Python",
+  "license": "MIT",
+  "phase": 2
+}

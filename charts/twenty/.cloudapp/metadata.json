@@ -14,10 +14,7 @@
     "zh": "./README-zh.md",
     "en": "./README.md"
   },
-  "alternative_products": [
-    "Salesforce",
-    "Pipedrive"
-  ],
+  "alternative_products": [],
   "tags": [],
   "official_address": "https://twenty.com",
   "product_document": "https://docs.twenty.com/",

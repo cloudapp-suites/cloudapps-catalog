@@ -1,0 +1,36 @@
+{
+  "name": "reactive-resume",
+  "display_name": "Reactive-Resume",
+  "description": {
+    "zh": "Reactive Resume 是一个免费开源的简历构建工具，帮助用户轻松创建、自定义和分享专业简历。它注重隐私保护，无用户追踪或广告，并支持实时编辑、拖放式定制以及集成 OpenAI 来优化文本表达。该平台可在30秒内完成自托管，让用户完全掌控自己的数据。",
+    "en": "Reactive Resume is a free and open-source resume builder that enables users to create, customize, and share professional resumes with ease. It prioritizes user privacy with no tracking or ads, supports real-time editing, drag-and-drop customization, and offers integration with OpenAI to enhance writing quality. The platform can be self-hosted in under 30 seconds, giving users full control over their data."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 完全免费且开源，无隐藏费用\n- 高度注重用户隐私，无遥测、追踪或广告\n- 支持一键自托管，实现数据自主可控\n- 可通过自有 OpenAI API 密钥提升简历内容质量\n- 支持多语言使用与本地化\n\n## 功能列表:\n\n- 实时简历编辑\n- 拖放式模块自定义\n- 数十种专业和现代风格模板\n- 支持单页或多页简历\n- 可自定义颜色、字体（通过 Google Fonts）和布局\n- 可创建适用于特定行业的自定义模块\n- 每份简历可添加仅自己可见的私人备注\n- 支持锁定简历防止误改\n- 内置暗黑模式\n- 支持导出为 A4 或 Letter 格式的 PDF 文件\n- 可生成个性化分享链接\n- 跟踪简历链接的访问和下载次数\n- 支持邮箱、GitHub 或 Google 登录，并可启用双因素认证\n- 单账户下可创建多份简历，针对不同职位定制\n- 使用 ChatGPT 翻译简历内容并回导入编辑\n- 支持欧洲通用简历标准（EuroPass）模板",
+    "en": "## Benefits:\n\n- Completely free and open-source with no hidden costs\n- Strong focus on user privacy — no telemetry, tracking, or ads\n- Full data ownership through effortless self-hosting\n- Enhances resume content quality using OpenAI (with your own API key)\n- Supports multilingual use and localization\n\n## Features:\n\n- Real-time resume editing\n- Drag-and-drop section customization\n- Dozens of professional and modern templates\n- Support for single-page or multi-page resumes\n- Customizable colors, fonts (via Google Fonts), and layouts\n- Ability to create custom sections for industry-specific needs\n- Personal notes per resume (private to the user)\n- Lock resumes to prevent accidental edits\n- Built-in dark mode\n- Export to PDF in A4 or Letter format\n- Shareable personalized resume links\n- View and download tracking for shared resumes\n- Sign in via email, GitHub, or Google with optional two-factor authentication\n- Multi-resume support under one account for tailored job applications\n- Translate resume content using ChatGPT and import back for editing\n- EuroPass standard template support"
+  },
+  "github_url": "https://github.com/AmruthPillai/Reactive-Resume",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://rxresu.me",
+  "product_document": "https://docs.rxresu.me/",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Resume Builder",
+    "Documentation",
+    "Real-Time Editing",
+    "Drag-And-Drop",
+    "Multi-Language"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/reactive-resume/image/68747470733a2f2f692e696d6775722e636f6d2f464663346e795a2e6a7067",
+  "language": "TypeScript",
+  "license": "MIT",
+  "phase": 2
+}
