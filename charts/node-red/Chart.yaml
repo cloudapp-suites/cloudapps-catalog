@@ -1,27 +1,21 @@
 annotations:
-  artifacthub.io/changes: |
-    - Update k8s-sidecar to 1.30.5
+  artifacthub.io/changes: '- Update k8s-sidecar to 1.30.5
+
     - Update Node-Red to 4.0.9
-  artifacthub.io/containsSecurityUpdates: "false"
-  artifacthub.io/images: |
-    - name: node-red
-      image: docker.io/nodered/node-red:4.0.9
-    - name: node-red-sidecar
-      image: quay.io/kiwigrid/k8s-sidecar:1.30.5
+
+    '
+  artifacthub.io/containsSecurityUpdates: 'false'
+  artifacthub.io/cr.source: nodered/node-red
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/images: "- name: node-red\n  image: docker.io/nodered/node-red:4.0.9\n\
+    - name: node-red-sidecar\n  image: quay.io/kiwigrid/k8s-sidecar:1.30.5\n"
   artifacthub.io/license: Apache-2.0
-  artifacthub.io/links: |
-    - name: website
-      url: https://jobs.schwarz
-  artifacthub.io/maintainers: |
-    - name: dirien
-      email: engin.diri@mail.schwarz
-    - name: Kaktor
-      email: felix.kammerer@mail.schwarz
-  artifacthub.io/cr.source: "nodered/node-red"
-  artifacthub.io/own.source: "nodered_node-red"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/links: "- name: website\n  url: https://jobs.schwarz\n"
+  artifacthub.io/maintainers: "- name: dirien\n  email: engin.diri@mail.schwarz\n\
+    - name: Kaktor\n  email: felix.kammerer@mail.schwarz\n"
+  artifacthub.io/own.source: nodered_node-red
 apiVersion: v2
-appVersion: 4.1.1
+appVersion: 4.1.1-20
 description: A Helm chart for Node-Red, a low-code programming for event-driven applications
 home: https://nodered.org/
 icon: https://nodered.org/about/resources/media/node-red-icon-2.png
