@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "cordys-crm.fullname" . }}
+  labels:
+    {{- include "cordys-crm.labels" . | nindent 4 }}
+spec:
+  serviceName: "{{ include "cordys-crm.fullname" . }}"
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "cordys-crm.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "cordys-crm.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "cordys-crm.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.cordys.image.repository }}:{{ .Values.cordys.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.cordys.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
+            - name: mcp
+              containerPort: 8082
+              protocol: TCP
+            - name: mysql
+              containerPort: 3306
+              protocol: TCP
+          env:
+            - name: mysql.embedded.enabled
+              value: {{ .Values.cordys.env.MYSQL_EMBEDDED_ENABLED | quote }}
+            - name: redis.embedded.enabled
+              value: {{ .Values.cordys.env.REDIS_EMBEDDED_ENABLED | quote }}
+            - name: mcp.embedded.enabled
+              value: {{ .Values.cordys.env.MCP_EMBEDDED_ENABLED | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /opt/cordys
+          resources:
+            {{- toYaml .Values.cordys.resources | nindent 12 }}
+      volumes:
+        - name: data
+          {{- if .Values.cordys.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ if .Values.cordys.persistence.existingClaim }}{{ .Values.cordys.persistence.existingClaim }}{{- else }}{{ include "cordys-crm.fullname" . }}{{- end }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

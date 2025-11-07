@@ -1,0 +1,32 @@
+# Cordys CRM 配置
+cordys:
+  image:
+    repository: 1panel/cordys-crm
+    tag:
+    pullPolicy: IfNotPresent
+  
+  # 服务配置
+  service:
+    type: LoadBalancer
+    port: 8081
+    mcpPort: 8082
+  
+  # 资源配置
+  resources: {}
+  
+  # 存储配置
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+  
+  # 环境变量配置
+  env:
+    MYSQL_EMBEDDED_ENABLED: "true"
+    REDIS_EMBEDDED_ENABLED: "true"
+    MCP_EMBEDDED_ENABLED: "true"
+
+# ServiceAccount 配置
+serviceAccount:
+  create: false
+  name: ""

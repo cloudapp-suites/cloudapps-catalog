@@ -1,0 +1,36 @@
+{
+  "name": "cordys-crm",
+  "display_name": "CordysCRM",
+  "description": {
+    "zh": "Cordys CRM 是一款开源的 AI 驱动客户关系管理系统，旨在帮助企业实现从线索到回款（L2C）的全流程管理。它覆盖线索获取、客户跟进、商机管理、合同签约及回款执行等环节，构建完整的销售运营闭环。基于现代化技术栈与AI能力集成，支持智能化自动化和数据驱动决策。",
+    "en": "Cordys CRM is an open-source AI-powered Customer Relationship Management (CRM) system designed to help businesses manage the entire lead-to-cash (L2C) process. It supports end-to-end sales operations, including lead management, customer tracking, opportunity management, contract signing, and payment collection. Built with modern technology and AI integration, it enables intelligent automation and data-driven decision-making."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 灵活易用，支持基于角色的权限管控和模块化配置\n- 安全可控，通过私有化部署保障数据主权\n- AI 加持，可构建智能创建、智能跟进、智能报价等智能体\n- BI 加持，支持数据可视化、自助分析和自然语言智能查询\n\n## 功能列表:\n\n- 支持从线索到回款（L2C）的全生命周期管理\n- 可集成企业微信、钉钉、飞书等主流办公平台\n- 基于角色的访问控制（RBAC），实现细粒度权限管理\n- 通过 MCP Server 与 MaxKB 集成，支持 AI 智能体开发\n- 使用 DataEase 实现销售数据可视化与分析\n- 借助 SQLBot 实现自然语言转 SQL 查询\n- 支持基于 Docker 的一键安装部署\n- 支持离线环境下的离线安装包部署",
+    "en": "## Benefits:\n\n- Flexible and user-friendly with role-based access control and modular configuration\n- Secure and controllable via private deployment, ensuring full data ownership\n- Enhanced by AI for building intelligent agents in lead creation, follow-up, and quoting\n- Empowered by BI capabilities for data visualization, self-service analytics, and natural language querying\n\n## Features:\n\n- Full lifecycle management from lead to cash (L2C)\n- Integration with enterprise platforms like WeCom, DingTalk, and Feishu\n- Role-Based Access Control (RBAC) for fine-grained permission management\n- AI agent development via MCP Server integrated with MaxKB\n- Sales data visualization and analysis using DataEase\n- Natural language to SQL query conversion through SQLBot\n- Docker-based deployment with one-click installation\n- Offline installation support for air-gapped environments"
+  },
+  "github_url": "https://github.com/1Panel-dev/CordysCRM",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://cordys.cn",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "CRM",
+    "Ai Integration",
+    "Business Intelligence",
+    "Sales Automation",
+    "Data Visualization"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cordys-crm/image/overview-20251103.png",
+  "license": "GPL-3.0",
+  "language": "Java",
+  "phase": 2
+}
