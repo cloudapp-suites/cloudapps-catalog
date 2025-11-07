@@ -3,7 +3,7 @@ annotations:
     \ scheme so charts show app versions in search on artifacthub.io"
   artifacthub.io/cr.source: linuxserver/nzbget
   artifacthub.io/cr.update-strategy: latest
-  artifacthub.io/own.source: linuxserver_nzbget
+  artifacthub.io/own.source: lscr.io_linuxserver_nzbget
   artifacthub.io/values-schema: values.schema.json
 apiVersion: v2
 appVersion: 25.4.20251017
