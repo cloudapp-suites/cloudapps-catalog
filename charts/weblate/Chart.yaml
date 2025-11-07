@@ -3,7 +3,7 @@ annotations:
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: weblate_weblate
 apiVersion: v2
-appVersion: 5.14.1.1
+appVersion: 5.14.2.0
 dependencies:
 - condition: postgresql.enabled
   name: postgresql
