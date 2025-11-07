@@ -1,0 +1,171 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "nzbget.fullname" . }}
+  labels:
+    {{- include "nzbget.labels" . | nindent 4 }}
+  {{- with .Values.deploymentAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "nzbget.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "nzbget.selectorLabels" . | nindent 8 }}
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "nzbget.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: TZ
+              value: {{ .Values.env.TZ | quote }}
+            {{- if .Values.secrets.enabled }}
+            - name: NZBGET_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "nzbget.fullname" . }}
+                  key: username
+            - name: NZBGET_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "nzbget.fullname" . }}
+                  key: password
+            {{- end }}
+            {{- with .Values.env }}
+            {{- range $key, $value := . }}
+            {{- if and (ne $key "TZ") (ne $key "NZBGET_USER") (ne $key "NZBGET_PASS") }}
+            - name: {{ $key | quote }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- end }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 6789
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: 6789
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+          readinessProbe:
+            tcpSocket:
+              port: 6789
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            {{- if .Values.persistence.config.enabled }}
+            - name: config
+              mountPath: /config
+              {{- if .Values.persistence.config.subPath }}
+              subPath: {{ .Values.persistence.config.subPath }}
+              {{- end }}
+            {{- end }}
+            {{- if .Values.persistence.media.enabled }}
+            - name: media
+              mountPath: /media
+              {{- if .Values.persistence.media.subPath }}
+              subPath: {{ .Values.persistence.media.subPath }}
+              {{- end }}
+            {{- end }}
+            {{- if .Values.persistence.downloads.enabled }}
+            - name: downloads
+              mountPath: /downloads
+              {{- if .Values.persistence.downloads.subPath }}
+              subPath: {{ .Values.persistence.downloads.subPath }}
+              {{- end }}
+            {{- end }}
+            {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+      volumes:
+        {{- if .Values.persistence.config.enabled }}
+        - name: config
+          {{- if eq .Values.persistence.config.type "pvc" }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.config.existingClaim | default (printf "%s-config" (include "nzbget.fullname" .)) }}
+          {{- else if eq .Values.persistence.config.type "emptyDir" }}
+          emptyDir: {}
+          {{- else if eq .Values.persistence.config.type "hostPath" }}
+          hostPath:
+            path: {{ .Values.persistence.config.hostPath.path }}
+            {{- with .Values.persistence.config.hostPath.type }}
+            type: {{ . }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- if .Values.persistence.media.enabled }}
+        - name: media
+          {{- if eq .Values.persistence.media.type "pvc" }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.media.existingClaim | default (printf "%s-media" (include "nzbget.fullname" .)) }}
+          {{- else if eq .Values.persistence.media.type "emptyDir" }}
+          emptyDir: {}
+          {{- else if eq .Values.persistence.media.type "hostPath" }}
+          hostPath:
+            path: {{ .Values.persistence.media.hostPath.path }}
+            {{- with .Values.persistence.media.hostPath.type }}
+            type: {{ . }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- if .Values.persistence.downloads.enabled }}
+        - name: downloads
+          {{- if eq .Values.persistence.downloads.type "pvc" }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.downloads.existingClaim | default (printf "%s-downloads" (include "nzbget.fullname" .)) }}
+          {{- else if eq .Values.persistence.downloads.type "emptyDir" }}
+          emptyDir: {}
+          {{- else if eq .Values.persistence.downloads.type "hostPath" }}
+          hostPath:
+            path: {{ .Values.persistence.downloads.hostPath.path }}
+            {{- with .Values.persistence.downloads.hostPath.type }}
+            type: {{ . }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- if .Values.secrets.enabled }}
+        - name: nzbget-secret
+          secret:
+            secretName: {{ include "nzbget.fullname" . }}
+        {{- end }}
+        {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
