@@ -1,9 +1,9 @@
+annotations:
+  artifacthub.io/cr.source: apache/answer
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: answer
 apiVersion: v2
+appVersion: 1.7.0
+description: Helm chart for deploying Apache Answer
 name: answer
 version: 1.0.0
-description: Helm chart for deploying Apache Answer
-appVersion: 1.6.0
-annotations:
-  artifacthub.io/cr.source: "apache/answer"
-  artifacthub.io/own.source: "answer"
-  artifacthub.io/cr.update-strategy: "latest"

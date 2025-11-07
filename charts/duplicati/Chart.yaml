@@ -1,5 +1,9 @@
+annotations:
+  artifacthub.io/cr.source: linuxserver/duplicati
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: linuxserver_duplicati
 apiVersion: v2
-appVersion: 2.2.0
+appVersion: v2.2.0.0_stable_2025-10-23-ls264
 description: A Helm chart for duplicati
 home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
 icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/Duplicati/images/duplicati-logo.png
@@ -8,7 +12,3 @@ sources:
 - https://github.com/linuxserver/docker-duplicati
 type: application
 version: 0.1.0
-annotations:
-  artifacthub.io/cr.source: "linuxserver/duplicati"
-  artifacthub.io/own.source: "linuxserver_duplicati"
-  artifacthub.io/cr.update-strategy: "latest"
