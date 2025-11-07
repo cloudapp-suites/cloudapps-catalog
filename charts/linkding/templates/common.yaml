@@ -1,4 +1,0 @@
-{{/* Make sure all variables are set properly */}}
-{{- include "bjw-s.common.loader.init" . }}
-
-{{- include "bjw-s.common.loader.generate" . }}
