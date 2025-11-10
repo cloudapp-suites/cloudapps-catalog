@@ -25,7 +25,7 @@
  under the License.
 -->
 
-<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 # Apache Airflow
 
 | 徽章       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -54,7 +54,7 @@
 
 使用 Airflow 编写编排任务的工作流（DAG）。Airflow 调度器在遵循指定依赖关系的情况下，在一系列工作节点上执行您的任务。丰富的命令行工具使对 DAG 进行复杂操作变得轻而易举。丰富的用户界面使可视化生产环境中的管道、监控进度以及在需要时排查问题变得简单。
 
-<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **目录**
@@ -98,7 +98,7 @@ Airflow 不是流处理解决方案，但它经常用于处理实时数据，以
 - **可扩展**: Airflow 框架包含广泛的内置操作符，可以根据您的需要进行扩展。
 - **灵活**: Airflow 利用 [**Jinja**](https://jinja.palletsprojects.com) 模板引擎，允许丰富的自定义。
 
-<!-- START Requirements, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Requirements, please keep comment here to allow auto update of PyPI README-zh.md -->
 ## 要求
 
 Apache Airflow 的测试环境：
@@ -126,8 +126,8 @@ Apache Airflow 的测试环境：
 [社区管理的 DockerHub 镜像](https://hub.docker.com/p/apache/airflow)中使用的发行版是
 `Debian Bookworm`。
 
-<!-- END Requirements, please keep comment here to allow auto update of PyPI README.md -->
-<!-- START Getting started, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Requirements, please keep comment here to allow auto update of PyPI README-zh.md -->
+<!-- START Getting started, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## 用户界面
 
@@ -209,8 +209,8 @@ EOL 版本将不会获得任何修复或支持。
 
 如果您使用 Airflow - 欢迎提交 PR 将您的组织添加到列表中。
 
-<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
-<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
+<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## 谁维护 Apache Airflow？
 
@@ -220,7 +220,7 @@ Airflow 是[社区](https://github.com/apache/airflow/graphs/contributors)的工
 如果您想成为维护者，请查看 Apache Airflow
 [提交者要求](https://github.com/apache/airflow/blob/main/COMMITTERS.rst#guidelines-to-become-an-airflow-committer)。
 
-<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## 下一个版本包含什么？
 

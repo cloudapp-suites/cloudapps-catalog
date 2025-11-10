@@ -11,12 +11,14 @@
   },
   "github_url": "https://github.com/cloudtogo/pageplug",
   "readme": {
+    "zh": "./README-zh.md",
     "en": "./README.md"
   },
-  "alternative_products": [
-
-  ],
-  "tags": [
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "https://lowcode.methodot.com/user/login",
+  "product_document": "https://docs.pageplug.cn",
+  "categories": [
     "Low-code",
     "Appsmith",
     "Orchestration",
@@ -27,14 +29,7 @@
     "Modeling tools",
     "Mini Program"
   ],
-  "official_address": "https://lowcode.methodot.com/user/login",
-  "product_document": "https://docs.pageplug.cn",
-  "categories": [
-    "Open Source",
-    "Prompt Engineering",
-    "Prompt Orchestration"
-  ],
-  "pic_url": "https://lowcode.methodot.com/static/img/pageplug_logo_black.svg",
-  "license": "Apache License 2.0",
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/pageplug/image/new-banner.png",
+  "license": "Apache-2.0",
   "language": "Typescript"
 }
