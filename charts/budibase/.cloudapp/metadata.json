@@ -1,0 +1,39 @@
+{
+  "name": "budibase",
+  "display_name": "Budibase",
+  "description": {
+    "zh": "Budibase 是一个开源的低代码平台，旨在帮助工程师快速安全地构建表单、门户和审批应用。它支持开发者创建具有响应式设计和性能优化的单页应用。该平台集成了多种数据源和工具，非常适合构建定制化的业务应用。",
+    "en": "Budibase is an open-source low-code platform designed to help engineers quickly build forms, portals, and approval applications securely. It enables developers to create single-page applications with responsive design and performance optimization. The platform supports integration with various data sources and tools, making it ideal for building custom business applications."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过加速应用开发，帮助工程师节省数百小时\n- 提供自托管和云托管两种部署选项\n- 提供开发者友好的可扩展开源架构\n\n## 功能列表:\n\n- 构建并部署响应式单页应用\n- 支持连接多种数据源，包括 MongoDB、PostgreSQL、MySQL、Airtable 等\n- 使用预置 UI 组件实现快速应用开发\n- 通过 Webhook 和 API 自动化工作流并与外部工具集成\n- 支持在 Docker、Kubernetes、Digital Ocean 和 Portainer 上自托管部署\n- 提供公共 API，用于扩展和将 Budibase 作为后端集成\n- 支持全局设置下的用户/组管理和快速上手\n- 与多种流行工具集成，适配现有技术栈",
+    "en": "## Benefits:\n\n- Saves engineers 100s of hours by accelerating app development\n- Offers both self-hosted and cloud-hosted deployment options\n- Provides a developer-friendly, extensible, and open-source architecture\n\n## Features:\n\n- Build and deploy responsive single-page applications\n- Connect to multiple data sources including MongoDB, PostgreSQL, MySQL, Airtable, and more\n- Use pre-built UI components for rapid application development\n- Automate workflows and integrate with external tools via webhooks and APIs\n- Support for self-hosting on Docker, Kubernetes, Digital Ocean, and Portainer\n- Public API for extending and integrating Budibase as a backend\n- Easy onboarding and user/group management with global settings\n- Integration with popular tools to fit into existing tech stacks"
+  },
+  "github_url": "https://github.com/Budibase/budibase",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://docs.budibase.com/docs",
+  "categories": [
+    "Productivity",
+    "Automation",
+    "No-Code",
+    "Database Management",
+    "Internal Tools",
+    "Data Collection",
+    "Low-Code",
+    "Workflow",
+    "Form Builder",
+    "Forms",
+    "Business Operations",
+    "Workflows",
+    "Internal tools"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/budibase/image/homepage-design-ui_sizp7b.png",
+  "language": "TypeScript/JavaScript",
+  "phase": 2
+}
