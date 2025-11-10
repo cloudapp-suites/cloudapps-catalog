@@ -1,0 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: cloudtogo/pageplug
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: cloudtogo/pageplug
+apiVersion: v2
+appVersion: 1.9.39
+description: A Helm chart for PagePlug application
+name: pageplug
+type: application
+version: 0.1.0

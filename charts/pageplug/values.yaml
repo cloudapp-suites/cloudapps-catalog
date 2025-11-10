@@ -1,0 +1,32 @@
+# Default values for pageplug.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global Docker image parameters
+# Please, note that this will override the image parameters, including dependencies, configured to use the global value
+# Current available global Docker image parameters: imageRegistry and imagePullSecrets
+imageRegistry: ""
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# application configuration
+app:
+  image:
+    repository: registry.cn-beijing.aliyuncs.com/cloudtogo-offical/pageplug-ce
+    tag: v1.9.39
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  storage:
+    size: 20Gi
+    className: alicloud-disk-topology-alltype
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+
+
+
