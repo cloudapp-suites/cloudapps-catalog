@@ -1,0 +1,31 @@
+# Default values for dify.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global Docker image parameters
+# Please, note that this will override the image parameters, including dependencies, configured to use the global value
+# Current available global Docker image parameters: imageRegistry and imagePullSecrets
+imageRegistry: ""
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Redis configuration
+app:
+  image:
+    repository: cloudtogouser/pageplug-ce
+    tag:
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  storage:
+    size: 20Gi
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+
+
+

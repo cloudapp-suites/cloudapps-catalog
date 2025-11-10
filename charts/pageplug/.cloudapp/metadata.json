@@ -1,0 +1,41 @@
+{
+  "name": "pageplug",
+  "display_name": "PagePlug",
+  "description": {
+    "zh": "PagePlug 是 Appsmith 的中国化项目，是一个开源的、声明式的、可视化的前端低代码框架，可以用来制作 web 应用、微信小程序。",
+    "en": "PagePlug is the Chinese version of Appsmith's project. It is an open-source, declarative, and visual low-code front-end framework that can be used to create web applications and WeChat mini-programs."
+  },
+  "feature": {
+    "zh": "## 产品优势\n\n- 基于 Appsmith 做了整体汉化及性能优化，体验变得更好了\n- 更快捷简单的图表解决方案\n- 集成表单解决方案领域的佼佼者\n## 功能特色\n\n- 更强大的可视化建模工具\n- 更广泛的 API 支持\n- 更完善的数据管理功能\n- 更强大的扩展性\n- 更好的安全性支持",
+    "en": "## Benefits:\n\n- Based on Appsmith, with overall localization and performance optimization for a better user experience\n- A faster and simpler charting solution\n- A leader in integrated form solutions\n# Features\n\n- More powerful visual modeling tools\n- Wider API support\n- More comprehensive data management functions\n- Greater scalability\n- Better security support"
+  },
+  "github_url": "https://github.com/cloudtogo/pageplug",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+
+  ],
+  "tags": [
+    "Low-code",
+    "Appsmith",
+    "Orchestration",
+    "For developers",
+    "No code",
+    "Non-intrusive",
+    "Charts",
+    "Modeling tools",
+    "Mini Program"
+  ],
+  "official_address": "https://lowcode.methodot.com/user/login",
+  "product_document": "https://docs.pageplug.cn",
+  "categories": [
+    "Open Source",
+    "Prompt Engineering",
+    "Prompt Orchestration"
+  ],
+  "pic_url": "https://lowcode.methodot.com/static/img/pageplug_logo_black.svg",
+  "license": "Apache License 2.0",
+  "language": "Typescript"
+}
