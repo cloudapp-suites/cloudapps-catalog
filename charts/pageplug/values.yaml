@@ -1,4 +1,4 @@
-# Default values for dify.
+# Default values for pageplug.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -10,17 +10,18 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-# Redis configuration
+# application configuration
 app:
   image:
-    repository: cloudtogouser/pageplug-ce
-    tag:
+    repository: registry.cn-beijing.aliyuncs.com/cloudtogo-offical/pageplug-ce
+    tag: v1.9.39
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
     port: 80
   storage:
     size: 20Gi
+    className: alicloud-disk-topology-alltype
   resources: {}
   nodeSelector: {}
   tolerations: []

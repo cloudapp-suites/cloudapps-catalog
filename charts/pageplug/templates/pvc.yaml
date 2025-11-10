@@ -9,5 +9,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.storage.size }}
-  storageClassName: alicloud-disk-topology-alltype
+      storage: {{ .Values.app.storage.size }}
+  storageClassName: {{ .Values.app.storage.className }}

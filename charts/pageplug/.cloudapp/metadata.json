@@ -2,8 +2,8 @@
   "name": "pageplug",
   "display_name": "PagePlug",
   "description": {
-    "zh": "PagePlug 是 Appsmith 的中国化项目，是一个开源的、声明式的、可视化的前端低代码框架，可以用来制作 web 应用、微信小程序。",
-    "en": "PagePlug is the Chinese version of Appsmith's project. It is an open-source, declarative, and visual low-code front-end framework that can be used to create web applications and WeChat mini-programs."
+    "zh": "PagePlug 是一个开源的、声明式的、可视化的前端低代码框架，可以用来制作 Web 应用、H5应用等。与市面上其他的低代码（轻流、宜搭、微搭、简道云、轻流、活字格等等）面向的非编程人员使用场景不同，PagePlug 这款低代码产品是面向 Developers 研发人群使用的，它旨在加速开发人员的开发过程，内部系统、工具的开发更简单。",
+    "en": "PagePlug is an open-source, declarative, and visual low-code front-end framework for creating web applications, H5 applications, and more. Unlike other low-code frameworks on the market (such as LightFlow, Yida, Weida, Jiandaoyun, LightFlow, and Huozige, etc.) which are geared towards non-programmers, PagePlug is designed for developers. It aims to accelerate the development process and simplify the development of internal systems and tools."
   },
   "feature": {
     "zh": "## 产品优势\n\n- 基于 Appsmith 做了整体汉化及性能优化，体验变得更好了\n- 更快捷简单的图表解决方案\n- 集成表单解决方案领域的佼佼者\n## 功能特色\n\n- 更强大的可视化建模工具\n- 更广泛的 API 支持\n- 更完善的数据管理功能\n- 更强大的扩展性\n- 更好的安全性支持",
@@ -11,7 +11,6 @@
   },
   "github_url": "https://github.com/cloudtogo/pageplug",
   "readme": {
-    "zh": "./README-zh.md",
     "en": "./README.md"
   },
   "alternative_products": [
