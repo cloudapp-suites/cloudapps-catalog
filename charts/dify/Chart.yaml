@@ -1,7 +1,19 @@
 annotations:
+  artifacthub.io/complex: "true"
   artifacthub.io/cr.source: langgenius/dify-api
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: dify-api
+  artifacthub.io/source: |
+    [
+      {
+        "own.source": "dify-api",
+        "cr.source": "langgenius/dify-api"
+      },
+      {
+        "own.source": "dify-web",
+        "cr.source": "langgenius/dify-web"
+      }
+    ]
 apiVersion: v2
 appVersion: 1.9.2
 description: A Helm chart for Dify AI application
