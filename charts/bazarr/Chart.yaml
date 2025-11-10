@@ -1,12 +1,11 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `common` chart dependency to version 4.5.2
-  artifacthub.io/cr.source: "linuxserver/bazarr"
-  artifacthub.io/own.source: "linuxserver_bazarr"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/changes: "- kind: changed\n  description: Upgraded `common` chart\
+    \ dependency to version 4.5.2"
+  artifacthub.io/cr.source: linuxserver/bazarr
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: linuxserver_bazarr
 apiVersion: v2
-appVersion: 1.5.3
+appVersion: v1.5.3-ls324
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com

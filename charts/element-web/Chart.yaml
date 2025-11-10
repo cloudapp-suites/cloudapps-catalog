@@ -1,5 +1,9 @@
+annotations:
+  artifacthub.io/cr.source: vectorim/element-web
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: vectorim_element-web
 apiVersion: v2
-appVersion: v1.12.2
+appVersion: v1.12.3
 description: 'All-in-one secure chat app for teams, friends and organisations. Keeps
   conversations in your control, safe from data-mining and ads. Talk to everyone through
   the open global Matrix network, protected by proper end-to-end encryption. '
@@ -10,7 +14,3 @@ maintainers:
 name: element-web
 type: application
 version: 1.4.16
-annotations:
-  artifacthub.io/cr.source: "vectorim/element-web"
-  artifacthub.io/own.source: "vectorim_element-web"
-  artifacthub.io/cr.update-strategy: "latest"

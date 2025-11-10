@@ -1,57 +1,86 @@
-<div align="center">
+# Linkding
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+Linkding 是一个用于存储和同步网络浏览器书签的应用程序。
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=9b05d6bd-c8e3-4201-b7ac-37dc5b21e8b7)
+## 介绍
 
-</div>
+该图表使用 [Helm](https://helm.sh) 包管理器在 [Kubernetes](http://kubernetes.io) 集群上部署 [Linkding](https://github.com/sissbruecker/linkding)。
 
-<div align="center">
-    <br>
-    <a href="https://github.com/sissbruecker/linkding">
-        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/header.svg" height="50">
-    </a>
-    <br>
-</div>
+## 先决条件
 
-## 简介
+- Kubernetes 1.22+
+- Helm 3+
 
-linkding 是一个你可以自行托管的书签管理工具。  
-它设计简洁、运行快速，并可通过 Docker 轻松部署。
+## 安装图表
 
-名称来源如下：
-- *link*，在日常语言中常作为 URL 和书签的同义词
-- *Ding*，是德语中“东西”的意思
-- 所以整体上就是用来管理你的链接的工具
+要安装名为 `my-release` 的图表，请运行：
 
-**功能概览：**
-- 简洁的界面，优化了可读性
-- 使用标签组织书签
-- 支持批量编辑、Markdown 笔记和稍后阅读功能
-- 可与其他用户或访客共享书签
-- 自动获取书签网站的标题、描述和图标
-- 自动归档网站，可保存为本地 HTML 文件或上传至 Internet Archive
-- 支持以 Netscape HTML 格式导入和导出书签
-- 可作为渐进式网页应用（PWA）安装
-- 提供 [Firefox](https://addons.mozilla.org/firefox/addon/linkding-extension/) 和 [Chrome](https://chrome.google.com/webstore/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe) 扩展，以及书签小工具
-- 支持通过 OIDC 或认证代理进行单点登录（SSO）
-- 提供用于开发第三方应用的 REST API
-- 管理后台支持用户自助服务和原始数据访问
+```bash
+helm install my-release .
+```
 
-**演示地址：** https://demo.linkding.link/
+该命令使用默认配置在 Kubernetes 集群上部署 Linkding。[参数](#parameters) 部分列出了安装期间可以配置的参数。
 
-**截图：**
+> **提示**: 使用 `helm list` 列出所有已发布的版本
 
-![截图](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/linkding-screenshot.png "截图")
+## 卸载图表
 
-## 文档
+要卸载/删除 `my-release` 部署，请运行：
 
-完整文档请访问 [linkding.link](https://linkding.link/)。
+```bash
+helm delete my-release
+```
 
-如果你想为文档做贡献，可以在 `docs` 文件夹中找到源文件。
+该命令将删除与图表关联的所有 Kubernetes 组件并删除该发布。
 
-如果你想贡献一个社区项目，欢迎 [提交 PR](https://github.com/sissbruecker/linkding/edit/master/docs/src/content/docs/community.md)。
+## 参数
 
-## 贡献指南
+下表列出了 Linkding 图表的可配置参数及其默认值。
 
-小的改进、Bug 修复和文档优化始终欢迎。如果你打算贡献一个较大的功能，建议先提交一个 Issue 进行讨论。对于与项目目标不符或我不愿维护的功能，可能会忽略对应的 PR。
+| 键 | 类型 | 默认值 | 描述 |
+|-----|------|---------|-------------|
+| replicaCount | int | `1` | 副本数量 |
+| image.repository | string | `"sissbruecker/linkding"` | 镜像仓库 |
+| image.pullPolicy | string | `"IfNotPresent"` | 镜像拉取策略 |
+| image.tag | string | `""` | 覆盖镜像标签，默认为图表 appVersion |
+| imagePullSecrets | list | `[]` | 镜像拉取密钥 |
+| nameOverride | string | `""` | 部分覆盖 common.names.name 的字符串 |
+| fullnameOverride | string | `""` | 完全覆盖 common.names.fullname 的字符串 |
+| serviceAccount.create | bool | `false` | 指定是否应创建服务帐户 |
+| serviceAccount.annotations | object | `{}` | 添加到服务帐户的注释 |
+| serviceAccount.name | string | `""` | 要使用的服务帐户的名称 |
+| podAnnotations | object | `{}` | Pod 注释 |
+| podSecurityContext | object | `{}` | Pod 安全上下文 |
+| securityContext | object | `{}` | 容器安全上下文 |
+| service.type | string | `"LoadBalancer"` | Kubernetes 服务类型 |
+| service.port | int | `9090` | 服务端口 |
+| service.annotations | object | `{}` | 服务注释 |
+| ingress.enabled | bool | `false` | 启用入口记录生成 |
+| ingress.className | string | `""` | 将使用的 IngressClass |
+| ingress.annotations | object | `{"nginx.ingress.kubernetes.io/configuration-snippet":"location /metrics {\n  deny all;\n  return 403;\n}\n"}` | 入口注释 |
+| ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | 入口主机 |
+| ingress.tls | list | `[]` | 入口 TLS 配置 |
+| env | object | `{"LD_SUPERUSER_NAME":"admin","LD_SUPERUSER_PASSWORD":"","LD_DISABLE_BACKGROUND_TASKS":"False","LD_DISABLE_URL_VALIDATION":"False","LD_REQUEST_TIMEOUT":"60","LD_ENABLE_AUTH_PROXY":"False","LD_DB_ENGINE":"sqlite"}` | 环境变量 |
+| resources | object | `{}` | 容器资源 |
+| autoscaling.enabled | bool | `false` | 启用自动缩放 |
+| autoscaling.minReplicas | int | `1` | 最小副本数 |
+| autoscaling.maxReplicas | int | `100` | 最大副本数 |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` | 目标 CPU 利用率百分比 |
+| nodeSelector | object | `{}` | 用于 Pod 分配的节点标签 |
+| tolerations | list | `[]` | 用于 Pod 分配的容忍度 |
+| affinity | object | `{}` | 用于 Pod 分配的亲和性 |
+| persistence.enabled | bool | `false` | 使用 PVC 启用持久化 |
+| persistence.existingClaim | string | `""` | 使用现有 PVC 来持久化数据 |
+| persistence.mountPath | string | `"/etc/linkding/data"` | 挂载卷的路径 |
+| persistence.accessMode | string | `"ReadWriteOnce"` | PVC 访问模式 |
+| persistence.size | string | `"1Gi"` | PVC 大小 |
+
+使用 `--set key=value[,key=value]` 参数指定每个参数给 `helm install`。
+
+或者，可以在安装图表时提供指定参数值的 YAML 文件。例如，
+
+```bash
+helm install my-release -f values.yaml .
+```
+
+> **提示**: 您可以使用默认的 [values.yaml](values.yaml)

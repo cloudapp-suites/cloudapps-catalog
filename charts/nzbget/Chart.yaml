@@ -1,17 +1,12 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: changed version naming scheme so charts show app versions in search on artifacthub.io
+  artifacthub.io/changes: "- kind: changed\n  description: changed version naming\
+    \ scheme so charts show app versions in search on artifacthub.io"
+  artifacthub.io/cr.source: linuxserver/nzbget
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: lscr.io_linuxserver_nzbget
   artifacthub.io/values-schema: values.schema.json
-  artifacthub.io/cr.source: "linuxserver/nzbget"
-  artifacthub.io/own.source: "linuxserver_nzbget"
-  artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
 appVersion: 25.4.20251017
-dependencies:
-- name: common
-  repository: https://bjw-s-labs.github.io/helm-charts
-  version: 4.1.2
 description: nzbget - efficient usenet downloader.
 home: https://github.com/loeken/helm-charts
 icon: https://gravatar.com/avatar/61f5b56ca85bc7e22f270e125c7e61ca?s=400
@@ -22,4 +17,4 @@ name: nzbget
 sources:
 - https://github.com/loeken/helm-charts/tree/main/charts/nzbget
 type: application
-version: v25.2-ls206
+version: 1.0.0

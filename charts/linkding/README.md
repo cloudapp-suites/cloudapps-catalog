@@ -1,57 +1,86 @@
-<div align="center">
+# Linkding
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+Linkding is an application to store and synchronise web browsers bookmarks.
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=9b05d6bd-c8e3-4201-b7ac-37dc5b21e8b7)
+## Introduction
 
-</div>
+This chart deploys [Linkding](https://github.com/sissbruecker/linkding) on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
-<div align="center">
-    <br>
-    <a href="https://github.com/sissbruecker/linkding">
-        <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/header.svg" height="50">
-    </a>
-    <br>
-</div>
+## Prerequisites
 
-##  Introduction
+- Kubernetes 1.22+
+- Helm 3+
 
-linkding is a bookmark manager that you can host yourself.
-It's designed be to be minimal, fast, and easy to set up using Docker.
+## Installing the Chart
 
-The name comes from:
-- *link* which is often used as a synonym for URLs and bookmarks in common language
-- *Ding* which is German for thing
-- ...so basically something for managing your links
+To install the chart with the release name `my-release`:
 
-**Feature Overview:**
-- Clean UI optimized for readability
-- Organize bookmarks with tags
-- Bulk editing, Markdown notes, read it later functionality
-- Share bookmarks with other users or guests
-- Automatically provides titles, descriptions and icons of bookmarked websites
-- Automatically archive websites, either as local HTML file or on Internet Archive
-- Import and export bookmarks in Netscape HTML format
-- Installable as a Progressive Web App (PWA)
-- Extensions for [Firefox](https://addons.mozilla.org/firefox/addon/linkding-extension/) and [Chrome](https://chrome.google.com/webstore/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe), as well as a bookmarklet
-- SSO support via OIDC or authentication proxies
-- REST API for developing 3rd party apps
-- Admin panel for user self-service and raw data access
+```bash
+helm install my-release .
+```
 
-**Demo:** https://demo.linkding.link/
+The command deploys Linkding on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
-**Screenshot:**
+> **Tip**: List all releases using `helm list`
 
-![Screenshot](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkding/image/linkding-screenshot.png "Screenshot")
+## Uninstalling the Chart
 
-## Documentation
+To uninstall/delete the `my-release` deployment:
 
-The full documentation is now available at [linkding.link](https://linkding.link/).
+```bash
+helm delete my-release
+```
 
-If you want to contribute to the documentation, you can find the source files in the `docs` folder.
+The command removes all the Kubernetes components associated with the chart and deletes the release.
 
-If you want to contribute a community project, feel free to [submit a PR](https://github.com/sissbruecker/linkding/edit/master/docs/src/content/docs/community.md).
+## Parameters
 
-## Contributing
+The following table lists the configurable parameters of the Linkding chart and their default values.
 
-Small improvements, bugfixes and documentation improvements are always welcome. If you want to contribute a larger feature, consider opening an issue first to discuss it. I may choose to ignore PRs for features that don't align with the project's goals or that I don't want to maintain.
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| replicaCount | int | `1` | Number of replicas |
+| image.repository | string | `"sissbruecker/linkding"` | Image repository |
+| image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
+| imagePullSecrets | list | `[]` | Image pull secrets |
+| nameOverride | string | `""` | String to partially override common.names.name |
+| fullnameOverride | string | `""` | String to fully override common.names.fullname |
+| serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.name | string | `""` | The name of the service account to use |
+| podAnnotations | object | `{}` | Pod annotations |
+| podSecurityContext | object | `{}` | Pod security context |
+| securityContext | object | `{}` | Container security context |
+| service.type | string | `"LoadBalancer"` | Kubernetes service type |
+| service.port | int | `9090` | Service port |
+| service.annotations | object | `{}` | Service annotations |
+| ingress.enabled | bool | `false` | Enable ingress record generation |
+| ingress.className | string | `""` | IngressClass that will be used |
+| ingress.annotations | object | `{"nginx.ingress.kubernetes.io/configuration-snippet":"location /metrics {\n  deny all;\n  return 403;\n}\n"}` | Ingress annotations |
+| ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | Ingress hosts |
+| ingress.tls | list | `[]` | Ingress TLS configuration |
+| env | object | `{"LD_SUPERUSER_NAME":"admin","LD_SUPERUSER_PASSWORD":"","LD_DISABLE_BACKGROUND_TASKS":"False","LD_DISABLE_URL_VALIDATION":"False","LD_REQUEST_TIMEOUT":"60","LD_ENABLE_AUTH_PROXY":"False","LD_DB_ENGINE":"sqlite"}` | Environment variables |
+| resources | object | `{}` | Container resources |
+| autoscaling.enabled | bool | `false` | Enable autoscaling |
+| autoscaling.minReplicas | int | `1` | Minimum number of replicas |
+| autoscaling.maxReplicas | int | `100` | Maximum number of replicas |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage |
+| nodeSelector | object | `{}` | Node labels for pod assignment |
+| tolerations | list | `[]` | Tolerations for pod assignment |
+| affinity | object | `{}` | Affinity for pod assignment |
+| persistence.enabled | bool | `false` | Enable persistence using PVC |
+| persistence.existingClaim | string | `""` | Use an existing PVC to persist data |
+| persistence.mountPath | string | `"/etc/linkding/data"` | Path to mount the volume at |
+| persistence.accessMode | string | `"ReadWriteOnce"` | PVC access mode |
+| persistence.size | string | `"1Gi"` | PVC size |
+
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
+
+Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
+
+```bash
+helm install my-release -f values.yaml .
+```
+
+> **Tip**: You can use the default [values.yaml](values.yaml)

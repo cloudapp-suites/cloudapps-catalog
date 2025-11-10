@@ -2,15 +2,13 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: Initial release linkding with bjw lib
+    - kind: changed
+      description: Refactor chart to remove common library dependency
   artifacthub.io/cr.source: "sissbruecker/linkding"
   artifacthub.io/own.source: "sissbruecker_linkding"
   artifacthub.io/cr.update-strategy: "latest"
 apiVersion: v2
 appVersion: 1.44.1
-dependencies:
-- name: common
-  repository: https://bjw-s-labs.github.io/helm-charts
-  version: 2.6.0
 description: Linkding is an application to store and synchronise web browsers bookmarks
 home: https://github.com/sissbruecker/linkding
 icon: https://github.com/sissbruecker/linkding/raw/master/docs/header.svg
@@ -26,4 +24,4 @@ name: linkding
 sources:
 - https://github.com/sissbruecker/linkding
 - https://hub.docker.com/r/sissbruecker/linkding
-version: 0.2.3
+version: 0.2.4
