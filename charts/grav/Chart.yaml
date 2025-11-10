@@ -5,7 +5,7 @@ annotations:
   artifacthub.io/images: "- name: grav\n  image: ghcr.io/linuxserver/grav:version-1.7.18\n"
   artifacthub.io/own.source: linuxserver_grav
 apiVersion: v2
-appVersion: 1.7.50.7-ls227
+appVersion: 1.7.50.8-ls227
 dependencies:
 - name: common
   repository: https://nicholaswilde.github.io/helm-charts/
