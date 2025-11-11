@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "codexdocs.fullname" . }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "codexdocs.labels" . | nindent 4 }}
+spec:
+  {{- if or (eq .Values.configuration.database.driver "local") (eq .Values.configuration.uploads.driver "local")}}
+  replicas: 1
+  strategy:
+    type: Recreate
+  {{- else }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "codexdocs.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ .Values.configuration | toString | sha256sum }}
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "codexdocs.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+          - name: config
+            configMap:
+              defaultMode: 420
+              name: {{ .Release.Name }}-config
+          {{- if eq .Values.configuration.database.driver "local" }}
+          - name: {{ include "codexdocs.fullname" . }}-db
+            persistentVolumeClaim:
+              claimName: {{ include "codexdocs.fullname" . }}-db
+          {{- end }}
+          {{- if eq .Values.configuration.uploads.driver "local" }}
+          - name: {{ include "codexdocs.fullname" . }}-uploads
+            persistentVolumeClaim:
+              claimName: {{ include "codexdocs.fullname" . }}-uploads
+          {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: APP_CONFIG_auth_password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "codexdocs.secretName" . }}
+                  key: {{ template "codexdocs.secretPasswordKey" . }}
+{{- if .Values.env }}
+{{ toYaml .Values.env | indent 12 }}
+{{- end }}
+          volumeMounts:
+            - name: config
+              mountPath: /usr/src/app/docs-config.yaml
+              subPath: "docs-config.yaml"
+            {{- if eq .Values.configuration.database.driver "local" }}
+            - name: {{ include "codexdocs.fullname" . }}-db
+              mountPath: {{ .Values.configuration.database.local.path }}
+            {{- end}}
+            {{- if eq .Values.configuration.uploads.driver "local" }}
+            - name: {{ include "codexdocs.fullname" . }}-uploads
+              mountPath: {{ .Values.configuration.uploads.local.path }}
+            {{- end}}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

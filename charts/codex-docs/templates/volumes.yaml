@@ -1,0 +1,32 @@
+{{ if eq .Values.configuration.database.driver "local" }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "codexdocs.fullname" . }}-db
+  labels:
+    {{- include "codexdocs.labels" . | nindent 4 }}
+spec:
+  storageClassName: {{ .Values.volumes.db.storageClassName | quote }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.volumes.db.storage }}
+{{end}}
+
+{{ if eq .Values.configuration.uploads.driver "local" }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "codexdocs.fullname" . }}-uploads
+  labels:
+    {{- include "codexdocs.labels" . | nindent 4 }}
+spec:
+  storageClassName: {{ .Values.volumes.uploads.storageClassName | quote }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.volumes.uploads.storage }}
+{{end}}

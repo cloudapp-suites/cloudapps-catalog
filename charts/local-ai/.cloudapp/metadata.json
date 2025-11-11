@@ -1,0 +1,36 @@
+{
+  "name": "localai",
+  "display_name": "LocalAI",
+  "description": {
+    "zh": "LocalAI 是一个免费的开源 OpenAI 替代方案，提供与 OpenAI、ElevenLabs 和 Anthropic API 兼容的即插即用 REST API。它允许用户在本地或本地部署环境中使用消费级硬件运行大语言模型（LLM）、生成图像和音频，并执行多种 AI 任务。无需 GPU，支持多种模型家族和后端，并具备自动硬件加速检测功能。",
+    "en": "LocalAI is a free, open-source alternative to OpenAI that provides a drop-in replacement REST API compatible with OpenAI, ElevenLabs, and Anthropic APIs. It enables users to run large language models (LLMs), generate images and audio, and perform various AI tasks locally or on-premises using consumer-grade hardware. No GPU is required, and it supports multiple model families and backends with automatic hardware acceleration detection."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 可在本地运行AI模型，无需依赖云服务，确保数据隐私并降低成本。\n- 兼容OpenAI及其他主流AI API，可无缝集成现有应用。\n- 支持文本、音频、图像生成及目标检测等多种AI任务。\n- 自动检测后端和硬件加速能力，简化部署流程。\n- 轻量级模块化架构，支持通过OCI镜像动态加载后端。\n\n## 功能列表:\n\n- 使用LLM进行文本生成（通过llama.cpp、vLLM、transformers等）\n- 文本转语音和语音转文本（Whisper、Coqui、Piper等）\n- 使用Stable Diffusion和diffusers生成图像\n- 多模态模型的视觉API\n- 使用rf-detr进行目标检测\n- 为向量数据库生成嵌入\n- 文档重排序的Reranker API\n- 兼容OpenAI的函数调用和工具使用\n- 支持Model Context Protocol (MCP) 实现代理工作流\n- 语音活动检测（VAD）\n- 点对点联邦推理和AI集群\n- 用于模型管理和交互的Web界面\n- 支持从Hugging Face、Ollama和OCI加载模型",
+    "en": "## Benefits:\n\n- Run AI models locally without relying on cloud services, ensuring data privacy and reducing costs.\n- Compatible with OpenAI and other popular AI APIs, enabling seamless integration with existing applications.\n- Supports a wide range of AI tasks including text, audio, image generation, and object detection.\n- Automatic backend and hardware acceleration detection for simplified deployment.\n- Lightweight, modular architecture with dynamic backend loading via OCI images.\n\n## Features:\n\n- Text generation using LLMs (via llama.cpp, vLLM, transformers, etc.)\n- Text-to-speech and speech-to-text conversion (Whisper, Coqui, Piper, etc.)\n- Image generation with Stable Diffusion and diffusers\n- Vision API for multimodal models\n- Object detection using rf-detr\n- Embeddings generation for vector databases\n- Reranker API for document ranking\n- OpenAI-compatible function calling and tool use\n- Model Context Protocol (MCP) support for agentic workflows\n- Voice activity detection (VAD)\n- P2P federated inferencing and AI swarms\n- WebUI for model management and interaction\n- Support for Hugging Face, Ollama, and OCI-based model loading"
+  },
+  "github_url": "https://github.com/mudler/LocalAI",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://localai.io",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Ai Inference",
+    "Local Ai",
+    "Multi-Modal",
+    "REST API",
+    "Model Management"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/local-ai/image/logo.png",
+  "license": "MIT",
+  "language": "Go",
+  "phase": 2
+}

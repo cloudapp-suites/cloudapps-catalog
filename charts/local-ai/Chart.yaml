@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for deploying LocalAI to a Kubernetes cluster
+name: local-ai
+type: application
+version: 3.4.2
+annotations:
+  artifacthub.io/cr.source: "quay.io/go-skynet/local-ai"
+  artifacthub.io/own.source: "local-ai"
+  artifacthub.io/cr.update-strategy: "no"

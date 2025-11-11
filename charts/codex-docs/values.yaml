@@ -1,0 +1,105 @@
+replicaCount: 1
+
+annotations:
+
+configuration:
+  port: 3000
+  host: "0.0.0.0"
+  uploads:
+    driver: "local"
+    local:
+      path: "./uploads"
+  frontend:
+    title: "CodeX Docs"
+    description: "A block-styled editor with clean JSON output"
+    startPage: ""
+    misprintsChatId: "12344564"
+    yandexMetrikaId: ""
+    carbon:
+      serve: ""
+      placement: ""
+    menu: []
+  auth:
+    password: "will be generated automatically"
+    secret: supersecret
+
+  database:
+    driver: local
+    local:
+      path: "./data/db"
+
+# Additional Environment variables
+env: {}
+# - name: APP_CONFIG_hawk_backendToken
+#   valueFrom:
+#     secretKeyRef:
+#       key: backend-token
+#       name: hawk-creds
+externalEnv:
+  app:
+    # Auth password
+    # Defaults to a random 20-character alphanumeric string if not set
+    #
+    password: "password"
+
+# Authentication parameters
+auth:
+  # The name of an existing secret with auth credentials
+  # NOTE: When it's set, the previous `auth.password` parameter is ignored
+  #
+  existingSecret: ""
+  # Password key to be retrieved from existing secret
+  # NOTE: ignored unless `auth.existingSecret` parameter is set
+  #
+  existingSecretPasswordKey: ""
+
+image:
+  repository: ghcr.io/codex-team/codex.docs
+  pullPolicy: IfNotPresent
+  tag:
+
+imagePullSecrets: []
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 3000
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: codex-docs.local
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: web
+              port:
+                number: 3000
+  tls: []
+
+resources: {}
+
+volumes:
+  db:
+    storage: 20Gi
+    storageClassName: ""
+  uploads:
+    storage: 20Gi
+    storageClassName: ""
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,31 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ printf "%s-%s" (include "local-ai.fullname" $) "models" }}
+  labels:
+    {{- include "local-ai.labels" $ | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml $.Values.externalEnv.persistence.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ $.Values.persistence.models.size | quote }}
+  {{- if $.Values.externalEnv.persistence.storageClass }}
+  storageClassName: {{ $.Values.externalEnv.persistence.storageClass | quote }}
+  {{- end }}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ printf "%s-%s" (include "local-ai.fullname" $) "output" }}
+  labels:
+    {{- include "local-ai.labels" $ | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml $.Values.externalEnv.persistence.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ $.Values.persistence.output.size | quote }}
+  {{- if $.Values.externalEnv.persistence.storageClass }}
+  storageClassName: {{ $.Values.externalEnv.persistence.storageClass | quote }}
+  {{- end }}
