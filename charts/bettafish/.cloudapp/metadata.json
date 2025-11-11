@@ -1,0 +1,36 @@
+{
+  "name": "bettafish",
+  "display_name": "BettaFish",
+  "description": {
+    "zh": "“微舆”（BettaFish）是一个创新的AI驱动多智能体舆情分析系统，可自动监控并分析来自30多个国内外主流社交媒体平台的数百万条评论。用户只需以自然语言提出分析需求，系统即可完成端到端的研究，生成包含深度洞察与趋势预测的综合报告。",
+    "en": "BettaFish \"Micro-Yu\" is an innovative, AI-driven multi-agent system for comprehensive public opinion analysis. It automatically monitors and analyzes millions of social media comments from over 30 domestic and international platforms. Users simply submit a query in natural language, and the system conducts end-to-end research, generating in-depth reports with insights and future trend predictions."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- **AI驱动的全域监控**：7x24小时不间断捕获微博、小红书、抖音等主流社媒的实时舆情与海量用户评论。\n- **超越LLM的复合分析引擎**：融合专业Agent、微调模型与统计方法，提供更深入、精准、多维度的分析结果。\n- **强大的多模态能力**：能深度解析短视频内容，并提取搜索引擎中的天气、股票等结构化信息卡片。\n- **Agent“论坛”协作机制**：通过主持人模型引导Agent进行链式思维碰撞与辩论，提升集体智能，避免同质化。\n- **公私域数据无缝融合**：支持将内部业务数据库安全接入，实现外部舆情与内部数据的联合分析。\n- **轻量化与高扩展性框架**：基于纯Python模块化设计，支持一键部署，开发者可轻松扩展定制。\n\n## 功能列表:\n\n- 自动爬取微博、抖音、小红书等10+社交平台数据。\n- 多智能体架构，包含Query Agent、Media Agent、Insight Agent和Report Agent。\n- ForumEngine实现智能体间通信与协同推理。\n- 内置基于BERT、Qwen及传统机器学习的情感分析工具。\n- 支持自定义数据库接入与业务逻辑扩展。\n- 可动态选择模板生成报告（如品牌监测、事件分析）。\n- 支持Docker与源码部署，兼容OpenAI格式的LLM API。\n- 可配置搜索深度、反思轮次、结果数量等参数。",
+    "en": "## Benefits:\n\n- **AI-Powered Full-Spectrum Monitoring**: Continuously captures real-time public opinions across major social platforms like Weibo, Xiaohongshu, Douyin, and more.\n- **Composite Analysis Engine Beyond LLMs**: Combines specialized agents with fine-tuned models and statistical methods for deeper, more accurate, and multi-dimensional insights.\n- **Advanced Multimodal Capabilities**: Deeply parses short videos and extracts structured multimodal data (e.g., weather, stocks) from modern search results.\n- **Agent \"Forum\" Collaboration Mechanism**: Enables chain-of-thought debate among agents via a moderator model, enhancing collective intelligence and reducing bias.\n- **Seamless Public-Private Data Integration**: Securely connects internal business databases with public舆情 data for holistic vertical analysis.\n- **Lightweight and Highly Extensible Framework**: Pure Python modular design allows one-click deployment and easy customization for diverse business scenarios.\n\n## Features:\n\n- Automated crawling from 10+ social media platforms including Weibo, Douyin, and Xiaohongshu.\n- Multi-agent architecture with Query Agent, Media Agent, Insight Agent, and Report Agent.\n- ForumEngine for inter-agent communication and collaborative reasoning.\n- Built-in sentiment analysis tools using BERT, Qwen, and traditional ML models.\n- Support for custom database integration and business logic extension.\n- Dynamic report generation with selectable templates (e.g., brand monitoring, event analysis).\n- Docker and source code deployment options with OpenAI-compatible LLM API support.\n- Configurable parameters for search depth, reflection rounds, and result limits."
+  },
+  "github_url": "https://github.com/666ghj/BettaFish",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "AI",
+    "Analytics",
+    "Multi-Agent System",
+    "Sentiment Analysis",
+    "Social Media Monitoring"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bettafish/image/logo_compressed.png",
+  "license": "GPL-2.0",
+  "language": "Python",
+  "phase": 2
+}

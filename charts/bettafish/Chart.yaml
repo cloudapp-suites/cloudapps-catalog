@@ -1,0 +1,11 @@
+apiVersion: v2
+name: bettafish
+description: A Helm chart for BettaFish舆情分析系统
+type: application
+version: 0.1.0
+appVersion: 1.2.1
+annotations:
+  # 自定义 Annotation，用于存放镜像的原始出处
+  artifacthub.io/cr.source: "ghcr.io/666ghj/bettafish"
+  artifacthub.io/own.source: "bettafish"
+  artifacthub.io/cr.update-strategy: "latest"

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bettafish.fullname" . }}
+  labels:
+    {{- include "bettafish.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.bettafish.service.type }}
+  ports:
+    - port: {{ .Values.bettafish.service.ports.flask.port }}
+      targetPort: {{ .Values.bettafish.service.ports.flask.targetPort }}
+      protocol: {{ .Values.bettafish.service.ports.flask.protocol }}
+      name: flask
+    - port: {{ .Values.bettafish.service.ports.streamlit1.port }}
+      targetPort: {{ .Values.bettafish.service.ports.streamlit1.targetPort }}
+      protocol: {{ .Values.bettafish.service.ports.streamlit1.protocol }}
+      name: streamlit1
+    - port: {{ .Values.bettafish.service.ports.streamlit2.port }}
+      targetPort: {{ .Values.bettafish.service.ports.streamlit2.targetPort }}
+      protocol: {{ .Values.bettafish.service.ports.streamlit2.protocol }}
+      name: streamlit2
+    - port: {{ .Values.bettafish.service.ports.streamlit3.port }}
+      targetPort: {{ .Values.bettafish.service.ports.streamlit3.targetPort }}
+      protocol: {{ .Values.bettafish.service.ports.streamlit3.protocol }}
+      name: streamlit3
+  selector:
+    {{- include "bettafish.selectorLabels" . | nindent 4 }}
