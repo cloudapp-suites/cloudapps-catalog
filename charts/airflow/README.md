@@ -25,7 +25,7 @@
  under the License.
 -->
 
-<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 # Apache Airflow
 
 | Badges     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -54,7 +54,7 @@ When workflows are defined as code, they become more maintainable, versionable, 
 
 Use Airflow to author workflows (Dags) that orchestrate tasks. The Airflow scheduler executes your tasks on an array of workers while following the specified dependencies. Rich command line utilities make performing complex surgeries on DAGs a snap. The rich user interface makes it easy to visualize pipelines running in production, monitor progress, and troubleshoot issues when needed.
 
-<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
@@ -98,7 +98,7 @@ Airflow is not a streaming solution, but it is often used to process real-time d
 - **Extensible**: The Airflow framework includes a wide range of built-in operators and can be extended to fit your needs.
 - **Flexible**: Airflow leverages the [**Jinja**](https://jinja.palletsprojects.com) templating engine, allowing rich customizations.
 
-<!-- START Requirements, please keep comment here to allow auto update of PyPI README.md -->
+<!-- START Requirements, please keep comment here to allow auto update of PyPI README-zh.md -->
 ## Requirements
 
 Apache Airflow is tested with:
@@ -128,8 +128,8 @@ as this is the only environment that is supported. The only distro that is used 
 is used in the [Community managed DockerHub image](https://hub.docker.com/p/apache/airflow) is
 `Debian Bookworm`.
 
-<!-- END Requirements, please keep comment here to allow auto update of PyPI README.md -->
-<!-- START Getting started, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Requirements, please keep comment here to allow auto update of PyPI README-zh.md -->
+<!-- START Getting started, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## User Interface
 
@@ -217,8 +217,8 @@ We know about around 500 organizations that are using Apache Airflow (but there 
 
 If you use Airflow - feel free to make a PR to add your organisation to the list.
 
-<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
-<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Who uses Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
+<!-- START Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## Who maintains Apache Airflow?
 
@@ -228,7 +228,7 @@ are responsible for reviewing and merging PRs as well as steering conversations 
 If you would like to become a maintainer, please review the Apache Airflow
 [committer requirements](https://github.com/apache/airflow/blob/main/COMMITTERS.rst#guidelines-to-become-an-airflow-committer).
 
-<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README.md -->
+<!-- END Who maintains Apache Airflow, please keep comment here to allow auto update of PyPI README-zh.md -->
 
 ## What goes into the next release?
 

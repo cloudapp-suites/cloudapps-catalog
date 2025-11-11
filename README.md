@@ -90,7 +90,7 @@ dify/
   "github_url": "https://github.com/langgenius/dify",
   "readme": {
     "zh": "./README-zh.md",
-    "en": "./README.md"
+    "en": "./README-zh.md"
   },
   "alternative_products": [
     "n8n",
