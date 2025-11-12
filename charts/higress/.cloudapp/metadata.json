@@ -1,0 +1,38 @@
+{
+  "name": "higress",
+  "display_name": "Higress",
+  "description": {
+    "zh": "Higress 是一个基于 Istio 和 Envoy 构建的云原生 API 网关，专为 AI 场景设计，用于统一管理大语言模型（LLM）和 MCP（Model Context Protocol）API。它支持主流 AI 模型厂商的接入，并可通过 Wasm 插件机制托管 MCP 服务器。具备流式处理、统一可观测性、易扩展等特性，适用于 AI 应用和微服务架构的生产级网关。",
+    "en": "Higress is a cloud-native API gateway built on Istio and Envoy, designed to serve as an AI-native gateway for managing LLM and MCP (Model Context Protocol) APIs. It supports seamless integration with major AI model providers and enables hosting of MCP servers via Wasm plugins. With features like streaming processing, unified observability, and easy extensibility, it caters to both AI and microservices use cases in production environments."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 在阿里巴巴经过两年以上生产验证，支持每秒数十万请求，无流量抖动\n- 真正的流式处理能力，在高带宽 AI 场景下显著降低内存开销\n- 统一管理 LLM 和 MCP API，提供一致的可观测性和治理能力\n- 与企业级安全认证体系无缝集成，保障调用安全\n- 支持单机 Docker 部署，个人开发者可快速上手\n\n## 功能列表:\n\n- 支持国内外主流大模型厂商的 AI 网关功能\n- 通过 Wasm 插件机制支持托管 MCP 服务器\n- 提供 openapi-to-mcp 工具，将 OpenAPI 转换为远程 MCP 服务\n- 面向 AI 的精细化限流、Token 控制和缓存能力\n- 完整支持流式协议（如 SSE），可处理完整的请求/响应流\n- 兼容 Kubernetes Ingress API，支持 Nginx 注解\n- 微服务网关，支持从 Nacos、ZooKeeper、Consul、Eureka 发现服务\n- 深度集成 Dubbo、Nacos、Sentinel 等微服务技术栈\n- 安全网关功能，支持 WAF、JWT、OIDC、HMAC 等多种认证方式\n- 开箱即用的 UI 控制台，支持 Let's Encrypt 自动签发证书\n- 支持使用 Go、Rust、JavaScript 编写的 Wasm 插件，支持热更新",
+    "en": "## Benefits:\n\n- Production-proven at Alibaba, handling hundreds of thousands of requests per second with zero traffic jitter\n- True streaming processing reduces memory overhead in high-bandwidth AI scenarios\n- Unified management and observability for both LLM and MCP APIs\n- Seamless integration with enterprise security and authentication systems\n- Lightweight deployment with Docker support for individual developers\n\n## Features:\n\n- AI Gateway with support for mainstream domestic and international LLM providers\n- Built-in support for hosting MCP Servers via Wasm plugins\n- OpenAPI-to-MCP tool for converting OpenAPI specs into remote MCP servers\n- Fine-grained rate limiting, token control, and caching for AI APIs\n- Streaming protocol support (e.g., SSE) with full request/response body processing\n- Kubernetes Ingress Controller compatible with Nginx annotations\n- Microservice gateway with service discovery from Nacos, ZooKeeper, Consul, Eureka\n- Deep integration with Dubbo, Nacos, and Sentinel ecosystems\n- Security gateway capabilities with WAF, JWT, OIDC, HMAC, and other auth methods\n- Out-of-the-box UI console and automatic Let's Encrypt certificate management\n- Extensible via Wasm plugins in Go, Rust, JavaScript with hot reload capability"
+  },
+  "github_url": "https://github.com/alibaba/higress",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Nacos"
+  ],
+  "tags": [
+    "Microservices",
+    "AI"
+  ],
+  "official_address": "https://higress.ai",
+  "product_document": "",
+  "categories": [
+    "Api Gateway",
+    "Cloud Native",
+    "AI",
+    "Wasm",
+    "Observability",
+    "Microservices",
+    "Security"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/higress/image/O1CN01NwxLDd20nxfGBjxmZ___6000000006895-2-tps-960-290.png",
+  "license": "Apache-2.0",
+  "language": "Go"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "nacos",
+  "display_name": "Nacos",
+  "description": {
+    "zh": "Nacos 是一个开源的动态服务发现、配置管理和服务管理平台。它通过提供实时的服务注册、健康检查和集中式配置，帮助用户轻松构建云原生应用和微服务架构。支持 Spring Cloud、Dubbo 和 Kubernetes 等多种服务框架，简化了分布式系统的开发与运维。",
+    "en": "Nacos is an open-source platform for dynamic service discovery, configuration management, and service management. It enables seamless building of cloud-native applications and microservices architectures by providing real-time service registration, health checks, and centralized configuration. Designed to support diverse service frameworks like Spring Cloud, Dubbo, and Kubernetes, Nacos simplifies the development and operation of distributed systems."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 支持云原生和微服务架构的快速开发与部署。\n- 通过解耦服务发现逻辑，避免对特定厂商API的依赖。\n- 动态配置更新无需重启应用，提升运维效率和系统敏捷性。\n\n## 功能列表:\n\n- 基于 DNS 或 HTTP 接口的服务发现与健康检查。\n- 跨环境的动态配置管理，支持实时推送。\n- 支持权重路由的动态 DNS 服务，用于负载均衡和流量控制。\n- 集中的服务与元数据管理仪表板。\n- 支持 Spring Cloud、Dubbo 和 Kubernetes 等多种服务框架。",
+    "en": "## Benefits:\n\n- Enables rapid development and deployment of cloud-native and microservices-based applications.\n- Reduces system coupling by decoupling service discovery from vendor-specific APIs.\n- Improves agility and efficiency with dynamic configuration updates without application restarts.\n\n## Features:\n\n- Service Discovery and Service Health Check via DNS or HTTP interface.\n- Dynamic Configuration Management across environments with real-time push.\n- Dynamic DNS Service with weighted routing for load balancing and traffic control.\n- Centralized Service and MetaData Management dashboard.\n- Supports multiple service frameworks including Spring Cloud, Dubbo, and Kubernetes."
+  },
+  "github_url": "https://github.com/alibaba/nacos",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Higresss"
+  ],
+  "tags": [
+    "Microservices"
+  ],
+  "official_address": "https://nacos.io",
+  "product_document": "",
+  "categories": [
+    "Microservices",
+    "Service Discovery",
+    "Configuration Management",
+    "Cloud Native",
+    "Api Gateway",
+    "MCP",
+    "Dashboard"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/nacos/image/Nacos_Logo.png",
+  "license": "Apache-2.0",
+  "language": "Java"
+}
