@@ -25,72 +25,13 @@ It consists of three core components that perfectly match the needs of different
 2. AI Open Platform Portal (for Developers/Enterprise Internal Users): The portal is the "storefront"面向内外开发者. Developers can complete developer registration, create consumers, obtain credentials, browse and subscribe to AI products, conduct online testing, and clearly monitor their call status and costs.
 3. AI Gateway: As a sub-project of the Higress community, the Higress AI Gateway carries capabilities such as authentication, security, flow control, protocol conversion, and observability for all AI calls.
 
-## Quick Start
-### Preparation
+## Usage Guide
 
-1. **Install Git**
-   https://git-scm.com/downloads
-2. **Install JDK 8 or higher**
-3. **Install Node.js (recommended v20 or above)**
-   https://nodejs.org/
-4. **Install Maven**
-   https://maven.apache.org/download.cgi
-5. **Prepare Database**
-   The backend service depends on an external database. You need to start the database locally (such as MySQL/MariaDB, etc.) and configure the database connection parameters according to the application.yaml file in portal-bootstrap.
+The EDAS version has built-in demo consoles for Higress and Nacos for Himarket, enabling out-of-the-box usability.
 
-### Clone Project Code
-
-```bash
-git clone https://github.com/higress-group/himarket.git
-cd himarket
-```
-
-### Start Backend portal-bootstrap
-
-The backend service depends on an external database. Please refer to `portal-bootstrap/src/main/resources/application.yaml` to configure database-related parameters. These configurations can also be overridden through command-line parameters at startup.
-
-#### Startup Method
-
-First, package:
-
-```bash
-mvn clean package
-```
-
-Then start:
-
-```bash
-java -Ddb.host=xxxx.mysql.rds.aliyuncs.com \
-     -Ddb.port=3306 \
-     -Ddb.name=xxx \
-     -Ddb.username=xxx \
-     -Ddb.password=xxx \
-     -jar portal-bootstrap/target/portal-bootstrap-1.0-SNAPSHOT.jar
-```
-
-### Start Frontend Project
-
-#### 1. portal-web/api-portal-admin
-
-```bash
-cd portal-web/api-portal-admin
-npm install
-npm run dev
-```
-
-The local access address refers to the console output, generally http://localhost:5174
-
-#### 2. portal-web/api-portal-frontend
-
-```bash
-cd portal-web/api-portal-frontend
-npm install
-npm run dev
-```
-
-The local access address is the same as above, generally http://${portal_frontend_domain}:5173
-
-In the local development process, portal_frontend_domain needs domain name resolution configuration (locally modify the /etc/hosts file). In HiMarket's design, the portal domain name is the basis for resolving to the corresponding portal ID.
+Himarket default username/password: admin/admin
+Higress default username/password: admin/admin
+Nacos default username/password: nacos/nacos
 
 ### HiMarket Admin Console
 

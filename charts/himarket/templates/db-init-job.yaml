@@ -1,0 +1,107 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "himarket.fullname" . }}-db-init
+  labels:
+    {{- include "himarket.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        {{- include "himarket.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: db-init
+          image: "{{ .Values.hub }}/{{ .Values.mysql.image.repository }}:{{ .Values.mysql.image.tag }}"
+          command:
+            - /bin/sh
+            - -c
+            - |
+              # 等待 MySQL 服务启动
+              until mysqladmin ping -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} --silent; do
+                echo "Waiting for MySQL..."
+                sleep 5
+              done
+              
+              # 检查并创建 administrator 表（如果不存在）
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                CREATE TABLE IF NOT EXISTS administrator (
+                  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                  created_at DATETIME(3),
+                  updated_at DATETIME(3),
+                  admin_id VARCHAR(64) UNIQUE,
+                  password_hash VARCHAR(255),
+                  username VARCHAR(64) UNIQUE
+                );
+              "
+              
+              # 检查并创建 gateway 表（如果不存在）
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                CREATE TABLE IF NOT EXISTS gateway (
+                  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                  created_at DATETIME(3),
+                  updated_at DATETIME(3),
+                  admin_id VARCHAR(64),
+                  adp_ai_gateway_config JSON,
+                  apig_config JSON,
+                  apsara_gateway_config JSON,
+                  gateway_id VARCHAR(64) UNIQUE,
+                  gateway_name VARCHAR(64),
+                  gateway_type VARCHAR(32),
+                  higress_config JSON
+                );
+              "
+
+              # 检查并创建 nacos_instance 表（如果不存在）
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                CREATE TABLE IF NOT EXISTS nacos_instance (
+                  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                  created_at DATETIME(3),
+                  updated_at DATETIME(3),
+                  access_key VARCHAR(128),
+                  admin_id VARCHAR(64),
+                  description VARCHAR(512),
+                  nacos_id VARCHAR(64) UNIQUE,
+                  nacos_name VARCHAR(64),
+                  password VARCHAR(128),
+                  secret_key VARCHAR(256),
+                  server_url VARCHAR(256),
+                  username VARCHAR(64)
+                );
+              "
+              
+              # 插入 administrator 表的初始化用户数据
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                INSERT INTO administrator (created_at, updated_at, admin_id, password_hash, username) 
+                VALUES (NOW(3), NOW(3), 'admin-6912e28ae4b03d66591fac76', '\$2a\$10\$eZQzVKEBRLv7ZE9iX0ndGucbHdUo60qPUOzP7WbHGe7L0c1Ys9uYu', 'admin')
+                ON DUPLICATE KEY UPDATE updated_at = NOW(3);
+              "
+
+              # 插入 gateway 表数据（使用默认地址，后续可通过管理界面更新）
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                INSERT INTO gateway (created_at, updated_at, admin_id, adp_ai_gateway_config, apig_config, apsara_gateway_config, gateway_id, gateway_name, gateway_type, higress_config) 
+                VALUES (NOW(3), NOW(3), 'admin-6912e28ae4b03d66591fac76', NULL, NULL, NULL, 'higress-6912f73ce4b03d66591fac7f', 'higress-demo', 'HIGRESS', '{\"address\": \"https://demo.higress.io\", \"password\": \"0f8530266b60e144aa065cccd6ac0ff7\", \"username\": \"admin\"}')
+                ON DUPLICATE KEY UPDATE updated_at = NOW(3);
+              "
+              
+              # 插入 nacos_instance 表数据
+              mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
+                INSERT INTO nacos_instance (created_at, updated_at, access_key, admin_id, description, nacos_id, nacos_name, password, secret_key, server_url, username) 
+                VALUES (NOW(3), NOW(3), NULL, 'admin-6912e28ae4b03d66591fac76', NULL, 'nacos-69132974e4b013dfd5208684', 'nacos-demo', 'nacos', NULL, 'https://console.nacos.io', 'nacos')
+                ON DUPLICATE KEY UPDATE updated_at = NOW(3);
+              "
+              
+              echo "Database initialization completed."
+          env:
+            - name: MYSQL_HOST
+              value: mysql-headless-svc
+            - name: MYSQL_USER
+              value: {{ .Values.mysql.auth.username | quote }}
+            - name: MYSQL_PASSWORD
+              value: {{ .Values.mysql.auth.password | quote }}
+            - name: MYSQL_DATABASE
+              value: {{ .Values.mysql.auth.database | quote }}

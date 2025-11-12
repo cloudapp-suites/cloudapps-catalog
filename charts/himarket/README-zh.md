@@ -25,72 +25,13 @@ HiMarket 是一个开箱即用的 AI 开放平台解决方案，可以用于构�
 2. AI 开放平台门户 (for 开发者/企业内部用户)：门户是面向内外开发者的“店面”。开发者可以在此完成开发者注册、创建消费者、获取凭证、浏览和订阅 AI 产品、在线测试，并清晰地监控自己的调用状态和成本。
 3. AI 网关：作为 Higress 社区的子项目，Higress AI 网关承载所有 AI 调用的认证、安全、流控、协议转换以及可观测性等能力。
 
-## 快速入门
-### 准备工作
+## 使用指南
 
-1. **安装 Git**
-   https://git-scm.com/downloads
-2. **安装 JDK 8 或者更高版本**
-3. **安装 Node.js（建议 v20 及以上）**
-   https://nodejs.org/
-4. **安装 Maven**
-   https://maven.apache.org/download.cgi
-5. **准备数据库**
-   后端服务依赖外部数据库。你需要本地启动数据库（如 MySQL/MariaDB 等），并根据 portal-bootstrap 中的 application.yaml 文件配置数据库连接参数。
+EDAS上版本已经为 Himarket 内置 Higress 和 Nacos 的demo控制台，实现开箱即用。
 
-### 克隆项目代码
-
-```bash
-git clone https://github.com/higress-group/himarket.git
-cd himarket
-```
-
-### 启动后端 portal-bootstrap
-
-后端服务依赖外部数据库。请参考 `portal-bootstrap/src/main/resources/application.yaml` 配置数据库相关参数。也可以在启动时通过命令行参数覆盖这些配置。
-
-#### 启动方式
-
-先打包：
-
-```bash
-mvn clean package
-```
-
-再启动：
-
-```bash
-java -Ddb.host=xxxx.mysql.rds.aliyuncs.com \
-     -Ddb.port=3306 \
-     -Ddb.name=xxx \
-     -Ddb.username=xxx \
-     -Ddb.password=xxx \
-     -jar portal-bootstrap/target/portal-bootstrap-1.0-SNAPSHOT.jar
-```
-
-### 启动前端项目
-
-#### 1. portal-web/api-portal-admin
-
-```bash
-cd portal-web/api-portal-admin
-npm install
-npm run dev
-```
-
-本地访问地址参考控制台输出，一般为 http://localhost:5174
-
-#### 2. portal-web/api-portal-frontend
-
-```bash
-cd portal-web/api-portal-frontend
-npm install
-npm run dev
-```
-
-本地访问地址同上，一般为 http://${portal_frontend_domain}:5173
-
-在本地开发过程中，portal_frontend_domain 需要配置域名解析（本地修改 /etc/hosts 文件），在 HiMarket 的设计中，门户域名是解析到对应门户 ID 的依据。
+Himarket 默认账户名密码：admin/admin
+Higress 默认账户名密码：admin/admin
+Nacos 默认账户名密码：nacos/nacos
 
 ### HiMarket 后台管理
 
