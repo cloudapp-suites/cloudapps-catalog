@@ -14,7 +14,10 @@
     "zh": "./README-zh.md",
     "en": "./README.md"
   },
-  "alternative_products": [],
+  "alternative_products": [
+    "CordysCRM",
+    "Cockpit CMS"
+  ],
   "tags": [],
   "official_address": "https://twenty.com",
   "product_document": "https://docs.twenty.com/",

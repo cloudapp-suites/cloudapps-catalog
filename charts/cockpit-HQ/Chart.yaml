@@ -1,0 +1,10 @@
+apiVersion: v2
+name: cockpit
+description: A Helm chart for Cockpit CMS
+type: application
+version: 0.1.0
+appVersion: core-latest
+annotations:
+  artifacthub.io/cr.source: "cockpithq/cockpit"
+  artifacthub.io/own.source: "cockpit"
+  artifacthub.io/cr.update-strategy: "no"
