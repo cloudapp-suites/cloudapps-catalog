@@ -25,3 +25,7 @@ name: nacos
 sources:
 - https://github.com/alibaba/nacos
 version: 2.1.10
+annotations:
+  artifacthub.io/cr.source: "nacos/nacos-server"
+  artifacthub.io/own.source: "nacos/nacos-server"
+  artifacthub.io/cr.update-strategy: "latest"

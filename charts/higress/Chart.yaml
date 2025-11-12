@@ -19,6 +19,6 @@ sources:
 type: application
 version: 2.1.9-rc.1
 annotations:
-  artifacthub.io/cr.source: "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress"
+  artifacthub.io/cr.source: "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/higress"
   artifacthub.io/own.source: "higress"
   artifacthub.io/cr.update-strategy: "no"
