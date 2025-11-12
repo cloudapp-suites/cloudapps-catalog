@@ -1,0 +1,10 @@
+apiVersion: v2
+name: dialoqbase
+description: A Helm chart for Dialoqbase - Create chatbots with ease
+type: application
+version: 0.1.0
+appVersion: v1.11.4
+annotations:
+  artifacthub.io/cr.source: "n4z3m/dialoqbase"
+  artifacthub.io/own.source: "dialoqbase"
+  artifacthub.io/cr.update-strategy: "latest"

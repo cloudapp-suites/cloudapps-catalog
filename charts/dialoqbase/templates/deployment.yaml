@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dialoqbase.fullname" . }}
+  labels:
+    {{- include "dialoqbase.labels" . | nindent 4 }}
+spec:
+  strategy:
+    type: Recreate
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "dialoqbase.appSelectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "dialoqbase.appSelectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+
+            - name: DATABASE_URL
+              value: {{ .Values.env.DATABASE_URL }}
+            - name: DB_REDIS_URL
+              value: {{ .Values.env.DB_REDIS_URL }}
+            - name: DB_SEARXNG_URL
+              value: {{ .Values.env.DB_SEARXNG_URL }}
+            - name: DB_SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "dialoqbase.fullname" . }}-secret
+                  key: session-secret
+            - name: DB_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "dialoqbase.fullname" . }}-secret
+                  key: secret-key
+            - name: DB_QUEUE_CONCURRENCY
+              value: "{{ .Values.env.DB_QUEUE_CONCURRENCY }}"
+            - name: DB_SESSION_SECURE
+              value: "{{ .Values.env.DB_SESSION_SECURE }}"
+            {{- range $key, $val := .Values.externalEnv.model }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: uploads
+              mountPath: /app/uploads
+      volumes:
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: {{ include "dialoqbase.fullname" . }}-uploads-pvc
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "dialoqbase.fullname" . }}-uploads-pvc
+  labels:
+    {{- include "dialoqbase.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.persistent.storageClassName | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistent.storage }}

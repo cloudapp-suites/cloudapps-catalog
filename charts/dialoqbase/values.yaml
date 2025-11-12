@@ -1,0 +1,130 @@
+# Default values for dialoqbase.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: n4z3m/dialoqbase
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag:
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: LoadBalancer
+  port: 3000
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# Environment variables for dialoqbase
+env:
+  # Database connection
+  DATABASE_URL: "postgres://postgres:postgres@dialoqbase-postgres:5432/dialoqbase?connection_limit=15&pool_timeout=0"
+  
+  # Redis connection
+  DB_REDIS_URL: "redis://dialoqbase-redis:6379"
+  
+  # Searxng connection
+  DB_SEARXNG_URL: "http://dialoqbase-searxng:8080"
+  
+  # Session configuration
+  DB_SESSION_SECRET: ""
+  
+  # Secret key for JWT token generation
+  DB_SECRET_KEY: "super-secret-key"
+  
+  # Queue concurrency
+  DB_QUEUE_CONCURRENCY: 1
+  
+  # Session secure
+  DB_SESSION_SECURE: "false"
+
+externalEnv:
+  model:
+    # You can get your API key from https://platform.openai.com/account/api-keys
+    # If you have Azure openai key please refer here https://js.langchain.com/docs/getting-started/guide-llm
+    OPENAI_API_KEY: ""
+    # Cohere API key  -> https://dashboard.cohere.ai/api-keys
+    COHERE_API_KEY: ""
+    # Huggingface Hub API key -> https://huggingface.co/settings/token
+    HUGGINGFACEHUB_API_KEY: ""
+    # Anthropic API key -> https://earlyaccess.anthropic.com/
+    ANTHROPIC_API_KEY: ""
+    # Github personal access token -> https://github.com/settings/tokens/new
+    GITHUB_ACCESS_TOKEN: ""
+    # Google PaLM API key -> https://makersuite.google.com/app/apikey
+    GOOGLE_API_KEY: ""
+    # Eleven labs API Key -> https://elevenlabs.io/
+    ELEVENLABS_API_KEY: ""
+    # Jina API key -> https://jina.ai/embeddings/
+    JINA_API_KEY: ""
+
+
+# PostgreSQL configuration
+postgresql:
+  image:
+    repository: ankane-pgvector
+    tag: latest
+  auth:
+    postgresUser: postgres
+    postgresPassword: postgres
+    database: dialoqbase
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+  resources: {}
+
+# Redis configuration
+redis:
+  image:
+    repository: redis
+    tag: latest
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+# Searxng configuration
+searxng:
+  image:
+    repository: searxng
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 8080
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+persistent:
+  storageClassName: "alicloud-disk-essd"
+  storage: 20Gi
