@@ -1,0 +1,46 @@
+{
+  "name": "draw-a-ui",
+  "display_name": "Draw a UI",
+  "description": {
+    "zh": "draw-a-ui 是一个利用 tldraw 和 GPT-4 Vision API 将手绘线框图转换为 HTML 代码的 Web 应用。用户可以绘制 UI 布局，应用将生成对应的 Tailwind CSS HTML 文件。该项目为概念验证工具，仅用于演示，不适合生产环境使用。",
+    "en": "draw-a-ui is a web application that leverages tldraw and the GPT-4 Vision API to convert hand-drawn wireframes into HTML code. Users can sketch a UI layout, and the app generates a corresponding HTML file using Tailwind CSS. It's a proof-of-concept tool designed for demonstration purposes, not production use."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过 AI 技术将草图快速转换为 HTML，加快原型开发。\n- 集成 tldraw 实现直观的 UI 线框绘制。\n- 利用 GPT-4 Vision API 进行智能代码生成。\n\n## 功能列表:\n\n- 提供用于创建 UI 线框的绘图画布。\n- 支持将 SVG 画布导出为 PNG 用于 AI 处理。\n- 自动生成带有 Tailwind CSS 的 HTML 文件。\n- 使用 Next.js 14 构建，支持现代 Web 开发。\n- 需要具有 GPT-4 Vision 权限的 OpenAI API 密钥。",
+    "en": "## Benefits:\n\n- Enables rapid prototyping by converting sketches into HTML with AI.\n- Integrates tldraw for intuitive UI wireframing.\n- Uses GPT-4 Vision API for smart code generation.\n\n## Features:\n\n- Drawing canvas for creating UI wireframes.\n- Export of SVG canvas to PNG for AI processing.\n- Automatic HTML generation with Tailwind CSS.\n- Built with Next.js 14 for modern web development.\n- Requires OpenAI API key with GPT-4 Vision access."
+  },
+  "github_url": "https://github.com/SawyerHood/draw-a-ui",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Drawio",
+    "Excalidraw"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "Web Development",
+    "Next.js",
+    "HTML Generation",
+    "Tailwind CSS",
+    "Wireframing",
+    "Wireframe",
+    "UI Prototyping",
+    "GPT-4-Vision",
+    "Visual Design",
+    "AI-Powered Tools",
+    "Design Automation",
+    "AI Design Tools",
+    "SVG to HTML",
+    "Frontend Development"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/draw-a-ui/image/demo.gif",
+  "language": "TypeScript",
+  "license": "MIT",
+  "phase": 2
+}
