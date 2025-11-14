@@ -67,7 +67,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-external-svc
+  name: {{ .Release.Name }}-mysql-external-svc
 spec:
   type: {{ .Values.mysql.service.external.type }}
   ports:
@@ -83,7 +83,7 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: {{ .Release.Name }}-mysql
   labels:
     app: mysql
 spec:

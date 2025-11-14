@@ -776,12 +776,12 @@ redis:
       enabled: false
       # -- If defined, storageClassName: <storageClass>
       # -- If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
-      storageClass: ""
+      storageClass: "alicloud-disk-essd"
       # -- Persistent Volume access modes
       accessModes:
         - ReadWriteOnce
       # -- Persistent Volume size
-      size: 1Gi
+      size: 20Gi
 
 pluginServer:
   name: "higress-plugin-server"

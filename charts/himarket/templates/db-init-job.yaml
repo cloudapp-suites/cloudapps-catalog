@@ -31,11 +31,11 @@ spec:
               mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
                 CREATE TABLE IF NOT EXISTS administrator (
                   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                  created_at DATETIME(3),
-                  updated_at DATETIME(3),
-                  admin_id VARCHAR(64) UNIQUE,
-                  password_hash VARCHAR(255),
-                  username VARCHAR(64) UNIQUE
+                  admin_id VARCHAR(64) NOT NULL UNIQUE,
+                  username VARCHAR(64) NOT NULL UNIQUE,
+                  password_hash VARCHAR(255) NOT NULL,
+                  created_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3),
+                  updated_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)
                 );
               "
               
@@ -43,16 +43,16 @@ spec:
               mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
                 CREATE TABLE IF NOT EXISTS gateway (
                   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                  created_at DATETIME(3),
-                  updated_at DATETIME(3),
-                  admin_id VARCHAR(64),
-                  adp_ai_gateway_config JSON,
+                  gateway_name VARCHAR(64) NOT NULL,
+                  gateway_type VARCHAR(32) NOT NULL,
+                  gateway_id VARCHAR(64) NOT NULL UNIQUE,
+                  admin_id VARCHAR(64) NOT NULL,
                   apig_config JSON,
+                  adp_ai_gateway_config JSON,
+                  higress_config JSON,
                   apsara_gateway_config JSON,
-                  gateway_id VARCHAR(64) UNIQUE,
-                  gateway_name VARCHAR(64),
-                  gateway_type VARCHAR(32),
-                  higress_config JSON
+                  created_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3),
+                  updated_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)
                 );
               "
 
@@ -60,17 +60,17 @@ spec:
               mysql -h mysql-headless-svc -u {{ .Values.mysql.auth.username }} -p{{ .Values.mysql.auth.password }} {{ .Values.mysql.auth.database }} -e "
                 CREATE TABLE IF NOT EXISTS nacos_instance (
                   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                  created_at DATETIME(3),
-                  updated_at DATETIME(3),
-                  access_key VARCHAR(128),
-                  admin_id VARCHAR(64),
-                  description VARCHAR(512),
-                  nacos_id VARCHAR(64) UNIQUE,
-                  nacos_name VARCHAR(64),
+                  nacos_name VARCHAR(64) NOT NULL,
+                  nacos_id VARCHAR(64) NOT NULL UNIQUE,
+                  admin_id VARCHAR(64) NOT NULL,
+                  server_url VARCHAR(256) NOT NULL,
+                  username VARCHAR(64),
                   password VARCHAR(128),
+                  access_key VARCHAR(128),
                   secret_key VARCHAR(256),
-                  server_url VARCHAR(256),
-                  username VARCHAR(64)
+                  description VARCHAR(512),
+                  created_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3),
+                  updated_at DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)
                 );
               "
               
