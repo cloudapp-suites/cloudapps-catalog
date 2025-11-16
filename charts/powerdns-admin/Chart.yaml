@@ -1,12 +1,11 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `common` chart dependency to version 4.5.2
-  artifacthub.io/cr.source: "powerdnsadmin/pda-legacy"
-  artifacthub.io/own.source: "powerdnsadmin_pda-legacy"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/changes: "- kind: changed\n  description: Upgraded `common` chart\
+    \ dependency to version 4.5.2"
+  artifacthub.io/cr.source: powerdnsadmin/pda-legacy
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: powerdnsadmin_pda-legacy
 apiVersion: v2
-appVersion: 0.2.4
+appVersion: v0.4.2
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com
