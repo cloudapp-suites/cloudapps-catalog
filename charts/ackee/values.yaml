@@ -25,7 +25,7 @@ ackee:
   corsHeaders: ""
 
 secret:
-  PASSWORD: "secretpassword"
+  PASSWORD: "secretpasswordtest"
 
 image:
   # Ackee Image name
