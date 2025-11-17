@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 结合视觉与文本智能，提供更深入的洞察\n- 实现实时多模态问答能力\n- 通过网络增强推理提升AI理解力\n\n## 功能列表:\n\n- 使用 Gemini 2.0 Flash 进行视频分析\n- 集成 DuckDuckGo 实现网络研究\n- 支持多种视频格式（MP4、MOV、AVI）\n- 实时视频处理\n- 视觉与文本联合分析",
     "en": "## Benefits:\n\n- Combines visual and textual intelligence for deeper insights\n- Enables real-time, multimodal question answering\n- Enhances AI understanding through web-augmented reasoning\n\n## Features:\n\n- Video analysis using Gemini 2.0 Flash\n- Web research integration via DuckDuckGo\n- Support for multiple video formats (MP4, MOV, AVI)\n- Real-time video processing\n- Combined visual and textual analysis"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/multimodal_ai_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

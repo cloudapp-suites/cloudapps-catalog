@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 结合自动网页抓取与高级AI推理，提供全面且富含上下文的研究结果\n- 自动化数据采集和洞察生成，显著减少人工研究时间\n- 提供结构化的可下载输出，便于集成到工作流程中\n\n## 功能列表:\n\n- 深度网络研究：自动搜索网页、提取内容并综合发现\n- 增强分析：使用OpenAI的Agents SDK为研究结果添加更多背景和见解\n- 交互式UI：简洁的Streamlit界面，便于操作\n- 报告可下载：将研究成果导出为Markdown文件",
     "en": "## Benefits:\n\n- Delivers comprehensive and context-rich research by combining automated web scraping with advanced AI reasoning\n- Reduces manual research time by automating both data collection and insight generation\n- Provides structured, downloadable outputs for easy integration into workflows\n\n## Features:\n\n- Deep Web Research: Automatically searches the web, extracts content, and synthesizes findings\n- Enhanced Analysis: Uses OpenAI's Agents SDK to elaborate on research findings with additional context and insights\n- Interactive UI: Clean Streamlit interface for easy interaction\n- Downloadable Reports: Export research findings as markdown files"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_ai_agents/single_agent_apps/ai_deep_research_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 借助AI实现医学影像的快速初步分析\n- 提供结构化的详细诊断报告，并附带面向患者的通俗解释\n- 通过谷歌提供的每日免费API额度，降低成本，易于访问\n\n## 功能列表:\n\n- 影像类型识别（X光、MRI、CT、超声）\n- 解剖区域检测\n- 关键发现与观察结果列表\n- 潜在异常检测\n- 图像质量评估\n- 研究与参考文献生成\n- 包含鉴别诊断的诊断评估\n- 严重程度评估与诊断排序\n- 面向患者的简化、基于原理的解释",
     "en": "## Benefits:\n\n- Enables rapid preliminary analysis of medical imaging with AI support\n- Provides structured, detailed diagnostic reports with patient-friendly explanations\n- Low-cost and accessible through free daily API credits from Google\n\n## Features:\n\n- Image Type Identification (X-ray, MRI, CT scan, ultrasound)\n- Anatomical Region Detection\n- Key Findings and Observations listing\n- Potential Abnormalities Detection\n- Image Quality Assessment\n- Research and Reference generation\n- Diagnostic Assessment with differential diagnoses\n- Severity assessment and diagnosis ranking\n- Simplified, first-principles explanations for patients"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_medical_imaging_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

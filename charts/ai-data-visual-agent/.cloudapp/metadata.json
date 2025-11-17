@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 让非技术用户也能通过自然语言轻松探索数据\n- 通过自动化生成可视化和洞察，显著加快数据分析速度\n- 支持多种先进的大语言模型，灵活平衡性能与成本\n\n## 功能列表:\n\n- 用简单英文向数据提问\n- 实时获取可视化图表和统计分析\n- 获得发现结果的详细解释和洞察\n- 支持交互式追问\n- 自动选择合适的图表类型\n- 动态生成可视化图表\n- 支持统计类可视化\n- 支持自定义图表格式和样式\n- 使用Meta-Llama 3.1 405B进行复杂分析\n- 使用DeepSeek V3获取深入洞察\n- 使用Qwen 2.5 7B进行快速分析\n- 使用Meta-Llama 3.3 70B处理高级查询",
     "en": "## Benefits:\n\n- Enables non-technical users to explore data using natural language\n- Accelerates data analysis with automated visualization and insight generation\n- Supports multiple state-of-the-art LLMs for flexible performance and cost trade-offs\n\n## Features:\n\n- Ask questions about your data in plain English\n- Get instant visualizations and statistical analysis\n- Receive explanations of findings and insights\n- Interactive follow-up questioning\n- Automatic choice of appropriate chart types\n- Dynamic visualization generation\n- Statistical visualization support\n- Custom plot formatting and styling\n- Meta-Llama 3.1 405B for complex analysis\n- DeepSeek V3 for detailed insights\n- Qwen 2.5 7B for quick analysis\n- Meta-Llama 3.3 70B for advanced queries"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_data_visualisation_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

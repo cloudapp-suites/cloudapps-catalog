@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 通过对话式 AI 简化对复杂学术研究的访问\n- 通过直观探索 arXiv 论文提升研究效率\n- 利用先进的大语言模型（GPT-4o）提供准确且上下文相关的回答\n\n## 功能列表:\n\n- 与 arXiv 进行对话式交互\n- 访问并探索大量研究论文\n- 使用 OpenAI GPT-4o 获取智能回复",
     "en": "## Benefits:\n\n- Simplifies access to complex academic research through conversational AI\n- Enhances research efficiency by enabling intuitive exploration of arXiv papers\n- Leverages state-of-the-art LLM (GPT-4o) for accurate and contextual responses\n\n## Features:\n\n- Engage in conversational interactions with arXiv\n- Access and explore a vast collection of research papers\n- Utilize OpenAI GPT-4o for intelligent responses"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_research_papers",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

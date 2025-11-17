@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 基于空气质量及用户健康状况提供个性化健康建议\n- 支持基于数据的户外活动安全决策\n- 结合AI推理与实时环境数据，提供可操作的洞察\n\n## 功能列表:\n\n- 多智能体系统，包含专用的AQI分析器和健康建议代理\n- 实时监控空气质量指数（AQI）、PM2.5、PM10、一氧化碳、温度、湿度和风速\n- 健康影响评估与活动安全性建议\n- 基于位置的空气质量分析\n- 考虑用户医疗状况以提供定制化建议\n- 针对特定活动的推荐，便于规划\n- 可下载的分析报告\n- 示例查询功能，便于快速测试和上手\n- 集成Firecrawl获取数据，结合OpenAI实现AI处理",
     "en": "## Benefits:\n\n- Delivers personalized health recommendations based on air quality and user conditions\n- Enables data-driven decisions for safer outdoor activities\n- Combines AI reasoning with real-time environmental data for actionable insights\n\n## Features:\n\n- Multi-Agent System with dedicated AQI Analyzer and Health Recommendation Agent\n- Real-time monitoring of Air Quality Index (AQI), PM2.5, PM10, CO, temperature, humidity, and wind speed\n- Health impact assessment and activity safety recommendations\n- Location-based air quality analysis\n- Consideration of user medical conditions for tailored advice\n- Activity-specific recommendations for better planning\n- Downloadable analysis reports\n- Example queries for quick testing and onboarding\n- Integration with Firecrawl for data fetching and OpenAI for AI processing"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/advanced_ai_agents/multi_agent_apps/ai_aqi_analysis_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

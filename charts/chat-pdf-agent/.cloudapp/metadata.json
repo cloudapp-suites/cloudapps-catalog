@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 通过自然语言查询实现对复杂 PDF 内容的直观交互\n- 利用人工智能减少从文档中提取信息所需的人工操作\n- 轻量高效，代码简洁，依赖少，易于部署\n\n## 功能列表:\n\n- 上传 PDF 文档\n- 针对 PDF 内容提问\n- 基于 RAG 和选定的大语言模型获取准确答案",
     "en": "## Benefits:\n\n- Enables intuitive interaction with complex PDF content through natural language queries\n- Reduces manual effort in extracting information from documents using AI\n- Lightweight and easy to set up with minimal code and dependencies\n\n## Features:\n\n- Upload a PDF document\n- Ask questions about the content of the PDF\n- Get accurate answers using RAG and the selected LLM"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_pdf",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

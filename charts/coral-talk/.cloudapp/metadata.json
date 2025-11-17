@@ -1,6 +1,6 @@
 {
   "name": "coral-talk",
-  "display_name": "talk",
+  "display_name": "Coral talk",
   "description": {
     "zh": "Coral 是由 Vox Media 开发的开源评论平台，旨在通过改进审核、评论展示和对话管理来提升在线讨论质量。它帮助出版商在网站上建立更安全、更智能且更具参与性的评论区。Coral 注重社区健康，支持自定义审核工作流和现有用户系统的集成。",
     "en": "Coral is an open-source commenting platform developed by Vox Media that aims to improve online discussions through better moderation, comment display, and conversation management. It enables publishers to host safer, smarter, and more engaging comment sections on their websites. Designed with community health in mind, Coral supports customizable workflows for comment moderation and integration with existing user systems."

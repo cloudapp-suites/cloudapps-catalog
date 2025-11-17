@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 让非技术人员无需 SQL 知识即可执行复杂的数据分析\n- 通过自然语言交互加速数据洞察的生成\n- 结合强大的 AI 模型与高效的内存数据处理能力\n\n## 功能列表:\n\n- 支持上传 CSV 和 Excel 文件\n- 自动检测数据类型并推断模式\n- 支持多种文件格式\n- 将自然语言问题转换为 SQL 查询\n- 快速获取关于数据的答案\n- 无需 SQL 知识\n- 执行复杂的数据聚合\n- 过滤和排序数据\n- 生成统计摘要\n- 创建数据可视化图表\n- 用户友好的 Streamlit 界面\n- 实时查询处理\n- 清晰的结果展示",
     "en": "## Benefits:\n\n- Enables non-technical users to perform complex data analysis without SQL knowledge\n- Accelerates data insight generation through natural language interaction\n- Combines powerful AI models with efficient in-memory data processing\n\n## Features:\n\n- Upload CSV and Excel files\n- Automatic data type detection and schema inference\n- Support for multiple file formats\n- Convert natural language questions into SQL queries\n- Get instant answers about your data\n- No SQL knowledge required\n- Perform complex data aggregations\n- Filter and sort data\n- Generate statistical summaries\n- Create data visualizations\n- User-friendly Streamlit interface\n- Real-time query processing\n- Clear result presentation"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/ai_data_analysis_agent",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

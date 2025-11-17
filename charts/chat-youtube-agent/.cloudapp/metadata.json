@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 通过AI实现与YouTube视频内容的交互式问答\n- 提升长视频内容的可访问性和理解效率\n- 利用强大的大语言模型和RAG技术提供准确、上下文感知的回答\n\n## 功能列表:\n\n- 输入YouTube视频URL\n- 对视频内容提出问题\n- 使用RAG和选定的大语言模型获取准确答案",
     "en": "## Benefits:\n\n- Enables interactive Q&A with YouTube video content using AI\n- Improves accessibility and comprehension of long-form video content\n- Leverages powerful LLMs and RAG for accurate, context-aware responses\n\n## Features:\n\n- Input a YouTube video URL\n- Ask questions about the content of the video\n- Get accurate answers using RAG and the selected LLM"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_youtube_videos",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"

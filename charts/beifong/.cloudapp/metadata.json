@@ -9,7 +9,7 @@
     "zh": "## 产品优势:\n\n- 将用户信任的在线内容自动转化为个性化的音频播客\n- 仅聚焦用户自主筛选的信息源，消除信息噪音\n- 通过AI生成的音频摘要实现免动手知识获取\n- 高度可扩展，支持自定义处理器和第三方工具集成\n\n## 功能列表:\n\n- 基于AI的内容分析与摘要\n- 自动播客脚本生成\n- 支持OpenAI、ElevenLabs及开源引擎（如Kokoro）的文本转语音\n- 基于浏览器自动化的社交媒体数据采集（X.com、Facebook等）\n- 使用FAISS向量索引的语义搜索\n- 通过Python模块扩展自定义内容处理器\n- 可调度的内容采集与处理工作流\n- Slack集成以实现对话式AI交互\n- 持久化浏览器会话用于登录站点访问\n- 支持本地及远程部署，基于Redis与Python后端",
     "en": "## Benefits:\n\n- Turns your trusted online content into personalized audio podcasts automatically\n- Eliminates information noise by focusing only on user-curated sources\n- Enables hands-free knowledge consumption through AI-generated audio summaries\n- Highly extensible with support for custom processors and third-party tools\n\n## Features:\n\n- AI-powered content analysis and summarization\n- Automated podcast script generation\n- Text-to-speech support via OpenAI, ElevenLabs, and open-source engines (e.g., Kokoro)\n- Browser automation for social media data collection (X.com, Facebook, etc.)\n- Semantic search using FAISS vector indexing\n- Custom content processor extensibility via Python modules\n- Scheduled content collection and processing workflows\n- Slack integration for conversational AI interaction\n- Persistent browser sessions for authenticated site access\n- Local and remote deployment options with Redis and Python backend"
   },
-  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_ai_agents/multi_agent_apps/ai_news_and_podcast_agents",
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
   "readme": {
     "zh": "./README-zh.md",
     "en": "./README.md"
