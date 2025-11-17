@@ -1,0 +1,36 @@
+{
+  "name": "mindsdb",
+  "display_name": "MindsDB",
+  "description": {
+    "zh": "MindsDB 是一个开源服务器，使人类、AI、智能体和应用程序能够对大规模数据源进行高精度查询。它允许用户连接、统一并交互分布在数据库、数据仓库和 SaaS 应用中的数据。通过结合基于 SQL 的数据管理和 AI 驱动的查询能力，MindsDB 使得复杂数据可通过自然语言或程序化接口轻松访问。",
+    "en": "MindsDB is an open-source server that enables humans, AI, agents, and applications to query large-scale data sources with high accuracy. It allows users to connect, unify, and interact with distributed data across databases, data warehouses, and SaaS applications. By combining SQL-based data management with AI-powered querying, MindsDB makes complex data accessible through natural language or programmatic interfaces."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无需ETL即可从分散和联邦式数据源中实现实时、高精度的洞察。\n- 通过支持对结构化和非结构化数据的自然语言交互，弥合AI与企业数据之间的鸿沟。\n- 提供高度灵活的部署选项，支持Docker和深度定制。\n\n## 功能列表:\n\n- 连接数百种数据源，包括数据库、数据仓库和SaaS应用。\n- 创建知识库以索引和组织非结构化数据，实现高效问答。\n- 构建视图以在多个数据源之间统一数据，无需ETL。\n- 使用任务（Jobs）自动化数据同步和转换。\n- 配置AI智能体（Agents）对统一后的数据进行提问和响应。\n- 内置MCP（模型上下文协议）服务器，便于与AI应用无缝集成。",
+    "en": "## Benefits:\n\n- Enables accurate, real-time insights from disparate and federated data sources without ETL.\n- Bridges the gap between AI and enterprise data by allowing natural language interaction with structured and unstructured data.\n- Highly flexible deployment options with support for Docker and full customization.\n\n## Features:\n\n- Connect to hundreds of data sources including databases, data warehouses, and SaaS applications.\n- Create Knowledge Bases to index and organize unstructured data for efficient Q&A.\n- Build Views to unify data across multiple sources without ETL.\n- Automate data synchronization and transformation using Jobs.\n- Configure AI Agents to answer questions over unified data.\n- Built-in MCP (Model Context Protocol) server for seamless integration with AI applications."
+  },
+  "github_url": "https://github.com/mindsdb/mindsdb",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://mindsdb.com",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Ai Integration",
+    "Data Unification",
+    "Knowledge Management",
+    "Real-Time",
+    "API"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/mindsdb/image/mindsdb_logo.png",
+  "license": "MIT",
+  "language": "Python",
+  "phase": 2
+}
