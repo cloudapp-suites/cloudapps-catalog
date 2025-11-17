@@ -1,0 +1,92 @@
+# Default values for AgentGPT deployment
+
+# Global configuration
+global:
+  imageRegistry: ""
+  imageTag: "latest"
+  imagePullPolicy: IfNotPresent
+
+# Frontend configuration
+frontend:
+  image:
+    repository: tuapuikia/agentgpt
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 3000
+  env:
+    NODE_ENV: "development"
+    PLATFORM_URL: "http://agentgpt-platform:8000"
+    NEXT_PUBLIC_BACKEND_URL: "http://agentgpt-platform:8000"
+    NEXTAUTH_URL: ""
+    DATABASE_URL: "mysql://reworkd_platform:reworkd_platform@agentgpt-mysql:3306/reworkd_platform"
+  resources: {}
+  # limits:
+  #   cpu: 500m
+  #   memory: 512Mi
+  # requests:
+  #   cpu: 200m
+  #   memory: 256Mi
+
+# Platform (Backend) configuration
+platform:
+  image:
+    repository: agentgpt-platform
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8000
+  env:
+    REWORKD_PLATFORM_HOST: "0.0.0.0"
+    REWORKD_PLATFORM_DB_HOST: "agentgpt-mysql"
+    REWORKD_PLATFORM_DB_PORT: "3306"
+    REWORKD_PLATFORM_DB_USER: "reworkd_platform"
+    REWORKD_PLATFORM_DB_PASS: "reworkd_platform"
+    REWORKD_PLATFORM_DB_BASE: "reworkd_platform"
+    REWORKD_PLATFORM_ENVIRONMENT: "production"
+    REWORKD_PLATFORM_FF_MOCK_MODE_ENABLED: "false"
+    REWORKD_PLATFORM_FRONTEND_URL: "http://agentgpt-frontend:3000"
+    REWORKD_PLATFORM_OPENAI_API_BASE: "https://api.openai.com/v1"
+    REWORKD_PLATFORM_DATABASE_URL: "mysql://reworkd_platform:reworkd_platform@agentgpt-mysql:3306/reworkd_platform"
+  resources: {}
+  # limits:
+  #   cpu: 500m
+  #   memory: 512Mi
+  # requests:
+  #   cpu: 200m
+  #   memory: 256Mi
+
+# MySQL database configuration
+mysql:
+  enabled: true
+  image:
+    repository: mysql
+    tag: 8.0
+  imagePullPolicy: IfNotPresent
+  rootPassword: "reworkd_platform"
+  user: "reworkd_platform"
+  password: "reworkd_platform"
+  database: "reworkd_platform"
+  service:
+    port: 3306
+  resources: {}
+  # limits:
+  #   cpu: 500m
+  #   memory: 512Mi
+  # requests:
+  #   cpu: 200m
+  #   memory: 256Mi
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+
+externalEnv:
+  model:
+    OPENAI_API_KEY: "your-openai-api-key"
+
+# Job configuration
+job:
+  kubectlImage: kubectl.image
