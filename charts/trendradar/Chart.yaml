@@ -1,0 +1,10 @@
+apiVersion: v2
+name: trendradar
+description: A Helm chart for TrendRadar - Hot News Aggregator and Push System
+type: application
+version: 0.1.0
+appVersion: 3.0.5
+annotations:
+  artifacthub.io/cr.source: "wantcat/trendradar"
+  artifacthub.io/own.source: "trendradar"
+  artifacthub.io/cr.update-strategy: "latest"
