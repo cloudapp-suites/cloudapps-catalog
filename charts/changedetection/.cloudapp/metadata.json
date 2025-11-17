@@ -1,5 +1,5 @@
 {
-  "name": "change detection",
+  "name": "changedetection",
   "display_name": "Change Detection",
   "description": {
     "zh": "changedetection.io 是一个开源的网站监控工具，能够实时检测网页内容变化并即时发送警报。它帮助用户追踪价格变动、内容更新以及条件性变化。该工具支持交互式浏览器操作、通过可视化工具选择性监控，并集成了多种通知服务。",

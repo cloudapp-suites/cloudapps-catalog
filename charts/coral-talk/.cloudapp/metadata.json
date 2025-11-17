@@ -1,5 +1,5 @@
 {
-  "name": "talk",
+  "name": "coral-talk",
   "display_name": "talk",
   "description": {
     "zh": "Coral 是由 Vox Media 开发的开源评论平台，旨在通过改进审核、评论展示和对话管理来提升在线讨论质量。它帮助出版商在网站上建立更安全、更智能且更具参与性的评论区。Coral 注重社区健康，支持自定义审核工作流和现有用户系统的集成。",

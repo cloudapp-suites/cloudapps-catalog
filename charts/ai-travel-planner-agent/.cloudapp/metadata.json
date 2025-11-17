@@ -3,7 +3,7 @@
   "display_name": "Travel Planner Agent",
   "description": {
     "zh": "MCP Travel Planner Agent Team 是一个基于 Streamlit 构建的AI旅行规划应用，利用多个模型上下文协议（MCP）服务器生成高度详细且个性化的旅行行程。它通过专用的 MCP 服务器集成 Airbnb 和 Google Maps 的实时数据，提供准确的住宿信息、距离计算和位置服务。该应用还整合了天气预报、餐厅与景点详情以及预算分析，帮助用户轻松制定全面的旅行计划。",
-    "en": "The MCP Travel Planner Agent Team is an AI-powered travel planning application built with Streamlit that generates highly detailed, personalized itineraries by leveraging multiple Model Context Protocol (MCP) servers. It integrates real-time data from Airbnb and Google Maps via dedicated MCP servers to provide accurate accommodation options, distance calculations, and location-based services. The app also incorporates weather forecasts, restaurant and attraction details, and budget analysis, enabling users to plan comprehensive trips with ease."
+    "en": "An AI travel planner using Streamlit and MCP servers, integrating Airbnb and Google Maps for real-time data on accommodations, distances, weather, restaurants, attractions, and budget analysis to create personalized itineraries."
   },
   "feature": {
     "zh": "## 产品优势:\n\n- 利用AI和实时数据提供高度个性化的旅行行程\n- 借助实时住宿和交通数据提升行程规划准确性\n- 自动化复杂的旅行安排和调度，节省用户时间\n\n## 功能列表:\n\n- 详细的每日行程，包含时间、地址和费用\n- 通过Airbnb MCP实现实时住宿价格和可用性集成\n- 使用Google Maps MCP进行精确的距离和交通时间计算\n- 提供逐向导引的交通路线优化\n- 对所有推荐地点进行地址验证\n- 天气预报及穿衣建议\n- 餐厅和景点研究，包括价格、评论和开放时间\n- 当地文化信息和实用旅行提示（如货币、安全）\n- 详细的费用分项和符合预算的推荐\n- 支持导出为日历文件（.ics格式），兼容主流日历平台\n- 安排缓冲时间以应对延误和交通\n- 提供多个靠近市中心的住宿选择",

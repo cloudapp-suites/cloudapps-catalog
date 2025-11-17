@@ -27,7 +27,7 @@
     "Lightweight",
     "Multi-User"
   ],
-  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/filebrowser/image/filebrowser",
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/filebrowser/image/banner.png",
   "license": "Apache-2.0",
   "language": "Go",
   "phase": 2
