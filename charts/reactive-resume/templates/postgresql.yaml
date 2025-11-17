@@ -1,0 +1,101 @@
+{{- if .Values.postgresql.enabled -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-postgresql
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgresql
+spec:
+  serviceName: {{ include "reactive-resume.fullname" . }}-postgresql
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "reactive-resume.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: postgresql
+  template:
+    metadata:
+      labels:
+        {{- include "reactive-resume.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: postgresql
+    spec:
+      containers:
+        - name: postgresql
+          image: "{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POSTGRES_DB
+              value: {{ .Values.postgresql.auth.database }}
+            - name: POSTGRES_USER
+              value: {{ .Values.postgresql.auth.username }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgresql.auth.password }}
+          ports:
+            - name: postgresql
+              containerPort: 5432
+          volumeMounts:
+            - name: postgresql-data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgresql
+          livenessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - {{ .Values.postgresql.auth.username }}
+                - -d
+                - {{ .Values.postgresql.auth.database }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - {{ .Values.postgresql.auth.username }}
+                - -d
+                - {{ .Values.postgresql.auth.database }}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+      volumes:
+        - name: postgresql-data
+        {{- if .Values.postgresql.primary.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "reactive-resume.fullname" . }}-postgresql-pvc
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-postgresql
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgresql
+spec:
+  ports:
+    - name: postgresql
+      port: 5432
+      targetPort: postgresql
+  selector:
+    {{- include "reactive-resume.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: postgresql
+{{- if .Values.postgresql.primary.persistence.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-postgresql-pvc
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgresql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.postgresql.primary.persistence.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.postgresql.primary.persistence.size }}
+{{- end }}
+{{- end }}

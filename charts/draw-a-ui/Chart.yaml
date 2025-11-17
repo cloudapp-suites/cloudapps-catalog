@@ -1,0 +1,11 @@
+apiVersion: v2
+name: draw-a-ui
+description: A Helm chart for draw-a-ui application
+type: application
+version: 0.1.0
+appVersion: latest
+annotations:
+  # 自定义 Annotation，用于存放镜像的原始出处
+  artifacthub.io/cr.source: "ceramicwhite/draw-a-ui"
+  artifacthub.io/own.source: "draw-a-ui"
+  artifacthub.io/cr.update-strategy: "no"

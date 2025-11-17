@@ -1,0 +1,72 @@
+# Default values for twenty chart
+
+# Image configuration
+image:
+  repository: twentycrm/twenty
+  tag:
+  pullPolicy: IfNotPresent
+  kubectl: kubectl.image
+
+# Server configuration
+server:
+  name: server
+  port: 3000
+  service:
+    type: LoadBalancer
+    port: 3000
+
+# Worker configuration
+worker:
+  name: worker
+  # Same as server.resources
+
+# Database configuration
+database:
+  name: db
+  image:
+    repository: postgres
+    tag: 16
+  credentials:
+    username: postgres
+    password: password
+    database: default
+  service:
+    port: 5432
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClass: ""
+  resources: {}
+
+# Redis configuration
+redis:
+  name: redis
+  image:
+    repository: redis
+    tag: latest
+  service:
+    port: 6379
+  resources: {}
+
+# Storage configuration
+storage:
+  type: local
+  local:
+    persistence:
+      enabled: true
+      size: 20Gi
+      storageClass: ""
+  s3:
+    region: ""
+    bucket: ""
+    endpoint: ""
+    accessKeyId: ""
+    secretAccessKey: ""
+
+# Application secrets
+app:
+  secret: "KSZmQQcYwO/fifFEgcKfpoZGiAZWgN4kNGwChw03iCo="
+  serverUrl: ""
+
+# Environment variables
+env: {}

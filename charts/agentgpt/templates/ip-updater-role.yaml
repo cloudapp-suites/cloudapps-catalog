@@ -1,0 +1,19 @@
+{{- if eq .Values.frontend.service.type "LoadBalancer" }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: "{{ include "agentgpt.fullname" . }}-ip-updater-role"
+  labels:
+    {{- include "agentgpt.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,pre-delete
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+rules:
+- apiGroups: [""]
+  resources: ["services"]
+  verbs: ["get", "watch", "list"]
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "patch"]
+{{- end }}

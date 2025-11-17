@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "twenty.fullname" . }}-worker
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-worker
+spec:
+  serviceName: {{ include "twenty.fullname" . }}-worker
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "twenty.selectorLabels" . | nindent 6 }}
+      app: {{ include "twenty.name" . }}-worker
+  template:
+    metadata:
+      labels:
+        {{- include "twenty.selectorLabels" . | nindent 8 }}
+        app: {{ include "twenty.name" . }}-worker
+    spec:
+      initContainers:
+        - name: init-permissions
+          image: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest"
+          command: ['sh', '-c']
+          args:
+            - |
+              mkdir -p /app/packages/twenty-server/.local-storage/worker
+              chmod -R 777 /app/packages/twenty-server/.local-storage
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: worker-local-data
+              mountPath: /app/packages/twenty-server/.local-storage
+              subPath: worker
+      containers:
+        - name: worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["yarn", "worker:prod"]
+          env:
+            - name: PG_DATABASE_URL
+              value: "postgres://{{ .Values.database.credentials.username }}:{{ .Values.database.credentials.password }}@{{ include "twenty.fullname" . }}-db:{{ .Values.database.service.port }}/{{ .Values.database.credentials.database }}"
+            - name: SERVER_URL
+              value: "{{ .Values.app.serverUrl }}"
+            - name: REDIS_URL
+              value: "redis://{{ include "twenty.fullname" . }}-redis:{{ .Values.redis.service.port }}"
+            - name: APP_SECRET
+              value: "{{ .Values.app.secret }}"
+            - name: STORAGE_TYPE
+              value: "{{ .Values.storage.type }}"
+            {{- if eq .Values.storage.type "s3" }}
+            - name: STORAGE_S3_REGION
+              value: "{{ .Values.storage.s3.region }}"
+            - name: STORAGE_S3_NAME
+              value: "{{ .Values.storage.s3.bucket }}"
+            - name: STORAGE_S3_ENDPOINT
+              value: "{{ .Values.storage.s3.endpoint }}"
+            {{- end }}
+            - name: DISABLE_DB_MIGRATIONS
+              value: "true"
+            - name: DISABLE_CRON_JOBS_REGISTRATION
+              value: "true"
+          volumeMounts:
+            - name: worker-local-data
+              mountPath: /app/packages/twenty-server/.local-storage
+              subPath: worker
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: worker-local-data
+          {{- if .Values.storage.local.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "twenty.fullname" . }}-worker-local-data
+          {{- else }}
+          emptyDir: {}
+          {{- end }}

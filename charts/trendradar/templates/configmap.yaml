@@ -1,0 +1,196 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "trendradar.fullname" . }}-config
+  labels:
+    {{- include "trendradar.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    app:
+      version_check_url: "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version"
+      show_version_update: true
+
+    crawler:
+      request_interval: 1000
+      enable_crawler: true
+      use_proxy: false
+      default_proxy: "http://127.0.0.1:10086"
+
+    report:
+      mode: "daily"
+      rank_threshold: 5
+
+    notification:
+      enable_notification: true
+      message_batch_size: 4000
+      dingtalk_batch_size: 20000
+      feishu_batch_size: 29000
+      batch_send_interval: 3
+      feishu_message_separator: "━━━━━━━━━━━━━━━━━━━"
+
+      push_window:
+        enabled: false
+        time_range:
+          start: "20:00"
+          end: "22:00"
+        once_per_day: true
+        push_record_retention_days: 7
+
+      webhooks:
+        feishu_url: ""
+        dingtalk_url: ""
+        wework_url: ""
+        telegram_bot_token: ""
+        telegram_chat_id: ""
+        email_from: ""
+        email_password: ""
+        email_to: ""
+        email_smtp_server: ""
+        email_smtp_port: ""
+        ntfy_server_url: "https://ntfy.sh"
+        ntfy_topic: ""
+        ntfy_token: ""
+
+    weight:
+      rank_weight: 0.6
+      frequency_weight: 0.3
+      hotness_weight: 0.1
+
+    platforms:
+      - id: "toutiao"
+        name: "今日头条"
+      - id: "baidu"
+        name: "百度热搜"
+      - id: "wallstreetcn-hot"
+        name: "华尔街见闻"
+      - id: "thepaper"
+        name: "澎湃新闻"
+      - id: "bilibili-hot-search"
+        name: "bilibili 热搜"
+      - id: "cls-hot"
+        name: "财联社热门"
+      - id: "ifeng"
+        name: "凤凰网"
+      - id: "tieba"
+        name: "贴吧"
+      - id: "weibo"
+        name: "微博"
+      - id: "douyin"
+        name: "抖音"
+      - id: "zhihu"
+        name: "知乎"
+
+  frequency_words.txt: |
+    胖东来
+    于东来
+
+    DeepSeek
+    梁文锋
+
+    华为
+    鸿蒙
+    HarmonyOS
+    任正非
+
+    比亚迪
+    王传福
+
+    大疆
+    DJI
+
+    宇树
+    王兴兴
+
+    智元
+    灵犀
+    稚晖君
+    彭志辉
+
+    黑神话
+    冯骥
+
+    影之刃零
+    梁其伟
+
+    哪吒
+    饺子
+    杨宇
+    !车
+    !餐
+
+    三体
+    流浪地球
+    刘慈欣
+    郭帆
+
+    申奥
+
+    京东
+    刘强东
+
+    字节
+    bytedance
+    张一鸣
+
+    特斯拉
+    马斯克
+
+    微软
+    Microsoft
+
+    英伟达
+    NVIDIA
+    黄仁勋
+
+    AMD
+
+    谷歌
+    google
+    gemini
+    deepmind
+
+    chatgpt
+    openai
+    sora
+
+    claude
+    Anthropic
+
+    iphone
+    ipad
+    mac
+    ios
+
+    ai
+    !gai
+    人工智能
+
+    自动驾驶
+
+    机器人
+
+    国产
+    中国
+
+    美国
+    日本
+    韩国
+
+    芯片
+    光刻机
+
+    科技
+
+    核能
+
+    水电站
+    雅鲁藏布江
+
+    新质生产力
+
+    月球
+    登月
+    火星
+    宇宙
+    飞船
+    航空

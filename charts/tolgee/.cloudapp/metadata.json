@@ -1,0 +1,35 @@
+{
+  "name": "Tolgee",
+  "display_name": "tolgee",
+  "description": {
+    "zh": "Tolgee 是一个开源的本地化平台，旨在简化软件应用的翻译流程。它允许开发者通过上下文内编辑和一键截图功能，在应用中直接管理翻译内容。借助机器翻译、翻译记忆库和无缝集成的 SDK，Tolgee 为团队提供了更高效的国际化解决方案。",
+    "en": "Tolgee is an open-source localization platform designed to streamline the translation process for software applications. It enables developers to manage translations directly within their apps using in-context editing and one-click screenshot capture. With support for machine translation, translation memory, and seamless SDK integrations, Tolgee simplifies internationalization for teams."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过上下文内翻译避免手动编辑语言文件，节省开发时间。\n- 支持在生产环境中开发者与非技术人员协作完成翻译。\n- 借助AI驱动的翻译建议和翻译记忆库，提升翻译的一致性与效率。\n\n## 功能列表:\n\n- 在应用中通过按住 ALT/Option 键并点击元素进行上下文翻译。\n- 一键截图捕获翻译所需视觉上下文。\n- 使用 Tolgee Chrome 插件在生产环境中实时编辑翻译。\n- 集成机器翻译服务（DeepL、Google Translate、AWS Translate）。\n- 启用后自动使用翻译记忆库或机器翻译API完成新词条翻译。\n- 翻译记忆库支持相似度匹配及原文参考。\n- 活动日志记录所有修改、审核和用户操作。\n- 支持对翻译条目添加评论以促进团队协作。\n- 完整记录每个键值和语言的翻译历史。\n- 提供多种SDK实现与应用的无缝集成。\n- 提供命令行工具（CLI）用于自动化和流程优化。",
+    "en": "## Benefits:\n\n- Saves development time by enabling in-context translation without manual file editing.\n- Supports collaboration between developers and non-technical translators in production environments.\n- Enhances translation consistency and efficiency with AI-powered suggestions and translation memory.\n\n## Features:\n\n- In-context translation via ALT/Option + click directly in the app.\n- One-click screenshot capture for visual context in translation tasks.\n- Real-time translation editing in production using the Tolgee Chrome plugin.\n- Integration with machine translation services (DeepL, Google Translate, AWS Translate).\n- Automatic translation using translation memory or machine translation APIs.\n- Translation memory with similarity matching and source reference.\n- Activity log to track changes, reviews, and user actions.\n- Commenting system on translations for team collaboration.\n- Full translation history for each key and language.\n- SDKs for seamless integration into applications.\n- CLI tool for automation and easier workflow management."
+  },
+  "github_url": "https://github.com/tolgee/tolgee-platform",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://tolgee.io",
+  "product_document": "https://tolgee.io/platform",
+  "categories": [
+    "Open Source",
+    "Localization",
+    "In-Context Translation",
+    "Machine Translation",
+    "SDK",
+    "Collaboration",
+    "Documentation"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/tolgee/image/LinkedIn-0A66C2",
+  "language": "TypeScript",
+  "license": "Apache-2.0"
+}

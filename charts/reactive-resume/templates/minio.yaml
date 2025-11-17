@@ -1,0 +1,80 @@
+{{- if .Values.minio.enabled -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-minio
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: minio
+spec:
+  replicas: 1
+  serviceName: {{ include "reactive-resume.fullname" . }}-minio
+  selector:
+    matchLabels:
+      {{- include "reactive-resume.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: minio
+  template:
+    metadata:
+      labels:
+        {{- include "reactive-resume.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: minio
+    spec:
+      containers:
+        - name: minio
+          image: "{{ .Values.minio.image.repository }}:{{ .Values.minio.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          command: ["minio", "server", "/data"]
+          env:
+            - name: MINIO_ROOT_USER
+              value: {{ .Values.minio.auth.rootUser }}
+            - name: MINIO_ROOT_PASSWORD
+              value: {{ .Values.minio.auth.rootPassword }}
+          ports:
+            - name: minio
+              containerPort: {{ .Values.minio.service.port }}
+          volumeMounts:
+            - name: minio-data
+              mountPath: /data
+      volumes:
+        - name: minio-data
+        {{- if .Values.minio.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "reactive-resume.fullname" . }}-minio-pvc
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-minio
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: minio
+spec:
+  ports:
+    - name: minio
+      port: {{ .Values.minio.service.port }}
+      targetPort: minio
+  selector:
+    {{- include "reactive-resume.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: minio
+
+---
+{{- if .Values.minio.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}-minio-pvc
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+    app.kubernetes.io/component: minio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.minio.persistence.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.minio.persistence.size }}
+{{- end }}
+{{- end }}

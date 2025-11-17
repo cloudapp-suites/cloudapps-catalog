@@ -1,0 +1,10 @@
+apiVersion: v2
+name: thumbor
+description: A Helm chart for Thumbor image processing service
+type: application
+version: 0.1.0
+appVersion: 7.7.7-py-3.13
+annotations:
+  artifacthub.io/cr.source: "thumbororg/thumbor"
+  artifacthub.io/own.source: "thumbor"
+  artifacthub.io/cr.update-strategy: "latest"

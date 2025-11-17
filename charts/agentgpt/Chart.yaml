@@ -1,0 +1,10 @@
+apiVersion: v2
+name: agentgpt
+description: A Helm chart for AgentGPT deployment
+type: application
+version: 0.1.0
+appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "electerious/ackee"
+  artifacthub.io/own.source: "electerious_ackee"
+  artifacthub.io/cr.update-strategy: "no"

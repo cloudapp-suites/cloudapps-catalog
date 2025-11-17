@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "coral-talk.fullname" . }}
+  labels:
+    {{- include "coral-talk.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "coral-talk.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "coral-talk.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.talk.image.repository }}:{{ .Values.talk.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.talk.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.talk.containerPort }}
+          env:
+            - name: MONGODB_URI
+              value: {{ .Values.talk.env.MONGODB_URI }}
+            - name: REDIS_URI
+              value: {{ .Values.talk.env.REDIS_URI }}
+            - name: NODE_ENV
+              value: {{ .Values.talk.env.NODE_ENV }}
+            - name: SIGNING_SECRET
+              value: {{ .Values.talk.env.SIGNING_SECRET }}
+          resources:
+            {{- toYaml .Values.talk.resources | nindent 12 }}

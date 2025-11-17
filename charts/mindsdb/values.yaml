@@ -1,0 +1,56 @@
+# Default values for mindsdb chart
+
+# MindsDB application configuration
+mindsdb:
+  image:
+    repository: mindsdb/mindsdb
+    tag:
+    pullPolicy: IfNotPresent
+  
+  service:
+    type: LoadBalancer
+    port: 47334
+    mysqlPort: 47335
+  
+  resources: {}
+  
+  # 添加 API Keys 配置
+  apiKeys:
+    # Google Gemini API Key - 请在此处填写您的实际 API Key
+    googleApiKey: ""
+  
+  # 添加代理配置（如果需要）
+  proxy:
+    enabled: false
+    httpProxy: ""
+    httpsProxy: ""
+    noProxy: ""
+
+# PostgreSQL dependency configuration
+postgresql:
+  image:
+    repository: postgres
+    tag: 16.4
+    pullPolicy: IfNotPresent
+  
+  auth:
+    username: postgres
+    password: postgres
+    database: mindsdb
+  
+  primary:
+    resources:
+      limits:
+        cpu: 1
+      memory: 2Gi
+      requests:
+        cpu: 500m
+        memory: 1Gi
+  
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+
+# Global storage class configuration
+storageClass: "alicloud-disk-essd"

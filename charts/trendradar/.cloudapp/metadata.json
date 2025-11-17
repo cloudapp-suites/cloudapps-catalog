@@ -1,0 +1,36 @@
+{
+  "name": "trendradar",
+  "display_name": "TrendRadar",
+  "description": {
+    "zh": "TrendRadar 是一款轻量级开源热点监控工具，聚合多个平台的热门资讯，并提供个性化、实时的信息推送。用户可通过自定义关键词过滤内容，分析趋势变化，并通过多种渠道接收智能通知。项目设计注重易用性，支持在 GitHub 上一键部署，无需编程基础。",
+    "en": "TrendRadar is a lightweight, open-source hotspot monitoring tool that aggregates trending news from multiple platforms and delivers personalized, real-time updates. It enables users to filter content by custom keywords, analyze trends over time, and receive intelligent notifications via multiple channels. Designed for ease of deployment, it supports one-click setup on GitHub with no coding required."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 零技术门槛，GitHub 一键 Fork 即可使用\n- 通过精准过滤减少信息过载，只关注真正相关的热点\n- 支持多通道推送，实现实时手机和邮件提醒\n- 提供基于 AI 的自然语言对话式新闻趋势分析\n- 轻量且可自托管，降低对算法推荐 App 的依赖\n\n## 功能列表:\n\n- 聚合微博、知乎、百度、B站等 11+ 平台热点\n- 三种推送模式：每日汇总、当前排名、增量监控\n- 智能关键词过滤，支持必含词(+)和排除词(!)\n- 推送时间窗口控制，避免非工作时间打扰\n- 实时趋势追踪，包含生命周期、热度变化和新话题识别\n- 跨平台新闻排名对比，分析媒体关注度差异\n- 可配置的个性化排序算法（排名、频率、热度权重）\n- 多通道通知：企业微信、飞书、钉钉、Telegram、邮箱、ntfy\n- 集成 GitHub Pages 生成适配移动端的网页报告\n- 基于 MCP 的 AI 分析服务，支持自然语言查询和 13 种分析工具",
+    "en": "## Benefits:\n\n- Zero technical barrier deployment with one-click fork on GitHub\n- Reduces information overload by filtering only relevant hotspots\n- Supports multi-channel push for real-time mobile and email alerts\n- Enables AI-powered conversational analysis of news trends\n- Lightweight and self-hosted, reducing dependency on algorithm-driven apps\n\n## Features:\n\n- Aggregates hotspots from 11+ platforms including Weibo, Zhihu, Baidu, and Bilibili\n- Three push modes: daily summary, current ranking, and incremental monitoring\n- Smart keyword filtering with support for required (+) and filter (!) words\n- Time window control for scheduled, non-disruptive notifications\n- Real-time trend tracking with lifecycle, popularity changes, and new topic detection\n- Cross-platform comparison of news rankings and media attention\n- Personalized ranking algorithm (configurable weight for rank, frequency, and heat)\n- Multi-channel notification support: WeCom, Feishu, DingTalk, Telegram, Email, ntfy\n- GitHub Pages integration for web-based reports with mobile adaptation\n- AI analysis server based on MCP with natural language querying and 13 analytical tools"
+  },
+  "github_url": "https://github.com/sansan0/TrendRadar",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://github.com/sansan0",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Real-Time",
+    "Multi-Platform",
+    "Notification",
+    "Trend Analysis",
+    "Ai Integration"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/trendradar/image/banner.jpg",
+  "license": "GPL-3.0",
+  "language": "Python",
+  "phase": 2
+}

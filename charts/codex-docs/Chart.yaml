@@ -1,0 +1,10 @@
+apiVersion: v2
+name: codex-docs
+description: A Helm chart for CodeX Docs
+type: application
+version: "2.1.2"
+appVersion: v2.1.3
+annotations:
+  artifacthub.io/cr.source: "ghcr.io/codex-team/codex.docs"
+  artifacthub.io/own.source: "codex.docs"
+  artifacthub.io/cr.update-strategy: "latest"

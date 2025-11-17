@@ -1,0 +1,10 @@
+apiVersion: v2
+name: reactive-resume
+description: A Helm chart for Reactive Resume
+type: application
+version: 0.1.0
+appVersion: v4.5.5
+annotations:
+  artifacthub.io/cr.source: "amruthpillai/reactive-resume"
+  artifacthub.io/own.source: "reactive-resume"
+  artifacthub.io/cr.update-strategy: "latest"

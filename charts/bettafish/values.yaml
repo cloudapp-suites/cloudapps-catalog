@@ -1,0 +1,129 @@
+# Default values for bettafish.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global configuration
+global:
+  # Docker image configuration
+  image:
+    repository: ghcr.io/666ghj/bettafish
+    tag:
+    pullPolicy: IfNotPresent
+
+  # Flask server configuration
+  server:
+    host: 0.0.0.0
+    port: 5000
+
+# PostgreSQL database configuration
+postgresql:
+  enabled: true
+  image:
+    repository: postgres
+    tag: 15
+  auth:
+    username: bettafish
+    password: bettafish
+    database: bettafish
+  primary:
+    persistence:
+      enabled: true
+      size: 20Gi
+      storageClass: "alicloud-disk-essd"
+
+# BettaFish application configuration
+bettafish:
+  replicaCount: 1
+  image:
+    repository: ghcr.io/666ghj/bettafish
+    tag:
+    pullPolicy: IfNotPresent
+  
+  # Container ports
+  ports:
+    flask: 5000
+    streamlit1: 8501
+    streamlit2: 8502
+    streamlit3: 8503
+  
+  # Environment variables
+  env:
+    PYTHONUNBUFFERED: "1"
+    STREAMLIT_SERVER_ENABLE_FILE_WATCHER: "false"
+  
+  # Resource limits and requests
+  resources:
+    limits:
+      cpu: 2
+      memory: 4Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
+  
+  # Service configuration
+  service:
+    type: LoadBalancer
+    ports:
+      flask:
+        port: 5000
+        targetPort: 5000
+        protocol: TCP
+      streamlit1:
+        port: 8501
+        targetPort: 8501
+        protocol: TCP
+      streamlit2:
+        port: 8502
+        targetPort: 8502
+        protocol: TCP
+      streamlit3:
+        port: 8503
+        targetPort: 8503
+        protocol: TCP
+  
+  # Volume mounts
+  volumeMounts:
+    - name: logs
+      mountPath: /app/logs
+    - name: final-reports
+      mountPath: /app/final_reports
+    - name: insight-reports
+      mountPath: /app/insight_engine_streamlit_reports
+    - name: media-reports
+      mountPath: /app/media_engine_streamlit_reports
+    - name: query-reports
+      mountPath: /app/query_engine_streamlit_reports
+  
+  # Volumes
+  volumes:
+    - name: logs
+      emptyDir: {}
+    - name: final-reports
+      emptyDir: {}
+    - name: insight-reports
+      emptyDir: {}
+    - name: media-reports
+      emptyDir: {}
+    - name: query-reports
+      emptyDir: {}
+
+# Service account configuration
+serviceAccount:
+  create: false
+  name: ""
+
+# Ingress configuration (optional)
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+externalEnv:
+  model:
+    KEYWORD_OPTIMIZER_API_KEY: ""

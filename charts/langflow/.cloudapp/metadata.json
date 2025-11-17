@@ -1,0 +1,43 @@
+{
+  "name": "langflow",
+  "display_name": "Langflow",
+  "description": {
+    "zh": "Langflow 是一个开源平台，通过可视化界面帮助开发者构建、测试和部署基于AI的智能体和工作流。它支持主流大语言模型、向量数据库和丰富的AI工具，可快速搭建复杂的AI应用。工作流可作为API或MCP服务部署，轻松集成到各类应用中。",
+    "en": "Langflow is an open-source platform designed for building, testing, and deploying AI-powered agents and workflows using a visual interface. It enables developers to create complex AI workflows with support for major LLMs, vector databases, and AI tools. Workflows can be deployed as APIs or MCP servers for integration into any application."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过无代码可视化构建器加速AI工作流开发。\n- 支持通过API或MCP服务器无缝集成到现有应用中。\n- 提供企业级的可扩展性和安全性，适用于生产环境。\n\n## 功能列表:\n\n- 可视化构建界面，支持快速原型设计和迭代。\n- 完整的Python源码访问，可自定义任意组件。\n- 交互式沙盒环境，支持逐步执行和调试流程。\n- 支持多智能体编排，具备对话管理和检索能力。\n- 将工作流部署为REST API，或导出为JSON用于Python应用。\n- 将流程运行为MCP服务器，供MCP客户端调用为工具。\n- 支持LangSmith、LangFuse等可观测性集成。\n- 内置对主流大语言模型和向量数据库的支持。",
+    "en": "## Benefits:\n\n- Accelerates AI workflow development with a no-code visual builder.\n- Enables seamless integration into existing applications via API or MCP server.\n- Provides enterprise-grade scalability and security for production use.\n\n## Features:\n\n- Visual builder interface for rapid prototyping and iteration.\n- Full Python source code access for component customization.\n- Interactive playground with step-by-step flow execution and debugging.\n- Support for multi-agent orchestration with conversation and retrieval capabilities.\n- Deploy workflows as REST APIs or export as JSON for Python applications.\n- Run flows as MCP servers to expose them as tools for MCP clients.\n- Observability integrations with LangSmith, LangFuse, and others.\n- Built-in support for all major LLMs and vector databases."
+  },
+  "github_url": "https://github.com/langflow-ai/langflow",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Dify",
+    "n8n",
+    "AutoGen Studio",
+    "Ragflow",
+    "AnythingLLM",
+    "Coze Studio",
+    "Flowise"
+  ],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "http://www.langflow.org",
+  "product_document": "https://docs.langflow.org/",
+  "categories": [
+    "AI",
+    "Workflow Automation",
+    "Visual Programming",
+    "Llm Integration",
+    "Open Source",
+    "Self-Hosted",
+    "Developer Tool"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/langflow/image/langflow-logo-color-black-solid.svg",
+  "language": "Python",
+  "license": "MIT"
+}

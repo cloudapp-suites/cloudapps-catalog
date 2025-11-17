@@ -1,0 +1,35 @@
+{
+  "name": "whiteboard",
+  "display_name": "whiteboard",
+  "description": {
+    "zh": "whiteboard 是一个基于 Node.js 的轻量级协作绘图和草图工具，支持实时多人协同。它提供远程用户光标显示、每个用户的撤销/重做功能，并兼容 PC、平板和移动设备。用户可拖放或复制粘贴图片与 PDF，添加文本和便签，并将白板保存为图像或 JSON 文件。",
+    "en": "whiteboard is a lightweight Node.js-based collaborative drawing and sketching application that enables real-time teamwork. It supports multi-user interaction with features like shared cursors, undo/redo per user, and cross-device compatibility. The tool allows importing images and PDFs, text input, sticky notes, and saving boards as images or JSON."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 轻量高效，易于自托管，适合实时协作场景\n- 可通过配置文件和源码完全自定义\n- 支持跨平台使用，涵盖桌面、平板和手机设备\n\n## 功能列表:\n\n- 实时显示其他用户的绘制光标\n- 每个用户独立的撤销与重做功能\n- 支持拖拽或复制粘贴导入图片和 PDF 文件\n- 可对图像进行缩放、移动、旋转并绘制到画布或设为背景\n- 支持添加文本和便签注释\n- 可将白板保存为图片（如 PNG）或 JSON 格式\n- 绘制线条或矩形时按住 Shift 键可绘制直角线或正方形\n- 显示参与协作中最小屏幕尺寸的提示标识\n- 所有操作均支持键盘快捷键\n- 提供 REST API 用于外部系统集成与自动化控制\n- 支持 WebDAV 协议，可直接保存至 Nextcloud 或 ownCloud\n- 支持通过 YAML 配置文件调整性能与安全设置\n- 可选访问令牌（AccessToken）增强安全性\n- 支持通过 URL 参数设置白板 ID、用户名、标题等\n- 支持从已有白板复制内容\n- 提供 Nginx 和 Apache 反向代理配置示例\n- 支持 Nextcloud 外部站点集成，并可自定义图标",
+    "en": "## Benefits:\n\n- Lightweight and easy to self-host for real-time collaboration\n- Fully customizable via configuration files and open-source code\n- Cross-platform support including PC, tablet, and mobile devices\n\n## Features:\n\n- Real-time display of remote user cursors during drawing\n- Per-user undo and redo functionality\n- Drag-and-drop or copy-paste import of images and PDFs\n- Resize, move, rotate, and draw images on canvas or as background\n- Text and sticky note annotations\n- Save whiteboard as image (e.g., PNG) or JSON for backup and sharing\n- Draw straight lines and squares using Shift key assistance\n- Screen size indicator showing the smallest participant's viewport\n- Full keyboard shortcut support for all functions\n- REST API for external integration and automation\n- WebDAV support for direct saving to Nextcloud or ownCloud\n- Configurable via YAML file for performance and security settings\n- Optional access token authentication for enhanced security\n- URL parameters to set whiteboard ID, username, title, and more\n- Ability to clone content from existing whiteboards\n- Reverse proxy ready (Nginx and Apache configurations provided)\n- Nextcloud integration with external site linking and icon support"
+  },
+  "github_url": "https://github.com/cracker0dks/whiteboard",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Excalidraw"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/cracker0dks/whiteboard",
+  "categories": [
+    "Collaboration",
+    "Real-Time",
+    "Whiteboard",
+    "Drawing",
+    "REST API",
+    "Webdav"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/whiteboard/image/iconPrev.jpg",
+  "language": "JavaScript",
+  "license": "MIT",
+  "phase": 2
+}

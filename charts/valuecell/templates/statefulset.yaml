@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "valuecell.fullname" . }}
+  labels:
+    {{- include "valuecell.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "valuecell.fullname" . }}
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "valuecell.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "valuecell.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.api.port }}
+              protocol: TCP
+          env:
+            {{- if .Values.externalEnv.modelProviders.google.enabled }}
+            - name: GOOGLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: GOOGLE_API_KEY
+            {{- end }}
+            {{- if .Values.externalEnv.modelProviders.openrouter.enabled }}
+            - name: OPENROUTER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: OPENROUTER_API_KEY
+            {{- end }}
+            {{- if .Values.externalEnv.modelProviders.azureOpenai.enabled }}
+            - name: AZURE_OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: AZURE_OPENAI_API_KEY
+            - name: AZURE_OPENAI_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: AZURE_OPENAI_ENDPOINT
+            - name: AZURE_OPENAI_API_VERSION
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: AZURE_OPENAI_API_VERSION
+            {{- end }}
+            {{- if .Values.externalEnv.modelProviders.openai.enabled }}
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: OPENAI_API_KEY
+            {{- end }}
+            {{- if .Values.externalEnv.modelProviders.siliconflow.enabled }}
+            - name: SILICONFLOW_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: SILICONFLOW_API_KEY
+            {{- end }}
+            {{- if .Values.thirdParty.finnhub.enabled }}
+            - name: FINNHUB_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: FINNHUB_API_KEY
+            {{- end }}
+            {{- if .Values.thirdParty.sec.email }}
+            - name: SEC_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "valuecell.fullname" . }}
+                  key: SEC_EMAIL
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: data
+              mountPath: /app/data
+            - name: config
+              mountPath: /app/.env
+              subPath: .env
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "valuecell.fullname" . }}
+        - name: config
+          configMap:
+            name: {{ include "valuecell.fullname" . }}

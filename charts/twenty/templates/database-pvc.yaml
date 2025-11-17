@@ -1,0 +1,16 @@
+{{- if .Values.database.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "twenty.fullname" . }}-db-data
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-db
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.database.persistence.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.database.persistence.size }}
+{{- end }}

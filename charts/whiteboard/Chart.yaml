@@ -1,0 +1,10 @@
+apiVersion: v2
+name: whiteboard
+description: A collaborative Whiteboard/Sketchboard application
+type: application
+version: 0.1.0
+appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "rofl256/whiteboard"
+  artifacthub.io/own.source: "whiteboard"
+  artifacthub.io/cr.update-strategy: "latest"

@@ -1,0 +1,120 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "trendradar.fullname" . }}
+  labels:
+    {{- include "trendradar.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "trendradar.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "trendradar.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "trendradar.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: ENABLE_CRAWLER
+              value: {{ .Values.trendradar.enableCrawler | quote }}
+            - name: ENABLE_NOTIFICATION
+              value: {{ .Values.trendradar.enableNotification | quote }}
+            - name: REPORT_MODE
+              value: {{ .Values.trendradar.reportMode | quote }}
+            - name: PUSH_WINDOW_ENABLED
+              value: {{ .Values.trendradar.pushWindow.enabled | quote }}
+            - name: PUSH_WINDOW_START
+              value: {{ .Values.trendradar.pushWindow.start | quote }}
+            - name: PUSH_WINDOW_END
+              value: {{ .Values.trendradar.pushWindow.endtime | quote }}
+            - name: PUSH_WINDOW_ONCE_PER_DAY
+              value: {{ .Values.trendradar.pushWindow.oncePerDay | quote }}
+            - name: PUSH_WINDOW_RETENTION_DAYS
+              value: {{ .Values.trendradar.pushWindow.retentionDays | quote }}
+            - name: FEISHU_WEBHOOK_URL
+              value: {{ .Values.externalEnv.notifications.feishuWebhookUrl | quote }}
+            - name: TELEGRAM_BOT_TOKEN
+              value: {{ .Values.externalEnv.notifications.telegramBotToken | quote }}
+            - name: TELEGRAM_CHAT_ID
+              value: {{ .Values.externalEnv.notifications.telegramChatId | quote }}
+            - name: DINGTALK_WEBHOOK_URL
+              value: {{ .Values.externalEnv.notifications.dingtalkWebhookUrl | quote }}
+            - name: WEWORK_WEBHOOK_URL
+              value: {{ .Values.externalEnv.notifications.weworkWebhookUrl | quote }}
+            - name: EMAIL_FROM
+              value: {{ .Values.externalEnv.notifications.emailFrom | quote }}
+            - name: EMAIL_PASSWORD
+              value: {{ .Values.externalEnv.notifications.emailPassword | quote }}
+            - name: EMAIL_TO
+              value: {{ .Values.externalEnv.notifications.emailTo | quote }}
+            - name: EMAIL_SMTP_SERVER
+              value: {{ .Values.externalEnv.notifications.emailSmtpServer | quote }}
+            - name: EMAIL_SMTP_PORT
+              value: {{ .Values.externalEnv.notifications.emailSmtpPort | quote }}
+            - name: NTFY_SERVER_URL
+              value: {{ .Values.externalEnv.notifications.ntfyServerUrl | quote }}
+            - name: NTFY_TOPIC
+              value: {{ .Values.externalEnv.notifications.ntfyTopic | quote }}
+            - name: NTFY_TOKEN
+              value: {{ .Values.externalEnv.notifications.ntfyToken | quote }}
+            - name: CRON_SCHEDULE
+              value: {{ .Values.trendradar.cronSchedule | quote }}
+            - name: RUN_MODE
+              value: {{ .Values.trendradar.runMode | quote }}
+            - name: IMMEDIATE_RUN
+              value: {{ .Values.trendradar.immediateRun | quote }}
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+            - name: output
+              mountPath: /app/output
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "trendradar.fullname" . }}-config
+        - name: output
+          {{- if .Values.trendradar.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "trendradar.fullname" . }}-pvc
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

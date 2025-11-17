@@ -1,0 +1,100 @@
+# Default values for reactive-resume.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global Docker image parameters
+image:
+  repository: amruthpillai/reactive-resume
+  tag:
+  pullPolicy: IfNotPresent
+
+# Application service parameters
+service:
+  type: LoadBalancer
+  port: 3000
+
+# Application deployment parameters
+replicaCount: 1
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# Environment variables for the application
+env:
+  PORT: 3000
+  NODE_ENV: production
+  PUBLIC_URL: http://localhost:3000
+  STORAGE_URL: http://localhost:9000/default
+  CHROME_TOKEN: chrome_token
+  CHROME_URL: ws://reactive-resume-chrome:3000
+  DATABASE_URL: postgresql://postgres:postgres@reactive-resume-postgresql:5432/postgres
+  ACCESS_TOKEN_SECRET: access_token_secret
+  REFRESH_TOKEN_SECRET: refresh_token_secret
+  MAIL_FROM: noreply@localhost
+  SMTP_URL: ""
+  STORAGE_ENDPOINT: reactive-resume-minio
+  STORAGE_PORT: 9000
+  STORAGE_REGION: us-east-1
+  STORAGE_BUCKET: default
+  STORAGE_ACCESS_KEY: minioadmin
+  STORAGE_SECRET_KEY: minioadmin
+  STORAGE_USE_SSL: "false"
+  STORAGE_SKIP_BUCKET_CHECK: "false"
+  DISABLE_SIGNUPS: "false"
+  DISABLE_EMAIL_AUTH: "false"
+
+# PostgreSQL dependency configuration
+postgresql:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/postgres
+    tag: 16-alpine
+  auth:
+    postgresPassword: postgres
+    username: postgres
+    password: postgres
+    database: postgres
+  primary:
+    persistence:
+      enabled: true
+      storageClass: "alicloud-disk-essd"
+      size: 20Gi
+
+# Minio dependency configuration
+minio:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/minio
+    tag: latest
+  service:
+    port: 9000
+  auth:
+    rootUser: minioadmin
+    rootPassword: minioadmin
+  persistence:
+    enabled: true
+    storageClass: "alicloud-disk-essd"
+    size: 20Gi
+
+# Chrome dependency configuration
+chrome:
+  enabled: true
+  image:
+    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/chromium
+    tag: latest
+  service:
+    port: 3000
+  env:
+    HEALTH: "true"
+    TOKEN: chrome_token
+    PROXY_HOST: "chrome"
+    PROXY_PORT: 3000
+    PROXY_SSL: "false"

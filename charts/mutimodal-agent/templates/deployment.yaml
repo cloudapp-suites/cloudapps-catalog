@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mutimodal-agent.fullname" . }}
+  labels:
+    {{- include "mutimodal-agent.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "mutimodal-agent.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mutimodal-agent.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8501
+              protocol: TCP
+          env:
+            - name: STREAMLIT_SERVER_MAX_UPLOAD_SIZE
+              value: "200"
+            - name: STREAMLIT_SERVER_ENABLE_CORS
+              value: "true"
+            - name: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+              value: "false"
+            - name: STREAMLIT_SERVER_HEADLESS
+              value: "true"
+            - name: STREAMLIT_SERVER_PORT
+              value: "8501"
+            - name: STREAMLIT_SERVER_ADDRESS
+              value: "0.0.0.0"
+            - name: STREAMLIT_SERVER_ENABLE_WEB_SOCKET_COMPRESSION
+              value: "false"
+            - name: STREAMLIT_SERVER_RUN_ON_SAVE
+              value: "true"
+            - name: STREAMLIT_SERVER_BROWSER_GATHER_USAGE_STATS
+              value: "false"
+            - name: STREAMLIT_SERVER_CLIENT_DISPLAY_TRACKING
+              value: "false"
+            - name: STREAMLIT_SERVER_ALLOW_RUN_ON_SAVE
+              value: "true"
+          volumeMounts:
+            - name: streamlit-config
+              mountPath: /root/.streamlit
+            - name: tmp-storage
+              mountPath: /tmp
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: streamlit-config
+          configMap:
+            name: {{ include "mutimodal-agent.fullname" . }}-config
+        - name: tmp-storage
+          emptyDir: {}

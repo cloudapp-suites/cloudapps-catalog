@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "dialoqbase.fullname" . }}-postgres
+  labels:
+    {{- include "dialoqbase.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgres
+spec:
+  serviceName: {{ include "dialoqbase.fullname" . }}-postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dialoqbase.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: postgres
+  template:
+    metadata:
+      labels:
+        {{- include "dialoqbase.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: "{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: POSTGRES_USER
+              value: {{ .Values.postgresql.auth.postgresUser | default "postgres" | quote }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgresql.auth.postgresPassword | quote }}
+            - name: POSTGRES_DB
+              value: {{ .Values.postgresql.auth.database | quote }}
+          ports:
+            - name: postgres
+              containerPort: 5432
+              protocol: TCP
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+          resources:
+            {{- toYaml .Values.postgresql.resources | nindent 12 }}
+      volumes:
+        - name: postgres-data
+          persistentVolumeClaim:
+            claimName: {{ include "dialoqbase.fullname" . }}-postgres-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "dialoqbase.fullname" . }}-postgres
+  labels:
+    {{- include "dialoqbase.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgres
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+      targetPort: postgres
+      protocol: TCP
+      name: postgres
+  selector:
+    {{- include "dialoqbase.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: postgres
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "dialoqbase.fullname" . }}-postgres-pvc
+  labels:
+    {{- include "dialoqbase.labels" . | nindent 4 }}
+    app.kubernetes.io/component: postgres
+spec:
+  accessModes:
+    - {{ .Values.postgresql.persistence.accessMode | default "ReadWriteOnce" | quote }}
+  storageClassName: {{ .Values.postgresql.persistence.storageClass | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.postgresql.persistence.size | quote }}

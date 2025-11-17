@@ -1,0 +1,37 @@
+{
+  "name": "chat-arxiv-agent",
+  "display_name": "Chat with Arxiv Research Papers",
+  "description": {
+    "zh": "这是一个基于 Streamlit 的 RAG（检索增强生成）应用，允许用户与 arXiv 上的研究论文进行交互式对话。通过利用 GPT-4o，用户可以用自然语言探索和获取学术文章的见解。该工具旨在帮助研究人员和学生高效浏览科学文献。",
+    "en": "This is a Streamlit-based RAG (Retrieval-Augmented Generation) application that enables users to interactively chat with research papers from arXiv. By leveraging GPT-4o, it allows natural language conversations to explore and retrieve insights from academic articles. The tool is designed to help researchers and students efficiently navigate scientific literature."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 通过对话式 AI 简化对复杂学术研究的访问\n- 通过直观探索 arXiv 论文提升研究效率\n- 利用先进的大语言模型（GPT-4o）提供准确且上下文相关的回答\n\n## 功能列表:\n\n- 与 arXiv 进行对话式交互\n- 访问并探索大量研究论文\n- 使用 OpenAI GPT-4o 获取智能回复",
+    "en": "## Benefits:\n\n- Simplifies access to complex academic research through conversational AI\n- Enhances research efficiency by enabling intuitive exploration of arXiv papers\n- Leverages state-of-the-art LLM (GPT-4o) for accurate and contextual responses\n\n## Features:\n\n- Engage in conversational interactions with arXiv\n- Access and explore a vast collection of research papers\n- Utilize OpenAI GPT-4o for intelligent responses"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_research_papers",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Agent",
+    "RAG",
+    "Llm Application",
+    "Research Tool",
+    "Academic Search",
+    "Natural Language Processing",
+    "Streamlit"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/chat-arxiv-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

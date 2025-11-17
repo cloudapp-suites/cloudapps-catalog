@@ -1,0 +1,36 @@
+{
+  "name": "ai-audio-tour-agent",
+  "display_name": "Ai-audio-tour Agent",
+  "description": {
+    "zh": "一个对话式语音代理系统，可根据用户的位置、兴趣和游览时长生成个性化的自助语音导览。系统采用多智能体架构，包含历史、建筑、文化和美食等专业AI代理。通过先进的文本转语音技术，输出富有表现力且自然的语音内容。",
+    "en": "A conversational voice agent system that creates personalized, self-guided audio tours based on user location, interests, and preferred tour duration. It leverages a multi-agent architecture with specialized AI agents for history, architecture, culture, and cuisine. The system generates expressive, natural-sounding speech output using advanced TTS technology."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供高度个性化且沉浸式的语音导览体验\n- 结合实时信息检索与富有表现力的语音合成，增强内容吸引力\n- 模块化的多智能体设计，支持可扩展和易维护的AI叙事架构\n\n## 功能列表:\n\n- 使用协调代理管理导览流程并调度各专家代理\n- 配备具有不同语调的历史、建筑、文化与美食专业代理\n- 基于用户输入位置动态生成内容\n- 集成实时网络搜索以获取最新信息\n- 支持自定义导览时长（15、30 或 60 分钟）\n- 根据用户兴趣权重自适应分配时间\n- 使用 Gpt-4o Mini Audio 生成高质量语音输出",
+    "en": "## Benefits:\n\n- Delivers highly personalized and immersive audio tour experiences\n- Combines real-time information retrieval with expressive voice synthesis for engaging content\n- Modular multi-agent design enables scalable and maintainable AI-driven storytelling\n\n## Features:\n\n- Orchestrator Agent to manage tour flow and coordinate expert agents\n- Specialized agents: History, Architecture, Culture, and Culinary Agents with distinct tones\n- Dynamic content generation based on user-provided location\n- Real-time web search integration for up-to-date information\n- Support for customizable tour durations (15, 30, or 60 minutes)\n- Adaptive time allocation based on user interest weights\n- High-quality audio output using Gpt-4o Mini Audio"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/voice_ai_agents/ai_audio_tour_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Multi-Agent System",
+    "Voice Assistant",
+    "Real-Time",
+    "Personalization",
+    "Natural Language Processing",
+    "Text-To-Speech"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/ai-audio-tour-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

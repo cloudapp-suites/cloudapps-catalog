@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mindsdb.fullname" . }}
+  labels:
+    {{- include "mindsdb.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "mindsdb.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mindsdb.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: mindsdb
+          image: "{{ .Values.mindsdb.image.repository }}:{{ .Values.mindsdb.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.mindsdb.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "mindsdb.fullname" . }}-config
+            {{- if .Values.mindsdb.apiKeys.googleApiKey }}
+            - secretRef:
+                name: {{ include "mindsdb.fullname" . }}-api-keys
+            {{- end }}
+          env:
+            # 通过环境变量显式设置 API 密钥
+            {{- if .Values.mindsdb.apiKeys.googleApiKey }}
+            - name: GOOGLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "mindsdb.fullname" . }}-api-keys
+                  key: google-api-key
+            {{- end }}
+            # 添加代理环境变量
+            {{- if .Values.mindsdb.proxy.enabled }}
+            {{- if .Values.mindsdb.proxy.httpProxy }}
+            - name: HTTP_PROXY
+              value: {{ .Values.mindsdb.proxy.httpProxy }}
+            {{- end }}
+            {{- if .Values.mindsdb.proxy.httpsProxy }}
+            - name: HTTPS_PROXY
+              value: {{ .Values.mindsdb.proxy.httpsProxy }}
+            {{- end }}
+            {{- if .Values.mindsdb.proxy.noProxy }}
+            - name: NO_PROXY
+              value: {{ .Values.mindsdb.proxy.noProxy }}
+            {{- end }}
+            {{- end }}
+          ports:
+            - containerPort: {{ .Values.mindsdb.service.port }}
+              name: http
+            - containerPort: {{ .Values.mindsdb.service.mysqlPort }}
+              name: mysql
+          livenessProbe:
+            httpGet:
+              path: /api/util/ping
+              port: {{ .Values.mindsdb.service.port }}
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/util/ping
+              port: {{ .Values.mindsdb.service.port }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+          # 添加启动探针，确保应用完全启动
+          startupProbe:
+            httpGet:
+              path: /api/util/ping
+              port: {{ .Values.mindsdb.service.port }}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 30
+          resources:
+            {{- toYaml .Values.mindsdb.resources | nindent 12 }}
+          volumeMounts:
+            - name: mindsdb-data
+              mountPath: /mindsdb/var
+            - name: mindsdb-config
+              mountPath: /mindsdb/var/config.json
+              subPath: config.json
+      volumes:
+        - name: mindsdb-data
+          emptyDir: {}
+        - name: mindsdb-config
+          configMap:
+            name: {{ include "mindsdb.fullname" . }}-settings
+            items:
+              - key: config.json
+                path: config.json

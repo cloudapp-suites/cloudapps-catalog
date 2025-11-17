@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "trendradar.fullname" . }}-file-server
+  labels:
+    {{- include "trendradar.labels" . | nindent 4 }}
+    app: file-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "trendradar.selectorLabels" . | nindent 6 }}
+      app: file-server
+  template:
+    metadata:
+      labels:
+        {{- include "trendradar.selectorLabels" . | nindent 8 }}
+        app: file-server
+    spec:
+      containers:
+        - name: file-server
+          image: caddy:2
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: output
+              mountPath: /usr/share/caddy
+              subPath: html
+          command:
+            - caddy
+            - file-server
+            - --listen
+            - :80
+            - --root
+            - /usr/share/caddy
+      volumes:
+        - name: output
+          persistentVolumeClaim:
+            claimName: {{ include "trendradar.fullname" . }}-pvc

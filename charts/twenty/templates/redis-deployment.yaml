@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "twenty.fullname" . }}-redis
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "twenty.selectorLabels" . | nindent 6 }}
+      app: {{ include "twenty.name" . }}-redis
+  template:
+    metadata:
+      labels:
+        {{- include "twenty.selectorLabels" . | nindent 8 }}
+        app: {{ include "twenty.name" . }}-redis
+    spec:
+      containers:
+        - name: redis
+          image: "{{ .Values.redis.image.repository }}:{{ .Values.redis.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ["--maxmemory-policy", "noeviction"]
+          ports:
+            - name: redis
+              containerPort: {{ .Values.redis.service.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.redis.resources | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+                - redis-cli
+                - ping
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 10

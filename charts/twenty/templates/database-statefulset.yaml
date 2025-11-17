@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "twenty.fullname" . }}-db
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "twenty.selectorLabels" . | nindent 6 }}
+      app: {{ include "twenty.name" . }}-db
+  serviceName: {{ include "twenty.fullname" . }}-db
+  template:
+    metadata:
+      labels:
+        {{- include "twenty.selectorLabels" . | nindent 8 }}
+        app: {{ include "twenty.name" . }}-db
+    spec:
+      containers:
+        - name: postgres
+          image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: POSTGRES_DB
+              value: {{ .Values.database.credentials.database }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.database.credentials.password }}
+            - name: POSTGRES_USER
+              value: {{ .Values.database.credentials.username }}
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          ports:
+            - name: postgresql
+              containerPort: {{ .Values.database.service.port }}
+              protocol: TCP
+          volumeMounts:
+            - name: db-data
+              mountPath: /var/lib/postgresql/data
+          resources:
+            {{- toYaml .Values.database.resources | nindent 12 }}
+          livenessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - {{ .Values.database.credentials.username }}
+                - -h
+                - localhost
+                - -d
+                - postgres
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 10
+      volumes:
+        - name: db-data
+          {{- if .Values.database.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "twenty.fullname" . }}-db-data
+          {{- else }}
+          emptyDir: {}
+          {{- end }}

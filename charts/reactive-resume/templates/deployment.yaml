@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "reactive-resume.fullname" . }}
+  labels:
+    {{- include "reactive-resume.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "reactive-resume.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "reactive-resume.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.env.PORT }}
+              protocol: TCP
+          env:
+            - name: PORT
+              value: "{{ .Values.env.PORT }}"
+            - name: NODE_ENV
+              value: "{{ .Values.env.NODE_ENV }}"
+            - name: PUBLIC_URL
+              value: "{{ .Values.env.PUBLIC_URL }}"
+            - name: STORAGE_URL
+              value: "{{ .Values.env.STORAGE_URL }}"
+            - name: CHROME_TOKEN
+              value: "{{ .Values.env.CHROME_TOKEN }}"
+            - name: CHROME_URL
+              value: "ws://$(REACTIVE_RESUME_CHROME_SERVICE_HOST):3000"
+            - name: DATABASE_URL
+              value: "postgresql://postgres:postgres@$(REACTIVE_RESUME_POSTGRESQL_SERVICE_HOST):5432/postgres"
+            - name: ACCESS_TOKEN_SECRET
+              value: "{{ .Values.env.ACCESS_TOKEN_SECRET }}"
+            - name: REFRESH_TOKEN_SECRET
+              value: "{{ .Values.env.REFRESH_TOKEN_SECRET }}"
+            - name: MAIL_FROM
+              value: "{{ .Values.env.MAIL_FROM }}"
+            - name: STORAGE_ENDPOINT
+              value: "$(REACTIVE_RESUME_MINIO_SERVICE_HOST)"
+            - name: STORAGE_PORT
+              value: "{{ .Values.env.STORAGE_PORT }}"
+            - name: STORAGE_REGION
+              value: "{{ .Values.env.STORAGE_REGION }}"
+            - name: STORAGE_BUCKET
+              value: "{{ .Values.env.STORAGE_BUCKET }}"
+            - name: STORAGE_ACCESS_KEY
+              value: "{{ .Values.env.STORAGE_ACCESS_KEY }}"
+            - name: STORAGE_SECRET_KEY
+              value: "{{ .Values.env.STORAGE_SECRET_KEY }}"
+            - name: STORAGE_USE_SSL
+              value: "{{ .Values.env.STORAGE_USE_SSL }}"
+            - name: STORAGE_SKIP_BUCKET_CHECK
+              value: "{{ .Values.env.STORAGE_SKIP_BUCKET_CHECK }}"
+            - name: DISABLE_SIGNUPS
+              value: "{{ .Values.env.DISABLE_SIGNUPS }}"
+            - name: DISABLE_EMAIL_AUTH
+              value: "{{ .Values.env.DISABLE_EMAIL_AUTH }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

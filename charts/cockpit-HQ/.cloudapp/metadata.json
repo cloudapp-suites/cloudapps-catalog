@@ -1,0 +1,36 @@
+{
+  "name": "cockpit",
+  "display_name": "Cockpit CMS",
+  "description": {
+    "zh": "Cockpit CMS 是一个现代化的无头内容管理系统，专为开发者设计，用于构建灵活的内容驱动型应用。它支持任意前端技术，并提供强大的 API 来管理结构化内容。适用于网站、移动应用和物联网项目，可轻松部署并完全掌控内容基础设施。",
+    "en": "Cockpit CMS is a modern, headless content management system designed for developers to build flexible, content-driven applications. It supports any frontend technology and provides powerful APIs for managing structured content. Ideal for websites, mobile apps, and IoT projects, it enables easy deployment and full control over content infrastructure."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无头架构设计，可与任意前端框架集成\n- 无厂商锁定，支持数据自主和灵活部署\n- 高性能，支持 SQLite 或 MongoDB 后端\n\n## 功能列表:\n\n- 灵活的内容建模，支持集合、单例和树形结构\n- 支持 20 多种字段类型和自定义内容结构\n- 内置多语言内容支持，含回退机制\n- 资源管理功能，包括图像处理和 CDN 集成\n- 提供具备实时能力的 GraphQL 和 REST API\n- 基于角色的用户管理，支持双因素认证和 API 令牌\n- 可通过自定义字段、插件、钩子和事件扩展功能\n- 支持多租户，通过“空间”管理多个站点或客户\n- 开发者工具，如 GraphQL Playground 和 API 文档",
+    "en": "## Benefits:\n\n- Headless by design, enabling use with any frontend framework\n- No vendor lock-in, allowing full data ownership and flexible deployment\n- High performance with support for SQLite or MongoDB backends\n\n## Features:\n\n- Flexible content modeling with Collections, Singletons, and Trees\n- Support for 20+ field types and custom content structures\n- Built-in multi-language content with fallback support\n- Asset management including image processing and CDN integration\n- GraphQL and REST APIs with real-time capabilities\n- Role-based user management with 2FA and API tokens\n- Extensibility via custom fields, addons, hooks, and events\n- Multi-tenancy support through Spaces for managing multiple sites\n- Developer tools including GraphQL playground and API documentation"
+  },
+  "github_url": "https://github.com/Cockpit-HQ/Cockpit",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "Microservices"
+  ],
+  "official_address": "https://getcockpit.com",
+  "product_document": "",
+  "categories": [
+    "Headless Cms",
+    "Content Management",
+    "API",
+    "Multi-Language",
+    "Asset Management",
+    "Extensibility",
+    "Self-Hosted"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit-HQ/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca",
+  "license": "MIT",
+  "language": "PHP",
+  "phase": 2
+}

@@ -1,0 +1,36 @@
+{
+  "name": "memos",
+  "display_name": "Memos",
+  "description": {
+    "zh": "Memos 是一个现代、开源、支持自托管的知识管理与笔记记录平台。它面向注重隐私的个人和组织，提供对数据的完全控制权。该平台轻量易用，支持跨平台访问，具备完整的 Markdown 支持和本地数据存储功能。",
+    "en": "Memos is a modern, open-source, self-hosted knowledge management and note-taking platform. It is designed for privacy-conscious individuals and organizations who want full control over their data. The platform offers a lightweight, cross-platform solution with comprehensive Markdown support and secure local data storage."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 提供完整的数据所有权和隐私控制\n- 轻量级高性能架构设计\n- 无需授权费用，成本效益高\n- 开源项目，社区活跃，持续更新\n\n## 功能列表:\n\n- 支持自托管及本地数据库存储\n- 支持 Markdown 语法高亮等高级功能\n- 支持 Linux、macOS、Windows 及容器化部署，跨平台访问\n- 支持插入图片和嵌入内容等富媒体功能\n- 提供 RESTful API 接口用于第三方集成\n- 支持多种数据库（SQLite、PostgreSQL、MySQL）\n- 支持自定义主题和品牌标识\n- 提供 Docker 及 Docker Compose 部署选项\n- 拥有完善的文档和社区支持",
+    "en": "## Benefits:\n\n- Full data ownership and privacy control\n- Lightweight and high-performance architecture\n- Cost-effective with no licensing fees\n- Open source with active community development\n\n## Features:\n\n- Self-hosted with support for local database storage\n- Advanced Markdown support with syntax highlighting\n- Cross-platform accessibility on Linux, macOS, Windows, and containers\n- Rich media integration including images and embedded content\n- RESTful API for third-party integrations\n- Multiple database support (SQLite, PostgreSQL, MySQL)\n- Configurable themes and branding options\n- Docker and Docker Compose deployment options\n- Comprehensive documentation and community support"
+  },
+  "github_url": "https://github.com/usememos/memos",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [
+    "Shaarli"
+  ],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/usememos/memos#deploy-with-docker-in-seconds",
+  "categories": [
+    "Productivity",
+    "Privacy",
+    "Integration",
+    "Customizable",
+    "Markdown",
+    "Notes",
+    "Note-taking"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/memos/image/demo.png",
+  "license": "MIT",
+  "language": "Go",
+  "phase": 2
+}

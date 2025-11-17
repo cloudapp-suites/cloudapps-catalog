@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bettafish.fullname" . }}
+  labels:
+    {{- include "bettafish.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.bettafish.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "bettafish.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.bettafish.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "bettafish.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "bettafish.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.bettafish.image.repository }}:{{ .Values.bettafish.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.bettafish.image.pullPolicy }}
+          env:
+            {{- range $key, $val := .Values.bettafish.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end }}
+            - name: DB_HOST
+              value: {{ include "bettafish.fullname" . }}-postgresql
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              value: {{ .Values.postgresql.auth.username | quote }}
+            - name: DB_PASSWORD
+              value: {{ .Values.postgresql.auth.password | quote }}
+            - name: DB_NAME
+              value: {{ .Values.postgresql.auth.database | quote }}
+            - name: DB_DIALECT
+              value: "postgresql"
+            - name: KEYWORD_OPTIMIZER_API_KEY
+              value: "{{ .Values.externalEnv.model.KEYWORD_OPTIMIZER_API_KEY }}"
+          ports:
+            - name: flask
+              containerPort: {{ .Values.bettafish.ports.flask }}
+              protocol: TCP
+            - name: streamlit1
+              containerPort: {{ .Values.bettafish.ports.streamlit1 }}
+              protocol: TCP
+            - name: streamlit2
+              containerPort: {{ .Values.bettafish.ports.streamlit2 }}
+              protocol: TCP
+            - name: streamlit3
+              containerPort: {{ .Values.bettafish.ports.streamlit3 }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: flask
+          readinessProbe:
+            httpGet:
+              path: /
+              port: flask
+          resources:
+            {{- toYaml .Values.bettafish.resources | nindent 12 }}
+          volumeMounts:
+            {{- toYaml .Values.bettafish.volumeMounts | nindent 12 }}
+      volumes:
+        {{- toYaml .Values.bettafish.volumes | nindent 8 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

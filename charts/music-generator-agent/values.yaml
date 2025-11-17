@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: app.image
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 8501
+
+ingress:
+  enabled: false
+  className: ""
+  hosts:
+    - host: music-generator-agent.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources: {}
+autoscaling:
+  enabled: false

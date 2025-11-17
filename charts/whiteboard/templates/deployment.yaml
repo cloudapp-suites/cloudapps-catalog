@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "whiteboard.fullname" . }}
+  labels:
+    {{- include "whiteboard.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "whiteboard.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "whiteboard.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "whiteboard.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: ACCESS_TOKEN
+              value: {{ .Values.whiteboard.accessToken | quote }}
+            - name: ENABLE_WEBDAV
+              value: {{ .Values.whiteboard.enableWebdav | quote }}
+            - name: ENABLE_FILE_DATABASE
+              value: {{ .Values.whiteboard.enableFileDatabase | quote }}
+            - name: SET_READ_ONLY
+              value: {{ .Values.whiteboard.frontend.setReadOnly | quote }}
+            - name: DISPLAY_INFO
+              value: {{ .Values.whiteboard.frontend.displayInfo | quote }}
+            - name: SHOW_SMALLEST_SCREEN_INDICATOR
+              value: {{ .Values.whiteboard.frontend.showSmallestScreenIndicator | quote }}
+            - name: IMAGE_DOWNLOAD_FORMAT
+              value: {{ .Values.whiteboard.frontend.imageDownloadFormat | quote }}
+            - name: DRAW_BACKGROUND_GRID
+              value: {{ .Values.whiteboard.frontend.drawBackgroundGrid | quote }}
+            - name: BACKGROUND_GRID_IMAGE
+              value: {{ .Values.whiteboard.frontend.backgroundGridImage | quote }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

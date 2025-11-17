@@ -1,0 +1,15 @@
+apiVersion: v2
+name: etherpad
+description: A Helm chart for Etherpad
+type: application
+version: 0.1.0
+appVersion: 2.5.3
+dependencies:
+  - name: postgresql
+    version: 15.5.1
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+annotations:
+  artifacthub.io/cr.source: "etherpad/etherpad"
+  artifacthub.io/own.source: "etherpad"
+  artifacthub.io/cr.update-strategy: "latest"

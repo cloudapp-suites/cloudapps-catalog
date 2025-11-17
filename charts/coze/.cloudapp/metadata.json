@@ -18,7 +18,8 @@
     "n8n",
     "Dify",
     "Ragflow",
-    "AnythingLLM"
+    "AnythingLLM",
+    "Langflow"
   ],
   "tags": [
     "AI"

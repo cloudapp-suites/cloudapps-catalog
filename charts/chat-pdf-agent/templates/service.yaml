@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "chat-pdf-agent.fullname" . }}
+  labels:
+    {{- include "chat-pdf-agent.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "chat-pdf-agent.selectorLabels" . | nindent 4 }}

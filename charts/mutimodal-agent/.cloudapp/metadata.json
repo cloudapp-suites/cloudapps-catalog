@@ -1,0 +1,36 @@
+{
+  "name": "mutimodal-agent",
+  "display_name": "Vedio AI Agent",
+  "description": {
+    "zh": "这是一个基于 Streamlit 构建的多模态 AI 代理，利用 Google 的 Gemini 2.0 模型分析视频，并结合视觉理解与网络搜索来回答问题。它支持多种视频格式并实现实时处理。通过整合视频分析与 DuckDuckGo 网络搜索，能够提供全面且上下文感知的回答。",
+    "en": "A multimodal AI agent built with Streamlit that leverages Google's Gemini 2.0 model to analyze videos and answer questions by combining visual understanding with web search. It supports multiple video formats and performs real-time video processing. The integration of video analysis and DuckDuckGo web research enables comprehensive, context-aware responses."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 结合视觉与文本智能，提供更深入的洞察\n- 实现实时多模态问答能力\n- 通过网络增强推理提升AI理解力\n\n## 功能列表:\n\n- 使用 Gemini 2.0 Flash 进行视频分析\n- 集成 DuckDuckGo 实现网络研究\n- 支持多种视频格式（MP4、MOV、AVI）\n- 实时视频处理\n- 视觉与文本联合分析",
+    "en": "## Benefits:\n\n- Combines visual and textual intelligence for deeper insights\n- Enables real-time, multimodal question answering\n- Enhances AI understanding through web-augmented reasoning\n\n## Features:\n\n- Video analysis using Gemini 2.0 Flash\n- Web research integration via DuckDuckGo\n- Support for multiple video formats (MP4, MOV, AVI)\n- Real-time video processing\n- Combined visual and textual analysis"
+  },
+  "github_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/starter_ai_agents/multimodal_ai_agent",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://www.theunwindai.com",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Multimodal",
+    "Video Analysis",
+    "Web Search",
+    "Real-Time",
+    "Streamlit",
+    "Knowledge Management"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/mutimodal-agent/image/img.png",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "phase": 2
+}

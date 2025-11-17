@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "agentgpt.fullname" . }}-platform
+  labels:
+    {{- include "agentgpt.labels" . | nindent 4 }}
+    app: platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "agentgpt.selectorLabels" . | nindent 6 }}
+      app: platform
+  template:
+    metadata:
+      labels:
+        {{- include "agentgpt.selectorLabels" . | nindent 8 }}
+        app: platform
+    spec:
+      containers:
+        - name: platform
+          image: "{{ .Values.platform.image.repository }}:{{ .Values.platform.image.tag }}"
+          imagePullPolicy: {{ .Values.platform.image.pullPolicy }}
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REWORKD_PLATFORM_HOST
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_HOST | quote }}
+            - name: REWORKD_PLATFORM_DB_HOST
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DB_HOST | quote }}
+            - name: REWORKD_PLATFORM_DB_PORT
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DB_PORT | quote }}
+            - name: REWORKD_PLATFORM_DB_USER
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DB_USER | quote }}
+            - name: REWORKD_PLATFORM_DB_PASS
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DB_PASS | quote }}
+            - name: REWORKD_PLATFORM_DB_BASE
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DB_BASE | quote }}
+            - name: REWORKD_PLATFORM_ENVIRONMENT
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_ENVIRONMENT | quote }}
+            - name: REWORKD_PLATFORM_FF_MOCK_MODE_ENABLED
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_FF_MOCK_MODE_ENABLED | quote }}
+            - name: REWORKD_PLATFORM_OPENAI_API_KEY
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_OPENAI_API_KEY | quote }}
+            - name: REWORKD_PLATFORM_FRONTEND_URL
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_FRONTEND_URL | quote }}
+            - name: REWORKD_PLATFORM_RELOAD
+              value: {{ .Values.externalEnv.model.OPENAI_API_KEY | quote }}
+            - name: REWORKD_PLATFORM_OPENAI_API_BASE
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_OPENAI_API_BASE | quote }}
+            - name: REWORKD_PLATFORM_DATABASE_URL
+              value: {{ .Values.platform.env.REWORKD_PLATFORM_DATABASE_URL | quote }}
+          resources:
+            {{- toYaml .Values.platform.resources | nindent 12 }}

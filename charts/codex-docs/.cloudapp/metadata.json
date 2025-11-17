@@ -1,0 +1,34 @@
+{
+  "name": "codex-docs",
+  "display_name": "CodeX Docs",
+  "description": {
+    "zh": "CodeX Docs 是一款基于 Editor.js 生态系统的免费开源文档应用，适用于创建产品文档、团队知识库或个人笔记。它提供现代化的内容编辑体验，界面简洁且支持移动端。该应用支持静态渲染，无需数据库即可轻松部署，并集成了分析和错误追踪功能。",
+    "en": "CodeX Docs is a free, open-source documentation application built on the Editor.js ecosystem, designed for creating and managing product documentation, team knowledge bases, or personal notes. It offers modern content editing capabilities with a clean, mobile-friendly interface. The app supports static rendering, easy deployment without databases, and integrates analytics and error tracking tools."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无需数据库或复杂依赖，部署简单快捷\n- 支持多种部署方式（Docker、Kubernetes、Yarn），灵活高效\n- 用户界面高度可定制，适配不同使用场景\n- SEO友好的URL设计，提升内容可发现性和用户体验\n\n## 功能列表:\n\n- 基于 Editor.js 生态系统，支持富文本内容编辑\n- 支持文档嵌套结构，便于灵活组织内容\n- 静态渲染，提升性能与安全性\n- 响应式设计，兼容桌面端与移动端\n- 页面URL简洁易读，利于SEO\n- 集成 Hawk 错误监控系统\n- 支持将错别字反馈至 Slack 或 Telegram\n- 内置 Yandex Metrica 分析工具\n- 配置与部署流程简单\n- 可自定义UI，如折叠章节、隐藏侧边栏等",
+    "en": "## Benefits:\n\n- No database or complex dependencies required for deployment\n- Fast and simple setup with multiple deployment options (Docker, Kubernetes, Yarn)\n- Highly customizable UI to fit different user preferences\n- SEO-friendly URLs enhance discoverability and user experience\n\n## Features:\n\n- Powered by the Editor.js ecosystem for rich content editing\n- Supports nested document structures for flexible organization\n- Static rendering for improved performance and security\n- Responsive design that works well on both desktop and mobile devices\n- Human-readable, SEO-friendly page URLs\n- Integrated error tracking via Hawk\n- Misprint reporting to Slack or Telegram\n- Built-in integration with Yandex Metrica for analytics\n- Easy configuration and deployment process\n- Customizable UI options such as collapsible sections and sidebar visibility control"
+  },
+  "github_url": "https://github.com/codex-team/codex.docs",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "https://docs.codex.so",
+  "product_document": "https://docs.codex.so",
+  "categories": [
+    "Documentation",
+    "Wiki",
+    "Knowledge Management",
+    "Static Rendering",
+    "Self-Hosted",
+    "Open Source",
+    "Seo-Friendly"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/codex-docs/image/190149130-6a6fcdec-09bc-4f96-8bdc-5ff4d789f248.png",
+  "language": "TypeScript",
+  "license": "Apache-2.0",
+  "phase": 2
+}

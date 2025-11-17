@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "changedetection.fullname" . }}-datastore
+  labels:
+    {{- include "changedetection.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.config.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.config.storageSize }}

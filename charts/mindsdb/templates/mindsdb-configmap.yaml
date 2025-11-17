@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mindsdb.fullname" . }}-settings
+  labels:
+    {{- include "mindsdb.labels" . | nindent 4 }}
+data:
+  config.json: |
+    {
+      "log": {
+        "level": {
+          "console": "DEBUG",
+          "file": "INFO"
+        }
+      },
+      "api": {
+        "http": {
+          "host": "0.0.0.0",
+          "port": {{ .Values.mindsdb.service.port | quote }}
+        }
+      },
+      "db": {
+        "type": "postgres",
+        "host": "{{ include "mindsdb.fullname" . }}-postgresql",
+        "port": "5432",
+        "user": {{ .Values.postgresql.auth.username | quote }},
+        "password": {{ .Values.postgresql.auth.password | quote }},
+        "database": {{ .Values.postgresql.auth.database | quote }}
+      }
+    }

@@ -1,0 +1,30 @@
+replicaCount: 1
+
+image:
+  repository: app.image
+  tag: app.image.tag
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 8501
+
+ingress:
+  enabled: false
+  className: ""
+  hosts:
+    - host: multimodal-agent.your-domain.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources: 
+  limits:
+    cpu: 1000m
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+    
+autoscaling:
+  enabled: false

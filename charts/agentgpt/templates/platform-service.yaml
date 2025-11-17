@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "agentgpt.fullname" . }}-platform
+  labels:
+    {{- include "agentgpt.labels" . | nindent 4 }}
+    app: platform
+spec:
+  type: {{ .Values.platform.service.type }}
+  ports:
+    - port: {{ .Values.platform.service.port }}
+      targetPort: 8000
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "agentgpt.selectorLabels" . | nindent 4 }}
+    app: platform

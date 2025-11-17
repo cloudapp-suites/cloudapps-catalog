@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "agentgpt.fullname" . }}-frontend
+  labels:
+    {{- include "agentgpt.labels" . | nindent 4 }}
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "agentgpt.selectorLabels" . | nindent 6 }}
+      app: frontend
+  template:
+    metadata:
+      labels:
+        {{- include "agentgpt.selectorLabels" . | nindent 8 }}
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: {{ .Values.frontend.env.NODE_ENV | quote }}
+            - name: PLATFORM_URL
+              value: {{ .Values.frontend.env.PLATFORM_URL | quote }}
+            - name: NEXT_PUBLIC_BACKEND_URL
+              value: {{ .Values.frontend.env.NEXT_PUBLIC_BACKEND_URL | quote }}
+            - name: NEXTAUTH_URL
+              value: {{ .Values.frontend.env.NEXTAUTH_URL | quote }}
+            - name: OPENAI_API_KEY
+              value: {{ .Values.externalEnv.model.OPENAI_API_KEY | quote }}
+            - name: DATABASE_URL
+              value: {{ .Values.frontend.env.DATABASE_URL | quote }}
+          resources:
+            {{- toYaml .Values.frontend.resources | nindent 12 }}

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: web-check
+description: A Helm chart for Kubernetes to deploy web-check application
+type: application
+version: 0.1.0
+appVersion: latest
+annotations:
+  artifacthub.io/cr.source: "lissy93/web-check"
+  artifacthub.io/own.source: "web-check"
+  artifacthub.io/cr.update-strategy: "latest"

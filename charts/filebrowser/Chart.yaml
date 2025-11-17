@@ -1,0 +1,10 @@
+apiVersion: v2
+name: filebrowser
+description: A Helm chart for File Browser - Web File Manager
+type: application
+version: 0.1.0
+appVersion: v2.45.0
+annotations:
+  artifacthub.io/cr.source: "filebrowser/filebrowser"
+  artifacthub.io/own.source: "filebrowser"
+  artifacthub.io/cr.update-strategy: "latest"

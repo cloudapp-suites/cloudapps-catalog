@@ -1,0 +1,17 @@
+{{- if .Values.drawio.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "drawio.fullname" . }}
+  labels:
+    {{- include "drawio.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.drawio.persistence.size | default "20Gi" }}
+  {{- if .Values.drawio.persistence.storageClass }}
+  storageClassName: {{ .Values.drawio.persistence.storageClass }}
+  {{- end }}
+{{- end }}

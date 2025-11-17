@@ -1,0 +1,34 @@
+{
+  "name": "bytestash",
+  "display_name": "ByteStash",
+  "description": {
+    "zh": "ByteStash 是一个自托管的网页应用，用于安全地存储、组织和管理代码片段。它允许开发者创建、编辑代码片段，并按编程语言或内容进行筛选。专为个人使用设计，支持本地安全存储并可选账户认证。",
+    "en": "ByteStash is a self-hosted web application for storing, organizing, and managing code snippets securely. It allows developers to create, edit, and filter snippets by programming language or content. Designed for personal use, it ensures secure local storage with optional account authentication."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 在您自己的服务器上安全、私密地存储代码片段。\n- 轻量级，可通过 Docker 或 Unraid 轻松部署。\n- 界面直观，便于高效管理代码片段。\n\n## 功能列表:\n\n- 创建和编辑片段：通过直观的界面轻松添加新代码片段或更新现有片段。\n- 按语言和内容筛选：根据编程语言或内容关键词快速查找所需片段。\n- 安全存储：所有代码片段均安全存储在 sqlite 数据库中，确保代码安全且仅限您访问。\n- 支持 Swagger UI 的 API 访问：通过浏览器访问 `/api-docs` 查看完整的 API 文档。\n- 支持 Docker 和 Unraid 的自托管：可通过 Docker、Docker Compose 或 Unraid 在本地或云端部署。",
+    "en": "## Benefits:\n\n- Secure, private storage of code snippets on your own server.\n- Lightweight and easy to deploy using Docker or Unraid.\n- Intuitive UI for efficient snippet management.\n\n## Features:\n\n- Create and Edit Snippets: Easily add new code snippets or update existing ones with an intuitive interface.\n- Filter by Language and Content: Quickly find the right snippet by filtering based on programming language or keywords in the content.\n- Secure Storage: All snippets are securely stored in a sqlite database, ensuring your code remains safe and accessible only to you.\n- API Access with Swagger UI: Full API documentation available via Swagger UI at `/api-docs`.\n- Self-hosted with Docker and Unraid Support: Deploy locally or in the cloud using Docker, Docker Compose, or Unraid."
+  },
+  "github_url": "https://github.com/jordan-dalby/bytestash",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "https://github.com/jordan-dalby/bytestash/wiki",
+  "categories": [
+    "Self-Hosted",
+    "Documentation",
+    "Code Management",
+    "Developer Tools",
+    "API",
+    "Docker",
+    "Lightweight"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bytestash/image/logo192.png",
+  "language": "TypeScript",
+  "license": "GPL-3.0",
+  "phase": 2
+}

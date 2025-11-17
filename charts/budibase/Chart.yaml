@@ -1,0 +1,39 @@
+apiVersion: v2
+appVersion: 3.23.15
+annotations:
+  artifacthub.io/complex: "true"
+  artifacthub.io/source: |
+    [
+      {
+        "own.source": "budibase/apps",
+        "cr.source": "budibase/apps"
+      },
+      {
+        "own.source": "budibase/proxy",
+        "cr.source": "budibase/proxy"
+      },
+      {
+        "own.source": "budibase/worker",
+        "cr.source": "budibase/worker"
+      }
+    ]
+  artifacthub.io/cr.source: "budibase/apps"
+  artifacthub.io/own.source: "budibase/apps"
+  artifacthub.io/cr.update-strategy: "latest"
+dependencies:
+- condition: services.couchdb.enabled
+  name: couchdb
+  repository: https://apache.github.io/couchdb-helm
+  version: 4.5.6
+description: Budibase is an open source low-code platform, helping thousands of teams
+  build apps for their workplace in minutes.
+keywords:
+- low-code
+- database
+- cluster
+name: budibase
+sources:
+- https://github.com/Budibase/budibase
+- https://budibase.com
+type: application
+version: 3.0.472

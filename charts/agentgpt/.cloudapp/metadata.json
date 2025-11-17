@@ -1,0 +1,36 @@
+{
+  "name": "agentgpt",
+  "display_name": "AgentGPT",
+  "description": {
+    "zh": "AgentGPT 是一个开源平台，允许用户在浏览器中创建、配置和部署自主AI智能体。这些智能体能够通过大语言模型（LLM）自主规划任务并执行，以实现用户设定的目标。它支持与外部工具和API集成，扩展智能体的网络搜索、图像生成等能力。",
+    "en": "AgentGPT is an open-source platform that enables users to create, configure, and deploy autonomous AI agents directly in the browser. These agents can set and execute tasks toward achieving user-defined goals by leveraging large language models (LLMs). It supports integration with external tools and APIs to enhance agent capabilities such as web search and image generation."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无需复杂基础设施即可快速创建和部署自主AI智能体。\n- 完全透明地展示智能体的决策过程和任务执行流程。\n- 高度可定制，适用于研究、自动化、个人助理等多种场景。\n\n## 功能列表:\n\n- 基于浏览器的界面，用于配置和启动AI智能体。\n- 目标驱动的自主智能体，能将目标分解为可执行任务。\n- 集成OpenAI API，利用大语言模型进行推理和响应生成。\n- 可选集成Serper API，实现联网实时搜索功能。\n- 可选集成Replicate API，支持AI图像生成。\n- 提供自动部署CLI工具，一键配置Docker、数据库、后端和前端。\n- 采用Next.js、FastAPI、Prisma和Langchain等现代技术栈构建。",
+    "en": "## Benefits:\n\n- Enables rapid creation and deployment of autonomous AI agents without infrastructure overhead.\n- Provides full transparency into agent decision-making and task execution processes.\n- Highly customizable agents for diverse use cases including research, automation, and personal assistance.\n\n## Features:\n\n- Browser-based interface for configuring and launching AI agents.\n- Goal-driven autonomous agents that decompose objectives into actionable tasks.\n- Integration with OpenAI API for LLM-powered reasoning and response generation.\n- Optional integration with Serper API for real-time web search capabilities.\n- Optional integration with Replicate API for image generation.\n- Automatic setup CLI for local deployment with Docker, database, backend, and frontend.\n- Built with modern tech stack: Next.js, FastAPI, Prisma, and Langchain."
+  },
+  "github_url": "https://github.com/reworkd/AgentGPT",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Autonomous Agents",
+    "Web Application",
+    "Self-Hosted",
+    "Open Source",
+    "LLM",
+    "Task Automation"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/agentgpt/image/banner.png",
+  "license": "GPL-3.0",
+  "language": "Python",
+  "phase": 2
+}

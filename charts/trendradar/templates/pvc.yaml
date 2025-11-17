@@ -1,0 +1,19 @@
+{{- if .Values.trendradar.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "trendradar.fullname" . }}-pvc
+  labels:
+    {{- include "trendradar.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    {{- range .Values.trendradar.persistence.accessModes }}
+    - {{ . | quote }}
+    {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.trendradar.persistence.size | quote }}
+  {{- if .Values.trendradar.persistence.storageClass }}
+  storageClassName: {{ .Values.trendradar.persistence.storageClass | quote }}
+  {{- end }}
+{{- end }}

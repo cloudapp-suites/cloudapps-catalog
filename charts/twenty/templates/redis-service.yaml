@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "twenty.fullname" . }}-redis
+  labels:
+    {{- include "twenty.labels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-redis
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.redis.service.port }}
+      targetPort: {{ .Values.redis.service.port }}
+      protocol: TCP
+      name: redis
+  selector:
+    {{- include "twenty.selectorLabels" . | nindent 4 }}
+    app: {{ include "twenty.name" . }}-redis

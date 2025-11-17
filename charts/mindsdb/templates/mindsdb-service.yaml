@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mindsdb.fullname" . }}
+  labels:
+    {{- include "mindsdb.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.mindsdb.service.type }}
+  ports:
+    - port: {{ .Values.mindsdb.service.port }}
+      targetPort: {{ .Values.mindsdb.service.port }}
+      protocol: TCP
+      name: http
+    - port: {{ .Values.mindsdb.service.mysqlPort }}
+      targetPort: {{ .Values.mindsdb.service.mysqlPort }}
+      protocol: TCP
+      name: mysql
+  selector:
+    {{- include "mindsdb.selectorLabels" . | nindent 4 }}

@@ -1,0 +1,132 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "portainer.fullname" . }}-cluster-role
+  labels:
+    {{- include "portainer.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources:
+      - namespaces
+      - namespaces/status
+      - nodes
+      - nodes/status
+      - persistentvolumes
+      - persistentvolumeclaims
+      - pods
+      - pods/status
+      - pods/exec
+      - pods/log
+      - services
+      - services/status
+      - endpoints
+      - configmaps
+      - secrets
+      - serviceaccounts
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+
+  - apiGroups: ["apps"]
+    resources:
+      - deployments
+      - deployments/status
+      - deployments/scale
+      - statefulsets
+      - statefulsets/status
+      - statefulsets/scale
+      - daemonsets
+      - daemonsets/status
+      - replicasets
+      - replicasets/status
+      - replicasets/scale
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+
+  - apiGroups: ["batch"]
+    resources:
+      - jobs
+      - jobs/status
+      - cronjobs
+      - cronjobs/status
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+
+  - apiGroups: ["networking.k8s.io"]
+    resources:
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+
+  - apiGroups: ["storage.k8s.io"]
+    resources:
+      - storageclasses
+    verbs:
+      - get
+      - list
+      - watch
+
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources:
+      - clusterroles
+      - clusterrolebindings
+      - roles
+      - rolebindings
+    verbs:
+      - get
+      - list
+      - watch
+
+  - apiGroups: ["apiextensions.k8s.io"]
+    resources:
+      - customresourcedefinitions
+    verbs:
+      - get
+      - list
+      - watch
+
+  - apiGroups: ["metrics.k8s.io"]
+    resources:
+      - pods
+      - nodes
+    verbs:
+      - get
+      - list
+
+  - apiGroups: ["autoscaling"]
+    resources:
+      - horizontalpodautoscalers
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete

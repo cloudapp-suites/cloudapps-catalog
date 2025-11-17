@@ -1,0 +1,49 @@
+# Coral Talk 配置
+talk:
+  image:
+    repository: coralproject/talk
+    tag:
+    pullPolicy: IfNotPresent
+  containerPort: 5000
+  resources: {}
+  env:
+    # 必需的环境变量
+    MONGODB_URI: mongodb://mongo:27017/coral
+    REDIS_URI: redis://redis:6379
+    SIGNING_SECRET: "coral-talk-secret-key-2025"
+    # 可选的环境变量
+    NODE_ENV: production
+
+# MongoDB 配置
+mongodb:
+  image:
+    repository: mongo
+    tag: 8.0.3
+  containerPort: 27017
+  resources: {}
+  persistence:
+    enabled: true
+    size: 20Gi
+    storageClass: "alicloud-disk-essd"
+
+# Redis 配置
+redis:
+  image:
+    repository: redis
+    tag: 7.2.5
+  containerPort: 6379
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+  persistence:
+    enabled: false
+
+# 服务配置
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000

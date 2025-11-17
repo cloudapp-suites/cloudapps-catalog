@@ -1,0 +1,15 @@
+{{- if and .Values.cordys.persistence.enabled (not .Values.cordys.persistence.existingClaim) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "cordys-crm.fullname" . }}
+  labels:
+    {{- include "cordys-crm.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.cordys.persistence.storageClass | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.cordys.persistence.size | quote }}
+{{- end }}
