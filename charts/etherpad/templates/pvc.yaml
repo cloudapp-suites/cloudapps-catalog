@@ -1,19 +1,31 @@
-{{- if .Values.persistence.enabled }}
-kind: PersistentVolumeClaim
+{{- if .Values.persistence.plugins.enabled }}
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "etherpad.fullname" . }}-pvc
+  name: {{ include "etherpad-lite.fullname" . }}-plugins
   labels:
-    {{- include "etherpad.labels" . | nindent 4 }}
+    {{- include "etherpad-lite.labels" . | nindent 4 }}
 spec:
   accessModes:
-    {{- range .Values.persistence.accessModes }}
-    - {{ . | quote }}
-    {{- end }}
+    {{- toYaml .Values.persistence.plugins.accessModes | nindent 4 }}
+  storageClassName: {{ .Values.persistence.plugins.storageClass }}
   resources:
     requests:
-      storage: {{ .Values.persistence.size | quote }}
-  {{- if .Values.persistence.storageClass }}
-  storageClassName: {{ .Values.persistence.storageClass }}
-  {{- end }}
+      storage: {{ .Values.persistence.plugins.size }}
+{{- end }}
+---
+{{- if .Values.persistence.var.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "etherpad-lite.fullname" . }}-var
+  labels:
+    {{- include "etherpad-lite.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml .Values.persistence.var.accessModes | nindent 4 }}
+  storageClassName: {{ .Values.persistence.var.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.var.size }}
 {{- end }}
