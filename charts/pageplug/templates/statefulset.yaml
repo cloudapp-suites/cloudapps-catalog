@@ -1,14 +1,13 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: {{ include "pageplug.fullname" . }}-deployment
+  name: {{ include "pageplug.fullname" . }}
   labels:
     {{- include "pageplug.labels" . | nindent 4 }}
     app.kubernetes.io/component: app
 spec:
+  serviceName: {{ include "pageplug.fullname" . }}-headless
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       {{- include "pageplug.selectorLabels" . | nindent 6 }}
