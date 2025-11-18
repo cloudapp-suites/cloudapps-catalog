@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: file-server
-          image: caddy:2
+          image: {{ .Values.image.caddy }}
           ports:
             - containerPort: 80
           volumeMounts:
