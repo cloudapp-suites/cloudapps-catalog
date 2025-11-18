@@ -167,16 +167,19 @@ affinity: {}
 
 # Environment variables for the application
 env:
-  # Required: Your OpenAI API key for AI features
-  OPENAI_API_KEY: ""
-  # Optional: Your ElevenLabs API key for text-to-speech features
-  ELEVENLABS_API_KEY: ""
   REDIS_HOST: ""  # This will be set dynamically in deployment template
   REDIS_PORT: "6379"
   REDIS_DB: "0"
   CLIENT_BUILD_PATH: "/app/web/build"
   PORT: "7000"
   REACT_APP_API_BASE_URL: ""
+
+externalEnv:
+  # Required: Your OpenAI API key for AI features
+  OPENAI_API_KEY: ""
+  # Optional: Your ElevenLabs API key for text-to-speech features
+  ELEVENLABS_API_KEY: ""
+
 
 # Redis configuration
 redis:

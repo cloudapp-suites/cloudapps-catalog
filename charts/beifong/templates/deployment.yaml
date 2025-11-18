@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "beifong.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "beifong.selectorLabels" . | nindent 6 }}
@@ -42,9 +40,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: OPENAI_API_KEY
-              value: {{ .Values.env.OPENAI_API_KEY | quote }}
+              value: {{ .Values.externalEnv.OPENAI_API_KEY | quote }}
             - name: ELEVENLABS_API_KEY
-              value: {{ .Values.env.ELEVENLABS_API_KEY | quote }}
+              value: {{ .Values.externalEnv.ELEVENLABS_API_KEY | quote }}
             - name: REDIS_HOST
               value: {{ include "beifong.fullname" . }}-redis
             - name: REDIS_PORT
