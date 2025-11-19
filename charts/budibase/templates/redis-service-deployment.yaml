@@ -19,7 +19,7 @@ spec:
     spec:
       initContainers:
       - name: init-redis-permissions
-        image: busybox
+        image: {{ .Values.image.busybox }}
         command: ['sh', '-c', 'chown -R 1001:1001 /data && chmod -R 777 /data']
         volumeMounts:
         - name: redis-data

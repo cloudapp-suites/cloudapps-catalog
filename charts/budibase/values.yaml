@@ -3,6 +3,7 @@ image:
   minio: minio/minio:latest
   proxy: budibase/proxy
   worker: budibase/worker
+  busybox: busybox:latest
 
 # -- Passed to all pods created by this chart. Should not ordinarily need to be changed.
 imagePullSecrets: []
