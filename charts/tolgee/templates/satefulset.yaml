@@ -58,15 +58,6 @@ spec:
             periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if not .Values.resources }}
-          resources:
-            limits:
-              cpu: 2
-              memory: 4Gi
-            requests:
-              cpu: 500m
-              memory: 2Gi
-          {{- end }}
       volumes:
         - name: data
         {{- if .Values.tolgee.storage.persistent }}
