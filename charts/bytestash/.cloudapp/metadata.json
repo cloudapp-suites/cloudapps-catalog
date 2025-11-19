@@ -19,12 +19,10 @@
   "official_address": "",
   "product_document": "https://github.com/jordan-dalby/bytestash/wiki",
   "categories": [
-    "Self-Hosted",
     "Documentation",
     "Code Management",
     "Developer Tools",
     "API",
-    "Docker",
     "Lightweight"
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bytestash/image/logo192.png",

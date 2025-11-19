@@ -1,15 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "bytestash.fullname" . }}
   labels:
     {{- include "bytestash.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "bytestash.fullname" . }}
   replicas: {{ .Values.replicaCount }}
-  {{- with .Values.strategy }}
-  strategy:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "bytestash.selectorLabels" . | nindent 6 }}
