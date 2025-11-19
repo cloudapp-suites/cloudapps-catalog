@@ -2,7 +2,7 @@
   "name": "cockpit",
   "display_name": "Cockpit CMS",
   "description": {
-    "zh": "Cockpit CMS 是一个现代化的无头内容管理系统，专为开发者设计，用于构建灵活的内容驱动型应用。它支持任意前端技术，并提供强大的 API 来管理结构化内容。适用于网站、移动应用和物联网项目，可轻松部署并完全掌控内容基础设施。",
+    "zh": "Cockpit CMS 是一个现代化的无头内容管理系统，专为开发者设计，用于构建灵活的内容驱动型应用。它支持任意前端技术，并提供强大的 API 来管理结构化内容。适用于网站、移动应用和物联网项目，可轻松部署。",
     "en": "Cockpit CMS is a modern, headless content management system designed for developers to build flexible, content-driven applications. It supports any frontend technology and provides powerful APIs for managing structured content. Ideal for websites, mobile apps, and IoT projects, it enables easy deployment and full control over content infrastructure."
   },
   "feature": {

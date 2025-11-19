@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(kubectl get pods:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(kubectl logs:*)",
+      "Bash(kubectl get pv,pvc:*)",
+      "Bash(helm list:*)",
+      "Bash(helm get values:*)",
+      "Bash(helm upgrade:*)",
+      "Bash(kubectl delete pod:*)",
+      "Bash(helm uninstall:*)",
+      "Bash(kubectl delete pvc etherpad-pvc data-etherpad-postgresql-0:*)",
+      "Bash(kubectl get pvc:*)",
+      "Bash(helm install:*)",
+      "Bash(kubectl delete pvc:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

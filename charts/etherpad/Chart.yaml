@@ -1,5 +1,5 @@
 apiVersion: v2
-name: etherpad-lite
+name: etherpad
 description: A Helm chart for Etherpad Lite - a real-time collaborative editor
 type: application
 version: 1.0.0

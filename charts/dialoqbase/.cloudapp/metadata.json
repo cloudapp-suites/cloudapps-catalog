@@ -2,11 +2,11 @@
   "name": "dialoqbase",
   "display_name": "dialoqbase",
   "description": {
-    "zh": "Dialoqbase 是一个开源应用，允许用户基于自定义知识库创建专属聊天机器人。它利用先进的语言模型和 PostgreSQL 的向量搜索能力，提供准确且上下文相关的回复。该工具支持多种数据源和 AI 模型提供商，便于灵活、个性化的聊天机器人开发。",
+    "zh": "Dialoqbase 是一个开源应用，用户可以基于自定义知识库创建专属聊天机器人。它利用先进的语言模型和 PostgreSQL 的向量搜索能力，提供准确且上下文相关的回复。该工具支持多种数据源和 AI 模型提供商，便于灵活、个性化的聊天机器人开发。",
     "en": "Dialoqbase is an open-source application that enables users to create custom chatbots powered by their own knowledge base. It leverages advanced language models and PostgreSQL for vector search to deliver context-aware, accurate responses. The tool supports various data sources and AI model providers for flexible, personalized chatbot development."
   },
   "feature": {
-    "zh": "## 产品优势:\n\n- 让非专家用户也能轻松搭建AI驱动的聊天机器人，配置简单\n- 支持自托管和定制化部署，保障数据隐私与自主控制\n- 兼容多种大语言模型和嵌入模型提供商，灵活性极高\n\n## 功能列表:\n\n- 基于个性化知识库创建自定义聊天机器人\n- 利用强大的语言模型生成上下文感知的回复\n- 使用 PostgreSQL 实现高效的向量搜索和知识库存储\n- 支持多种数据加载器，包括 PDF、YouTube、GitHub、MP3 和网站等\n- 集成主流 AI 提供商：OpenAI、Anthropic、Google、Fireworks、Ollama 等\n- 提供可嵌入网页的小工具，并支持 Telegram、Discord 和 WhatsApp 集成",
+    "zh": "## 产品优势:\n\n- 让非专家用户也能轻松搭建AI驱动的聊天机器人，配置简单\n- 支持自托管和定制化部署，保障数据隐私和自主控制\n- 兼容多种大语言模型和嵌入模型提供商，灵活性极高\n\n## 功能列表:\n\n- 基于个性化知识库创建自定义聊天机器人\n- 利用强大的语言模型生成上下文感知的回复\n- 使用 PostgreSQL 实现高效的向量搜索和知识库存储\n- 支持多种数据加载器，包括 PDF、YouTube、GitHub、MP3 和网站等\n- 集成主流 AI 提供商：OpenAI、Anthropic、Google、Fireworks、Ollama 等\n- 提供可嵌入网页的小工具，并支持 Telegram、Discord 和 WhatsApp 集成",
     "en": "## Benefits:\n\n- Empowers non-experts to build AI-powered chatbots with minimal setup\n- Enables full control over data privacy with self-hosted, customizable deployment\n- Supports integration with multiple LLM and embedding providers for maximum flexibility\n\n## Features:\n\n- Create custom chatbots using a personalized knowledge base\n- Utilize powerful language models to generate context-aware responses\n- Use PostgreSQL for efficient vector search and knowledge base storage\n- Support for diverse data loaders including PDF, YouTube, GitHub, MP3, and websites\n- Integration with major AI providers: OpenAI, Anthropic, Google, Fireworks, Ollama, and more\n- Embeddable web widget and support for Telegram, Discord, and WhatsApp integrations"
   },
   "github_url": "https://github.com/n4ze3m/dialoqbase",
@@ -24,8 +24,6 @@
   "official_address": "https://dialoqbase.n4ze3m.com/",
   "product_document": "",
   "categories": [
-    "Open Source",
-    "Self-Hosted",
     "Chatbot",
     "Knowledge Management",
     "Ai Integration",
