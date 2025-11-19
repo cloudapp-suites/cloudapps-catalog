@@ -1,6 +1,6 @@
 apiVersion: v2
 name: whiteboard
-description: A collaborative Whiteboard/Sketchboard application
+description: A collaborative Whiteboard/Sketchboard application.
 type: application
 version: 0.1.0
 appVersion: latest
