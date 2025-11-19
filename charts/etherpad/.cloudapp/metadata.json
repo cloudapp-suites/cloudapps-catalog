@@ -6,7 +6,7 @@
     "en": "Etherpad is a real-time collaborative editor designed for web-based document collaboration. It allows thousands of users to edit documents simultaneously, offering full data export capabilities. The application runs on a self-hosted server, giving users full control over their data and deployment environment."
   },
   "feature": {
-    "zh": "## 产品优势:\n\n- 可扩展到支持数千个用户同时在线协作\n- 自托管的解决方案，确保数据与部署环境的完全控制权\n- 基于插件架构的高度可定制性\n- 支持了超过101种语言，国际化程度高\n\n## 功能列表:\n\n- 实时多人协同文档编辑\n- 完整的数据导出能力\n- 支持通过 Docker 和 Docker Compose 部署\n- 插件系统用于扩展功能\n- 通过插件支持用户认证和访客账户\n- 提供 HTTP API 以便与其他应用集成\n- 支持通过皮肤变体自定义界面的样式\n- 支持多种数据库，包括 PostgreSQL 和 MySQL\n- 提供高本地化覆盖率的多语言支持",
+    "zh": "## 产品优势:\n\n- 可扩展到支持数千个用户同时在线协作\n- 自托管的解决方案，确保数据与部署环境的完全控制权\n- 基于插件架构的高度可定制性\n- 支持了超过101种语言，国际化程度高\n\n## 功能列表:\n\n- 实时多人协同文档编辑\n- 完整的数据导出能力\n- 支持通过 Docker 和 Docker Compose 部署\n- 插件系统用于扩展功能\n- 通过插件支持用户认证和访客账户\n- 提供 HTTP API 以便与其他应用的集成\n- 支持通过皮肤变体自定义界面的样式\n- 支持多种数据库，包括 PostgreSQL 和 MySQL\n- 提供高本地化覆盖率的多语言支持",
     "en": "## Benefits:\n\n- Scalable to support thousands of simultaneous users\n- Self-hosted solution for full data and deployment control\n- Highly customizable through a plugin framework\n- Available in over 100 languages with strong internationalization support\n\n## Features:\n\n- Real-time collaborative document editing\n- Full data export capabilities\n- Support for Docker and Docker Compose deployment\n- Plugin system for extending functionality\n- User authentication and guest account support via plugins\n- HTTP API for integration with other applications\n- Customizable UI with skin variants\n- Support for multiple databases including PostgreSQL and MySQL\n- Translation support with high localization coverage"
   },
   "github_url": "https://github.com/ether/etherpad-lite",
