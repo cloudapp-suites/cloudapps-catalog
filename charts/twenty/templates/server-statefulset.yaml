@@ -20,7 +20,7 @@ spec:
     spec:
       initContainers:
         - name: init-permissions
-          image: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/busybox:latest"
+          image: {{ .Values.image.busybox }}
           command: ['sh', '-c']
           args:
             - |

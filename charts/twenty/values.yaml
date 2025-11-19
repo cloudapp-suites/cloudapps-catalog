@@ -5,7 +5,8 @@ image:
   repository: twentycrm/twenty
   tag:
   pullPolicy: IfNotPresent
-  kubectl: kubectl.image
+  kubectl: kubectl:latest
+  busybox: busybox:latest
 
 # Server configuration
 server:
