@@ -1,5 +1,13 @@
+annotations:
+  artifacthub.io/cr.source: electerious/ackee
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: electerious_ackee
 apiVersion: v2
-appVersion: 3.4.2
+appVersion: 3.5.1
+dependencies:
+- name: mongodb
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.3.0
 description: A Helm chart for Ackee analytics tool
 home: https://github.com/suda/charts/tree/main/charts/ackee
 maintainers:
@@ -11,11 +19,3 @@ sources:
 - https://github.com/suda/charts/tree/main/charts/ackee
 type: application
 version: 0.2.1
-dependencies:
-- name: mongodb
-  repository: https://charts.bitnami.com/bitnami
-  version: 16.3.0
-annotations:
-  artifacthub.io/cr.source: "electerious/ackee"
-  artifacthub.io/own.source: "electerious_ackee"
-  artifacthub.io/cr.update-strategy: "latest"
