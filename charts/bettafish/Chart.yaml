@@ -1,6 +1,6 @@
 apiVersion: v2
 name: bettafish
-description: A Helm chart for BettaFish舆情分析系统
+description: A Helm chart for BettaFish 舆情分析系统.
 type: application
 version: 0.1.0
 appVersion: 1.2.1
