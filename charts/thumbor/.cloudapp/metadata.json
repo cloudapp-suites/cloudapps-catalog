@@ -33,7 +33,7 @@
     "API"
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/thumbor/image/thumbor-logo.png",
-  "language": "Python",
+  "language": "",
   "license": "MIT",
   "phase": 2
 }
