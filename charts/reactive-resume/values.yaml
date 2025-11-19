@@ -55,7 +55,7 @@ env:
 postgresql:
   enabled: true
   image:
-    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/postgres
+    repository: postgres
     tag: 16-alpine
   auth:
     postgresPassword: postgres
@@ -65,14 +65,14 @@ postgresql:
   primary:
     persistence:
       enabled: true
-      storageClass: "alicloud-disk-essd"
+      storageClass: ""
       size: 20Gi
 
 # Minio dependency configuration
 minio:
   enabled: true
   image:
-    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/minio
+    repository: minio
     tag: latest
   service:
     port: 9000
@@ -81,14 +81,14 @@ minio:
     rootPassword: minioadmin
   persistence:
     enabled: true
-    storageClass: "alicloud-disk-essd"
+    storageClass: ""
     size: 20Gi
 
 # Chrome dependency configuration
 chrome:
   enabled: true
   image:
-    repository: apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/chromium
+    repository: chromium
     tag: latest
   service:
     port: 3000
