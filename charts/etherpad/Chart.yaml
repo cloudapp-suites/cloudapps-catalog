@@ -3,7 +3,11 @@ name: etherpad-lite
 description: A Helm chart for Etherpad Lite - a real-time collaborative editor
 type: application
 version: 1.0.0
-appVersion: "2.5.3"
+appVersion: 2.5.3
+annotations:
+  artifacthub.io/cr.source: "etherpad/etherpad"
+  artifacthub.io/own.source: "etherpad"
+  artifacthub.io/cr.update-strategy: "latest"
 keywords:
   - etherpad
   - collaborative

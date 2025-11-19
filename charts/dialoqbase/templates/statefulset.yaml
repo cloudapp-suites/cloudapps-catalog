@@ -1,12 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "dialoqbase.fullname" . }}
   labels:
     {{- include "dialoqbase.labels" . | nindent 4 }}
 spec:
-  strategy:
-    type: Recreate
+  serviceName: {{ include "dialoqbase.fullname" . }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
