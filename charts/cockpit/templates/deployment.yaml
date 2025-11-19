@@ -16,6 +16,17 @@ spec:
       labels:
         {{- include "cockpit.selectorLabels" . | nindent 8 }}
     spec:
+      initContainers:
+        - name: volume-permissions
+          image: {{ .Values.image.busybox }}
+          command: ['sh', '-c']
+          args:
+            - |
+              chown -R 82:82 /var/www/html/storage
+              chmod -R 775 /var/www/html/storage
+          volumeMounts:
+            - name: cockpit-storage
+              mountPath: /var/www/html/storage
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

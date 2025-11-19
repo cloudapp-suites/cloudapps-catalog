@@ -29,6 +29,6 @@
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/agentgpt/image/banner.png",
   "license": "GPL-3.0",
-  "language": "Python",
+  "language": "TypeScript",
   "phase": 2
 }

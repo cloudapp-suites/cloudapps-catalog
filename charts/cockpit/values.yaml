@@ -6,6 +6,7 @@ image:
   repository: cockpithq/cockpit
   tag: core-latest
   pullPolicy: IfNotPresent
+  busybox: busybox:latest
 
 service:
   type: LoadBalancer

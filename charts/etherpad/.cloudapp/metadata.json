@@ -2,7 +2,7 @@
   "name": "etherpad",
   "display_name": "Etherpad",
   "description": {
-    "zh": "Etherpad 是一个面向网页的实时协作编辑器，支持多人同时在线编辑文档。它具备完整的数据导出功能，可部署在用户自己的服务器上，让用户完全掌控数据和部署环境。",
+    "zh": "Etherpad 是一个面向网页的实时协作编辑器，支持多人同时在线编辑文档。具备完整的数据导出功能，可部署在用户自己的服务器上，让用户完全掌控数据和部署环境。",
     "en": "Etherpad is a real-time collaborative editor designed for web-based document collaboration. It allows thousands of users to edit documents simultaneously, offering full data export capabilities. The application runs on a self-hosted server, giving users full control over their data and deployment environment."
   },
   "feature": {
