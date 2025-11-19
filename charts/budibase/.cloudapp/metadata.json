@@ -2,7 +2,7 @@
   "name": "budibase",
   "display_name": "Budibase",
   "description": {
-    "zh": "Budibase 是一个开源的低代码平台，旨在帮助工程师快速安全地构建表单、门户和审批应用。它支持开发者创建具有响应式设计和性能优化的单页应用。该平台集成了多种数据源和工具，非常适合构建定制化的业务应用。",
+    "zh": "Budibase 是一个开源低代码平台，旨在帮助工程师快速安全地构建表单、门户和审批应用。它支持开发者创建具有响应式设计和性能优化的单页应用。该平台集成了多种数据源和工具，非常适合构建定制化的业务应用。",
     "en": "Budibase is an open-source low-code platform designed to help engineers quickly build forms, portals, and approval applications securely. It enables developers to create single-page applications with responsive design and performance optimization. The platform supports integration with various data sources and tools, making it ideal for building custom business applications."
   },
   "feature": {

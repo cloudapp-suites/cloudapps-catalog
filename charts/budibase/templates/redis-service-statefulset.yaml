@@ -1,11 +1,12 @@
 {{- if .Values.services.redis.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   labels:
     io.kompose.service: redis-service
   name: redis-service
 spec:
+  serviceName: redis-service
   replicas: {{ .Values.services.redis.replicaCount }}
   selector:
     matchLabels:

@@ -1,17 +1,16 @@
 {{- if .Values.services.objectStore.minio }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   labels:
     io.kompose.service: minio-service
   name: minio-service
 spec:
   replicas: 1
+  serviceName: minio-service
   selector:
     matchLabels:
       io.kompose.service: minio-service
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
