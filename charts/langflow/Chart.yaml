@@ -5,18 +5,6 @@ type: application
 version: 0.1.0
 appVersion: 1.6.5
 annotations:
-  artifacthub.io/complex: "true"
   artifacthub.io/cr.source: "langflowai/langflow-frontend"
   artifacthub.io/own.source: "langflow-frontend"
-  artifacthub.io/source: |
-    [
-      {
-        "own.source": "langflow-frontend",
-        "cr.source": "langflowai/langflow-frontend"
-      },
-      {
-        "own.source": "langflow-backend",
-        "cr.source": "langflowai/langflow-backend"
-      }
-    ]
   artifacthub.io/cr.update-strategy: "latest"
