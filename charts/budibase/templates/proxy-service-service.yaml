@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/name: budibase-proxy
   name: proxy-service
 spec:
+  type: {{ .Values.services.proxy.type | quote }}
   ports:
   - name: {{ .Values.services.proxy.port | quote }}
     port: {{ .Values.services.proxy.port }}

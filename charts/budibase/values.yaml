@@ -21,7 +21,7 @@ serviceAccount:
 
 service:
   # -- Service type for the service that points to the main Budibase proxy pod.
-  type: LoadBalancer
+  type: ClusterIP
   # -- Port to expose on the service.
   port: 10000
 
@@ -159,6 +159,7 @@ services:
   dns: cluster.local
 
   proxy:
+    type: LoadBalancer
     # @ignore (you shouldn't need to change this)
     port: 10000
     # -- The number of proxy replicas to run.
