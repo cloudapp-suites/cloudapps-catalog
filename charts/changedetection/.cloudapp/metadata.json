@@ -31,7 +31,7 @@
     "Change Monitoring"
   ],
   "pic_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png",
-  "language": "Python",
+  "language": "",
   "license": "Apache-2.0",
   "phase": 2
 }

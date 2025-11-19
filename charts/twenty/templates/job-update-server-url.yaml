@@ -41,11 +41,11 @@ spec:
             exit 1
           fi
 
-          echo "Patching deployment {{ include "twenty.fullname" . }}-server with SERVER_URL=http://$EXTERNAL_IP:{{ .Values.server.service.port }}"
-          kubectl patch deployment {{ include "twenty.fullname" . }}-server --namespace {{ .Release.Namespace }} \
+          echo "Patching statefulset {{ include "twenty.fullname" . }}-server with SERVER_URL=http://$EXTERNAL_IP:{{ .Values.server.service.port }}"
+          kubectl patch statefulset {{ include "twenty.fullname" . }}-server --namespace {{ .Release.Namespace }} \
             --type='strategic' \
             -p='{"spec":{"template":{"spec":{"containers":[{"name":"server","env":[{"name":"SERVER_URL","value":"http://'$EXTERNAL_IP':{{ .Values.server.service.port }}"}]}]}}}}'
-          echo "Patch successful. Deployment will be updated with the new SERVER_URL environment variable."
+          echo "Patch successful. StatefulSet will be updated with the new SERVER_URL environment variable."
       restartPolicy: Never
   backoffLimit: 3
 {{- end }}
