@@ -41,7 +41,7 @@ spec:
             - name: PG_DATABASE_URL
               value: "postgres://{{ .Values.database.credentials.username }}:{{ .Values.database.credentials.password }}@{{ include "twenty.fullname" . }}-db:{{ .Values.database.service.port }}/{{ .Values.database.credentials.database }}"
             - name: SERVER_URL
-              value: "{{ .Values.app.serverUrl }}"
+              value: "{{ .Values.app.serverUrl | default "http://localhost:3000" }}"
             - name: REDIS_URL
               value: "redis://{{ include "twenty.fullname" . }}-redis:{{ .Values.redis.service.port }}"
             - name: APP_SECRET

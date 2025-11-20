@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "langflow.fullname" . }}-db
   labels:
     {{- include "langflow.labels" . | nindent 4 }}
     app.kubernetes.io/component: database
 spec:
+  serviceName: {{ include "langflow.fullname" . }}-db
   replicas: 1
   selector:
     matchLabels:

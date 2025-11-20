@@ -33,11 +33,9 @@
     "Workflow Automation",
     "Visual Programming",
     "Llm Integration",
-    "Open Source",
-    "Self-Hosted",
     "Developer Tool"
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/langflow/image/langflow-logo-color-black-solid.svg",
-  "language": "Python",
+  "language": "",
   "license": "MIT"
 }

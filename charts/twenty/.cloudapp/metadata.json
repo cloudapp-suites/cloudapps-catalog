@@ -2,7 +2,7 @@
   "name": "twenty",
   "display_name": "Twenty",
   "description": {
-    "zh": "Twenty 是一款开源客户关系管理（CRM）系统，旨在提供一种经济实惠、用户友好且由社区驱动的替代方案，以取代价格高昂且数据锁定的传统 CRM。它通过可自定义的布局、自动化工作流和灵活的权限管理，帮助团队高效管理客户数据。基于 TypeScript、NestJS 和 React 等现代技术构建，Twenty 强调透明性、可扩展性以及受 Notion 和 Airtable 启发的全新用户体验。",
+    "zh": "Twenty 是一款开源客户关系管理（CRM）系统，旨在提供一种经济实惠、用户友好且由社区驱动的替代方案，以取代价格高昂且数据锁定的传统 CRM。它通过自定义的布局、自动化工作流和灵活的权限管理，帮助团队高效管理客户数据。基于 TypeScript、NestJS 和 React 等现代技术构建，Twenty 强调透明性、可扩展性以及受 Notion 和 Airtable 启发的全新用户体验。",
     "en": "Twenty is the #1 open-source CRM designed to provide an affordable, user-friendly, and community-driven alternative to expensive, locked-in customer relationship management systems. It empowers teams to manage customer data with customizable layouts, automation workflows, and flexible permissions. Built with modern tech like TypeScript, NestJS, and React, Twenty emphasizes transparency, extensibility, and a fresh UX inspired by tools like Notion and Airtable."
   },
   "feature": {
