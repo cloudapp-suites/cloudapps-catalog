@@ -2,7 +2,7 @@
   "name": "mindsdb",
   "display_name": "MindsDB",
   "description": {
-    "zh": "MindsDB 是一个开源服务器，使人类、AI、智能体和应用程序能够对大规模数据源进行高精度查询。它允许用户连接、统一并交互分布在数据库、数据仓库和 SaaS 应用中的数据。通过结合基于 SQL 的数据管理和 AI 驱动的查询能力，MindsDB 使得复杂数据可通过自然语言或程序化接口轻松访问。",
+    "zh": "MindsDB 是一个开源服务器，使人类、AI、智能体和应用程序能够对大规模数据源进行高精度查询。允许用户连接、统一并交互分布在数据库、数据仓库和 SaaS 应用中的数据。通过结合基于 SQL 的数据管理和 AI 驱动的查询能力，MindsDB 使得复杂数据可通过自然语言或程序化接口轻松访问。",
     "en": "MindsDB is an open-source server that enables humans, AI, agents, and applications to query large-scale data sources with high accuracy. It allows users to connect, unify, and interact with distributed data across databases, data warehouses, and SaaS applications. By combining SQL-based data management with AI-powered querying, MindsDB makes complex data accessible through natural language or programmatic interfaces."
   },
   "feature": {

@@ -18,10 +18,14 @@ spec:
         {{- include "mindsdb.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: postgresql
     spec:
+      securityContext:
+        fsGroup: 1001
       containers:
         - name: postgresql
           image: "{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}"
           imagePullPolicy: {{ .Values.postgresql.image.pullPolicy }}
+          securityContext:
+            runAsUser: 1001
           env:
             - name: POSTGRES_USER
               value: {{ .Values.postgresql.auth.username | quote }}
