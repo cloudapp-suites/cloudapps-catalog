@@ -11,7 +11,7 @@ image:
   repository: linuxserver/mstream
   # -- image tag
   # @default -- chart.appVersion
-  tag: 
+  tag: ""
   # -- image pull policy
   pullPolicy: IfNotPresent
 
