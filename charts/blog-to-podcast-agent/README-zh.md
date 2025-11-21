@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=blog-to-podcast-agent)
+
+</div>
+
 > ⚠️ 注意：该应用使用 openai/gemini 等外部服务，对服务器所在地网络有要求。请使用合适的集群进行部署，如 新加坡 集群，并确保对外服务网络可用。
 
 ## 📰 ➡️ 🎙️ 博客转播客代理

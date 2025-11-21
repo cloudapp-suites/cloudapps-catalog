@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=713e8a30-ec75-49be-9658-eb151ae317a6)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=shiori)
 
 </div>
+
 
 # Shiori
 

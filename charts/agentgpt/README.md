@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=agentgpt)
+
+</div>
+
 <p align="center">
   <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/agentgpt/image/banner.png" height="300" alt="AgentGPT Logo"/>
 </p>

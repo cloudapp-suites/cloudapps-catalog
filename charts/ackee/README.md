@@ -1,8 +1,8 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=2d2a0dc1-e1d7-4778-8a44-fcf263c5cd13)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=ackee)
 
 </div>
 

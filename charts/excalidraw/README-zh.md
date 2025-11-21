@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=db20e1fc-6199-468d-b8d6-c300d4f10f8b)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=excalidraw)
 
 </div>
+
 
 <a href="https://excalidraw.com/" target="_blank" rel="noopener">
   <picture>

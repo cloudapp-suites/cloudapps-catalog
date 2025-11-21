@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=7bd173d1-e731-473d-8a52-73fbb48c690f)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=coze)
 
 </div>
+
 
 > **Note**: After deployment, you need to configure the model's api_key and model (default qwen-plus) in the model-configmap. Currently, only Alibaba Bailian is supported. If you need to modify it, you can configure the model file according to the project details.
 

@@ -1,4 +1,12 @@
 <div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=linkwarden)
+
+</div>
+
+<div align="center">
   <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/linkwarden/image/logo.png" width="100px" />
   <h1>Linkwarden</h1>
   <h3>书签，进化了</h3>

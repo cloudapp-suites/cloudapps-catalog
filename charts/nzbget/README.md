@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=8ee67da0-02a5-47ad-93c5-ecfda425cfa6)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=nzbget)
 
 </div>
+
 
 > Note: After deployment, you need to manually remove the tracking information from the browser address (for example: /?spm=5176.13764303.0.0.768f2c01KgPdkL)
 # NZBGet #

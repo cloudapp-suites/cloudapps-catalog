@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=517cdf03-3683-4583-90b6-c9fc8009d749)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=bazarr)
 
 </div>
+
 
 # bazarr
 

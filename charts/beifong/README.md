@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=beifong)
+
+</div>
+
 # 🦉 Beifong: Your Junk-Free, Personalized Information and Podcasts
 
 ![image](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/beifong/image/b2f24f12-6f80-46fa-aa31-ee42e17765b1)

@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=180efb88-6599-4278-8354-730ac9b01782)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=cusdis)
 
 </div>
+
 
 <p align="center"><a href="https://cusdis.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cusdis/image/logo-256.png" alt="logo"></a></p>
 

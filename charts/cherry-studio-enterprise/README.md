@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=bdd9a65d-7201-46e3-b1cb-49897399e4bf)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=cherry-studio-enterprise)
 
 </div>
+
 
 # Cherry Studio Enterprise Helm Chart
 

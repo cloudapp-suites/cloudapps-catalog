@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=codex-docs)
+
+</div>
+
 # CodeX Docs
 
 [CodeX Docs](https://docs.codex.so/) is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.

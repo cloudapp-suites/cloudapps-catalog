@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=cordys-crm)
+
+</div>
+
 <h1 align="center">Cordys CRM</h1>
 <h3 align="center">新一代的开源 AI CRM 系统</h3>
 <p align="center">

@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=budibase)
+
+</div>
+
 <p align="center">
   <a href="https://www.budibase.com">
     <img alt="Budibase" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/budibase/image/Budibase_Symbol_RGB_FullColour_cbqvha_1_z5cwq2.svg" width="60" />

@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=b8bf821f-d64d-43d7-a065-3682c4d78bdc)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=flowise)
 
 </div>
+
 
 <!-- markdownlint-disable MD030 -->
 

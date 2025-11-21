@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=element-web)
+
+</div>
+
 [![Chat](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/element-web/image/element-web_matrix.org.svg)](https://matrix.to/#/#element-web:matrix.org)
 ![Tests](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/element-web/image/badge.svg)
 ![Static Analysis](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/element-web/image/badge.svg)

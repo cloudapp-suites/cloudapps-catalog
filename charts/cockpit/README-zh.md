@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=cockpit)
+
+</div>
+
 # Cockpit CMS - 无头内容管理
 
 ![cockpit banner](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit-HQ/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca)

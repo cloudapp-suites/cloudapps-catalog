@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=coral-talk)
+
+</div>
+
 <p align="center">
   <a href="https://coralproject.net" target="_blank"><img width="250" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/coral-talk/image/coralproject_by_voxmedia.svg" alt="Coral by Vox Media" /></a>
 </p>

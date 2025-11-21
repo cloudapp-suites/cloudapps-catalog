@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=mealie)
+
+</div>
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">

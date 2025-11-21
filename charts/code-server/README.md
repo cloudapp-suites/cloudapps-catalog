@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=code-server)
+
+</div>
+
 # code-server
 
 [!["GitHub Discussions"](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/_20GitHub-_20Discussions-gray.svg)](https://github.com/coder/code-server/discussions) [!["Join us on Slack"](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/join-us_20on_20slack-gray.svg)](https://coder.com/community) [![Twitter Follow](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/CoderHQ.svg)](https://twitter.com/coderhq) [![Discord](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/747933592273027093.svg)](https://discord.com/invite/coder) [![codecov](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/badge.svg)](https://codecov.io/gh/coder/code-server) [![See latest](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/code-server/image/v1.svg)](https://coder.com/docs/code-server/latest)

@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=thumbor)
+
+</div>
+
 > 注意：thumbor 不支持 /spm? 埋点，请直接使用如：**http://<thumbor-server>/unsafe/https://raw.githubusercontent.com/thumbor/thumbor/master/example.jpg**
 <p align="center">
   <a href="http://www.thumbor.org">

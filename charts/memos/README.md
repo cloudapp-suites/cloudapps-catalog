@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=memos)
+
+</div>
+
 # Memos
 
 <img align="right" height="96px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/memos/image/logo-rounded.png" alt="Memos" />

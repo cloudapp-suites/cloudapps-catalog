@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=bolt-diy)
+
+</div>
+
 # bolt.diy
 
 [![bolt.diy: 浏览器中的AI全栈Web开发](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bolt-diy/image/social_preview_index.jpg)](https://bolt.diy)

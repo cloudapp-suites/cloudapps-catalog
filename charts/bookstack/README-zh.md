@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=bookstack)
+
+</div>
+
 # BookStack
 
 [![GitHub 发布版本](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/bookstack/image/BookStack.svg)](https://github.com/BookStackApp/BookStack/releases/latest)

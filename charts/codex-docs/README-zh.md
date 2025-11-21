@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=codex-docs)
+
+</div>
+
 # CodeX 文档
 
 [CodeX Docs](https://docs.codex.so/) 是一个免费的文档应用。它基于 Editor.js 生态系统，提供了现代化的内容操作功能。

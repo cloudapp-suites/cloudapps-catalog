@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=c718b2f5-74ba-4987-a966-1d77412af15e)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=navidrome)
 
 </div>
+
 
 <a href="https://www.navidrome.org"><img alt="Navidrome logo" height="60px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/logo-192x192.png" title="navidrome"/></a>
 

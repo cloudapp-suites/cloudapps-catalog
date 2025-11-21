@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=beifong)
+
+</div>
+
 # 🦉 Beifong：您的无垃圾、个性化信息和播客
 
 ![image](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/beifong/image/b2f24f12-6f80-46fa-aa31-ee42e17765b1)

@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=c718b2f5-74ba-4987-a966-1d77412af15e)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=navidrome)
 
 </div>
+
 
 <a href="https://www.navidrome.org"><img alt="Navidrome标志" height="60px" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/navidrome/image/logo-192x192.png" title="navidrome"/></a>
 

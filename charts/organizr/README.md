@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=organizr)
+
+</div>
+
 ![OrganizrHeader](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/organizr/image/logo-wide.png)
 
 [![Percentage of issues still open](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/organizr/image/Organizr.svg)](http://isitmaintained.com/project/causefx/Organizr "Percentage of issues still open")

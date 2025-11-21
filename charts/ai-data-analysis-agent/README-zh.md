@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=ai-data-analysis-agent)
+
+</div>
+
 g # 📊 AI 数据分析代理
 
 一个使用 Agno Agent 框架和 OpenAI 的 gpt-4o 模型构建的 AI 数据分析代理。该代理帮助用户通过自然语言查询分析他们的数据（CSV、Excel 文件），由 OpenAI 语言模型和 DuckDB 提供支持，实现高效的数据处理，使数据分析对所有用户都可访问，无论他们是否具备 SQL 专业知识。

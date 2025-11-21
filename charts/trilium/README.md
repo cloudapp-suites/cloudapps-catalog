@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=trilium)
+
+</div>
+
 # Trilium Notes
 
 ![GitHub Sponsors](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/trilium/image/eliandoran.svg) ![LiberaPay patrons](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/trilium/image/ElianDoran.svg)  

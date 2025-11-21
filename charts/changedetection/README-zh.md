@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=changedetection)
+
+</div>
+
 # 自动检测网站更改 — 实时监控网页变化
 
 监控网站更新 — 通过 Discord、电子邮件、Slack、Telegram、Webhook 等方式接收通知。

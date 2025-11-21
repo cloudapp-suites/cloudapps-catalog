@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=searxng)
+
+</div>
+
 注重隐私、可定制的 [`元搜索引擎`](https://en.wikipedia.org/wiki/Metasearch_engine)
 
 [Searx.space](https://searx.space) 列出了可直接使用的运行实例。

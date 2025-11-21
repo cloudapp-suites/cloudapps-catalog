@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=thumbor)
+
+</div>
+
 <h4 align="center">Join <a href="https://github.com/thumbor/thumbor-bootcamp">thumbor-bootcamp</a> for a learning and contribution experience with ❤️ and 🤗 from the thumbor team</h4>
 
 <p align="center">

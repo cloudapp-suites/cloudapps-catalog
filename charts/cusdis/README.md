@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS provides one-click application deployment. Try it now!** 
+ 🚀 **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=180efb88-6599-4278-8354-730ac9b01782)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=cusdis)
 
 </div>
+
 
 <p align="center"><a href="https://cusdis.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cusdis/image/logo-256.png" alt="logo"></a></p>
 

@@ -1,5 +1,13 @@
 <div align="center">
 
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=bettafish)
+
+</div>
+
+<div align="center">
+
 <img src="https://github.com/666ghj/BettaFish/raw/main/static/image/logo_compressed.png" alt="BettaFish Logo" width="100%">
 
 <a href="https://aihubmix.com/?aff=8Ds9" target="_blank"><img alt="666ghj%2FBettaFish | Trendshift" height="40" src="https://github.com/666ghj/BettaFish/raw/main/static/image/logo_aihubmix.png"/></a>&ensp;

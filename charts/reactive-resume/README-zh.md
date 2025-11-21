@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=reactive-resume)
+
+</div>
+
 ![Reactive Resume](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/reactive-resume/image/68747470733a2f2f692e696d6775722e636f6d2f464663346e795a2e6a7067)
 
 ![App Version](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/reactive-resume/image/Reactive-Resume.svg)

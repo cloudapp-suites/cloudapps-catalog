@@ -1,10 +1,11 @@
 <div align="center">
 
-🚀 **EDAS 提供应用一键部署，快来体验吧！**
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=7bd173d1-e731-473d-8a52-73fbb48c690f)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=coze)
 
 </div>
+
 
 > **注意**：部署完成后需要自行去model-configmap中配置模型的api_key 和 model（默认 qwen-plus ），当前只支持阿里百炼，如需修改可以按照项目详情自行配置模型文件
 

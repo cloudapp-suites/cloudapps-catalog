@@ -1,3 +1,11 @@
+<div align="center">
+
+ 🚀 **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=flame)
+
+</div>
+
 # 火焰（Flame）
 
 ![主页截图](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/flame/image/home.png)

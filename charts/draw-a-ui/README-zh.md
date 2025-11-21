@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS 提供应用一键部署，快来体验吧！**
+
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=draw-a-ui)
+
+</div>
+
 # 画一个UI
 
 这是一个使用 tldraw 和 gpt-4-vision API 的应用程序，它可以根据你绘制的线框图生成 HTML 页面。

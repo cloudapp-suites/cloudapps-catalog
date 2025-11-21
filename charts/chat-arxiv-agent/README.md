@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=chat-arxiv-agent)
+
+</div>
+
 ## 🔎 Chat with Arxiv Research Papers
 This Streamlit app enables you to engage in interactive conversations with arXiv, a vast repository of scholarly articles, using GPT-4o. With this RAG application, you can easily access and explore the wealth of knowledge contained within arXiv.
 

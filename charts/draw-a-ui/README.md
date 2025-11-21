@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=draw-a-ui)
+
+</div>
+
 # draw-a-ui
 
 This is an app that uses tldraw and the gpt-4-vision api to generate html based on a wireframe you draw.

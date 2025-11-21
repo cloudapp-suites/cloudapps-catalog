@@ -1,3 +1,11 @@
+<div align="center">
+
+ **EDAS provides one-click application deployment. Try it now!** 
+
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&name=changedetection)
+
+</div>
+
 # Detect Website Changes Automatically — Monitor Web Page Changes in Real Time
 
 Monitor websites for updates — get notified via Discord, Email, Slack, Telegram, Webhook and many more.
