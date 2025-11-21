@@ -2,7 +2,7 @@
   "name": "authorizer",
   "display_name": "Authorizer",
   "description": {
-    "zh": "Authorizer 是一个开源的身份验证和授权解决方案，帮助开发者轻松将安全的用户管理功能集成到他们的应用中。它支持自托管部署，并兼容超过11种数据库，让用户完全掌控用户数据。平台提供包括社交登录、基于角色的访问控制和多因素认证等丰富功能。",
+    "zh": "Authorizer 是一个开源身份验证和授权解决方案，帮助开发者轻松将安全的用户管理功能集成到他们的应用中。它支持自托管部署，并兼容超过11种数据库，让用户完全掌控用户数据。平台提供包括社交登录、基于角色的访问控制和多因素认证等丰富功能。",
     "en": "Authorizer is an open-source authentication and authorization solution that allows developers to easily integrate secure user management into their applications. It supports self-hosting and connects to over 11 databases, giving full control over user data. The platform provides a comprehensive set of features including social login, role-based access, and multi-factor authentication."
   },
   "feature": {

@@ -18,7 +18,7 @@ spec:
       {{- if .Values.postgresql.enabled }}
       initContainers:
       - name: wait-for-db
-        image: postgres:13
+        image: "{{ .Values.postgresql.image }}"
         command:
         - sh
         - -c
@@ -33,10 +33,10 @@ spec:
       {{- end }}
       containers:
         - name: authorizer
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-          - containerPort: {{ .Values.service.port }}
+            - containerPort: {{ .Values.service.port }}
           env:
           - name: ENV
             value: {{ .Values.env.ENV | quote }}
