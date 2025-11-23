@@ -1,9 +1,9 @@
+annotations:
+  artifacthub.io/cr.source: caronc/apprise
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: caronc_apprise
 apiVersion: v2
+appVersion: 1.2.3
+description: A Helm chart for Apprise API
 name: apprise-api
 version: 0.1.0
-description: A Helm chart for Apprise API
-appVersion: 1.2.1
-annotations:
-  artifacthub.io/cr.source: "caronc/apprise"
-  artifacthub.io/own.source: "caronc_apprise"
-  artifacthub.io/cr.update-strategy: "latest"
