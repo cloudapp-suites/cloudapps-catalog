@@ -2,7 +2,7 @@
   "name": "trendradar",
   "display_name": "TrendRadar",
   "description": {
-    "zh": "TrendRadar 是一款轻量级开源热点监控工具，聚合多个平台的热门资讯，并提供个性化、实时的信息推送。用户可通过自定义关键词过滤内容，分析趋势变化，并通过多种渠道接收智能通知。项目设计注重易用性，支持在 GitHub 上一键部署，无需编程基础。",
+    "zh": "TrendRadar 是一款轻量级开源热点监控工具，聚合多个平台的热门资讯，提供个性化、实时的信息推送。用户可通过自定义关键词过滤内容，分析趋势变化，并通过多种渠道接收智能通知。项目设计注重易用性，支持在 GitHub 上一键部署，无需编程基础。",
     "en": "TrendRadar is a lightweight, open-source hotspot monitoring tool that aggregates trending news from multiple platforms and delivers personalized, real-time updates. It enables users to filter content by custom keywords, analyze trends over time, and receive intelligent notifications via multiple channels. Designed for ease of deployment, it supports one-click setup on GitHub with no coding required."
   },
   "feature": {
