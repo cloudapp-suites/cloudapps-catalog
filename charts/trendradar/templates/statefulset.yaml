@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "trendradar.fullname" . }}
   labels:
     {{- include "trendradar.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "trendradar.fullname" . }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
