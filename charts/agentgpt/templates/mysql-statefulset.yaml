@@ -1,12 +1,13 @@
 {{- if .Values.mysql.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "agentgpt.fullname" . }}-mysql
   labels:
     {{- include "agentgpt.labels" . | nindent 4 }}
     app: mysql
 spec:
+  serviceName: {{ include "agentgpt.fullname" . }}-mysql
   replicas: 1
   selector:
     matchLabels:
