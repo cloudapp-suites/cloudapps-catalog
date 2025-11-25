@@ -31,20 +31,6 @@
 
 > This project aims to be lightweight and easy to deploy
 
-## 📑 Quick Navigation
-
-<div align="center">
-
-| [🎯 Core Features](#-core-features) | [🚀 Quick Start](#-quick-start) | [🐳 Docker Deployment](#-docker-deployment) | [🤖 AI Analysis Zone](#-ai-intelligent-analysis-deployment) |
-|:---:|:---:|:---:|:---:|
-| [📝 Changelog](#-changelog) | [🔌 MCP Client](#-mcp-client) | [❓ Q&A and FAQ](#questions-and-answers) | [⭐ Project Related](#project-related) |
-
-</div>
-
-- Thanks to **contributors who patiently report bugs**, your every feedback makes the project better😉;  
-- Thanks to **viewers who star the project**, **fork** what you want, **star** what I want, both can be had😍is the best support for the open source spirit;  
-- Thanks to **readers who follow the [official account](#questions-and-answers)**, your active interactions such as comments, likes, shares and recommendations make the content more warm😎.
-
 ## ✨ Core Features
 
 ### **All-Platform Hotspot Aggregation**

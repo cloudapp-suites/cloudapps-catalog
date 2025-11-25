@@ -28,13 +28,6 @@
             alt="follow on X(Twitter)"></a>
 </div>
 
-<div align="center">
-  <a href="README.md" style="color: gray;">English</a>
-  <a href="README.zh.md" style="color: auto;">中文（简体）</a>
-  <a href="README.zh_Hant.md" style="color: gray;">中文（繁體）</a>
-  <a href="README.ja.md" style="color: gray;">日本語</a>
-</div>
-
 
 # ValueCell
 ValueCell 是一个社区驱动的多智能体金融应用产品，我们的计划是打造全球最大的去中心化金融智能体社区

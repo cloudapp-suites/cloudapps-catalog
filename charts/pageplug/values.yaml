@@ -21,7 +21,7 @@ app:
     port: 80
   storage:
     size: 20Gi
-    className: alicloud-disk-topology-alltype
+    className: ""
   resources: {}
   nodeSelector: {}
   tolerations: []
