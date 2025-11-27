@@ -2,7 +2,7 @@
   "name": "localai",
   "display_name": "LocalAI",
   "description": {
-    "zh": "LocalAI 是一个免费的开源 OpenAI 替代方案，提供与 OpenAI、ElevenLabs 和 Anthropic API 兼容的即插即用 REST API。它允许用户在本地或本地部署环境中使用消费级硬件运行大语言模型（LLM）、生成图像和音频，并执行多种 AI 任务。无需 GPU，支持多种模型家族和后端，并具备自动硬件加速检测功能。",
+    "zh": "LocalAI 是一个免费的开源 OpenAI 替代方案，提供与 OpenAI、ElevenLabs 和 Anthropic API 兼容的即插即用 REST API。它允许用户在本地或本地部署环境中使用消费级硬件运行大语言模型（LLM）、生成图像和音频，并执行多种 AI 任务。无需 GPU，支持多种模型家族和后端，具备自动硬件加速检测功能。",
     "en": "LocalAI is a free, open-source alternative to OpenAI that provides a drop-in replacement REST API compatible with OpenAI, ElevenLabs, and Anthropic APIs. It enables users to run large language models (LLMs), generate images and audio, and perform various AI tasks locally or on-premises using consumer-grade hardware. No GPU is required, and it supports multiple model families and backends with automatic hardware acceleration detection."
   },
   "feature": {

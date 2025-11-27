@@ -32,10 +32,6 @@
 <img src="https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/local-ai/image/X-_23000000.svg" alt="Follow LocalAI_API"/>
 </a>
 </p>
-> :bulb: 获取帮助 - [❓常见问题](https://localai.io/faq/) [💭讨论区](https://github.com/go-skynet/LocalAI/discussions) [:speech_balloon: Discord](https://discord.gg/uJAeKSAGDy) [:book: 文档网站](https://localai.io/)
->
-> [💻 快速开始](https://localai.io/basics/getting_started/) [🖼️ 模型](https://models.localai.io/) [🚀 路线图](https://github.com/mudler/LocalAI/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap) [🛫 示例](https://github.com/mudler/LocalAI-examples) 在以下平台尝试：
-[![Telegram](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/local-ai/image/Telegram-2CA5E0.svg)](https://t.me/localaiofficial_bot)
 
 **LocalAI** 是免费的开源 OpenAI 替代方案。LocalAI 作为与 OpenAI（Elevenlabs、Anthropic 等）API 规范兼容的即插即用 REST API，用于本地 AI 推理。它允许你在消费级硬件上通过本地或本地部署运行大语言模型（LLM）、生成图像、音频（以及更多功能），支持多种模型家族，无需 GPU。该项目由 [Ettore Di Giacinto](https://github.com/mudler) 创建并维护。
 
