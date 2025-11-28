@@ -2,13 +2,12 @@
 
  **EDAS 提供应用一键部署，快来体验吧！**
 
-[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=cockpit)
+[![立即部署](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit/image/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=cockpit)
 
 </div>
-
 # Cockpit CMS - 无头内容管理
 
-![cockpit banner](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit-HQ/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca)
+![cockpit banner](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca)
 
 > **现代化、灵活的 CMS，适应你的工作流**
 
@@ -23,9 +22,50 @@ Cockpit 是一个无头 CMS，提供灵活性，让你以自己的方式构建�
 - **🎨 无厂商锁定** - 数据归你所有，可自由部署到任意平台
 - **⚡ 性能优先** - 可选 MongoDB 或 SQLite 作为后端数据库
 
-## 🚀 使用指南
+## 🚀 快速开始
 
-启动后，访问 `http://your-ip/install` 并按照提示记录密码，并完成安装。
+在 5 分钟内运行 Cockpit：
+
+### 方式 1: 传统设置
+
+```bash
+# 下载并解压
+wget https://github.com/cockpit-hq/cockpit/releases/latest/download/cockpit.zip
+unzip cockpit.zip && cd cockpit
+
+# 设置存储目录可写  
+chmod -R 755 storage/
+
+# 在浏览器中打开并完成设置
+open http://localhost/cockpit/install
+```
+
+### 方式 2: Docker（推荐）
+
+```bash
+# 使用持久化存储运行 Cockpit
+docker run -d \
+  --name cockpit \
+  -p 8080:80 \
+  -v cockpit_storage:/var/www/html/storage \
+  cockpithq/cockpit:core-latest
+
+# 访问地址：http://localhost:8080/install
+```
+
+### 开始构建
+
+安装完成后，可以通过管理界面或 API 创建内容模型：
+
+```javascript
+// 在任何地方获取你的内容
+fetch('/api/content/items/blog')
+  .then(res => res.json())
+  .then(posts => {
+    // 在 React、Vue、移动应用等中使用
+    console.log('我的内容:', posts);
+  });
+```
 
 ## 🛠️ 核心功能
 
@@ -37,7 +77,7 @@ Cockpit 是一个无头 CMS，提供灵活性，让你以自己的方式构建�
 | **多语言** | 支持本地化内容及回退机制 |
 | **开发者工具** | GraphQL Playground、REST 文档、CLI 命令 |
 | **可扩展性** | 自定义字段、插件、钩子函数、事件系统 |
-| **多租户支持** | 支持多个站点和客户的“空间”隔离 |
+| **多租户支持** | 支持多个站点和客户的"空间"隔离 |
 
 ## 📋 系统要求
 
@@ -89,6 +129,7 @@ mutation CreatePost($data: JSON!) {
 }
 ```
 
+
 ## 🔗 资源链接
 
 - **[文档](https://getcockpit.com/documentation)** - 完整指南和 API 参考
@@ -103,6 +144,7 @@ mutation CreatePost($data: JSON!) {
 - **企业官网** - 多语言企业网站
 - **物联网仪表盘** - 为智能设备和显示屏提供内容
 - **多租户 SaaS** - 平台级内容基础设施
+
 
 ## 🐳 Docker
 
@@ -187,3 +229,9 @@ COPY ./config/config.php /var/www/html/config/config.php
 - `pro-{version}` - 特定 Pro 版本标签
 
 访问 [Docker Hub](https://hub.docker.com/r/cockpithq/cockpit/tags) 查看所有可用标签。
+
+## 版权和许可
+
+版权所有 © 2015 [🅰🅶🅴🅽🆃🅴🅹🅾](https://agentejo.com)，采用 MIT 许可证。
+
+查看 [LICENSE](LICENSE) 获取更多信息。

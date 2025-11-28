@@ -2,13 +2,13 @@
 
  **EDAS provides one-click application deployment. Try it now!** 
 
-[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=cockpit)
+[![Deploy Now](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit/image/EDASpoc.png)](https://edasnext.console.aliyun.com/#/home?tab=marketplace&marketDetail=cockpit)
 
 </div>
 
 # Cockpit CMS - Headless Content Management
 
-![cockpit banner](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit-HQ/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca)
+![cockpit banner](https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/cockpit/image/c8d4daf1-86cc-45c9-be24-5c6a6a2ca8ca)
 
 > **Modern, flexible CMS that adapts to your workflow**
 
@@ -230,3 +230,9 @@ COPY ./config/config.php /var/www/html/config/config.php
 - `pro-{version}` - Specific pro version tags
 
 Visit [Docker Hub](https://hub.docker.com/r/cockpithq/cockpit/tags) for all available tags.
+
+## Copyright and license
+
+Copyright since 2015 [🅰🅶🅴🅽🆃🅴🅹🅾](https://agentejo.com) under the MIT license.
+
+See [LICENSE](LICENSE) for more information.
