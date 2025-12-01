@@ -125,6 +125,8 @@ spec:
       kind: PersistentVolumeClaim
       metadata:
         name: redis-db
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
         {{- if .Values.redis.persistence.annotations }}
         annotations: {{- toYaml .Values.redis.persistence.annotations | nindent 10 }}
         {{- end }}

@@ -75,6 +75,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: milvus-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: [ "ReadWriteOnce" ]
       {{- if .Values.milvus.persistence.storageClassName }}

@@ -263,6 +263,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: weblate-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes:
           - {{ .Values.persistence.accessMode | quote }}

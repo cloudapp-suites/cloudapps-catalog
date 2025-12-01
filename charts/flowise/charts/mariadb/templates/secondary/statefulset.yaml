@@ -392,6 +392,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
         {{- $claimLabels := include "common.tplvalues.merge" ( dict "values" ( list .Values.secondary.persistence.labels .Values.commonLabels ) "context" . ) }}
         labels: {{- include "common.labels.matchLabels" ( dict "customLabels" $claimLabels "context" $ ) | nindent 10 }}
           app.kubernetes.io/component: secondary

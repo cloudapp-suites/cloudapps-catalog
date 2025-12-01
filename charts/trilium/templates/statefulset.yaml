@@ -69,6 +69,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: trilium-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
         {{- if .Values.persistentVolume.annotations }}
         annotations:
 {{ toYaml .Values.persistentVolume.annotations | indent 10 }}

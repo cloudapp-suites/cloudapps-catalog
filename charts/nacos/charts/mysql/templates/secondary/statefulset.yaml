@@ -336,6 +336,7 @@ spec:
     - metadata:
         name: data
         labels: {{ include "common.labels.matchLabels" . | nindent 10 }}
+          edas.opensource.pvc/name: {{ .Release.Name }}
           app.kubernetes.io/component: secondary
           {{- if .Values.commonLabels }}
           {{- include "common.tplvalues.render" (dict "value" .Values.commonLabels "context" $) | nindent 10 }}

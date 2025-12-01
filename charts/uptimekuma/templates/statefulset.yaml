@@ -126,6 +126,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: storage
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes:
           - {{ .Values.volume.accessMode }}

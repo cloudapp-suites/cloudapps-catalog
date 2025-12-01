@@ -89,6 +89,7 @@ spec:
     - metadata:
         name: redis-data
         labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
           {{- include "ragflow.selectorLabels" . | nindent 10 }}
           app.kubernetes.io/component: redis
       spec:

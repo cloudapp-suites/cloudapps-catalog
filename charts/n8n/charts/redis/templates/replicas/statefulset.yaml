@@ -448,6 +448,7 @@ spec:
     - metadata:
         name: redis-data
         labels: {{- include "common.labels.matchLabels" . | nindent 10 }}
+          edas.opensource.pvc/name: {{ .Release.Name }}
           app.kubernetes.io/component: replica
         {{- if .Values.replica.persistence.annotations }}
         annotations: {{- toYaml .Values.replica.persistence.annotations | nindent 10 }}

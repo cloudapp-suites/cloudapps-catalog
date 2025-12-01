@@ -285,6 +285,8 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: data-storage
+      labels:
+        edas.opensource.pvc/name: {{ .Release.Name }}
       {{- if .Values.persistence.annotations }}
       annotations: {{- toYaml .Values.persistence.annotations | nindent 10 }}
       {{- end }}

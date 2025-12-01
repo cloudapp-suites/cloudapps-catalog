@@ -36,6 +36,7 @@ spec:
   - metadata:
       name: postgres-data
       labels:
+        edas.opensource.pvc/name: {{ .Release.Name }}
         app.kubernetes.io/instance: {{ include "authorizer.fullname" . }}
     spec:
       storageClassName: {{ .Values.postgresql.persistence.storageClassName | quote }}

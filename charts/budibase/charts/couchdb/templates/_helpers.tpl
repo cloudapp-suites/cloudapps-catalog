@@ -112,6 +112,7 @@ name: {{ $claim.claimName | default "database-storage" }}
 labels:
   app: {{ template "couchdb.name" $context }}
   release: {{ $context.Release.Name }}
+  edas.opensource.pvc/name: {{ .Release.Name }}
 {{- with $context.Values.persistentVolume.annotations }}
 annotations:
   {{- toYaml . | nindent 6 }}

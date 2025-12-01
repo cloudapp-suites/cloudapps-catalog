@@ -40,6 +40,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: redis-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: [ "ReadWriteOnce" ]
       {{- if .Values.redis.persistence.storageClassName }}

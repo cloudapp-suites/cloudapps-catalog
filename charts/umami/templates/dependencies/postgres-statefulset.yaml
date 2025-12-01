@@ -34,6 +34,7 @@ spec:
     - metadata:
         name: postgres-data
         labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
           app.kubernetes.io/instance: {{ include "umami.fullname" . }}
       spec:
         accessModes: ["ReadWriteOnce"]

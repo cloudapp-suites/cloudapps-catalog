@@ -286,6 +286,8 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: h2database-data
+      labels:
+        edas.opensource.pvc/name: {{ .Release.Name }}
       annotations:
       {{- range $key, $value := .Values.persistence.persistentVolumeClaim.h2database.annotations }}
         {{ $key }}: {{ $value | quote }}

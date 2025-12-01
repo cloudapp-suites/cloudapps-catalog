@@ -686,6 +686,7 @@ spec:
         {{- end }}
         {{- if .Values.primary.persistence.labels }}
         labels: {{- include "common.tplvalues.render" (dict "value" .Values.primary.persistence.labels "context" $) | nindent 10 }}
+          edas.opensource.pvc/name: {{ .Release.Name }}
         {{- end }}
       spec:
         accessModes:

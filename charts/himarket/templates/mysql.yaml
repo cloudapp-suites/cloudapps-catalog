@@ -146,6 +146,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: mysql-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: 
           - {{ .Values.mysql.persistence.accessMode }}

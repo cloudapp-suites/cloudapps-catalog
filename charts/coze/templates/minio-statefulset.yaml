@@ -58,6 +58,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: minio-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: [ "ReadWriteOnce" ]
       {{- if .Values.minio.persistence.storageClassName }}

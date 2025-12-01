@@ -61,6 +61,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: postgresql-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: "alicloud-disk-topology-alltype"

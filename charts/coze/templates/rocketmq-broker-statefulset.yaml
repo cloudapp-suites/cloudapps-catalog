@@ -111,6 +111,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: broker-store
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes: [ "ReadWriteOnce" ]
       {{- if .Values.rocketmq.broker.persistence.store.storageClassName }}

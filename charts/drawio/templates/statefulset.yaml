@@ -87,6 +87,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: drawio-data
+        labels:
+          edas.opensource.pvc/name: {{ .Release.Name }}
       spec:
         accessModes:
           - ReadWriteOnce
