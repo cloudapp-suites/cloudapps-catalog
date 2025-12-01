@@ -1,0 +1,19 @@
+{{- if eq .Values.service.type "LoadBalancer" }}
+---
+# 将上述权限绑定到 ServiceAccount
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-binding"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+subjects:
+- kind: ServiceAccount
+  name: "{{ include "bookstack.fullname" . }}-ip-updater"
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

@@ -1,0 +1,18 @@
+{{- if eq .Values.service.type "LoadBalancer" }}
+---
+# 定义 Job 所需的权限：获取 Service 和更新 StatefulSet
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
+  labels:
+    app: {{ template "bookstack.name" . }}
+    release: {{ .Release.Name }}
+rules:
+- apiGroups: [""] # "" 表示核心 API 组
+  resources: ["services"]
+  verbs: ["get", "watch", "list"] # 允许获取 Service 信息
+- apiGroups: ["apps"]
+  resources: ["statefulsets"]
+  verbs: ["get", "patch"] # 允许获取和更新 StatefulSet
+{{- end }}

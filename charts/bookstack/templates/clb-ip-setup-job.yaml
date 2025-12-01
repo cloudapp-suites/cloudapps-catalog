@@ -1,53 +1,5 @@
 {{- if eq .Values.service.type "LoadBalancer" }}
 ---
-# 为 Job 创建一个专用的 ServiceAccount
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: "{{ include "bookstack.fullname" . }}-ip-updater"
-  labels:
-    app: {{ template "bookstack.name" . }}
-    release: {{ .Release.Name }}
-
----
-# 定义 Job 所需的权限：获取 Service 和更新 Deployment
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
-  labels:
-    app: {{ template "bookstack.name" . }}
-    release: {{ .Release.Name }}
-rules:
-- apiGroups: [""] # "" 表示核心 API 组
-  resources: ["services"]
-  verbs: ["get", "watch", "list"] # 允许获取 Service 信息
-- apiGroups: ["apps"]
-  resources: ["deployments"]
-  verbs: ["get", "patch"] # 允许获取和更新 Deployment
-
----
-# 将上述权限绑定到 ServiceAccount
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: "{{ include "bookstack.fullname" . }}-ip-updater-binding"
-  labels:
-    app: {{ template "bookstack.name" . }}
-    release: {{ .Release.Name }}
-subjects:
-- kind: ServiceAccount
-  name: "{{ include "bookstack.fullname" . }}-ip-updater"
-  namespace: {{ .Release.Namespace }}
-roleRef:
-  kind: Role
-  name: "{{ include "bookstack.fullname" . }}-ip-updater-role"
-  apiGroup: rbac.authorization.k8s.io
-{{- end }}
-
----
-# templates/job-update-ip.yaml (或者你原来的文件名)
-{{- if eq .Values.service.type "LoadBalancer" }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -96,13 +48,13 @@ spec:
             exit 1
           fi
 
-          echo "Patching deployment {{ include "bookstack.fullname" . }} with APP_URL=http://$EXTERNAL_IP"
+          echo "Patching statefulset {{ include "bookstack.fullname" . }} with APP_URL=http://$EXTERNAL_IP"
           # 使用 --type=strategic 和更清晰的 patch 语法
-          kubectl patch deployment {{ include "bookstack.fullname" . }} --namespace {{ .Release.Namespace }} \
+          kubectl patch statefulset {{ include "bookstack.fullname" . }} --namespace {{ .Release.Namespace }} \
             --type='strategic' \
-            -p='{"spec":{"template":{"spec":{"containers":[{"name":"{{ include "bookstack.name" . }}","env":[{"name":"APP_URL","value":"http://'"$EXTERNAL_IP"'"}]}]}}}}'
+            -p='{"spec":{"template":{"spec":{"containers":[{"name":"{{ .Chart.Name }}","env":[{"name":"APP_URL","value":"http://'"$EXTERNAL_IP"'"}]}]}}}}'
 
-          echo "Patch successful. Deployment will be updated with the new environment variable."
+          echo "Patch successful. StatefulSet will be updated with the new environment variable."
       restartPolicy: Never
   backoffLimit: 3 # 减少重试次数
 {{- end }}
