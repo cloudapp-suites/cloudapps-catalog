@@ -1,5 +1,9 @@
 apiVersion: v2
-appVersion: "2024.10"
+appVersion: 25.11.4
+annotations:
+  artifacthub.io/cr.source: "solidnerd/bookstack"
+  artifacthub.io/own.source: "solidnerd_bookstack"
+  artifacthub.io/cr.update-strategy: "latest"
 dependencies:
 - condition: mariadb.enabled
   name: mariadb
