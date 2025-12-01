@@ -86,6 +86,7 @@ metadata:
   name: {{ .Release.Name }}-mysql
   labels:
     app: mysql
+    app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.mysql.replicaCount }}
   selector:

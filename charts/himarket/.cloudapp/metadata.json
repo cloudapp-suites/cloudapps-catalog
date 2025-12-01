@@ -20,7 +20,10 @@
   "product_document": "",
   "categories": [
     "AI",
-    "MCP"
+    "MCP",
+    "Agent",
+    "API Market",
+    "Gateway"
   ],
   "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/himarket/image/e0956234-1a97-42c6-852d-411fa02c3f01",
   "license": "Apache-2.0",
