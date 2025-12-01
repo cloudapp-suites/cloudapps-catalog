@@ -6,7 +6,7 @@
     "en": "Weblate is a libre software web-based continuous localization system. It is used by over 2500 open-source projects and companies across more than 165 countries. Users can either install it locally or use the Hosted Weblate service."
   },
   "feature": {
-    "zh": "## 产品优势:\n\n- 提供面向持续本地化的协作平台。\n- 被大量开源项目和国际化公司广泛采用。\n- 同时支持自托管和云托管部署方式。\n\n## 功能列表:\n\n- 基于 Web 的翻译管理界面。\n- 与版本控制系统集成。\n- 支持多语言及多种翻译格式。\n- 实时翻译状态跟踪。\n- 完善的文档和社区支持。\n- 通过 GitHub 进行缺陷报告和功能请求管理。\n- 活跃的 IRC 实时聊天支持。",
+    "zh": "## 产品优势:\n\n- 提供面向本地化的协作平台。\n- 被大量开源项目和国际化公司广泛采用。\n- 同时支持自托管和云托管部署方式。\n\n## 功能列表:\n\n- 基于 Web 的翻译管理界面。\n- 与版本控制系统集成。\n- 支持多语言及多种翻译格式。\n- 实时翻译状态跟踪。\n- 完善的文档和社区支持。\n- 通过 GitHub 进行缺陷报告和功能请求管理。\n- 活跃的 IRC 实时聊天支持。",
     "en": "## Benefits:\n\n- Provides a collaborative platform for continuous localization.\n- Widely adopted by open-source projects and international companies.\n- Offers both self-hosted and cloud-hosted deployment options.\n\n## Features:\n\n- Web-based translation management interface.\n- Integration with version control systems.\n- Support for multiple languages and translation formats.\n- Real-time translation status tracking.\n- Comprehensive documentation and community support.\n- Bug reporting and feature request tracking via GitHub.\n- Active IRC-based live chat support."
   },
   "github_url": "https://github.com/WeblateOrg/weblate",
