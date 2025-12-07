@@ -5,7 +5,7 @@ annotations:
   artifacthub.io/images: "- name: mstream\n  image: linuxserver/mstream:5.13.1\n"
   artifacthub.io/own.source: linuxserver_mstream
 apiVersion: v2
-appVersion: v5.13.1-ls211
+appVersion: v5.13.1-ls213
 dependencies:
 - name: common
   repository: https://nicholaswilde.github.io/helm-charts/
