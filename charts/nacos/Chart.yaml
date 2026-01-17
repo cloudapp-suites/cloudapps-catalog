@@ -1,5 +1,9 @@
+annotations:
+  artifacthub.io/cr.source: nacos/nacos-server
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: nacos/nacos-server
 apiVersion: v2
-appVersion: 3.0.2
+appVersion: v3.1.0
 dependencies:
 - name: common
   repository: https://ygqygq2.github.io/charts
@@ -25,7 +29,3 @@ name: nacos
 sources:
 - https://github.com/alibaba/nacos
 version: 2.1.10
-annotations:
-  artifacthub.io/cr.source: "nacos/nacos-server"
-  artifacthub.io/own.source: "nacos/nacos-server"
-  artifacthub.io/cr.update-strategy: "latest"
