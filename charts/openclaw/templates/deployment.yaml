@@ -1,0 +1,315 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "openclaw.fullname" . }}
+  labels:
+    {{- include "openclaw.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      {{- include "openclaw.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "openclaw.selectorLabels" . | nindent 8 }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+    spec:
+      securityContext:
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
+
+      initContainers:
+        # ── init-config: merge or overwrite openclaw.json ────────────
+        - name: init-config
+          image: {{ include "openclaw.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - sh
+            - -c
+            - |
+              log() { echo "[$(date -Iseconds)] [init-config] $*"; }
+
+              log "Starting config initialization"
+              mkdir -p /home/node/.openclaw
+              CONFIG_MODE="${CONFIG_MODE:-merge}"
+
+              if [ "$CONFIG_MODE" = "merge" ] && [ -f /home/node/.openclaw/openclaw.json ]; then
+                log "Mode: merge - merging Helm config with existing config"
+                if node -e "
+                  const fs = require('fs');
+                  const stripComments = (s) => {
+                    let r = '', q = false, i = 0;
+                    while (i < s.length) {
+                      if (q) {
+                        if (s[i] === '\\\\') { r += s[i] + s[i+1]; i += 2; continue; }
+                        if (s[i] === '\"') q = false;
+                        r += s[i++];
+                      } else if (s[i] === '\"') {
+                        q = true; r += s[i++];
+                      } else if (s[i] === '/' && s[i+1] === '/') {
+                        while (i < s.length && s[i] !== '\n') i++;
+                      } else { r += s[i++]; }
+                    }
+                    return r;
+                  };
+                  let existing;
+                  try {
+                    existing = JSON.parse(stripComments(fs.readFileSync('/home/node/.openclaw/openclaw.json', 'utf8')));
+                  } catch (e) {
+                    console.error('[init-config] Warning: existing config is not valid JSON, will overwrite');
+                    process.exit(1);
+                  }
+                  const helm = JSON.parse(stripComments(fs.readFileSync('/config/openclaw.json', 'utf8')));
+                  const deepMerge = (target, source) => {
+                    for (const key of Object.keys(source)) {
+                      if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+                        target[key] = target[key] || {};
+                        deepMerge(target[key], source[key]);
+                      } else {
+                        target[key] = source[key];
+                      }
+                    }
+                    return target;
+                  };
+                  const merged = deepMerge(existing, helm);
+                  fs.writeFileSync('/home/node/.openclaw/openclaw.json', JSON.stringify(merged, null, 2));
+                "; then
+                  log "Config merged successfully"
+                else
+                  log "WARNING: Merge failed (existing config may not be valid JSON), falling back to overwrite"
+                  cp /config/openclaw.json /home/node/.openclaw/openclaw.json
+                fi
+              else
+                if [ ! -f /home/node/.openclaw/openclaw.json ]; then
+                  log "Fresh install - writing initial config"
+                else
+                  log "Mode: overwrite - replacing config with Helm values"
+                fi
+                cp /config/openclaw.json /home/node/.openclaw/openclaw.json
+              fi
+              log "Config initialization complete"
+          env:
+            - name: CONFIG_MODE
+              value: {{ .Values.configMode | quote }}
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: true
+            - name: data
+              mountPath: /home/node/.openclaw
+            - name: tmp
+              mountPath: /tmp
+
+        # ── init-skills: install ClawHub skills ──────────────────────
+        - name: init-skills
+          image: {{ include "openclaw.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - sh
+            - -c
+            - |
+              log() { echo "[$(date -Iseconds)] [init-skills] $*"; }
+
+              log "Starting skills initialization"
+              mkdir -p /home/node/.openclaw/workspace/skills
+              cd /home/node/.openclaw/workspace
+
+              install_skill() {
+                skill="$1"
+                SKILL_NAME="$(basename "$skill")"
+                if [ -z "$skill" ]; then
+                  return 0
+                fi
+                if [ -d "skills/$SKILL_NAME" ]; then
+                  log "Skill already installed: $skill"
+                  return 0
+                fi
+                log "Installing skill: $skill"
+                attempts=6
+                delay=5
+                for i in $(seq 1 "$attempts"); do
+                  if npx -y clawhub install "$skill" --no-input; then
+                    log "Installed skill: $skill"
+                    return 0
+                  fi
+                  jitter=$((RANDOM % 5))
+                  if [ "$i" -lt "$attempts" ]; then
+                    log "WARNING: Failed to install skill: $skill (attempt $i/$attempts). Retrying in $((delay + jitter))s..."
+                    sleep $((delay + jitter))
+                    delay=$((delay * 2))
+                  fi
+                done
+                log "WARNING: Failed to install skill after $attempts attempts: $skill"
+                return 1
+              }
+
+              {{- if .Values.skills }}
+              {{- range .Values.skills }}
+              install_skill {{ . | quote }} || true
+              {{- end }}
+              {{- end }}
+
+              log "Skills initialization complete"
+          env:
+            - name: HOME
+              value: /tmp
+            - name: NPM_CONFIG_CACHE
+              value: /tmp/.npm
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: data
+              mountPath: /home/node/.openclaw
+            - name: tmp
+              mountPath: /tmp
+
+      containers:
+        # ── main: OpenClaw gateway ───────────────────────────────────
+        - name: main
+          image: {{ include "openclaw.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - node
+            - dist/index.js
+          args:
+            - gateway
+            - --bind
+            - lan
+            - --port
+            - "18789"
+          {{- with .Values.envFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          env:
+            {{- range $key, $value := .Values.externalEnv.model }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 18789
+              protocol: TCP
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            {{- toYaml .Values.resources.main | nindent 12 }}
+          livenessProbe:
+            tcpSocket:
+              port: 18789
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            tcpSocket:
+              port: 18789
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          startupProbe:
+            tcpSocket:
+              port: 18789
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 30
+          volumeMounts:
+            - name: data
+              mountPath: /home/node/.openclaw
+            - name: bash-aliases
+              mountPath: /home/node/.bash_aliases
+              subPath: bash_aliases
+              readOnly: true
+            - name: tmp
+              mountPath: /tmp
+
+        # ── chromium: headless browser sidecar (CDP on port 9222) ────
+        {{- if .Values.chromium.enabled }}
+        - name: chromium
+          image: {{ include "openclaw.chromiumImage" . }}
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: XDG_CACHE_HOME
+              value: /tmp
+          ports:
+            - name: cdp
+              containerPort: 9222
+              protocol: TCP
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            {{- toYaml .Values.resources.chromium | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /json/version
+              port: 9222
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /json/version
+              port: 9222
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          startupProbe:
+            httpGet:
+              path: /json/version
+              port: 9222
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 12
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+        {{- end }}
+
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "openclaw.fullname" . }}-config
+        - name: bash-aliases
+          configMap:
+            name: {{ include "openclaw.fullname" . }}-config
+            items:
+              - key: bash_aliases
+                path: bash_aliases
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "openclaw.fullname" . }}-data
+        - name: tmp
+          emptyDir: {}

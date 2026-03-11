@@ -1,0 +1,35 @@
+{
+  "name": "openclaw",
+  "display_name": "openclaw",
+  "description": {
+    "zh": "OpenClaw 是一款运行于用户自有设备的个人 AI 助理。它支持接入超过 20 种消息平台（如 WhatsApp、Telegram、Slack、Discord、iMessage），并提供语音唤醒与对话、实时可视化画布（Canvas）、本地优先自动化等功能，全程保障数据隐私与用户自主控制。",
+    "en": "OpenClaw is a personal AI assistant designed to run entirely on your own devices. It integrates with over 20 messaging platforms (e.g., WhatsApp, Telegram, Slack, Discord, iMessage) and supports voice interaction, live visual canvases, and local-first automation — all while keeping data private and under user control."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 完全自托管且注重隐私：原生支持 macOS/iOS/Android/Linux/Windows（WSL2），无需强制依赖云服务。\n- 统一多渠道收件箱：将分散的消息平台（如 WhatsApp、Telegram 等）无缝桥接，提供一致的助理交互体验。\n- 本地优先架构，支持可选远程访问：通过 Tailscale 或 SSH 隧道实现安全远程控制，无需暴露本地服务至公网。\n- 可扩展的代理工作区：支持技能（Skills）、沙箱隔离、工具流式执行，兼顾安全性与定制化自动化能力。\n\n## 功能列表:\n\n- 多渠道支持：WhatsApp、Telegram、Slack、Discord、Google Chat、Signal、BlueBubbles/iMessage、IRC、Microsoft Teams、Matrix、Feishu、LINE、Mattermost、Nextcloud Talk、Nostr、Synology Chat、Tlon、Twitch、Zalo、WebChat 等。\n- 语音唤醒（Voice Wake）+ 对话模式（Talk Mode）：macOS/iOS 支持关键词唤醒；Android 支持连续语音输入，兼容 ElevenLabs 与系统 TTS 回退。\n- 实时画布（Live Canvas）与 A2UI：由 AI 代理驱动的可视化工作区，支持动态 UI 渲染、快照与交互式评估。\n- 本地节点执行：摄像头抓拍、录屏、定位获取、通知推送、系统命令等操作均在配对的 macOS/iOS/Android 设备上直接执行。\n- 代理路由与会话隔离：支持按渠道、群组、账号路由至独立工作区，并提供激活模式与上下文管理机制。\n- 命令行引导式配置向导：通过 `openclaw onboard` 交互式完成网关、渠道、模型、技能等全流程初始化。\n- 内置安全模型：私信配对（DM pairing）、渠道白名单、会话级 Docker 沙箱、细粒度认证策略。",
+    "en": "## Benefits:\n\n- Fully self-hosted and privacy-first: runs locally on macOS/iOS/Android/Linux/Windows (WSL2), with no mandatory cloud dependency.\n- Unified multi-channel inbox: natively bridges disparate messaging surfaces into a single, consistent assistant experience.\n- Local-first architecture with optional remote access: leverages Tailscale or SSH tunnels for secure external control without exposing services publicly.\n- Extensible agent workspace with skills, sandboxing, and tool streaming for safe, customizable automation.\n\n## Features:\n\n- Multi-channel support: WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, BlueBubbles/iMessage, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, WebChat, and more.\n- Voice Wake + Talk Mode: wake-word detection on macOS/iOS; continuous voice input on Android with ElevenLabs/system TTS fallback.\n- Live Canvas with A2UI: agent-driven visual workspace for dynamic UI rendering, snapshots, and interactive evaluation.\n- Local node execution: device-specific actions (camera, screen recording, location, notifications, system commands) executed directly on paired macOS/iOS/Android nodes.\n- Agent routing & session isolation: per-channel, per-group, and per-account routing to isolated workspaces with activation modes and context management.\n- CLI-driven onboarding wizard: guided setup for gateway, channels, models, and skills via `openclaw onboard`.\n- Built-in security model: DM pairing, channel allowlists, per-session Docker sandboxes, and granular auth policies."
+  },
+  "github_url": "https://github.com/openclaw/openclaw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://openclaw.ai",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Self-Hosted",
+    "Multi-Channel",
+    "Voice Interface",
+    "Visual Interface",
+    "Automation",
+    "Privacy-First"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/openclaw/image/openclaw-logo-text.png",
+  "license": "MIT",
+  "language": "TypeScript"
+}

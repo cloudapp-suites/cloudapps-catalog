@@ -1,0 +1,224 @@
+# OpenClaw Helm Chart Values
+#
+# IMPORTANT ARCHITECTURE NOTES:
+# - OpenClaw is NOT horizontally scalable
+# - Deploy as a SINGLE INSTANCE only
+# - Do NOT increase replica count
+
+# -- Override chart name
+nameOverride: ""
+# -- Override full release name
+fullnameOverride: ""
+
+# -- Config mode: `merge` preserves runtime changes, `overwrite` for strict GitOps
+configMode: merge
+
+# -- OpenClaw container image
+image:
+  repository: ghcr.io/openclaw/openclaw
+  tag: "2026.3.8"
+  pullPolicy: IfNotPresent
+
+# -- Chromium sidecar for browser automation (CDP on port 9222)
+chromium:
+  enabled: true
+  image:
+    repository: chromedp/headless-shell
+    tag: "146.0.7680.66"
+
+# -- Skills to install from ClawHub (https://clawhub.com)
+# Add skill slugs to install them declaratively during pod init.
+skills: []
+#  - weather
+#  - gog
+
+# -- Environment variables for the main container (key-value pairs)
+# These are injected as env vars into the OpenClaw process.
+# OpenClaw reads OPENCLAW_GATEWAY_TOKEN from the environment at startup.
+# API keys for model providers should also go here.
+env: {}
+#  ANTHROPIC_API_KEY: "sk-..."
+#  OPENCLAW_GATEWAY_TOKEN: "your-gateway-token"
+#  DASHSCOPE_API_KEY: "sk-..."
+
+# -- envFrom references (e.g. secretRef) for the main container
+# Use this to inject env vars from a Secret or ConfigMap.
+envFrom: []
+#  - secretRef:
+#      name: openclaw-env-secret
+
+# -- Resource requests and limits
+resources:
+  main:
+    requests:
+      cpu: 200m
+      memory: 512Mi
+    limits:
+      cpu: 2000m
+      memory: 2Gi
+  chromium:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+
+# -- Persistent volume for OpenClaw data directory (/home/node/.openclaw)
+persistence:
+  accessMode: ReadWriteOnce
+  size: 5Gi
+  # storageClass: ""
+
+# -- Service configuration
+service:
+  type: ClusterIP
+  port: 18789
+  ipFamilyPolicy: SingleStack
+
+# -- Ingress configuration
+ingress:
+  enabled: false
+  # className: nginx
+  # annotations: {}
+  # tls: []
+  # hosts:
+  #   - host: openclaw.example.com
+  #     paths:
+  #       - path: /
+  #         pathType: Prefix
+
+# -- Network policy (requires CNI support: Calico, Cilium, etc.)
+# When enabled, ALL traffic is denied by default. You must explicitly allow.
+networkPolicy:
+  enabled: false
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: gateway-system
+      ports:
+        - protocol: TCP
+          port: 18789
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+              - 10.0.0.0/8
+              - 172.16.0.0/12
+              - 192.168.0.0/16
+              - 169.254.0.0/16
+              - 100.64.0.0/10
+
+# -- OpenClaw JSON configuration
+# This is written to /config/openclaw.json in the ConfigMap, then copied
+# (or merged) into /home/node/.openclaw/openclaw.json by the init-config container.
+# JSON5 comments are supported (the init-config script strips them).
+# Sensitive values should use ${ENV_VAR} substitution — OpenClaw resolves
+# environment variable references at runtime.
+openclawConfig: |
+  {
+    // Gateway configuration
+    "gateway": {
+      "port": 18789,
+      "mode": "local",
+      // IMPORTANT: trustedProxies uses exact IP matching only
+      // CIDR notation is NOT supported
+      "trustedProxies": ["10.0.0.1"]
+    },
+
+    // Browser configuration (Chromium sidecar)
+    "browser": {
+      "enabled": true,
+      "defaultProfile": "default",
+      "profiles": {
+        "default": {
+          "cdpUrl": "http://localhost:9222",
+          "color": "#4285F4"
+        }
+      }
+    },
+
+    // Agent configuration
+    "agents": {
+      "defaults": {
+        "workspace": "/home/node/.openclaw/workspace",
+        "model": {
+          // Uses ANTHROPIC_API_KEY from environment
+          "primary": "anthropic/claude-opus-4-6"
+        },
+        "userTimezone": "UTC",
+        "timeoutSeconds": 600,
+        "maxConcurrent": 1
+      },
+      "list": [
+        {
+          "id": "main",
+          "default": true,
+          "identity": {
+            "name": "OpenClaw",
+            "emoji": "🦞"
+          }
+        }
+      ]
+    },
+
+    // Session management
+    "session": {
+      "scope": "per-sender",
+      "store": "/home/node/.openclaw/sessions",
+      "reset": {
+        "mode": "idle",
+        "idleMinutes": 60
+      }
+    },
+
+    // Logging
+    "logging": {
+      "level": "info",
+      "consoleLevel": "info",
+      "consoleStyle": "compact",
+      "redactSensitive": "tools"
+    },
+
+    // Tools configuration
+    "tools": {
+      "profile": "full",
+      "web": {
+        "search": {
+          "enabled": false
+        },
+        "fetch": {
+          "enabled": true
+        }
+      }
+    }
+
+    // Channel configuration can be added here:
+    // "channels": {
+    //   "telegram": {
+    //     "botToken": "${TELEGRAM_BOT_TOKEN}",
+    //     "enabled": true
+    //   },
+    //   "discord": {
+    //     "token": "${DISCORD_BOT_TOKEN}"
+    //   },
+    //   "slack": {
+    //     "botToken": "${SLACK_BOT_TOKEN}",
+    //     "appToken": "${SLACK_APP_TOKEN}"
+    //   }
+    // }
+  }

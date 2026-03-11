@@ -1,0 +1,27 @@
+apiVersion: v2
+name: openclaw
+description: Helm chart for deploying OpenClaw on Kubernetes — an AI assistant that connects to messaging platforms and executes tasks autonomously.
+type: application
+version: 2.0.0
+appVersion: "2026.3.8"
+kubeVersion: ">=1.26.0-0"
+icon: https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.png
+keywords:
+  - ai
+  - assistant
+  - chatbot
+  - automation
+  - kubernetes
+home: https://github.com/openclaw/openclaw
+sources:
+  - https://github.com/serhanekicii/openclaw-helm
+  - https://serhanekici.com/openclaw-helm.html
+maintainers:
+  - name: Serhan Ekici
+    url: https://serhanekici.com
+annotations:
+  artifacthub.io/category: ai-machine-learning
+  artifacthub.io/license: MIT
+  artifacthub.io/cr.source: ghcr.io/openclaw/openclaw
+  artifacthub.io/cr.update-strategy: no
+  artifacthub.io/own.source: openclaw
