@@ -1,9 +1,9 @@
-apiVersion: v2
-appVersion: 1.21.0
 annotations:
-  artifacthub.io/cr.source: "heartexlabs/label-studio"
-  artifacthub.io/own.source: "heartexlabs_label-studio"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/cr.source: heartexlabs/label-studio
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: heartexlabs_label-studio
+apiVersion: v2
+appVersion: 1.22.0
 dependencies:
 - enabled: true
   name: postgresql
