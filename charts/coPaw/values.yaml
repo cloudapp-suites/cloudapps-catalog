@@ -1,0 +1,34 @@
+replicaCount: 1
+
+image:
+  repository: agentscope/copaw
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+service:
+  type: LoadBalancer
+  port: 8088
+  targetPort: 8088
+
+containerPort: 8088
+
+env:
+  COPAW_PORT: "8088"
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+  limits:
+    memory: "2Gi"
+    cpu: "2000m"
+
+persistence:
+  enabled: true
+  storageClass: alicloud-disk-essd
+  size: 20Gi
+  accessMode: ReadWriteOnce
+
+cloudProvider: alibaba

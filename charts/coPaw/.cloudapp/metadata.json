@@ -1,0 +1,35 @@
+{
+  "name": "copaw",
+  "display_name": "CoPaw",
+  "description": {
+    "zh": "CoPaw 是一款面向个人用户的 AI 助手，支持本地或云端部署，可接入钉钉、飞书、Discord 等多种即时通讯平台，并通过可定制技能、长期记忆与定时任务持续扩展能力。它强调用户对数据与隐私的完全掌控，原生支持云服务和纯离线本地大模型（如 llama.cpp、MLX、Ollama）。CoPaw 不仅是聊天工具，更是一个智能代理工作站：协调工具调用、管理上下文、并随用户工作流自主演进。",
+    "en": "CoPaw is a personal AI assistant designed for local or cloud deployment, enabling users to interact with LLMs across multiple messaging platforms (e.g., DingTalk, Feishu, Discord) and extend capabilities via customizable skills, memory, and scheduled automation. It prioritizes user control over data, privacy, and extensibility — supporting both cloud and fully offline local models (e.g., llama.cpp, MLX, Ollama). CoPaw functions as an agentic workstation: orchestrating tools, managing context, and evolving with user workflows."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 完全自托管、隐私优先：所有记忆、配置与数据均由用户完全掌控\n- 统一代理覆盖 10+ 通讯渠道（钉钉、飞书、QQ、Discord、iMessage 等），无厂商锁定\n- 混合模型支持：无缝切换云大模型（通义千问、魔搭）与本地模型（llama.cpp、MLX、Ollama）\n- 可扩展的智能代理架构：内置定时任务（cron）、自动加载自定义技能、MCP 客户端集成与模块化工具链\n- 生产就绪的多形态部署：命令行、一键脚本安装、Docker 镜像、桌面应用（Beta）、ModelScope/阿里云一键部署\n\n## 功能列表:\n\n- 多渠道消息集成：支持钉钉、飞书、QQ、Discord、iMessage、Matrix、Mattermost、Telegram 等\n- 本地模型支持：提供 llama.cpp / MLX / Ollama 的原生安装支持及图形化模型下载与管理\n- 技能系统：基于 Python 的自定义技能、自动发现机制、工作区文件拖拽上传、技能卡片展示\n- 记忆与上下文管理：长期记忆存储、上下文感知的会话状态持久化、主动式信息推送\n- 定时自动化（“心跳”功能）：跨平台每日摘要、提醒通知、后台任务执行\n- 安全防护层：Tool Guard 工具调用审批机制、环境变量隔离、模型提供商级细粒度配置控制\n- 控制台 Web UI：功能完整的浏览器界面，支持聊天、模型选择、频道配置、安全设置等全流程操作\n- 命令行与守护进程模式：`copaw init`、`copaw app`、`copaw models`、`copaw uninstall` 及自愈型代理运维能力",
+    "en": "## Benefits:\n\n- Fully self-hosted and privacy-first: all memory, configuration, and data remain under user control\n- Unified agent across 10+ channels (DingTalk, Feishu, QQ, Discord, iMessage, etc.) with zero lock-in\n- Hybrid model support: seamless switching between cloud LLMs (DashScope, ModelScope) and local models (llama.cpp, MLX, Ollama)\n- Extensible agentic architecture: built-in cron, auto-loaded custom skills, MCP integration, and modular tooling\n- Production-ready deployment options: CLI, script installer, Docker, desktop app (beta), and ModelScope/Alibaba Cloud one-click\n\n## Features:\n\n- Multi-channel messaging integration (DingTalk, Feishu, QQ, Discord, iMessage, Matrix, Mattermost, Telegram, etc.)\n- Local model support with native installers (llama.cpp, MLX, Ollama) and UI-based model management\n- Skill system: Python-based custom skills, auto-discovery, drag-and-drop workspace files, and skill cards\n- Memory & context management: long-term memory, context-aware chat state preservation, and proactive delivery\n- Scheduled automation (\"Heartbeat\"): daily digests, reminders, and background tasks across channels\n- Security layer: Tool Guard for risky tool call approval, environment variable isolation, and provider-level config controls\n- Console web UI: full-featured browser interface for chat, configuration, model selection, channel setup, and security settings\n- CLI and daemon mode: `copaw init`, `copaw app`, `copaw models`, `copaw uninstall`, and self-healing agent operations"
+  },
+  "github_url": "https://github.com/agentscope-ai/CoPaw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "http://copaw.agentscope.io/",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Self-Hosted",
+    "Multi-Channel",
+    "Local Llm",
+    "Agent Framework",
+    "Skill Extension",
+    "Privacy-First"
+  ],
+  "pic_url": "",
+  "license": "Apache-2.0",
+  "language": "Python"
+}

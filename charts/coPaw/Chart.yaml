@@ -1,0 +1,11 @@
+apiVersion: v2
+name: copaw
+description: CoPaw - Your Personal AI Assistant
+type: application
+version: 0.1.0
+appVersion: "0.0.7"
+annotations:
+  artifacthub.io/cr.source: agentscope/copaw
+  artifacthub.io/cr.update-strategy: no
+  artifacthub.io/own.source: copaw
+  artifacthub.io/license: Apache-2.0
