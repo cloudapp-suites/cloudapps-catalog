@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hiclaw.fullname" . }}
+  labels:
+    {{- include "hiclaw.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      {{- include "hiclaw.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "hiclaw.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: manager
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ include "hiclaw.fullname" . }}-env
+          env:
+            - name: HOME
+              value: /root/manager-workspace
+            - name: TZ
+              value: Asia/Shanghai
+          {{- if .Values.elementHomeserverUrl }}
+          command:
+            - bash
+            - -c
+            - |
+              sed -i 's|MATRIX_DOMAIN="${HICLAW_MATRIX_DOMAIN:-.*}"|MATRIX_DOMAIN="{{ .Values.elementHomeserverUrl }}"|' /opt/hiclaw/scripts/init/start-element-web.sh
+              exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
+          {{- else }}
+          command: ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+          {{- end }}
+          workingDir: /root/manager-workspace
+          ports:
+            - name: gateway
+              containerPort: {{ .Values.containerPorts.gateway }}
+            - name: console
+              containerPort: {{ .Values.containerPorts.console }}
+            - name: element-web
+              containerPort: {{ .Values.containerPorts.elementWeb }}
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: data
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "hiclaw.fullname" . }}-data
+          {{- else }}
+          emptyDir: {}
+          {{- end }}

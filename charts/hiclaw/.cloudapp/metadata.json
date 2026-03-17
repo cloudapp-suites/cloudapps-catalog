@@ -1,0 +1,35 @@
+{
+  "name": "hiclaw",
+  "display_name": "hiclaw",
+  "description": {
+    "zh": "HiClaw 是一个开源的协作式多智能体操作系统，通过自托管的 Matrix 聊天室实现透明、以人为本的任务协同。它采用“管理者-工作者”（Manager-Workers）架构，协调多种 AI 智能体（如 OpenClaw、CoPaw）完成复杂任务，所有对话、凭证和数据均保留在用户自有基础设施内。它本质上是一个企业级、高安全性的“聊天室中的 AI 团队”。",
+    "en": "HiClaw is an open-source, collaborative multi-agent operating system that enables transparent, human-in-the-loop task coordination via self-hosted Matrix chat rooms. It uses a Manager-Workers architecture to orchestrate AI agents (e.g., OpenClaw, CoPaw) for complex tasks—while keeping all communication, credentials, and data fully private and on-premises. It serves as an enterprise-grade, secure “AI team in a chat room”."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 企业级安全防护：真实 API 密钥与令牌永不触达工作者智能体，杜绝凭证泄露风险。\n- 完全私有化与去中心化通信：基于自托管 Matrix（Tuwunel），无厂商锁定，无数据外泄。\n- 原生支持“人在环路中”：所有智能体交互均实时可见、可介入，消除黑盒操作。\n- 零配置、一键部署（`curl | bash`）：自动集成 AI 网关、IM 服务、文件存储、Web 界面与管理者智能体。\n- 轻量级、可扩展的工作者运行时（CoPaw / NanoClaw / ZeroClaw），支持高密度智能体部署。\n\n## 功能列表:\n\n- 可定制的智能体运行时（“Claws”）：支持 OpenClaw、CoPaw、NanoClaw、ZeroClaw 或企业自定义智能体。\n- 自然语言驱动的管理者智能体：支持通过对话创建、分派、监控工作者生命周期。\n- 自托管 Matrix 服务器（Tuwunel）+ Element Web 客户端：提供安全、私有、实时的智能体-人类协作聊天环境。\n- 基于 MinIO 的共享文件系统：支撑工作者智能体无状态化、可随时销毁重建。\n- Higress AI 网关作为安全凭证代理：工作者仅持有消费令牌，不接触任何真实 API 密钥。\n- 按需加载 skills.sh 技能库（80,000+ 社区技能），权限由令牌沙箱严格隔离。\n- 内置 MCP（Model Context Protocol）服务器支持，真实凭证零暴露。",
+    "en": "## Benefits:\n\n- Enterprise-grade security with zero credential exposure: real API keys and tokens never reach workers.\n- Fully private and decentralized communication via self-hosted Matrix (Tuwunel), eliminating vendor lock-in and data leakage.\n- Built-in human-in-the-loop transparency: every agent interaction is visible and intervenable in real time.\n- Zero-configuration, one-command deployment (`curl | bash`) covering gateway, IM, storage, UI, and manager.\n- Lightweight, scalable worker runtimes (CoPaw, NanoClaw, ZeroClaw) enabling high-density agent deployment.\n\n## Features:\n\n- Customizable agent runtimes (\"Claws\"): OpenClaw, CoPaw, NanoClaw, ZeroClaw, or custom enterprise agents.\n- Natural-language-driven Manager Agent for worker lifecycle management (create, assign, monitor).\n- Self-hosted Matrix server (Tuwunel) + Element Web client for secure, private, real-time agent-human chat.\n- Shared MinIO-based file system enabling stateless, reproducible worker instances.\n- Higress AI Gateway acting as a secure credential proxy: workers receive only consumer tokens—not real API keys.\n- On-demand skills loading from skills.sh (80,000+ community skills), sandboxed by token-based access.\n- Integrated MCP (Model Context Protocol) server support with zero-credential exposure."
+  },
+  "github_url": "https://github.com/higress-group/hiclaw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "https://hiclaw.io",
+  "product_document": "",
+  "categories": [
+    "Open Source",
+    "Self-Hosted",
+    "Multi-Agent",
+    "Ai Orchestration",
+    "Secure Communication",
+    "Decentralized",
+    "Low-Code Automation"
+  ],
+  "pic_url": "",
+  "license": "Apache-2.0",
+  "language": "Shell"
+}

@@ -1,0 +1,72 @@
+image:
+  repository: higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/hiclaw-manager
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# User-facing fields (filled by frontend)
+externalEnv:
+  HICLAW_LLM_API_KEY: ""
+  HICLAW_ADMIN_PASSWORD: ""
+
+# LLM Configuration
+llm:
+  provider: "alibaba-cloud"
+  baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  defaultModel: "qwen3.5-plus"
+
+# Admin credentials
+admin:
+  username: "admin"
+
+# Network
+service:
+  type: LoadBalancer
+  gatewayPort: 18080
+  consolePort: 18001
+  elementWebPort: 18088
+
+# Container ports (internal)
+containerPorts:
+  gateway: 8080
+  console: 8001
+  elementWeb: 8088
+  openclawConsole: 18888
+
+# Domain configuration
+# matrix domain keeps :18080 (Tuwunel server_name, cannot change after DB init)
+# Other domains MUST NOT contain port numbers (colon breaks K8s labels in Higress)
+domains:
+  matrix: "matrix-local.hiclaw.io:18080"
+  elementWeb: "element-local.hiclaw.io"
+  aiGateway: "aigw-local.hiclaw.io"
+  fileSystem: "fs-local.hiclaw.io"
+  openclawConsole: "console-local.hiclaw.io"
+
+# Element Web homeserver override (for K8s: use LoadBalancer IP:Port since browser can't resolve internal domains)
+# Format: "IP:PORT" e.g. "8.136.15.102:18080". Set to "" to use default HICLAW_MATRIX_DOMAIN.
+elementHomeserverUrl: ""
+
+# Worker runtime
+defaultWorkerRuntime: "copaw"
+
+# Matrix E2EE
+matrixE2ee: "0"
+
+# Persistence
+persistence:
+  enabled: true
+  storageClass: alicloud-disk-essd
+  dataSize: 20Gi
+
+# Resources
+resources:
+  requests:
+    memory: "2Gi"
+    cpu: "500m"
+  limits:
+    memory: "8Gi"
+    cpu: "4000m"
+
+# EDAS integration
+edas:
+  enabled: false

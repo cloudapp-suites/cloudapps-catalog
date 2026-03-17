@@ -1,0 +1,12 @@
+HiClaw Manager deployed!
+
+Get the external IP:
+  kubectl get svc {{ include "hiclaw.fullname" . }} -n {{ .Release.Namespace }}
+
+Access:
+  Element Web: http://EXTERNAL-IP:{{ .Values.service.elementWebPort }}/#/login
+  Higress Console: http://EXTERNAL-IP:{{ .Values.service.consolePort }}
+  Gateway: http://EXTERNAL-IP:{{ .Values.service.gatewayPort }}
+
+Note: HiClaw Manager is an all-in-one container. Worker containers need to be
+created separately (Manager cannot auto-create Workers in K8s without Docker socket).

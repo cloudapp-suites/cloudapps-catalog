@@ -1,0 +1,11 @@
+apiVersion: v2
+name: hiclaw
+description: HiClaw - Collaborative Multi-Agent OS
+type: application
+version: 0.1.0
+appVersion: "1.0.6"
+annotations:
+  artifacthub.io/cr.source: "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/hiclaw-manager"
+  artifacthub.io/own.source: "higress_hiclaw"
+  artifacthub.io/cr.update-strategy: no
+  artifacthub.io/license: Apache-2.0
