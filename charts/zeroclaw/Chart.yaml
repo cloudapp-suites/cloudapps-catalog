@@ -1,0 +1,6 @@
+apiVersion: v2
+name: zeroclaw
+description: ZeroClaw - Zero overhead AI assistant runtime
+type: application
+version: 0.1.0
+appVersion: "latest"

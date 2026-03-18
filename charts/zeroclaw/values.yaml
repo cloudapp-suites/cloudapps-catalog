@@ -1,0 +1,41 @@
+image:
+  repository: ghcr.io/zeroclaw-labs/zeroclaw
+  tag:
+  pullPolicy: Always
+
+# User-facing fields (filled by frontend)
+externalEnv:
+  API_KEY: ""
+
+# LLM provider
+# Use custom: prefix for DashScope (OpenAI-compatible)
+provider: "custom:https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+# Default model
+model: "qwen-max"
+
+# Network
+service:
+  type: LoadBalancer
+  port: 3000
+
+containerPort: 3000
+
+# Resources (ZeroClaw is extremely lightweight)
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "512Mi"
+    cpu: "2000m"
+
+# Persistence
+persistence:
+  enabled: true
+  storageClass: alicloud-disk-essd
+  size: 20Gi
+
+# EDAS integration
+edas:
+  enabled: false

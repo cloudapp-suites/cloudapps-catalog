@@ -1,0 +1,25 @@
+{
+  "name": "zeroclaw",
+  "display_name": "zeroclaw",
+  "description": {
+    "zh": "",
+    "en": ""
+  },
+  "feature": {
+    "zh": "",
+    "en": ""
+  },
+  "github_url": "https://github.com/zeroclaw-labs/zeroclaw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "https://www.zeroclawlabs.ai/",
+  "product_document": "",
+  "categories": [],
+  "pic_url": "docs/assets/zeroclaw.png",
+  "license": "Apache-2.0",
+  "language": "Rust"
+}

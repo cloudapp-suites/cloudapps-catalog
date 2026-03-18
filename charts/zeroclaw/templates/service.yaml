@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "zeroclaw.fullname" . }}
+  labels:
+    {{- include "zeroclaw.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: gateway
+      port: {{ .Values.service.port }}
+      targetPort: gateway
+  selector:
+    {{- include "zeroclaw.selectorLabels" . | nindent 4 }}

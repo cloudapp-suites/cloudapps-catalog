@@ -1,0 +1,14 @@
+ZeroClaw deployed!
+
+Get the external IP:
+  kubectl get svc {{ include "zeroclaw.fullname" . }} -n {{ .Release.Namespace }}
+
+Access:
+  Gateway API: http://EXTERNAL-IP:{{ .Values.service.port }}
+  Health Check: http://EXTERNAL-IP:{{ .Values.service.port }}/health
+  Webhook:     POST http://EXTERNAL-IP:{{ .Values.service.port }}/webhook
+
+Test:
+  curl -X POST http://EXTERNAL-IP:{{ .Values.service.port }}/webhook \
+    -H "Content-Type: application/json" \
+    -d '{"message": "hello"}'
