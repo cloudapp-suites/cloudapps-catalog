@@ -2,12 +2,12 @@
   "name": "zeroclaw",
   "display_name": "zeroclaw",
   "description": {
-    "zh": "",
-    "en": ""
+    "zh": "ZeroClaw 是一款基于 Rust 构建的极简型命令行与守护进程工具，专为超低资源环境设计——可在仅需不到 5MB 内存、售价 10 美元的硬件上全功能运行。它提供架构无关的基础设施编排能力，核心系统均以 trait 抽象（如 Provider、Channel、Tool 等），支持安全、可移植、低成本的跨平台（ARM/x86/RISC-V）部署。强调零运行时开销、毫秒级冷启动，以及兼容 OpenAI API 的开放扩展能力，杜绝厂商锁定。",
+    "en": "ZeroClaw is a lean, Rust-based CLI and daemon tool designed for ultra-low-resource deployment — running fully in under 5MB RAM on $10 hardware. It provides agnostic infrastructure orchestration with swappable components (providers, channels, tools, tunnels), enabling secure, portable, and cost-efficient operations across ARM/x86/RISC-V. It emphasizes zero runtime overhead, instant cold starts, and OpenAI-compatible extensibility without vendor lock-in."
   },
   "feature": {
-    "zh": "",
-    "en": ""
+    "zh": "## 产品优势:\n\n- 超低资源占用（<5MB 内存，~8.8MB 静态二进制）\n- 毫秒级冷启动（<10ms），由单二进制 Rust 运行时保障\n- 硬件无关的跨平台可移植性（支持 ARM/x86/RISC-V）\n- 安全优先设计：配对机制、严格沙箱、显式白名单、工作区作用域隔离、端到端加密通道支持\n- 零厂商锁定：兼容 OpenAI API 的 Provider 接口 + 可插拔自定义终端点\n\n## 功能列表:\n\n- 极简 CLI 与状态查询工作流，内存占用控制在数兆级别\n- 面向低成本单板机（SBC）和微型云实例的经济型部署方案\n- 基于 trait 的可替换核心系统（Provider、Channel、Tool、Memory、Tunnel）\n- 统一文档中心，含任务导向式目录及完整参考手册（CLI 命令、配置、Provider/Channel 等）\n- 支持 Matrix 端到端加密房间运维及代理网关操作手册\n- 通过 `cargo build --release` 与 `/usr/bin/time -l` 实现本地可复现性能基准测试",
+    "en": "## Benefits:\n\n- Ultra-low resource footprint (<5MB RAM, ~8.8MB static binary)\n- Instant cold starts (<10ms) enabled by single-binary Rust runtime\n- Hardware-agnostic portability across ARM, x86, and RISC-V\n- Security-by-design: strict sandboxing, explicit allowlists, workspace scoping, and end-to-end encrypted channel support\n- Zero lock-in: OpenAI-compatible provider interface + pluggable custom endpoints\n\n## Features:\n\n- Lean CLI and status workflows with minimal memory envelope\n- Cost-efficient deployment targeting low-cost SBCs and micro-cloud instances\n- Swappable core systems via traits (providers, channels, tools, memory, tunnels)\n- Unified documentation hub with task-oriented TOC and comprehensive reference guides\n- Matrix E2EE room operations support and proxy agent playbook\n- Reproducible local benchmarking via `cargo build --release` and `/usr/bin/time -l`"
   },
   "github_url": "https://github.com/zeroclaw-labs/zeroclaw",
   "readme": {
@@ -15,11 +15,21 @@
     "en": "./README.md"
   },
   "alternative_products": [],
-  "tags": [],
+  "tags": [
+    "Microservices"
+  ],
   "official_address": "https://www.zeroclawlabs.ai/",
   "product_document": "",
-  "categories": [],
-  "pic_url": "docs/assets/zeroclaw.png",
+  "categories": [
+    "CLI",
+    "Rust",
+    "Self-Hosted",
+    "Infrastructure Automation",
+    "Low-Resource",
+    "Portable",
+    "Documentation"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/zeroclaw/image/EDASpoc.png",
   "license": "Apache-2.0",
   "language": "Rust"
 }
