@@ -1,6 +1,6 @@
 image:
-  repository: higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/hiclaw-manager
-  tag: latest
+  repository: {{ registry }}
+  tag:
   pullPolicy: IfNotPresent
 
 # User-facing fields (filled by frontend)
@@ -60,13 +60,7 @@ persistence:
   dataSize: 20Gi
 
 # Resources
-resources:
-  requests:
-    memory: "2Gi"
-    cpu: "500m"
-  limits:
-    memory: "8Gi"
-    cpu: "4000m"
+resources: {{ resources }}
 
 # EDAS integration
 edas:
@@ -77,3 +71,6 @@ edas:
 minio:
   user: "admin"
   password: ""
+
+workerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
+copawWorkerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
