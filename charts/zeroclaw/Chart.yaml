@@ -4,3 +4,9 @@ description: ZeroClaw - Zero overhead AI assistant runtime
 type: application
 version: 0.1.0
 appVersion: "latest"
+
+annotations:
+  artifacthub.io/cr.source: "ghcr.io/zeroclaw-labs/zeroclaw"
+  artifacthub.io/own.source: "zeroclaw-labs_zeroclaw"
+  artifacthub.io/cr.update-strategy: no
+  artifacthub.io/license: MIT OR Apache-2.0

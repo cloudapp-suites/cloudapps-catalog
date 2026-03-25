@@ -1,11 +1,14 @@
 image:
   repository: ghcr.io/zeroclaw-labs/zeroclaw
-  tag:
+  tag: main
   pullPolicy: Always
 
 # User-facing fields (filled by frontend)
 externalEnv:
-  API_KEY: ""
+  # 百炼 API Key，用于调用通义千问等大模型
+  # 获取方式：登录百炼控制台 https://bailian.console.aliyun.com/ -> API Key 管理
+  # 格式：sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  DASHSCOPE_API_KEY: ""
 
 # LLM provider
 # Use custom: prefix for DashScope (OpenAI-compatible)

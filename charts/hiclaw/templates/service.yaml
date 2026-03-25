@@ -7,14 +7,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
+    - name: element-web
+      port: {{ .Values.service.elementWebPort }}
+      targetPort: element-web
     - name: gateway
       port: {{ .Values.service.gatewayPort }}
       targetPort: gateway
     - name: console
       port: {{ .Values.service.consolePort }}
       targetPort: console
-    - name: element-web
-      port: {{ .Values.service.elementWebPort }}
-      targetPort: element-web
   selector:
     {{- include "hiclaw.selectorLabels" . | nindent 4 }}

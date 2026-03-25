@@ -17,6 +17,13 @@ containerPort: 8088
 env:
   COPAW_PORT: "8088"
 
+# User-facing fields (filled by frontend)
+externalEnv:
+  # 百炼 API Key，用于调用通义千问等大模型
+  # 获取方式：登录百炼控制台 https://bailian.console.aliyun.com/ -> API Key 管理
+  # 格式：sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  DASHSCOPE_API_KEY: ""
+
 resources:
   requests:
     memory: "256Mi"

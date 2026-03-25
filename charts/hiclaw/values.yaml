@@ -1,11 +1,15 @@
 image:
-  repository: {{ registry }}
-  tag:
+  repository: higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/hiclaw-manager
+  tag: latest
   pullPolicy: IfNotPresent
 
 # User-facing fields (filled by frontend)
 externalEnv:
-  HICLAW_LLM_API_KEY: ""
+  # 百炼 API Key，用于调用通义千问等大模型
+  # 获取方式：登录百炼控制台 https://bailian.console.aliyun.com/ -> API Key 管理
+  # 格式：sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  DASHSCOPE_API_KEY: ""
+  # HiClaw 管理员密码，留空则自动生成
   HICLAW_ADMIN_PASSWORD: ""
 
 # LLM Configuration
@@ -17,6 +21,12 @@ llm:
 # Admin credentials
 admin:
   username: "admin"
+
+# MinIO credentials (user >= 3 chars, password >= 8 chars required by MinIO)
+# Leave password empty to auto-generate a secure one
+minio:
+  user: "admin"
+  password: ""
 
 # Network
 service:
@@ -47,6 +57,10 @@ domains:
 # Format: "IP:PORT" e.g. "8.136.15.102:18088". Set to "" to use default HICLAW_MATRIX_DOMAIN.
 elementHomeserverUrl: ""
 
+# Worker images (override default images with enhanced versions that include common Linux tools)
+workerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
+copawWorkerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
+
 # Worker runtime
 defaultWorkerRuntime: "copaw"
 
@@ -60,17 +74,14 @@ persistence:
   dataSize: 20Gi
 
 # Resources
-resources: {{ resources }}
+resources:
+  requests:
+    memory: "2Gi"
+    cpu: "500m"
+  limits:
+    memory: "8Gi"
+    cpu: "4000m"
 
 # EDAS integration
 edas:
   enabled: false
-
-# MinIO credentials (user >= 3 chars, password >= 8 chars required by MinIO)
-# Leave password empty to auto-generate a secure one
-minio:
-  user: "admin"
-  password: ""
-
-workerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
-copawWorkerImage: "apaas-registry.cn-hangzhou.cr.aliyuncs.com/cloud-app/hiclaw-copaw-worker:latest"
