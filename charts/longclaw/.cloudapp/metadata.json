@@ -1,0 +1,33 @@
+{
+  "name": "longclaw",
+  "display_name": "longclaw",
+  "description": {
+    "zh": "Longclaw 是一个面向 Wagtail CMS 的开源电商扩展，使开发者能在 Wagtail 后台直接构建在线商店。它深度集成 Wagtail 的页面化内容模型，支持商品管理、订单处理、运费配置和数据统计。项目强调易用性与可定制性，内置多支付网关支持，并提供 REST API 以灵活适配任意前端。",
+    "en": "Longclaw is an open-source e-commerce extension for the Wagtail CMS, enabling developers to build online stores directly within Wagtail’s admin interface. It provides tight integration with Wagtail’s page-based content model for product catalogs, order management, shipping configuration, and analytics. Designed for simplicity and extensibility, it supports multiple payment gateways and exposes a REST API for frontend flexibility."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 无缝 Wagtail 原生体验——无需独立后台，也无需复杂覆盖或分叉\n- 极速项目初始化：仅需一条命令 `longclaw start` 即可启动\n- 前端无关设计——使用标准 Wagtail 模板和模式自由构建定制化 storefront\n- 开箱即用的生产级支付集成（Stripe、Braintree、PayPal v.zero）\n\n## 功能列表:\n\n- 通过 Wagtail 页面管理商品与商品目录\n- 在 Wagtail 后台统一处理订单及查看销售统计仪表盘\n- 可配置的运费与税费规则\n- 提供 RESTful API 及配套 JavaScript 客户端（通过模板标签加载）\n- 支持多种支付后端（Stripe、Braintree、PayPal v.zero）\n- 内置国家数据加载命令（`python manage.py loadcountries`）\n- 集成 Django/Wagtail 迁移与超级用户创建工具链",
+    "en": "## Benefits:\n\n- Seamless Wagtail-native experience — no separate admin or complex overrides required\n- Rapid project setup with a single CLI command (`longclaw start`)\n- Frontend agnosticism — build custom storefronts using standard Wagtail templates and patterns\n- Production-ready payment integrations out of the box (Stripe, Braintree, PayPal v.zero)\n\n## Features:\n\n- Product and catalog management via Wagtail pages\n- Order administration and statistics dashboard in Wagtail admin\n- Configurable shipping and tax rules\n- RESTful API with JavaScript client loaded via template tag\n- Multi-payment backend support (Stripe, Braintree, PayPal v.zero)\n- Built-in country data loading (`python manage.py loadcountries`)\n- Django/Wagtail migration and superuser setup tooling"
+  },
+  "github_url": "https://github.com/longclawshop/longclaw",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "E-Commerce",
+    "Cms Extension",
+    "Wagtail",
+    "REST API",
+    "Payment Integration",
+    "Django",
+    "Open Source"
+  ],
+  "pic_url": "docs/assets/dashboard.png",
+  "license": "MIT",
+  "language": "Python"
+}

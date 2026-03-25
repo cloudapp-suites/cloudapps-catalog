@@ -1,0 +1,11 @@
+apiVersion: v2
+name: longclaw
+description: LongClaw - E-commerce extension for Wagtail CMS
+version: 1.0.0
+appVersion: "1.0.2"
+
+annotations:
+  artifacthub.io/cr.source: ""
+  artifacthub.io/own.source: "longclawshop_longclaw"
+  artifacthub.io/cr.update-strategy: no
+  artifacthub.io/license: MIT

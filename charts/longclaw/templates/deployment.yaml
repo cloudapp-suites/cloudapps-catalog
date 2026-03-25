@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "longclaw.fullname" . }}
+  labels:
+    {{- include "longclaw.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      {{- include "longclaw.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "longclaw.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: longclaw
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ include "longclaw.fullname" . }}-env
+          ports:
+            - name: http
+              containerPort: 8000
+          volumeMounts:
+            - name: data
+              mountPath: /app/data
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: data
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "longclaw.fullname" . }}-data
+          {{- else }}
+          emptyDir: {}
+          {{- end }}

@@ -1,0 +1,30 @@
+image:
+  repository:
+  tag: latest
+  pullPolicy: Always
+
+# Django settings
+django:
+  secretKey: ""
+  debug: "false"
+  allowedHosts: "*"
+  superuserUsername: "admin"
+  superuserPassword: ""
+  superuserEmail: "admin@example.com"
+
+service:
+  type: LoadBalancer
+  port: 8000
+
+persistence:
+  enabled: true
+  storageClass: alicloud-disk-essd
+  size: 20Gi
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+  limits:
+    memory: "1Gi"
+    cpu: "1000m"
