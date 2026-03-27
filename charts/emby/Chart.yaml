@@ -1,23 +1,15 @@
 annotations:
-  artifacthub.io/images: |
-    - name: Emby
-      image: emby/embyserver:4.9.1.80
-      platforms:
-        - linux/amd64
+  artifacthub.io/cr.source: emby/embyserver
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/images: "- name: Emby\n  image: emby/embyserver:4.9.1.80\n  platforms:\n\
+    \    - linux/amd64\n"
   artifacthub.io/license: MIT
-  artifacthub.io/links: |
-    - name: Source
-      url: https://github.com/pmoscode-helm/emby
-    - name: support
-      url: https://github.com/pmoscode-helm/emby/issues
-  artifacthub.io/maintainers: |-
-    - name: pmoscode
-      email: info@pmoscode.de
-  artifacthub.io/cr.source: "emby/embyserver"
-  artifacthub.io/own.source: "embyserver"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/links: "- name: Source\n  url: https://github.com/pmoscode-helm/emby\n\
+    - name: support\n  url: https://github.com/pmoscode-helm/emby/issues\n"
+  artifacthub.io/maintainers: "- name: pmoscode\n  email: info@pmoscode.de"
+  artifacthub.io/own.source: embyserver
 apiVersion: v2
-appVersion: 4.9.1.80
+appVersion: 4.9.1.90
 description: Your personal media on any device. Bringing all of your home videos,
   music, and photos together into one place has never been easier. Your personal Emby
   Server automatically converts and streams your media on-the-fly to play on any device.
