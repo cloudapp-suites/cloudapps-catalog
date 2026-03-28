@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: ghcr.io/dgtlmoon/changedetection.io
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: changedetection
 apiVersion: v2
-name: changedetection
+appVersion: 0.51.3
 description: A Helm chart for changedetection.io application
+name: changedetection
 type: application
 version: 0.1.0
-appVersion: 0.50.38
-annotations:
-  artifacthub.io/cr.source: "ghcr.io/dgtlmoon/changedetection.io"
-  artifacthub.io/own.source: "changedetection"
-  artifacthub.io/cr.update-strategy: "latest"

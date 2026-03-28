@@ -1,11 +1,11 @@
+annotations:
+  artifacthub.io/cr.source: jgraph/drawio
+  artifacthub.io/cr.update-strategy: github
+  artifacthub.io/github.source: https://api.github.com/repos/jgraph/drawio/releases/latest
+  artifacthub.io/own.source: jgraph/drawio
 apiVersion: v2
-name: drawio
+appVersion: 29.0.3
 description: A Helm chart for draw.io (diagrams.net)
+name: drawio
 type: application
 version: 0.1.0
-appVersion: 28.2.8
-annotations:
-  artifacthub.io/cr.source: "jgraph/drawio"
-  artifacthub.io/own.source: "jgraph/drawio"
-  artifacthub.io/github.source: "https://api.github.com/repos/jgraph/drawio/releases/latest"
-  artifacthub.io/cr.update-strategy: "github"
