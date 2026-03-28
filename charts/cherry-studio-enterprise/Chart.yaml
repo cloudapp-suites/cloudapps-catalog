@@ -3,7 +3,7 @@ annotations:
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: cherry-studio-enterprise-api
 apiVersion: v2
-appVersion: v0.2.5
+appVersion: v0.3.2
 description: A Helm chart for Cherry Studio Enterprise
 name: cherry-studio-enterprise
 type: application

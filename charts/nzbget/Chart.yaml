@@ -6,7 +6,7 @@ annotations:
   artifacthub.io/own.source: lscr.io_linuxserver_nzbget
   artifacthub.io/values-schema: values.schema.json
 apiVersion: v2
-appVersion: 25.4.20251017
+appVersion: 25.4.20251128
 description: nzbget - efficient usenet downloader.
 home: https://github.com/loeken/helm-charts
 icon: https://gravatar.com/avatar/61f5b56ca85bc7e22f270e125c7e61ca?s=400

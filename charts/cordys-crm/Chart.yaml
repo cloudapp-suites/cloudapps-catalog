@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: 1panel/cordys-crm
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: cordys-crm
 apiVersion: v2
-name: cordys-crm
+appVersion: v1.3.4
 description: A Helm chart for Cordys CRM
+name: cordys-crm
 type: application
 version: 0.1.0
-appVersion: v1.3.1
-annotations:
-  artifacthub.io/cr.source: "1panel/cordys-crm"
-  artifacthub.io/own.source: "cordys-crm"
-  artifacthub.io/cr.update-strategy: "latest"
