@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: tolgee/tolgee
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: tolgee
 apiVersion: v2
-name: tolgee
+appVersion: v3.141.0
 description: A Helm chart for Tolgee localization platform
+name: tolgee
 type: application
 version: 0.1.0
-appVersion: 3.138.0
-annotations:
-  artifacthub.io/cr.source: "tolgee/tolgee"
-  artifacthub.io/own.source: "tolgee"
-  artifacthub.io/cr.update-strategy: "latest"
