@@ -1,14 +1,12 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: Initial release linkding with bjw lib
-    - kind: changed
-      description: Refactor chart to remove common library dependency
-  artifacthub.io/cr.source: "sissbruecker/linkding"
-  artifacthub.io/own.source: "sissbruecker_linkding"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/changes: "- kind: changed\n  description: Initial release linkding\
+    \ with bjw lib\n- kind: changed\n  description: Refactor chart to remove common\
+    \ library dependency"
+  artifacthub.io/cr.source: sissbruecker/linkding
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: sissbruecker_linkding
 apiVersion: v2
-appVersion: 1.44.1
+appVersion: 1.45.0
 description: Linkding is an application to store and synchronise web browsers bookmarks
 home: https://github.com/sissbruecker/linkding
 icon: https://github.com/sissbruecker/linkding/raw/master/docs/header.svg

@@ -1,18 +1,16 @@
 annotations:
-  artifacthub.io/changes: |
-    - kind: changed
-      description: Image repository
-  artifacthub.io/maintainers: |
-    - name: obeone
-      email: obeone@obeone.org
-  artifacthub.io/signKey: |
-    fingerprint: B9FE852F28888D27F8C9A11CD33E04CD22E335CE
+  artifacthub.io/changes: "- kind: changed\n  description: Image repository\n"
+  artifacthub.io/cr.source: obeoneorg/cyberchef
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/maintainers: "- name: obeone\n  email: obeone@obeone.org\n"
+  artifacthub.io/own.source: obeoneorg_cyberchef
+  artifacthub.io/signKey: 'fingerprint: B9FE852F28888D27F8C9A11CD33E04CD22E335CE
+
     url: https://raw.githubusercontent.com/obeone/charts/main/public_key.gpg
-  artifacthub.io/cr.source: "obeoneorg/cyberchef"
-  artifacthub.io/own.source: "obeoneorg_cyberchef"
-  artifacthub.io/cr.update-strategy: "latest"
+
+    '
 apiVersion: v2
-appVersion: v10.19.4
+appVersion: v10.20.0
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com
