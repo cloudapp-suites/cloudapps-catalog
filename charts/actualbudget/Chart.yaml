@@ -29,7 +29,7 @@ annotations:
 
     '
 apiVersion: v2
-appVersion: 25.11.0
+appVersion: 25.12.0
 description: A local-first personal finance app
 home: https://actualbudget.org/
 icon: https://raw.githubusercontent.com/actualbudget/docs/refs/heads/master/static/img/actual.png
