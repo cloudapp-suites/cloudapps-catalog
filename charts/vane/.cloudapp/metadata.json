@@ -1,0 +1,35 @@
+{
+  "name": "vane",
+  "display_name": "Vane",
+  "description": {
+    "zh": "Vane 是一款注重隐私的自托管 AI 搜索引擎，通过融合互联网知识与本地或云端大语言模型（如 Ollama、OpenAI、Claude）来回答问题，在保障用户数据完全私有前提下，提供带来源引用的准确答案。",
+    "en": "Vane is a privacy-first, self-hosted AI search engine that answers questions by combining web knowledge with local or cloud-based LLMs (e.g., Ollama, OpenAI, Claude), delivering cited, accurate results without compromising user data."
+  },
+  "feature": {
+    "zh": "## 产品优势:\n\n- 全隐私保障：所有搜索均在本地或用户自有基础设施中执行，无遥测、无查询日志。\n- 灵活的 AI 后端：可无缝切换本地大模型与多种云服务商，灵活平衡成本、响应速度与答案质量。\n- 可扩展架构：模块化设计便于轻松集成新搜索源、UI 小部件及智能体（agents）。\n\n## 功能列表:\n\n- 支持本地大语言模型（通过 Ollama）及云 AI 服务商（OpenAI、Anthropic Claude、Google Gemini、Groq）。\n- 三种智能搜索模式：极速模式、均衡模式、高质量模式。\n- 多源搜索：网页（基于 SearxNG）、论坛讨论、学术论文、图像、视频及上传文件（PDF、文本、图片）。\n- 站点限定搜索：将查询限制在特定网站内（如技术文档站点）。\n- 交互式 UI 小部件：天气、股价、计算器等上下文感知快捷信息卡片。\n- 文件理解问答：支持上传文档并针对其内容提问，具备多模态理解能力。\n- 实时搜索建议与本地持久化搜索历史。\n- 可浏览的“发现”（Discover）信息流，推送当日热点与推荐内容。\n- 提供 RESTful API，支持程序化调用搜索与模型编排。",
+    "en": "## Benefits:\n\n- Full privacy: All searches run locally or on your own infrastructure; no telemetry or query logging.\n- Flexible AI backend: Seamlessly switch between local LLMs and multiple cloud providers for optimal cost, speed, and quality trade-offs.\n- Extensible architecture: Modular design supports easy integration of new search sources, widgets, and agents.\n\n## Features:\n\n- Support for local LLMs (via Ollama) and cloud AI providers (OpenAI, Anthropic Claude, Google Gemini, Groq).\n- Three smart search modes: Speed, Balanced, and Quality.\n- Multi-source search: Web (via SearxNG), discussions, academic papers, images, videos, and uploaded files (PDF, text, images).\n- Domain-specific search: Restrict queries to particular websites (e.g., documentation sites).\n- Interactive UI widgets: Weather, stock prices, calculations, and other contextual quick-lookups.\n- File-aware Q&A: Ask questions about uploaded documents with multimodal understanding.\n- Real-time search suggestions and local search history persistence.\n- Browseable \"Discover\" feed for trending and recommended content.\n- RESTful API for programmatic search and model orchestration."
+  },
+  "github_url": "https://github.com/ItzCrazyKns/Vane",
+  "readme": {
+    "zh": "./README-zh.md",
+    "en": "./README.md"
+  },
+  "alternative_products": [],
+  "tags": [
+    "AI"
+  ],
+  "official_address": "",
+  "product_document": "",
+  "categories": [
+    "AI",
+    "Search Engine",
+    "Privacy-Focused",
+    "Self-Hosted",
+    "Local Llm",
+    "Multimodal",
+    "Open Source"
+  ],
+  "pic_url": "https://edas-hz.oss-cn-hangzhou.aliyuncs.com/edas-apps/charts-store/vane/image/vane.jpg",
+  "license": "MIT",
+  "language": "TypeScript"
+}

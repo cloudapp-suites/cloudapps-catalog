@@ -1,0 +1,9 @@
+apiVersion: v2
+name: vane
+description: Vane - Privacy-focused AI answering engine with built-in SearXNG
+type: application
+version: 0.1.0
+appVersion: "1.12.2"
+home: https://github.com/ItzCrazyKns/Vane
+sources:
+  - https://github.com/ItzCrazyKns/Vane

@@ -1,0 +1,16 @@
+Vane has been deployed!
+
+1. Get the external IP (LoadBalancer 分配后):
+   kubectl get svc {{ include "vane.fullname" . }} -n {{ .Release.Namespace }} -w
+
+2. 访问 Vane (LoadBalancer IP 就绪后):
+   http://<EXTERNAL-IP>
+
+3. 首次访问会进入 Setup 页面，需配置:
+   - AI Provider (OpenAI / Anthropic / Ollama / Groq 等)
+   - 对应的 API Key
+
+4. 查看 Pod 日志:
+   kubectl logs -n {{ .Release.Namespace }} -l app.kubernetes.io/instance={{ .Release.Name }} -f
+
+5. SearXNG 已内置在同一容器中 (端口 8080，仅内部访问)

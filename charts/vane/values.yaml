@@ -1,0 +1,58 @@
+replicaCount: 1
+
+nameOverride: ""
+fullnameOverride: "vane"
+
+image:
+  repository: itzcrazykns1337/vane:latest
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+  annotations:
+    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-spec: "slb.s1.small"
+    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-address-type: "internet"
+
+containerPort: 3000
+
+persistence:
+  enabled: true
+  storageClass: alicloud-disk-essd
+  size: 20Gi
+  accessMode: ReadWriteOnce
+  mountPath: /home/vane/data
+
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: "500m"
+  limits:
+    memory: "4Gi"
+    cpu: "2000m"
+
+startupProbe:
+  tcpSocket:
+    port: 3000
+  initialDelaySeconds: 15
+  periodSeconds: 5
+  failureThreshold: 36
+
+livenessProbe:
+  tcpSocket:
+    port: 3000
+  periodSeconds: 30
+  timeoutSeconds: 5
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: 3000
+  periodSeconds: 10
+  timeoutSeconds: 5
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
