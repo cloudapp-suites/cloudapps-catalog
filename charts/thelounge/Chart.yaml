@@ -1,12 +1,11 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `common` chart dependency to version 4.5.2
-  artifacthub.io/cr.source: "thelounge/thelounge"
-  artifacthub.io/own.source: "thelounge_thelounge"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/changes: "- kind: changed\n  description: Upgraded `common` chart\
+    \ dependency to version 4.5.2"
+  artifacthub.io/cr.source: thelounge/thelounge
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: thelounge_thelounge
 apiVersion: v2
-appVersion: 4.4.3
+appVersion: 4.5.0
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com
