@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: langflowai/langflow-frontend
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: langflow-frontend
 apiVersion: v2
-name: langflow
+appVersion: 1.7.3
 description: A Helm chart for Langflow
+name: langflow
 type: application
 version: 0.1.0
-appVersion: 1.6.5
-annotations:
-  artifacthub.io/cr.source: "langflowai/langflow-frontend"
-  artifacthub.io/own.source: "langflow-frontend"
-  artifacthub.io/cr.update-strategy: "latest"
