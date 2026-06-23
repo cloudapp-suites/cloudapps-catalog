@@ -1,11 +1,12 @@
+annotations:
+  artifacthub.io/cr.source: coralproject/talk
+  artifacthub.io/cr.update-strategy: github
+  artifacthub.io/github.source: https://api.github.com/repos/coralproject/talk/releases/latest
+  artifacthub.io/own.source: coralproject/talk
 apiVersion: v2
+appVersion: 9.10.9
+description: A Helm chart for Coral Talk - a better commenting experience from Vox
+  Media
 name: coral-talk
-description: A Helm chart for Coral Talk - a better commenting experience from Vox Media
 type: application
 version: 0.1.0
-appVersion: 9.10.8
-annotations:
-  artifacthub.io/cr.source: "coralproject/talk"
-  artifacthub.io/own.source: "coralproject/talk"
-  artifacthub.io/github.source: "https://api.github.com/repos/coralproject/talk/releases/latest"
-  artifacthub.io/cr.update-strategy: "github"
