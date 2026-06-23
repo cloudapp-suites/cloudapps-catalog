@@ -5,7 +5,7 @@ annotations:
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: linuxserver_tautulli
 apiVersion: v2
-appVersion: v2.16.0-ls207
+appVersion: v2.16.0-ls209
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com
