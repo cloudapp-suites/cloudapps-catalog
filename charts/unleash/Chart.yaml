@@ -1,9 +1,9 @@
-apiVersion: v2
-appVersion: 7.2.3
 annotations:
-  artifacthub.io/cr.source: "unleashorg/unleash-server"
-  artifacthub.io/own.source: "unleashorg_unleash-server"
-  artifacthub.io/cr.update-strategy: "latest"
+  artifacthub.io/cr.source: unleashorg/unleash-server
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: unleashorg_unleash-server
+apiVersion: v2
+appVersion: 7.3.0
 dependencies:
 - condition: postgresql.enabled
   name: postgresql
