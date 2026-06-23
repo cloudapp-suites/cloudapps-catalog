@@ -3,7 +3,7 @@ annotations:
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: linuxserver_duplicati
 apiVersion: v2
-appVersion: v2.2.0.0_stable_2025-10-23-ls264
+appVersion: v2.2.0.1_stable_2025-11-09-ls267
 description: A Helm chart for duplicati
 home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
 icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/Duplicati/images/duplicati-logo.png
