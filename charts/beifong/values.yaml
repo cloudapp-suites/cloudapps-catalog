@@ -196,4 +196,4 @@ redis:
       memory: 128Mi
 
 kubctl:
-  image: bitnami/kubectl:latest
+  image: soldevelo/kubectl:latest
