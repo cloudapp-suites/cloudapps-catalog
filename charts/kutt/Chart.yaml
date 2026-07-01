@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: kutt/kutt
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: kutt_kutt
 apiVersion: v2
-name: kutt
+appVersion: v3.2.5
 description: A modern URL shortener with support for custom domains
+name: kutt
 type: application
 version: 0.1.0
-appVersion: v3.2.3
-annotations:
-  artifacthub.io/cr.source: "kutt/kutt"
-  artifacthub.io/own.source: "kutt_kutt"
-  artifacthub.io/cr.update-strategy: "latest"
