@@ -32,7 +32,7 @@ standalone:
 
 # Kubectl image for IP update job
 kubectl:
-  image: bitnami/kubectl:latest
+  image: soldevelo/kubectl:latest
 
 # Service configuration
 service:

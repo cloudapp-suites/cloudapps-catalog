@@ -20,7 +20,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: api-url-setup
-        image: {{ .Values.app.image.kubectlImage | default "bitnami/kubectl:latest" }}
+        image: {{ .Values.app.image.kubectlImage | default "soldevelo/kubectl:latest" }}
         command:
         - /bin/bash
         - -c
