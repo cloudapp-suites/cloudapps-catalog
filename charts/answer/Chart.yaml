@@ -3,7 +3,7 @@ annotations:
   artifacthub.io/cr.update-strategy: latest
   artifacthub.io/own.source: answer
 apiVersion: v2
-appVersion: 1.7.0
+appVersion: 2.0.1
 description: Helm chart for deploying Apache Answer
 name: answer
 version: 1.0.0
