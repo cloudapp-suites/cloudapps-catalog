@@ -1,24 +1,18 @@
 annotations:
-  artifacthub.io/signKey: |
-    fingerprint: 9E57D2479D48B84463EF491F66D280CE667AD6C8
+  artifacthub.io/complex: 'true'
+  artifacthub.io/cr.source: flowiseai/flowise
+  artifacthub.io/cr.update-strategy: github
+  artifacthub.io/github.source: https://api.github.com/repos/flowiseai/flowise/releases/latest
+  artifacthub.io/own.source: flowiseai_flowise
+  artifacthub.io/signKey: 'fingerprint: 9E57D2479D48B84463EF491F66D280CE667AD6C8
+
     url: https://cowboysysop.github.io/charts/pgp-public-key-2022-02-19.asc
+
+    '
+  artifacthub.io/source: "[\n  {\n    \"own.source\": \"flowiseai_flowise\",\n   \
+    \ \"cr.source\": \"flowiseai/flowise\"\n  },\n  {\n    \"own.source\": \"flowise-worker\"\
+    ,\n    \"cr.source\": \"flowiseai/flowise-worker\"\n  }\n]\n"
   kubeVersion: '>=1.24'
-  artifacthub.io/complex: "true"
-  artifacthub.io/cr.source: "flowiseai/flowise"
-  artifacthub.io/own.source: "flowiseai_flowise"
-  artifacthub.io/github.source: "https://api.github.com/repos/flowiseai/flowise/releases/latest"
-  artifacthub.io/cr.update-strategy: "github"
-  artifacthub.io/source: |
-    [
-      {
-        "own.source": "flowiseai_flowise",
-        "cr.source": "flowiseai/flowise"
-      },
-      {
-        "own.source": "flowise-worker",
-        "cr.source": "flowiseai/flowise-worker"
-      }
-    ]
 apiVersion: v2
 appVersion: 3.0.8
 dependencies:
