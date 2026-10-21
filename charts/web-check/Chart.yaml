@@ -1,10 +1,10 @@
+annotations:
+  artifacthub.io/cr.source: lissy93/web-check
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: web-check
 apiVersion: v2
-name: web-check
+appVersion: 2.3.8
 description: A Helm chart for Kubernetes to deploy web-check application
+name: web-check
 type: application
 version: 0.1.0
-appVersion: latest
-annotations:
-  artifacthub.io/cr.source: "lissy93/web-check"
-  artifacthub.io/own.source: "web-check"
-  artifacthub.io/cr.update-strategy: "latest"
