@@ -1,25 +1,14 @@
+annotations:
+  artifacthub.io/complex: 'true'
+  artifacthub.io/cr.source: budibase/apps
+  artifacthub.io/cr.update-strategy: latest
+  artifacthub.io/own.source: budibase/apps
+  artifacthub.io/source: "[\n  {\n    \"own.source\": \"budibase/apps\",\n    \"cr.source\"\
+    : \"budibase/apps\"\n  },\n  {\n    \"own.source\": \"budibase/proxy\",\n    \"\
+    cr.source\": \"budibase/proxy\"\n  },\n  {\n    \"own.source\": \"budibase/worker\"\
+    ,\n    \"cr.source\": \"budibase/worker\"\n  }\n]\n"
 apiVersion: v2
 appVersion: 3.23.15
-annotations:
-  artifacthub.io/complex: "true"
-  artifacthub.io/source: |
-    [
-      {
-        "own.source": "budibase/apps",
-        "cr.source": "budibase/apps"
-      },
-      {
-        "own.source": "budibase/proxy",
-        "cr.source": "budibase/proxy"
-      },
-      {
-        "own.source": "budibase/worker",
-        "cr.source": "budibase/worker"
-      }
-    ]
-  artifacthub.io/cr.source: "budibase/apps"
-  artifacthub.io/own.source: "budibase/apps"
-  artifacthub.io/cr.update-strategy: "latest"
 dependencies:
 - condition: services.couchdb.enabled
   name: couchdb
